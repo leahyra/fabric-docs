@@ -198,6 +198,8 @@ items:
         href: event-streams/api-update-eventstream-definition.md
   - name: Security 
     items:
+    - name: Choose the right network security feature
+      href: event-streams/choose-the-right-network-security-feature.md
     - name: Secure outbound via managed private endpoints
       href: event-streams/set-up-private-endpoint.md
     - name: Secure inbound via tenant and workspace private links
