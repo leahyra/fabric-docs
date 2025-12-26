@@ -79,30 +79,27 @@ Managed private endpoints enable Eventstream to securely connect to Azure resour
 
 **Use case:** Use managed private endpoints when your Azure resources (such as Azure Event Hubs or Azure IoT Hub) have public access disabled or are protected by firewall rules. The private endpoint ensures that data flows from these Azure resources to Eventstream without traversing the public internet.
 
-**How it works:**
-1. You create a managed private endpoint in your Fabric workspace
-2. Fabric provisions a managed virtual network dedicated to your workspace
-3. Eventstream connects to your Azure resource through this private network
-4. The Azure resource administrator approves the private endpoint connection
-5. Data flows securely between the Azure resource and Eventstream
-
-Managed private endpoints are ideal when you need to pull data from Azure Event Hubs or Azure IoT Hub that are configured with network restrictions.
+Managed private endpoints are ideal when your Azure resource network setting is not publicly accessible, such as when public access is disabled or restricted by firewall rules.
 
 ### Tenant and Workspace-level Private Links
 
-Tenant-level private links provide network security for your entire Fabric tenant. When enabled, they restrict all inbound access to Fabric, ensuring that only traffic from approved Azure virtual networks can access Fabric resources, including Eventstream.
+Tenant-level and workspace-level private links are inbound network security features that restrict access to Fabric and Eventstream from the public internet. Both options use Azure Private Link services to ensure only traffic from approved Azure virtual networks can access your resources, but they differ in scope and flexibility.
 
 **Direction:** Inbound (controlling access to Fabric and Eventstream)
 
-**Use case:** Use tenant-level private links when your organization requires a comprehensive security policy that applies to all workspaces and all users. This feature blocks public internet access to Fabric entirely, ensuring that all access comes through approved private endpoints.
+**Tenant-level private links:**
+- Apply to the entire Fabric tenant, securing all workspaces and workspace items
+- Use when your organization requires a comprehensive security policy for all users and workspaces
+- Block public internet access to Fabric entirely; all access must come through approved private endpoints
+- Enabled by a Fabric administrator in the admin portal
 
-**How it works:**
-1. A Fabric administrator enables private links at the tenant level
-2. All Fabric resources, including Eventstream, become accessible only through private endpoints
-3. Users and applications must connect from an approved Azure virtual network
-4. Public internet access to Fabric is blocked
+**Workspace-level private links:**
+- Apply to individual workspaces, allowing granular control
+- Use when you need to secure specific workspaces with sensitive data or production workloads, while keeping other workspaces open for public access
+- Block public internet access only for the configured workspace; other workspaces remain accessible if not restricted
+- Enabled by a workspace administrator for each workspace
 
-Tenant-level private links are ideal when your organization has strict security policies that require all data and access to remain within private networks.
+Tenant-level private links are ideal for organizations with strict, company-wide security policies. Workspace-level private links are best for organizations needing flexibility to secure only select workspaces.
 
 ### Connector VNet
 
@@ -112,15 +109,7 @@ Workspace-level private links provide granular network security for specific wor
 
 **Use case:** Use Connector VNet when you need to connect Eventstream to external streaming platforms (like Confluent Cloud, Amazon Kinesis, Google Pub/Sub, MQTT) or database CDC sources (PostgreSQL, MySQL, SQL Server) that reside in private networks.
 
-**How it works:**
-1. Configure virtual network settings for your Eventstream workspace
-2. Eventstream's connectors establish secure connections through the configured virtual network
-3. Data flows from sources in private networks to Eventstream over secure channels
-4. No exposure to the public internet
-
-Connector VNet is ideal when you need to stream data from non-Azure sources or databases that are behind firewalls or in private networks.
-
-### Tenant and Workspace-level Private Links
+Connector VNet is ideal when you need to stream data from external systems or databases that are behind firewalls or in private networks.
 
 ## Choose the right network security feature
 
@@ -142,11 +131,15 @@ Ask yourself these questions:
    - If external sources need to push data to Eventstream (inbound), use **Private Links**
    - If Eventstream needs to connect to external Azure resources (outbound), continue to the next questions.
 
-3. **Is your data source an Azure Event Hub or Azure IoT Hub?**
+4. **Is your data source an Azure Event Hub or Azure IoT Hub?**
    - If yes, use **Managed Private Endpoint**
    - For other external data sources, use **Connector VNET**
 
 ### Decision matrix
+
+Use the following flowchart and decision matrix to determine the right network security feature for your Eventstream scenario:
+
+:::image type="content" source="media/set-up-private-links/choose-right-network-security.png" alt-text="A screenshot of how to choose the right network security feature." lightbox="media/set-up-private-links/choose-right-network-security.png":::
 
 #### Sources
 
