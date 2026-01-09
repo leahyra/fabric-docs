@@ -9,3 +9,5 @@ ms.subservice: rti-core
 ms.date: 01/08/2026
 ms.search.form: Architecture
 ---
+
+# Customer churn reference architecture 
