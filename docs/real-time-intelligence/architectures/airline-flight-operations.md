@@ -32,29 +32,29 @@ The airline flight operations reference architecture uses Microsoft Fabric to cr
 
 The following Microsoft Fabric components work together to deliver comprehensive flight operations analytics:
 
-- **[Eventstreams](event-streams/overview.md)**: Real-time data ingestion and stream processing. 
+- **[Eventstreams](../event-streams/overview.md)**: Real-time data ingestion and stream processing. 
 
-- **[Eventhouse](eventhouse.md)**: Real-time analytics and anomaly detection. 
+- **[Eventhouse](../eventhouse.md)**: Real-time analytics and anomaly detection. 
 
 - **[OneLake](../onelake/onelake-overview.md)**: Centralized data lake for historical analysis. 
 
-- **[Real-Time Dashboard](dashboard-real-time-create.md)**: Live operational monitoring. 
+- **[Real-Time Dashboard](../dashboard-real-time-create.md)**: Live operational monitoring. 
 
-- **[Power BI](create-powerbi-report.md)**: Business intelligence and reporting. 
+- **[Power BI](../create-powerbi-report.md)**: Business intelligence and reporting. 
 
-- **[Activator](data-activator/activator-introduction.md)**: Automated alerting and responses. 
+- **[Activator](../data-activator/activator-introduction.md)**: Automated alerting and responses. 
 
-- **[KQL Copilot](copilot-writing-queries.md)**: Natural language analytics. 
+- **[KQL Copilot](../copilot-writing-queries.md)**: Natural language analytics. 
 
 ## Data flow and processing
 
 ### Ingest and process
 
-You route live telemetry to [Eventstreams](event-streams/overview.md) for ingestion and enrichment. In parallel, the system processes environmental data through Azure Event Hubs before routing it to Eventstreams.
+You route live telemetry to [Eventstreams](../event-streams/overview.md) for ingestion and enrichment. In parallel, the system processes environmental data through Azure Event Hubs before routing it to Eventstreams.
 
 **Real-world scenario example**: During a typical day, a major airline processes more than 2 million operational events. These events include aircraft position updates every 30 seconds, passenger check-in events, baggage tracking updates, gate assignments, crew scheduling changes, and weather updates. Eventstreams handles this high-velocity data while applying real-time enrichment such as adding aircraft type information, route details, and passenger connection data.
 
-[Eventhouse](eventhouse.md) receives real-time flight operation data from Eventstreams and ingests information such as delays, maintenance alerts, and passenger status updates. It applies sophisticated rules to detect anomalies such as: 
+[Eventhouse](../eventhouse.md) receives real-time flight operation data from Eventstreams and ingests information such as delays, maintenance alerts, and passenger status updates. It applies sophisticated rules to detect anomalies such as: 
 
 - Aircraft approaching maintenance thresholds based on flight hours or cycles.
 
@@ -64,19 +64,19 @@ You route live telemetry to [Eventstreams](event-streams/overview.md) for ingest
 
 - Ground equipment failures that affect turnaround times.
 
-The system then transforms this data and sends it to [OneLake](../onelake/onelake-overview.md), where you can query historical trends, such as identifying airports with frequent weather-related disruptions or monitoring aircraft turnaround efficiency. For example, you can identify that Airport X has 23% higher delay rates during winter months, which enable proactive resource allocation and schedule adjustments.
+The system then transforms this data and sends it to [OneLake](../../onelake/onelake-overview.md), where you can query historical trends, such as identifying airports with frequent weather-related disruptions or monitoring aircraft turnaround efficiency. For example, you can identify that Airport X has 23% higher delay rates during winter months, which enable proactive resource allocation and schedule adjustments.
 
-By correlating real-time alerts from Eventhouse with historical insights in OneLake, you can optimize flight schedules, improve resource allocation, and proactively mitigate operational risks. The system routes processed data to [Real-Time Dashboard](dashboard-real-time-create.md) and [Power BI](create-powerbi-report.md) for immediate operational visibility and strategic analysis.
+By correlating real-time alerts from Eventhouse with historical insights in OneLake, you can optimize flight schedules, improve resource allocation, and proactively mitigate operational risks. The system routes processed data to [Real-Time Dashboard](../dashboard-real-time-create.md) and [Power BI](../create-powerbi-report.md) for immediate operational visibility and strategic analysis.
 
 ### Analyze and transform
 
-Use [KQL Copilot](copilot-writing-queries.md) to quickly check the status of flights affected by bad weather, determine potential delays, and query real-time data without complex coding. You can also build and train KQL Copilot to aggregate and analyze utilization patterns for better operational insights.
+Use [KQL Copilot](../copilot-writing-queries.md) to quickly check the status of flights affected by bad weather, determine potential delays, and query real-time data without complex coding. You can also build and train KQL Copilot to aggregate and analyze utilization patterns for better operational insights.
 
-Your flight operations teams use [Power BI](create-powerbi-report.md) to monitor live flight patterns, delays, and airspace congestion.
+Your flight operations teams use [Power BI](../create-powerbi-report.md) to monitor live flight patterns, delays, and airspace congestion.
 
 **Automated operational responses with Activator**:
 
-[Activator](data-activator/activator-introduction.md) enables sophisticated automation for your airline operations with subsecond latency:
+[Activator](../data-activator/activator-introduction.md) enables sophisticated automation for your airline operations with subsecond latency:
 
 - **Flight delay management** - Automatically notify passengers via SMS or email when delays exceed 15 minutes, trigger rebooking workflows for missed connections, and alert ground crews for aircraft turnaround adjustments.
 
@@ -93,29 +93,29 @@ KQL Copilot provides instant insights and helps your teams proactively manage di
 
 ### Ingestion layer
 
-**Event ingestion**: Route live telemetry to [Eventstreams](../real-time-intelligence/event-streams/overview.md) for ingestion and enrichment. Process environmental data through Azure Event Hubs before routing to Eventstreams.
+**Event ingestion**: Route live telemetry to [Eventstreams](../event-streams/overview.md) for ingestion and enrichment. Process environmental data through Azure Event Hubs before routing to Eventstreams.
 
 **Data enrichment**: Eventstreams applies real-time transformations and enriches incoming data with contextual information before forwarding to processing layers.
 
 ### Processing and storage layer
 
-**Real-time processing**: [Eventhouse](eventhouse.md) receives enriched flight operation data and applies business rules for anomaly detection, helping identify operational disruptions in real-time.
+**Real-time processing**: [Eventhouse](../eventhouse.md) receives enriched flight operation data and applies business rules for anomaly detection, helping identify operational disruptions in real-time.
 
-**Historical storage**: Processed data flows to [OneLake](../onelake/onelake-overview.md) for long-term storage and historical analysis, enabling trend identification and predictive analytics. 
+**Historical storage**: Processed data flows to [OneLake](../../onelake/onelake-overview.md) for long-term storage and historical analysis, enabling trend identification and predictive analytics. 
 
 ### Analytics and intelligence layer
 
-**Natural language processing**: [KQL Copilot](copilot-writing-queries.md) enables operations teams to query data using natural language, check flight statuses, and analyze utilization patterns without coding. 
+**Natural language processing**: [KQL Copilot](../copilot-writing-queries.md) enables operations teams to query data using natural language, check flight statuses, and analyze utilization patterns without coding. 
 
 **Machine learning**: Advanced analytics capabilities process historical and real-time data to predict disruptions and optimize operations. 
 
 ### Presentation and action layer
 
-**Real-time monitoring**: [Real-Time Dashboard](../real-time-intelligence/dashboard-real-time-create.md) provides live operational visibility with customizable views for different operational roles. 
+**Real-time monitoring**: [Real-Time Dashboard](../dashboard-real-time-create.md) provides live operational visibility with customizable views for different operational roles. 
 
-**Business intelligence**: [Power BI](create-powerbi-report.md) delivers comprehensive analytics for monitoring flight patterns, delays, and airspace congestion. 
+**Business intelligence**: [Power BI](../create-powerbi-report.md) delivers comprehensive analytics for monitoring flight patterns, delays, and airspace congestion. 
 
-**Automated responses**: [Activator](data-activator/activator-introduction.md) triggers automated actions including passenger notifications, gate reassignments, and maintenance alerts. 
+**Automated responses**: [Activator](../data-activator/activator-introduction.md) triggers automated actions including passenger notifications, gate reassignments, and maintenance alerts. 
 
 ## Technical benefits and outcomes 
 
@@ -209,13 +209,13 @@ KQL Copilot provides instant insights and helps your teams proactively manage di
 
 **Phase 1: Foundation setup**
 
-- Review [Microsoft Fabric Real-Time Intelligence](../real-time-intelligence/overview.md) capabilities and understand capacity requirements for your airline's operational scale.
+- Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your airline's operational scale.
 
-- Plan your [Eventstreams](../real-time-intelligence/event-streams/overview.md) data ingestion strategy. Start with critical operational data like flight status, passenger notifications, and safety alerts.
+- Plan your [Eventstreams](../event-streams/overview.md) data ingestion strategy. Start with critical operational data like flight status, passenger notifications, and safety alerts.
 
-- Design your [Eventhouse](../real-time-intelligence/eventhouse.md) real-time analytics implementation. Focus on delay management and operational disruptions.
+- Design your [Eventhouse](../eventhouse.md) real-time analytics implementation. Focus on delay management and operational disruptions.
 
-- Configure [OneLake](../onelake/onelake-overview.md) for historical data storage and analysis with appropriate retention policies for regulatory compliance.
+- Configure [OneLake](../../onelake/onelake-overview.md) for historical data storage and analysis with appropriate retention policies for regulatory compliance.
 
 **Phase 2: Pilot implementation**
 
@@ -241,9 +241,9 @@ KQL Copilot provides instant insights and helps your teams proactively manage di
 
 **Intelligent automation and AI**
 
-- Set up [Activator](data-activator/activator-introduction.md) for sophisticated operational automation. Include passenger rebooking workflows, crew scheduling adjustments, and maintenance planning optimization.
+- Set up [Activator](../data-activator/activator-introduction.md) for sophisticated operational automation. Include passenger rebooking workflows, crew scheduling adjustments, and maintenance planning optimization.
 
-- Implement [KQL Copilot](copilot-writing-queries.md) for natural language analytics. Enable your operations teams to query complex scenarios like "Show me all flights from weather-impacted airports with passenger connections at risk.".
+- Implement [KQL Copilot](../copilot-writing-queries.md) for natural language analytics. Enable your operations teams to query complex scenarios like "Show me all flights from weather-impacted airports with passenger connections at risk.".
 
 - Deploy predictive maintenance models using historical aircraft sensor data to predict component failures and optimize maintenance schedules.
 
@@ -255,22 +255,20 @@ KQL Copilot provides instant insights and helps your teams proactively manage di
 
 - Implement advanced analytics for route optimization, demand forecasting, and revenue management integration.
 
-- Create comprehensive dashboards with [Power BI](create-powerbi-report.md) and [Real-Time Dashboard](dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance.
+- Create comprehensive dashboards with [Power BI](../power-bi/create-powerbi-report.md) and [Real-Time Dashboard](../dashboard/dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance.
 
 - Develop machine learning models for delay prediction, passenger flow optimization, and dynamic pricing based on operational data.
 
 ## Related resources
 
-- [Real-Time Intelligence documentation](overview.md) 
+- [Real-Time Intelligence documentation](../overview.md) 
 
-- [Microsoft Fabric enterprise architecture patterns](../enterprise/architecture.md) 
+- [Activator for automated alerting](../data-activator/activator-introduction.md) 
 
-- [Activator for automated alerting](data-activator/activator-introduction.md) 
+- [Eventstreams for real-time data ingestion](../event-streams/overview.md) 
 
-- [Eventstreams for real-time data ingestion](event-streams/overview.md) 
+- [Advanced analytics and machine learning](../../data-science/data-science-overview.md) 
 
-- [Advanced analytics and machine learning](../data-science/data-science-overview.md) 
+- [Microsoft Fabric capacity planning](../../enterprise/plan-capacity.md) 
 
-- [Microsoft Fabric capacity planning](../enterprise/plan-capacity.md) 
-
-- [OneLake data lake overview](../onelake/onelake-overview.md) 
+- [OneLake data lake overview](../../onelake/onelake-overview.md) 
