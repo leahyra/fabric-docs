@@ -36,7 +36,7 @@ The following Microsoft Fabric components work together to deliver comprehensive
 
 - **[Eventhouse](../eventhouse.md)**: Real-time analytics and anomaly detection. 
 
-- **[OneLake](../onelake/onelake-overview.md)**: Centralized data lake for historical analysis. 
+- **[OneLake](../../onelake/onelake-overview.md)**: Centralized data lake for historical analysis. 
 
 - **[Real-Time Dashboard](../dashboard-real-time-create.md)**: Live operational monitoring. 
 
@@ -255,7 +255,7 @@ KQL Copilot provides instant insights and helps your teams proactively manage di
 
 - Implement advanced analytics for route optimization, demand forecasting, and revenue management integration.
 
-- Create comprehensive dashboards with [Power BI](../power-bi/create-powerbi-report.md) and [Real-Time Dashboard](../dashboard/dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance.
+- Create comprehensive dashboards with [Power BI](../create-powerbi-report.md) and [Real-Time Dashboard](../dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance.
 
 - Develop machine learning models for delay prediction, passenger flow optimization, and dynamic pricing based on operational data.
 
