@@ -28,6 +28,8 @@ The healthcare billing system reference architecture uses Microsoft Fabric Real-
 
 - **Visualize & Activate** - Provides real-time notifications, Power BI dashboards, and natural language analytics for healthcare billing management 
 
+    :::image type="content" source="./media/healthcare-billing-system/architecture.png" alt-text="Diagram that shows the architecture of Healthcare billing system.":::
+
 ## Architecture components 
 
 The following Microsoft Fabric Real-Time Intelligence components work together to deliver comprehensive healthcare billing system management: 
