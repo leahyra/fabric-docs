@@ -12,23 +12,36 @@ ms.search.form: Architecture
 
 # Healthcare billing system reference architecture 
 
-This reference architecture demonstrates how you can use Microsoft Fabric Real-Time Intelligence to build comprehensive healthcare billing solutions that handle real-time Electronic Health Records (EHR) and Revenue Cycle Management (RCM) data from multiple healthcare destinations. You can process continuous healthcare data streams and integrate registration information from Enterprise Resource Planning (ERP) systems to enable intelligent billing anomaly detection, predictive analytics, and automated revenue cycle optimization. 
+This reference architecture demonstrates how you can use Microsoft Fabric Real-Time Intelligence to build comprehensive healthcare billing solutions that handle real-time electronic health records (EHR) and revenue cycle management (RCM) data from multiple healthcare destinations. You can process continuous healthcare data streams and integrate registration information from Enterprise Resource Planning (ERP) systems to enable intelligent billing anomaly detection, predictive analytics, and automated revenue cycle optimization. 
 
-You can manage complex healthcare billing operations where EHR and RCM systems continuously generate data on patient encounters, billing codes, and revenue cycles. The architecture integrates real-time healthcare data through Eventstreams processing and maintains comprehensive patient registration information synchronized through Data Factory for unified healthcare billing intelligence and automated deficiency management. 
+You can manage complex healthcare billing operations where EHR and RCM systems continuously generate data on patient encounters, billing codes, and revenue cycles. The architecture integrates real-time healthcare data through Eventstream processing and maintains comprehensive patient registration information synchronized through Data Factory for unified healthcare billing intelligence and automated deficiency management. 
 
 ## Architecture overview 
 
 The healthcare billing system reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from healthcare systems and integrates ERP registration data for intelligent revenue cycle management. You can implement the architecture with four main operational phases: 
 
-- **Ingest & process** - Captures real-time EHR and RCM data from multiple healthcare destinations with ERP registration synchronization 
+:::image type="content" source="./media/healthcare-billing-system/architecture.png" alt-text="Diagram that shows the architecture of Healthcare billing system.":::
 
-- **Analyze, transform, & enrich** - Conducts continuous transformations and anomaly detection with KQL queries on petabytes of healthcare data 
+### Ingest and process
 
-- **Train** - Builds predictive ML models for billing deficiency and revenue spike prediction 
+1. Real-time Electronic Health Records (EHR) and Revenue Cycle Management (RCM) data is ingested from multiple destinations and processed through Eventstream.
+2. Registration information is synced from Enterprise Resource Planning (ERP) system using Data Factory
 
-- **Visualize & Activate** - Provides real-time notifications, Power BI dashboards, and natural language analytics for healthcare billing management 
+### Analyze, transform, and enrich
 
-    :::image type="content" source="./media/healthcare-billing-system/architecture.png" alt-text="Diagram that shows the architecture of Healthcare billing system.":::
+3. Continuous transformations take place within Eventhouse where KQL Query queries petabytes of data to detect anomalies like duplicate entries or missing billing codes, flagging them for resolution. 
+4. A shortcut is created between Eventhouse and OneLake to link streaming EHR and RCM data with reference ERP data for deeper insights. 
+
+### Train
+
+5. Build, train and score Machine Learning (ML) models in real time, to better predict potential deficiencies and spikes.
+
+### Visualize and activate
+
+6. Administrators are notified of missing charge code with RTI Activator ahead of a scheduled appointment thus reducing manual intervention and ensuring no downstream delays.
+7. Billing managers use Power BI dashboards—connected directly to OneLake and Eventhouse—to monitor reimbursement cycle times and revenue trends.
+8. Real-Time dashboard is used to visualize customized high granularity experience per customer.
+9. Using Copilot, analysts can ask natural language questions.
 
 ## Architecture components 
 
@@ -51,7 +64,6 @@ The following Microsoft Fabric Real-Time Intelligence components work together t
 - **[Data Factory](../../data-factory/data-factory-overview.md)**: ERP registration data synchronization 
 
 - **[Copilot](../../fundamentals/copilot-fabric-overview.md)**: Natural language analytics for healthcare billing insights 
-
 
 ## Healthcare billing system data flow and processing 
 
@@ -83,9 +95,7 @@ Registration information is synced from ERP using [Data Factory](../../data-fact
 
 - Regulatory compliance and billing requirements 
 
-
 **Real-world scenario example**: A large healthcare network processes real-time EHR and RCM data from hundreds of facilities including hospitals, clinics, and specialty practices. Eventstreams ingests millions of patient encounters, billing transactions, and insurance claims daily while Data Factory synchronizes patient registration, insurance eligibility, and provider information from multiple ERP systems to ensure accurate billing and optimal revenue cycle performance. 
-
 
 ### Analyze, transform, & enrich 
 
@@ -166,7 +176,6 @@ By using [Copilot](../../fundamentals/copilot-fabric-overview.md), analysts can 
 - **Strategic decision support** - Conversational access to healthcare billing intelligence for operational optimization 
 
 ## Technical benefits and outcomes 
-
 
 ### Healthcare billing intelligence and revenue optimization 
 
@@ -315,7 +324,6 @@ By using [Copilot](../../fundamentals/copilot-fabric-overview.md), analysts can 
 - Develop enterprise-grade machine learning models for revenue prediction, billing optimization, and healthcare network expansion planning 
 
 ## Related resources 
-
 
 - [Real-Time Intelligence documentation](../overview.md) 
 
