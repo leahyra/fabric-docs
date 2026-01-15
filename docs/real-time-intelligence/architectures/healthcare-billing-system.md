@@ -35,8 +35,9 @@ Real-Time dashboard is used to visualize customized high granularity experience 
 
 The following sections explain each operational phase in detail.
 
+## Operational phases
 
-## Ingest and process 
+### Ingest and process 
 
 Real-time Electronic Health Records (EHR) and Revenue Cycle Management (RCM) data is ingested from multiple sources and processed through [Eventstreams](../event-streams/overview.md). This continuous data integration captures comprehensive healthcare billing information including: 
 
@@ -54,10 +55,10 @@ Registration information is synced from ERP using [Data Factory](../../data-fact
 - Insurance contract terms and reimbursement rates 
 - Regulatory compliance and billing requirements 
 
-### Real-world scenario example 
+#### Real-world scenario example 
 A large healthcare network processes real-time EHR and RCM data from hundreds of facilities including hospitals, clinics, and specialty practices. Eventstreams ingests millions of patient encounters, billing transactions, and insurance claims daily while Data Factory synchronizes patient registration, insurance eligibility, and provider information from multiple ERP systems to ensure accurate billing and optimal revenue cycle performance.
 
-## Analyze, transform, and enrich
+### Analyze, transform, and enrich
 
 Continuous transformations take place within [Eventhouse](../eventhouse.md), where KQL Query processes petabytes of streaming data to detect anomalies such as duplicate entries or missing billing codes and flag them for resolution. This real-time processing enables immediate healthcare billing optimization including the following capabilities:
 
@@ -73,7 +74,7 @@ A shortcut is created between [Eventhouse](../eventhouse.md) and [OneLake](../..
 - **Provider performance analysis** - Real-time tracking of provider billing efficiency and revenue generation, enables data-driven performance management and operational improvements.
 - **Compliance monitoring** - Continuous assessment of regulatory compliance and billing standards helps organizations detect potential issues early and maintain adherence to healthcare regulations.
 
-## Train
+### Train
 
 Machine learning models are built, trained, and scored in real time by using Data Science capabilities to predict billing deficiencies, revenue fluctuations, and compliance risks. These models continuously learn from streaming EHR and RCM data combined with historical billing patterns to support proactive revenue cycle optimization.
 
@@ -83,7 +84,7 @@ Machine learning models are built, trained, and scored in real time by using Dat
 - **Reimbursement optimization** - Machine learning models evaluate billing timing, coding scenarios, and payer behavior to recommend optimal reimbursement strategies. These insights support maximum revenue capture while maintaining compliance with payer and regulatory requirements.
 - **Compliance risk modeling** - Compliance risk models identify patterns that might indicate regulatory violations or audit exposure. By surfacing risks in real time, organizations can proactively adjust billing practices and reduce the likelihood of compliance issues.
 
-## Visualize and activate
+### Visualize and activate
 
 Activator in Fabric Real-Time Intelligence notifies administrators of missing charge codes and billing deficiencies ahead of scheduled appointments. With this real-time awareness and automated responses, the system reduces manual intervention and helps prevent downstream delays in the revenue cycle, including the following capabilities:
 
