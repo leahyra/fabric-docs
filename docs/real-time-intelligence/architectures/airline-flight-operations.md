@@ -92,7 +92,7 @@ Your flight operations teams use [Power BI](../create-powerbi-report.md) dashboa
 - **Executive reporting** - Comprehensive reports for airline executives, summarizing key performance indicators (KPIs), operational trends, and strategic insights.
 - **Regulatory compliance** - Reports designed to meet aviation industry regulatory requirements, including safety audits and operational performance metrics.
 
-Real-Time Dashboard provides live operational visibility with customizable views for different operational roles, enabling teams to monitor and respond to real-time events effectively. These dashboards provide the following capabilities:
+[Real-Time Dashboard](../real-time-dashboards-overview.md) provides live operational visibility with customizable views for different operational roles, enabling teams to monitor and respond to real-time events effectively. These dashboards provide the following capabilities:
 
 - **Customizable views** - Tailor dashboards for different operational roles, such as flight operations, ground handling, and passenger services, ensuring relevant information is readily accessible.
 - **Real-time alerts** - Display real-time alerts for operational disruptions, enabling teams to respond quickly and effectively.
