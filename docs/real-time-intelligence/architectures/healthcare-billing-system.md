@@ -19,26 +19,26 @@ You can manage complex healthcare billing operations where EHR and RCM systems c
 
 ## Architecture overview 
 
-The healthcare billing system reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from healthcare systems and integrates ERP registration data for intelligent revenue cycle management. You can implement the architecture with four main operational phases: 
+This reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from healthcare systems and integrates ERP registration data for intelligent revenue cycle management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate. 
 
 :::image type="content" source="./media/healthcare-billing-system/healthcare-billing-architecture.png" alt-text="Diagram of a healthcare billing system architecture showing ingest, process, analyze, train, and visualize phases with labeled data flows." lightbox="./media/healthcare-billing-system/healthcare-billing-architecture.png":::
 
 1. Real-time Electronic Health Records (EHR) and Revenue Cycle Management (RCM) data is ingested from multiple sources and processed through Eventstream.
-1. Registration information is synced from Enterprise Resource Planning (ERP) system using Data Factory
-1. Continuous transformations take place within Eventhouse where Kusto Query Language (KQL) Query queries petabytes of data to detect anomalies like duplicate entries or missing billing codes, flagging them for resolution. 
+1. Registration information is synced from Enterprise Resource Planning (ERP) system using Data Factory.
+1. Continuous transformations take place within Eventhouse where Kusto Query Language (KQL) Query queries petabytes of data to detect anomalies like duplicate entries or missing billing codes, and flags them for resolution. 
 1. A shortcut is created between Eventhouse and OneLake to link streaming EHR and RCM data with reference ERP data for deeper insights. 
 1. Build, train, and score Machine Learning (ML) models in real time, to better predict potential deficiencies and spikes.
-1. Administrators are notified of missing charge code with Activator in Fabric Real-Time Intelligence ahead of a scheduled appointment thus reducing manual intervention and ensuring no downstream delays.
+1. Administrators are notified of missing charge code with Activator ahead of a scheduled appointment, which reduces manual intervention and ensures no downstream delays.
 1. Billing managers use Power BI dashboards—connected directly to OneLake and Eventhouse—to monitor reimbursement cycle times and revenue trends.
 Real-Time dashboard is used to visualize customized high granularity experience per customer.
-1. Using Copilot, analysts can ask natural language questions.
+1. Analysts can ask natural language questions by using Copilot.
 
 The following sections explain each operational phase in detail.
 
 
 ## Ingest and process 
 
-Real-time Electronic Health Records (EHR) and Revenue Cycle Management (RCM) data is ingested from multiple destinations and processed through [Eventstreams](../event-streams/overview.md). This continuous data integration captures comprehensive healthcare billing information including: 
+Real-time Electronic Health Records (EHR) and Revenue Cycle Management (RCM) data is ingested from multiple sources and processed through [Eventstreams](../event-streams/overview.md). This continuous data integration captures comprehensive healthcare billing information including: 
 
 - Patient encounter data and clinical documentation 
 - Billing codes, procedures, and diagnostic information 
@@ -54,22 +54,23 @@ Registration information is synced from ERP using [Data Factory](../../data-fact
 - Insurance contract terms and reimbursement rates 
 - Regulatory compliance and billing requirements 
 
-**Real-world scenario example**: A large healthcare network processes real-time EHR and RCM data from hundreds of facilities including hospitals, clinics, and specialty practices. Eventstreams ingests millions of patient encounters, billing transactions, and insurance claims daily while Data Factory synchronizes patient registration, insurance eligibility, and provider information from multiple ERP systems to ensure accurate billing and optimal revenue cycle performance.
+### Real-world scenario example 
+A large healthcare network processes real-time EHR and RCM data from hundreds of facilities including hospitals, clinics, and specialty practices. Eventstreams ingests millions of patient encounters, billing transactions, and insurance claims daily while Data Factory synchronizes patient registration, insurance eligibility, and provider information from multiple ERP systems to ensure accurate billing and optimal revenue cycle performance.
 
 ## Analyze, transform, and enrich
 
 Continuous transformations take place within [Eventhouse](../eventhouse.md), where KQL Query processes petabytes of streaming data to detect anomalies such as duplicate entries or missing billing codes and flag them for resolution. This real-time processing enables immediate healthcare billing optimization including the following capabilities:
 
 - **Anomaly detection** - Eventhouse continuously identifies duplicate billing entries, missing charge codes, and coding inconsistencies in real time. These anomalies are flagged as they occur, allowing billing teams to correct issues before claims progress further in the revenue cycle.
-- **Data validation** - Real-time validation verifies billing accuracy, insurance eligibility, and regulatory compliance across incoming EHR and RCM events. It ensures that only complete and compliant billing data advances to downstream systems and reporting.
-- **Pattern recognition** - Revenue cycle trends, reimbursement patterns, and billing performance indicators are detected as they emerge. These insights help healthcare organizations understand operational inefficiencies and optimize reimbursement outcomes.
+- **Data validation** - Real-time validation verifies billing accuracy, insurance eligibility, and regulatory compliance across incoming EHR and RCM events. It ensures that only complete and compliant billing data is forwarded to downstream systems and reporting.
+- **Pattern recognition** - Revenue cycle trends, reimbursement patterns, and billing performance indicators are detected as they emerge. These insights help healthcare organizations understand operational inefficiencies and optimize reimbursement processes.
 - **Quality assurance** - Automated quality checks validate the completeness of clinical documentation and the accuracy of billing codes at scale, reducing the risk of errors that can lead to claim denials or compliance issues.
 
 A shortcut is created between [Eventhouse](../eventhouse.md) and [OneLake](../../onelake/onelake-overview.md) to link streaming EHR and RCM data with reference ERP data. This unified data access enables deeper analytical insights across clinical, operational, and financial domains, including the following capabilities:
 
 - **Real-time healthcare analytics** - By correlating clinical and billing data as it arrives, the system provides immediate visibility into revenue optimization opportunities and emerging billing risks.
 - **Patient journey tracking** - Linking streaming and reference data creates a comprehensive view of patient encounters and billing progression across healthcare services, from registration through reimbursement.
-- **Provider performance analysis** - Real-time analytics track provider billing efficiency and revenue generation, enabling data-driven performance management and operational improvements.
+- **Provider performance analysis** - Real-time tracking of provider billing efficiency and revenue generation, enables data-driven performance management and operational improvements.
 - **Compliance monitoring** - Continuous assessment of regulatory compliance and billing standards helps organizations detect potential issues early and maintain adherence to healthcare regulations.
 
 ## Train
@@ -84,23 +85,23 @@ Machine learning models are built, trained, and scored in real time by using Dat
 
 ## Visualize and activate
 
-Activator in Fabric Real-Time Intelligence notifies administrators of missing charge codes and billing deficiencies ahead of scheduled appointments. By enabling real-time awareness and automated responses, the system reduces manual intervention and helps prevent downstream delays in the revenue cycle, including the following capabilities:
+Activator in Fabric Real-Time Intelligence notifies administrators of missing charge codes and billing deficiencies ahead of scheduled appointments. With this real-time awareness and automated responses, the system reduces manual intervention and helps prevent downstream delays in the revenue cycle, including the following capabilities:
 
 - **Proactive billing management** - Activator generates automated alerts for missing charge codes, incomplete documentation, and other billing issues before appointment completion. This proactive approach allows healthcare teams to address problems early and avoid costly rework later in the billing process.
 - **Revenue protection** - Real-time notifications surface potential revenue loss scenarios as they occur, enabling billing and revenue cycle teams to take corrective action and optimize reimbursement outcomes.
 - **Compliance alerts** - Immediate notifications are triggered when regulatory compliance issues or potential audit risks are detected. It helps organizations maintain adherence to healthcare billing standards and respond quickly to emerging compliance concerns.
 - **Workflow optimization** - Automated triggers initiated by Activator support continuous billing process improvements by streamlining administrative workflows and reducing operational inefficiencies.
 
-Billing managers use Power BI dashboards connected directly to OneLake and Eventhouse to monitor reimbursement cycle times, billing performance, and revenue trends through unified analytical views, including the following capabilities:
+Billing managers use [Power BI](../create-powerbi-report.md) dashboards connected directly to OneLake and Eventhouse to monitor reimbursement cycle times, billing performance, and revenue trends through unified analytical views, including the following capabilities:
 
 - **Revenue cycle analytics** - Dashboards provide comprehensive visibility into billing performance, collection rates, and reimbursement efficiency across healthcare services and facilities.
 - **Financial performance monitoring** - Real-time insights into revenue trends, payment processing, and cash flow help financial leaders make informed decisions and adjust strategies as conditions change.
 - **Operational efficiency analysis** - Analytics highlight billing cycle durations, performance of processing claims, and administrative cost drivers, supporting data-driven improvements in revenue cycle operations.
 - **Strategic planning** - Long-term revenue forecasting and financial planning are enabled through historical and real-time billing analytics delivered via Power BI.
 
-Real-Time Dashboard visualizes customized and high-granularity experiences tailored to specific healthcare roles and operational needs, providing the following capabilities:
+[Real-Time Dashboard](../dashboard-real-time-create.md) visualizes customized and high-granularity experiences tailored to specific healthcare roles and operational needs, providing the following capabilities:
 
-- **Patient-specific billing views** - Role-based dashboards display detailed billing information and payment status for individual patients and encounters, supporting focused resolution of billing issues.
+- **Patient-specific billing views** - Dashboards display detailed billing information and payment status for individual patients and encounters, supporting focused resolution of billing issues.
 - **Provider performance dashboards** - Real-time visualizations track provider billing efficiency, revenue generation, and compliance metrics to support performance management.
 - **Facility operations monitoring** - Dashboards provide facility-level visibility into billing performance and revenue optimization across hospitals, clinics, and specialty practices.
 - **Custom analytics experiences** - Customizable dashboard experiences allow organizations to tailor analytics views for different healthcare roles, responsibilities, and decision-making contexts.
@@ -112,22 +113,6 @@ By using [Copilot](../../fundamentals/copilot-fabric-overview.md), analysts can 
 - **Intuitive revenue insights** - Natural language queries simplify exploration of complex billing scenarios and revenue trends without requiring deep technical expertise.
 - **Simplified compliance reporting** - Analysts can quickly access compliance-related insights and audit preparation information using conversational queries.
 - **Strategic decision support** - Conversational access to healthcare billing intelligence supports faster, more informed operational, and strategic decision-making.
-
-## Architecture components
-
-The following Microsoft Fabric components work together to deliver comprehensive healthcare billing system management: 
- 
-- Fabric RTI components:
-    - **[Eventstreams](../event-streams/overview.md)**: Real-time EHR and RCM data ingestion from multiple healthcare destinations 
-    - **[Eventhouse](../eventhouse.md)**: Healthcare data analytics and anomaly detection processing 
-    - **[OneLake](../../onelake/onelake-overview.md)**: Centralized data lake for healthcare reference data and historical analytics 
-    - **[Real-Time Dashboard](../dashboard-real-time-create.md)**: Customized high granularity healthcare billing experiences 
-    - **[Activator](../data-activator/activator-introduction.md)**: Automated notifications for billing deficiencies and missing charge codes 
-- Additional Fabric components:
-    - **[Power BI](../create-powerbi-report.md)**: Revenue cycle monitoring and reimbursement analytics dashboards 
-    - **[Data Science](../../data-science/data-science-overview.md)**: Predictive ML models for billing optimization and revenue forecasting 
-    - **[Data Factory](../../data-factory/data-factory-overview.md)**: ERP registration data synchronization 
-    - **[Copilot](../../fundamentals/copilot-fabric-overview.md)**: Natural language analytics for healthcare billing insights 
 
 ## Technical benefits and outcomes
 
