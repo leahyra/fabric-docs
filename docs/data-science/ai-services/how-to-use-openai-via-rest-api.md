@@ -3,10 +3,10 @@ title: Use Azure OpenAI with REST API
 description: How to use prebuilt Azure OpenAI in Fabric with REST API
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: vimeland
+reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 12/23/2025
+ms.date: 01/16/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
@@ -178,5 +178,6 @@ Output:
 - [Use prebuilt Text Analytics in Fabric with SynapseML](how-to-use-text-analytics.md)
 - [Use prebuilt Azure AI Translator in Fabric with REST API](how-to-use-text-translator.md)
 - [Use prebuilt Azure AI Translator in Fabric with SynapseML](how-to-use-text-translator.md)
-- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-sdk-synapse.md)
-- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-sdk-synapse.md)
+- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-python-sdk.md)
+- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-synapse-ml.md)
+- [Use prebuilt Azure OpenAI in Fabric with AI Functions](how-to-use-openai-ai-functions.md)
