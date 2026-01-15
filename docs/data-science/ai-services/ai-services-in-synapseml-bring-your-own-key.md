@@ -5,9 +5,9 @@ ms.topic: overview
 ms.custom: 
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: jessiwang
-reviewer: JessicaXYWang
-ms.date: 08/26/2025
+ms.reviewer: vimeland
+reviewer: virginiaroman
+ms.date: 01/16/2026
 ai-usage: ai-assisted
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
@@ -18,14 +18,26 @@ ms.collection: ce-skilling-ai-copilot
 
 [Azure AI services](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that you use to add AI features to your apps. Azure AI services helps you build apps that see, hear, speak, understand, and reason. It includes five capabilities: vision, speech, language, web search, and decision. Fabric uses SynapseML to provide access to these services.
 
-
-> [!NOTE] 
+> [!NOTE]
 > Fabric integrates with Azure AI services to enrich your data with [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/). This integration is in public preview. Learn more in [AI services in Fabric](./ai-services-overview.md).
+>
+> For Azure OpenAI specifically, Fabric also provides [AI Functions](how-to-use-openai-ai-functions.md) for simple DataFrame operations. For distributed processing, see [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md).
 
 
 
 
 ## Usage of Azure AI services with bring your own key
+
+The following sections document SynapseML transformers available for Azure AI services with bring-your-own-key. These are useful when you need specific Azure AI services capabilities or have your own Azure AI services subscriptions.
+
+> [!TIP]
+> **Consider simpler alternatives first:**
+>
+> - **For text operations at any scale** (sentiment, translation, summarization, classification, extraction): Use [AI Functions](how-to-use-openai-ai-functions.md) which provide DataFrame extensions with minimal code. **PySpark AI Functions are fully distributed** (powered by SynapseML), handling thousands to millions of rows.
+> - **For advanced custom prompts at scale**: Use [Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) which offers the `OpenAIPrompt` transformer when you need unrestricted prompt control beyond AI Functions' validated templates
+> - **For single API calls with full control**: Use [Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md)
+>
+> The services below require bring-your-own-key and are useful for specialized vision, speech, document intelligence, and search scenarios not covered by AI Functions.
 
 ### Vision
 [Azure AI Vision](https://azure.microsoft.com/products/ai-services/ai-vision/)
@@ -52,7 +64,9 @@ ms.collection: ce-skilling-ai-copilot
 
 
 ### Language
+
 [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/)
+
 - Language detection: detects language of the input text ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/text/LanguageDetector.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.text.html#module-synapse.ml.cognitive.text.LanguageDetector))
 - Key phrase extraction: identifies the key talking points in the input text ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/text/KeyPhraseExtractor.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.text.html#module-synapse.ml.cognitive.text.KeyPhraseExtractor))
 - Named entity recognition: identifies known entities and general named entities in the input text ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/text/NER.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.text.html#module-synapse.ml.cognitive.text.NER))
@@ -61,7 +75,14 @@ ms.collection: ce-skilling-ai-copilot
 
 
 ### Translation
+
 [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/)
+
+> [!TIP]
+> **For text translation at any scale, consider using AI Functions first:**
+>
+> Use `df.ai.translate()` to translate text between languages with minimal code. Works with both Pandas and PySpark DataFrames (**PySpark = fully distributed** via SynapseML), no subscription keys required. See [AI Functions overview](how-to-use-openai-ai-functions.md).
+
 - Translate: Translates text. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/Translate.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.Translate))
 - Transliterate: Converts text in one language from one script to another script. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/Transliterate.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.Transliterate))
 - Detect: Identifies the language of a piece of text. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/Detect.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.Detect))
@@ -92,6 +113,14 @@ ms.collection: ce-skilling-ai-copilot
 
 ## Related content
 
-- [Use Azure AI services with SynapseML in Microsoft Fabric](../how-to-use-ai-services-with-synapseml.md)
-- [Use Azure AI services with SynapseML for multivariate anomaly detection](../multivariate-anomaly-detection.md)
-- [Create a custom search engine and question answering system](../create-a-multilingual-search-engine-from-forms.md)
+### Simpler alternatives for common tasks
+
+- [AI Functions overview](how-to-use-openai-ai-functions.md) - Simplest approach for text operations with Pandas and PySpark DataFrames
+- [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) - Distributed processing with OpenAIPrompt transformer, no subscription key needed
+- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) - Fine-grained control for single API calls
+
+### SynapseML with Azure AI services
+
+- [Use Azure AI services with SynapseML in Microsoft Fabric](../how-to-use-ai-services-with-synapseml.md) - Comprehensive guide with examples
+- [Use Azure AI services with SynapseML for multivariate anomaly detection](../multivariate-anomaly-detection.md) - Specialized anomaly detection
+- [Create a custom search engine and question answering system](../create-a-multilingual-search-engine-from-forms.md) - Advanced search scenarios
