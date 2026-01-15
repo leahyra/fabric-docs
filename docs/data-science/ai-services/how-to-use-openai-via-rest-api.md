@@ -174,10 +174,6 @@ Output:
 
 ## Related content
 
-- [Use prebuilt Text Analytics in Fabric with REST API](how-to-use-text-analytics.md)
-- [Use prebuilt Text Analytics in Fabric with SynapseML](how-to-use-text-analytics.md)
-- [Use prebuilt Azure AI Translator in Fabric with REST API](how-to-use-text-translator.md)
-- [Use prebuilt Azure AI Translator in Fabric with SynapseML](how-to-use-text-translator.md)
-- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-python-sdk.md)
-- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-synapse-ml.md)
-- [Use prebuilt Azure OpenAI in Fabric with AI Functions](how-to-use-openai-ai-functions.md)
+- [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md) for large scale dataset transofrmations in Fabric for Pandas or PySpark DataFrames
+- [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing using Spark DataFrames with no overhead
+- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for pythonic control over single API calls using OpenAI Python SDK

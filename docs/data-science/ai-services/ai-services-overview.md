@@ -140,4 +140,8 @@ Once the shop owner validates the logic, the owner sets up the regular run and e
 According to [Spark compute usage reporting](../../data-engineering/billing-capacity-management-for-spark.md#spark-compute-usage-reporting), all Spark related operations are classified as [background operations](../../enterprise/fabric-operations.md#background-operations).
 
 ## Related content
-- [Use prebuilt Azure OpenAI in Fabric](how-to-use-openai-sdk-synapse.md)
+
+- [Fabric AI Functions](../ai-functions/ai-functions-overview.md) for large scale dataset transformations in Fabric for Pandas or PySpark DataFrames
+- [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing using Spark DataFrames with no overhead
+- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for pythonic control over single API calls using OpenAI Python SDK
+- [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint
