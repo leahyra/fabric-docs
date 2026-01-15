@@ -49,7 +49,7 @@ The hospital operations reference architecture uses Microsoft Fabric Real-Time I
 
 ### Ingest & process 
 
-Real-time Electronic Health Records (EHR) data is ingested from multiple destinations and processed through [Eventstreams](../real-time-intelligence/event-streams/overview.md). This continuous data integration captures comprehensive hospital operations information including: 
+Real-time Electronic Health Records (EHR) data is ingested from multiple destinations and processed through [Eventstreams](../event-streams/overview.md). This continuous data integration captures comprehensive hospital operations information including: 
 
 - Patient clinical data and medical histories 
 
@@ -73,7 +73,7 @@ Admission, Discharge, Transfer (ADT) Feeds supply real-time updates on patient m
 
 - Emergency department flow and capacity management 
 
-Revenue Cycle Management (RCM) data is ingested from multiple destinations and is synced using [Data Factory](../data-factory/data-factory-overview.md) then sent to [OneLake](../onelake/onelake-overview.md), including: 
+Revenue Cycle Management (RCM) data is ingested from multiple destinations and is synced using [Data Factory](../../data-factory/data-factory-overview.md) then sent to [OneLake](../../onelake/onelake-overview.md), including: 
 
 
 - Billing and charge capture information 
@@ -94,7 +94,7 @@ A major hospital system processes real-time EHR data from thousands of daily pat
 
 ### Analyze, transform, & enrich 
 
-The ingested [Eventstream](../real-time-intelligence/event-streams/overview.md) data is sent to [Eventhouse](../real-time-intelligence/eventhouse.md) for further processing, enabling streaming analytics and anomaly detection. This real-time processing enables immediate hospital operations optimization including: 
+The ingested [Eventstream](../event-streams/overview.md) data is sent to [Eventhouse](../eventhouse.md) for further processing, enabling streaming analytics and anomaly detection. This real-time processing enables immediate hospital operations optimization including: 
 
 - **Real-time patient monitoring** - Continuous tracking of patient status, care progression, and clinical outcomes 
 
@@ -104,7 +104,7 @@ The ingested [Eventstream](../real-time-intelligence/event-streams/overview.md) 
 
 - **Resource optimization** - Dynamic analysis of bed utilization, staff allocation, and equipment availability 
 
-A shortcut is created between [Eventhouse](../real-time-intelligence/eventhouse.md) to [OneLake](../onelake/onelake-overview.md) where the clinical systems including lab results, imaging, and medication orders are captured to enrich patient context. This enables: 
+A shortcut is created between [Eventhouse](../eventhouse.md) to [OneLake](../../onelake/onelake-overview.md) where the clinical systems including lab results, imaging, and medication orders are captured to enrich patient context. This enables: 
 
 - **Comprehensive patient care** - Complete integration of clinical data for holistic patient care coordination and treatment optimization 
 
@@ -114,7 +114,7 @@ A shortcut is created between [Eventhouse](../real-time-intelligence/eventhouse.
 
 - **Outcome analysis** - Correlation of clinical interventions with patient outcomes and quality indicators 
 
-Continuous transformations take place within [Eventhouse](../real-time-intelligence/eventhouse.md) where KQL Query queries petabytes of data to detect anomalies like duplicate entries or missing billing codes, flagging them for resolution. This enables: 
+Continuous transformations take place within [Eventhouse](../eventhouse.md) where KQL Query queries petabytes of data to detect anomalies like duplicate entries or missing billing codes, flagging them for resolution. This enables: 
 
 - **Data quality management** - Real-time identification and resolution of data inconsistencies and errors 
 
@@ -141,7 +141,7 @@ Digital Twin Builder constructs digital representations of hospital operations, 
 
 ### Train & score 
 
-Build, train, and score ML models in real time, to better predict potential surges, and spikes using [Data Science](../data-science/overview-what-is-data-science.md) capabilities, including: 
+Build, train, and score ML models in real time, to better predict potential surges, and spikes using [Data Science](../../data-science/overview-what-is-data-science.md) capabilities, including: 
 
 - **Patient surge prediction models** - Forecast admission volumes, emergency department capacity needs, and seasonal demand patterns 
 
@@ -155,7 +155,7 @@ Build, train, and score ML models in real time, to better predict potential surg
 
 ### Visualize & Activate 
 
-Hospital administrators use [Real-Time Dashboard](../real-time-intelligence/dashboard-real-time-create.md) to visualize customized live updates of hospital operations, providing: 
+Hospital administrators use [Real-Time Dashboard](../dashboard-real-time-create.md) to visualize customized live updates of hospital operations, providing: 
 
 - **Operations command center** - Comprehensive real-time view of hospital capacity, patient flow, and operational status 
 
@@ -165,7 +165,7 @@ Hospital administrators use [Real-Time Dashboard](../real-time-intelligence/dash
 
 - **Clinical workflow support** - Real-time information for clinical teams including patient status, care plans, and resource availability 
 
-[Activator](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-introduction) is used to get real-time alerts on bed occupancy and admission surges, enabling timely adjustments and preventing delays, including: 
+[Activator](../data-activator/activator-introduction.md) is used to get real-time alerts on bed occupancy and admission surges, enabling timely adjustments and preventing delays, including: 
 
 - **Capacity management alerts** - Immediate notifications for bed availability, census thresholds, and capacity constraints 
 
@@ -175,7 +175,7 @@ Hospital administrators use [Real-Time Dashboard](../real-time-intelligence/dash
 
 - **Emergency preparedness** - Automated triggers for disaster response, mass casualty events, and emergency capacity expansion 
 
-[Power BI](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/create-powerbi-report) dashboards—connected directly to OneLake and Eventhouse—monitor reimbursement cycle times and revenue trends, including: 
+[Power BI](../../power-bi/create-powerbi-report.md) dashboards—connected directly to OneLake and Eventhouse—monitor reimbursement cycle times and revenue trends, including: 
 
 - **Financial performance monitoring** - Comprehensive tracking of revenue cycles, payment processing, and financial optimization 
 
@@ -299,13 +299,13 @@ By using [Copilot](https://learn.microsoft.com/en-us/fabric/get-started/copilot-
 
 **Phase 1: Foundation setup**  
 
-- Review [Microsoft Fabric Real-Time Intelligence](../real-time-intelligence/overview.md) capabilities and understand capacity requirements for your hospital operations scale (EHR systems, patient volumes, and operational complexity) 
+- Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your hospital operations scale (EHR systems, patient volumes, and operational complexity) 
 
-- Plan your [Eventstream](../real-time-intelligence/event-streams/overview.md) integration strategy for EHR data and ADT feeds. Start with critical clinical areas and high-volume patient services 
+- Plan your [Eventstream](../event-streams/overview.md) integration strategy for EHR data and ADT feeds. Start with critical clinical areas and high-volume patient services 
 
-- Design your real-time analytics implementation in [Eventhouse](../real-time-intelligence/eventhouse.md) for processing hospital events with immediate response requirements 
+- Design your real-time analytics implementation in [Eventhouse](../eventhouse.md) for processing hospital events with immediate response requirements 
 
-- Configure [OneLake](../onelake/onelake-overview.md) for clinical systems data and historical hospital analytics with appropriate retention policies  
+- Configure [OneLake](../../onelake/onelake-overview.md) for clinical systems data and historical hospital analytics with appropriate retention policies  
 
 **Phase 2: Pilot implementation**  
 
@@ -331,11 +331,11 @@ By using [Copilot](https://learn.microsoft.com/en-us/fabric/get-started/copilot-
 
 **Intelligent automation and AI**  
 
-- Set up advanced [Data Science](../data-science/overview-what-is-data-science.md) capabilities for building, training, and scoring predictive ML models for surge forecasting and operational optimization 
+- Set up advanced [Data Science](../../data-science/overview-what-is-data-science.md) capabilities for building, training, and scoring predictive ML models for surge forecasting and operational optimization 
 
-- Implement [Activator](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-introduction) for sophisticated hospital automation including predictive capacity management, dynamic resource allocation, and automated surge response 
+- Implement [Activator](../data-activator/activator-introduction.md) for sophisticated hospital automation including predictive capacity management, dynamic resource allocation, and automated surge response 
 
-- Deploy [Copilot](https://learn.microsoft.com/en-us/fabric/get-started/copilot-fabric-overview) for natural language analytics enabling hospital teams to query complex operational scenarios using conversational interfaces 
+- Deploy [Copilot](/fabric/get-started/copilot-fabric-overview) for natural language analytics enabling hospital teams to query complex operational scenarios using conversational interfaces 
 
 - Create intelligent hospital operations systems that provide real-time decision support based on patient data, operational performance, and predictive analytics 
 
@@ -346,28 +346,28 @@ By using [Copilot](https://learn.microsoft.com/en-us/fabric/get-started/copilot-
 
 - Implement advanced analytics for cross-facility operational optimization, quality management, and performance analysis 
 
-- Create comprehensive dashboards with [Power BI](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/create-powerbi-report) direct query capabilities and [Real-Time Dashboard](../real-time-intelligence/dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance 
+- Create comprehensive dashboards with [Power BI](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/create-powerbi-report) direct query capabilities and [Real-Time Dashboard](../dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance 
 
 - Develop enterprise-grade machine learning models for patient outcome prediction, operational optimization, and hospital network expansion planning  
 
 ## Related resources  
 
-- [Real-Time Intelligence documentation](../real-time-intelligence/overview.md) 
+- [Real-Time Intelligence documentation](../overview.md) 
 
-- [Microsoft Fabric Real-Time Intelligence enterprise architecture patterns](../enterprise/architecture.md) 
+- [Microsoft Fabric Real-Time Intelligence enterprise architecture patterns](../../enterprise/architecture.md) 
 
-- [Activator for automated alerting](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-introduction) 
+- [Activator for automated alerting](../data-activator/activator-introduction.md) 
 
-- [Eventstreams for real-time data ingestion](../real-time-intelligence/event-streams/overview.md) 
+- [Eventstreams for real-time data ingestion](../event-streams/overview.md) 
 
-- [Healthcare data analytics with Microsoft Fabric](../real-time-intelligence/overview.md) 
+- [Healthcare data analytics with Microsoft Fabric](../overview.md) 
 
-- [Advanced analytics and machine learning](../data-science/overview-what-is-data-science.md) 
+- [Advanced analytics and machine learning](../../data-science/overview-what-is-data-science.md) 
 
-- [Microsoft Fabric Real-Time Intelligence capacity planning](../enterprise/plan-capacity.md) 
+- [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md) 
 
-- [OneLake data storage overview](../onelake/onelake-overview.md) 
+- [OneLake data storage overview](../../onelake/onelake-overview.md) 
 
-- [Data Factory for data integration](../data-factory/data-factory-overview.md) 
+- [Data Factory for data integration](../../data-factory/data-factory-overview.md) 
 
  
