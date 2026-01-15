@@ -141,7 +141,7 @@ Digital Twin Builder constructs digital representations of hospital operations, 
 
 ### Train & score 
 
-Build, train, and score ML models in real time, to better predict potential surges, and spikes using [Data Science](../../data-science/overview-what-is-data-science.md) capabilities, including: 
+Build, train, and score ML models in real time, to better predict potential surges, and spikes using [Data Science](../../data-science/data-science-overview.md) capabilities, including: 
 
 - **Patient surge prediction models** - Forecast admission volumes, emergency department capacity needs, and seasonal demand patterns 
 
@@ -175,7 +175,7 @@ Hospital administrators use [Real-Time Dashboard](../dashboard-real-time-create.
 
 - **Emergency preparedness** - Automated triggers for disaster response, mass casualty events, and emergency capacity expansion 
 
-[Power BI](../../power-bi/create-powerbi-report.md) dashboards—connected directly to OneLake and Eventhouse—monitor reimbursement cycle times and revenue trends, including: 
+[Power BI](../create-powerbi-report.md) dashboards—connected directly to OneLake and Eventhouse—monitor reimbursement cycle times and revenue trends, including: 
 
 - **Financial performance monitoring** - Comprehensive tracking of revenue cycles, payment processing, and financial optimization 
 
@@ -185,7 +185,7 @@ Hospital administrators use [Real-Time Dashboard](../dashboard-real-time-create.
 
 - **Strategic planning** - Long-term operational planning and performance benchmarking based on hospital analytics 
 
-By using [Copilot](https://learn.microsoft.com/en-us/fabric/get-started/copilot-fabric-overview), analysts can ask natural language questions, enabling: 
+By using [Copilot](../../fundamentals/copilot-fabric-overview.md), analysts can ask natural language questions, enabling: 
 
 - **Conversational hospital analytics** - Enable hospital staff to ask questions like "Show me current bed availability in the cardiac unit" 
 
@@ -321,7 +321,7 @@ By using [Copilot](https://learn.microsoft.com/en-us/fabric/get-started/copilot-
 
 - Test system performance during peak patient volume periods and operational surge scenarios 
 
-- Validate [Activator](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-introduction) rules for capacity alerts and surge management 
+- Validate [Activator](../data-activator/activator-introduction.md) rules for capacity alerts and surge management 
 
 - Ensure compliance with HIPAA regulations and hospital operational standards 
 
@@ -331,11 +331,11 @@ By using [Copilot](https://learn.microsoft.com/en-us/fabric/get-started/copilot-
 
 **Intelligent automation and AI**  
 
-- Set up advanced [Data Science](../../data-science/overview-what-is-data-science.md) capabilities for building, training, and scoring predictive ML models for surge forecasting and operational optimization 
+- Set up advanced [Data Science](../../data-science/data-science-overview.md) capabilities for building, training, and scoring predictive ML models for surge forecasting and operational optimization 
 
 - Implement [Activator](../data-activator/activator-introduction.md) for sophisticated hospital automation including predictive capacity management, dynamic resource allocation, and automated surge response 
 
-- Deploy [Copilot](/fabric/get-started/copilot-fabric-overview) for natural language analytics enabling hospital teams to query complex operational scenarios using conversational interfaces 
+- Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) for natural language analytics enabling hospital teams to query complex operational scenarios using conversational interfaces 
 
 - Create intelligent hospital operations systems that provide real-time decision support based on patient data, operational performance, and predictive analytics 
 
@@ -346,7 +346,7 @@ By using [Copilot](https://learn.microsoft.com/en-us/fabric/get-started/copilot-
 
 - Implement advanced analytics for cross-facility operational optimization, quality management, and performance analysis 
 
-- Create comprehensive dashboards with [Power BI](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/create-powerbi-report) direct query capabilities and [Real-Time Dashboard](../dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance 
+- Create comprehensive dashboards with [Power BI](../create-powerbi-report.md) direct query capabilities and [Real-Time Dashboard](../dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance 
 
 - Develop enterprise-grade machine learning models for patient outcome prediction, operational optimization, and hospital network expansion planning  
 
@@ -354,15 +354,13 @@ By using [Copilot](https://learn.microsoft.com/en-us/fabric/get-started/copilot-
 
 - [Real-Time Intelligence documentation](../overview.md) 
 
-- [Microsoft Fabric Real-Time Intelligence enterprise architecture patterns](../../enterprise/architecture.md) 
-
 - [Activator for automated alerting](../data-activator/activator-introduction.md) 
 
 - [Eventstreams for real-time data ingestion](../event-streams/overview.md) 
 
 - [Healthcare data analytics with Microsoft Fabric](../overview.md) 
 
-- [Advanced analytics and machine learning](../../data-science/overview-what-is-data-science.md) 
+- [Advanced analytics and machine learning](../../data-science/data-science-overview.md) 
 
 - [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md) 
 
