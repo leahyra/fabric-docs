@@ -6,7 +6,7 @@ ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: example-scenario
 ms.subservice: rti-core
-ms.date: 01/08/2026
+ms.date: 01/15/2026
 ms.search.form: Architecture
 ---
 
@@ -18,138 +18,116 @@ You can source real-time and historical airline flight operations data from mult
 
 ## Architecture overview
 
-The airline flight operations reference architecture uses Microsoft Fabric to create a unified analytics platform that processes real-time operational data and enables intelligent decision-making. You can implement the architecture with four main layers:
+This reference architecture uses Microsoft Fabric to create a unified analytics platform that processes real-time operational data and enables intelligent decision-making. You can implement the architecture with four main operational phases: Ingest and process, Analyze, train, and enrich, Train, and Visualize and activate.
 
-- **Data ingestion layer** - Captures real-time telemetry and operational data.
+1. Real-time and historical airline flight operations data is sourced from multiple places including air traffic feeds, flight trackers, and weather sources. IoT sensors on aircraft and ground operations provide
+updates on engine health, baggage handling, and turnaround times. Passenger and airport systems feed check-
+in, boarding, and gate information into the pipeline.​
+1. Live telemetry is routed to Eventstream for ingestions and enrichments. In parallel, environmental data is processed through Azure Event Hubs before routing to Eventstream.​
+1. ​Eventhouse receives real-time flight operation data from Eventstreams, ingesting information such as delays, maintenance alerts, and passenger status updates. It then applies rules to detect anomalies, helping airlines quickly identify and respond to operational disruptions.​
+1. This data is then transformed and sent to OneLake, where analysts can query historical trends, such as identifying airports with frequent weather-related disruptions or monitoring aircraft turnaround efficiency. By correlating real-time alerts from Eventhouse with historical insights in OneLake, airlines can optimize flight schedules, improve resource allocation, and proactively mitigate operational risks. ​
+1. Processed data is routed to Real-Time Dashboard and Power BI. ​
+1. NL Copilot AI is used to quickly check the status of flights affected by bad weather, determine potential delays, and query real-time data without complex coding. It can also be built and trained to aggregate and analyze utilization patterns for better operational insights.​
+1. Flight operations teams use Power BI to monitor live flight patterns, delays, and airspace congestion.
+1. Automated alerts via Activator update passengers, reassign gates, and trigger maintenance actions. ​
+1. Copilot AI provides instant insights, helping teams proactively manage disruptions and optimize airline performance.​
 
-- **Processing and storage layer** - Processes, enriches, and stores data for analysis.
+The following sections explain each operational phase in more detail.
 
-- **Analytics and intelligence layer** - Applies AI/ML for insights and predictions.
-
-- **Presentation and action layer** - Visualizes data and triggers automated responses.
-
-## Architecture components
-
-The following Microsoft Fabric components work together to deliver comprehensive flight operations analytics:
-
-- **[Eventstreams](../event-streams/overview.md)**: Real-time data ingestion and stream processing. 
-
-- **[Eventhouse](../eventhouse.md)**: Real-time analytics and anomaly detection. 
-
-- **[OneLake](../../onelake/onelake-overview.md)**: Centralized data lake for historical analysis. 
-
-- **[Real-Time Dashboard](../dashboard-real-time-create.md)**: Live operational monitoring. 
-
-- **[Power BI](../create-powerbi-report.md)**: Business intelligence and reporting. 
-
-- **[Activator](../data-activator/activator-introduction.md)**: Automated alerting and responses. 
-
-- **[KQL Copilot](../copilot-writing-queries.md)**: Natural language analytics. 
-
-## Data flow and processing
+## Operational phases
 
 ### Ingest and process
 
 You route live telemetry to [Eventstreams](../event-streams/overview.md) for ingestion and enrichment. In parallel, the system processes environmental data through Azure Event Hubs before routing it to Eventstreams.
 
-**Real-world scenario example**: During a typical day, a major airline processes more than 2 million operational events. These events include aircraft position updates every 30 seconds, passenger check-in events, baggage tracking updates, gate assignments, crew scheduling changes, and weather updates. Eventstreams handles this high-velocity data while applying real-time enrichment such as adding aircraft type information, route details, and passenger connection data.
+The continuous data integration includes:
 
-[Eventhouse](../eventhouse.md) receives real-time flight operation data from Eventstreams and ingests information such as delays, maintenance alerts, and passenger status updates. It applies sophisticated rules to detect anomalies such as: 
+- **Live flight telemetry** - Ingest real-time data from aircraft systems, including position updates, speed, altitude, and engine performance metrics.
+- **Airline and airport operation systems** - Collect data from passenger management systems, baggage handling systems, gate assignments, and crew scheduling systems.
+- **Weather and environmental data** - Integrate real-time weather updates, NOTAMs (Notices to Airmen), and air traffic control advisories.
 
-- Aircraft approaching maintenance thresholds based on flight hours or cycles.
+During a typical day, a major airline processes more than 2 million operational events. These events include aircraft position updates every 30 seconds, passenger check-in events, baggage tracking updates, gate assignments, crew scheduling changes, and weather updates. Eventstreams handles this high-velocity data while applying real-time enrichment such as adding aircraft type information, route details, and passenger connection data.
 
-- Unusual passenger flow patterns that indicate potential security or operational problems.
+### Analyze, transform, and enrich
 
-- Weather conditions that might impact flight operations.
+Continuous transformations take place within [Eventhouse](../eventhouse.md), where KQL Query processes petabytes of streaming data to detect anomalies such as duplicate flight records, missing passenger details, or incorrect baggage routing codes and flag them for resolution. This real-time processing enables immediate airline operational optimization, including the following capabilities:
 
-- Ground equipment failures that affect turnaround times.
+- [**Anomaly detection**](../anomaly-detection.md) - Eventhouse continuously monitors flight operations data to identify deviations from expected patterns, such as unexpected delays, maintenance alerts, or passenger flow issues in real-time. These anomalies are flagged as they occur, allowing operations teams to respond quickly and correct issues before they escalate.
+- **Data validation** - Real-time validation verifies incoming data against predefined rules, such as ensuring flight numbers conform to IATA standards, passenger identification numbers are valid, and baggage routing codes match expected formats. Invalid data is flagged for correction, ensuring high data quality for downstream analytics.
+- **Pattern recognition** - Eventhouse applies machine learning models to recognize patterns in flight operations data, such as recurring delay causes, maintenance trends, or passenger behavior patterns. These insights help airlines optimize operations and improve service quality.
+- **Quality assurance** - Continuous monitoring of data quality metrics, such as completeness, accuracy, and timeliness, ensures that flight operations data meets established standards. Alerts are generated for any quality issues, enabling proactive resolution.
 
-The system then transforms this data and sends it to [OneLake](../../onelake/onelake-overview.md), where you can query historical trends, such as identifying airports with frequent weather-related disruptions or monitoring aircraft turnaround efficiency. For example, you can identify that Airport X has 23% higher delay rates during winter months, which enable proactive resource allocation and schedule adjustments.
+A shortcut is created between [Eventhouse](../eventhouse.md) and [OneLake](../../onelake/onelake-overview.md) to enable seamless data flow for historical analysis. By correlating real-time alerts from Eventhouse with historical insights in OneLake, the following optimizations are enabled:
 
-By correlating real-time alerts from Eventhouse with historical insights in OneLake, you can optimize flight schedules, improve resource allocation, and proactively mitigate operational risks. The system routes processed data to [Real-Time Dashboard](../dashboard-real-time-create.md) and [Power BI](../create-powerbi-report.md) for immediate operational visibility and strategic analysis.
+- **Flight schedule optimization** - Analyze historical delay patterns alongside real-time alerts to adjust flight schedules dynamically, minimizing disruptions and improving on-time performance.
+- **Resource allocation** - Use historical data on aircraft utilization and passenger flow to optimize gate assignments, crew scheduling, and ground operations in response to real-time events.
+- **Predictive maintenance** - Combine real-time maintenance alerts with historical aircraft performance data to predict component failures and schedule proactive maintenance, reducing downtime.
+- **Disruption mitigation** - Leverage historical weather impact data alongside real-time weather alerts to implement proactive contingency plans, such as rerouting flights or adjusting departure times.
 
-### Analyze and transform
+### Train
 
-Use [KQL Copilot](../copilot-writing-queries.md) to quickly check the status of flights affected by bad weather, determine potential delays, and query real-time data without complex coding. You can also build and train KQL Copilot to aggregate and analyze utilization patterns for better operational insights.
+Machine learning models are built, trained, and scored in real-time by using [Data Science](../../data-science/data-science-overview.md) capabilities within Microsoft Fabric. These models analyze both historical and real-time flight operations data to predict disruptions and optimize operations. Key use cases include:
 
-Your flight operations teams use [Power BI](../create-powerbi-report.md) to monitor live flight patterns, delays, and airspace congestion.
+- **Delay prediction** - Train models to predict flight delays based on historical patterns, weather conditions, and real-time operational data. These predictions help airlines proactively manage schedules and communicate with passengers.
+- **Passenger flow optimization** - Analyze passenger check-in and boarding data to optimize processes, reduce wait times, and enhance the overall travel experience.
+- **Maintenance forecasting** - Use historical maintenance records and real-time sensor data to forecast maintenance needs, enabling proactive scheduling and reducing unexpected aircraft downtime.
+- **Route optimization** - Analyze historical flight paths and real-time air traffic data to optimize routes, reducing fuel consumption and improving on-time performance.
+- **Crew scheduling** - Optimize crew assignments based on historical workload patterns and real-time operational demands, ensuring compliance with regulations while maximizing efficiency.
+- **Baggage handling efficiency** - Use historical baggage tracking data and real-time updates to streamline baggage handling processes, reducing mishandling rates and improving passenger satisfaction.
 
-**Automated operational responses with Activator**:
+### Visualize and activate
 
-[Activator](../data-activator/activator-introduction.md) enables sophisticated automation for your airline operations with subsecond latency:
+[Activator](../data-activator/activator-introduction.md) in Microsoft Fabric Real-Time Intelligence triggers automated actions based on real-time flight operations data. With this real-time awareness and automated response, the system reduces manual intervention and helps maintain smooth operations. These actions include:
 
-- **Flight delay management** - Automatically notify passengers via SMS or email when delays exceed 15 minutes, trigger rebooking workflows for missed connections, and alert ground crews for aircraft turnaround adjustments.
-
-- **Gate operations** - Dynamically reassign gates when aircraft arrival times change, coordinate ground equipment deployment, and update passenger boarding notifications.
-
-- **Maintenance alerts** - Trigger immediate maintenance requests when aircraft sensor data indicates anomalies, automatically ground aircraft that exceed maintenance thresholds, and notify crew scheduling systems.
+- **Passenger notifications** - Automatically send real-time updates to passengers regarding flight status changes, delays, gate assignments, and boarding information via SMS, email, or mobile app notifications.
+- **Gate reassignments** - Trigger automatic gate changes based on real-time operational data, such as delays or aircraft availability, ensuring efficient use of airport resources.
+- **Maintenance alerts** - Generate real-time maintenance alerts for ground crews based on aircraft sensor data, enabling prompt responses to potential issues and minimizing turnaround times.
+- **Crew scheduling adjustments** - Automatically adjust crew assignments in response to real-time flight delays or cancellations, ensuring compliance with regulations while maintaining operational efficiency.
+- **Baggage handling updates** - Trigger real-time updates to baggage handling systems based on flight status changes, reducing mishandling rates and improving passenger satisfaction.
 - **Weather response** - Activate contingency plans when weather conditions deteriorate, trigger flight rerouting procedures, and coordinate with airport authorities for operational adjustments.
 
-- **Passenger experience** - Send proactive notifications for gate changes, boarding delays, and baggage claim updates based on real-time operational data.
+Your flight operations teams use [Power BI](../create-powerbi-report.md) dashboards connected directly to Eventhouse and OneLake to monitor live flight patterns, delays, and airspace congestion through unified analytical views, including:
 
-KQL Copilot provides instant insights and helps your teams proactively manage disruptions and optimize airline performance by enabling natural language queries like "Show me all flights delayed more than 30 minutes due to weather in the Northeast region.".
+- **Operational dashboards** - Real-time dashboards provide live visibility into flight operations, including on-time performance, delay causes, and resource utilization.
+- **Executive reporting** - Comprehensive reports for airline executives, summarizing key performance indicators (KPIs), operational trends, and strategic insights.
+- **Regulatory compliance** - Reports designed to meet aviation industry regulatory requirements, including safety audits and operational performance metrics.
 
-## Reference architecture details
+Real-Time Dashboard provides live operational visibility with customizable views for different operational roles, enabling teams to monitor and respond to real-time events effectively. These dashboards provide the following capabilities:
 
-### Ingestion layer
+- **Customizable views** - Tailor dashboards for different operational roles, such as flight operations, ground handling, and passenger services, ensuring relevant information is readily accessible.
+- **Real-time alerts** - Display real-time alerts for operational disruptions, enabling teams to respond quickly and effectively.
+- **Interactive visualizations** - Use interactive charts and graphs to explore flight operations data, identify trends, and make informed decisions.
 
-**Event ingestion**: Route live telemetry to [Eventstreams](../event-streams/overview.md) for ingestion and enrichment. Process environmental data through Azure Event Hubs before routing to Eventstreams.
+[KQL Copilot](../copilot-writing-queries.md) enables you to use natural language queries to quickly check the status of weather-affected flights, identify potential delays, and explore real-time data without requiring complex coding. Additionally, you can train KQL Copilot to aggregate and evaluate utilization patterns, providing deeper operational insights.
 
-**Data enrichment**: Eventstreams applies real-time transformations and enriches incoming data with contextual information before forwarding to processing layers.
+## Technical benefits and outcomes
 
-### Processing and storage layer
+The airline flight operations reference architecture delivers measurable technical and operational benefits by combining real-time data processing, predictive analytics, and automated workflows across flight operations, passenger management, and maintenance systems.
 
-**Real-time processing**: [Eventhouse](../eventhouse.md) receives enriched flight operation data and applies business rules for anomaly detection, helping identify operational disruptions in real-time.
+### Real-time operational intelligence
 
-**Historical storage**: Processed data flows to [OneLake](../../onelake/onelake-overview.md) for long-term storage and historical analysis, enabling trend identification and predictive analytics. 
-
-### Analytics and intelligence layer
-
-**Natural language processing**: [KQL Copilot](../copilot-writing-queries.md) enables operations teams to query data using natural language, check flight statuses, and analyze utilization patterns without coding. 
-
-**Machine learning**: Advanced analytics capabilities process historical and real-time data to predict disruptions and optimize operations. 
-
-### Presentation and action layer
-
-**Real-time monitoring**: [Real-Time Dashboard](../dashboard-real-time-create.md) provides live operational visibility with customizable views for different operational roles. 
-
-**Business intelligence**: [Power BI](../create-powerbi-report.md) delivers comprehensive analytics for monitoring flight patterns, delays, and airspace congestion. 
-
-**Automated responses**: [Activator](../data-activator/activator-introduction.md) triggers automated actions including passenger notifications, gate reassignments, and maintenance alerts. 
-
-## Technical benefits and outcomes 
-
-### Real-time operational intelligence 
-
-- **Unified data platform** - Create a single source of truth for all flight operations data.
-
-- **Real-time anomaly detection** - Get immediate identification of operational disruptions.
-
-- **Scalable architecture** - Handle high-velocity data streams from multiple sources.
-
-- **Integrated analytics** - Combine real-time and historical data for comprehensive insights.
+- **Unified data platform** - Establish a centralized repository for all airline flight operations data, ensuring consistency and accessibility.
+- **Real-time anomaly detection** - Identify operational disruptions such as flight delays, maintenance issues, or passenger flow bottlenecks as they occur.
+- **Scalable architecture** - Support high-velocity data streams from diverse sources, including aircraft sensors, weather systems, and passenger management platforms.
+- **Integrated analytics** - Combine real-time telemetry with historical data to deliver actionable insights for operational optimization.
 
 ### Automated operational responses
 
-- **Intelligent alerting** - Receive context-aware notifications based on operational rules.
+- **Intelligent alerting** - Generate context-aware notifications for flight delays, gate changes, and maintenance requirements based on predefined operational rules.
+- **Automated workflows** - Trigger automated actions such as passenger notifications, baggage handling updates, and crew reassignments to streamline operations.
+- **Proactive disruption management** - Leverage early warning systems to mitigate the impact of weather disruptions, airspace congestion, or equipment failures.
+- **Resource optimization** - Dynamically allocate gates, crew, and aircraft based on real-time operational data and historical trends.
 
-- **Automated workflows** - Set up triggers for passenger notifications, gate changes, and maintenance.
+### Advanced analytics capabilities
 
-- **Proactive disruption management** - Use early warning systems for weather and operational issues.
-
-- **Resource optimization** - Enable dynamic allocation of gates, crew, and aircraft.
-
-### Advanced analytics capabilities 
-
-- **Natural language processing** - Query complex operational data using conversational AI.
-
-- **Predictive analytics** - Use machine learning models for delay prediction and optimization.
-
-- **Historical trend analysis** - Identify patterns in airport performance and efficiency.
-
-- **Cross-system correlation** - Link real-time events with historical operational data.
+- **Natural language processing** - Use conversational AI to query complex operational scenarios, such as identifying flights impacted by weather or analyzing passenger connection risks.
+- **Predictive analytics** - Deploy machine learning models to forecast flight delays, optimize crew scheduling, and predict maintenance needs.
+- **Historical trend analysis** - Analyze past operational data to uncover patterns in airport efficiency, delay causes, and resource utilization.
+- **Cross-system correlation** - Integrate real-time events with historical data to provide a comprehensive view of operational performance and enable data-driven decision-making.
 
 ## Implementation considerations 
+
+Implementing a real-time airline operations system requires careful planning across data architecture, security, integration, monitoring, and operational cost management. The following considerations help ensure a scalable, compliant, and resilient deployment.
 
 ### Data architecture requirements 
 
