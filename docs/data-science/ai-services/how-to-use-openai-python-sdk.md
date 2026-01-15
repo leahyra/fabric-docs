@@ -14,11 +14,11 @@ ms.collection: ce-skilling-ai-copilot
 ---
 # Use Azure OpenAI in Fabric with Python SDK (preview)
 
-This article shows how to use Azure OpenAI in Fabric with the [OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python). For distributed processing of large datasets, see [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md). For the simplest approach using Pandas AI Functions, see [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md).
+This article shows how to use Azure OpenAI in Fabric with the [OpenAI Python SDK](https://github.com/openai/openai-python/). For distributed processing of large datasets, see [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md). For the simplest approach using Pandas AI Functions, see [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md).
 
 ## Prerequisites
 
-[OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) isn't installed in default runtime, you need to first install it.
+The [OpenAI Python SDK](https://github.com/openai/openai-python/) isn't installed in default runtime, you need to first install it.
 
 ``` Python
 %pip install -U openai
@@ -42,7 +42,7 @@ This client handles authentication automatically when running in Fabric notebook
 
 ## Chat completions
 
-The example presented here showcases simple chat completion operations.
+The example presented here showcases simple chat completion operations. For complete API reference, see [Chat Completions API](https://platform.openai.com/docs/api-reference/chat).
 
 ```python
 response = client.chat.completions.create(
@@ -72,7 +72,7 @@ print(f"{response.choices[0].message.content}")
 
 ## Responses API
 
-The Responses API is the recommended approach by OpenAI for new implementations. It provides improved response quality and better handling of structured outputs.
+The Responses API is the recommended approach by OpenAI for new implementations. It provides improved response quality and better handling of structured outputs. For complete API reference, see [Responses API](https://platform.openai.com/docs/api-reference/responses).
 
 ```python
 response = client.responses.create(
@@ -93,7 +93,7 @@ print(f"{response.output_text}")
 
 ## Embeddings
 
-An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs.
+An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs. For complete API reference, see [Embeddings API](https://platform.openai.com/docs/api-reference/embeddings).
 
 ```python
 response = client.embeddings.create(
@@ -109,6 +109,15 @@ For information about available models and consumption rates, see [AI Services c
 
 ## Related content
 
+### Fabric documentation
+
 - [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md) for large scale dataset transofrmations in Fabric for Pandas or PySpark DataFrames
 - [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing using Spark DataFrames with no overhead
 - [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint
+
+### OpenAI Python SDK documentation
+
+- [OpenAI Python SDK GitHub](https://github.com/openai/openai-python/) - Official repository with examples and documentation
+- [Chat Completions API](https://platform.openai.com/docs/api-reference/chat) - Complete API reference for chat completions
+- [Responses API](https://platform.openai.com/docs/api-reference/responses) - Complete API reference for the responses endpoint
+- [Embeddings API](https://platform.openai.com/docs/api-reference/embeddings) - Complete API reference for embeddings
