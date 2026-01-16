@@ -86,6 +86,7 @@ Switch to the **Home** tab at the top of the pipeline editor, and select the sav
 
 ## Known issues
 - The WI option in connections settings does not surface in some instances. This is a bug that a fix is being worked on at the moment.
+- Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
 
 ## Related content
 
