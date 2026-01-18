@@ -7,7 +7,7 @@ ms.reviewer: gabil
 ms.topic: how-to
 ms.subservice: rti-dashboard
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 01/18/2026
 ---
 
 # Customize Real-Time Dashboard visuals
@@ -47,6 +47,7 @@ The following table describes the available customization properties, categorize
 |  | **Value** | The numeric column that serves as the primary variable for the heatmap. | Heatmap |
 |  | **Numeric column** | The column that provides the numeric value for the data category. | Pie chart |
 |  | **Define location by** | Determines the method used to define the location: **Infer**, **Latitude and longitude**, or **Geo point**. | Map |
+| **Data series colors** | **Color palette** | Customizes the colors presented in the visualization. | Anomaly chart, Area chart, Bar chart, Column chart, Line chart, Pie chart, Scatter chart, Time chart |
 | **Display options** | **Order by** | How to order the results in the chart: **Name**, **Size**, or **None**. | Pie chart |
 |  | **Top N** | Option to only show sections for the top *n* values in the chart. | Pie chart |
 | **General** | **Display orientation** | Determines the orientation of the display: Horizontal or Vertical. | Multi Stat |
