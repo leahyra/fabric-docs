@@ -236,16 +236,14 @@ Implementing a real-time e-mobility charging network system requires careful pla
 
 ## Related resources
 
-- [Real-Time Intelligence documentation](../real-time-intelligence/overview.md) 
-
-- [Microsoft Fabric Real-Time Intelligence enterprise architecture patterns](../enterprise/architecture.md) 
+- [Real-Time Intelligence documentation](../overview.md) 
 
 - [Activator for automated alerting](../data-activator/activator-introduction.md) 
 
 - [Eventstreams for real-time data ingestion](../event-streams/overview.md) 
 
-- [Advanced analytics and machine learning](../data-science/data-science-overview.md) 
+- [Advanced analytics and machine learning](../../data-science/data-science-overview.md) 
 
-- [Microsoft Fabric Real-Time Intelligence capacity planning](../enterprise/plan-capacity.md) 
+- [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md) 
 
 - [OneLake data storage overview](../../onelake/onelake-overview.md) 
