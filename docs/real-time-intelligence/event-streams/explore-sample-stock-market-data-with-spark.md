@@ -10,7 +10,7 @@ ms.date: 12/22/2025
 ms.search.form: Eventstreams Tutorials
 ---
 
-# Tutorial: Explore and transform sample bike-sharing data with Eventstream for KQL Database integration
+# Tutorial: Explore and transform sample bike-sharing data in Fabric Eventstreams using Spark Structured Streaming
 
 Eventstream is a streaming platform that enables you to ingest, transform, and route data streams to a variety of destinations including Lakehouse, Eventhouse, Activator and Derived Streams. In this tutorial, we explore how you can use Spark Structured Streaming in a Notebook to process the streaming sample data. 
 
@@ -44,11 +44,11 @@ Follow these steps to create an eventstream in your workspace:
 
 3. Search for and select the eventstream that you want to connect to.
 
-    :::image type="content" source="./media/explore-sample-stock-data-with-spark/select-sample-stock-eventstream.png" alt-text="Screenshot that shows the list of evenstreams in the real-time hub." lightbox="./media/explore-sample-stock-data-with-spark/select-sample-stock-eventstream.png":::
+    :::image type="content" source="./media/explore-sample-stock-data-with-spark/select-sample-stock-eventstream.png" alt-text="Screenshot that shows the list of evenstreams to choose from." lightbox="./media/explore-sample-stock-data-with-spark/select-sample-stock-eventstream.png":::
 
 4. After selecting an eventstream, you can preview the data. Click **Next** when you are ready.
 
-    :::image type="content" source="./media/explore-sample-stock-data-with-spark/select-stock-sample-preview-next.png" alt-text="Screenshot that shows the list of evenstreams in the real-time hub." lightbox="./media/explore-sample-stock-data-with-spark/select-stock-sample-preview-next.png":::
+    :::image type="content" source="./media/explore-sample-stock-data-with-spark/select-stock-sample-preview-next.png" alt-text="Screenshot that shows how to preview the data in the selected eventstream." lightbox="./media/explore-sample-stock-data-with-spark/select-stock-sample-preview-next.png":::
 
 5. Back in the Notebook, click on your Eventstream in the **Explorer** pane, right-click on the default stream and choose **Read with Spark**.  
 

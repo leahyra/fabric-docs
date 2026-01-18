@@ -68,5 +68,5 @@ Follow these steps to configure a Spark Notebook as a destination for your Event
 
 - [Create an eventstream](create-manage-an-eventstream.md)
 
-- [Apache Spark in Microsoft Fabric](../data-engineering/spark-compute.md)
-- [How to use Microsoft Fabric Notebooks](../data-engineering/how-to-use-notebook.md)
+- [Apache Spark in Microsoft Fabric](../../data-engineering/spark-compute.md)
+- [How to use Microsoft Fabric Notebooks](../../data-engineering/data-engineering/how-to-use-notebook.md)
