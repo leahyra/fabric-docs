@@ -205,7 +205,7 @@ Predictive maintenance reduces downtime and maintenance costs by leveraging mach
 
 - Test system performance during severe weather conditions and high-activity scenarios.
 
-- Validate [Activator](../data-activator/activator-introduction) rules for maintenance team notifications based on equipment malfunctions and anomalous turbine behavior.
+- Validate [Activator](../data-activator/activator-introduction.md) rules for maintenance team notifications based on equipment malfunctions and anomalous turbine behavior.
 
 - Ensure compliance with energy regulations and grid integration requirements.
 
@@ -217,7 +217,7 @@ Predictive maintenance reduces downtime and maintenance costs by leveraging mach
 
 - Set up advanced [Data Science](../../data-science/data-science-overview.md) capabilities for building, training, and scoring predictive ML models for maintenance prediction and performance optimization.
 
-- Implement [Activator](../data-activator/activator-introduction) for sophisticated wind farm automation including predictive maintenance, dynamic performance optimization, and automated maintenance dispatch.
+- Implement [Activator](../data-activator/activator-introduction.md) for sophisticated wind farm automation including predictive maintenance, dynamic performance optimization, and automated maintenance dispatch.
 
 - Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) for natural language analytics. Enable your teams to query complex scenarios like "Show me all turbines with performance problems during high wind conditions in the northern region".
 
@@ -237,7 +237,7 @@ Predictive maintenance reduces downtime and maintenance costs by leveraging mach
 
 - [Real-Time Intelligence documentation](../overview.md) 
 
-- [Activator for automated alerting](../data-activator/activator-introduction) 
+- [Activator for automated alerting](../data-activator/activator-introduction.md) 
 
 - [Eventstreams for real-time data ingestion](../event-streams/overview.md) 
 
