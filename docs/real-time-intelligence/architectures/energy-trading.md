@@ -99,7 +99,7 @@ Build, train, and score machine learning models in real time by using [Data Scie
 
 - **Market alerts** - Stay informed with immediate notifications for critical market conditions that require urgent trading actions, minimizing risks and enhancing operational efficiency.
 
-Your traders use [Power BI dashboards](../create-powerbi-report) connected directly to Eventhouse and OneLake to monitor real-time energy trading data and generate comprehensive reports. These reports provide:
+Your traders use [Power BI dashboards](../create-powerbi-report.md) connected directly to Eventhouse and OneLake to monitor real-time energy trading data and generate comprehensive reports. These reports provide:
 
 - **Trading analytics** - Gain insights into generation versus consumption patterns and evaluate market performance through detailed reports. These analytics help identify inefficiencies, optimize trading strategies, and improve decision-making.
 
