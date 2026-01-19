@@ -4,7 +4,7 @@ description: Learn about the SynapseML library and how it simplifies the creatio
 ms.reviewer: vimeland
 author: jonburchel
 ms.author: jburchel
-ms.topic: conceptual
+ms.topic: conceptual-article
 ms.date: 01/16/2026
 reviewer: virginiaroman
 ai.usage: ai-assisted
