@@ -21,11 +21,11 @@ You can manage complex hospital operations where EHR systems, patient movement t
 
 The hospital operations reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from hospital systems and integrates digital twin representations for intelligent operations management. You can implement the architecture with five main operational phases: 
 
-<<IMAGE>>
+:::image type="content" source="./media/hospital-operations/hospital-operations-reference-architecture.png" alt-text="Diagram showing the reference architecture for hospital operations." lightbox="./media/hospital-operations/hospital-operations-reference-architecture.png":::
 
 1. Real-time Electronic Health Records (EHR) data is ingested from multiple destinations and processed through Eventstreams. Admission, Discharge, Transfer (ADT) Feeds supplies real-time updates on patient movements within the hospital.
 
-1.Revenue Cycle Management (RCM) data is ingested from multiple destinations and is synced using Data Factory then sent to OneLake.
+1. Revenue Cycle Management (RCM) data is ingested from multiple destinations and is synced using Data Factory then sent to OneLake.
 
 1. The ingested Eventstream data is sent to Eventhouse for further processing, enabling streaming analytics and anomaly detection.
 
