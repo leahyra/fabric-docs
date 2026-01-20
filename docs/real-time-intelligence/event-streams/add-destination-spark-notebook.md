@@ -13,9 +13,9 @@ ms.search.form: Source and Destination
 # Add a Fabric Spark Notebook destination to an Eventstream (preview)
 
 > [!NOTE]
-> This feature is currently in **preview** and may change before general availability.
+> This feature is currently in **preview** and might change before general availability.
 
-You can now route data from a Fabric Eventstream directly into a Spark Notebook. This enables real-time data processing and advanced analytics using Spark Structured Streaming within Microsoft Fabric.
+You can now route data from a Fabric Eventstream directly into a Spark Notebook. This feature enables real-time data processing and advanced analytics using Spark Structured Streaming within Microsoft Fabric.
 
 ## Prerequisites
 
@@ -31,31 +31,33 @@ Follow these steps to configure a Spark Notebook as a destination for your Event
 
 ### Step 1: Select the Spark Notebook destination
 
-1. In your Eventstream, click the **Edit** option in the ribbon.
-2. Select **Notebook** from the list of available destinations.
+1. In your Eventstream, select the **Edit** option in the ribbon.
+
+   :::image type="content" source="media/add-destination-notebook/edit-event-stream.png" alt-text="A screenshot with the Edit button for an eventstream selected." lightbox="media/add-destination-notebook/edit-event-stream.png":::
+1. Select **Notebook** from the list of available destinations.
 
    :::image type="content" source="media/add-destination-notebook/add-destination-notebook.png" alt-text="A screenshot of the Add destination dropdown list with Notebook highlighted." lightbox="media/add-destination-notebook/add-destination-notebook.png":::
 
 ### Step 2: Select an existing Notebook
 
 1. In the destination configuration pane, type in the **Destination name** if you wish to change the default.
-2. Click on the **Notebook** dropdown and select an existing Notebook
+2. Select the **Notebook** dropdown and select an existing Notebook
 
    :::image type="content" source="media/add-destination-notebook/configure-notebook-destination.png" alt-text="A screenshot of the Notebook destination configuration pane with the destination name and Notebook dropdown list highlighted." lightbox="media/add-destination-notebook/configure-notebook-destination.png":::
 
-3. Once the selected Notebook is validated, a "**Validated. View parameters and values." message will appear under the text box. Click on the link to view the details or skip ahead and Save.
+3. Once the selected Notebook is validated, a `**Validated. View parameters and values.` message appears under the text box. Select the link to view the details or skip ahead and Save.
 
    :::image type="content" source="media/add-destination-notebook/select-validate-notebook.png" alt-text="A screenshot of the Notebook destination configuration pane parameter validate link and dialog box highlighted." lightbox="media/add-destination-notebook/select-validate-notebook.png":::
 
 ### Step 3: Save and Publish
 
-1. Click on **Save** and then Publish the changes to the Eventstream. This will update the Eventstream and initiate the Spark Structured Streaming job.
+1. Select **Save** and then **Publish** changes to the Eventstream. This action updates the Eventstream and initiates the Spark Structured Streaming job.
 
    :::image type="content" source="media/add-destination-notebook/save-notebook-destination.png" alt-text="A screenshot of the Notebook destination configuration with the Save button highlighted." lightbox="media/add-destination-notebook/save-notebook-destination.png":::
 
 ### Step 5: Review the Notebook
 
-1. From the Eventstream view, click on the **Notebook** destination. From the **Details** pane, click on the **Open Item** link to open the configured Notebook item.
+1. From the Eventstream view, select the **Notebook** destination. From the **Details** pane, select the **Open Item** link to open the configured Notebook item.
 
    :::image type="content" source="media/add-destination-notebook/details-view-notebook-destination.png" alt-text="A screenshot of the Notebook destination with the Details pane highlighted." lightbox="media/add-destination-notebook/details-view-notebook-destination.png":::
 
@@ -69,4 +71,4 @@ Follow these steps to configure a Spark Notebook as a destination for your Event
 - [Create an eventstream](create-manage-an-eventstream.md)
 
 - [Apache Spark in Microsoft Fabric](../../data-engineering/spark-compute.md)
-- [How to use Microsoft Fabric Notebooks](../../data-engineering/data-engineering/how-to-use-notebook.md)
+- [How to use Microsoft Fabric Notebooks](../../data-engineering/how-to-use-notebook.md)
