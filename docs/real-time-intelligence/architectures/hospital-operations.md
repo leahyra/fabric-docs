@@ -13,9 +13,11 @@ ms.search.form: Architecture
 
 # Hospital operations reference architecture 
 
-This reference architecture demonstrates how you can use Microsoft Fabric Real-Time Intelligence to build comprehensive hospital operations solutions that handle real-time Electronic Health Records (EHR) data and Admission, Discharge, Transfer (ADT) feeds from multiple healthcare destinations. You can process continuous hospital operations data streams and integrate Revenue Cycle Management (RCM) data to enable intelligent patient flow monitoring, operational surge prediction, and automated hospital management optimization. 
+This reference architecture shows how you can use Microsoft Fabric Real-Time Intelligence to build comprehensive hospital operations solutions that handle real-time Electronic Health Records (EHR) data and Admission, Discharge, Transfer (ADT) feeds from multiple healthcare sources. You can process continuous hospital operations data streams and integrate Revenue Cycle Management (RCM) data to enable intelligent patient flow monitoring, operational surge prediction, and automated hospital management optimization. 
 
 You can manage complex hospital operations where EHR systems, patient movement tracking, and revenue cycle management systems continuously generate data on patient encounters, bed occupancy, and operational metrics. The architecture integrates real-time hospital data through Eventstreams processing and maintains comprehensive clinical systems data including lab results, imaging, and medication orders for unified hospital operations intelligence and predictive surge management. 
+
+Unlike traditional batch-based analytics architectures, hospital operations require second-by-second visibility into patient movement, capacity constraints, and care coordination. Delays in detecting bed shortages, admission surges, or discharge bottlenecks can directly impact patient safety, care quality, and financial performance. This architecture emphasizes streaming ingestion, low-latency analytics, and automated activation to support continuous operational decision-making.
  
 ## Architecture overview  
 
@@ -23,9 +25,11 @@ The hospital operations reference architecture uses Microsoft Fabric Real-Time I
 
 :::image type="content" source="./media/hospital-operations/hospital-operations-reference-architecture.png" alt-text="Diagram showing the reference architecture for hospital operations." lightbox="./media/hospital-operations/hospital-operations-reference-architecture.png":::
 
-1. Real-time Electronic Health Records (EHR) data is ingested from multiple destinations and processed through Eventstreams. Admission, Discharge, Transfer (ADT) Feeds supplies real-time updates on patient movements within the hospital.
+Here are the key steps in the architecture:
 
-1. Revenue Cycle Management (RCM) data is ingested from multiple destinations and is synced using Data Factory then sent to OneLake.
+1. Real-time Electronic Health Records (EHR) data is ingested from multiple sources and processed through Eventstreams. Admission, Discharge, Transfer (ADT) Feeds supplies real-time updates on patient movements within the hospital.
+
+1. Revenue Cycle Management (RCM) data is ingested from multiple sources and is synced using Data Factory then sent to OneLake.
 
 1. The ingested Eventstream data is sent to Eventhouse for further processing, enabling streaming analytics and anomaly detection.
 
@@ -37,7 +41,7 @@ The hospital operations reference architecture uses Microsoft Fabric Real-Time I
 
 1. Build, train, and score ML models in real time, to better predict potential surges and spikes.
 
-1. ﻿﻿Hospital administrators use Real-Time Dashboard to visualize customized  live updates of hospital operations. 
+1. Hospital administrators use Real-Time Dashboard to visualize customized  live updates of hospital operations. 
 
 1. Activator is used to get real-time alerts on bed occupancy and admission surges, enabling timely adjustments and preventing delays.
 
@@ -90,39 +94,39 @@ Revenue Cycle Management (RCM) data is ingested from multiple destinations and i
 
 A major hospital system processes real-time EHR data from thousands of daily patient encounters while ADT feeds track continuous patient movements across emergency departments, inpatient units, and specialty services. Data Factory synchronizes RCM data from billing systems, insurance platforms, and payment processors to provide comprehensive visibility into hospital operations, patient flow, and financial performance for optimal resource allocation and patient care delivery. 
 
- 
 
 ### Analyze, transform, & enrich 
 
-The ingested [Eventstream](../event-streams/overview.md) data is sent to [Eventhouse](../eventhouse.md) for further processing, enabling streaming analytics and anomaly detection. This real-time processing enables immediate hospital operations optimization including: 
+The ingested [Eventstream](../event-streams/overview.md) data is sent to [Eventhouse](../eventhouse.md) for further processing, low-latency streaming analytics and real-time anomaly detection. This real-time processing enables immediate hospital operations optimization including: 
 
-- **Real-time patient monitoring** - Continuous tracking of patient status, care progression, and clinical outcomes 
+- **Real-time patient monitoring** - Continuous tracking of patient status, care progression, and clinical events to quickly identify delays, exceptions, or care handoff issues.
 
-- **Operational efficiency analysis** - Immediate identification of workflow bottlenecks, resource constraints, and process improvements 
+- **Operational efficiency analysis** - Immediate identification of workflow bottlenecks, resource constraints, and process improvements for enhanced hospital performance.
 
-- **Quality assurance** - Real-time monitoring of care quality indicators, patient safety metrics, and clinical compliance 
+- **Quality assurance** - Real-time monitoring of care quality indicators, patient safety metrics, and clinical compliance signals as events occur.
 
-- **Resource optimization** - Dynamic analysis of bed utilization, staff allocation, and equipment availability 
+- **Resource optimization** - Dynamic analysis of bed utilization, staff allocation, and equipment availability to support operational decisions during routine operations and surge periods.
 
-A shortcut is created between [Eventhouse](../eventhouse.md) to [OneLake](../../onelake/onelake-overview.md) where the clinical systems including lab results, imaging, and medication orders are captured to enrich patient context. This enables: 
+To enrich real-time events with clinical context, a shortcut is created between [Eventhouse](../eventhouse.md) and [OneLake](../../onelake/onelake-overview.md). The shortcut allows Eventhouse queries to access supporting clinical systems data such as laboratory results, diagnostic imaging, and medication orders without duplicating data. This enrichment provides deeper patient context for operational decision-making including:
 
-- **Comprehensive patient care** - Complete integration of clinical data for holistic patient care coordination and treatment optimization 
+- **Comprehensive patient care** - Complete integration of clinical data for holistic patient care coordination and treatment optimization. 
 
-- **Clinical decision support** - Real-time access to lab results, imaging studies, and medication information for informed care decisions 
+- **Clinical decision support** - Real-time access to lab results, imaging studies, and medication information for informed care decisions. 
 
-- **Care coordination** - Seamless integration of clinical data across hospital departments and care teams 
+- **Care coordination** - Seamless integration of clinical data across hospital departments and care teams. 
 
-- **Outcome analysis** - Correlation of clinical interventions with patient outcomes and quality indicators 
+- **Outcome analysis** - Correlation of clinical interventions with patient outcomes and quality indicators. 
 
-Continuous transformations take place within [Eventhouse](../eventhouse.md) where KQL Query queries petabytes of data to detect anomalies like duplicate entries or missing billing codes, flagging them for resolution. This enables: 
+Within [Eventhouse](../eventhouse.md), continuous transformations are applied using KQL to analyze large volumes of real-time and historical data. These transformations detect anomalies such as duplicate records, incomplete clinical events, or missing billing codes, and flag them for resolution. This processing enables: 
 
-- **Data quality management** - Real-time identification and resolution of data inconsistencies and errors 
+- **Data quality management** - Early detection and remediation of data inconsistencies before they impact downstream analytics or reporting.
 
-- **Billing optimization** - Automated detection of missing charges, coding errors, and revenue optimization opportunities 
+- **Billing optimization** - Automated detection of missing charges, coding errors, and revenue optimization opportunities. 
 
-- **Compliance monitoring** - Continuous assessment of regulatory compliance and documentation requirements 
+- **Compliance monitoring** - Continuous assessment of regulatory compliance and documentation requirements. 
 
-- **Operational intelligence** - Advanced analytics for hospital performance optimization and quality improvement 
+- **Operational intelligence** - Advanced analytics for hospital performance optimization and quality improvement. 
+
 
 
 ### Model & contextualize 
