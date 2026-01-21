@@ -25,11 +25,11 @@ Before you begin, make sure that you have:
 - A Spark Notebook already exists in the target workspace.
 - You have appropriate permissions to modify Eventstreams and access the Notebook.
 
-## Add a Spark Notebook as a destination
+## Add a Spark notebook as a destination
 
-Follow these steps to configure a Spark Notebook as a destination for your Eventstream:
+Follow these steps to configure a Spark notebook as a destination for your Eventstream:
 
-### Step 1: Select the Spark Notebook destination
+### Step 1: Select the Spark notebook destination
 
 1. In your Eventstream, select the **Edit** option in the ribbon.
 
@@ -38,26 +38,26 @@ Follow these steps to configure a Spark Notebook as a destination for your Event
 
    :::image type="content" source="media/add-destination-notebook/add-destination-notebook.png" alt-text="A screenshot of the Add destination dropdown list with Notebook highlighted." lightbox="media/add-destination-notebook/add-destination-notebook.png":::
 
-### Step 2: Select an existing Notebook
+### Step 2: Select an existing notebook
 
 1. In the destination configuration pane, type in the **Destination name** if you wish to change the default.
-2. Select the **Notebook** dropdown and select an existing Notebook
+2. Select the **Notebook** dropdown and select an existing notebook.
 
    :::image type="content" source="media/add-destination-notebook/configure-notebook-destination.png" alt-text="A screenshot of the Notebook destination configuration pane with the destination name and Notebook dropdown list highlighted." lightbox="media/add-destination-notebook/configure-notebook-destination.png":::
 
-3. Once the selected Notebook is validated, a `**Validated. View parameters and values.` message appears under the text box. Select the link to view the details or skip ahead and Save.
+3. Once the selected notebook is validated, a `Validated. View parameters and values.` message appears under the text box. Select the link to view the details or skip ahead and Save.
 
    :::image type="content" source="media/add-destination-notebook/select-validate-notebook.png" alt-text="A screenshot of the Notebook destination configuration pane parameter validate link and dialog box highlighted." lightbox="media/add-destination-notebook/select-validate-notebook.png":::
 
-### Step 3: Save and Publish
+### Step 3: Save and publish
 
-1. Select **Save** and then **Publish** changes to the Eventstream. This action updates the Eventstream and initiates the Spark Structured Streaming job.
+- Select **Save** and then **Publish** changes to the Eventstream. This action updates the Eventstream and initiates the Spark Structured Streaming job.
 
    :::image type="content" source="media/add-destination-notebook/save-notebook-destination.png" alt-text="A screenshot of the Notebook destination configuration with the Save button highlighted." lightbox="media/add-destination-notebook/save-notebook-destination.png":::
 
-### Step 5: Review the Notebook
+### Step 4: Review the notebook
 
-1. From the Eventstream view, select the **Notebook** destination. From the **Details** pane, select the **Open Item** link to open the configured Notebook item.
+- From the Eventstream view, select the **Notebook** destination. From the **Details** pane, select the **Open Item** link to open the configured Notebook item.
 
    :::image type="content" source="media/add-destination-notebook/details-view-notebook-destination.png" alt-text="A screenshot of the Notebook destination with the Details pane highlighted." lightbox="media/add-destination-notebook/details-view-notebook-destination.png":::
 
