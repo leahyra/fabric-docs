@@ -20,14 +20,24 @@ You can handle massive scale fleet operations where hundreds of thousands of veh
 
 The fleet management reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes millions of telemetry events from hundreds of thousands of vehicles in real-time. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate.
 
+:::image type="content" source="media/fleet-management-diagram.png" alt-text="Fleet management architecture diagram" lightbox="media/fleet-management-diagram.png":::
+
 1. Hundreds of thousands of fleet vehicles generate millions of telemetry events in an hour, providing details on vehicle location, mechanical state, and more.
+
 1. You aggregate and stream events in real time via MQTT-Eventstream integration.
+
 1. You sync service station, delivery points, locations, driver schedules, and vehicle details into OneLake from the ERP system.
+
 1. You contextualize events in real time with the vehicle metadata and driver information, providing a rich data set ready for use.
+
 1. You aggregate vehicle events with daily and weekly view for long time retention and historical views.
+
 1. You build, train, and score advanced ML models on the vehicle data, creating advanced predictive capabilities on vehicle behavior.
+
 1. A real-time dashboard with geospatial capabilities allows real-time view of the entire fleet, location, and drill down from global fleet view to a single vehicle view.
+
 1. Rich Power BI reports using direct query provides high granularity view on the fleet current state and full historical view.
+
 1. Activator push notifications in real time based on anomalous vehicle behavior, traffic, weather, and road conditions.
 
 The following sections explain each operational phase in detail.
@@ -124,19 +134,43 @@ Fleet managers can use [Power BI dashboards](../create-powerbi-report.md) integr
 
 ### Enterprise-scale fleet intelligence
 
-Enterprise-scale fleet intelligence enables massive scale processing, handling millions of telemetry events per hour from hundreds of thousands of vehicles. It provides real-time operational intelligence by delivering immediate insights from vehicle location, mechanical state, and driver behavior data. By integrating ERP system data with real-time telemetry, it creates a unified data platform for comprehensive fleet management. Advanced predictive capabilities, powered by machine learning models, allow organizations to forecast vehicle behavior and optimize operations effectively.
+- **Massive scale processing** - Handle millions of telemetry events per hour from hundreds of thousands of vehicles.
+
+- **Real-time operational intelligence** - Get immediate insights from vehicle location, mechanical state, and driver behavior data.
+
+- **Unified data platform** - Integrate ERP system data with real-time telemetry for comprehensive fleet management.
+
+- **Advanced predictive capabilities** - Use ML models to forecast vehicle behavior and optimize operations.
 
 ### Automated fleet operations
 
-Automated fleet operations leverage intelligent alerting to deliver real-time push notifications based on abnormal vehicle behavior, traffic, weather, and road conditions. These operations enable automated workflows, setting up triggers for maintenance scheduling, route optimization, and driver alerts. Proactive fleet management systems use early warning mechanisms to monitor vehicle health and optimize operations. Dynamic resource allocation ensures real-time adjustments to routes, schedules, and fleet deployment, enhancing overall efficiency.
+- **Intelligent alerting** - Receive real-time push notifications based on abnormal vehicle behavior, traffic, weather, and road conditions.
+
+- **Automated workflows** - Set up triggers for maintenance scheduling, route optimization, and driver alerts.
+
+- **Proactive fleet management** - Use early warning systems for vehicle health and operational optimization.
+
+- **Dynamic resource allocation** - Enable real-time adjustments to routes, schedules, and fleet deployment.
 
 ### Advanced analytics and visualization
 
-Advanced analytics and visualization provide geospatial fleet monitoring with real-time views of the entire fleet, allowing drill-down from a global perspective to individual vehicle details. Rich business intelligence capabilities enable high-granularity fleet analysis with direct query and full historical views. Natural language processing allows users to query complex fleet data using conversational AI, while cross-system correlation links real-time events with historical operational and ERP data for deeper insights.
+- **Geospatial fleet monitoring** - Real-time view of entire fleet with drill-down from global to individual vehicle perspective.
+
+- **Rich BI capabilities** - High granularity fleet analysis with direct query and full historical views.
+
+- **Natural language processing** - Query complex fleet data using conversational AI.
+
+- **Cross-system correlation** - Link real-time events with historical operational and ERP data.
 
 ### Operational efficiency and cost optimization
 
-You achieve operational efficiency and cost optimization through predictive maintenance, which reduces downtime and maintenance costs by using advanced machine learning models. Route optimization minimizes fuel consumption and delivery times by incorporating traffic and weather data. Real-time performance monitoring maximizes fleet utilization, ensuring asset efficiency. Additionally, compliance management is streamlined with automated reporting and audit trail capabilities, ensuring adherence to regulatory requirements.
+- **Predictive maintenance** - Reduce downtime and maintenance costs through advanced ML models.
+
+- **Route optimization** - Minimize fuel consumption and delivery times using traffic and weather data.
+
+- **Fleet utilization** - Maximize asset efficiency through real-time performance monitoring.
+
+- **Compliance management** - Automated reporting and audit trail capabilities for regulatory requirements.
 
 ## Implementation considerations
 
