@@ -96,7 +96,7 @@ Aggregated usage data is correlated with energy rates to provide a comprehensive
 
 - **User behavior analytics** - Analyze charging patterns and customer preferences to enhance the user experience. Insights from these analytics can inform decisions on station placement, pricing strategies, and service offerings. For instance, understanding that users prefer faster charging options during short stops can guide investments in high-speed chargers at specific locations.
 
-### Visualize & Activate
+### Visualize and activate
 
 [Activator](../data-activator/activator-introduction.md) in Mirosoft Fabric Real-Time Intelligence triggers automated actions based on real-time data insights. This enables proactive network management and enhances operational efficiency by reducing manual intervention. Key actions include:
 
