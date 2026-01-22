@@ -278,13 +278,8 @@ Fleet managers can use [Power BI dashboards](../create-powerbi-report.md) integr
 ## Related resources
 
 - [Real-Time Intelligence documentation](../overview.md) 
-
 - [Activator for automated alerting](../data-activator/activator-introduction.md) 
-
 - [Eventstreams for real-time data ingestion](../event-streams/overview.md) 
-
 - [Advanced analytics and machine learning](../../data-science/data-science-overview.md) 
-
 - [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md) 
-
 - [OneLake data storage overview](../../onelake/onelake-overview.md) 
