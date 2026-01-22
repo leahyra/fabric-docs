@@ -20,14 +20,24 @@ You can manage large-scale charging networks where thousands of charging station
 
 The e-mobility charging network reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from thousands of charging stations and integrates energy cost rates for intelligent network management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, train, and enrich, Train, and Visualize and activate.
 
+:::image type="content" source="media/electric-mobility-diagram.png" alt-text="E-Mobility charging network architecture diagram" lightbox="media/electric-mobility-diagram.png":::
+
 1. Thousands of charging stations streaming real time data on usage and state​.
+
 1. Energy cost rates are streamed via MQTT-Eventstream integration​.
+
 1. Metadata and asset information on the various types of charging stations is collected and updated daily​.
+
 1. Events from the charging stations are enriched on the fly with the asset information providing fully curated and ready for consumption data​.
+
 1. Usage data is aggregated and correlated with the energy rates providing curated aggregated view on usage and cost​.
+
 1. Predictive ML models are trained and scored in real time allowing to predict usage and stations availability.​
+
 1. Real time dashboard providing high granularity view of the entire charging network with ability to drill down into a specific station and even a specific charge socket.​
+
 1. Rich Power BI reports providing high granularity business view directly on the real time data.​
+
 1. Generate notifications directly to field technicians in real time on malfunctions or anomalous behavior of the charging stations​.
 
 The following sections explain each operational phase in more detail.
@@ -41,7 +51,9 @@ You route real-time charging station data to [Eventstreams](../event-streams/ove
 The continuous data integration includes:
 
 - **Live charging station telemetry** - Ingest real-time data from charging stations, including usage patterns, operational state, availability, and performance metrics.
+
 - **Energy cost rates** - Stream real-time pricing data for cost optimization and billing calculations.
+
 - **Station metadata and asset information** - Collect and update daily data on charging station specifications, installation locations, maintenance history, and hardware configurations.
 
 During a typical day, a major charging network operator with 15,000 charging stations processes over 500,000 usage events. These events include charging session starts/stops, power consumption readings, connector status updates, payment transactions, and system diagnostics. Eventstreams handles this high-velocity data while applying real-time enrichment, such as adding station specifications, network topology, and maintenance schedules.
@@ -51,16 +63,23 @@ During a typical day, a major charging network operator with 15,000 charging sta
 Continuous transformations take place within [Eventhouse](../eventhouse.md), where real-time charging station data is enriched with asset information stored in [OneLake](../../onelake/onelake-overview.md). This process combines live telemetry with historical and contextual data to create fully curated, ready-for-consumption datasets. The enrichment pipeline enables immediate operational insights, including the following capabilities:
 
 - **Station specifications and capabilities** - Integrate detailed metadata about charging station types, connector configurations, and power ratings to enhance operational context.
+
 - **Location and network information** - Correlate real-time data with geographic and network topology details for precise situational awareness.
+
 - **Historical performance patterns** - Analyze past usage trends and operational metrics to identify recurring issues or optimization opportunities.
+
 - **Maintenance and service records** - Incorporate maintenance history and service schedules to predict and prevent equipment failures.
+
 - **User behavior analytics** - Leverage insights into charging habits and preferences to improve customer experience and station utilization.
 
 Aggregated usage data is correlated with energy rates to provide a comprehensive view of operational costs and network performance. This enables the following optimizations:
 
 - **Real-time cost calculations** - Perform immediate billing and pricing adjustments based on live energy consumption and rate data.
+
 - **Usage pattern analysis** - Identify peak demand periods and forecast future usage trends to optimize resource allocation.
+
 - **Network optimization** - Balance loads dynamically across the network to prevent congestion and maximize efficiency.
+
 - **Performance monitoring** - Track key performance indicators (KPIs) in real-time to detect anomalies and ensure operational excellence.
 
 ### Train
@@ -68,9 +87,13 @@ Aggregated usage data is correlated with energy rates to provide a comprehensive
  Machine learning models are built, trained, and scored in real-time using [Data Science](../../data-science/data-science-overview.md) capabilities within Microsoft Fabric. There models analyze both historical and real-time data to provide predictive insights that enhance network operations. Key predictive capabilities include:
 
 - **Usage prediction models** - Leverage historical and real-time data to forecast charging demand across different locations, times of day, and seasons. These models help operators anticipate peak usage periods, optimize resource allocation, and ensure sufficient station availability during high-demand intervals. For example, the system can predict increased demand near shopping centers during weekends or in residential areas during evening hours.
+
 - **Station availability forecasting** - Use predictive analytics to determine the optimal placement of new charging stations and assess capacity needs for existing ones. By analyzing usage trends, geographic data, and network performance, operators can identify underserved areas and strategically expand the network to maximize coverage and minimize congestion.
+
 - **Maintenance prediction** - Implement machine learning models to predict equipment failures and optimize maintenance schedules. These models analyze historical maintenance records, real-time performance metrics, and environmental factors to identify potential issues before they occur. Proactive maintenance reduces downtime, extends equipment lifespan, and minimizes operational disruptions.
+
 - **Energy cost optimization** - Develop predictive models to optimize pricing strategies based on demand patterns, energy market conditions, and grid availability. By forecasting energy costs and usage trends, operators can implement dynamic pricing to balance load, reduce operational expenses, and maximize revenue during peak periods.
+
 - **User behavior analytics** - Analyze charging patterns and customer preferences to enhance the user experience. Insights from these analytics can inform decisions on station placement, pricing strategies, and service offerings. For instance, understanding that users prefer faster charging options during short stops can guide investments in high-speed chargers at specific locations.
 
 ### Visualize & Activate
@@ -88,8 +111,11 @@ Aggregated usage data is correlated with energy rates to provide a comprehensive
 Your charging network operations teams use [Power BI dashboards](../create-powerbi-report.md) connected directly to Eventhouse and OneLake to monitor live charging patterns, revenue trends, and network performance through unified analytical views, including:
 
 - **Usage analytics** - Analyze charging patterns, customer behavior, and station utilization trends to optimize station placement and improve user experience. For example, identify peak usage times at specific locations to allocate resources effectively.
+
 - **Revenue analysis** - Track financial performance, pricing strategies, and revenue growth across the network. For instance, evaluate the impact of dynamic pricing on revenue during high-demand periods.
+
 - **Network performance** - Monitor operational efficiency, station availability, and fault detection metrics. For example, identify underperforming stations and take corrective actions to improve uptime and reliability.
+
 - **Predictive insights** - Generate forecasts for capacity planning, network expansion, and maintenance scheduling. For example, predict future demand in underserved areas to prioritize new station deployments and ensure optimal coverage.
 
 [Real-Time Dashboard](../real-time-dashboards-overview.md) provides live operational visibility with customizable views for different operational roles, enabling teams to monitor and respond to real-time events effectively. These dashboards provide the following capabilities:
@@ -106,23 +132,45 @@ Your charging network operations teams use [Power BI dashboards](../create-power
 
 ## Technical benefits and outcomes
 
-The e-mobility charging network reference architecture delivers measurable technical and operational benefits by combining real-time data processing, predictive analytics, and automated workflows across charging station operations, user management, and maintenance systems.
-
 ### E-mobility network intelligence
 
-Real-time network monitoring enables operators to oversee thousands of charging stations with subsecond response times for critical operations. Predictive analytics powered by machine learning models allow for forecasting usage patterns, station availability, and maintenance needs. By integrating charging station data with energy rates and asset information, the architecture provides a unified data platform for comprehensive network management. Granular visibility is achieved through drill-down capabilities, offering insights from a network-wide overview down to individual charging sockets.
+- **Real-time network monitoring** - Monitor thousands of charging stations with subsecond response times for critical operations.
+
+- **Predictive analytics** - Use ML models to forecast usage patterns, station availability, and maintenance needs.
+
+- **Unified data platform** - Integrate charging station data with energy rates and asset information for comprehensive network management.
+
+- **Granular visibility** - Drill-down capabilities from network overview to individual charging sockets.
 
 ### Automated network operations
 
-Intelligent alerting systems deliver real-time notifications to field technicians for addressing malfunctions and anomalous behavior. Automated workflows streamline operations by triggering maintenance scheduling, capacity optimization, and service alerts. Proactive network management leverages predictive models to optimize station availability and performance. Dynamic resource allocation further enhances operational efficiency by enabling real-time adjustments to pricing, capacity, and maintenance schedules.
+- **Intelligent alerting** - Real-time notifications to field technicians for malfunctions and anomalous behavior.
+
+- **Automated workflows** - Set up triggers for maintenance scheduling, capacity optimization, and service alerts.
+
+- **Proactive network management** - Use predictive models for station availability and performance optimization.
+
+- **Dynamic resource allocation** - Enable real-time adjustments to pricing, capacity, and maintenance schedules.
 
 ### Advanced analytics and business intelligence
 
-The architecture supports real-time cost optimization by correlating usage data with energy rates, enabling immediate cost calculations and dynamic pricing strategies. Rich business intelligence capabilities provide high-granularity analysis through direct queries on real-time charging data. Natural language processing tools allow users to query complex charging network data conversationally, while cross-system correlation links real-time events with historical patterns and asset information for deeper insights.
+- **Real-time cost optimization** - Correlate usage data with energy rates for immediate cost calculations and pricing strategies.
+
+- **Rich BI capabilities** - High granularity business analysis with direct query on real-time charging data.
+
+- **Natural language processing** - Query complex charging network data using conversational AI.
+
+- **Cross-system correlation** - Link real-time events with historical patterns and asset information.
 
 ### Operational efficiency and revenue optimization
 
-Predictive maintenance powered by machine learning reduces downtime and maintenance costs by identifying potential failures before they occur. Usage optimization ensures maximum station utilization and revenue generation through demand forecasting and dynamic pricing. Real-time availability and performance monitoring enhance customer experience and improve network performance. Additionally, energy costs are managed effectively through real-time rate correlation and consumption analytics, ensuring cost efficiency across the network.
+- **Predictive maintenance** - Reduce downtime and maintenance costs through ML-driven failure prediction.
+
+- **Usage optimization** - Maximize station utilization and revenue through demand forecasting and dynamic pricing.
+
+- **Network performance** - Enhance customer experience through real-time availability and performance monitoring.
+
+- **Cost management** - Optimize energy costs through real-time rate correlation and consumption analytics.
 
 ## Implementation considerations
 
@@ -237,13 +285,8 @@ Implementing a real-time e-mobility charging network system requires careful pla
 ## Related resources
 
 - [Real-Time Intelligence documentation](../overview.md) 
-
 - [Activator for automated alerting](../data-activator/activator-introduction.md) 
-
 - [Eventstreams for real-time data ingestion](../event-streams/overview.md) 
-
 - [Advanced analytics and machine learning](../../data-science/data-science-overview.md) 
-
 - [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md) 
-
 - [OneLake data storage overview](../../onelake/onelake-overview.md) 
