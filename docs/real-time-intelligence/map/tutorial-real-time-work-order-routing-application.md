@@ -107,7 +107,7 @@ By ingesting eventstream data into an eventhouse, you make streaming events avai
 
 1. Select **Add destination**, then **Eventhouse** from the drop-down list.
 
-  :::image type="content" source="media/tutorials/real-time-work-order-routing-application/eventstream-add-destination.png" lightbox="media/tutorials/real-time-work-order-routing-application/eventstream-add-destination.png" alt-text="Screenshot of the eventstream, showing the option to add a destination.":::
+  :::image type="content" source="media/tutorials/real-time-work-order-routing-application/event-stream-add-destination.png" lightbox="media/tutorials/real-time-work-order-routing-application/event-stream-add-destination.png" alt-text="Screenshot of the eventstream, showing the option to add a destination.":::
 
 1. Fill out the details requested in the Eventhouse destination configuration pane as follows, then select **Save**:
     1. **Data ingestion mode**: Set to **Event processing before ingestion**.
@@ -123,7 +123,7 @@ By ingesting eventstream data into an eventhouse, you make streaming events avai
 
 1. Select **Publish** to publish your new eventstream.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/publish-eventstream.png" lightbox="media/tutorials/real-time-work-order-routing-application/publish-eventstream.png" alt-text="A screenshot showing the Eventstream designer showing a flow with CustomEndpoint-Workorders source connected to a Workorders-stream node, which connects to Workorders-Eventhouse destination. The Publish button is highlighted in the top right corner of the toolbar. An Edit mode banner indicates changes go live once published.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/publish-event-stream.png" lightbox="media/tutorials/real-time-work-order-routing-application/publish-event-stream.png" alt-text="A screenshot showing the Eventstream designer showing a flow with CustomEndpoint-Workorders source connected to a Workorders-stream node, which connects to Workorders-Eventhouse destination. The Publish button is highlighted in the top right corner of the toolbar. An Edit mode banner indicates changes go live once published.":::
 
 ### Get required SAS key authentication keys
 
