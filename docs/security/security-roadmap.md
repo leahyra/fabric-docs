@@ -11,60 +11,16 @@ ms.topic: concept-article
 
 # Fabric security features support roadmap
 
-Microsoft Fabric supports various security features across different workloads and items. This roadmap tracks the availability of **Workspace private links**, **Customer managed keys**, and **Outbound access protection** for each Fabric experience and item, including current support status and planned release timelines.
+Microsoft Fabric supports various security features across different workloads and items. This page is continuously updated with the availability of the following security features for Fabric items, including current support status and planned release timelines:
 
-In the following table, a checkmark means the item is supported with the security feature. If a Fabric item isn't listed in this table, support for these security features is not currently planned or announced.
+* [Workspace private links](security-workspace-level-private-links-overview.md)
+* [Customer managed keys](workspace-customer-managed-keys.md)
+* [Outbound access protection](workspace-outbound-access-protection-overview.md)
 
-| Fabric Experience | Fabric Item | Workspace private links: Preview | Workspace private links: GA | Customer managed keys: Preview | Customer managed keys: GA | Outbound access protection: Preview | Outbound access protection: GA |
-|--|--|--|--|--|--|--|--|
-| Power BI | Power BI Reports | - | - | - | - | Q1 2026 | Q2 2026 |
-| Power BI | Semantic Model | - | - | - | - | Q1 2026 | Q2 2026 |
-| OneLake | Shortcut | ✓ | ✓ | - | - | - | - |
-| Data Engineering | Lakehouse | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Data Engineering | Lakehouse Shortcuts | ✓ | ✓ | - | - | Q4 2025 | Q1 2026 |
-| Data Engineering | Lakehouse Sql Endpoint | ✓ | ✓ | - | ✓ | ✓ | ✓ |
-| Data Engineering | Notebook | ✓ | ✓ | - | ✓ | ✓ | ✓ |
-| Data Engineering | Spark Job Definition | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Data Engineering | Environment | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Data Engineering | Lakehouse with Schemas |  |  | ✓ | ✓ | Q4 2025 | Q4 2025 |
-| Data Factory | Default Semantic Model | Q4 2025 | Q4 2025 | - | - | Q4 2025 | Q4 2025 |
-| Data Factory | Pipeline | ✓ | ✓ | ✓ | ✓ | Q4 2025 | Q1 2026 |
-| Data Factory | Dataflows Gen1 | Not supported | Not supported | Not supported | Not supported | Not supported | Not supported |
-| Data Factory | Dataflows Gen2 | - | - | ✓ | ✓ | Q4 2025 | Q1 2026 |
-| Data Factory | Copy Jobs | ✓ | ✓ | ✓ | ✓ | Q4 2025 | Q1 2026 |
-| Data Factory | Mounted Azure Data Factory | ✓ | ✓ | - | - | - | - |
-| Data Factory | Vnet data gateways | ✓ | ✓ | - | - | Q4 2025 | Q1 2026 |
-| Data Factory | on-premises data gateways | done for Pipelines/Copy Job; Pending Dataflow Gen2 | done for Pipelines/Copy Job; Pending Dataflow Gen2 | - | - | Q4 2025 | Q1 2026 |
-| Data Warehouse | SQL Endpoint | ✓ | ✓ | Not supported | ✓ | ✓ | ✓ |
-| Data Warehouse | Warehouse | ✓ | ✓ | Not supported | ✓ | ✓ | ✓ |
-| Data Warehouse | Warehouse with EDPE | Q1 2026 | Q1 2026 | Not supported | Not supported | - | - |
-| Data Science | ML Model | ✓ | ✓ | ✓ | ✓ | Q1 2026 | Q2 2026 |
-| Data Science | Experiment | ✓ | ✓ | ✓ | ✓ | Q1 2026 | Q2 2026 |
-| Data Science | Data Agent | ✓ | Q4 2025 | - | - | Q1 2026 | Q2 2026 |
-| Real-Time Intelligence | KQL Queryset | ✓ | ✓ | Q4 2025 | 2026 | - | - |
-| Real-Time Intelligence | Activator | ✓ | Q4 2025 | - | - | - | - |
-| Real-Time Intelligence | Eventhouse/KQL DB | ✓ | ✓ | Q4 2025 | 2026 | Q1 2026 | Q2 2026 |
-| Real-Time Intelligence | Eventstream | ✓ | ✓ | Q1 2026 | - | Q1 2026 | Q2 2026 |
-| Real-Time Intelligence | Real-Time Dashboards | ✓ | ✓ | Q4 2025 | 2026 | - | - |
-| Mirroring | Mirrored Azure SQL Database | Not supported | Not supported | - | - | Q4 2025 | Q1 2026 |
-| Mirroring | Mirrored Azure SQL Managed Instance | Not supported | Not supported | - | - | Q4 2025 | Q1 2026 |
-| Mirroring | Mirrored Snowflake | - | - | - | - | Q4 2025 | Q1 2026 |
-| Mirroring | Mirrored SQL Server (Windows/Linux on-premises) | ✓ | ✓ | - | - | Q4 2025 | Q1 2026 |
-| Mirroring | Mirrored Azure Cosmos DB | ✓ | ✓ | - | - | Q4 2025 | Q1 2026 |
-| Mirroring | Mirrored Azure Database for PostgreSQL | Not supported | Not supported | - | - | Q4 2025 | Q1 2026 |
-| Mirroring | Mirrored Google Bigquery | - | - | - | - | Q4 2025 | Q1 2026 |
-| Mirroring | Mirrored Oracle | Q1 2026 | Q1 2026 | - | - | Q4 2025 | Q1 2026 |
-| Native Databases | Sql DB in Fabric | Q1 2026 | TBD | Q4 2025 | - | - | - |
-| Native Databases | Cosmos DB | Q1 2026 | Q1 2026 | Q4 2026 | - | Q1 2026 | Q2 2026 |
-| Developer Experience | API for GraphQL | - | - | ✓ | ✓ | - | - |
-| Developer Experience | Deployment Pipelines | Q1 2026 | Q1 2026 | - | - | Q4 2025 | Q4 2025 |
-| Developer Experience | Git Integration | ✓ | ✓ | - | - | ✓ | ✓ |
-| Developer Experience | Variable Libraries | ✓ | ✓ | - | - | - | - |
-| Industry Solutions | Healthcare data solutions | - | - | ✓ | ✓ | - | - |
-| Industry Solutions | Sustainability Solutions | - | - | ✓ | ✓ | - | - |
+The following table shows the support status for each Fabric item and whether it's currently in preview or generally available (GA). If a release is planned, the date is indicated. For items not listed or showing a dash (-), support isn't currently planned or announced.
 
 | Fabric Experience | Fabric Item | Workspace private links | Customer managed keys | Outbound access protection |
-|--|--|--|--|--|
+|--|--|:--:|:--:|:--:|
 | Power BI | Power BI Reports | - | - | Q1 2026 (Preview), Q2 2026 (GA) |
 | Power BI | Semantic Model | - | - | Q1 2026 (Preview), Q2 2026 (GA) |
 | OneLake | Shortcut | GA | - | - |
@@ -110,3 +66,11 @@ In the following table, a checkmark means the item is supported with the securit
 | Developer Experience | Variable Libraries | GA | - | - |
 | Industry Solutions | Healthcare data solutions | - | GA | - |
 | Industry Solutions | Sustainability Solutions | - | GA | - |
+
+## Related links
+
+- To learn about the new features and documentation improvements for Microsoft Fabric, see [What's new in Microsoft Fabric](whats-new.md).
+- To follow the latest in Fabric news and features, see the [Microsoft Fabric Updates Blog](https://blog.fabric.microsoft.com/).
+- For community, marketing, case studies, and industry news, see the [Microsoft Fabric Blog](https://www.microsoft.com/microsoft-fabric/blog/).
+- Follow the latest in Power BI at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
+- For older updates, review the [Microsoft Fabric What's New archive](whats-new-archive.md).
