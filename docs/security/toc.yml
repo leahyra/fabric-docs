@@ -8,7 +8,7 @@ items:
   - name: Security fundamentals
     href: security-fundamentals.md 
   - name: Security features roadmap
-    href: security-features-roadmap.md
+    href: security-roadmap.md
   - name: Power BI security
     href: power-bi-security.md     
   - name: Permission model
