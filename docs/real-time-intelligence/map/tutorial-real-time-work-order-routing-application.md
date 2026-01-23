@@ -132,13 +132,13 @@ You need the *Event hub name* and *Connection string-primary key* values from th
 1. Select the custom endpoint source tile you just added.
 1. In the **Details** pane, select **SAS Key Authentication**.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/select-ssa-key.png" lightbox="media/tutorials/real-time-work-order-routing-application/select-ssa-key.png" alt-text="A screenshot showing the Eventstream designer with the SAS Key Authentication option highlighted in the details pane.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/select-key.png" lightbox="media/tutorials/real-time-work-order-routing-application/select-key.png" alt-text="A screenshot showing the Eventstream designer with the SAS Key Authentication option highlighted in the details pane.":::
 
 1. Copy the following two values and save to be used in your notebook code:
     * **Event hub name**: Used for the **EVENT_HUB_NAME** variable.
     * **Connection string-primary key**: Used for the **CONNECTION_STR** variable.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/ssa-key-selected.png" lightbox="media/tutorials/real-time-work-order-routing-application/ssa-key-selected.png" alt-text="A screenshot showing the Eventstream designer with the SAS Key Authentication option selected in the details pane highlighting the Event hub name and Connection string-primary key fields that are used in the notebook code of a later step in this tutorial.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/key-selected.png" lightbox="media/tutorials/real-time-work-order-routing-application/key-selected.png" alt-text="A screenshot showing the Eventstream designer with the SAS Key Authentication option selected in the details pane highlighting the Event hub name and Connection string-primary key fields that are used in the notebook code of a later step in this tutorial.":::
 
 ## Simulate real‑time ingestion using a notebook
 
@@ -285,7 +285,7 @@ In this section, you create a Fabric Maps map and use the previously created KQL
 
 The queryset results are now displayed in the updated map.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/work-order-querystring-layer.png" lightbox="media/tutorials/real-time-work-order-routing-application/work-order-querystring-layer.png" alt-text="A screenshot showing Microsoft Fabric Maps interface displaying a map of Vienna, Austria with red circular markers indicating work order locations. The Explorer pane on the left shows Lakehouse and Eventhouse tabs with the Eventhouse tab selected, revealing a KQL database tree containing Workorders-Eventhouse and WorkorderQS entries. The Data layers panel in the upper left of the map shows WorkorderQS layer with a visibility toggle and options menu.":::
+:::image type="content" source="media/tutorials/real-time-work-order-routing-application/work-order-query-string-layer.png" lightbox="media/tutorials/real-time-work-order-routing-application/work-order-query-string-layer.png" alt-text="A screenshot showing Microsoft Fabric Maps interface displaying a map of Vienna, Austria with red circular markers indicating work order locations. The Explorer pane on the left shows Lakehouse and Eventhouse tabs with the Eventhouse tab selected, revealing a KQL database tree containing Workorders-Eventhouse and WorkorderQS entries. The Data layers panel in the upper left of the map shows WorkorderQS layer with a visibility toggle and options menu.":::
 
 ## Generate an optimized multi‑stop route with the Azure Maps Route Directions API
 
@@ -412,7 +412,7 @@ To complete this section, you need an Azure account with an Azure Maps account a
 1. Select the **Save as** button in the menu and save the notebook as **RouteOptimizations**.
 1. Run the notebook code. This creates a new file named **optimized_route.geojson** in the **File** directory of your lakehouse.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/optimized-route-geojson.png" lightbox="media/tutorials/real-time-work-order-routing-application/optimized-route-geojson.png" alt-text="A screenshot of the Microsoft Fabric interface showing a notebook code cell on the right side with Python code that retrieves route data and writes a GeoJSON file. The Explorer pane on the left displays OneLake with WorkorderLocation expanded showing Tables and Files folders. The Files folder contains WorkorderLocation.csv and  optimized_route.geojson highlighted with a red box indicating the newly created output file. The center Files panel shows both files with optimized_route.geojson also highlighted. The notebook output at the bottom displays a success message stating Transformed Directions GeoJSON waypoints carry properties.optimizedIndex written to Files/optimized_route.geojson with execution time of 5 sec 750 ms.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/optimized-route-file.png" lightbox="media/tutorials/real-time-work-order-routing-application/optimized-route-file.png" alt-text="A screenshot of the Microsoft Fabric interface showing a notebook code cell on the right side with Python code that retrieves route data and writes a GeoJSON file. The Explorer pane on the left displays OneLake with WorkorderLocation expanded showing Tables and Files folders. The Files folder contains WorkorderLocation.csv and  optimized_route.geojson highlighted with a red box indicating the newly created output file. The center Files panel shows both files with optimized_route.geojson also highlighted. The notebook output at the bottom displays a success message stating Transformed Directions GeoJSON waypoints carry properties.optimizedIndex written to Files/optimized_route.geojson with execution time of 5 sec 750 ms.":::
 
 Once completed, a new map layer appears in your Fabric Maps map created in the previous section.
 
