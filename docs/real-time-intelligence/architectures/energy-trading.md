@@ -6,7 +6,7 @@ ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: example-scenario
 ms.subservice: rti-core
-ms.date: 01/19/2026
+ms.date: 01/25/2026
 ms.search.form: Architecture
 ---
 
@@ -20,16 +20,28 @@ You can manage large-scale energy trading operations where thousands of energy g
 
 The energy trading management reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from energy generation facilities, consumption networks, and trading markets for intelligent energy trading management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform, and enrich, Train, and Visualize and activate.
 
+:::image type="content" source="media/energy-trading-diagram.png" alt-text="Energy trading management architecture diagram" lightbox= "media/energy-trading-diagram.png":::
+
 1. Energy manufacturing IoT events stream with subsecond latency from wind turbines and power plants.
+
 1. Events from the energy grid stream in real time.
+
 1. CRM contextualization data, such as smart meter ID and address, are pushed via MQTT and collected by Eventstream.
+
 1. Inventory and asset information sync from ERP using Data Factory.
+
 1. The source data from energy producer is normalized through a Medallion Architecture in Eventhouse and aggregated to create holistic energy generation picture.
+
 1. Producer data is then contextualized with the asset metadata from the ERP system.
-1. Energy grid consumption data is contextualized with customer smarts meters metadata, aggregated and correlated with the energy generation data.
-1. Build, train and score machine learning models in real time, to better predict potential energy deficiencies and spikes.
+
+1. Energy grid consumption data is contextualized with customer smarts meters metadata, aggregated, and correlated with the energy generation data.
+
+1. Build, train, and score machine learning models in real time, to better predict potential energy deficiencies and spikes.
+
 1. Generate real time notifications on energy spikes and forecasting of potential energy deficiencies.
+
 1. Real time dashboards provide rich, high granularity view of the entire electric grid with low latency and ability to drill down from overall grid view to a specific meter consumption.
+
 1. Rich Power BI reports provide full business views on the energy generation and consumption rates.
 
 ## Operational phases
@@ -61,16 +73,23 @@ A major energy trading company that manages 150,000 smart meters and 500 energy 
 Continuous transformations take place within [Eventhouse](../eventhouse.md), where real-time energy generation data from producers is enriched with asset metadata stored in [OneLake](../../onelake/onelake-overview.md). This enrichment process creates fully curated, ready-for-consumption trading data by combining real-time telemetry with the following information:
 
 - **Generation facility specifications** - Trading capacity baselines and operational benchmarks help you compare real-time generation metrics against expected performance, enabling the identification of inefficiencies or anomalies.
+
 - **Location context** - Facility locations and market connection details provide insights into how geographic and market factors influence energy generation and trading opportunities.
+
 - **Historical production patterns** - Long-term generation trends and trading performance history help you detect anomalies, forecast future production, and optimize trading strategies.
+
 - **Asset operational records** - Maintenance history and market participation data ensure that trading decisions align with current operational conditions and past performance.
+
 - **Weather correlation analytics** - Integration of weather data, such as wind patterns and solar conditions, enables accurate forecasting for renewable energy generation and trading planning.
 
 You can correlate aggregated energy grid consumption data with customer smart meter metadata and the enriched generation data to provide a unified view of supply and demand. This real-time processing delivers the following capabilities:
 
 - **Real-time market balancing** - Immediate correlation of supply and demand ensures optimal trading decisions and market positioning.
+
 - **Customer portfolio analysis** - Detailed insights into consumption patterns enable tailored trading strategies and portfolio optimization.
+
 - **Market optimization** - Load distribution analysis identifies trading opportunities and enhances market efficiency.
+
 - **Trading arbitrage** - Intelligent market positioning and profit margin optimization maximize trading profitability while minimizing risks.
 
 ### Train 
@@ -81,7 +100,7 @@ Build, train, and score machine learning models in real time by using [Data Scie
 
 - **Market spike forecasting** - Predict price volatility in energy markets by analyzing consumption trends, generation patterns, and external factors such as weather conditions. This forecasting helps optimize trading strategies and mitigate risks.
 
-- **Portfolio optimization** - Leverage predictive analytics to anticipate market movements and automate trading strategies. Optimize energy allocation and market participation to maximize returns while minimizing operational costs.
+- **Portfolio optimization** - Use predictive analytics to anticipate market movements and automate trading strategies. Optimize energy allocation and market participation to maximize returns while minimizing operational costs.
 
 - **Renewable energy forecasting** - Predict wind and solar energy generation by using weather data and historical performance patterns. These forecasts support efficient trading planning and renewable energy integration into the market.
 
@@ -119,25 +138,49 @@ Your traders use [Power BI dashboards](../create-powerbi-report.md) connected di
 
 - **Trading metrics** - Track real-time key performance indicators (KPIs) such as market position, profit margins, and trading performance. These metrics provide actionable insights for maximizing profitability, minimizing risks, and maintaining competitive advantage in fast-paced energy markets.
 
-[KQL Copilot](../copilot-writing-queries.md) allows you to use natural language queries to monitor energy trading operations, analyze real-time energy generation and consumption data, and identify potential market opportunities or operational issues. You can leverage KQL Copilot to aggregate and evaluate performance metrics from wind turbines, power plants, and smart meters, enabling deeper insights into energy generation efficiency, grid performance, and trading optimization. This tool simplifies complex data exploration, helping you make informed decisions to enhance energy trading strategies and market positioning.
+[KQL Copilot](../copilot-writing-queries.md) allows you to use natural language queries to monitor energy trading operations, analyze real-time energy generation and consumption data, and identify potential market opportunities or operational issues. You can use KQL Copilot to aggregate and evaluate performance metrics from wind turbines, power plants, and smart meters, enabling deeper insights into energy generation efficiency, grid performance, and trading optimization. This tool simplifies complex data exploration, helping you make informed decisions to enhance energy trading strategies and market positioning.
 
 ## Technical benefits and outcomes
 
 ### Energy trading intelligence
 
-Energy trading intelligence enables real-time market monitoring, providing subsecond response times for critical trading operations. Predictive analytics powered by machine learning models forecast market deficiencies, price spikes, and trading optimization opportunities. A unified data platform integrates generation data with consumption patterns and market information, offering comprehensive trading management. Granular visibility allows drill-down capabilities from a market overview to individual smart meter consumption, facilitating detailed portfolio analysis.
+- **Real-time market monitoring** - Monitor entire energy trading portfolio with subsecond response times for critical trading operations.
+
+- **Predictive analytics** - Use ML models to forecast market deficiencies, price spikes, and trading optimization opportunities.
+
+- **Unified data platform** - Integrate generation data with consumption patterns and market information for comprehensive trading management.
+
+- **Granular visibility** - Drill-down capabilities from market overview to individual smart meter consumption for portfolio analysis.
 
 ### Automated trading operations
 
-Automated trading operations leverage intelligent alerting to deliver real-time notifications for market spikes, deficiencies, and trading opportunities. Automated workflows enable triggers for trading execution, portfolio optimization, and market response protocols. Proactive trading management uses predictive models to enhance market positioning and portfolio optimization. Dynamic resource allocation supports real-time adjustments to trading strategies, generation scheduling, and market participation.
+- **Intelligent alerting** - Real-time notifications for market spikes, deficiencies, and trading opportunities.
+
+- **Automated workflows** - Set up triggers for trading execution, portfolio optimization, and market response protocols.
+
+- **Proactive trading management** - Use predictive models for market positioning and portfolio optimization.
+
+- **Dynamic resource allocation** - Enable real-time adjustments to trading strategies, generation scheduling, and market participation.
 
 ### Advanced analytics and business intelligence
 
-Advanced analytics and business intelligence provide real-time trading optimization by correlating generation capacity with market demand, ensuring immediate trading and profitability improvements. Rich business intelligence capabilities enable high granularity analysis with direct query on real-time energy trading data. Natural language processing allows users to query complex energy trading scenarios using conversational AI. Cross-system correlation links real-time events with historical patterns, customer data, and market information, delivering actionable insights.
+- **Real-time trading optimization** - Correlate generation capacity with market demand for immediate trading and profitability optimization.
+
+- **Rich BI capabilities** - High granularity business analysis with direct query on real-time energy trading data.
+
+- **Natural language processing** - Query complex energy trading scenarios using conversational AI.
+
+- **Cross-system correlation** - Link real-time events with historical patterns, customer data, and market information.
 
 ### Operational efficiency and trading optimization
 
-Operational efficiency and trading optimization are achieved through predictive trading management, which reduces market risks and improves profitability by using machine learning-driven deficiency and spike prediction. Portfolio optimization maximizes trading efficiency and renewable energy utilization through intelligent forecasting and automation. Real-time monitoring and predictive analytics enhance trading performance and market positioning. Cost management is optimized through predictive market management and efficient portfolio strategies, ensuring profitability and operational excellence.
+- **Predictive trading management** - Reduce market risks and improve profitability through ML-driven deficiency and spike prediction.
+
+- **Portfolio optimization** - Maximize trading efficiency and renewable energy utilization through intelligent forecasting and automation.
+
+- **Trading performance** - Enhance market positioning through real-time monitoring and predictive analytics.
+
+- **Cost management** - Optimize trading costs through predictive market management and efficient portfolio strategies.
 
 ## Implementation considerations
 
@@ -189,7 +232,7 @@ Operational efficiency and trading optimization are achieved through predictive 
 
 - **Capacity management**: Right-size Fabric capacity based on energy trading network size and data volume. Implement autoscaling for peak trading periods, and cost optimization during low-activity periods.
 
-- **Data lifecycle management**: Automatically archive older energy trading data to lower-cost storage tiers. Align retention policies with regulatory requirements, and delete non-essential trading data.
+- **Data lifecycle management**: Automatically archive older energy trading data to lower-cost storage tiers. Align retention policies with regulatory requirements, and delete nonessential trading data.
 
 - **Trading cost optimization**: Correlate generation patterns with market demand in real time to minimize operational costs and maximize trading profitability.
 
@@ -251,13 +294,8 @@ Operational efficiency and trading optimization are achieved through predictive 
 ## Related resources
 
 - [Real-Time Intelligence documentation](../overview.md) 
-
 - [Activator for automated alerting](../data-activator/activator-introduction.md) 
-
 - [Eventstreams for real-time data ingestion](../event-streams/overview.md) 
-
 - [Advanced analytics and machine learning](../../data-science/data-science-overview.md) 
-
 - [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md) 
-
-- [OneLake data storage overview](../../onelake/onelake-overview.md) 
+- [OneLake data storage overview](../../onelake/onelake-overview.md)
