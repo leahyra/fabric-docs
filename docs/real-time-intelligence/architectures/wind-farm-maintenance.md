@@ -6,7 +6,7 @@ ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: example-scenario
 ms.subservice: rti-core
-ms.date: 01/18/2026
+ms.date: 01/25/2026
 ms.search.form: Architecture
 ---
 
@@ -20,16 +20,28 @@ You can manage large-scale wind farms where hundreds or thousands of wind turbin
 
 The wind farm maintenance reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from wind turbines and integrates weather monitoring data for intelligent maintenance management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate.
 
+:::image type="content" source="media/wind-farm-diagram.png" alt-text="Wind farm maintenance architecture diagram" lightbox="media/wind-farm-diagram.png":::
+
 1. IoT events from wind turbines are transmitted with sub-second latency through Azure Eventhub to Eventstreams​.
+
 1. Regional weather monitoring devices provide real-time data on wind speed, direction, temperature, and humidity, which are sent to MQTT broker and subsequently gathered by Eventstream​.
+
 1. Asset metadata, including rotor blade generators, is synchronized from the ERP system to OneLake using Data Factory​.
+
 1. Incoming telemetry is directed to Eventhouse, where vast amounts of data are processed in sub-latency seconds, aiding in uncovering turbine related insights​.
+
 1. Turbine data is enhanced and contextualized using asset metadata, resulting in organized tables that are ready for straightforward access​.
+
 1. Shortcuts are established in OneLake for maintaining long-term aggregated logs​.
+
 1. Advanced machine learning models are trained and evaluated in real time, facilitating the detection and prediction of maintenance issues​.
+
 1. Our ontology is defined by entities and semantic relationships that utilize aggregated data from OneLake to create a unified and digital representation of physical assets​.
+
 1. Real time dashboard is used to provide high granularity view of all incoming telemetry with easy correlation to the asset trends​.
+
 1. Power BI generates high level reports providing yearly and monthly view on power generation and other business insights.
+
 1. Activator is triggered to generate real time notifications on anomalies and in-flight data​.
 
 The following sections explain each operational phase in detail.
@@ -63,16 +75,23 @@ Collect and update metadata and asset information on the various types of wind t
 Continuous transformations take place within [Eventhouse](../eventhouse.md), where real-time telemetry data from wind turbines is enriched with asset metadata stored in [OneLake](../../onelake/onelake-overview.md). This enrichment process creates fully curated, ready-for-consumption data by combining telemetry with the following information:
 
 - **Turbine specifications** - Rotor blade and generator performance baselines help you compare real-time telemetry against expected operational benchmarks. These baselines help you identify deviations that may indicate potential problems or inefficiencies.
+
 - **Location context** - Installation sites and environmental conditions, such as altitude, terrain, and proximity to other turbines, provide a comprehensive understanding of how location impacts turbine performance and maintenance needs.
+
 - **Historical patterns** - Long-term performance trends and operational benchmarks help you detect anomalies, predict future performance, and identify opportunities for optimization based on historical data.
+
 - **Maintenance records** - Service history and scheduled activities ensure that maintenance plans align with current operational conditions and help you track the effectiveness of past maintenance efforts.
+
 - **Weather analytics** - Correlation of telemetry with real-time environmental data, such as wind speed, direction, and temperature, enables dynamic adjustments to turbine operations for optimal performance under varying weather conditions.
 
 Aggregated telemetry data is correlated with weather conditions, enabling a curated view of performance patterns and operational efficiency. This real-time processing provides the following capabilities:
 
 - **Performance optimization** - Immediate calculations for turbine efficiency and power generation adjustments ensure that turbines operate at peak performance, maximizing energy output and reducing wear and tear.
+
 - **Trend analysis** - Identification of peak performance patterns and energy demand forecasting helps operators plan for high-demand periods and optimize energy distribution strategies.
+
 - **Predictive maintenance** - Optimized scheduling and resource allocation based on operational insights reduce downtime and maintenance costs by addressing potential problems before they escalate into failures.
+
 - **Environmental impact analysis** - Correlation of weather conditions with turbine performance allows for adaptive operations that minimize environmental impact while maintaining energy efficiency. For example, adjusting turbine speeds during extreme weather events reduces stress on components.
 
 ### Train 
@@ -80,9 +99,13 @@ Aggregated telemetry data is correlated with weather conditions, enabling a cura
 Machine learning models are built, trained, and scored in real time by using [Data Science](../../data-science/data-science-overview.md) capabilities to predict maintenance needs and turbine performance. These models continuously learn from incoming telemetry data, weather conditions, and historical performance patterns to provide actionable insights for wind farm operations. Key predictive capabilities include: 
 
 - **Maintenance prediction models** - Use advanced machine learning algorithms to forecast potential equipment failures by analyzing historical maintenance records, real-time telemetry, and environmental conditions. These models enable proactive scheduling of service activities, reducing downtime and extending the lifespan of critical components.
+
 - **Performance optimization** - Leverage predictive analytics to determine the optimal operational settings for turbines based on real-time weather data, such as wind speed, direction, and temperature. This ensures maximum energy output while minimizing wear and tear on turbine components.
+
 - **Power generation forecasting** - Employ machine learning models to predict energy output under varying weather conditions and operational scenarios. These forecasts help operators plan grid integration, manage energy distribution, and optimize power trading strategies.
+
 - **Environmental impact optimization** - Analyze weather patterns and operational data to identify strategies that minimize the environmental impact of wind farm operations. For example, adjust turbine speeds during extreme weather events to reduce stress on components and mitigate noise pollution.
+
 - **Asset lifecycle management** - Utilize predictive models to monitor equipment degradation patterns and anticipate replacement needs. This approach supports long-term planning for asset upgrades, ensuring cost-effective maintenance and sustained operational efficiency.
 
 ### Visualize and activate 
@@ -90,15 +113,21 @@ Machine learning models are built, trained, and scored in real time by using [Da
 [Activator](../data-activator/activator-introduction.md) in Fabric Real-Time Intelligence generates real-time notifications to maintenance teams for wind turbine malfunctions and anomalous behavior. With this real-time awareness and automated responses, the system reduces manual intervention and helps prevent delays in addressing critical issues. Key alerting capabilities include:
 
 - **Immediate fault response** - Automatic alerts for turbine malfunctions or performance degradation, such as abnormal vibration patterns, overheating, or unexpected power output drops. These alerts enable maintenance teams to quickly identify and address problems, minimizing downtime and preventing further damage to critical components.
+
 - **Proactive maintenance** - Preventive notifications are generated based on predictive analytics, which analyze historical data, real-time telemetry, and environmental conditions. For example, alerts can be triggered when a turbine's rotor blade shows signs of wear or when generator performance deviates from expected baselines, allowing operators to schedule maintenance before failures occur.
+
 - **Performance optimization** - Real-time adjustments are made to optimize farm efficiency and power generation. For instance, turbines can be dynamically reconfigured to adjust blade angles or rotational speeds based on wind conditions, ensuring maximum energy output while reducing mechanical stress and wear.
+
 - **Safety alerts** - Immediate notifications are sent for safety-critical problems requiring urgent response, such as extreme weather conditions, structural integrity concerns, or electrical faults. These alerts ensure that operators can take swift action to shut down turbines, secure the site, or deploy emergency response teams to protect personnel and equipment.
 
 Your wind farm operations teams use [Power BI dashboards](../create-powerbi-report.md) connected directly to Eventhouse and OneLake to monitor live turbine performance, maintenance trends, and energy generation through unified analytical views, including:
 
 - **Performance analytics** - Generate detailed reports on power generation patterns, including comparisons across different regions, turbines, and time periods. For example, analyze seasonal variations in energy output to identify trends and optimize turbine operations during peak demand periods.
+
 - **Revenue analysis** - Track financial performance by correlating power generation data with energy market prices. For instance, evaluate the profitability of turbines operating in high-demand regions and identify opportunities to maximize revenue through dynamic energy trading strategies.
+
 - **Maintenance performance** - Measure operational efficiency by analyzing equipment availability and downtime metrics. For example, assess the impact of predictive maintenance schedules on reducing unplanned outages and improving overall turbine reliability.
+
 - **Predictive insights** - Provide forecasting reports for maintenance planning and capacity optimization. For instance, predict the likelihood of turbine component failures based on historical performance data and environmental conditions, enabling proactive resource allocation and minimizing operational disruptions.
 
 [Real-Time Dashboard](../real-time-dashboards-overview.md) provides live operational visibility with customizable views for different operational roles, enabling teams to monitor and respond to real-time events effectively. These dashboards provide the following capabilities:
@@ -119,19 +148,43 @@ The wind farm maintenance reference architecture delivers measurable technical a
 
 ### Wind farm intelligence
 
-Real-time farm monitoring enables the management of hundreds or thousands of wind turbines with subsecond response times for critical maintenance operations. Predictive analytics leverage machine learning models to forecast maintenance needs, optimize performance, and predict power generation patterns. A unified data platform integrates turbine data with weather conditions and asset information, providing comprehensive farm management capabilities. Granular visibility allows for drill-down insights, ranging from a high-level farm overview to detailed information on individual turbine components.
+- **Real-time farm monitoring** - Monitor hundreds or thousands of wind turbines with subsecond response times for critical maintenance operations.
+
+- **Predictive analytics** - Use ML models to forecast maintenance needs, performance optimization, and power generation patterns.
+
+- **Unified data platform** - Integrate turbine data with weather conditions and asset information for comprehensive farm management.
+
+- **Granular visibility** - Drill-down capabilities from farm overview to individual turbine components.
 
 ### Automated maintenance operations
 
-Intelligent alerting provides real-time notifications to maintenance teams for equipment malfunctions and anomalous behavior. Automated workflows streamline triggers for maintenance scheduling, performance optimization, and safety alerts. Proactive farm management uses predictive models to ensure equipment availability and optimize performance. Dynamic resource allocation enables real-time adjustments to maintenance schedules, power generation, and operational strategies, ensuring efficient farm operations.
+- **Intelligent alerting** - Real-time notifications to maintenance teams for equipment malfunctions and anomalous behavior.
+
+- **Automated workflows** - Set up triggers for maintenance scheduling, performance optimization, and safety alerts.
+
+- **Proactive farm management** - Use predictive models for equipment availability and performance optimization.
+
+- **Dynamic resource allocation** - Enable real-time adjustments to maintenance schedules, power generation, and operational strategies.
 
 ### Advanced analytics and business intelligence
 
-Real-time performance optimization correlates turbine data with weather conditions to enable immediate efficiency calculations and operational strategies. Rich business intelligence capabilities provide high-granularity analysis with direct queries on real-time turbine data. Natural language processing allows users to query complex wind farm data using conversational AI, while cross-system correlation links real-time events with historical patterns and asset information for deeper insights.
+- **Real-time performance optimization** - Correlate turbine data with weather conditions for immediate efficiency calculations and operational strategies.
+
+- **Rich BI capabilities** - High granularity business analysis with direct query on real-time turbine data.
+
+- **Natural language processing** - Query complex wind farm data using conversational AI.
+
+- **Cross-system correlation** - Link real-time events with historical patterns and asset information. 
 
 ### Operational efficiency and power generation optimization
 
-Predictive maintenance reduces downtime and maintenance costs by leveraging machine learning-driven failure prediction. Performance optimization maximizes power generation and efficiency through weather-based forecasting and dynamic adjustments. Enhanced farm performance is achieved through real-time monitoring and performance analytics, while cost management is improved by optimizing maintenance costs through predictive scheduling and resource allocation.
+- **Predictive maintenance** - Reduce downtime and maintenance costs through ML-driven failure prediction.
+
+- **Performance optimization** - Maximize power generation and efficiency through weather-based forecasting and dynamic adjustments.
+
+- **Farm performance** - Enhance operational efficiency through real-time monitoring and performance analytics.
+
+- **Cost management** - Optimize maintenance costs through predictive scheduling and resource allocation.
 
 ## Implementation considerations
 
@@ -174,13 +227,17 @@ Predictive maintenance reduces downtime and maintenance costs by leveraging mach
 **Operational monitoring**:
 
 - **System health dashboards**: Use real-time monitoring of MQTT-Eventstream integration for weather data, turbine telemetry throughput, and Activator notification delivery with automated alerting for system anomalies.
+
 - **Data quality monitoring**: Continuously validate incoming turbine data with alerting for turbine communication failures, invalid performance metrics, or corrupted weather data.
+
 - **Performance metrics**: Track data ingestion latency from turbines, query response times for real-time dashboards, and ML model prediction accuracy with SLA monitoring.
 
 **Cost optimization**:
 
 - **Capacity management**: Right-size Fabric capacity based on wind farm size and data volume. Implement autoscaling for severe weather periods, and cost optimization during low-activity periods.
+
 - **Data lifecycle management**: Automate archival of older turbine data to lower-cost storage tiers. Align retention policies with business and regulatory requirements, and delete non-essential telemetry data.
+
 - **Performance cost optimization**: Correlate performance patterns with weather conditions in real time to minimize operational costs and maximize power generation.
 
 ## Next steps
@@ -236,15 +293,9 @@ Predictive maintenance reduces downtime and maintenance costs by leveraging mach
 ## Related resources
 
 - [Real-Time Intelligence documentation](../overview.md) 
-
 - [Activator for automated alerting](../data-activator/activator-introduction.md) 
-
 - [Eventstreams for real-time data ingestion](../event-streams/overview.md) 
-
 - [IoT and sensor data analytics with Microsoft Fabric](../overview.md) 
-
 - [Advanced analytics and machine learning](../../data-science/data-science-overview.md) 
-
 - [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md) 
-
 - [OneLake data storage overview](../../onelake/onelake-overview.md) 
