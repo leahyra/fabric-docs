@@ -34,11 +34,11 @@ The connected fleet reference architecture uses Microsoft Fabric Real-Time Intel
 
 1. Build, train, and score machine learning models in real time, to better predict and understand utilization patterns.
 
-1. Use activator to set up automated alerts and actions based on real-time vehicle data, such as engine health or vehicle performance.
-
 1. Fleet operators can use the Real-Time dashboard to visualize fleet information, including track-and-trace queries and near-real-time calculations. 
 
 1. Rich Power BI provide full analytics for monitoring fleet position, predictive maintenance thresholds, geofence tracking, and utilization patterns.
+
+1. Use activator to set up automated alerts and actions based on real-time vehicle data, such as engine health or vehicle performance.
 
 ## Operational phases 
 
