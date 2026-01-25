@@ -12,7 +12,7 @@ ms.search.form: Architecture
 
 # Energy grid management reference architecture 
 
-This reference architecture demonstrates how you can use Microsoft Fabric Real-Time Intelligence to build comprehensive energy grid management solutions that handle real-time data from energy generation facilities and grid consumption networks. You can process real-time manufacturing data from wind turbines and power plants, grid consumption events, and smart meter telemetry to enable intelligent energy grid operations with predictive analytics and real-time decision making. 
+This reference architecture shows how to use Microsoft Fabric Real-Time Intelligence to build comprehensive energy grid management solutions that handle real-time data from energy generation facilities and grid consumption networks. You can process real-time manufacturing data from wind turbines and power plants, grid consumption events, and smart meter telemetry to enable intelligent energy grid operations with predictive analytics and real-time decision making. 
 
 You can manage large-scale energy grids where thousands of energy generation sources and smart meters stream real-time data on production metrics, consumption patterns, and grid operational state. The architecture integrates CRM contextualization data via MQTT streaming and maintains comprehensive metadata and asset information on various types of energy infrastructure to create a unified energy grid platform. 
 
@@ -48,7 +48,7 @@ The following sections explain each operational phase in detail.
 
 ### Ingest and process
 
-Real-time IoT data from energy manufacturing facilities, including wind turbines and power plants, is ingested through [Eventstreams](../event-streams/overview.md) and processed with sub-second latency. Energy grid data is streamed in real time, providing detailed insights into grid load distribution, demand patterns, and operational performance across the energy network.
+The solution ingests real-time IoT data from energy manufacturing facilities, including wind turbines and power plants, through [Eventstreams](../event-streams/overview.md) and processes the data with subsecond latency. It streams energy grid data in real time, providing detailed insights into grid load distribution, demand patterns, and operational performance across the energy network.
 This continuous data integration captures comprehensive energy generation metrics, including:
 
 - Production capacity and generation metrics
@@ -56,13 +56,13 @@ This continuous data integration captures comprehensive energy generation metric
 - Renewable energy contribution and weather correlations
 - Maintenance schedules and operational status
 
-Customer contextualization data is pushed via MQTT and processed through [Eventstream](../event-streams/overview.md), enabling enhanced analytics with:
+The solution pushes customer contextualization data via MQTT and processes it through [Eventstream](../event-streams/overview.md), enabling enhanced analytics with:
 
 - Smart meter IDs and customer address information
 - Consumption profiles and billing data
 - Customer segmentation and usage patterns
 
-Inventory and asset information is synchronized from ERP systems into [OneLake](../../onelake/onelake-overview.md) using [Data Factory](../../data-factory/data-factory-overview.md), enabling comprehensive energy infrastructure contextualization, including:
+The solution synchronizes inventory and asset information from ERP systems into [OneLake](../../onelake/onelake-overview.md) using [Data Factory](../../data-factory/data-factory-overview.md), enabling comprehensive energy infrastructure contextualization, including:
 
 - Energy generation facility specifications and capacity ratings
 - Smart meter installations and customer mapping
@@ -70,7 +70,7 @@ Inventory and asset information is synchronized from ERP systems into [OneLake](
 - Asset lifecycle information and maintenance schedules
 - Regulatory compliance and operational requirements
 
-A major utility operator managing 100,000 smart meters and 300 energy generation facilities processes over 10 million energy events per day. These events include power generation readings from wind turbines and power plants, real-time grid consumption data, smart meter telemetry, and customer billing information. The MQTT-Eventstream integration processes this data while maintaining subsecond latency for critical grid balancing decisions and demand response operations. 
+A major utility operator that manages 100,000 smart meters and 300 energy generation facilities processes over 10 million energy events per day. These events include power generation readings from wind turbines and power plants, real-time grid consumption data, smart meter telemetry, and customer billing information. The MQTT-Eventstream integration processes this data while maintaining subsecond latency for critical grid balancing decisions and demand response operations. 
 
 ### Analyze, transform, and enrich
 
@@ -96,13 +96,13 @@ Energy grid consumption data is contextualized with customer smart meter metadat
 
 ### Train
 
-Build, train, and score machine learning models in real time by using [Data Science](../../data-science/data-science-overview.md) capabilities to predict energy deficiencies, demand spikes, and grid stability issues. These models continuously learn from incoming telemetry data, weather conditions, and historical energy patterns to provide actionable insights for energy grid operations. Key predictive capabilities include:
+Build, train, and score machine learning models in real time by using [Data Science](../../data-science/data-science-overview.md) capabilities to predict energy deficiencies, demand spikes, and grid stability problems. These models continuously learn from incoming telemetry data, weather conditions, and historical energy patterns to provide actionable insights for energy grid operations. Key predictive capabilities include:
 
 - **Energy deficiency prediction** - Use machine learning models to analyze historical energy generation and consumption data, combined with real-time telemetry, to forecast potential supply shortfalls. This prediction enables proactive adjustments to generation schedules, ensuring grid reliability and preventing outages.
 
-- **Demand spike forecasting** - Leverage predictive analytics to identify patterns in energy usage and anticipate peak consumption periods. By analyzing factors such as time of day, weather conditions, and historical demand trends, the system can optimize grid capacity and reduce the risk of overload.
+- **Demand spike forecasting** - Use predictive analytics to identify patterns in energy usage and anticipate peak consumption periods. By analyzing factors such as time of day, weather conditions, and historical demand trends, the system can optimize grid capacity and reduce the risk of overload.
 
-- **Grid stability optimization** - Continuously monitor grid performance metrics and predict potential imbalances between energy supply and demand. Automated response strategies, such as load shedding or dynamic energy redistribution, can be triggered to maintain grid stability and operational efficiency.
+- **Grid stability optimization** - Continuously monitor grid performance metrics and predict potential imbalances between energy supply and demand. Automated response strategies, such as load shedding or dynamic energy redistribution, maintain grid stability and operational efficiency.
 
 - **Renewable energy forecasting** - Integrate weather data with real-time telemetry from renewable energy sources like wind turbines and solar panels to predict energy generation. This forecasting helps optimize the integration of renewable energy into the grid, maximizing its utilization while maintaining stability.
 
@@ -112,7 +112,7 @@ Build, train, and score machine learning models in real time by using [Data Scie
 
 [Activator](../data-activator/activator-introduction.md) in Fabric Real-Time Intelligence generates real-time notifications on energy spikes and forecasting of potential energy deficiencies. With this real-time awareness and automated responses, the system reduces manual intervention and enhances grid reliability. Key alerting capabilities include:
 
-- **Immediate grid response** - Automatic alerts for energy spikes and supply shortfalls, such as notifying grid operators when energy demand exceeds 90% of available capacity, enabling them to take immediate corrective actions like activating reserve energy sources or reducing non-critical loads.
+- **Immediate grid response** - Automatic alerts for energy spikes and supply shortfalls, such as notifying grid operators when energy demand exceeds 90% of available capacity, enabling them to take immediate corrective actions like activating reserve energy sources or reducing noncritical loads.
 
 - **Proactive deficiency management** - Preventive notifications for predicted energy shortages, such as forecasting a 15% supply shortfall during peak evening hours based on historical patterns and real-time telemetry, allowing operators to schedule additional generation or initiate demand response programs.
 
@@ -126,11 +126,11 @@ Your grid operators use [Power BI dashboards](../create-powerbi-report.md) conne
 
 - **Grid performance** - Monitor operational efficiency and infrastructure utilization with real-time metrics. Identify underperforming assets, optimize load distribution, and ensure grid stability through actionable insights.
 
-- **Customer analytics** - Understand customer usage patterns and optimize billing processes. Leverage smart meter data to segment customers, identify energy-saving opportunities, and provide personalized energy solutions.
+- **Customer analytics** - Understand customer usage patterns and optimize billing processes. Use smart meter data to segment customers, identify energy-saving opportunities, and provide personalized energy solutions.
 
 - **Predictive insights** - Use forecasting reports to support capacity planning and demand management. Predict energy deficiencies, demand spikes, and renewable energy contributions to proactively address grid challenges and improve operational efficiency.
 
-[Real-time dashboard](../real-time-dashboards-overview.md) provides live operational visibility with customizable views for different operational roles, enabling teams to monitor and respond to real-time events effectively. These dashboards provide the following capabilities:
+[Real-Time Dashboard](../real-time-dashboards-overview.md) provides live operational visibility with customizable views for different operational roles, enabling teams to monitor and respond to real-time events effectively. These dashboards provide the following capabilities:
 
 - **Grid overview** - Provides a comprehensive, real-time view of the entire energy grid, including generation capacity, consumption status, and grid stability metrics. This high-level overview enables operators to quickly assess overall grid performance and identify areas requiring attention.
 
@@ -146,7 +146,7 @@ Your grid operators use [Power BI dashboards](../create-powerbi-report.md) conne
 
 ### Energy grid intelligence
 
-- **Real-time grid monitoring** - Monitor entire energy grid with subsecond response times for critical balancing operations.
+- **Real-time grid monitoring** - Monitor the entire energy grid with subsecond response times for critical balancing operations.
 
 - **Predictive analytics** - Use ML models to forecast energy deficiencies, demand spikes, and grid optimization opportunities.
 
@@ -226,13 +226,13 @@ Your grid operators use [Power BI dashboards](../create-powerbi-report.md) conne
 
 - **Data quality monitoring**: Continuously validate incoming energy data with alerting for generation facility failures, smart meter communication problems, or corrupted consumption data.
 
-- **Performance metrics**: Track data ingestion latency from energy sources, query response times for real-time dashboards, and ML model prediction accuracy with SLA monitoring.
+- **Performance metrics**: Track data ingestion latency from energy sources, query response times for Real-Time Dashboards, and ML model prediction accuracy with SLA monitoring.
 
 **Cost optimization**:
 
 - **Capacity management**: Right-size Fabric capacity based on energy network size and data volume. Implement autoscaling for peak demand periods, and cost optimization during low-activity periods.
 
-- **Data lifecycle management**: Automatically archive older energy data to lower-cost storage tiers. Align retention policies with regulatory requirements, and delete non-essential telemetry data.
+- **Data lifecycle management**: Automatically archive older energy data to lower-cost storage tiers. Align retention policies with regulatory requirements, and delete nonessential telemetry data.
 
 - **Energy cost optimization**: Correlate generation patterns with consumption demand in real time to minimize operational costs and maximize grid efficiency.
 
@@ -278,7 +278,7 @@ Your grid operators use [Power BI dashboards](../create-powerbi-report.md) conne
 
 - Implement [Activator](../data-activator/activator-introduction.md) for sophisticated energy grid automation including predictive demand response, dynamic generation optimization, and automated grid balancing.
 
-- Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) for natural language analytics. Enable your teams to query complex scenarios like "Show me all regions with predicted energy deficiencies during tomorrow's peak hours".
+- Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) for natural language analytics. Enable your teams to query complex scenarios like "Show me all regions with predicted energy deficiencies during tomorrow's peak hours.".
 
 - Create intelligent energy grid systems that provide real-time decision support based on generation patterns, consumption demand, and grid stability requirements.
 
