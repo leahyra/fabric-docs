@@ -6,7 +6,7 @@ ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: example-scenario
 ms.subservice: rti-core
-ms.date: 01/19/2026
+ms.date: 01/25/2026
 ms.search.form: Architecture
 ---
 
@@ -21,15 +21,25 @@ You can manage large-scale energy grids where thousands of energy generation sou
 The energy grid management reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from energy generation facilities and consumption networks for intelligent grid management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate.
 
 1. Stream energy manufacturing IoT events with subsecond latency from wind turbines and power plants.
+
 1. Stream events from the energy grid in real time.
+
 1. Push CRM contextualization data, such as smart meter ID and address, via MQTT and collect it by using Eventstream.
+
 1. Sync inventory and asset information from ERP by using Data Factory.
+
 1. Contextualize wind turbines and power plant data with the asset metadata from the ERP system.
+
 1. Aggregate manufacturing data from power plants and wind farms to create a holistic energy generation picture.
+
 1. Contextualize energy grid consumption data with customer smart meters metadata, aggregate it, and correlate it with the energy generation data.
+
 1. Build, train, and score machine learning models in real time to better predict potential energy deficiencies and spikes.
+
 1. Generate real-time notifications on energy spikes and forecasting of potential energy deficiencies.
+
 1. Provide real-time dashboards that offer a rich, high granularity view of the entire electric grid with low latency and the ability to drill down from overall grid view to a specific meter consumption.
+
 1. Provide rich Power BI reports that offer a full business view on the energy generation and consumption rates.
 
 The following sections explain each operational phase in detail.
@@ -67,7 +77,9 @@ A major utility operator managing 100,000 smart meters and 300 energy generation
 Continuous transformations take place within Eventhouse, where real-time energy generation data from wind turbines and power plants is enriched with asset metadata from the ERP system. This process ensures fully curated and ready-for-consumption data, enabling immediate insights and operational efficiency. The enrichment process includes the following capabilities:
 
 - **Facility contextualization** - Combines real-time generation data with facility specifications, capacity baselines, and grid connection details to provide a comprehensive operational view.
+
 - **Historical analysis** - Integrates historical production patterns and maintenance records to enhance predictive analytics and operational planning.
+
 - **Renewable energy insights** - Correlates weather data with renewable energy sources, enabling accurate forecasting and optimization of wind and solar contributions.
 
 Aggregated manufacturing data from power plants and wind farms creates a holistic energy generation picture, offering detailed visibility into total grid supply capacity and renewable energy contributions. This unified view supports strategic energy management and operational decision-making.
@@ -75,8 +87,11 @@ Aggregated manufacturing data from power plants and wind farms creates a holisti
 Energy grid consumption data is contextualized with customer smart meter metadata and correlated with energy generation data in real time. This continuous processing enables the following capabilities:
 
 - **Real-time grid balancing** - Immediate correlation of supply and demand ensures grid stability and operational efficiency.
+
 - **Customer consumption insights** - Provides detailed analysis of usage patterns, enabling billing optimization and personalized energy solutions.
+
 - **Infrastructure planning** - Facilitates load distribution analysis and long-term infrastructure development for grid optimization.
+
 - **Demand response coordination** - Supports intelligent demand management strategies, reducing peak load and enhancing grid reliability.
 
 ### Train
@@ -84,9 +99,13 @@ Energy grid consumption data is contextualized with customer smart meter metadat
 Build, train, and score machine learning models in real time by using [Data Science](../../data-science/data-science-overview.md) capabilities to predict energy deficiencies, demand spikes, and grid stability issues. These models continuously learn from incoming telemetry data, weather conditions, and historical energy patterns to provide actionable insights for energy grid operations. Key predictive capabilities include:
 
 - **Energy deficiency prediction** - Use machine learning models to analyze historical energy generation and consumption data, combined with real-time telemetry, to forecast potential supply shortfalls. This prediction enables proactive adjustments to generation schedules, ensuring grid reliability and preventing outages.
+
 - **Demand spike forecasting** - Leverage predictive analytics to identify patterns in energy usage and anticipate peak consumption periods. By analyzing factors such as time of day, weather conditions, and historical demand trends, the system can optimize grid capacity and reduce the risk of overload.
+
 - **Grid stability optimization** - Continuously monitor grid performance metrics and predict potential imbalances between energy supply and demand. Automated response strategies, such as load shedding or dynamic energy redistribution, can be triggered to maintain grid stability and operational efficiency.
+
 - **Renewable energy forecasting** - Integrate weather data with real-time telemetry from renewable energy sources like wind turbines and solar panels to predict energy generation. This forecasting helps optimize the integration of renewable energy into the grid, maximizing its utilization while maintaining stability.
+
 - **Customer behavior analytics** - Analyze customer consumption patterns by using smart meter data to identify trends and anomalies. This information supports improved demand planning, personalized energy solutions, and targeted energy-saving initiatives for better customer engagement and grid efficiency.
 
 ### Visualize and activate
@@ -100,7 +119,6 @@ Build, train, and score machine learning models in real time by using [Data Scie
 - **Grid optimization** - Real-time adjustments for energy distribution and load balancing, such as dynamically redistributing energy from underutilized regions to high-demand areas during unexpected consumption surges, ensuring optimal grid performance and stability.
 
 - **Emergency response** - Immediate notifications for critical grid stability issues requiring urgent action, such as detecting a sudden drop in renewable energy generation due to adverse weather conditions and triggering automated load-shedding protocols to prevent widespread outages.
-
 
 Your grid operators use [Power BI dashboards](../create-powerbi-report.md) connected directly to Eventhouse and OneLake to monitor real-time energy generation and consumption metrics through unified analytical views, including:
 
@@ -128,19 +146,43 @@ Your grid operators use [Power BI dashboards](../create-powerbi-report.md) conne
 
 ### Energy grid intelligence
 
-Real-time grid intelligence enables you to monitor the entire energy grid with subsecond response times for critical balancing operations. Predictive analytics powered by machine learning models forecast energy deficiencies, demand spikes, and grid optimization opportunities. A unified data platform integrates generation data with consumption patterns and customer information, providing comprehensive grid management. Granular visibility allows operators to drill down from a high-level grid overview to individual smart meter consumption.
+- **Real-time grid monitoring** - Monitor entire energy grid with subsecond response times for critical balancing operations.
+
+- **Predictive analytics** - Use ML models to forecast energy deficiencies, demand spikes, and grid optimization opportunities.
+
+- **Unified data platform** - Integrate generation data with consumption patterns and customer information for comprehensive grid management.
+
+- **Granular visibility** - Drill-down capabilities from grid overview to individual smart meter consumption.
 
 ### Automated grid operations
 
-Automated grid operations leverage intelligent alerting to provide real-time notifications for energy spikes, deficiencies, and grid stability issues. Automated workflows trigger demand response, generation optimization, and emergency protocols. Proactive grid management uses predictive models for supply-demand balancing and infrastructure optimization, while dynamic resource allocation enables real-time adjustments to energy distribution, generation scheduling, and demand response.
+- **Intelligent alerting** - Real-time notifications for energy spikes, deficiencies, and grid stability issues.
+
+- **Automated workflows** - Set up triggers for demand response, generation optimization, and emergency protocols.
+
+- **Proactive grid management** - Use predictive models for supply-demand balancing and infrastructure optimization.
+
+- **Dynamic resource allocation** - Enable real-time adjustments to energy distribution, generation scheduling, and demand response.
 
 ### Advanced analytics and business intelligence
 
-Advanced analytics and business intelligence enable real-time grid optimization by correlating generation capacity with consumption demand for immediate balancing and efficiency improvements. Rich business intelligence capabilities provide high granularity analysis with direct query on real-time energy data. Natural language processing allows users to query complex energy grid scenarios using conversational AI. Cross-system correlation links real-time events with historical patterns, customer data, and asset information for deeper insights.
+- **Real-time grid optimization** - Correlate generation capacity with consumption demand for immediate balancing and efficiency optimization.
+
+- **Rich BI capabilities** - High granularity business analysis with direct query on real-time energy data.
+
+- **Natural language processing** - Query complex energy grid scenarios using conversational AI.
+
+- **Cross-system correlation** - Link real-time events with historical patterns, customer data, and asset information.
 
 ### Operational efficiency and grid optimization
 
-You achieve operational efficiency and grid optimization through predictive grid management, which reduces outages and improves reliability by using machine learning-driven deficiency and spike prediction. Energy optimization maximizes grid efficiency and renewable energy utilization through intelligent forecasting and automation. Grid performance is enhanced through real-time monitoring and predictive analytics, while cost management is improved by optimizing energy costs through predictive demand management and efficient generation scheduling.
+- **Predictive grid management** - Reduce outages and improve reliability through ML-driven deficiency and spike prediction.
+
+- **Energy optimization** - Maximize grid efficiency and renewable energy utilization through intelligent forecasting and automation.
+
+- **Grid performance** - Enhance operational stability through real-time monitoring and predictive analytics.
+
+- **Cost management** - Optimize energy costs through predictive demand management and efficient generation scheduling.
 
 ## Implementation considerations 
 
@@ -253,14 +295,8 @@ You achieve operational efficiency and grid optimization through predictive grid
 ## Related resources
 
 - [Real-Time Intelligence documentation](../overview.md) 
-
 - [Activator for automated alerting](../data-activator/activator-introduction.md) 
-
 - [Eventstreams for real-time data ingestion](../event-streams/overview.md) 
-
 - [Advanced analytics and machine learning](../../data-science/data-science-overview.md) 
-
 - [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md) 
-
-- [OneLake data storage overview](../../onelake/onelake-overview.md) 
- 
+- [OneLake data storage overview](../../onelake/onelake-overview.md)
