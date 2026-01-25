@@ -42,7 +42,7 @@ The wind farm maintenance reference architecture uses Microsoft Fabric Real-Time
 
 1. Power BI generates high level reports providing yearly and monthly view on power generation and other business insights.
 
-1. Activator is triggered to generate real time notifications on anomalies and in-flight data​.
+1. Activator is triggered to generate real time notifications on anomalies​.
 
 The following sections explain each operational phase in detail.
 
