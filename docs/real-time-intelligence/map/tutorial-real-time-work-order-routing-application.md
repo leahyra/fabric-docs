@@ -63,7 +63,7 @@ The work order data file contains sample work order records used in this tutoria
 
 Copy and paste the following content into a text file, then save it as *WorkorderLocation.csv*. You'll use this file in the next step.
 
-```dos
+```
 WorkorderID,Latitude,Longitude
 100,48.22610712,16.32977412
 101,48.23519063,16.37364699
