@@ -165,7 +165,9 @@ Create a notebook with code to import the work order location file from your lak
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/connect-notebook-lakehouse.png" alt-text="A screenshot of the Microsoft Fabric Explorer pane showing the Data items tab selected with a No data sources added message and an empty folder icon. Below the message is an Add data items dropdown button expanded to reveal three menu options: From OneLake catalog with a database icon, From Real-Time hub with a lightning bolt icon, and New lakehouse with a plus sign. The From OneLake catalog option is highlighted with a dark border indicating selection.":::
 
-1. Once your new notebook is created and connected to your lakehouse, enter the following code into the first cell of your notebook, and run it to install the **Azure Event Hub** SDK:
+1. Select the **WorkorderLocation** lakehouse from the **OneLake catalog**. This is the lakehouse you created previously.
+
+1. After creating the notebook and connecting it to your lakehouse, paste the following code into the first cell and run it to install the **Azure Event Hub** SDK:
 
     ```python
     # Install Azure Event Hub SDK (only needed once per environment)
