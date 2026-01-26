@@ -12,13 +12,13 @@ ms.search.form: Architecture
 
 # Fleet management reference architecture 
 
-This reference architecture demonstrates how you can use Microsoft Fabric Real-Time Intelligence to build comprehensive fleet management solutions that handle millions of telemetry events from hundreds of thousands of vehicles. You can process real-time vehicle location data, mechanical state information, and operational metrics to enable intelligent fleet operations with advanced predictive capabilities and real-time decision making.
+This reference architecture shows how to use Microsoft Fabric Real-Time Intelligence to build comprehensive fleet management solutions that handle millions of telemetry events from hundreds of thousands of vehicles. You can process real-time vehicle location data, mechanical state information, and operational metrics to enable intelligent fleet operations with advanced predictive capabilities and real-time decision making.
 
 You can handle massive scale fleet operations where hundreds of thousands of vehicles generate millions of telemetry events per hour. These events provide critical details on vehicle location, mechanical state, driver behavior, and operational performance. The architecture integrates ERP system data including service station locations, delivery points, driver schedules, and vehicle details to create a unified fleet management platform.
 
 ## Architecture overview
 
-The fleet management reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes millions of telemetry events from hundreds of thousands of vehicles in real-time. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate.
+The fleet management reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes millions of telemetry events from hundreds of thousands of vehicles in real time. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate.
 
 :::image type="content" source="media/fleet-management-diagram.png" alt-text="Fleet management architecture diagram" lightbox="media/fleet-management-diagram.png":::
 
@@ -34,9 +34,9 @@ The fleet management reference architecture uses Microsoft Fabric Real-Time Inte
 
 1. You build, train, and score advanced ML models on the vehicle data, creating advanced predictive capabilities on vehicle behavior.
 
-1. A real-time dashboard with geospatial capabilities allows real-time view of the entire fleet, location, and drill down from global fleet view to a single vehicle view.
+1. A Real-Time Dashboard with geospatial capabilities allows real-time view of the entire fleet, location, and drill down from global fleet view to a single vehicle view.
 
-1. Rich Power BI reports using direct query provides high granularity view on the fleet current state and full historical view.
+1. Rich Power BI reports using direct query provide high granularity view on the fleet current state and full historical view.
 
 1. Activator push notifications in real time based on anomalous vehicle behavior, traffic, weather, and road conditions.
 
@@ -98,7 +98,7 @@ Build, train, and score advanced machine learning models in real time by using [
 
 ### Visualize and activate
 
-[Activator](../data-activator/activator-introduction.md) in Fabric Real-Time Intelligence generates real-time notifications on anomalous vehicle behavior, traffic conditions, weather alerts, and road conditions. With this real-time awareness, the system reduces manual intervention and enables swift responses to critical situations. Key alerting capabilities include:
+[Activator](../data-activator/activator-introduction.md) in Fabric Real-Time Intelligence generates real-time notifications on anomalous vehicle behavior, traffic conditions, weather alerts, and road conditions. By using this real-time awareness, the system reduces manual intervention and enables swift responses to critical situations. Key alerting capabilities include:
 
 - **Immediate response to emergencies** - Automatically generate alerts for vehicle breakdowns, accidents, or other critical incidents. These alerts enable fleet managers to dispatch assistance promptly, minimizing downtime and ensuring driver safety.
 
@@ -118,9 +118,9 @@ Fleet managers can use [Power BI dashboards](../create-powerbi-report.md) integr
 
 - **Executive dashboards** - Provide high-level strategic insights for leadership teams, including fleet-wide performance summaries, cost analysis, and predictive analytics. Enable data-driven decision-making to align fleet operations with organizational goals.
 
-[Real-time dashboard](../real-time-dashboards-overview.md) with geospatial capabilities provides live operational visibility of the entire fleet, location tracking, and drill-down from global fleet view to individual vehicle monitoring. Key capabilities include: 
+[Real-Time Dashboard](../real-time-dashboards-overview.md) with geospatial capabilities provides live operational visibility of the entire fleet, location tracking, and drill-down from global fleet view to individual vehicle monitoring. Key capabilities include: 
 
-- **Global fleet overview** - Gain a comprehensive view of all vehicles in the fleet with real-time status updates, including their current locations, operational states, and any active alerts. This high-level overview enables fleet managers to monitor overall performance and identify potential issues at a glance.
+- **Global fleet overview** - Gain a comprehensive view of all vehicles in the fleet with real-time status updates, including their current locations, operational states, and any active alerts. This high-level overview enables fleet managers to monitor overall performance and identify potential problems at a glance.
 
 - **Geospatial visualization** - Explore interactive maps that display vehicle locations, routes, and operational zones in real time. These maps provide a clear visual representation of fleet distribution, enabling efficient route planning and resource allocation.
 
@@ -128,7 +128,7 @@ Fleet managers can use [Power BI dashboards](../create-powerbi-report.md) integr
 
 - **Operational metrics** - Monitor real-time key performance indicators (KPIs) such as fleet efficiency, vehicle utilization, delivery success rates, and maintenance schedules. These metrics provide actionable insights to improve operational efficiency and reduce costs.
 
-[KQL Copilot](../copilot-writing-queries.md) enables you to use natural language queries to quickly check the current fleet status, identify potential operational issues, and explore real-time telemetry data without requiring complex coding. Additionally, you can train KQL Copilot to aggregate and evaluate performance patterns of fleet vehicles, including fuel efficiency, maintenance trends, and route optimization metrics, providing deeper operational insights for enhancing fleet performance and overall operational efficiency.
+[KQL Copilot](../copilot-writing-queries.md) enables you to use natural language queries to quickly check the current fleet status, identify potential operational problems, and explore real-time telemetry data without requiring complex coding. Additionally, you can train KQL Copilot to aggregate and evaluate performance patterns of fleet vehicles, including fuel efficiency, maintenance trends, and route optimization metrics, providing deeper operational insights for enhancing fleet performance and overall operational efficiency.
 
 ## Technical benefits and outcomes
 
