@@ -34,49 +34,49 @@ The following table shows the support status for each Fabric item and whether it
 |  | Exploration | - | - | - |
 |  | Org App | - | - | - |
 |  | Metric Set | - | - | - |
-| **OneLake** | Shortcut | GA | - | - |
-| **Data Engineering** | Lakehouse | GA | GA | GA |
-|  | Lakehouse Shortcuts | GA | - | Preview |
-|  | Lakehouse Sql Endpoint | GA | GA | GA |
-|  | Notebook | GA | GA | GA |
-|  | Spark Job Definition | GA | GA | GA |
-|  | Environment | GA | GA | GA |
-|  | Lakehouse with Schemas | - | GA | Preview |
-| **Data Factory** | Default Semantic Model | Preview | - | GA |
-|  | Pipeline | GA | GA | Preview |
+| **OneLake** | Shortcut | ✓ | - | - |
+| **Data Engineering** | Lakehouse | ✓ | ✓ | ✓ |
+|  | Lakehouse Shortcuts | ✓ | - | Preview |
+|  | Lakehouse Sql Endpoint | ✓ | ✓ | ✓ |
+|  | Notebook | ✓ | ✓ | ✓ |
+|  | Spark Job Definition | ✓ | ✓ | ✓ |
+|  | Environment | ✓ | ✓ | ✓ |
+|  | Lakehouse with Schemas | - | ✓ | Preview |
+| **Data Factory** | Default Semantic Model | Preview | - | ✓ |
+|  | Pipeline | ✓ | ✓ | Preview |
 |  | Dataflows Gen1 | Not supported | Not supported | Not supported |
-|  | Dataflows Gen2 | - | GA | Preview |
-|  | Copy Jobs | GA | GA | Preview |
-|  | Mounted Azure Data Factory | GA | - | - |
-|  | Vnet data gateways | GA | - | Preview |
+|  | Dataflows Gen2 | - | ✓ | Preview |
+|  | Copy Jobs | ✓ | ✓ | Preview |
+|  | Mounted Azure Data Factory | ✓ | - | - |
+|  | Vnet data gateways | ✓ | - | Preview |
 |  | On-premises data gateways | Pipelines/Copy Job supported (Dataflow Gen2 pending)| - | Preview |
-| **Data Warehouse** | SQL Endpoint | GA | GA | GA |
-|  | Warehouse | GA | GA | GA |
+| **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
+|  | Warehouse | ✓ | ✓ | ✓ |
 |  | Warehouse with EDPE | - | Not supported | - |
-| **Data Science** | ML Model | GA | GA | Planned <sup>2</sup> |
-|  | Experiment | GA | GA | - |
-|  | Data Agent | GA | - | - |
-| **Real-Time Intelligence** | KQL Queryset | GA | Preview | - |
-|  | Activator | GA | - | - |
-|  | Eventhouse/KQL DB | GA | Preview | - |
-|  | Eventstream | GA | - | - |
-|  | Real-Time Dashboards | GA | Preview | - |
+| **Data Science** | ML Model | ✓ | ✓ | Planned <sup>2</sup> |
+|  | Experiment | ✓ | ✓ | - |
+|  | Data Agent | ✓ | - | - |
+| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | - |
+|  | Activator | ✓ | - | - |
+|  | Eventhouse/KQL DB | ✓ | Preview | - |
+|  | Eventstream | ✓ | - | - |
+|  | Real-Time Dashboards | ✓ | Preview | - |
 | **Mirroring** | Mirrored Azure SQL Database | Not supported | - | Preview |
 |  | Mirrored Azure SQL Managed Instance | Not supported | - | Preview |
 |  | Mirrored Snowflake | - | - | Preview |
-|  | Mirrored SQL Server (Windows/Linux on-premises) | GA | - | Preview |
-|  | Mirrored Azure Cosmos DB | GA | - | Preview |
+|  | Mirrored SQL Server (Windows/Linux on-premises) | ✓ | - | Preview |
+|  | Mirrored Azure Cosmos DB | ✓ | - | Preview |
 |  | Mirrored Azure Database for PostgreSQL | Not supported | - | Preview |
 |  | Mirrored Google Bigquery | - | - | Preview |
 |  | Mirrored Oracle | Q1 2026 | - | Preview |
 | **Native Databases** | Sql DB in Fabric | Q1 2026 Preview | Preview | - |
 |  | Cosmos DB | - | - | - |
-| **Developer Experience** | API for GraphQL | - | GA | - |
+| **Developer Experience** | API for GraphQL | - | ✓ | - |
 |  | Deployment Pipelines | - | - | Preview |
-|  | Git Integration | GA | - | GA |
-|  | Variable Libraries | GA | - | - |
-| **Industry Solutions** | Healthcare data solutions | - | GA | - |
-|  | Sustainability Solutions | - | GA | - |
+|  | Git Integration | ✓ | - | ✓ |
+|  | Variable Libraries | ✓ | - | - |
+| **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
+|  | Sustainability Solutions | - | ✓ | - |
 
 <sup>1</sup> Support is currently in development, with preview targeted for Q1 2026 and GA for Q2 2026. These dates are subject to change.
 
@@ -86,49 +86,49 @@ The following table shows the support status for each Fabric item and whether it
 |--|--|:--:|:--:|:--:|
 | Power BI | Power BI Reports | - | - | Q1 2026 Preview <br></br>Q2 2026 GA |
 | Power BI | Semantic Model | - | - | Q1 2026 Preview <br></br>Q2 2026 GA |
-| OneLake | Shortcut | GA | - | - |
-| Data Engineering | Lakehouse | GA | GA | GA |
-| Data Engineering | Lakehouse Shortcuts | GA | - | Preview <br></br>Q1 2026 GA |
-| Data Engineering | Lakehouse Sql Endpoint | GA | GA | GA |
-| Data Engineering | Notebook | GA | GA | GA |
-| Data Engineering | Spark Job Definition | GA | GA | GA |
-| Data Engineering | Environment | GA | GA | GA |
-| Data Engineering | Lakehouse with Schemas | - | GA | GA |
-| Data Factory | Default Semantic Model | GA | - | GA |
-| Data Factory | Pipeline | GA | GA | Preview<br></br>Q1 2026 |
+| OneLake | Shortcut | ✓ | - | - |
+| Data Engineering | Lakehouse | ✓ | ✓ | ✓ |
+| Data Engineering | Lakehouse Shortcuts | ✓ | - | Preview <br></br>Q1 2026 GA |
+| Data Engineering | Lakehouse Sql Endpoint | ✓ | ✓ | ✓ |
+| Data Engineering | Notebook | ✓ | ✓ | ✓ |
+| Data Engineering | Spark Job Definition | ✓ | ✓ | ✓ |
+| Data Engineering | Environment | ✓ | ✓ | ✓ |
+| Data Engineering | Lakehouse with Schemas | - | ✓ | ✓ |
+| Data Factory | Default Semantic Model | ✓ | - | ✓ |
+| Data Factory | Pipeline | ✓ | ✓ | Preview<br></br>Q1 2026 |
 | Data Factory | Dataflows Gen1 | Not supported | Not supported | Not supported |
-| Data Factory | Dataflows Gen2 | - | GA | Preview <br></br>Q1 2026 GA |
-| Data Factory | Copy Jobs | GA | GA | Preview <br></br>Q1 2026 GA |
-| Data Factory | Mounted Azure Data Factory | GA | - | - |
-| Data Factory | Vnet data gateways | GA | - | Preview <br></br>Q1 2026 GA |
+| Data Factory | Dataflows Gen2 | - | ✓ | Preview <br></br>Q1 2026 GA |
+| Data Factory | Copy Jobs | ✓ | ✓ | Preview <br></br>Q1 2026 GA |
+| Data Factory | Mounted Azure Data Factory | ✓ | - | - |
+| Data Factory | Vnet data gateways | ✓ | - | Preview <br></br>Q1 2026 GA |
 | Data Factory | On-premises data gateways | Pipelines/Copy Job supported (Dataflow Gen2 pending)| - | Preview <br></br>Q1 2026 GA |
-| Data Warehouse | SQL Endpoint | GA | GA | GA |
-| Data Warehouse | Warehouse | GA | GA | GA |
+| Data Warehouse | SQL Endpoint | ✓ | ✓ | ✓ |
+| Data Warehouse | Warehouse | ✓ | ✓ | ✓ |
 | Data Warehouse | Warehouse with EDPE | Q1 2026 Preview <br></br>Q1 2026 GA | Not supported | - |
-| Data Science | ML Model | GA | GA | Q1 2026 Preview <br></br>Q2 2026 GA |
-| Data Science | Experiment | GA | GA | Q1 2026 Preview <br></br>Q2 2026 GA |
-| Data Science | Data Agent | GA | - | Q1 2026 Preview <br></br>Q2 2026 GA |
-| Real-Time Intelligence | KQL Queryset | GA | Preview<br></br>2026 GA | - |
-| Real-Time Intelligence | Activator | GA | - | - |
-| Real-Time Intelligence | Eventhouse/KQL DB | GA | Preview<br></br>2026 GA | Q1 2026 Preview <br></br>Q2 2026 GA |
-| Real-Time Intelligence | Eventstream | GA | Q1 2026 Preview | Q1 2026 Preview <br></br>Q2 2026 GA |
-| Real-Time Intelligence | Real-Time Dashboards | GA | Preview<br></br>2026 GA | - |
+| Data Science | ML Model | ✓ | ✓ | Q1 2026 Preview <br></br>Q2 2026 GA |
+| Data Science | Experiment | ✓ | ✓ | Q1 2026 Preview <br></br>Q2 2026 GA |
+| Data Science | Data Agent | ✓ | - | Q1 2026 Preview <br></br>Q2 2026 GA |
+| Real-Time Intelligence | KQL Queryset | ✓ | Preview<br></br>2026 GA | - |
+| Real-Time Intelligence | Activator | ✓ | - | - |
+| Real-Time Intelligence | Eventhouse/KQL DB | ✓ | Preview<br></br>2026 GA | Q1 2026 Preview <br></br>Q2 2026 GA |
+| Real-Time Intelligence | Eventstream | ✓ | Q1 2026 Preview | Q1 2026 Preview <br></br>Q2 2026 GA |
+| Real-Time Intelligence | Real-Time Dashboards | ✓ | Preview<br></br>2026 GA | - |
 | Mirroring | Mirrored Azure SQL Database | Not supported | - | Preview <br></br>Q1 2026 GA |
 | Mirroring | Mirrored Azure SQL Managed Instance | Not supported | - | Preview <br></br>Q1 2026 GA |
 | Mirroring | Mirrored Snowflake | - | - | Preview <br></br>Q1 2026 GA |
-| Mirroring | Mirrored SQL Server (Windows/Linux on-premises) | GA | - | Preview <br></br>Q1 2026 GA |
-| Mirroring | Mirrored Azure Cosmos DB | GA | - | Preview <br></br>Q1 2026 GA |
+| Mirroring | Mirrored SQL Server (Windows/Linux on-premises) | ✓ | - | Preview <br></br>Q1 2026 GA |
+| Mirroring | Mirrored Azure Cosmos DB | ✓ | - | Preview <br></br>Q1 2026 GA |
 | Mirroring | Mirrored Azure Database for PostgreSQL | Not supported | - | Preview <br></br>Q1 2026 GA |
 | Mirroring | Mirrored Google Bigquery | - | - | Preview <br></br>Q1 2026 GA |
 | Mirroring | Mirrored Oracle | Q1 2026 | - | Preview <br></br>Q1 2026 GA |
 | Native Databases | Sql DB in Fabric | Q1 2026 Preview | Preview | - |
 | Native Databases | Cosmos DB | Q1 2026 Preview<br></br>Q1 2026 GA | Q4 2026 Preview | Q1 2026 Preview <br></br>Q2 2026 GA |
-| Developer Experience | API for GraphQL | - | GA | - |
-| Developer Experience | Deployment Pipelines | Q1 2026 Preview<br></br>Q1 2026 GA | - | GA |
-| Developer Experience | Git Integration | GA | - | GA |
-| Developer Experience | Variable Libraries | GA | - | - |
-| Industry Solutions | Healthcare data solutions | - | GA | - |
-| Industry Solutions | Sustainability Solutions | - | GA | - |
+| Developer Experience | API for GraphQL | - | ✓ | - |
+| Developer Experience | Deployment Pipelines | Q1 2026 Preview<br></br>Q1 2026 GA | - | ✓ |
+| Developer Experience | Git Integration | ✓ | - | ✓ |
+| Developer Experience | Variable Libraries | ✓ | - | - |
+| Industry Solutions | Healthcare data solutions | - | ✓ | - |
+| Industry Solutions | Sustainability Solutions | - | ✓ | - |
 
 ---
 
