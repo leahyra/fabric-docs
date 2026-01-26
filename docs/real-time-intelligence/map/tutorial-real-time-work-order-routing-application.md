@@ -222,11 +222,12 @@ Create a notebook with code to import the work order location file from your lak
 
 ## Create a KQL queryset and add it as a map layer
 
-In this section, you create a KQL queryset that retrieves current work order location data from your eventhouse, then use that queryset as a data source for a Fabric Maps map. The queryset enables the map to display active work orders as a layer, providing a visual view of jobs that need to be planned and assigned to field crews.
+In this section, you create a KQL queryset that retrieves current work order location data from your eventhouse, then uses that queryset as a data source for a Fabric Maps map. The queryset enables the map to display active work orders as a layer, providing a visual view of jobs that need to be planned and assigned to field crews.
 
 ### Create a KQL queryset
 
-1. Open your eventhouse (KQL database).
+From your eventhouse (KQL database):
+
 1. Select the KQL database **Workorders-Eventhouse**.
 1. Select **KQL queryset** from the menu bar.
 1. Name the queryset **WorkorderQS** then select **Create**.
@@ -235,7 +236,7 @@ In this section, you create a KQL queryset that retrieves current work order loc
 
 1. Paste the following KQL query into the editor.
 
-    ```sql
+    ```
     Workorders
     | project Latitude, Longitude, WorkorderID 
     ```
@@ -264,18 +265,18 @@ In this section, you create a Fabric Maps map and use the previously created KQL
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/add-eventhouse-map.png" alt-text="A screenshot showing the Microsoft Fabric Maps interface with the Explorer pane on the left with Lakehouse and Eventhouse tabs. The Eventhouse tab is selected and highlighted with a red box. Below it, the Add data items button is also highlighted with a red box. The main area displays the default world map in the map area.":::
 
-1. Select the eventhouse **Workorders-Eventhouse** that you created previously, then select **Connect**.
+1. From the **OneLake** catalog, select the eventhouse **Workorders-Eventhouse** that you created previously, then select **Connect**.
 
 > [!TIP]
 > If you get an error such as *The KQL database has a protected label that restricts access. Please contact your database owner for assistance.* Check the sensitivity label on your KQL database, as it may be restricting access. For more information, see [Apply sensitivity labels to Fabric items](/fabric/fundamentals/apply-sensitivity-labels).
 
 ### Show queryset on map
 
-1. Select the eventhouse **Workorders-Eventhouse** that you added in the previous step.
+1. In the **Explorer** pane, select the eventhouse **Workorders-Eventhouse** that you added in the previous step.
 1. Navigate to the KQL query, and select the ellipse (...) to show the popup menu.
 1. Select **Show on map**
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/show-on-map.png" alt-text="A screenshot of Microsoft Fabric Maps Explorer panel showing a KQL database tree structure with Workorders-Eventhouse expanded to reveal Workorders-Event table and WorkorderQS queryset. A context menu is open next to WorkorderQS with the Show on map option highlighted by a red rectangle. The right side displays the default world map that appears when creating a new map.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/show-on-map.png" alt-text="A screenshot of the Microsoft Fabric Maps Explorer panel displaying a hierarchical tree structure with KQL database section expanded. The tree shows Workorders-Eventhouse containing Workorders-Event table and WorkorderQS queryset. An ellipsis menu is open next to WorkorderQS revealing options including Show on map highlighted with a red rectangle border.":::
 
 1. The **View Eventhouse data on map** dialog appears with **Preview data** selected. No changes are required. Ensure it's correct, then select **Next**
 
@@ -312,11 +313,10 @@ To complete this section, you need an Azure account with an Azure Maps account a
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/create-new-notebook.png"  lightbox="media/tutorials/real-time-work-order-routing-application/create-new-notebook.png" alt-text="A screenshot of  the Microsoft Fabric Eventhouse interface showing the Workorders-Eventhouse database selected in the left navigation panel under KQL databases. The top menu bar displays several options including Notebook, which is highlighted with a red box indicating that is the item to select. The main panel shows the Data Activity Tracker with ingestion and query statistics.":::
 
-1. In the new notebook, save the values for the **kustoQuery**, **kustoUri** and **database** variables. You use these values in the following notebook code.
+1. In the new notebook, save the values for the **kustoQuery**, **kustoUri** and **database** variables. You use these values in the new notebook code you create in step 6.
+1. Connect your notebook to your lakehouse by selecting **From OneLake catalog** from the **Add data items** dropdown list.
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-notebook-vars.png" lightbox="media/tutorials/real-time-work-order-routing-application/new-notebook-vars.png" alt-text="A screenshot of a Microsoft Fabric notebook interface showing a code cell with PySpark Python code. The left panel displays No data sources added with an Add data items button highlighted by a red box. The main code area shows an example query for reading data from Kusto with variables kustoQuery set to Workorders, kustoUri containing a Fabric Microsoft URL, and database set to Workorders-Eventhouse, all highlighted with red boxes to indicate values that need to be copied and used in the notebook code provided in this tutorial.":::
-
-1. Connect your notebook to your lakehouse by selecting **From OneLake catalog** from the **Add data items** dropdown list.
 
 1. Once your new notebook is created and connected to your lakehouse, enter the following code into the second cell of your notebook, replacing the default code, then add the variable values saved in the previous step:
 
