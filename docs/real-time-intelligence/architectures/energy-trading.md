@@ -6,7 +6,7 @@ ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: example-scenario
 ms.subservice: rti-core
-ms.date: 01/25/2026
+ms.date: 01/26/2026
 ms.search.form: Architecture
 ---
 
@@ -38,11 +38,11 @@ The energy trading management reference architecture uses Microsoft Fabric Real-
 
 1. Build, train, and score machine learning models in real time, to better predict potential energy deficiencies and spikes.
 
-1. Generate real time notifications on energy spikes and forecasting of potential energy deficiencies.
+1. Use Activator to generate real time notifications on energy spikes and forecasting of potential energy deficiencies.
 
-1. Real time dashboards provide rich, high granularity view of the entire electric grid with low latency and ability to drill down from overall grid view to a specific meter consumption.
+1. Real-Time Dashboards offer a rich, high granularity view of the entire electric grid with low latency and ability to drill down from overall grid view to a specific meter consumption.
 
-1. Rich Power BI reports provide full business views on the energy generation and consumption rates.
+1. Power BI reports provide a rich, full business view on the energy generation and consumption rates.
 
 ## Operational phases
 
@@ -108,7 +108,7 @@ Build, train, and score machine learning models in real time by using [Data Scie
 
 ### Visualize and activate 
 
-[Activator](../data-activator/activator-introduction.md) in Fabric Real-Time Intelligence generates real-time notifications on energy spikes and forecasting of potential energy deficiencies. With this real-time alerting awareness, the system reduces manual intervention and enables swift trading actions. Key alerting features include:
+[Activator](../data-activator/activator-introduction.md) in Fabric Real-Time Intelligence generates real-time notifications on energy spikes and forecasting of potential energy deficiencies. By using this real-time alerting awareness, the system reduces manual intervention and enables swift trading actions. Key alerting features include:
 
 - **Immediate trading response** - Receive automatic alerts for energy spikes and trading opportunities, enabling swift decision-making to capitalize on market conditions.
 
