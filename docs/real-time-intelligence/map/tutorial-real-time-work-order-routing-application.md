@@ -102,14 +102,20 @@ By ingesting eventstream data into an eventhouse, you make streaming events avai
 1. Select **Eventstream**.
 1. In the **New Eventstream** dialog, enter a **Name**: "Workorders", then select **Create**.
 1. In the **Design a flow to ingest, transform, and route streaming events** screen, select **Use custom endpoint**
+  
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/use-custom-endpoint.png" alt-text="Screenshot of the Design a flow to ingest, transform, and route streaming events screen in Fabric, showing the option to Use custom endpoint.":::
 
-  :::image type="content" source="media/tutorials/real-time-work-order-routing-application/use-custom-endpoint.png" alt-text="Screenshot of the Design a flow to ingest, transform, and route streaming events screen in Fabric, showing the option to Use custom endpoint.":::
+1. In the custom endpoint **Add souce** dialog, select **Add**.
 
-1. Select **Add destination**, then **Eventhouse** from the drop-down list.
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/custom-endpoint-add-source.png" alt-text="A screenshot of the Add source dialog for Custom endpoint in Microsoft Fabric showing a breadcrumb navigation with Custom endpoint arrow Workorders at the top. The dialog contains a Source name field with red asterisk marked as required containing the text CustomEndpoint-Source. A teal Add button is highlighted in the bottom right corner of the dialog indicating that should be selected with no further action required.":::
 
-  :::image type="content" source="media/tutorials/real-time-work-order-routing-application/event-stream-add-destination.png" lightbox="media/tutorials/real-time-work-order-routing-application/event-stream-add-destination.png" alt-text="Screenshot of the eventstream, showing the option to add a destination.":::
+    The eventstream is created, next add an Eventhouse as the destination.
 
-1. Fill out the details requested in the Eventhouse destination configuration pane as follows, then select **Save**:
+1. In the **Workorders-eventstream** node of the eventstream designer select **Eventhouse** from the **Transform events or add destination** drop-down list.
+
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/event-stream-add-destination.png" lightbox="media/tutorials/real-time-work-order-routing-application/event-stream-add-destination.png" alt-text="A screenshot of the Microsoft Fabric eventstream designer showing a flow diagram with CustomEndpoint-Source connected to Workorders-eventstream node. A dropdown menu is expanded from the Transform events or add destination tile on the right side, displaying the Destinations section at the bottom showing several options including Eventhouse which is highlighted with a red rectangle indicating that it should be selected.":::
+
+1. The **Eventhouse destination configuration** pane appear on the right side of the screen. Fill out the details requested as follows, then select **Save**:
     1. **Data ingestion mode**: Set to **Event processing before ingestion**.
     1. **Destination name**: Set to **Workorders-Eventhouse**.
     1. **Workspace**: A dropdown showing the name of your workspace.
@@ -121,7 +127,7 @@ By ingesting eventstream data into an eventhouse, you make streaming events avai
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/add-destination-eventhouse.png" alt-text="A screenshot showing the Eventhouse destination configuration pane showing Data ingestion mode with Event processing before ingestion selected, Destination name set to Workorders-Eventhouse, Workspace dropdown showing My workspace, Eventhouse dropdown showing Workorders-Eventhouse with Create new link, KQL database dropdown showing Workorders-Eventhouse, KQL Destination table dropdown showing New Workorders with Create new link, Activate ingestion after adding the data source checkbox checked, and a green Save button at the bottom.":::
 
-1. Select **Publish** to publish your new eventstream.
+1. Once the eventhouse has been added as a destination, select **Publish** to publish your new eventstream.
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/publish-event-stream.png" lightbox="media/tutorials/real-time-work-order-routing-application/publish-event-stream.png" alt-text="A screenshot showing the Eventstream designer showing a flow with CustomEndpoint-Workorders source connected to a Workorders-stream node, which connects to Workorders-Eventhouse destination. The Publish button is highlighted in the top right corner of the toolbar. An Edit mode banner indicates changes go live once published.":::
 
@@ -151,12 +157,12 @@ Create a notebook with code to import the work order location file from your lak
 1. Select **New item**, and enter *notebook* in the search box.
 1. Select **Notebook**.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-notebook.png" alt-text="A screenshot of the Microsoft Fabric New item dialog with a search box containing the text notebook. The search results display a Notebook tile with a document icon, showing the description Create a notebook to explore data and build machine learning models. The Notebook option is highlighted indicating it can be selected to create a new notebook item.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-notebook.png" alt-text="A screenshot of the Microsoft Fabric New item dialog with a search box containing the text notebook. The search results display a Notebook tile with a document icon, showing the description Create a notebook to explore data and build machine learning models. The Notebook option is highlighted indicating it can be selected to create a new notebook item.":::
 
 1. In the **New Notebook** dialog, enter *Workorder-Locations* in the **Name** field, then select **Create**.
 1. Connect your notebook to your lakehouse by selecting **From OneLake catalog** from the **Add data items** dropdown list.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/connect-notebook-lakehouse.png" alt-text="A screenshot of the Microsoft Fabric Explorer pane showing the Data items tab selected with a No data sources added message and an empty folder icon. Below the message is an Add data items dropdown button expanded to reveal three menu options: From OneLake catalog with a database icon, From Real-Time hub with a lightning bolt icon, and New lakehouse with a plus sign. The From OneLake catalog option is highlighted with a dark border indicating selection.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/connect-notebook-lakehouse.png" alt-text="A screenshot of the Microsoft Fabric Explorer pane showing the Data items tab selected with a No data sources added message and an empty folder icon. Below the message is an Add data items dropdown button expanded to reveal three menu options: From OneLake catalog with a database icon, From Real-Time hub with a lightning bolt icon, and New lakehouse with a plus sign. The From OneLake catalog option is highlighted with a dark border indicating selection.":::
 
 1. Once your new notebook is created and connected to your lakehouse, enter the following code into the first cell of your notebook, and run it to install the **Azure Event Hub** SDK:
 
@@ -167,7 +173,7 @@ Create a notebook with code to import the work order location file from your lak
 
 1. Select **+ Code** to create a new cell in the notebook.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/add-code-cell.png" alt-text="A screenshot of the Microsoft Fabric notebook interface showing a code cell with two lines of Python code. Line 1 contains a comment reading Install Azure Event Hub SDK only needed once per environment. Line 2 shows the pip install command percent pip install azure-eventhub. Below the code cell, a tooltip displays Add code cell pointing to a plus Code button highlighted with a red rectangle. A plus Markdown button appears to the right. The upper right corner shows PySpark Python as the selected kernel.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/add-code-cell.png" alt-text="A screenshot of the Microsoft Fabric notebook interface showing a code cell with two lines of Python code. Line 1 contains a comment reading Install Azure Event Hub SDK only needed once per environment. Line 2 shows the pip install command percent pip install azure-eventhub. Below the code cell, a tooltip displays Add code cell pointing to a plus Code button highlighted with a red rectangle. A plus Markdown button appears to the right. The upper right corner shows PySpark Python as the selected kernel.":::
 
 1. Select the new cell and enter the following code into it:
 
@@ -220,7 +226,7 @@ In this section, you create a KQL queryset that retrieves current work order loc
 1. Select **KQL queryset** from the menu bar.
 1. Name the queryset **WorkorderQS** then select **Create**.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-kql-queryset.png" alt-text="A screenshot of the New KQL Queryset dialog box in Microsoft Fabric with a Name field containing WorkorderQS, a Location dropdown set to My workspace with a folder icon, and Create and Cancel buttons at the bottom right with the Create button highlighted by a red border indicating it should be selected.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-kql-queryset.png" alt-text="A screenshot of the New KQL Queryset dialog box in Microsoft Fabric with a Name field containing WorkorderQS, a Location dropdown set to My workspace with a folder icon, and Create and Cancel buttons at the bottom right with the Create button highlighted by a red border indicating it should be selected.":::
 
 1. Paste the following KQL query into the editor.
 
@@ -299,7 +305,7 @@ To complete this section, you need an Azure account with an Azure Maps account a
 1. In the left navigation panel under **KQL databases**, select **Workorders-eventhouse**
 1. The top menu bar should now display an option for **Notebook**. Select it to create a new notebook.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/create-new-notebook.png"  lightbox="media/tutorials/real-time-work-order-routing-application/create-new-notebook.png" alt-text="A screenshot of  the Microsoft Fabric Eventhouse interface showing the Workorders-Eventhouse database selected in the left navigation panel under KQL databases. The top menu bar displays several options including Notebook, which is highlighted with a red box indicating that is the item to select. The main panel shows the Data Activity Tracker with ingestion and query statistics.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/create-new-notebook.png"  lightbox="media/tutorials/real-time-work-order-routing-application/create-new-notebook.png" alt-text="A screenshot of  the Microsoft Fabric Eventhouse interface showing the Workorders-Eventhouse database selected in the left navigation panel under KQL databases. The top menu bar displays several options including Notebook, which is highlighted with a red box indicating that is the item to select. The main panel shows the Data Activity Tracker with ingestion and query statistics.":::
 
 1. In the new notebook, save the values for the **kustoQuery**, **kustoUri** and **database** variables. You use these values in the following notebook code.
 
@@ -466,4 +472,3 @@ Layer labels are data‑driven annotations that come from one or more fields in 
     * **Data labels overlap**: toggled On
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/data-label-settings.png" lightbox="media/tutorials/real-time-work-order-routing-application/data-label-settings.png" alt-text="A screenshot of Microsoft Fabric Maps showing the Data labels settings panel expanded on the right side with Enable data labels toggled On, Data labels dropdown set to optimizedIndex, Font weight set to Medium, Text color showing a white color picker, Text size slider set to 20, Text stroke color showing black, Text stroke width slider set to 1.8, and Label position set to Bottom center. The main map area displays a street map of Vienna Austria with purple route lines connecting numbered waypoints labeled 1 through 9 indicating the optimized visit order. The Data layers panel on the left shows Workordersqs with visibility hidden and Optimized Route as the active layer.":::
-
