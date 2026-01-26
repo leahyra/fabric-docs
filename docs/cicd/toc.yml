@@ -51,7 +51,7 @@ items:
   - name: Understand the deployment process
     href: deployment-pipelines/understand-the-deployment-process.md
   - name: Retirement of semantic model support
-    href: deployment-pipelines/retirement-of-semantic-model-support.md
+    href: deployment-pipelines/retire-semantic-model.md
   - name: Deployment pipeline concepts
     items:
     - name: Assign a workspace
