@@ -22,19 +22,19 @@ The connected fleet reference architecture uses Microsoft Fabric Real-Time Intel
 
 :::image type="content" source="media/connected-fleet-diagram.png" alt-text="Connected fleet data analytics architecture diagram" lightbox="media/connected-fleet-diagram.png":::
 
-1. Vehicle data is captured from the vehicle's electronic control units (ECUs) and onboard sensors.
+1. Capture vehicle data from the vehicle's electronic control units (ECUs) and onboard sensors.
 
-1. Live telemetry and messages from connected vehicles, performs device management, and sends MQTT data to Eventstreams within Real-Time Intelligence.
+1. Connected vehicles perform device management and send MQTT data to Eventstreams within Real-Time Intelligence.
 
-1. The data capture device transmits recorded data files and telemetry from CAN, LIN, Ethernet, and video sources directly to Fabric Data Factory and then ingested into Eventhouse where all telemetry data is combined and stored. This ensures seamless ingestion and processing of diverse data streams for further analysis.
+1. The data capture device transmits recorded data files and telemetry from CAN, LIN, Ethernet, and video sources directly to Fabric Data Factory. Then, the data is ingested into Eventhouse where all telemetry data is combined and stored. This step ensures seamless ingestion and processing of diverse data streams for further analysis.
 
-1. The data ingested into Eventstreams are enriched in-motion with the asset meta data and asset hierarchy, providing clean and curated data for consumption.
+1. The data ingested into Eventstreams is enriched in-motion with the asset metadata and asset hierarchy, providing clean and curated data for consumption.
 
-1. Enriched data can then be aggregated with hourly and daily views per station.
+1. Aggregate enriched data with hourly and daily views per station.
 
 1. Build, train, and score machine learning models in real time, to better predict and understand utilization patterns.
 
-1. Fleet operators can use the Real-Time dashboard to visualize fleet information, including track-and-trace queries and near-real-time calculations. 
+1. Fleet operators use Real-Time Dashboard to visualize fleet information, including track-and-trace queries and near-real-time calculations. 
 
 1. Rich Power BI provide full analytics for monitoring fleet position, predictive maintenance thresholds, geofence tracking, and utilization patterns.
 
@@ -44,9 +44,9 @@ The connected fleet reference architecture uses Microsoft Fabric Real-Time Intel
 
 ### Ingest and process
 
-Ingest real-time telemetry data from connected vehicles, including engine diagnostics, GPS location updates, and driver behavior metrics, by using [Eventstreams](../event-streams/overview.md). Process IoT events with subsecond latency to provide comprehensive visibility into fleet operations and vehicle performance. Integrate vehicle specifications, route details, and driver information in real time to deliver actionable insights for fleet optimization.
+Use [Eventstreams](../event-streams/overview.md) to ingest real-time telemetry data from connected vehicles, including engine diagnostics, GPS location updates, and driver behavior metrics. Process IoT events with subsecond latency to provide comprehensive visibility into fleet operations and vehicle performance. Integrate vehicle specifications, route details, and driver information in real time to deliver actionable insights for fleet optimization.
 
-Collect and synchronize vehicle and asset information from fleet management systems into [OneLake](../../onelake/onelake-overview.md) by using [Data Factory](../../data-factory/data-factory-overview.md). Update metadata daily, including:
+Use [Data Factory](../../data-factory/data-factory-overview.md) to collect and synchronize vehicle and asset information from fleet management systems into [OneLake](../../onelake/onelake-overview.md). Update metadata daily, including:
 
 - Vehicle specifications and operational metrics
 - Driver profiles and route assignments
@@ -87,9 +87,9 @@ Build, train, and score machine learning models in real time by using [Data Scie
 
 ### Visualize and activate
 
-[Activator](../data-activator/activator-introduction.md) in Fabric Real-Time Intelligence generates real-time notifications on vehicle performance issues and predictive maintenance needs. With this real-time alerting awareness, the system reduces manual intervention and enables swift operational responses. Key alerting features include:
+[Activator](../data-activator/activator-introduction.md) in Fabric Real-Time Intelligence generates real-time notifications on vehicle performance issues and predictive maintenance needs. By using this real-time alerting awareness, the system reduces manual intervention and enables swift operational responses. Key alerting features include:
 
-- **Immediate maintenance response** - Receive automatic alerts for vehicle diagnostics indicating potential failures, enabling swift action to prevent breakdowns.
+- **Immediate maintenance response** - Receive automatic alerts for vehicle diagnostics that indicate potential failures, enabling swift action to prevent breakdowns.
 
 - **Driver safety alerts** - Trigger notifications for harsh braking, rapid acceleration, or speeding events, improving overall fleet safety.
 
@@ -103,7 +103,7 @@ Fleet operators use [Power BI](../create-powerbi-report.md) dashboards connected
 
 - **Driver behavior insights** - Analyze driving patterns to uncover trends and anomalies, enabling targeted training and safety improvements.
 
-Real-time dashboards provide live operational visibility with customizable views for different roles, enabling teams to monitor and respond to real-time events effectively. These dashboards provide the following capabilities:
+Real-Time Dashboards provide live operational visibility with customizable views for different roles, enabling teams to monitor and respond to real-time events effectively. These dashboards provide the following capabilities:
 
 - **Fleet overview** - Gain a comprehensive view of the entire fleet, including real-time vehicle status and operational metrics, to make informed decisions.
 
@@ -111,7 +111,7 @@ Real-time dashboards provide live operational visibility with customizable views
 
 - **Operational KPIs** - Track real-time key performance indicators (KPIs) such as fuel efficiency, route adherence, and maintenance compliance.
 
-[Copilot](../../fundamentals/copilot-fabric-overview.md) allows you to use natural language queries to monitor fleet operations, analyze real-time vehicle data, and identify potential issues or optimization opportunities. This tool simplifies complex data exploration, helping you make informed decisions to enhance fleet performance and operational efficiency.
+[Copilot](../../fundamentals/copilot-fabric-overview.md) allows you to use natural language queries to monitor fleet operations, analyze real-time vehicle data, and identify potential problems or optimization opportunities. This tool simplifies complex data exploration, helping you make informed decisions to enhance fleet performance and operational efficiency.
 
 ## Technical benefits and outcomes
 
@@ -119,7 +119,7 @@ Real-time dashboards provide live operational visibility with customizable views
 
 - **Unified data platform** - Create a single source of truth for all vehicle telemetry data.
 
-- **Real-time anomaly detection** - Get immediate identification of vehicle performance issues.
+- **Real-time anomaly detection** - Get immediate identification of vehicle performance problems.
 
 - **Scalable architecture** - Handle high-velocity data streams from thousands of connected vehicles.
 
