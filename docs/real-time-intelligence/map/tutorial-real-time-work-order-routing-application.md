@@ -85,6 +85,7 @@ Create a new lakehouse for incoming work order data and import the previously cr
 1. In the new lakehouse, select the **Explorer** pane on the left side of the screen.
 1. In the **File** section of the **Explorer**, select *WorkorderLocation.csv* to view the file you uploaded.
 1. In the **View settings**, select **First row as header**.
+1. (Optional) In the view drop-down list, select **Table view**.
 
 :::image type="content" source="media/tutorials/real-time-work-order-routing-application/work-order-location-file-preview.png" lightbox="media/tutorials/real-time-work-order-routing-application/work-order-location-file-preview.png" alt-text="Screenshot of the WorkorderLocation.csv file after importing it into a lakehouse.":::
 
