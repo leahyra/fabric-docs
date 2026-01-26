@@ -223,10 +223,11 @@ In this section, you create a KQL queryset that retrieves current work order loc
 ### Create a KQL queryset
 
 1. Open your eventhouse (KQL database).
+1. Select the KQL database **Workorders-Eventhouse**.
 1. Select **KQL queryset** from the menu bar.
 1. Name the queryset **WorkorderQS** then select **Create**.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-kql-queryset.png" alt-text="A screenshot of the New KQL Queryset dialog box in Microsoft Fabric with a Name field containing WorkorderQS, a Location dropdown set to My workspace with a folder icon, and Create and Cancel buttons at the bottom right with the Create button highlighted by a red border indicating it should be selected.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-kql-queryset.png" alt-text="A screenshot of the New KQL Queryset dialog box in Microsoft Fabric with a Name field containing WorkorderQS, a Location dropdown set to My workspace with a folder icon, and Create and Cancel buttons at the bottom right with the Create button highlighted by a red border indicating it should be selected.  In the background, the Workorders-Eventhouse database is visible in the left navigation panel under KQL databases, and the KQL Queryset button is highlighted in the top menu bar.":::
 
 1. Paste the following KQL query into the editor.
 
