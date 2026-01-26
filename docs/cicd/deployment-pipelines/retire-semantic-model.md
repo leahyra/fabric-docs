@@ -12,19 +12,19 @@ ms.date: 01/26/2026
 
 # Retirement of semantic model support for deployment pipelines
 
-To improve reliability and consistency across deployment environments, Microsoft Fabric deployment pipelines is retiring support for semantic models that haven't been upgraded to enhanced metadata (Git supports only the Enhanced Metadata format). This change supports strategic improvements in semantic model management, including XMLA read/write and Analysis Services migration, and ensures consistency across environments (see Using enhanced semantic model metadata). See below exempted Semantic Models of non-enhanced metadata which remains supported.
+To improve reliability and consistency across deployment environments, Microsoft Fabric deployment pipelines is retiring support for semantic models that haven't been upgraded to enhanced metadata (Git supports only the Enhanced Metadata format). This change supports strategic improvements in semantic model management, including XMLA read/write and Analysis Services migration, and ensures consistency across environments (see Using enhanced semantic model metadata). 
 
  
 
 >[!NOTE] 
-> While this change affects Power BI semantic models, deployment pipelines are now part of the broader Microsoft Fabric platform. Microsoft Fabric unifies experiences across Power BI, Synapse, Data Factory, and other services. For consistency with platform branding, this post uses “Microsoft Fabric” in the title.
+> While this change affects Power BI semantic models, deployment pipelines are now part of the broader Microsoft Fabric platform. Microsoft Fabric unifies experiences across Power BI, Synapse, Data Factory, and other services. For consistency with platform branding, this post uses "Microsoft Fabric" in the title.
 
 ## Effective date:
 
 This retirement takes effect on February 12, 2026
 
 ## How this affects your organization:
-Organizations using Microsoft Fabric deployment pipelines with semantic models that haven't yet been upgraded to enhanced metadata.
+Organizations using Microsoft Fabric deployment pipelines with semantic models that haven't upgraded to enhanced metadata.
 
 ## What happens:
  - Support for deploying semantic models with legacy metadata is retired.
@@ -63,7 +63,7 @@ Convert all source-stage semantic models from Default to Enhanced Metadata befor
 > After the conversion is executed successfully, the Workspace checks still have the "Open Semantic Model" grayed out. But the deployment won't fail anymore.
 
  
-## Additional considerations
+## More considerations
 
 - Communicate this change to helpdesk staff. 
 - Update internal documentation to reflect the new deployment requirements.
