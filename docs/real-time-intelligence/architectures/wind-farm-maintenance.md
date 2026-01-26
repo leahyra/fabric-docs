@@ -12,9 +12,9 @@ ms.search.form: Architecture
 
 # Wind farm maintenance reference architecture
 
-This reference architecture demonstrates how you can use Microsoft Fabric Real-Time Intelligence to build comprehensive wind farm maintenance solutions that handle real-time data from hundreds or thousands of wind turbines. You can process real-time telemetry data, weather conditions, and equipment performance metrics to enable intelligent wind farm operations with predictive analytics and real-time decision making. 
+This reference architecture shows how to use Microsoft Fabric Real-Time Intelligence to build comprehensive wind farm maintenance solutions that handle real-time data from hundreds or thousands of wind turbines. You can process real-time telemetry data, weather conditions, and equipment performance metrics to enable intelligent wind farm operations with predictive analytics and real-time decision making. 
 
-You can manage large-scale wind farms where hundreds or thousands of wind turbines stream real-time data on performance metrics, operational state, and environmental conditions. The architecture integrates weather monitoring data via MQTT streaming and maintains comprehensive metadata and asset information on various types of turbine equipment to create a unified wind farm platform. 
+You can manage large-scale wind farms where hundreds or thousands of wind turbines stream real-time data on performance metrics, operational state, and environmental conditions. The architecture integrates weather monitoring data through MQTT streaming and maintains comprehensive metadata and asset information on various types of turbine equipment to create a unified wind farm platform. 
 
 ## Architecture overview 
 
@@ -24,21 +24,21 @@ The wind farm maintenance reference architecture uses Microsoft Fabric Real-Time
 
 1. IoT events from wind turbines are transmitted with sub-second latency through Azure Eventhub to Eventstreams​.
 
-1. Regional weather monitoring devices provide real-time data on wind speed, direction, temperature, and humidity, which are sent to MQTT broker and subsequently gathered by Eventstream​.
+1. Regional weather monitoring devices provide real-time data on wind speed, direction, temperature, and humidity. These devices send data to an MQTT broker, and Eventstream​ subsequently gathers the data.
 
-1. Asset metadata, including rotor blade generators, is synchronized from the ERP system to OneLake using Data Factory​.
+1. Data Factory​ synchronizes asset metadata, including rotor blade generators, from the ERP system to OneLake.
 
-1. Incoming telemetry is directed to Eventhouse, where vast amounts of data are processed in sub-latency seconds, aiding in uncovering turbine related insights​.
+1. Incoming telemetry is directed to Eventhouse, where the system processes vast amounts of data in sub-latency seconds. This processing aids in uncovering turbine related insights​.
 
-1. Turbine data is enhanced and contextualized using asset metadata, resulting in organized tables that are ready for straightforward access​.
+1. The system enhances and contextualizes turbine data by using asset metadata. This process results in organized tables that are ready for straightforward access​.
 
-1. Shortcuts are established in OneLake for maintaining long-term aggregated logs​.
+1. The system establishes shortcuts in OneLake for maintaining long-term aggregated logs​.
 
-1. Advanced machine learning models are trained and evaluated in real time, facilitating the detection and prediction of maintenance issues​.
+1. The system trains and evaluates advanced machine learning models in real time, facilitating the detection and prediction of maintenance issues​.
 
 1. Our ontology is defined by entities and semantic relationships that utilize aggregated data from OneLake to create a unified and digital representation of physical assets​.
 
-1. Real time dashboard is used to provide high granularity view of all incoming telemetry with easy correlation to the asset trends​.
+1. Real-Time Dashboard provides a high granularity view of all incoming telemetry with easy correlation to the asset trends​.
 
 1. Power BI generates high level reports providing yearly and monthly view on power generation and other business insights.
 
@@ -84,7 +84,7 @@ Continuous transformations take place within [Eventhouse](../eventhouse.md), whe
 
 - **Weather analytics** - Correlation of telemetry with real-time environmental data, such as wind speed, direction, and temperature, enables dynamic adjustments to turbine operations for optimal performance under varying weather conditions.
 
-Aggregated telemetry data is correlated with weather conditions, enabling a curated view of performance patterns and operational efficiency. This real-time processing provides the following capabilities:
+By correlating aggregated telemetry data with weather conditions, you get a curated view of performance patterns and operational efficiency. This real-time processing provides the following capabilities:
 
 - **Performance optimization** - Immediate calculations for turbine efficiency and power generation adjustments ensure that turbines operate at peak performance, maximizing energy output and reducing wear and tear.
 
@@ -96,11 +96,11 @@ Aggregated telemetry data is correlated with weather conditions, enabling a cura
 
 ### Train 
 
-Machine learning models are built, trained, and scored in real time by using [Data Science](../../data-science/data-science-overview.md) capabilities to predict maintenance needs and turbine performance. These models continuously learn from incoming telemetry data, weather conditions, and historical performance patterns to provide actionable insights for wind farm operations. Key predictive capabilities include: 
+Build, train, and score machine learning models in real time by using [Data Science](../../data-science/data-science-overview.md) capabilities to predict maintenance needs and turbine performance. These models continuously learn from incoming telemetry data, weather conditions, and historical performance patterns to provide actionable insights for wind farm operations. Key predictive capabilities include: 
 
 - **Maintenance prediction models** - Use advanced machine learning algorithms to forecast potential equipment failures by analyzing historical maintenance records, real-time telemetry, and environmental conditions. These models enable proactive scheduling of service activities, reducing downtime and extending the lifespan of critical components.
 
-- **Performance optimization** - Leverage predictive analytics to determine the optimal operational settings for turbines based on real-time weather data, such as wind speed, direction, and temperature. This ensures maximum energy output while minimizing wear and tear on turbine components.
+- **Performance optimization** - Leverage predictive analytics to determine the optimal operational settings for turbines based on real-time weather data, such as wind speed, direction, and temperature. This approach ensures maximum energy output while minimizing wear and tear on turbine components.
 
 - **Power generation forecasting** - Employ machine learning models to predict energy output under varying weather conditions and operational scenarios. These forecasts help operators plan grid integration, manage energy distribution, and optimize power trading strategies.
 
@@ -110,7 +110,7 @@ Machine learning models are built, trained, and scored in real time by using [Da
 
 ### Visualize and activate 
 
-[Activator](../data-activator/activator-introduction.md) in Fabric Real-Time Intelligence generates real-time notifications to maintenance teams for wind turbine malfunctions and anomalous behavior. With this real-time awareness and automated responses, the system reduces manual intervention and helps prevent delays in addressing critical issues. Key alerting capabilities include:
+[Activator](../data-activator/activator-introduction.md) in Fabric Real-Time Intelligence generates real-time notifications to maintenance teams for wind turbine malfunctions and anomalous behavior. By using this real-time awareness and automated responses, the system reduces manual intervention and helps prevent delays in addressing critical issues. Key alerting capabilities include:
 
 - **Immediate fault response** - Automatic alerts for turbine malfunctions or performance degradation, such as abnormal vibration patterns, overheating, or unexpected power output drops. These alerts enable maintenance teams to quickly identify and address problems, minimizing downtime and preventing further damage to critical components.
 
@@ -230,7 +230,7 @@ The wind farm maintenance reference architecture delivers measurable technical a
 
 - **Data quality monitoring**: Continuously validate incoming turbine data with alerting for turbine communication failures, invalid performance metrics, or corrupted weather data.
 
-- **Performance metrics**: Track data ingestion latency from turbines, query response times for real-time dashboards, and ML model prediction accuracy with SLA monitoring.
+- **Performance metrics**: Track data ingestion latency from turbines, query response times for Real-Time Dashboards, and ML model prediction accuracy with SLA monitoring.
 
 **Cost optimization**:
 
