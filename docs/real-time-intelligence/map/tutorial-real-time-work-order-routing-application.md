@@ -51,7 +51,6 @@ Before starting this tutorial, it's helpful to review the [Real-Time Intelligenc
 * A basic understanding of [Fabric Eventhouse](/fabric/real-time-intelligence/eventhouse), used to ingest, process, and analyze data in near real-time. For information on creating an eventhouse, see [Create an eventhouse](/fabric/real-time-intelligence/create-eventhouse).
 * A Basic understanding of the [Kusto Query Language](/kusto/query/?view=microsoft-fabric).
 * A Basic understanding of [How to use Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook).
-* It would be helpful to go through the [Real-time intelligence tutorial](/fabric/real-time-intelligence/tutorial-introduction).
 
 ## Create a lakehouse and upload the sample work order data
 
@@ -80,7 +79,7 @@ WorkorderID,Latitude,Longitude
 
 Create a new lakehouse for incoming work order data and import the previously created work order location file.
 
-1. Select **New item**, and enter *lakehouse* in the search box and select it to create a new lakehouse.
+1. From your workspace, select **New item**, and enter *lakehouse* in the search box and select it to create a new lakehouse.
 1. Enter a name *WorkorderLocations* and select **Create**.
 1. In the new lakehouse, select **Upload files** and upload the *WorkorderLocation.csv* file created in the previous step.
 1. In the new lakehouse, select the **Explorer** pane on the left side of the screen.
@@ -100,7 +99,7 @@ By ingesting eventstream data into an eventhouse, you make streaming events avai
 
 ### Create an eventstream and eventhouse
 
-1. Select **New item**, and enter *eventstream* in the search box.
+1. From your workspace, select **New item**, and enter *eventstream* in the search box.
 1. Select **Eventstream**.
 1. In the **New Eventstream** dialog, enter a **Name**: "Workorders", then select **Create**.
 1. In the **Design a flow to ingest, transform, and route streaming events** screen, select **Use custom endpoint**
@@ -156,7 +155,7 @@ In this section, you create a notebook connected to the lakehouse you created ea
 
 Create a notebook with code to import the work order location file from your lakehouse into the eventstream you created in the previous section. This simulates a real-time streaming source, which in a production environment would be streamed rather than static.
 
-1. Select **New item**, and enter *notebook* in the search box.
+1. From your workspace, select **New item**, and enter *notebook* in the search box.
 1. Select **Notebook**.
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-notebook.png" alt-text="A screenshot of the Microsoft Fabric New item dialog with a search box containing the text notebook. The search results display a Notebook tile with a document icon, showing the description Create a notebook to explore data and build machine learning models. The Notebook option is highlighted indicating it can be selected to create a new notebook item.":::
@@ -272,9 +271,9 @@ In this section, you create a Fabric Maps map and use the previously created KQL
 
 ### Show queryset on map
 
-1. In the **Explorer** pane, select the eventhouse **Workorders-Eventhouse** that you added in the previous step.
-1. Navigate to the KQL query, and select the ellipse (...) to show the popup menu.
-1. Select **Show on map**
+1. In the **Explorer** pane in your new map, select the eventhouse **Workorders-Eventhouse** that you added in the previous step.
+1. Navigate to the KQL query *WorkorderQS*, and select the ellipse (...) to show the popup menu.
+1. Select **Show on map** from the popup menu.
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/show-on-map.png" alt-text="A screenshot of the Microsoft Fabric Maps Explorer panel displaying a hierarchical tree structure with KQL database section expanded. The tree shows Workorders-Eventhouse containing Workorders-Event table and WorkorderQS queryset. An ellipsis menu is open next to WorkorderQS revealing options including Show on map highlighted with a red rectangle border.":::
 
