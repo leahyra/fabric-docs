@@ -28,7 +28,7 @@ Organizations using Microsoft Fabric deployment pipelines with semantic models t
 
 ## What will happen:
  - Support for deploying semantic models with legacy metadata will be retired.
- - Attempting to deploy non-upgraded semantic models will result in deployment failure.
+ - Attempting to deploy nonupgraded semantic models will result in deployment failure.
  - PBIX files (Power BI Desktop report files) opened in the latest version of Power BI Desktop are automatically upgraded to enhanced metadata.
 - If a report has unapplied query changes or upgrade errors, users will see a warning and must manually upgrade the report.
 - Some legacy queries may not convert correctly after upgrade, especially for SQL Server, Oracle, Teradata, and SAP HANA (High-Performance Analytic Appliance) connections. Power BI regenerates native queries at runtime for these sources, and unsupported transformations may result in errors such as:
@@ -36,16 +36,16 @@ Organizations using Microsoft Fabric deployment pipelines with semantic models t
 
 ## Exemption:
 
-Semantic Models using Live Connections  to external AS servers (aka ASLC models) are only available with non-enhanced metadata, and can't be upgraded to enhanced metadata. Microsoft Fabric deployment pipelines will continue to support these ASLC Semantic Models   
+Semantic Models using Live Connections  to external AS servers (aka ASLC models) are only available with nonenhanced metadata, and can't be upgraded to enhanced metadata. Microsoft Fabric deployment pipelines will continue to support these ASLC Semantic Models   
 
 ## What you can do to prepare:
 
 Convert all source-stage semantic models from Default to Enhanced Metadata before February 2026.
 
-## How to Detect Non-Upgraded Models
+## How to Detect Nonupgraded Models
 
 - **Deployment failure:** If a deployment fails and the error message states the semantic model wasn't upgraded, that model requires conversion.
-- **Workspace check:** In the workspace, hover over ‘Open Semantic Model’ in the item’s menu (under 'More options'). If it’s grayed out and the tooltip indicates upgrade is needed, the model is probably not in Enhanced Metadata format.
+- **Workspace check:** In the workspace, hover over **Open Semantic Model** in the item’s menu (under 'More options'). If it’s grayed out and the tooltip indicates upgrade is needed, the model is probably not in Enhanced Metadata format.
  
  :::image type="content" source="media/retire-semantic-model/retire-1.png" alt-text="Diagram showing how to create your own fabric workload." lightbox="media/retire-semantic-model/retire-1.png":::
 
