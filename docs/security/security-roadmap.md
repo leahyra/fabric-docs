@@ -80,9 +80,7 @@ The following table shows the support status for each Fabric item and whether it
 
 <sup>1</sup> Support is currently in development, with preview targeted for Q1 2026 and GA for Q2 2026. These dates are subject to change.
 
----
-
-### [Option 3: Target dates](#tab/dates-1)
+### [Option 2: Target dates](#tab/dates-1)
 
 | Fabric Experience | Fabric Item | Workspace private links | Customer managed keys | Outbound access protection |
 |--|--|:--:|:--:|:--:|
@@ -141,3 +139,4 @@ The following table shows the support status for each Fabric item and whether it
 - For community, marketing, case studies, and industry news, see the [Microsoft Fabric Blog](https://www.microsoft.com/microsoft-fabric/blog/).
 - Follow the latest in Power BI at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
 - For older updates, review the [Microsoft Fabric What's New archive](/fabric/fundamentals/whats-new-archive.md).
+<!-->✓<-->
