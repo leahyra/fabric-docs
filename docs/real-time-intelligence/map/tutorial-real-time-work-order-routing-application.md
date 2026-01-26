@@ -50,7 +50,8 @@ Before starting this tutorial, it's helpful to review the [Real-Time Intelligenc
 * A basic understanding of [Fabric Lakehouse](/fabric/data-engineering/lakehouse-overview), a data repository for storing, managing, and analyzing structured and unstructured data in a single location. For information on creating a lakehouse, see [Create a lakehouse in Microsoft Fabric](/fabric/data-engineering/create-lakehouse).
 * A basic understanding of [Fabric Eventhouse](/fabric/real-time-intelligence/eventhouse), used to ingest, process, and analyze data in near real-time. For information on creating an eventhouse, see [Create an eventhouse](/fabric/real-time-intelligence/create-eventhouse).
 * A Basic understanding of the [Kusto Query Language](/kusto/query/?view=microsoft-fabric).
-* It would be helpful to
+* A Basic understanding of [How to use Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook).
+* It would be helpful to go through the [Real-time intelligence tutorial](/fabric/real-time-intelligence/tutorial-introduction).
 
 ## Create a lakehouse and upload the sample work order data
 
