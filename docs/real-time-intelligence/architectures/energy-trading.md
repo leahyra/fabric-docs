@@ -12,9 +12,9 @@ ms.search.form: Architecture
 
 # Energy trading management reference architecture
 
-This reference architecture demonstrates how you can use Microsoft Fabric Real-Time Intelligence to build comprehensive energy trading management solutions that handle real-time data from energy generation facilities, grid consumption networks, and market trading platforms. You can process real-time manufacturing data from wind turbines and power plants, grid consumption events, and smart meter telemetry to enable intelligent energy trading operations with predictive analytics and real-time decision making. 
+This reference architecture shows how to use Microsoft Fabric Real-Time Intelligence to build comprehensive energy trading management solutions that handle real-time data from energy generation facilities, grid consumption networks, and market trading platforms. You can process real-time manufacturing data from wind turbines and power plants, grid consumption events, and smart meter telemetry to enable intelligent energy trading operations with predictive analytics and real-time decision making. 
 
-You can manage large-scale energy trading operations where thousands of energy generation sources and smart meters stream real-time data on production metrics, consumption patterns, and market conditions. The architecture integrates CRM contextualization data via MQTT streaming and maintains comprehensive metadata and asset information on various types of energy infrastructure to create a unified energy trading platform.
+You can manage large-scale energy trading operations where thousands of energy generation sources and smart meters stream real-time data on production metrics, consumption patterns, and market conditions. The architecture integrates CRM contextualization data through MQTT streaming and maintains comprehensive metadata and asset information on various types of energy infrastructure to create a unified energy trading platform.
 
 ## Architecture overview
 
@@ -128,7 +128,7 @@ Your traders use [Power BI dashboards](../create-powerbi-report.md) connected di
 
 - **Market insights** - Generate forecasting reports to predict market trends, inform trading strategies, and improve market positioning. These insights enable proactive adjustments to trading operations and enhance competitive advantage.
 
-[Real-time dashboards](../real-time-dashboards-overview.md) provide live operational visibility with customizable views for different operational roles, enabling teams to monitor and respond to real-time events effectively. These dashboards provide the following capabilities:
+[Real-Time Dashboards](../real-time-dashboards-overview.md) provide live operational visibility with customizable views for different operational roles, enabling teams to monitor and respond to real-time events effectively. These dashboards provide the following capabilities:
 
 - **Grid overview** - Gain a comprehensive view of the entire energy grid, including real-time generation and consumption status, to make informed trading decisions. This overview provides insights into grid-wide energy flow, enabling traders to identify imbalances, optimize market positions, and respond to dynamic market conditions effectively.
 
@@ -138,13 +138,13 @@ Your traders use [Power BI dashboards](../create-powerbi-report.md) connected di
 
 - **Trading metrics** - Track real-time key performance indicators (KPIs) such as market position, profit margins, and trading performance. These metrics provide actionable insights for maximizing profitability, minimizing risks, and maintaining competitive advantage in fast-paced energy markets.
 
-[KQL Copilot](../copilot-writing-queries.md) allows you to use natural language queries to monitor energy trading operations, analyze real-time energy generation and consumption data, and identify potential market opportunities or operational issues. You can use KQL Copilot to aggregate and evaluate performance metrics from wind turbines, power plants, and smart meters, enabling deeper insights into energy generation efficiency, grid performance, and trading optimization. This tool simplifies complex data exploration, helping you make informed decisions to enhance energy trading strategies and market positioning.
+[KQL Copilot](../copilot-writing-queries.md) allows you to use natural language queries to monitor energy trading operations, analyze real-time energy generation and consumption data, and identify potential market opportunities or operational problems. You can use KQL Copilot to aggregate and evaluate performance metrics from wind turbines, power plants, and smart meters, enabling deeper insights into energy generation efficiency, grid performance, and trading optimization. This tool simplifies complex data exploration, helping you make informed decisions to enhance energy trading strategies and market positioning.
 
 ## Technical benefits and outcomes
 
 ### Energy trading intelligence
 
-- **Real-time market monitoring** - Monitor entire energy trading portfolio with subsecond response times for critical trading operations.
+- **Real-time market monitoring** - Monitor your entire energy trading portfolio with subsecond response times for critical trading operations.
 
 - **Predictive analytics** - Use ML models to forecast market deficiencies, price spikes, and trading optimization opportunities.
 
@@ -226,7 +226,7 @@ Your traders use [Power BI dashboards](../create-powerbi-report.md) connected di
 
 - **Data quality monitoring**: Continuously validate incoming energy trading data with alerting for generation facility failures, smart meter communication problems, or corrupted market data.
 
-- **Performance metrics**: Track data ingestion latency from energy sources, query response times for real-time dashboards, and ML model prediction accuracy with SLA monitoring.
+- **Performance metrics**: Track data ingestion latency from energy sources, query response times for Real-Time Dashboards, and ML model prediction accuracy with SLA monitoring.
 
 **Cost optimization**:
 
@@ -278,7 +278,7 @@ Your traders use [Power BI dashboards](../create-powerbi-report.md) connected di
 
 - Implement [Activator](../data-activator/activator-introduction.md) for sophisticated energy trading automation including predictive market response, dynamic portfolio optimization, and automated trading execution.
 
-- Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) for natural language analytics. Enable your teams to query complex scenarios like "Show me all generation assets with trading opportunities during tomorrow's peak pricing hours." 
+- Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) for natural language analytics. Enable your teams to query complex scenarios like "Show me all generation assets with trading opportunities during tomorrow's peak pricing hours.".
 - Create intelligent energy trading systems that provide real-time decision support based on generation patterns, market demand, and trading requirements.
 
 **Enterprise-scale deployment**
