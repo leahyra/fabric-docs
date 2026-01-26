@@ -6,7 +6,7 @@ ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: example-scenario
 ms.subservice: rti-core
-ms.date: 01/25/2026
+ms.date: 01/26/2026
 ms.search.form: Architecture
 ---
 
@@ -19,6 +19,8 @@ You can manage large-scale energy grids where thousands of energy generation sou
 ## Architecture overview 
 
 The energy grid management reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from energy generation facilities and consumption networks for intelligent grid management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate.
+
+:::image type="content" source="media/energy-grid-diagram.png" alt-text="Energy grid management architecture diagram" lightbox= "media/energy-grid-diagram.png":::
 
 1. Stream energy manufacturing IoT events with subsecond latency from wind turbines and power plants.
 
@@ -36,11 +38,11 @@ The energy grid management reference architecture uses Microsoft Fabric Real-Tim
 
 1. Build, train, and score machine learning models in real time to better predict potential energy deficiencies and spikes.
 
-1. Generate real-time notifications on energy spikes and forecasting of potential energy deficiencies.
+1. Use Activator to generate real-time notifications on energy spikes and forecasting of potential energy deficiencies.
 
-1. Provide real-time dashboards that offer a rich, high granularity view of the entire electric grid with low latency and the ability to drill down from overall grid view to a specific meter consumption.
+1. Real-Time Dashboards offer a rich, high granularity view of the entire electric grid with low latency and the ability to drill down from overall grid view to a specific meter consumption.
 
-1. Provide rich Power BI reports that offer a full business view on the energy generation and consumption rates.
+1. Power BI provides rich reports with a full business view on the energy generation and consumption rates.
 
 The following sections explain each operational phase in detail.
 
@@ -156,7 +158,7 @@ Your grid operators use [Power BI dashboards](../create-powerbi-report.md) conne
 
 ### Automated grid operations
 
-- **Intelligent alerting** - Real-time notifications for energy spikes, deficiencies, and grid stability issues.
+- **Intelligent alerting** - Real-time notifications for energy spikes, deficiencies, and grid stability problems.
 
 - **Automated workflows** - Set up triggers for demand response, generation optimization, and emergency protocols.
 
