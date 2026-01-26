@@ -7,7 +7,7 @@ author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.subservice: rti-eventhouse
-ms.date: 05/11/2025
+ms.date: 01/26/2026
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -116,6 +116,12 @@ The system overview page provides a snapshot of the current state of the eventho
         For example, if two users execute queries at the same time, one taking 3 minutes and the other 5 minutes, the total compute minutes would be 8. But since these queries ran together, the actual compute units used are just 5 minutes.
 
         In the case where 78 queries and 173 ingest operations run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units used is still only 5 minutes.
+
+        The tile also allows users to open the underlying KQL query by selecting **Open KQL Code** in the ellipsis menu.     
+        :::image type="content" source="media/eventhouse/eventhouse-activity.png" alt-text="Screenshot of the Activity in minutes tile":::
+
+        This provides full visibility into how the compute minutes are calculated.    
+        :::image type="content" source="{source}" alt-text="{alt-text}":::    
 
     * **Ingestion**: Shows the number of ingested rows and the number of databases that the data was ingested to. The information can help you understand the amount of data that is ingested into the eventhouse over time.
 
