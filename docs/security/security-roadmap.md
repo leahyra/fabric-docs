@@ -23,66 +23,66 @@ The following table shows the support status for each Fabric item and whether it
 
 | Fabric Experience | Fabric Item | Workspace private links | Customer managed keys | Outbound access protection |
 |--|--|:--:|:--:|:--:|
-| Power BI | Power BI Reports | - | - | Planned <sup>1</sup> |
-| Power BI | Dashboards | - | - | - |
-| Power BI | Scorecard | - | - | - |
-| Power BI | Semantic Model | - | - | Planned <sup>2</sup> |
-| OneLake | Shortcut | GA | - | - |
-| Power BI | Streaming dataflow | - | - | - |
-| Power BI | Streaming dataset | - | - | - |
-| Power BI | Paginated Reports | - | - | - |
-| Power BI | Datamart | - | - | - |
-| Power BI | Exploration | - | - | - |
-| Power BI | Org App | - | - | - |
-| Power BI | Metric Set | - | - | - |
-| Data Engineering | Lakehouse | GA | GA | GA |
-| Data Engineering | Lakehouse Shortcuts | GA | - | Preview |
-| Data Engineering | Lakehouse Sql Endpoint | GA | GA | GA |
-| Data Engineering | Notebook | GA | GA | GA |
-| Data Engineering | Spark Job Definition | GA | GA | GA |
-| Data Engineering | Environment | GA | GA | GA |
-| Data Engineering | Lakehouse with Schemas | - | GA | Preview |
-| Data Factory | Default Semantic Model | Preview | - | GA |
-| Data Factory | Pipeline | GA | GA | Preview |
-| Data Factory | Dataflows Gen1 | Not supported | Not supported | Not supported |
-| Data Factory | Dataflows Gen2 | - | GA | Preview |
-| Data Factory | Copy Jobs | GA | GA | Preview |
-| Data Factory | Mounted Azure Data Factory | GA | - | - |
-| Data Factory | Vnet data gateways | GA | - | Preview |
-| Data Factory | On-premises data gateways | Pipelines/Copy Job supported (Dataflow Gen2 pending)| - | Preview |
-| Data Warehouse | SQL Endpoint | GA | GA | GA |
-| Data Warehouse | Warehouse | GA | GA | GA |
-| Data Warehouse | Warehouse with EDPE | - | Not supported | - |
-| Data Science | ML Model | GA | GA | Planned <sup>2</sup> |
-| Data Science | Experiment | GA | GA | - |
-| Data Science | Data Agent | GA | - | - |
-| Real-Time Intelligence | KQL Queryset | GA | Preview | - |
-| Real-Time Intelligence | Activator | GA | - | - |
-| Real-Time Intelligence | Eventhouse/KQL DB | GA | Preview | - |
-| Real-Time Intelligence | Eventstream | GA | - | - |
-| Real-Time Intelligence | Real-Time Dashboards | GA | Preview | - |
-| Mirroring | Mirrored Azure SQL Database | Not supported | - | Preview |
-| Mirroring | Mirrored Azure SQL Managed Instance | Not supported | - | Preview |
-| Mirroring | Mirrored Snowflake | - | - | Preview |
-| Mirroring | Mirrored SQL Server (Windows/Linux on-premises) | GA | - | Preview |
-| Mirroring | Mirrored Azure Cosmos DB | GA | - | Preview |
-| Mirroring | Mirrored Azure Database for PostgreSQL | Not supported | - | Preview |
-| Mirroring | Mirrored Google Bigquery | - | - | Preview |
-| Mirroring | Mirrored Oracle | Q1 2026 | - | Preview |
-| Native Databases | Sql DB in Fabric | Q1 2026 Preview | Preview | - |
-| Native Databases | Cosmos DB | - | - | - |
-| Developer Experience | API for GraphQL | - | GA | - |
-| Developer Experience | Deployment Pipelines | - | - | Preview |
-| Developer Experience | Git Integration | GA | - | GA |
-| Developer Experience | Variable Libraries | GA | - | - |
-| Industry Solutions | Healthcare data solutions | - | GA | - |
-| Industry Solutions | Sustainability Solutions | - | GA | - |
+| **Power BI** | Power BI Reports | - | - | Planned <sup>1</sup> |
+|  | Dashboards | - | - | - |
+|  | Scorecard | - | - | - |
+|  | Semantic Model | - | - | Planned <sup>2</sup> |
+|  | Streaming dataflow | - | - | - |
+|  | Streaming dataset | - | - | - |
+|  | Paginated Reports | - | - | - |
+|  | Datamart | - | - | - |
+|  | Exploration | - | - | - |
+|  | Org App | - | - | - |
+|  | Metric Set | - | - | - |
+| **OneLake** | Shortcut | GA | - | - |
+| **Data Engineering** | Lakehouse | GA | GA | GA |
+|  | Lakehouse Shortcuts | GA | - | Preview |
+|  | Lakehouse Sql Endpoint | GA | GA | GA |
+|  | Notebook | GA | GA | GA |
+|  | Spark Job Definition | GA | GA | GA |
+|  | Environment | GA | GA | GA |
+|  | Lakehouse with Schemas | - | GA | Preview |
+| **Data Factory** | Default Semantic Model | Preview | - | GA |
+|  | Pipeline | GA | GA | Preview |
+|  | Dataflows Gen1 | Not supported | Not supported | Not supported |
+|  | Dataflows Gen2 | - | GA | Preview |
+|  | Copy Jobs | GA | GA | Preview |
+|  | Mounted Azure Data Factory | GA | - | - |
+|  | Vnet data gateways | GA | - | Preview |
+|  | On-premises data gateways | Pipelines/Copy Job supported (Dataflow Gen2 pending)| - | Preview |
+| **Data Warehouse** | SQL Endpoint | GA | GA | GA |
+|  | Warehouse | GA | GA | GA |
+|  | Warehouse with EDPE | - | Not supported | - |
+| **Data Science** | ML Model | GA | GA | Planned <sup>2</sup> |
+|  | Experiment | GA | GA | - |
+|  | Data Agent | GA | - | - |
+| **Real-Time Intelligence** | KQL Queryset | GA | Preview | - |
+|  | Activator | GA | - | - |
+|  | Eventhouse/KQL DB | GA | Preview | - |
+|  | Eventstream | GA | - | - |
+|  | Real-Time Dashboards | GA | Preview | - |
+| **Mirroring** | Mirrored Azure SQL Database | Not supported | - | Preview |
+|  | Mirrored Azure SQL Managed Instance | Not supported | - | Preview |
+|  | Mirrored Snowflake | - | - | Preview |
+|  | Mirrored SQL Server (Windows/Linux on-premises) | GA | - | Preview |
+|  | Mirrored Azure Cosmos DB | GA | - | Preview |
+|  | Mirrored Azure Database for PostgreSQL | Not supported | - | Preview |
+|  | Mirrored Google Bigquery | - | - | Preview |
+|  | Mirrored Oracle | Q1 2026 | - | Preview |
+| **Native Databases** | Sql DB in Fabric | Q1 2026 Preview | Preview | - |
+|  | Cosmos DB | - | - | - |
+| **Developer Experience** | API for GraphQL | - | GA | - |
+|  | Deployment Pipelines | - | - | Preview |
+|  | Git Integration | GA | - | GA |
+|  | Variable Libraries | GA | - | - |
+| **Industry Solutions** | Healthcare data solutions | - | GA | - |
+|  | Sustainability Solutions | - | GA | - |
 
 <sup>1</sup> Support is currently in development, with preview targeted for Q1 2026 and GA for Q2 2026. These dates are subject to change.
 
 ---
 
-### [Option 2: Target dates](#tab/dates-1)
+### [Option 3: Target dates](#tab/dates-1)
 
 | Fabric Experience | Fabric Item | Workspace private links | Customer managed keys | Outbound access protection |
 |--|--|:--:|:--:|:--:|
