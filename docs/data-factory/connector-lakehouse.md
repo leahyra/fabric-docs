@@ -34,11 +34,11 @@ In some cases, the Power Query connector article might include advanced options,
 
 ### Using relative references
 
-When using the navigator, you will be able to locate a node that uses the name **!(Current Workspace)**. This node in the navigator will always display the available Fabric Lakehouses in the same workspace where the Dataflow Gen2 is located.
+When using the navigator, you will be able to locate a node named **!(Current Workspace)**. This node displays the available Fabric Lakehouses in the same workspace where the Dataflow Gen2 is located.
 
 ![Screenshot of the navigator showing the !(Current Workspace) node for the Fabric Lakeouse connector](media/connector-lakehouse/lakehouse-relative-reference-current-workspace.png)
 
-When using any items within this node, the M script emitted will not use worskpace or lakehouse identifiers and instead will use relative identifiers such as the ```"."``` handler to denote the current workspace and the name of the lakehouse as in the example M code.
+When using any items within this node, the M script emitted uses workspace or lakehouse identifiers and instead uses relative references such as the ```"."``` handler to denote the current workspace and the name of the lakehouse as in the example M code.
 
 ```M code
 let
