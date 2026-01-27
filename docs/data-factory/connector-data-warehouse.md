@@ -32,7 +32,7 @@ You can connect Dataflow Gen2 to a Data Warehouse in Microsoft Fabric using Powe
 
 ### Using relative references
 
-When using the navigator, you will be able to locate a node named **!(Current Workspace)**. This node displays the available Fabric Data Warehouses in the same workspace where the Dataflow Gen2 is located.
+Inside the navigator, a special node with the name **!(Current Workspace)** is located. This node displays the available Fabric Data Warehouses in the same workspace where the Dataflow Gen2 is located.
 
 ![Screenshot of the navigator showing the !(Current Workspace) node for the Fabric Warehouse connector](media/connector-data-warehouse/warehouse-relative-reference-current-workspace.png)
 
