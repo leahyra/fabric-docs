@@ -537,6 +537,83 @@ If one of the rule options is greyed out, it could be because of the following r
 
 **Solution**: Format the semantic model connection in Power BI Desktop so that the semantic model source appears in the first row. Then, republish the semantic model.
 
+
+
+### Retirement of Legacy Semantic Model Metadata Support in Microsoft Fabric Deployment Pipelines
+
+#### What change is Microsoft making to semantic model support in deployment pipelines?
+**Solution**: Beginning February 12, 2026, Microsoft Fabric deployment pipelines will retire support for semantic models that have not been upgraded to Enhanced Metadata. Deployment pipelines—and Git integration—require Enhanced Metadata for improved reliability, consistency, and alignment with ongoing platform investments such as XMLA read/write and Analysis Services migration.
+
+#### Why is this change happening?
+**Solution**: Enhanced Metadata provides a consistent, modernized model structure that enables:
+
+More reliable deployments across environments
+Compatibility with Git (which supports only Enhanced Metadata)
+Improved XMLA read/write experiences
+Future migration paths aligned with Analysis Services
+Greater consistency across the unified Microsoft Fabric platform
+
+
+#### Who is impacted?
+**Solution**:  Any organization using Microsoft Fabric deployment pipelines with semantic models still using legacy (non‑enhanced) metadata. This change applies to Power BI semantic models within Fabric.
+
+#### What happens if we try to deploy models that haven’t been upgraded?
+**Solution**: 
+
+- Deployment of legacy metadata models will fail.
+- PBIX files opened in the latest Power BI Desktop are automatically upgraded.
+- If a report has unapplied query changes or upgrade errors, users will see a warning and must upgrade manually.
+- Some legacy queries (especially for SQL Server, Oracle, Teradata, SAP HANA) may not convert cleanly and could generate errors like:
+- "Unable to convert an M query in table 'Dimension City' into a native source query."
+
+
+#### Are there any exceptions?
+**Solution**:  Yes. ASLC (Analysis Services Live Connection) semantic models—which use external AS servers—cannot be upgraded because they rely on non‑enhanced metadata. Deployment pipelines will continue to support ASLC models.
+
+#### How can I check whether a semantic model still uses legacy metadata?
+**Solution**: 
+
+- Deployment failure: If a deployment error says the semantic model wasn't upgraded, it still uses legacy metadata.
+- Workspace check: In the workspace, hover over Open Semantic Model in the item's menu. If it's greyed out with an "upgrade required" tooltip, the model is likely not using Enhanced Metadata.
+
+
+#### What should my organization do to prepare?
+**Solution**: 
+
+- Upgrade all source‑stage semantic models to Enhanced Metadata before February 2026.
+- Inform helpdesk and internal support teams about the coming change.
+- Update internal documentation and workflows to reflect the new requirement.
+- Review limitations and troubleshooting steps in the Using enhanced semantic model metadata guidance.
+
+
+#### How do I convert a legacy semantic model to Enhanced Metadata?
+**Recommended method:** Republish via Power BI Desktop
+
+1. Download the model from the ALM source stage.
+2. Open it using the latest Power BI Desktop.
+3. Save the file—this triggers conversion to Enhanced Metadata.
+Republish to Power BI.
+
+**Alternative method:** Convert using XMLA read/write (SSMS)
+
+Using XMLA, update the model:
+
+Set `compatibilityLevel` to 1520
+Add `"defaultPowerBIDataSourceVersion": "powerBI_V3"` inside the "model" object
+
+
+See [Semantic model connectivity and management with the XMLA endpoint in Power BI](../enterprise/powerbi/service-premium-connect-tools.md) for details.
+
+.[!NOTE]
+> Even after a successful conversion, the Open Semantic Model option may remain greyed out. However, deployments will succeed.
+
+
+
+
+
+
+
+
 ## Troubleshooting errors
 
 Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-rules.md) you created. If you don't see a rule error message name, review the [deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations) and the [supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-gen1-and-semantic-model-rules), and try to reconfigure the rule.
