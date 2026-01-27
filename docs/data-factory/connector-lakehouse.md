@@ -34,7 +34,7 @@ In some cases, the Power Query connector article might include advanced options,
 
 ## Set up your connection in a pipeline
 
-You can set up a Lakehouse connection in the **Get Data** page or in the **Manage connections and gateways** page. Connections established through **Manage connections and gateways** page are currently in preview.
+You can set up a Lakehouse connection in the **Get Data** page or in the **Manage connections and gateways** page. Connections established through **Manage connections and gateways** page are currently in preview. The sections below describe how to configure the connection through each option.
 
 - In **Get Data** page:
 
