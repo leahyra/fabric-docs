@@ -576,7 +576,7 @@ To improve reliability and consistency across deployment environments, Microsoft
 
 - **Deployment failure:** If a deployment error says the semantic model wasn't upgraded, it still uses legacy metadata.
 - **Workspace check:** In the workspace, hover over Open Semantic Model in the item's menu. If it's greyed out with an "upgrade required" tooltip, the model is likely not using Enhanced Metadata.
-
+ :::image type="content" source="media/troubleshoot-cicd/retire-1.png" alt-text="Screenshot of workspace check." lightbox="media/troubleshoot-cicd/retire-1.png":::
 
 #### What should my organization do to prepare?
 **Solution**: 
