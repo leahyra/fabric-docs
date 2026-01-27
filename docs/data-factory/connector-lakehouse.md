@@ -4,7 +4,7 @@ description: This article details how to use the Data Factory Lakehouse connecto
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 01/07/2026
+ms.date: 2/9/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -31,6 +31,24 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 * To connect to the Lakehouse connector from Power Query, go to [Connect to a Lakehouse from Power Query Online](/power-query/connectors/lakehouse#connect-to-a-lakehouse-from-power-query-online).
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+
+### Using relative references
+
+When using the navigator, you will be able to locate a node that uses the name **!(Current Workspace)**. This node in the navigator will always display the available Fabric Lakehouses in the same workspace where the Dataflow Gen2 is located.
+
+![Screenshot of the navigator showing the !(Current Workspace) node for the Fabric Lakeouse connector](media/connector-lakehouse/lakehouse-relative-reference-current-workspace.png)
+
+When using any items within this node, the M script emitted will not use worskpace or lakehouse identifiers and instead will use relative identifiers such as the ```"."``` handler to denote the current workspace and the name of the lakehouse as in the example M code.
+
+```M code
+let
+  Source = Lakehouse.Contents([HierarchicalNavigation = null]),
+  #"Navigation 1" = Source{[workspaceId = "."]}[Data],
+  #"Navigation 2" = #"Navigation 1"{[lakehouseName = "My Lakehouse"]}[Data],
+  #"Navigation 3" = #"Navigation 2"{[Id = "Date", ItemKind = "Table"]}[Data]
+in
+  #"Navigation 3"
+```
 
 ## Set up your connection in a pipeline
 

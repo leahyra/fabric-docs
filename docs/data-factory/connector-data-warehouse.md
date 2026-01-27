@@ -4,7 +4,7 @@ description: This article provides information about how to create a Data Wareho
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 2/16/2025
+ms.date: 2/9/2025
 ms.custom:
   - template-how-to
   - connectors
