@@ -4,7 +4,7 @@ description: This article provides information about how to create a Data Wareho
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 1/30/2025
+ms.date: 2/16/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -32,7 +32,21 @@ You can connect Dataflow Gen2 to a Data Warehouse in Microsoft Fabric using Powe
 
 ### Using relative references
 
-TBD
+When using the navigator, you will be able to locate a node that uses the name **!(Current Workspace)**. This node in the navigator will always display the available Fabric Data Warehouses in the same workspace where the Dataflow Gen2 is located.
+
+![Screenshot of the navigator showing the !(Current Workspace) node for the Fabric Warehouse connector](media/connector-data-warehouse/warehouse-relative-reference-current-workspace.png)
+
+When using any items within this node, the M script emitted will not use worskpace or warehouse identifiers and instead will use relative identifiers such as the ```"."``` handler to denote the current workspace and the name of the Warehouse as in the example M code.
+
+```M-code
+let
+  Source = Fabric.Warehouse([HierarchicalNavigation = null]),
+  #"Navigation 1" = Source{[workspaceId = "."]}[Data],
+  #"Navigation 2" = #"Navigation 1"{[displayName = "Test sample"]}[Data],
+  #"Navigation 3" = #"Navigation 2"{[Schema = "dbo", Item = "Date"]}[Data]
+in
+  #"Navigation 3"
+  ```
 
 ### More information
 
