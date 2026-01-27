@@ -4,7 +4,7 @@ description: This article details how to use the Data Factory Lakehouse connecto
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 01/07/2026
+ms.date: 01/27/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -34,7 +34,7 @@ In some cases, the Power Query connector article might include advanced options,
 
 ## Set up your connection in a pipeline
 
-You can set up a Lakehouse connection in the **Get Data** page or in the **Manage connections and gateways** page. The sections below describe how to configure the connection through each option.
+You can set up a Lakehouse connection in the **Get Data** page or in the **Manage connections and gateways** page. Connections established through **Manage connections and gateways** page are currently in preview.
 
 - In **Get Data** page:
 
@@ -55,7 +55,7 @@ You can set up a Lakehouse connection in the **Get Data** page or in the **Manag
     
         :::image type="content" source="media/connector-lakehouse/manage-connection-gateways-new-connection.png" alt-text="Screenshot creating new Lakehouse connection in Manage connection gateways.":::
     
-    1. After the connection is created, go to the pipeline and select it in the connection drop‑down list. The connection established through this method is in preview stage.
+    1. After the connection is created, go to the pipeline and select it in the connection drop‑down list.
 
         :::image type="content" source="media/connector-lakehouse/select-lakehouse-connection.png" alt-text="Screenshot of selecting a Lakehouse connection in pipelines.":::
 
