@@ -5,13 +5,13 @@ description: Learn about the support status of the Fabric security features Work
 author: msmimart
 ms.author: mimart
 ms.reviewer: mimart
-ms.date: 01/23/2026
+ms.date: 01/27/2026
 ms.topic: concept-article
 ---
 
 # Security feature availability in Microsoft Fabric
 
-Microsoft Fabric supports various security features across different workloads and items. This page is continuously updated with the availability of the following security features for Fabric items, including current support status and planned release timelines:
+Microsoft Fabric supports various security features across different workloads and items. This article is continuously updated with the availability of the following security features for Fabric items, including current support status and planned release timelines:
 
 * [Workspace private links](security-workspace-level-private-links-overview.md)
 * [Customer managed keys](workspace-customer-managed-keys.md)
@@ -19,22 +19,10 @@ Microsoft Fabric supports various security features across different workloads a
 
 ## Feature availability by Fabric item type
 
-The following table shows the support status for each Fabric item. A check mark (✓) indicates the item is currently supported and generally available (GA). "Preview" means support for the item type is in preview, and "Planned" means support is planned but not yet available.
+The following table shows the support status for each Fabric item. A check mark (✓) indicates the item is currently supported and generally available (GA). "Preview" means support for the item type is in preview. For the most up-to-date Fabric release timelines, refer to the [Microsoft Fabric Roadmap](https://roadmap.fabric.microsoft.com/?product=administration%2Cgovernanceandsecurity).
 
 |  | Item type | Workspace private links | Customer managed keys | Outbound access protection |
 |--|--|:--:|:--:|:--:|
-| **Power BI** | Power BI Report | - | - | Planned<sup>1</sup> |
-|  | Dashboard | - | - | - |
-|  | Scorecard | - | - | - |
-|  | Semantic Model | - | - | Planned<sup>1</sup> |
-|  | Streaming dataflow | - | - | - |
-|  | Streaming dataset | - | - | - |
-|  | Paginated Report | - | - | - |
-|  | Datamart | - | - | - |
-|  | Exploration | - | - | - |
-|  | Org App | - | - | - |
-|  | Metric Set | - | - | - |
-| **OneLake** | Shortcut | ✓ | - | - |
 | **Data Engineering** | Lakehouse | ✓ | ✓ | ✓ |
 |  | Lakehouse Shortcut | ✓ | - | Preview |
 |  | Lakehouse SQL Endpoint | ✓ | ✓ | ✓ |
@@ -54,21 +42,23 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | On-premises data gateway: Dataflow Gen2 | -| - | Preview|
 |  | Data Workflow | - | - | - |
 |  | Data Build Tool job | - | - | - |
+| **Data Science** | ML Model | ✓ | ✓ |  |
+|  | Experiment | ✓ | ✓ |  |
+|  | Data Agent | ✓ | - |  |
 | **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
 |  | Warehouse | ✓ | ✓ | ✓ |
-|  | Warehouse with EDPE | Planned<sup>1</sup> | Not supported | - |
-| **Data Science** | ML Model | ✓ | ✓ | Planned<sup>1</sup> |
-|  | Experiment | ✓ | ✓ | Planned<sup>1</sup> |
-|  | Data Agent | ✓ | - | Planned<sup>1</sup> |
-| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | - |
-|  | Activator | ✓ | - | - |
-|  | Eventhouse/KQL DB | ✓ | Preview | Planned<sup>1</sup> |
-|  | Eventstream | ✓ | Planned<sup>1</sup> | - |
-|  | Real-Time Dashboard | ✓ | Preview | - |
-|  | Anomaly detector  | - | - | - |
-|  | Digital Twin Builder | - | - | - | 
-|  | Event Schema Set  | - | - | - |
-|  | Map | - | - | - |
+|  | Warehouse with EDPE |  | Not supported | - |
+| **Developer Experience** | API for GraphQL | - | ✓ | - |
+|  | Deployment Pipeline |  | - | ✓ |
+|  | Git Integration | ✓ | - | ✓ |
+|  | Variable Library | ✓ | - | - |
+| **Governance and Security** | Sensitivity Label | - | - | - |
+|  | Share item | - | - | - |
+| **Graph** | Graph model  | - | - | - |
+|  | Graph queryset | - | - | - |
+| **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
+|  | Sustainability Solution | - | ✓ | - |
+|  | Retail Solution | - | ✓ | - |
 | **Mirroring** | Mirrored Azure SQL Database | Not supported | - | Preview|
 |  | Mirrored Azure SQL Managed Instance | Not supported | - | Preview |
 |  | Mirrored Azure Databricks Catalog | - | - | - |
@@ -79,29 +69,37 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Mirrored Azure Cosmos DB | ✓ | - | Preview |
 |  | Mirrored Azure Database for PostgreSQL | Not supported | - | Preview |
 |  | Mirrored Google Bigquery | - | - | Preview |
-|  | Mirrored Oracle | Planned<sup>1</sup> | - | Preview |
-| **Native Databases** | Sql DB in Fabric | Planned<sup>1</sup> | Preview | - |
-|  | Cosmos DB | Planned<sup>1</sup> | Planned<sup>1</sup> | - |
+|  | Mirrored Oracle |  | - | Preview |
+| **Native Databases** | Sql DB in Fabric |  | Preview | - |
+|  | Cosmos DB |  |  | - |
 |  | Snowflake database | - | - | - |
-| **Graph** | Graph model  | - | - | - |
-|  | Graph queryset | - | - | - |
-| **Developer Experience** | API for GraphQL | - | ✓ | - |
-|  | Deployment Pipeline | Planned<sup>1</sup> | - | ✓ |
-|  | Git Integration | ✓ | - | ✓ |
-|  | Variable Library | ✓ | - | - |
-| **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
-|  | Sustainability Solution | - | ✓ | - |
-|  | Retail Solution | - | ✓ | - |
-| **Governance and Security** | Sensitivity Label | - | - | - |
-|  | Share item | - | - | - |
+| **OneLake** | Shortcut | ✓ | - | - |
+| **Power BI** | Power BI Report | - | - | - |
+|  | Dashboard | - | - | - |
+|  | Scorecard | - | - | - |
+|  | Semantic Model | - | - | - |
+|  | Streaming dataflow | - | - | - |
+|  | Streaming dataset | - | - | - |
+|  | Paginated Report | - | - | - |
+|  | Datamart | - | - | - |
+|  | Exploration | - | - | - |
+|  | Org App | - | - | - |
+|  | Metric Set | - | - | - |
+| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | - |
+|  | Activator | ✓ | - | - |
+|  | Eventhouse/KQL DB | ✓ | Preview |  |
+|  | Eventstream | ✓ |  | - |
+|  | Real-Time Dashboard | ✓ | Preview | - |
+|  | Anomaly detector  | - | - | - |
+|  | Digital Twin Builder | - | - | - | 
+|  | Event Schema Set  | - | - | - |
+|  | Map | - | - | - |
 | **Uncategorized**  | Operations Agent | - | - | - |
-
-<sup>1</sup>For the most up-to-date release timelines, see the [Microsoft Fabric Roadmap](https://roadmap.fabric.microsoft.com/?product=administration%2Cgovernanceandsecurity).
 
 ## Related links
 
-- To learn about the new features and documentation improvements for Microsoft Fabric, see [What's new in Microsoft Fabric](/fabric/fundamentals/whats-new.md).
-- To follow the latest in Fabric news and features, see the [Microsoft Fabric Updates Blog](https://blog.fabric.microsoft.com/).
-- For community, marketing, case studies, and industry news, see the [Microsoft Fabric Blog](https://www.microsoft.com/microsoft-fabric/blog/).
-- Follow the latest in Power BI at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
-- For older updates, review the [Microsoft Fabric What's New archive](/fabric/fundamentals/whats-new-archive.md).
+- Learn about the new features and documentation improvements for Microsoft Fabric in [What's new in Microsoft Fabric](/fabric/fundamentals/whats-new.md).
+- Follow the latest in Fabric news and features in the [Microsoft Fabric Updates Blog](https://blog.fabric.microsoft.com/).
+- Find community, marketing, case studies, and industry news in the [Microsoft Fabric Blog](https://www.microsoft.com/microsoft-fabric/blog/).
+- Follow the latest in Power BI at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service).
+- Review older updates in the [Microsoft Fabric What's New archive](/fabric/fundamentals/whats-new-archive.md).
