@@ -283,7 +283,7 @@ Begin by setting up the core Fabric experiences, then validate the pipeline with
 **Phase 3: Operational validation** 
 
 - Test system performance during peak network usage periods and high-volume data scenarios.
-- Validate [Activator](../data-activator/activator-introduction) rules for network alerts and anomaly detection.
+- Validate [Activator](../data-activator/activator-introduction.md) rules for network alerts and anomaly detection.
 - Ensure compliance with telecommunications regulations and service quality standards.
 - Train network operations teams on dashboard usage, alert management, and KQL investigations.
 
@@ -294,7 +294,7 @@ After the pilot is stable, add intelligent automation and scale the solution acr
 **Intelligent automation and AI** 
 
 - Set up advanced [Data Science](../../data-science/data-science-overview.md) capabilities to build, train, and score network prediction models for performance optimization.
-- Implement [Activator](../data-activator/activator-introduction) to automate responses such as predictive maintenance, dynamic capacity adjustment, and alert-driven workflows.
+- Implement [Activator](../data-activator/activator-introduction.md) to automate responses such as predictive maintenance, dynamic capacity adjustment, and alert-driven workflows.
 - Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) to enable natural language analytics for operational investigations.
 - Build intelligent network management workflows that provide real-time decision support based on performance patterns, customer behavior, and predictive analytics.
 
