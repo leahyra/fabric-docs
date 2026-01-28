@@ -20,7 +20,7 @@ You can source real-time and historical airline flight operations data from mult
 
 This reference architecture uses Microsoft Fabric to create a unified analytics platform that processes real-time operational data and enables intelligent decision-making. You can implement the architecture with four main operational phases: Ingest and process, Analyze, train, and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/airline-flight-operations-diagram.png" alt-text="Airline flight operations architecture diagram":::
+:::image type="content" source="media/airline-flight-operations-diagram.png" alt-text="Screenshot of the airline flight operations architecture diagram.":::
 
 1. Real-time and historical airline flight operations data is sourced from multiple places including air traffic feeds, flight trackers, and weather sources. IoT sensors on aircraft and ground operations provide
 updates on engine health, baggage handling, and turnaround times. Passenger and airport systems feed check-
@@ -189,33 +189,33 @@ Implementing a real-time airline operations system requires careful planning acr
 
 **Phase 1: Foundation setup**
 
-- Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your airline's operational scale.
+1. Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your airline's operational scale.
 
-- Plan your [Eventstreams](../event-streams/overview.md) data ingestion strategy. Start with critical operational data like flight status, passenger notifications, and safety alerts.
+1. Plan your [Eventstreams](../event-streams/overview.md) data ingestion strategy. Start with critical operational data like flight status, passenger notifications, and safety alerts.
 
-- Design your [Eventhouse](../eventhouse.md) real-time analytics implementation. Focus on delay management and operational disruptions.
+1. Design your [Eventhouse](../eventhouse.md) real-time analytics implementation. Focus on delay management and operational disruptions.
 
-- Configure [OneLake](../../onelake/onelake-overview.md) for historical data storage and analysis with appropriate retention policies for regulatory compliance.
+1. Configure [OneLake](../../onelake/onelake-overview.md) for historical data storage and analysis with appropriate retention policies for regulatory compliance.
 
 **Phase 2: Pilot implementation**
 
-- Use a single hub airport or regional operation to validate the architecture.
+1. Use a single hub airport or regional operation to validate the architecture.
 
-- Implement core data flows for flight operations, passenger management, and basic alerting.
+1. Implement core data flows for flight operations, passenger management, and basic alerting.
 
-- Integrate with your existing airline systems, such as PSS and OCC systems, for seamless data flow.
+1. Integrate with your existing airline systems, such as PSS and OCC systems, for seamless data flow.
 
-- Deploy Real-Time Dashboard for operations center monitoring with customized views for different operational roles.
+1. Deploy Real-Time Dashboard for operations center monitoring with customized views for different operational roles.
 
 **Phase 3: Operational validation**
 
-- Test system performance during peak operational periods and irregular operations scenarios.
+1. Test system performance during peak operational periods and irregular operations scenarios.
 
-- Validate Activator rules for passenger notifications, gate assignments, and maintenance alerts.
+1. Validate Activator rules for passenger notifications, gate assignments, and maintenance alerts.
 
-- Ensure compliance with aviation industry regulations and audit trail requirements.
+1. Ensure compliance with aviation industry regulations and audit trail requirements.
 
-- Train your operational teams on dashboard usage and alert management procedures.
+1. Train your operational teams on dashboard usage and alert management procedures.
 
 ### Advanced implementation
 
