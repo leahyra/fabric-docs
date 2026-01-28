@@ -49,7 +49,7 @@ You can set up a Lakehouse connection in the **Get Data** page or in the **Manag
     
     You can also select a Lakehouse by choosing **none** in the pipeline **Connection** drop‑down list. When **none** is selected, the **Item** field becomes available, and you can pick the Lakehouse you need.
     
-- In **Manage connections and gateways** page:
+- (Preview) In **Manage connections and gateways** page:
 
     1. On this page, select **+ New**, choose Lakehouse as the connection type, and enter a connection name. Then complete the organizational account authentication by selecting **Edit credentials**.
     
