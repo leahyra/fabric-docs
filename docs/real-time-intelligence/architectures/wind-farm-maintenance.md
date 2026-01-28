@@ -20,9 +20,9 @@ You can manage large-scale wind farms where hundreds or thousands of wind turbin
 
 The wind farm maintenance reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from wind turbines and integrates weather monitoring data for intelligent maintenance management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/wind-farm-diagram.png" alt-text="Wind farm maintenance architecture diagram" lightbox="media/wind-farm-diagram.png":::
+:::image type="content" source="media/wind-farm-diagram.png" alt-text="Screenshot of the wind farm maintenance architecture diagram." lightbox="media/wind-farm-diagram.png":::
 
-1. IoT events from wind turbines are transmitted with sub-second latency through Azure Eventhub to Eventstreams​.
+1. IoT events from wind turbines are transmitted with sub-second latency through Azure Event Hubs to Eventstreams​.
 
 1. Regional weather monitoring devices provide real-time data on wind speed, direction, temperature, and humidity. These devices send data to an MQTT broker, and Eventstream​ subsequently gathers the data.
 
@@ -246,27 +246,33 @@ The wind farm maintenance reference architecture delivers measurable technical a
 
 **Phase 1: Foundation setup**
 
-- Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your wind farm scale (hundreds or thousands of turbines).
-- Plan your MQTT-[Eventstream](../event-streams/overview.md) integration strategy for both turbine telemetry and weather monitoring data. Start with critical data like turbine status, performance metrics, and safety parameters.
-- Design your real-time analytics implementation in [Eventhouse](../eventhouse.md) for processing turbine events with subsecond latency requirements.
-- Configure [OneLake](../../onelake/onelake-overview.md) for turbine asset metadata and historical data storage with appropriate retention policies.
+1. Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your wind farm scale (hundreds or thousands of turbines).
+
+1. Plan your MQTT-[Eventstream](../event-streams/overview.md) integration strategy for both turbine telemetry and weather monitoring data. Start with critical data like turbine status, performance metrics, and safety parameters.
+
+1. Design your real-time analytics implementation in [Eventhouse](../eventhouse.md) for processing turbine events with subsecond latency requirements.
+
+1. Configure [OneLake](../../onelake/onelake-overview.md) for turbine asset metadata and historical data storage with appropriate retention policies.
 
 **Phase 2: Pilot implementation**
 
-- Use a regional wind farm subset (50-200 turbines) to validate the architecture and MQTT integration performance.
-- Implement core data flows for turbine monitoring, performance tracking, and basic alerting capabilities.
-- Establish integration with weather monitoring providers and asset management systems for real-time correlation.
-- Deploy Real-Time Dashboard for wind farm monitoring with drill-down capabilities from farm overview to individual turbine components.
+1. Use a regional wind farm subset (50-200 turbines) to validate the architecture and MQTT integration performance.
+
+1. Implement core data flows for turbine monitoring, performance tracking, and basic alerting capabilities.
+
+1. Establish integration with weather monitoring providers and asset management systems for real-time correlation.
+
+1. Deploy Real-Time Dashboard for wind farm monitoring with drill-down capabilities from farm overview to individual turbine components.
 
 **Phase 3: Operational validation**
 
-- Test system performance during severe weather conditions and high-activity scenarios.
+1. Test system performance during severe weather conditions and high-activity scenarios.
 
-- Validate [Activator](../data-activator/activator-introduction.md) rules for maintenance team notifications based on equipment malfunctions and anomalous turbine behavior.
+1. Validate [Activator](../data-activator/activator-introduction.md) rules for maintenance team notifications based on equipment malfunctions and anomalous turbine behavior.
 
-- Ensure compliance with energy regulations and grid integration requirements.
+1. Ensure compliance with energy regulations and grid integration requirements.
 
-- Train your operational teams on dashboard usage, alert management, and drill-down analysis procedures from farm to component level.
+1. Train your operational teams on dashboard usage, alert management, and drill-down analysis procedures from farm to component level.
 
 ### Advanced implementation
 
