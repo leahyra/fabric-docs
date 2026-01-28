@@ -20,13 +20,19 @@ It also maps the end-to-end flow—from ingestion and enrichment to ML scoring a
 
 The ISP analytics reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes high-volume router logs and customer data streams with ERP contextualization for intelligent network operations. You can implement the architecture with four main operational phases: 
 
-- **Ingest and process** - Captures over 1 TB/hour of router logs and customer data via Message Queuing Telemetry and Transport (MQTT) with ERP contextualization synchronization 
+:::image type="content" source="./media/internet-service-provider-analytics/internet-service-provider-analytics-architecture.png" alt-text="Diagram of ISP analytics reference architecture." lightbox="./media/internet-service-provider-analytics/internet-service-provider-analytics-architecture.png":::
 
-- **Analyze, transform, and enrich** - Conducts real-time data enrichment and aggregation with customer details integration 
+1. **Ingest router logs** - More than 1 TB/hour of router logs stream from customer endpoints and are captured in real time through Eventstreams.
+1. **Collect customer data** - Customer information including device specifications, addresses, and billing plans is pushed via MQTT and collected by Eventstreams for enrichment.
+1. **Sync ERP metadata** - Contextual metadata from ERP sources (inventory, network components, technician schedules) is synchronized to OneLake using Data Factory change data capture (CDC) to support data enrichment.
+1. **Enrich streaming data** - Router logs are enriched in motion with customer details and operational context, creating analysis-ready datasets in real time.
+1. **Aggregate for analytics** - Enriched data is aggregated in real time within Eventhouse, providing easy-to-query long-term views for network performance analysis.
+1. **Train and score ML models** - Machine learning models are built and trained using Data Science, then deployed for real-time scoring to predict network issues and optimize performance.
+1. **Visualize network health** - Real-Time Dashboards present live views of network usage with drill-down capabilities from system-wide metrics to individual router performance.
+1. **Generate BI reports** - Power BI connects to Eventhouse via DirectQuery to deliver rich business intelligence reports on real-time and historical network data.
+1. **Activate alerts** - Data Activator monitors router telemetry and generates real-time alerts on anomalies, threshold violations, and network issues.
+1. **Enable ad-hoc analysis** - Network operations teams use KQL for deep investigations and root-cause analysis, reducing investigation time from hours to minutes.
 
-- **Train and score** - Builds ML models for network issue prediction and real-time scoring capabilities 
-
-- **Visualize and activate** - Provides real-time dashboards, automated alerting, and comprehensive network analytics 
 
 ## Operational phases
 
@@ -39,23 +45,33 @@ Ingest and process focuses on reliably capturing high-volume streaming telemetry
 More than 1 TB/hour of router logs from customer endpoints are ingested through [Eventstreams](../event-streams/overview.md) (for example, via MQTT). This ingestion layer standardizes and routes events for downstream enrichment, analytics, and alerting, including: 
 
 - **Router performance logs**: Bandwidth utilization, latency metrics, and connection quality data
+
 - **Network traffic patterns**: Real-time usage analytics and capacity planning insights
+
 - **Error logs and diagnostics**: Network issues, outages, and performance degradations
+
 - **Security events**: Intrusion attempts, suspicious traffic, and network anomalies
 
 Customer data (device, address, billing plan, and more) is pushed via MQTT and collected by [Eventstreams](../event-streams/overview.md), including: 
 
 - **Device information**: Hardware specifications, firmware versions, and configuration details
+
 - **Customer profiles**: Service plans, billing information, and account status
+
 - **Location data**: Geographic distribution and service area analytics
+
 - **Service quality metrics**: Customer experience and satisfaction indicators
 
 Contextual metadata (inventory, network components, technician schedules, and more) is synced from ERP systems to [OneLake](../../onelake/onelake-overview.md) using [Data Factory](../../data-factory/data-factory-overview.md) change data capture (CDC) to enrich streaming events, including: 
 
 - **Network inventory**: Equipment specifications, locations, and maintenance schedules
+
 - **Infrastructure topology**: Network architecture and connectivity mapping
+
 - **Technician schedules**: Field service optimization and resource allocation
+
 - **Vendor information**: Equipment suppliers, maintenance contracts, and support agreements
+
 - **Regulatory compliance**: Service quality standards and reporting requirements
 
 ### Analyze, transform, and enrich 
@@ -65,22 +81,31 @@ Streamed data is enriched in motion with customer details to create a ready-to-u
 **Real-time data enrichment**: 
 
 - **Customer context integration**: Router logs enriched with customer profiles, service plans, and billing information
+
 - **Device correlation**: Network data combined with device specifications and configuration details
+
 - **Geographic enrichment**: Traffic patterns enhanced with location data and service area mapping
+
 - **Service quality correlation**: Performance metrics combined with customer experience indicators
 
 Enriched data is aggregated in real time to provide easy-to-use, long-term views. Advanced processing includes: 
 
 - **Network performance aggregation**: Real-time computation of bandwidth utilization, latency trends, and capacity metrics
+
 - **Customer usage patterns**: Dynamic analysis of consumption behaviors and service utilization
+
 - **Geographic analytics**: Regional performance analysis and service quality distribution
+
 - **Trend analysis**: Historical pattern identification and predictive insights generation
 
 Processed data streams into [OneLake](../../onelake/onelake-overview.md) tables, enabling comprehensive network intelligence through: 
 
 - Long-term network performance analysis
+
 - Customer behavior pattern recognition
+
 - Infrastructure optimization insights
+
 - Regulatory compliance reporting capabilities
 
 ### Train and score 
@@ -92,8 +117,11 @@ Train ML models and use them for real-time scoring to predict network issues usi
 Use machine learning to anticipate operational issues and capacity constraints based on historical patterns and current telemetry.
 
 - **Network issue prediction**: ML models forecasting potential outages and performance degradations
+
 - **Capacity planning**: Predictive analytics for bandwidth requirements and infrastructure scaling
+
 - **Customer churn prediction**: Analysis of service quality impact on customer retention
+
 - **Anomaly detection**: Real-time identification of unusual network patterns and security threats
 
 **Advanced ML Capabilities**: 
@@ -101,8 +129,11 @@ Use machine learning to anticipate operational issues and capacity constraints b
 Apply advanced modeling techniques to optimize network performance, improve quality-of-service outcomes, and drive proactive maintenance decisions.
 
 - **Performance optimization**: Models for network efficiency and resource allocation
+
 - **Quality of service prediction**: Forecasting customer experience and satisfaction metrics
+
 - **Maintenance scheduling**: Predictive models for equipment maintenance and replacement
+
 - **Traffic forecasting**: Bandwidth demand prediction and capacity planning analytics
 
 ### Visualize and activate 
@@ -116,8 +147,11 @@ Real-time dashboards built with [Real-Time Dashboard](../dashboard-real-time-cre
 Provides the core operational views for monitoring health and usage across the network.
 
 - **Network overview**: High-level view of overall network performance and health status
+
 - **Regional analysis**: Geographic distribution of network usage and service quality
+
 - **Customer segment views**: Service utilization patterns across different customer tiers
+
 - **Equipment monitoring**: Real-time status of routers, switches, and network infrastructure
 
 **Multi-granularity network analysis**: 
@@ -125,8 +159,11 @@ Provides the core operational views for monitoring health and usage across the n
 Enables drill-down from aggregate views to customer- and device-level telemetry.
 
 - **System-wide metrics**: Overall bandwidth utilization, latency, and performance indicators
+
 - **Regional drill-down**: Geographic performance analysis with regional service quality
+
 - **Customer-specific analysis**: Individual customer usage patterns and service experience
+
 - **Device-level monitoring**: Detailed router and equipment performance tracking
 
 Real-time alerts on router anomalies can be generated using [Activator](../data-activator/activator-introduction.md), including: 
@@ -136,8 +173,11 @@ Real-time alerts on router anomalies can be generated using [Activator](../data-
 Routes key signals to the right teams with low-latency notifications.
 
 - **Performance threshold alerts**: Notifications for bandwidth, latency, and capacity violations
+
 - **Anomaly detection alerts**: Immediate alerts for unusual network patterns and security threats
+
 - **Equipment failure notifications**: Real-time alerts for router malfunctions and infrastructure issues
+
 - **Service quality alerts**: Customer experience degradation and SLA violation notifications
 
 DirectQuery from [Power BI](../create-powerbi-report.md) to [Eventhouse](../eventhouse.md) provides rich BI reporting on real-time data, including: 
@@ -147,8 +187,11 @@ DirectQuery from [Power BI](../create-powerbi-report.md) to [Eventhouse](../even
 Supports executive and operational reporting on performance, utilization, and compliance.
 
 - **Network performance reporting**: Analysis of service delivery and infrastructure efficiency
+
 - **Customer analytics**: Usage patterns, service satisfaction, and revenue optimization insights
+
 - **Capacity planning**: Long-term infrastructure requirements and investment planning
+
 - **Regulatory compliance**: Service quality reporting and regulatory requirement documentation
 
 Ad-hoc queries using KQL enable deep investigations in minutes instead of hours, including: 
@@ -158,8 +201,11 @@ Ad-hoc queries using KQL enable deep investigations in minutes instead of hours,
 Enables rapid troubleshooting and root-cause analysis across network and customer signals.
 
 - **Performance troubleshooting**: Rapid analysis of network issues and root cause identification
+
 - **Customer experience analysis**: Investigation of service quality and satisfaction factors
+
 - **Security incident response**: Forensic analysis of network security events and threats
+
 - **Operational optimization**: Analysis for network efficiency and resource allocation improvements
 
 Using [Copilot](../../fundamentals/copilot-fabric-overview.md), network operations teams can ask natural language questions to accelerate investigations and simplify analysis.
@@ -173,8 +219,11 @@ This architecture delivers measurable operational and business outcomes by combi
 Improve situational awareness and optimization by correlating high-volume network telemetry with customer and operational context.
 
 - **Real-time network monitoring**: Monitor more than 1 TB/hour of router logs continuously to assess network performance in near real time.
+
 - **Predictive network analytics**: Use ML models to predict network issues and optimize infrastructure performance.
+
 - **Unified network platform**: Integrate router logs with customer data and ERP context to provide comprehensive network intelligence.
+
 - **Multi-granularity analysis**: Use real-time dashboards to drill down from a system overview to individual router performance.
 
 ### Automated network operations 
@@ -182,8 +231,11 @@ Improve situational awareness and optimization by correlating high-volume networ
 Reduce manual effort and speed up response by turning signals into alerts and automated workflows.
 
 - **Intelligent network alerting**: Send real-time notifications for performance thresholds, anomalies, and equipment failures.
+
 - **Automated response workflows**: Trigger escalations, maintenance scheduling, and customer notifications based on defined conditions.
+
 - **Proactive network management**: Use predictive models to support capacity planning and preventive maintenance.
+
 - **Dynamic resource allocation**: Make real-time adjustments to network capacity and service quality parameters.
 
 ### Advanced analytics and business intelligence 
@@ -191,8 +243,11 @@ Reduce manual effort and speed up response by turning signals into alerts and au
 Enable self-service analytics for operations and business teams with real-time BI, ad-hoc investigation, and conversational querying.
 
 - **Real-time network analytics**: Correlate router performance with customer experience to optimize service delivery.
+
 - **Cross-service intelligence**: Produce BI reports that analyze network infrastructure alongside customer services.
+
 - **Natural language processing**: Use conversational AI and KQL to explore complex network scenarios.
+
 - **Predictive and historical analysis**: Combine real-time events with historical patterns to improve network management.
 
 ### Cost optimization and operational efficiency 
@@ -200,8 +255,11 @@ Enable self-service analytics for operations and business teams with real-time B
 Lower operational costs and improve efficiency by predicting issues earlier and prioritizing actions using data-driven insights.
 
 - **Predictive cost management**: Reduce outages and maintenance costs through ML-driven issue prediction.
+
 - **Infrastructure efficiency**: Maximize network utilization while minimizing service disruptions with predictive analytics.
+
 - **Operations optimization**: Improve network management effectiveness with automated analytics and investigation tools.
+
 - **Strategic decision support**: Make data-driven decisions for infrastructure investment and service optimization.
 
 ## Implementation considerations 
@@ -214,10 +272,15 @@ Use the following considerations to adapt the reference architecture to your env
 Plan ingestion, processing, and storage to meet throughput, latency, and data quality requirements across the end-to-end pipeline.
 
 - **High-throughput ingestion**: Design the system to process more than 1 TB/hour of router logs, including burst capacity during peak network usage periods.
+
 - **Real-time processing**: Ensure immediate response times for critical network alerts, subsecond latency for performance monitoring, and real-time network issue detection.
+
 - **Data quality and validation**: Implement real-time validation for router log accuracy, customer data integrity, and network performance calculations, including automatic error correction.
+
 - **Scalability planning**: Design the architecture to handle growing network infrastructure, an expanding customer base, and increasing data volumes.
+
 - **Storage requirements**: Plan storage for real-time logs, historical performance records, and customer analytics with appropriate retention policies.
+
 - **Network systems integration**: Integrate with routers, MQTT protocols, and network management systems.
 
 ### Security and compliance 
@@ -225,7 +288,9 @@ Plan ingestion, processing, and storage to meet throughput, latency, and data qu
 Apply governance controls that protect customer and operational data while meeting telecommunications and organizational compliance requirements.
 
 - **Access controls**: Implement role-based access control aligned with operational roles, require multifactor authentication, and use privileged access management for infrastructure functions.
+
 - **Audit trails**: Create comprehensive audit logging for compliance, including network monitoring activities, customer data access, and system operations, and store logs.
+
 - **Data privacy**: Ensure compliance with telecommunications regulations, customer privacy requirements, and data protection standards for network and customer information.
 
 ### Integration points 
@@ -233,9 +298,13 @@ Apply governance controls that protect customer and operational data while meeti
 Define how the architecture connects to network systems and business applications so data and context remain synchronized end to end.
 
 - **Network infrastructure**: Integrate with routers, switches, and network equipment to collect logs in real time.
+
 - **MQTT protocols**: Integrate with customer devices and IoT endpoints via MQTT.
+
 - **ERP systems**: Integrate with ERP systems for inventory management, technician scheduling, and network asset data.
+
 - **Customer management**: Integrate with billing systems, customer service platforms, and CRM systems.
+
 - **External data sources**: Connect to external APIs for vendor systems, regulatory databases, and network monitoring tools.
 
 ### Monitoring and observability 
@@ -247,7 +316,9 @@ Monitor both platform health and data correctness so you can detect ingestion fa
 Track service health and end-to-end performance of ingestion, processing, and alerting.
 
 - **System health dashboards**: Monitor router log ingestion, Eventhouse processing, and Activator alert delivery, and alert on system anomalies.
+
 - **Data quality monitoring**: Continuously validate incoming network data and alert on communication failures, invalid performance indicators, or corrupted router information.
+
 - **Performance metrics**: Track ingestion latency, ML model prediction accuracy, and dashboard response times against SLAs.
 
 **Cost optimization**: 
@@ -255,7 +326,9 @@ Track service health and end-to-end performance of ingestion, processing, and al
 Control spending through capacity planning, retention policies, and lifecycle management aligned to your regulatory and operational needs.
 
 - **Capacity management**: Right-size Fabric capacity based on data volume and analytics complexity, autoscale for peak usage periods, and optimize spend during low-activity windows.
+
 - **Data lifecycle management**: Archive older network data to lower-cost storage tiers, apply retention policies aligned with regulatory requirements, and delete nonessential operational data.
+
 - **Network operations optimization**: Correlate network performance with operational costs to minimize maintenance expenses and maximize infrastructure efficiency.
 
 ## Next steps 
@@ -269,22 +342,31 @@ Begin by setting up the core Fabric experiences, then validate the pipeline with
 **Phase 1: Foundation setup** 
 
 - Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and estimate capacity requirements based on your network size, data volumes, and analytics complexity.
+
 - Plan your [Eventstreams](../event-streams/overview.md) integration strategy for ingesting router logs and customer data via MQTT.
+
 - Design your real-time analytics implementation in [Eventhouse](../eventhouse.md) to process network events with immediate response requirements.
+
 - Configure [OneLake](../../onelake/onelake-overview.md) for ERP contextual metadata and historical network analytics, including appropriate retention policies.
 
 **Phase 2: Pilot implementation** 
 
 - Start with a subset of network infrastructure and customer segments to validate the architecture and integration performance.
+
 - Implement core data flows for network monitoring, performance analytics, and basic alerting.
+
 - Establish integrations with network equipment and ERP systems to validate end-to-end contextualization.
+
 - Deploy a Real-Time Dashboard for network monitoring, drill-down analysis, and performance assessment.
 
 **Phase 3: Operational validation** 
 
 - Test system performance during peak network usage periods and high-volume data scenarios.
+
 - Validate [Activator](../data-activator/activator-introduction.md) rules for network alerts and anomaly detection.
+
 - Ensure compliance with telecommunications regulations and service quality standards.
+
 - Train network operations teams on dashboard usage, alert management, and KQL investigations.
 
 ### Advanced implementation 
@@ -294,15 +376,21 @@ After the pilot is stable, add intelligent automation and scale the solution acr
 **Intelligent automation and AI** 
 
 - Set up advanced [Data Science](../../data-science/data-science-overview.md) capabilities to build, train, and score network prediction models for performance optimization.
+
 - Implement [Activator](../data-activator/activator-introduction.md) to automate responses such as predictive maintenance, dynamic capacity adjustment, and alert-driven workflows.
+
 - Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) to enable natural language analytics for operational investigations.
+
 - Build intelligent network management workflows that provide real-time decision support based on performance patterns, customer behavior, and predictive analytics.
 
 **Enterprise-scale deployment** 
 
 - Scale to full ISP operations with comprehensive coverage and centralized monitoring across all infrastructure and customer segments.
+
 - Implement advanced analytics for cross-service optimization, capacity management, and performance effectiveness analysis.
+
 - Create dashboards with [Power BI](../create-powerbi-report.md) DirectQuery capabilities and [Real-Time Dashboard](../dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance.
+
 - Develop enterprise-grade ML models for network prediction, customer experience optimization, and infrastructure investment planning.
 
 ## Related resources 
@@ -314,4 +402,4 @@ After the pilot is stable, add intelligent automation and scale the solution acr
 - [Advanced analytics and machine learning](../../data-science/data-science-overview.md) 
 - [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md) 
 - [OneLake data storage overview](../../onelake/onelake-overview.md) 
-- [Data Factory for data integration](../../data-factory/data-factory-overview.md) 
+- [Data Factory for data integration](../../data-factory/data-factory-overview.md)
