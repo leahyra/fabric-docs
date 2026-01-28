@@ -60,7 +60,7 @@ To simulate a real-time streaming source, the notebook in the following steps us
 
 The work order data file contains sample work order records used in this tutorial to simulate a real‑time streaming source. After creating the file, you'll import it into a lakehouse in the next step.
 
-Copy and paste the following content into a text file, then save it as *workorder_locations.csv*. You'll use this file in the next step.
+Copy and paste the following content into a text file, then save it as *WorkorderLocations.csv*. You'll use this file in the next step.
 
 ```
 WorkorderID,Latitude,Longitude
@@ -80,14 +80,14 @@ WorkorderID,Latitude,Longitude
 Create a new lakehouse for incoming work order data and import the previously created work order location file.
 
 1. From your workspace, select **New item**, and enter *lakehouse* in the search box and select it to create a new lakehouse.
-1. Enter a name *WorkorderLocations-Lakehouse* and select **Create**.
-1. In the new lakehouse, select **Upload files** and upload the *workorder_locations.csv* file created in the previous step.
+1. Enter a name *WorkorderLocations_Lakehouse* and select **Create**.
+1. In the new lakehouse, select **Upload files** and upload the *WorkorderLocations.csv* file created in the previous step.
 1. In the new lakehouse, select the **Explorer** pane on the left side of the screen.
-1. In the **File** section of the **Explorer**, select *workorder_locations.csv* to view the file you uploaded.
+1. In the **File** section of the **Explorer**, select *WorkorderLocations.csv* to view the file you uploaded.
 1. In the **View settings**, select **First row as header**.
 1. (Optional) In the view drop-down list, select **Table view**.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/work-order-location-file-preview.png" lightbox="media/tutorials/real-time-work-order-routing-application/work-order-location-file-preview.png" alt-text="Screenshot of the workorder_locations.csv file after importing it into a lakehouse.":::
+:::image type="content" source="media/tutorials/real-time-work-order-routing-application/work-order-location-file-preview.png" lightbox="media/tutorials/real-time-work-order-routing-application/work-order-location-file-preview.png" alt-text="Screenshot of the WorkorderLocations.csv file after importing it into a lakehouse.":::
 
 ## Create an eventstream and write data to an eventhouse
 
@@ -101,20 +101,20 @@ By ingesting eventstream data into an eventhouse, you make streaming events avai
 
 1. From your workspace, select **New item**, and enter *eventstream* in the search box.
 1. Select **Eventstream**.
-1. In the **New Eventstream** dialog, enter a **Name**: "Workorders-Eventstream", then select **Create**.
+1. In the **New Eventstream** dialog, enter a **Name**: "WorkordersEventstream", then select **Create**.
 1. In the **Design a flow to ingest, transform, and route streaming events** screen, select **Use custom endpoint**
   
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/use-custom-endpoint.png" alt-text="Screenshot of the Design a flow to ingest, transform, and route streaming events screen in Fabric, showing the option to Use custom endpoint.":::
 
 1. In the custom endpoint **Add souce** dialog, select **Add**.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/custom-endpoint-add-source.png" alt-text="A screenshot of the Add source dialog for Custom endpoint in Microsoft Fabric showing a breadcrumb navigation with Custom endpoint arrow Workorders-Eventstream at the top. The dialog contains a Source name field with red asterisk marked as required containing the text CustomEndpoint-Source. A teal Add button is highlighted in the bottom right corner of the dialog indicating that should be selected with no further action required.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/custom-endpoint-add-source.png" alt-text="A screenshot of the Add source dialog for Custom endpoint in Microsoft Fabric showing a breadcrumb navigation with Custom endpoint arrow WorkordersEventstream at the top. The dialog contains a Source name field with red asterisk marked as required containing the text CustomEndpoint-Source. A teal Add button is highlighted in the bottom right corner of the dialog indicating that should be selected with no further action required.":::
 
     The eventstream is created, next add an Eventhouse as the destination.
 
-1. In the **Workorders-eventstream** node of the eventstream designer select **Eventhouse** from the **Transform events or add destination** drop-down list.
+1. In the **WorkordersEventstream** node of the eventstream designer select **Eventhouse** from the **Transform events or add destination** drop-down list.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/event-stream-add-destination.png" lightbox="media/tutorials/real-time-work-order-routing-application/event-stream-add-destination.png" alt-text="A screenshot of the Microsoft Fabric eventstream designer showing a flow diagram with CustomEndpoint-Source connected to Workorders-eventstream node. A dropdown menu is expanded from the Transform events or add destination tile on the right side, displaying the Destinations section at the bottom showing several options including Eventhouse which is highlighted with a red rectangle indicating that it should be selected.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/event-stream-add-destination.png" lightbox="media/tutorials/real-time-work-order-routing-application/event-stream-add-destination.png" alt-text="A screenshot of the Microsoft Fabric eventstream designer showing a flow diagram with CustomEndpoint-Source connected to WorkordersEventstream node. A dropdown menu is expanded from the Transform events or add destination tile on the right side, displaying the Destinations section at the bottom showing several options including Eventhouse which is highlighted with a red rectangle indicating that it should be selected.":::
 
 1. The **Eventhouse destination configuration** pane appear on the right side of the screen. Fill out the details requested as follows, then select **Save**:
     1. **Data ingestion mode**: Set to **Event processing before ingestion**.
@@ -138,10 +138,7 @@ You need the *Event hub name* and *Connection string-primary key* values from th
 
 1. Select the custom endpoint source tile you just added.
 1. In the **Details** pane, select **SAS Key Authentication**.
-
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/select-key.png" lightbox="media/tutorials/real-time-work-order-routing-application/select-key.png" alt-text="A screenshot showing the Eventstream designer with the SAS Key Authentication option highlighted in the details pane.":::
-
-1. Copy the following two values and save to be used in your notebook code:
+1. Copy the following two values and save them for use in your notebook code:
     * **Event hub name**: Used for the **EVENT_HUB_NAME** variable.
     * **Connection string-primary key**: Used for the **CONNECTION_STR** variable.
 
@@ -165,7 +162,7 @@ Create a notebook with code to import the work order location file from your lak
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/connect-notebook-lakehouse.png" alt-text="A screenshot of the Microsoft Fabric Explorer pane showing the Data items tab selected with a No data sources added message and an empty folder icon. Below the message is an Add data items dropdown button expanded to reveal three menu options: From OneLake catalog with a database icon, From Real-Time hub with a lightning bolt icon, and New lakehouse with a plus sign. The From OneLake catalog option is highlighted with a dark border indicating selection.":::
 
-1. Select **WorkorderLocations-Lakehouse** from the **OneLake catalog**. This is the lakehouse you created previously.
+1. Select **WorkorderLocationsLakehouse** from the **OneLake catalog**. This is the lakehouse you created previously.
 
 1. After creating the notebook and connecting it to your lakehouse, paste the following code into the first cell and run it to install the **Azure Event Hub** SDK:
 
@@ -191,7 +188,7 @@ Create a notebook with code to import the work order location file from your lak
     EVENT_HUB_NAME = "" # Event hub name
     producer = EventHubProducerClient.from_connection_string(conn_str=CONNECTION_STR, eventhub_name=EVENT_HUB_NAME)
     
-    df = spark.read.csv("Files/workorder_locations.csv", header=True, inferSchema=True)
+    df = spark.read.csv("Files/WorkorderLocations.csv", header=True, inferSchema=True)
     pdf = df.toPandas()
     total_records = len(pdf)
     
@@ -217,7 +214,10 @@ Create a notebook with code to import the work order location file from your lak
         time.sleep(0.1)
     ```
 
-1. Add the values for the variables **CONNECTION_STR** and **EVENT_HUB_NAME** obtained in the previous section titled [Get required SAS key authentication keys](#get-required-sas-key-authentication-keys)
+1. Add the values for the variables **CONNECTION_STR** and **EVENT_HUB_NAME** obtained in the previous section titled [Get required SAS key authentication keys](#get-required-sas-key-authentication-keys).
+1. Run the notebook code. This will create the *Workorders* table in the KQL database in the *WorkordersEventhouse* eventhouse.
+
+:::image type="content" source="media/tutorials/real-time-work-order-routing-application/work-order-table.png" alt-text="A screenshot of the Microsoft Fabric Eventhouse interface displaying the Workorders table with a Data preview tab selected. The left navigation panel shows the KQL databases tree with WorkordersEventhouse expanded, containing Tables with the Workorders table selected. The data preview shows nine rows of work order records with columns including WorkorderID, Latitude, Longitude, EventProcessedUtc timestamps, PartitionId, EventEnqueuedUtc timestamps, and IngestionTime values.":::
 
 ## Create a KQL queryset and add it as a map layer
 
@@ -422,11 +422,11 @@ To complete this section, you need an Azure account with an Azure Maps account a
 1. Select the **Save as** button in the menu and save the notebook as **OptimizeRoute**.
 1. Run the notebook code. This creates a new file named **optimized_route.geojson** in the **File** directory of your lakehouse.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/optimized-route-file.png" lightbox="media/tutorials/real-time-work-order-routing-application/optimized-route-file.png" alt-text="A screenshot of the Microsoft Fabric interface showing a notebook code cell on the right side with Python code that retrieves route data and writes a GeoJSON file. The Explorer pane on the left displays OneLake with WorkorderLocation expanded showing Tables and Files folders. The Files folder contains workorder_locations.csv and  optimized_route.geojson highlighted with a red box indicating the newly created output file. The center Files panel shows both files with optimized_route.geojson also highlighted. The notebook output at the bottom displays a success message stating Transformed Directions GeoJSON waypoints carry properties.optimizedIndex written to Files/optimized_route.geojson with execution time of 5 sec 750 ms.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/optimized-route-file.png" lightbox="media/tutorials/real-time-work-order-routing-application/optimized-route-file.png" alt-text="A screenshot of the Microsoft Fabric interface showing a notebook code cell on the right side with Python code that retrieves route data and writes a GeoJSON file. The Explorer pane on the left displays OneLake with WorkorderLocation expanded showing Tables and Files folders. The Files folder contains WorkorderLocations.csv and  optimized_route.geojson highlighted with a red box indicating the newly created output file. The center Files panel shows both files with optimized_route.geojson also highlighted. The notebook output at the bottom displays a success message stating Transformed Directions GeoJSON waypoints carry properties.optimizedIndex written to Files/optimized_route.geojson with execution time of 5 sec 750 ms.":::
 
 Once completed, a new map layer appears in your Fabric Maps map created in the previous section.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/optimized-route-no-styles.png" alt-text="A screenshot of the Microsoft Fabric Maps interface displaying a street map of Vienna Austria with purple route lines connecting multiple waypoints marked by circles. The Explorer pane on the left shows Lakehouse and Eventhouse tabs with the Lakehouse tab expanded, revealing WorkorderLocations containing Tables and Files folders with workorder_locations.csv and optimized_route.geojson files. The Data layers panel in the upper left corner of the map shows two layers: Workorders-QS with red circular markers and optimized_route.geojson displaying the connected route path. The map background shows Vienna neighborhoods including Favoriten, Simmering, and Margareten with road networks visible.":::
+:::image type="content" source="media/tutorials/real-time-work-order-routing-application/optimized-route-no-styles.png" alt-text="A screenshot of the Microsoft Fabric Maps interface displaying a street map of Vienna Austria with purple route lines connecting multiple waypoints marked by circles. The Explorer pane on the left shows Lakehouse and Eventhouse tabs with the Lakehouse tab expanded, revealing WorkorderLocations containing Tables and Files folders with WorkorderLocations.csv and optimized_route.geojson files. The Data layers panel in the upper left corner of the map shows two layers: Workorders-QS with red circular markers and optimized_route.geojson displaying the connected route path. The map background shows Vienna neighborhoods including Favoriten, Simmering, and Margareten with road networks visible.":::
 
 ### Map layer settings
 
