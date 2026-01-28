@@ -20,7 +20,7 @@ You can source real-time and historical vehicle data from multiple sources inclu
 
 The connected fleet reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified analytics platform that processes real-time vehicle telemetry and enables intelligent fleet management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform, and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/connected-fleet-diagram.png" alt-text="Connected fleet data analytics architecture diagram" lightbox="media/connected-fleet-diagram.png":::
+:::image type="content" source="media/connected-fleet-diagram.png" alt-text="Screenshot of the connected fleet data analytics architecture diagram." lightbox="media/connected-fleet-diagram.png":::
 
 1. Capture vehicle data from the vehicle's electronic control units (ECUs) and onboard sensors.
 
@@ -199,33 +199,33 @@ Real-Time Dashboards provide live operational visibility with customizable views
 
 **Phase 1: Foundation setup** 
 
-- Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your fleet size.
+1. Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your fleet size.
 
-- Plan your [Eventstreams](../event-streams/overview.md) data ingestion strategy. Start with critical vehicle data (engine diagnostics, GPS tracking, fuel consumption).
+1. Plan your [Eventstreams](../event-streams/overview.md) data ingestion strategy. Start with critical vehicle data (engine diagnostics, GPS tracking, fuel consumption).
 
-- Design your [Eventhouse](../eventhouse.md) real-time analytics implementation. Focus on vehicle health monitoring and maintenance alerts.
+1. Design your [Eventhouse](../eventhouse.md) real-time analytics implementation. Focus on vehicle health monitoring and maintenance alerts.
 
-- Configure [OneLake](../../onelake/onelake-overview.md) for historical data storage and analysis with appropriate retention policies.
+1. Configure [OneLake](../../onelake/onelake-overview.md) for historical data storage and analysis with appropriate retention policies.
 
 **Phase 2: Pilot implementation** 
 
-- Use a subset of your fleet (50-100 vehicles) to validate the architecture.
+1. Use a subset of your fleet (50-100 vehicles) to validate the architecture.
 
-- Implement core data flows for vehicle monitoring, driver behavior analysis, and basic alerting.
+1. Implement core data flows for vehicle monitoring, driver behavior analysis, and basic alerting.
 
-- Establish integration with your existing fleet management systems for seamless data flow.
+1. Establish integration with your existing fleet management systems for seamless data flow.
 
-- Deploy Real-Time Dashboard for fleet operations monitoring with customized views for different roles.
+1. Deploy Real-Time Dashboard for fleet operations monitoring with customized views for different roles.
 
 **Phase 3: Operational validation** 
 
-- Test system performance during peak operational periods and various driving conditions.
+1. Test system performance during peak operational periods and various driving conditions.
 
-- Validate Activator rules for maintenance alerts, geofence monitoring, and performance optimization.
+1. Validate Activator rules for maintenance alerts, geofence monitoring, and performance optimization.
 
-- Ensure compliance with data privacy regulations and fleet management requirements.
+1. Ensure compliance with data privacy regulations and fleet management requirements.
 
-- Train your operational teams on dashboard usage and alert management procedures.
+1. Train your operational teams on dashboard usage and alert management procedures.
 
 ### Advanced implementation 
 
