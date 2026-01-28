@@ -20,7 +20,7 @@ You can handle massive scale fleet operations where hundreds of thousands of veh
 
 The fleet management reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes millions of telemetry events from hundreds of thousands of vehicles in real time. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/fleet-management-diagram.png" alt-text="Fleet management architecture diagram" lightbox="media/fleet-management-diagram.png":::
+:::image type="content" source="media/fleet-management-diagram.png" alt-text="Screenshot of the fleet management architecture diagram." lightbox="media/fleet-management-diagram.png":::
 
 1. Hundreds of thousands of fleet vehicles generate millions of telemetry events in an hour, providing details on vehicle location, mechanical state, and more.
 
@@ -189,7 +189,7 @@ Fleet managers can use [Power BI dashboards](../create-powerbi-report.md) integr
 
 - **Audit trails** - Create comprehensive logging for regulatory compliance including all data access, modifications, and system actions with immutable audit logs and automated compliance reporting.
 
-- **Data privacy** - Ensure compliance with regional privacy regulations (GDPR, CCPA) and fleet-specific requirements for driver and vehicle data protection.
+- **Data privacy** - Ensure compliance with regional privacy regulations and fleet-specific requirements for driver and vehicle data protection.
 
 ### Integration points
 
@@ -225,33 +225,33 @@ Fleet managers can use [Power BI dashboards](../create-powerbi-report.md) integr
 
 **Phase 1: Foundation setup**
 
-- Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your enterprise fleet scale (hundreds of thousands of vehicles).
+1. Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your enterprise fleet scale (hundreds of thousands of vehicles).
 
-- Plan your MQTT-[Eventhouse](../eventhouse.md) integration strategy through [Eventstreams](../event-streams/overview.md). Start with critical telemetry data (vehicle location, mechanical state, driver status).
+1. Plan your MQTT-[Eventhouse](../eventhouse.md) integration strategy through [Eventstreams](../event-streams/overview.md). Start with critical telemetry data (vehicle location, mechanical state, driver status).
 
-- Design your real-time analytics implementation for processing millions of events per hour with subsecond latency requirements.
+1. Design your real-time analytics implementation for processing millions of events per hour with subsecond latency requirements.
 
-- Configure [OneLake](../../onelake/onelake-overview.md) for ERP system integration and historical data storage with appropriate retention policies for compliance.
+1. Configure [OneLake](../../onelake/onelake-overview.md) for ERP system integration and historical data storage with appropriate retention policies for compliance.
 
 **Phase 2: Pilot implementation**
 
-- Use a regional fleet subset (10,000-50,000 vehicles) to validate the architecture and MQTT integration performance.
+1. Use a regional fleet subset (10,000-50,000 vehicles) to validate the architecture and MQTT integration performance.
 
-- Implement core data flows for vehicle location tracking, mechanical state monitoring, and basic alerting capabilities.
+1. Implement core data flows for vehicle location tracking, mechanical state monitoring, and basic alerting capabilities.
 
-- Establish integration with your ERP systems for service stations, delivery points, and driver schedule synchronization.
+1. Establish integration with your ERP systems for service stations, delivery points, and driver schedule synchronization.
 
-- Deploy geospatial Real-Time Dashboard for fleet operations monitoring with drill-down capabilities from global to individual vehicle views.
+1. Deploy geospatial Real-Time Dashboard for fleet operations monitoring with drill-down capabilities from global to individual vehicle views.
 
 **Phase 3: Operational validation**
 
-- Test system performance during peak operational periods with millions of telemetry events per hour.
+1. Test system performance during peak operational periods with millions of telemetry events per hour.
 
-- Validate [Activator](../data-activator/activator-introduction.md) rules for push notifications based on abnormal vehicle behavior, traffic, weather, and road conditions.
+1. Validate [Activator](../data-activator/activator-introduction.md) rules for push notifications based on abnormal vehicle behavior, traffic, weather, and road conditions.
 
-- Ensure compliance with enterprise data governance policies and regulatory requirements.
+1. Ensure compliance with enterprise data governance policies and regulatory requirements.
 
-- Train your operational teams on geospatial dashboard usage, alert management, and drill-down analysis procedures.
+1. Train your operational teams on geospatial dashboard usage, alert management, and drill-down analysis procedures.
 
 ### Advanced implementation
 
