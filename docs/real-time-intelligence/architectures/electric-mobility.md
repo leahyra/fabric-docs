@@ -20,7 +20,7 @@ You can manage large-scale charging networks where thousands of charging station
 
 The e-mobility charging network reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from thousands of charging stations and integrates energy cost rates for intelligent network management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, train, and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/electric-mobility-diagram.png" alt-text="E-Mobility charging network architecture diagram" lightbox="media/electric-mobility-diagram.png":::
+:::image type="content" source="media/electric-mobility-diagram.png" alt-text="Screenshot of the e-Mobility charging network architecture diagram." lightbox="media/electric-mobility-diagram.png":::
 
 1. Thousands of charging stations stream real-time data on usage and state​.
 
@@ -232,33 +232,33 @@ Implementing a real-time e-mobility charging network system requires careful pla
 
 **Phase 1: Foundation setup**
 
-- Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your charging network scale (thousands of charging stations).
+1. Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your charging network scale (thousands of charging stations).
 
-- Plan your MQTT-[Eventstream](../event-streams/overview.md) integration strategy for both charging station data and energy cost rates. Start with critical data (station status, usage patterns, availability).
+1. Plan your MQTT-[Eventstream](../event-streams/overview.md) integration strategy for both charging station data and energy cost rates. Start with critical data (station status, usage patterns, availability).
 
-- Design your real-time analytics implementation in [Eventhouse](../eventhouse.md) for processing charging events with subsecond latency requirements.
+1. Design your real-time analytics implementation in [Eventhouse](../eventhouse.md) for processing charging events with subsecond latency requirements.
 
-- Configure [OneLake](../../onelake/onelake-overview.md) for charging station asset metadata and historical data storage with appropriate retention policies.
+1. Configure [OneLake](../../onelake/onelake-overview.md) for charging station asset metadata and historical data storage with appropriate retention policies.
 
 **Phase 2: Pilot implementation**
 
-- Use a regional charging network subset (100-500 stations) to validate the architecture and MQTT integration performance.
+1. Use a regional charging network subset (100-500 stations) to validate the architecture and MQTT integration performance.
 
-- Implement core data flows for charging station monitoring, usage tracking, and basic alerting capabilities.
+1. Implement core data flows for charging station monitoring, usage tracking, and basic alerting capabilities.
 
-- Establish integration with energy rate providers and asset management systems for real-time cost correlation.
+1. Establish integration with energy rate providers and asset management systems for real-time cost correlation.
 
-- Deploy Real-Time Dashboard for charging network monitoring with drill-down capabilities from network overview to individual charging sockets.
+1. Deploy Real-Time Dashboard for charging network monitoring with drill-down capabilities from network overview to individual charging sockets.
 
 **Phase 3: Operational validation**
 
-- Test system performance during peak charging periods and high-usage scenarios.
+1. Test system performance during peak charging periods and high-usage scenarios.
 
-- Validate [Activator](../data-activator/activator-introduction.md) rules for field technician notifications based on malfunctions and anomalous charging station behavior.
+1. Validate [Activator](../data-activator/activator-introduction.md) rules for field technician notifications based on malfunctions and anomalous charging station behavior.
 
-- Ensure compliance with e-mobility regulations and energy market requirements.
+1. Ensure compliance with e-mobility regulations and energy market requirements.
 
-- Train your operational teams on dashboard usage, alert management, and drill-down analysis procedures from network to socket level.
+1. Train your operational teams on dashboard usage, alert management, and drill-down analysis procedures from network to socket level.
 
 ### Advanced implementation
 
