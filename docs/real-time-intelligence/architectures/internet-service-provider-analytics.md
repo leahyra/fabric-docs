@@ -36,21 +36,21 @@ Operational phases describe how data moves through the solution from ingestion t
 
 Ingest and process focuses on reliably capturing high-volume streaming telemetry and shaping it into analysis-ready events. In this phase, you bring router logs and customer/device signals into Fabric in near real time, apply basic validation and normalization, and ensure the data is available for downstream enrichment, analytics, and alerting.
 
-More than 1 TB/hour of router logs from customer endpoints are ingested through [Eventstreams](../real-time-intelligence/event-streams/overview.md) (for example, via MQTT). This ingestion layer standardizes and routes events for downstream enrichment, analytics, and alerting, including: 
+More than 1 TB/hour of router logs from customer endpoints are ingested through [Eventstreams](../event-streams/overview.md) (for example, via MQTT). This ingestion layer standardizes and routes events for downstream enrichment, analytics, and alerting, including: 
 
 - **Router performance logs**: Bandwidth utilization, latency metrics, and connection quality data
 - **Network traffic patterns**: Real-time usage analytics and capacity planning insights
 - **Error logs and diagnostics**: Network issues, outages, and performance degradations
 - **Security events**: Intrusion attempts, suspicious traffic, and network anomalies
 
-Customer data (device, address, billing plan, and more) is pushed via MQTT and collected by [Eventstreams](../real-time-intelligence/event-streams/overview.md), including: 
+Customer data (device, address, billing plan, and more) is pushed via MQTT and collected by [Eventstreams](../event-streams/overview.md), including: 
 
 - **Device information**: Hardware specifications, firmware versions, and configuration details
 - **Customer profiles**: Service plans, billing information, and account status
 - **Location data**: Geographic distribution and service area analytics
 - **Service quality metrics**: Customer experience and satisfaction indicators
 
-Contextual metadata (inventory, network components, technician schedules, and more) is synced from ERP systems to [OneLake](../onelake/onelake-overview.md) using [Data Factory](../data-factory/data-factory-overview.md) change data capture (CDC) to enrich streaming events, including: 
+Contextual metadata (inventory, network components, technician schedules, and more) is synced from ERP systems to [OneLake](../../onelake/onelake-overview.md) using [Data Factory](../../data-factory/data-factory-overview.md) change data capture (CDC) to enrich streaming events, including: 
 
 - **Network inventory**: Equipment specifications, locations, and maintenance schedules
 - **Infrastructure topology**: Network architecture and connectivity mapping
@@ -60,7 +60,7 @@ Contextual metadata (inventory, network components, technician schedules, and mo
 
 ### Analyze, transform, and enrich 
 
-Streamed data is enriched in motion with customer details to create a ready-to-use dataset in real time. This processing within [Eventhouse](../real-time-intelligence/eventhouse.md) enables: 
+Streamed data is enriched in motion with customer details to create a ready-to-use dataset in real time. This processing within [Eventhouse](../eventhouse.md) enables: 
 
 **Real-time data enrichment**: 
 
@@ -76,7 +76,7 @@ Enriched data is aggregated in real time to provide easy-to-use, long-term views
 - **Geographic analytics**: Regional performance analysis and service quality distribution
 - **Trend analysis**: Historical pattern identification and predictive insights generation
 
-Processed data streams into [OneLake](../onelake/onelake-overview.md) tables, enabling comprehensive network intelligence through: 
+Processed data streams into [OneLake](../../onelake/onelake-overview.md) tables, enabling comprehensive network intelligence through: 
 
 - Long-term network performance analysis
 - Customer behavior pattern recognition
@@ -85,7 +85,7 @@ Processed data streams into [OneLake](../onelake/onelake-overview.md) tables, en
 
 ### Train and score 
 
-Train ML models and use them for real-time scoring to predict network issues using [Data Science](../data-science/overview-what-is-data-science.md). Advanced network analytics includes: 
+Train ML models and use them for real-time scoring to predict network issues using [Data Science](../../data-science/data-science-overview.md). Advanced network analytics includes: 
 
 **Predictive Network Analytics**: 
 
@@ -109,7 +109,7 @@ Apply advanced modeling techniques to optimize network performance, improve qual
 
 Visualize and activate focuses on making insights usable for day-to-day operations through real-time dashboards, alerts, and self-service investigation tools.
 
-Real-time dashboards built with [Real-Time Dashboard](../real-time-intelligence/dashboard-real-time-create.md) provide a live view of network usage and make it easy to move from high-level monitoring to detailed drill-down. The dashboard provides: 
+Real-time dashboards built with [Real-Time Dashboard](../dashboard-real-time-create.md) provide a live view of network usage and make it easy to move from high-level monitoring to detailed drill-down. The dashboard provides: 
 
 **Comprehensive network monitoring**: 
 
@@ -129,7 +129,7 @@ Enables drill-down from aggregate views to customer- and device-level telemetry.
 - **Customer-specific analysis**: Individual customer usage patterns and service experience
 - **Device-level monitoring**: Detailed router and equipment performance tracking
 
-Real-time alerts on router anomalies can be generated using [Activator](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-introduction), including: 
+Real-time alerts on router anomalies can be generated using [Activator](../data-activator/activator-introduction.md), including: 
 
 **Automated network alerting**: 
 
@@ -140,7 +140,7 @@ Routes key signals to the right teams with low-latency notifications.
 - **Equipment failure notifications**: Real-time alerts for router malfunctions and infrastructure issues
 - **Service quality alerts**: Customer experience degradation and SLA violation notifications
 
-DirectQuery from [Power BI](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/create-powerbi-report) to [Eventhouse](../real-time-intelligence/eventhouse.md) provides rich BI reporting on real-time data, including: 
+DirectQuery from [Power BI](../create-powerbi-report.md) to [Eventhouse](../eventhouse.md) provides rich BI reporting on real-time data, including: 
 
 **Strategic network analytics**: 
 
@@ -162,7 +162,7 @@ Enables rapid troubleshooting and root-cause analysis across network and custome
 - **Security incident response**: Forensic analysis of network security events and threats
 - **Operational optimization**: Analysis for network efficiency and resource allocation improvements
 
-Using [Copilot](https://learn.microsoft.com/en-us/fabric/get-started/copilot-fabric-overview), network operations teams can ask natural language questions to accelerate investigations and simplify analysis.
+Using [Copilot](../../fundamentals/copilot-fabric-overview.md), network operations teams can ask natural language questions to accelerate investigations and simplify analysis.
 
 ## Technical benefits and outcomes 
 
@@ -268,10 +268,10 @@ Begin by setting up the core Fabric experiences, then validate the pipeline with
 
 **Phase 1: Foundation setup** 
 
-- Review [Microsoft Fabric Real-Time Intelligence](../real-time-intelligence/overview.md) capabilities and estimate capacity requirements based on your network size, data volumes, and analytics complexity.
-- Plan your [Eventstreams](../real-time-intelligence/event-streams/overview.md) integration strategy for ingesting router logs and customer data via MQTT.
-- Design your real-time analytics implementation in [Eventhouse](../real-time-intelligence/eventhouse.md) to process network events with immediate response requirements.
-- Configure [OneLake](../onelake/onelake-overview.md) for ERP contextual metadata and historical network analytics, including appropriate retention policies.
+- Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and estimate capacity requirements based on your network size, data volumes, and analytics complexity.
+- Plan your [Eventstreams](../event-streams/overview.md) integration strategy for ingesting router logs and customer data via MQTT.
+- Design your real-time analytics implementation in [Eventhouse](../eventhouse.md) to process network events with immediate response requirements.
+- Configure [OneLake](../../onelake/onelake-overview.md) for ERP contextual metadata and historical network analytics, including appropriate retention policies.
 
 **Phase 2: Pilot implementation** 
 
@@ -283,7 +283,7 @@ Begin by setting up the core Fabric experiences, then validate the pipeline with
 **Phase 3: Operational validation** 
 
 - Test system performance during peak network usage periods and high-volume data scenarios.
-- Validate [Activator](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-introduction) rules for network alerts and anomaly detection.
+- Validate [Activator](../data-activator/activator-introduction) rules for network alerts and anomaly detection.
 - Ensure compliance with telecommunications regulations and service quality standards.
 - Train network operations teams on dashboard usage, alert management, and KQL investigations.
 
@@ -293,26 +293,25 @@ After the pilot is stable, add intelligent automation and scale the solution acr
 
 **Intelligent automation and AI** 
 
-- Set up advanced [Data Science](../data-science/overview-what-is-data-science.md) capabilities to build, train, and score network prediction models for performance optimization.
-- Implement [Activator](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-introduction) to automate responses such as predictive maintenance, dynamic capacity adjustment, and alert-driven workflows.
-- Deploy [Copilot](https://learn.microsoft.com/en-us/fabric/get-started/copilot-fabric-overview) to enable natural language analytics for operational investigations.
+- Set up advanced [Data Science](../../data-science/data-science-overview.md) capabilities to build, train, and score network prediction models for performance optimization.
+- Implement [Activator](../data-activator/activator-introduction) to automate responses such as predictive maintenance, dynamic capacity adjustment, and alert-driven workflows.
+- Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) to enable natural language analytics for operational investigations.
 - Build intelligent network management workflows that provide real-time decision support based on performance patterns, customer behavior, and predictive analytics.
 
 **Enterprise-scale deployment** 
 
 - Scale to full ISP operations with comprehensive coverage and centralized monitoring across all infrastructure and customer segments.
 - Implement advanced analytics for cross-service optimization, capacity management, and performance effectiveness analysis.
-- Create dashboards with [Power BI](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/create-powerbi-report) DirectQuery capabilities and [Real-Time Dashboard](../real-time-intelligence/dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance.
+- Create dashboards with [Power BI](../create-powerbi-report.md) DirectQuery capabilities and [Real-Time Dashboard](../dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance.
 - Develop enterprise-grade ML models for network prediction, customer experience optimization, and infrastructure investment planning.
 
 ## Related resources 
 
-- [Real-Time Intelligence documentation](../real-time-intelligence/overview.md) 
-- [Microsoft Fabric Real-Time Intelligence enterprise architecture patterns](../enterprise/architecture.md) 
-- [Activator for automated alerting](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-introduction) 
-- [Eventstreams for real-time data ingestion](../real-time-intelligence/event-streams/overview.md) 
-- [ISP analytics with Microsoft Fabric](../real-time-intelligence/overview.md) 
-- [Advanced analytics and machine learning](../data-science/overview-what-is-data-science.md) 
-- [Microsoft Fabric Real-Time Intelligence capacity planning](../enterprise/plan-capacity.md) 
-- [OneLake data storage overview](../onelake/onelake-overview.md) 
-- [Data Factory for data integration](../data-factory/data-factory-overview.md) 
+- [Real-Time Intelligence documentation](../overview.md) 
+- [Activator for automated alerting](../data-activator/activator-introduction.md) 
+- [Eventstreams for real-time data ingestion](../event-streams/overview.md) 
+- [ISP analytics with Microsoft Fabric](../overview.md) 
+- [Advanced analytics and machine learning](../../data-science/data-science-overview.md) 
+- [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md) 
+- [OneLake data storage overview](../../onelake/onelake-overview.md) 
+- [Data Factory for data integration](../../data-factory/data-factory-overview.md) 
