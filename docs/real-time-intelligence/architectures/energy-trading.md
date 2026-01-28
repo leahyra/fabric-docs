@@ -20,7 +20,7 @@ You can manage large-scale energy trading operations where thousands of energy g
 
 The energy trading management reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from energy generation facilities, consumption networks, and trading markets for intelligent energy trading management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform, and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/energy-trading-diagram.png" alt-text="Energy trading management architecture diagram" lightbox= "media/energy-trading-diagram.png":::
+:::image type="content" source="media/energy-trading-diagram.png" alt-text="Screenshot of the energy trading management architecture diagram." lightbox= "media/energy-trading-diagram.png":::
 
 1. Energy manufacturing IoT events stream with subsecond latency from wind turbines and power plants.
 
@@ -242,33 +242,33 @@ Your traders use [Power BI dashboards](../create-powerbi-report.md) connected di
 
 **Phase 1: Foundation setup**
 
-- Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your energy trading scale (thousands of generation sources and smart meters).
+1. Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your energy trading scale (thousands of generation sources and smart meters).
 
-- Plan your MQTT-[Eventstream](../event-streams/overview.md) integration strategy for energy generation data, grid consumption events, and CRM contextualization. Start with critical data like generation capacity, market prices, and customer portfolios.
+1. Plan your MQTT-[Eventstream](../event-streams/overview.md) integration strategy for energy generation data, grid consumption events, and CRM contextualization. Start with critical data like generation capacity, market prices, and customer portfolios.
 
-- Design your real-time analytics implementation in [Eventhouse](../eventhouse.md) with Medallion Architecture for processing energy trading events with subsecond latency requirements.
+1. Design your real-time analytics implementation in [Eventhouse](../eventhouse.md) with Medallion Architecture for processing energy trading events with subsecond latency requirements.
 
-- Configure [OneLake](../../onelake/onelake-overview.md) for energy asset metadata and historical trading data storage with appropriate retention policies.
+1. Configure [OneLake](../../onelake/onelake-overview.md) for energy asset metadata and historical trading data storage with appropriate retention policies.
 
 **Phase 2: Pilot implementation**
 
-- Use a regional energy trading portfolio subset (20,000 to 50,000 smart meters and key generation facilities) to validate the architecture and MQTT integration performance.
+1. Use a regional energy trading portfolio subset (20,000 to 50,000 smart meters and key generation facilities) to validate the architecture and MQTT integration performance.
 
-- Implement core data flows for energy generation monitoring, grid consumption tracking, and basic trading alerting capabilities.
+1. Implement core data flows for energy generation monitoring, grid consumption tracking, and basic trading alerting capabilities.
 
-- Establish integration with CRM systems and ERP platforms for real-time customer contextualization and asset management.
+1. Establish integration with CRM systems and ERP platforms for real-time customer contextualization and asset management.
 
-- Deploy Real-Time Dashboard for energy trading monitoring with drill-down capabilities from market overview to individual smart meter consumption.
+1. Deploy Real-Time Dashboard for energy trading monitoring with drill-down capabilities from market overview to individual smart meter consumption.
 
 **Phase 3: Operational validation**
 
-- Test system performance during peak trading periods and market volatility scenarios.
+1. Test system performance during peak trading periods and market volatility scenarios.
 
-- Validate [Activator](../data-activator/activator-introduction.md) rules for trading team notifications based on energy spikes and forecasted deficiencies.
+1. Validate [Activator](../data-activator/activator-introduction.md) rules for trading team notifications based on energy spikes and forecasted deficiencies.
 
-- Ensure compliance with energy trading regulations and market requirements.
+1. Ensure compliance with energy trading regulations and market requirements.
 
-- Train your trading teams on dashboard usage, alert management, and drill-down analysis procedures from market to meter level.
+1. Train your trading teams on dashboard usage, alert management, and drill-down analysis procedures from market to meter level.
 
 ### Advanced implementation
 
