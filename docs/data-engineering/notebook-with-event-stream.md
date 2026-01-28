@@ -6,7 +6,7 @@ ms.author: qixwang
 author: qixwang
 ms.topic: overview
 ms.custom:
-ms.date: 01/20/2026
+ms.date: 01/27/2026
 ms.search.form: SparkStructuredStreaming Eventstream Notebook
 ---
 
