@@ -71,15 +71,15 @@ Before you begin, ensure you have the following prerequisites in place:
         query.awaitTermination()
         ```
 
-The value of the `eventstream.itemid` and `eventstream.datasourceid` options are automatically populated in the parameter code cell above this code cell.
-
-> [!NOTE]
-> For each select on **Read with Spark**, a new code cell is generated with the necessary parameters automatically filled in, and a new Notebook destination is created for the Eventstream item, where the `eventstream.datasourceid` is unique for each Notebook destination. For one notebook item, we recommend that you set it once as destination for one Eventstream item to avoid creating multiple destinations.
-
-Before running any job, you can also preview the streaming data by clicking on the **Preview data** button in the context menu of the Eventstream item. A side panel opens to show a snapshot of the streaming data beside the notebook.
-
-:::image type="content" source="media\notebook-with-event-stream\preview-event-stream-data.png" alt-text="Screenshot showing how to preview Eventstream data from the context menu." lightbox="media\notebook-with-event-stream\preview-event-stream-data.png":::
-
+    The value of the `eventstream.itemid` and `eventstream.datasourceid` options are automatically populated in the parameter code cell above this code cell.
+    
+    > [!NOTE]
+    > For each select on **Read with Spark**, a new code cell is generated with the necessary parameters automatically filled in, and a new Notebook destination is created for the Eventstream item, where the `eventstream.datasourceid` is unique for each Notebook destination. For one notebook item, we recommend that you set it once as destination for one Eventstream item to avoid creating multiple destinations.
+    
+    Before running any job, you can also preview the streaming data by clicking on the **Preview data** button in the context menu of the Eventstream item. A side panel opens to show a snapshot of the streaming data beside the notebook.
+    
+    :::image type="content" source="media\notebook-with-event-stream\preview-event-stream-data.png" alt-text="Screenshot showing how to preview Eventstream data from the context menu." lightbox="media\notebook-with-event-stream\preview-event-stream-data.png":::
+    
 3. **Add notebook as destination**:
 You can also add the notebook as a destination for the Eventstream to start ingesting data into the Eventstream from within the notebook. For more information, see [Add a Spark Notebook destination to an eventstream](../real-time-intelligence/event-streams/add-destination-spark-notebook.md).
 
