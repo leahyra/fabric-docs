@@ -80,7 +80,7 @@ WorkorderID,Latitude,Longitude
 Create a new lakehouse for incoming work order data and import the previously created work order location file.
 
 1. From your workspace, select **New item**, and enter *lakehouse* in the search box and select it to create a new lakehouse.
-1. Enter a name *WorkorderLocations_Lakehouse* and select **Create**.
+1. Enter a name *WorkorderLocationsLakehouse* and select **Create**.
 1. In the new lakehouse, select **Upload files** and upload the *WorkorderLocations.csv* file created in the previous step.
 1. In the new lakehouse, select the **Explorer** pane on the left side of the screen.
 1. In the **File** section of the **Explorer**, select *WorkorderLocations.csv* to view the file you uploaded.
