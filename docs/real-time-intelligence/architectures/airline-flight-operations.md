@@ -153,7 +153,7 @@ Implementing a real-time airline operations system requires careful planning acr
 
 - **Audit trails** - Create comprehensive logging for regulatory compliance including all data access, modifications, and system actions with immutable audit logs, automated compliance reporting, and integration with airline quality assurance systems.
 
-- **Data residency** - Ensure data storage complies with aviation industry regulations (FAA, EASA, Transport Canada), regional data protection laws (GDPR, CCPA), and airline-specific requirements for operational data location.
+- **Data residency** - Ensure data storage complies with aviation industry regulations (FAA, EASA, Transport Canada), regional data protection laws, and airline-specific requirements for operational data location.
 
 ### Monitoring and observability 
 
