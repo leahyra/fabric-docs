@@ -162,7 +162,7 @@ Create a notebook with code to import the work order location file from your lak
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/connect-notebook-lakehouse.png" alt-text="A screenshot of the Microsoft Fabric Explorer pane showing the Data items tab selected with a No data sources added message and an empty folder icon. Below the message is an Add data items dropdown button expanded to reveal three menu options: From OneLake catalog with a database icon, From Real-Time hub with a lightning bolt icon, and New lakehouse with a plus sign. The From OneLake catalog option is highlighted with a dark border indicating selection.":::
 
-1. Select **WorkorderLocationsLakehouse** from the **OneLake catalog**. This is the lakehouse you created previously.
+1. Select **WorkorderLocationsLakehouse** from the **OneLake catalog** and select the **Connect** button. This is the lakehouse you created [previously](#create-a-lakehouse-and-import-the-work-order-data-file).
 
 1. After creating the notebook and connecting it to your lakehouse, paste the following code into the first cell and run it to install the **Azure Event Hub** SDK:
 
@@ -239,7 +239,7 @@ From your eventhouse (KQL database):
 
 1. Select the *pencil edit icon* in the tab titled **Tab** and rename it to **WorkordersQuery**.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-kql-queryset.png" alt-text="A screenshot of the Microsoft Fabric KQL queryset interface showing the WorkordersEventhouse database selected in the left Explorer pane under KQL databases with WorkordersEventhouse_queryset expanded to reveal the Workorders table. The main query editor displays a new tab highlighted with a red rectangle containing a query. A second red rectangle highlights the WorkordersEventhouse_queryset item in the left navigation panel. The query window shows two lines of KQL code with Workorders on line 1 and project Latitude comma Longitude comma WorkorderID on line 2.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-kql-queryset.png" alt-text="A screenshot of the Microsoft Fabric KQL queryset interface showing the WorkordersEventhouse database selected in the left Explorer pane under KQL databases with WorkordersEventhouse_queryset expanded to reveal the Workorders table. The main query editor displays a new tab highlighted with a red rectangle containing a query. A second red rectangle highlights the WorkordersEventhouse_queryset item in the left navigation panel. The query window shows two lines of KQL code with Workorders on line 1 and project Latitude comma Longitude comma WorkorderID on line 2.":::
 
 1. Select **Run** to verify that the query returns the work order data with location fields.
 
