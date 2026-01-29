@@ -118,19 +118,19 @@ By ingesting eventstream data into an eventhouse, you make streaming events avai
 
 1. The **Eventhouse destination configuration** pane appear on the right side of the screen. Fill out the details requested as follows, then select **Save**:
     1. **Data ingestion mode**: Set to **Event processing before ingestion**.
-    1. **Destination name**: Set to **Workorders-Eventhouse**.
+    1. **Destination name**: Set to **WorkordersEventhouse**.
     1. **Workspace**: A dropdown showing the name of your workspace.
-    1. **Eventhouse**: Select **Create new** and create an eventhouse named **Workorders-Eventhouse**.
-    1. **KQL Database**: Select **Workorders-DB**.
+    1. **Eventhouse**: Select **Create new** and create an eventhouse named **WorkordersEventhouse**.
+    1. **KQL Database**: Select **WorkordersEventhouse**.
     1. **KQL Destination table**: Select the **Create new** link and create a new table named **Workorders-tbl**.
     1. **Input data format**: Select **Json**.
     1. **Activate ingestion after adding the data source**: check the checkbox.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/add-destination-eventhouse.png" alt-text="A screenshot showing the Eventhouse destination configuration pane showing Data ingestion mode with Event processing before ingestion selected, Destination name set to Workorders-Eventhouse, Workspace dropdown showing My workspace, Eventhouse dropdown showing Workorders-Eventhouse with Create new link, KQL database dropdown showing Workorders-DB, KQL Destination table dropdown showing New Workorders-tbl with Create new link, Activate ingestion after adding the data source checkbox checked, and a green Save button at the bottom.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/add-destination-eventhouse.png" alt-text="A screenshot showing the Eventhouse destination configuration pane showing Data ingestion mode with Event processing before ingestion selected, Destination name set to WorkordersEventhouse, Workspace dropdown showing My workspace, Eventhouse dropdown showing WorkordersEventhouse with Create new link, KQL database dropdown showing WorkordersEventhouse, KQL Destination table dropdown showing New Workorders-tbl with Create new link, Activate ingestion after adding the data source checkbox checked, and a green Save button at the bottom.":::
 
 1. Once the eventhouse has been added as a destination, select **Publish** to publish your new eventstream.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/publish-event-stream.png" lightbox="media/tutorials/real-time-work-order-routing-application/publish-event-stream.png" alt-text="A screenshot showing the Eventstream designer showing a flow with CustomEndpoint-Workorders source connected to a Workorders-stream node, which connects to Workorders-Eventhouse destination. The Publish button is highlighted in the top right corner of the toolbar. An Edit mode banner indicates changes go live once published.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/publish-event-stream.png" lightbox="media/tutorials/real-time-work-order-routing-application/publish-event-stream.png" alt-text="A screenshot showing the Eventstream designer showing a flow with CustomEndpoint-Workorders source connected to a Workorders-stream node, which connects to WorkordersEventhouse destination. The Publish button is highlighted in the top right corner of the toolbar. An Edit mode banner indicates changes go live once published.":::
 
 ### Get required SAS key authentication keys
 
@@ -217,22 +217,19 @@ Create a notebook with code to import the work order location file from your lak
 1. Add the values for the variables **CONNECTION_STR** and **EVENT_HUB_NAME** obtained in the previous section titled [Get required SAS key authentication keys](#get-required-sas-key-authentication-keys).
 1. Run the notebook code. This will create the *Workorders* table in the KQL database in the *WorkordersEventhouse* eventhouse.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/work-order-table.png" alt-text="A screenshot of the Microsoft Fabric Eventhouse interface displaying the Workorders table with a Data preview tab selected. The left navigation panel shows the KQL databases tree with WorkordersEventhouse expanded, containing Tables with the Workorders table selected. The data preview shows nine rows of work order records with columns including WorkorderID, Latitude, Longitude, EventProcessedUtc timestamps, PartitionId, EventEnqueuedUtc timestamps, and IngestionTime values.":::
+:::image type="content" source="media/tutorials/real-time-work-order-routing-application/work-order-table.png" lightbox="media/tutorials/real-time-work-order-routing-application/work-order-table.png" alt-text="A screenshot of the Microsoft Fabric Eventhouse interface displaying the Workorders table with a Data preview tab selected. The left navigation panel shows the KQL databases tree with WorkordersEventhouse expanded, containing Tables with the Workorders table selected. The data preview shows nine rows of work order records with columns including WorkorderID, Latitude, Longitude, EventProcessedUtc timestamps, PartitionId, EventEnqueuedUtc timestamps, and IngestionTime values.":::
 
 ## Create a KQL queryset and add it as a map layer
 
-In this section, you create a KQL queryset that retrieves current work order location data from your eventhouse, then uses that queryset as a data source for a Fabric Maps map. The queryset enables the map to display active work orders as a layer, providing a visual view of jobs that need to be planned and assigned to field crews.
+In this section, you create a KQL queryset that retrieves current work order location data from the *Workorders* table in your eventhouse, then uses that queryset as a data source for a Fabric Maps map. The queryset enables the map to display active work orders as a layer, providing a visual view of jobs that need to be planned and assigned to field crews.
 
 ### Create a KQL queryset
 
 From your eventhouse (KQL database):
 
-1. Select the KQL database **Workorders-DB**.
-1. Select **KQL queryset** from the menu bar.
-1. Name the queryset **Workorder-QS** then select **Create**.
-
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-kql-queryset.png" alt-text="A screenshot of the New KQL Queryset dialog box in Microsoft Fabric with a Name field containing Workorders-QS, a Location dropdown set to My workspace with a folder icon, and Create and Cancel buttons at the bottom right with the Create button highlighted by a red border indicating it should be selected.  In the background, the Workorders-DB database is visible in the left navigation panel under KQL databases, and the KQL Queryset button is highlighted in the top menu bar.":::
-
+1. Select **WorkordersEventhouse_queryset** from within the KQL database.
+1. Select **+** from the queries menu bar to create a new query.
+1. When the new query is created, it is automatically named *WorkordersEventhouse*, select the pencil icon to edit the name, and rename it to **WorkordersQuery**.
 1. Paste the following KQL query into the editor.
 
     ```
@@ -240,11 +237,11 @@ From your eventhouse (KQL database):
     | project Latitude, Longitude, WorkorderID 
     ```
 
-1. Select the *pencil edit icon* in the tab titled **Tab** and rename it to **Workorders-QS**.
-1. Select **Run** to verify that the query returns the work order data with location fields.
-1. Select the **Save** button in the upper left corner to save the queryset.
+1. Select the *pencil edit icon* in the tab titled **Tab** and rename it to **WorkordersQuery**.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/save-kql-queryset.png" alt-text="A screenshot of the Microsoft Fabric KQL queryset editor showing the Home and Help menu tabs at the top. A red rectangle highlights the Save button in the upper left corner next to the Add data source and Copilot buttons. The Workorders-QS tab is visible with a pencil edit icon, which is also highlighted with a red rectangle. The Explorer pane on the left displays a Search field and shows Workorders-DB with a Workorders table underneath. The query editor panel shows three lines of KQL code with line 1 containing Workorders and line 2 containing project Latitude comma Longitude comma WorkorderID. The results table displays columns for Latitude Longitude and WorkorderID with sample data including coordinates.":::
+:::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-kql-queryset.png" alt-text="A screenshot of the Microsoft Fabric KQL queryset interface showing the WorkordersEventhouse database selected in the left Explorer pane under KQL databases with WorkordersEventhouse_queryset expanded to reveal the Workorders table. The main query editor displays a new tab highlighted with a red rectangle containing a query. A second red rectangle highlights the WorkordersEventhouse_queryset item in the left navigation panel. The query window shows two lines of KQL code with Workorders on line 1 and project Latitude comma Longitude comma WorkorderID on line 2.":::
+
+1. Select **Run** to verify that the query returns the work order data with location fields.
 
 This queryset functions as a reusable data source for a Fabric Maps map data layer, which is demonstrated in the next section.
 
@@ -256,7 +253,7 @@ In this section, you create a Fabric Maps map and use the previously created KQL
 
 1. From your workspace, select **New item**.
 1. In the **New item** panel, enter **map** into the search field, and select **Map (preview)**.
-1. In the **New Map** dialog, enter **Work Orders** in the **Name** field and select **Create**.
+1. In the **New Map** dialog, enter **WorkordersMap** in the **Name** field and select **Create**.
 
 ### Add eventhouse to map
 
@@ -264,39 +261,39 @@ In this section, you create a Fabric Maps map and use the previously created KQL
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/add-eventhouse-map.png" alt-text="A screenshot showing the Microsoft Fabric Maps interface with the Explorer pane on the left with Lakehouse and Eventhouse tabs. The Eventhouse tab is selected and highlighted with a red box. Below it, the Add data items button is also highlighted with a red box. The main area displays the default world map in the map area.":::
 
-1. From the **OneLake** catalog, select the eventhouse **Workorders-Eventhouse** that you created previously, then select **Connect**.
+1. From the **OneLake** catalog, select the eventhouse **WorkordersEventhouse** that you created previously, then select **Connect**.
 
 > [!TIP]
 > If you get an error such as *The KQL database has a protected label that restricts access. Please contact your database owner for assistance.* Check the sensitivity label on your KQL database, as it may be restricting access. For more information, see [Apply sensitivity labels to Fabric items](/fabric/fundamentals/apply-sensitivity-labels).
 
 ### Show queryset on map
 
-1. In the **Explorer** pane in your new map, select the eventhouse **Workorders-Eventhouse** that you added in the previous step.
-1. Navigate to the KQL query *Workorders-QS*, and select the ellipse (...) to show the popup menu.
+1. In the **Explorer** pane in your new map, select the eventhouse **WorkordersEventhouse** that you added in the previous step.
+1. Navigate to the KQL query *WorkordersQuery*, and select the ellipse (...) to show the popup menu.
 1. Select **Show on map** from the popup menu.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/show-on-map.png" alt-text="A screenshot of the Microsoft Fabric Maps Explorer panel displaying a hierarchical tree structure with KQL database section expanded. The tree shows Workorders-DB containing Workorders-Event table and Workorders-QS queryset. An ellipsis menu is open next to Workorders-QS revealing options including Show on map highlighted with a red rectangle border.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/show-on-map.png" alt-text="A screenshot of the Microsoft Fabric Maps Explorer panel displaying a hierarchical tree structure with KQL database section expanded. The tree shows WorkordersEventhouse containing Workorders-Event table and WorkordersQuery queryset. An ellipsis menu is open next to WorkordersQuery revealing options including Show on map highlighted with a red rectangle border.":::
 
 1. The **View Eventhouse data on map** dialog appears with **Preview data** selected. No changes are required. Ensure it's correct, then select **Next**
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/preview-data.png" alt-text="A screenshot of the View Eventhouse data on map dialog in Microsoft Fabric showing three steps on the left: Preview data with a green checkmark, Set geometry, and data refresh interval, and Review and add to map. The main panel displays Visualize spatial data over time on a map with a dropdown to Select a KQL query to visualize set to Workorders-QS. Below is a Query result preview table with columns for Latitude, Longitude, and WorkorderID showing nine work order records with coordinates in the Vienna Austria area. Back and Next buttons appear at the bottom right.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/preview-data.png" alt-text="A screenshot of the View Eventhouse data on map dialog in Microsoft Fabric showing three steps on the left: Preview data with a green checkmark, Set geometry, and data refresh interval, and Review and add to map. The main panel displays Visualize spatial data over time on a map with a dropdown to Select a KQL query to visualize set to WorkordersQuery. Below is a Query result preview table with columns for Latitude, Longitude, and WorkorderID showing nine work order records with coordinates in the Vienna Austria area. Back and Next buttons appear at the bottom right.":::
 
 1. In the **Set geometry and data refresh interval** step, set the fields as follows, then select **Next**:
-    * **Data layer Name**: Workorders-QS
+    * **Data layer Name**: WorkordersQuery
     * **Geometry column location**: Latitude and longitude data locate on separate columns
     * **Latitude column**: Latitude
     * **Longitude column**: Longitude
     * **Data refresh interval**: 5 minutes
 
-        :::image type="content" source="media/tutorials/real-time-work-order-routing-application/set-geometry.png" alt-text="A screenshot of the Microsoft Fabric dialog titled View Eventhouse data on map showing the Set geometry and data refresh interval configuration step. A left sidebar displays three workflow steps with checkmarks indicating Preview data is completed and Set geometry and data refresh interval is currently active. The main panel contains a Data layer section with a Name field containing Workorders-QS, followed by a Geometry data column section with three dropdowns: Geometry column location set to Latitude and longitude data locate on separate columns, Latitude column set to Latitude, and Longitude column set to Longitude. Below is a Data refresh section with a Data refresh interval dropdown set to 5 minutes. Back and Next buttons appear at the bottom right corner.":::
+        :::image type="content" source="media/tutorials/real-time-work-order-routing-application/set-geometry.png" alt-text="A screenshot of the Microsoft Fabric dialog titled View Eventhouse data on map showing the Set geometry and data refresh interval configuration step. A left sidebar displays three workflow steps with checkmarks indicating Preview data is completed and Set geometry and data refresh interval is currently active. The main panel contains a Data layer section with a Name field containing WorkordersQuery, followed by a Geometry data column section with three dropdowns: Geometry column location set to Latitude and longitude data locate on separate columns, Latitude column set to Latitude, and Longitude column set to Longitude. Below is a Data refresh section with a Data refresh interval dropdown set to 5 minutes. Back and Next buttons appear at the bottom right corner.":::
 
 1. In the **Review and add to map** step, review settings and select **Add to map**.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/review-add-to-map.png" alt-text="A screenshot of the Microsoft Fabric View Eventhouse data on map dialog displaying the Review and add to map step. The left sidebar shows three workflow steps with green checkmarks next to Preview data and Set geometry and data refresh interval, and a blue dot indicating Review and add to map is currently active. The main panel displays the heading View Eventhouse data on map with subtitle Visualize spatial data over time on a map. The Data source section shows KQL database set to Workorders-DB, KQL queryset set to Workorders-Eventhouse_queryset, and Queryset tab set to Workorders-QS. The Data layer section shows Name field with a red asterisk set to Workorders-QS. The Geometry data column section displays Geometry column location with red asterisk set to Latitude and longitude data locate on separate columns, Latitude column with red asterisk set to Latitude, and Longitude column with red asterisk set to Longitude. The Data refresh section shows Data refresh interval with red asterisk set to 5 minutes. Back and Add to map buttons appear at the bottom right corner.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/review-add-to-map.png" alt-text="A screenshot of the Microsoft Fabric View Eventhouse data on map dialog displaying the Review and add to map step. The left sidebar shows three workflow steps with green checkmarks next to Preview data and Set geometry and data refresh interval, and a blue dot indicating Review and add to map is currently active. The main panel displays the heading View Eventhouse data on map with subtitle Visualize spatial data over time on a map. The Data source section shows KQL database set to WorkordersEventhouse, KQL queryset set to WorkordersEventhouse_queryset, and Queryset tab set to WorkordersQuery. The Data layer section shows Name field with a red asterisk set to WorkordersQuery. The Geometry data column section displays Geometry column location with red asterisk set to Latitude and longitude data locate on separate columns, Latitude column with red asterisk set to Latitude, and Longitude column with red asterisk set to Longitude. The Data refresh section shows Data refresh interval with red asterisk set to 5 minutes. Back and Add to map buttons appear at the bottom right corner.":::
 
 The queryset results are now displayed in the updated map.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/work-order-query-string-layer.png" lightbox="media/tutorials/real-time-work-order-routing-application/work-order-query-string-layer.png" alt-text="A screenshot showing Microsoft Fabric Maps interface displaying a map of Vienna, Austria with red circular markers indicating work order locations. The Explorer pane on the left shows Lakehouse and Eventhouse tabs with the Eventhouse tab selected, revealing a KQL database tree containing Workorders-Eventhouse and Workorders-QS entries. The Data layers panel in the upper left of the map shows Workorders-QS layer with a visibility toggle and options menu.":::
+:::image type="content" source="media/tutorials/real-time-work-order-routing-application/work-order-query-string-layer.png" lightbox="media/tutorials/real-time-work-order-routing-application/work-order-query-string-layer.png" alt-text="A screenshot showing Microsoft Fabric Maps interface displaying a map of Vienna, Austria with red circular markers indicating work order locations. The Explorer pane on the left shows Lakehouse and Eventhouse tabs with the Eventhouse tab selected, revealing a KQL database tree containing WorkordersEventhouse and WorkordersQuery entries. The Data layers panel in the upper left of the map shows WorkordersQuery layer with a visibility toggle and options menu.":::
 
 ## Generate an optimized multi‑stop route with the Azure Maps Route Directions API
 
@@ -307,15 +304,15 @@ To complete this section, you need an Azure account with an Azure Maps account a
 ### Create a notebook in your Fabric workspace that retrieves the optimal route
 
 1. From within your workspace, open the eventhouse you created previously.
-1. In the left navigation panel under **KQL databases**, select **Workorders-eventhouse**
+1. In the left navigation panel under **KQL databases**, select **WorkordersEventhouse**
 1. The top menu bar should now display an option for **Notebook**. Select it to create a new notebook.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/create-new-notebook.png"  lightbox="media/tutorials/real-time-work-order-routing-application/create-new-notebook.png" alt-text="A screenshot of  the Microsoft Fabric Eventhouse interface showing the Workorders-DB database selected in the left navigation panel under KQL databases. The top menu bar displays several options including Notebook, which is highlighted with a red box indicating that is the item to select. The main panel shows the Data Activity Tracker with ingestion and query statistics.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/create-new-notebook.png"  lightbox="media/tutorials/real-time-work-order-routing-application/create-new-notebook.png" alt-text="A screenshot of  the Microsoft Fabric Eventhouse interface showing the WorkordersEventhouse database selected in the left navigation panel under KQL databases. The top menu bar displays several options including Notebook, which is highlighted with a red box indicating that is the item to select. The main panel shows the Data Activity Tracker with ingestion and query statistics.":::
 
 1. In the new notebook, save the values for the **kustoQuery**, **kustoUri** and **database** variables. You use these values in the new notebook code you create in step 6.
 1. Connect your notebook to your lakehouse by selecting **From OneLake catalog** from the **Add data items** dropdown list.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-notebook-vars.png" lightbox="media/tutorials/real-time-work-order-routing-application/new-notebook-vars.png" alt-text="A screenshot of a Microsoft Fabric notebook interface showing a code cell with PySpark Python code. The left panel displays No data sources added with an Add data items button highlighted by a red box. The main code area shows an example query for reading data from Kusto with variables kustoQuery set to Workorders, kustoUri containing a Fabric Microsoft URL, and database set to Workorders-DB, all highlighted with red boxes to indicate values that need to be copied and used in the notebook code provided in this tutorial.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-notebook-vars.png" lightbox="media/tutorials/real-time-work-order-routing-application/new-notebook-vars.png" alt-text="A screenshot of a Microsoft Fabric notebook interface showing a code cell with PySpark Python code. The left panel displays No data sources added with an Add data items button highlighted by a red box. The main code area shows an example query for reading data from Kusto with variables kustoQuery set to Workorders, kustoUri containing a Fabric Microsoft URL, and database set to WorkordersEventhouse, all highlighted with red boxes to indicate values that need to be copied and used in the notebook code provided in this tutorial.":::
 
 1. Once your new notebook is created and connected to your lakehouse, enter the following code into the second cell of your notebook, replacing the default code, then add the variable values saved in the previous step:
 
@@ -334,7 +331,7 @@ To complete this section, you need an Azure account with an Azure Maps account a
     
     kustoQuery = "['Workorders']" # Your Kusto query name
     kustoUri = "" # Your Kusto URI
-    database = "Workorders-DB" # Your KQL database name
+    database = "WorkordersEventhouse" # Your KQL database name
     
     # The access credentials.
     accessToken = mssparkutils.credentials.getToken(kustoUri)
@@ -347,7 +344,7 @@ To complete this section, you need an Azure account with an Azure Maps account a
     
     # Write transformed response to a new file so the raw output is preserved
     OUTPUT_GEOJSON_PATH_TRANSFORMED = (
-        'Files/optimized_route.geojson' # GeoJSON output file 
+        'Files/OptimizedRoute.geojson' # GeoJSON output file 
     )
     
     # ---- Read Stores from KQL database table ----
@@ -420,13 +417,26 @@ To complete this section, you need an Azure account with an Azure Maps account a
 
 1. Enter Your Azure Maps subscription key in the notebook code for the **AZMAPS_SUBSCRIPTION_KEY** variable by replacing "*\<Your Azure Maps subscription key\>*" with Your Azure Maps subscription key.
 1. Select the **Save as** button in the menu and save the notebook as **OptimizeRoute**.
-1. Run the notebook code. This creates a new file named **optimized_route.geojson** in the **File** directory of your lakehouse.
+1. Run the notebook code. This creates a new file named **OptimizedRoute.geojson** in the **File** directory of your lakehouse.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/optimized-route-file.png" lightbox="media/tutorials/real-time-work-order-routing-application/optimized-route-file.png" alt-text="A screenshot of the Microsoft Fabric interface showing a notebook code cell on the right side with Python code that retrieves route data and writes a GeoJSON file. The Explorer pane on the left displays OneLake with WorkorderLocation expanded showing Tables and Files folders. The Files folder contains WorkorderLocations.csv and  optimized_route.geojson highlighted with a red box indicating the newly created output file. The center Files panel shows both files with optimized_route.geojson also highlighted. The notebook output at the bottom displays a success message stating Transformed Directions GeoJSON waypoints carry properties.optimizedIndex written to Files/optimized_route.geojson with execution time of 5 sec 750 ms.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/optimized-route-file.png" lightbox="media/tutorials/real-time-work-order-routing-application/optimized-route-file.png" alt-text="A screenshot of the Microsoft Fabric interface showing a notebook code cell on the right side with Python code that retrieves route data and writes a GeoJSON file. The Explorer pane on the left displays OneLake with WorkorderLocation expanded showing Tables and Files folders. The Files folder contains WorkorderLocations.csv and  OptimizedRoute.geojson highlighted with a red box indicating the newly created output file. The center Files panel shows both files with OptimizedRoute.geojson also highlighted. The notebook output at the bottom displays a success message stating Transformed Directions GeoJSON waypoints carry properties.":::
 
-Once completed, a new map layer appears in your Fabric Maps map created in the previous section.
+#### Add lakehouse to map
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/optimized-route-no-styles.png" alt-text="A screenshot of the Microsoft Fabric Maps interface displaying a street map of Vienna Austria with purple route lines connecting multiple waypoints marked by circles. The Explorer pane on the left shows Lakehouse and Eventhouse tabs with the Lakehouse tab expanded, revealing WorkorderLocations containing Tables and Files folders with WorkorderLocations.csv and optimized_route.geojson files. The Data layers panel in the upper left corner of the map shows two layers: Workorders-QS with red circular markers and optimized_route.geojson displaying the connected route path. The map background shows Vienna neighborhoods including Favoriten, Simmering, and Margareten with road networks visible.":::
+1. In the **Explorer** pane, select **Lakehouse** then the **Add data items** button.
+1. From the *OneLake catalog**, select the lakehouse **WorkorderLocationsLakehouse** that you created previously, then select **Connect**.
+
+#### Show the optimized route on the map
+
+1. In the **Explorer** pane in your new map, select the lakehouse **WorkorderLocationsLakehouse** that you added in the previous step.
+1. Navigate to the **OptimizedRoute.geojson** in the **File** directory of your lakehouse and select the ellipse (...) to show the popup menu.
+1. Select **Show on map** from the popup menu.
+
+:::image type="content" source="media/tutorials/real-time-work-order-routing-application/show-optimized-route-on-map.png" lightbox="media/tutorials/real-time-work-order-routing-application/show-optimized-route-on-map.png" alt-text="A screenshot of the Microsoft Fabric Maps Explorer panel showing the Lakehouse tab selected with WorkorderLocationsLakehouse expanded. The Files folder contains OptimizedRoute.geojson and WorkorderLocations.csv files. A context menu is open next to OptimizedRoute.geojson displaying options including Show on map highlighted with a red rectangle. The Data layers panel shows WorkordersQuery as an existing layer with a visibility toggle.":::
+
+Once completed, the new map layer appears in your Fabric Maps map created in the previous section.
+
+:::image type="content" source="media/tutorials/real-time-work-order-routing-application/optimized-route-no-styles.png" alt-text="A screenshot of the Microsoft Fabric Maps interface displaying a street map of Vienna Austria with purple route lines connecting multiple waypoints marked by circles. The Explorer pane on the left shows Lakehouse and Eventhouse tabs with the Lakehouse tab expanded, revealing WorkorderLocations containing Tables and Files folders with WorkorderLocations.csv and OptimizedRoute.geojson files. The Data layers panel in the upper left corner of the map shows two layers: WorkordersQuery with red circular markers and OptimizedRoute.geojson displaying the connected route path. The map background shows Vienna neighborhoods including Favoriten, Simmering, and Margareten with road networks visible.":::
 
 ### Map layer settings
 
@@ -436,7 +446,7 @@ Fabric Maps provides a range of layer settings that let you control how data is 
 
 1. Select the new layers options menu and select **Rename**.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/rename-layer.png" alt-text="A screenshot of the Microsoft Fabric Maps Data layers panel showing two layers Workorders-QS and optimized_route.geojson. The optimized_route.geojson layer has its options menu expanded with a red rectangle highlighting the Rename option. Other menu options visible include Zoom to fit, Duplicate, and Delete. The panel appears over a street map background showing the Vienna Austria area.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/rename-layer.png" alt-text="A screenshot of the Microsoft Fabric Maps Data layers panel showing two layers WorkordersQuery and OptimizedRoute.geojson. The OptimizedRoute.geojson layer has its options menu expanded with a red rectangle highlighting the Rename option. Other menu options visible include Zoom to fit, Duplicate, and Delete. The panel appears over a street map background showing the Vienna Austria area.":::
 
 1. In the **Layer name** field, enter **Optimized Route**, then select **Rename**.
 
@@ -458,7 +468,7 @@ To turn off basemap labels:
 1. Select **Map settings** from the menu bar.
 1. Locate the **Labels** checkbox, and unchecked it.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/map-settings-labels.png" lightbox="media/tutorials/real-time-work-order-routing-application/map-settings-labels.png" alt-text="A screenshot showing the Microsoft Fabric Maps interface displaying a street map of Vienna Austria with purple route lines connecting multiple waypoints. The left side shows the Explorer pane with Data layers panel listing Workorders-QS and Optimized Route layers. The top toolbar highlights the Map settings button highlighted with a red rectangle. The right side displays the Basemap settings panel with the Labels checkbox unchecked and highlighted with a red rectangle.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/map-settings-labels.png" lightbox="media/tutorials/real-time-work-order-routing-application/map-settings-labels.png" alt-text="A screenshot showing the Microsoft Fabric Maps interface displaying a street map of Vienna Austria with purple route lines connecting multiple waypoints. The left side shows the Explorer pane with Data layers panel listing WorkordersQuery and Optimized Route layers. The top toolbar highlights the Map settings button highlighted with a red rectangle. The right side displays the Basemap settings panel with the Labels checkbox unchecked and highlighted with a red rectangle.":::
 
 #### Add labels to the layer
 
@@ -472,7 +482,6 @@ Layer labels are data‑driven annotations that come from one or more fields in 
     * **Font weight**: Medium
     * **Text color**: white
     * **Text size** slider set to 20
-    * **Text stroke width** slider set to 1.8
-    * **Data labels overlap**: toggled On
+    * **Text stroke width** slider set to 2
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/data-label-settings.png" lightbox="media/tutorials/real-time-work-order-routing-application/data-label-settings.png" alt-text="A screenshot of Microsoft Fabric Maps showing the Data labels settings panel expanded on the right side with Enable data labels toggled On, Data labels dropdown set to optimizedIndex, Font weight set to Medium, Text color showing a white color picker, Text size slider set to 20, Text stroke color showing black, Text stroke width slider set to 1.8, and Label position set to Bottom center. The main map area displays a street map of Vienna Austria with purple route lines connecting numbered waypoints labeled 1 through 9 indicating the optimized visit order. The Data layers panel on the left shows Workorders-QS with visibility hidden and Optimized Route as the active layer.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/data-label-settings.png" lightbox="media/tutorials/real-time-work-order-routing-application/data-label-settings.png" alt-text="A screenshot of Microsoft Fabric Maps showing the Data labels settings panel expanded on the right side with Enable data labels toggled On, Data labels dropdown set to optimizedIndex, Text color showing a white color picker, Text size slider set to 20, Text stroke color showing black, and Text stroke width slider set to 2. The main map area displays a street map of Vienna Austria with purple route lines connecting numbered waypoints labeled 1 through 9 indicating the optimized visit order. The Data layers panel on the left shows WorkordersQuery with visibility hidden and Optimized Route as the active layer.":::
