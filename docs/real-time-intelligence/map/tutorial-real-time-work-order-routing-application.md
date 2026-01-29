@@ -473,12 +473,11 @@ To turn off basemap labels:
 
 Layer labels are data‑driven annotations that come from one or more fields in the layer's dataset. They're tied directly to layer level map features, such as the points on the map that represent work order locations.
 
-1. Select the **Optimized Route** in the **Data layers** panel. The **Optimized Route** settings dialog appears in the right side of the screen.
-1. In the **Optimized Route** settings dialog, select **> Data label settings**.
+1. Select **Optimized Route** in the **Data layers** panel. The **Optimized Route** settings panel appears in the right side of the screen.
+1. In the **Optimized Route** settings panel, select **> Data label settings**.
 1. Select the **Enable data labels** toggle to turn on data labels. This shows more data label settings.
 1. Change the following data label settings:
     * **Data labels**: optimizedIndex
-    * **Font weight**: Medium
     * **Text color**: white
     * **Text size** slider set to 20
     * **Text stroke width** slider set to 2
