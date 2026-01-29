@@ -122,11 +122,11 @@ By ingesting eventstream data into an eventhouse, you make streaming events avai
     1. **Workspace**: A dropdown showing the name of your workspace.
     1. **Eventhouse**: Select **Create new** and create an eventhouse named **WorkordersEventhouse**.
     1. **KQL Database**: Select **WorkordersEventhouse**.
-    1. **KQL Destination table**: Select the **Create new** link and create a new table named **Workorders-tbl**.
+    1. **KQL Destination table**: Select the **Create new** link and create a new table named **WorkordersEventhouse**.
     1. **Input data format**: Select **Json**.
     1. **Activate ingestion after adding the data source**: check the checkbox.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/add-destination-eventhouse.png" alt-text="A screenshot showing the Eventhouse destination configuration pane showing Data ingestion mode with Event processing before ingestion selected, Destination name set to WorkordersEventhouse, Workspace dropdown showing My workspace, Eventhouse dropdown showing WorkordersEventhouse with Create new link, KQL database dropdown showing WorkordersEventhouse, KQL Destination table dropdown showing New Workorders-tbl with Create new link, Activate ingestion after adding the data source checkbox checked, and a green Save button at the bottom.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/add-destination-eventhouse.png" alt-text="A screenshot showing the Eventhouse destination configuration pane showing Data ingestion mode with Event processing before ingestion selected, Destination name set to WorkordersEventhouse, Workspace dropdown showing My workspace, Eventhouse dropdown showing WorkordersEventhouse with Create new link, KQL database dropdown showing WorkordersEventhouse, KQL Destination table dropdown showing New WorkordersEventhouse with Create new link, Activate ingestion after adding the data source checkbox checked, and a green Save button at the bottom.":::
 
 1. Once the eventhouse has been added as a destination, select **Publish** to publish your new eventstream.
 
