@@ -269,7 +269,7 @@ In this section, you create a Fabric Maps map and use the previously created KQL
 ### Show queryset on map
 
 1. In the **Explorer** pane in your new map, select the eventhouse **WorkordersEventhouse** that you added in the previous step.
-1. Navigate to the KQL query *WorkordersQuery*, and select the ellipse (...) to show the popup menu.
+1. Navigate to the KQL query *WorkordersQuery*, and select the ellipse (**...**) to show the popup menu.
 1. Select **Show on map** from the popup menu.
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/show-on-map.png" alt-text="A screenshot of the Microsoft Fabric Maps Explorer panel displaying a hierarchical tree structure with KQL database section expanded. The tree shows WorkordersEventhouse containing Workorders-Event table and WorkordersQuery queryset. An ellipsis menu is open next to WorkordersQuery revealing options including Show on map highlighted with a red rectangle border.":::
@@ -303,14 +303,14 @@ To complete this section, you need an Azure account with an Azure Maps account a
 
 ### Create a notebook in your Fabric workspace that retrieves the optimal route
 
-1. From within your workspace, open the eventhouse you created previously.
-1. In the left navigation panel under **KQL databases**, select **WorkordersEventhouse**
+1. From within your workspace, open the eventhouse **WorkordersEventhouse** you created previously.
+1. In the left navigation panel under **KQL databases**, select **WorkordersEventhouse**.
 1. The top menu bar should now display an option for **Notebook**. Select it to create a new notebook.
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/create-new-notebook.png"  lightbox="media/tutorials/real-time-work-order-routing-application/create-new-notebook.png" alt-text="A screenshot of  the Microsoft Fabric Eventhouse interface showing the WorkordersEventhouse database selected in the left navigation panel under KQL databases. The top menu bar displays several options including Notebook, which is highlighted with a red box indicating that is the item to select. The main panel shows the Data Activity Tracker with ingestion and query statistics.":::
 
 1. In the new notebook, save the values for the **kustoQuery**, **kustoUri** and **database** variables. You use these values in the new notebook code you create in step 6.
-1. Connect your notebook to your lakehouse by selecting **From OneLake catalog** from the **Add data items** dropdown list.
+1. Connect your notebook to **WorkorderLocationsLakehouse** by selecting **From OneLake catalog** from the **Add data items** dropdown list.
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-notebook-vars.png" lightbox="media/tutorials/real-time-work-order-routing-application/new-notebook-vars.png" alt-text="A screenshot of a Microsoft Fabric notebook interface showing a code cell with PySpark Python code. The left panel displays No data sources added with an Add data items button highlighted by a red box. The main code area shows an example query for reading data from Kusto with variables kustoQuery set to Workorders, kustoUri containing a Fabric Microsoft URL, and database set to WorkordersEventhouse, all highlighted with red boxes to indicate values that need to be copied and used in the notebook code provided in this tutorial.":::
 
@@ -424,17 +424,17 @@ To complete this section, you need an Azure account with an Azure Maps account a
 #### Add lakehouse to map
 
 1. In the **Explorer** pane, select **Lakehouse** then the **Add data items** button.
-1. From the *OneLake catalog**, select the lakehouse **WorkorderLocationsLakehouse** that you created previously, then select **Connect**.
+1. From the **OneLake catalog**, select the lakehouse **WorkorderLocationsLakehouse** that you created previously, then select **Connect**.
 
 #### Show the optimized route on the map
 
 1. In the **Explorer** pane in your new map, select the lakehouse **WorkorderLocationsLakehouse** that you added in the previous step.
-1. Navigate to the **OptimizedRoute.geojson** in the **File** directory of your lakehouse and select the ellipse (...) to show the popup menu.
+1. Navigate to **OptimizedRoute.geojson** in the **File** directory of your lakehouse and select the ellipse (**...**) to show the popup menu.
 1. Select **Show on map** from the popup menu.
 
 :::image type="content" source="media/tutorials/real-time-work-order-routing-application/show-optimized-route-on-map.png" lightbox="media/tutorials/real-time-work-order-routing-application/show-optimized-route-on-map.png" alt-text="A screenshot of the Microsoft Fabric Maps Explorer panel showing the Lakehouse tab selected with WorkorderLocationsLakehouse expanded. The Files folder contains OptimizedRoute.geojson and WorkorderLocations.csv files. A context menu is open next to OptimizedRoute.geojson displaying options including Show on map highlighted with a red rectangle. The Data layers panel shows WorkordersQuery as an existing layer with a visibility toggle.":::
 
-Once completed, the new map layer appears in your Fabric Maps map created in the previous section.
+Once completed, the new map layer appears in your Fabric Maps map.
 
 :::image type="content" source="media/tutorials/real-time-work-order-routing-application/optimized-route-no-styles.png" alt-text="A screenshot of the Microsoft Fabric Maps interface displaying a street map of Vienna Austria with purple route lines connecting multiple waypoints marked by circles. The Explorer pane on the left shows Lakehouse and Eventhouse tabs with the Lakehouse tab expanded, revealing WorkorderLocations containing Tables and Files folders with WorkorderLocations.csv and OptimizedRoute.geojson files. The Data layers panel in the upper left corner of the map shows two layers: WorkordersQuery with red circular markers and OptimizedRoute.geojson displaying the connected route path. The map background shows Vienna neighborhoods including Favoriten, Simmering, and Margareten with road networks visible.":::
 
@@ -444,11 +444,10 @@ Fabric Maps provides a range of layer settings that let you control how data is 
 
 #### Rename the layer
 
-1. Select the new layers options menu and select **Rename**.
+1. In the **Data layers** panel, open the **OptimizedRoute** options menu by selecting the elipse (**...**).
+1. Once in the options menu, select **Rename**.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/rename-layer.png" alt-text="A screenshot of the Microsoft Fabric Maps Data layers panel showing two layers WorkordersQuery and OptimizedRoute.geojson. The OptimizedRoute.geojson layer has its options menu expanded with a red rectangle highlighting the Rename option. Other menu options visible include Zoom to fit, Duplicate, and Delete. The panel appears over a street map background showing the Vienna Austria area.":::
-
-1. In the **Layer name** field, enter **Optimized Route**, then select **Rename**.
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/rename-layer.png" alt-text="A screenshot of the Microsoft Fabric Maps Data layers panel showing two layers WorkordersQuery and OptimizedRoute. The OptimizedRoute layer has its options menu expanded with a red rectangle highlighting the Rename option. Other menu options visible include Zoom to fit, Duplicate, and Delete. The panel appears over a street map background showing the Vienna Austria area.":::
 
 #### Remove labels at the map level
 
