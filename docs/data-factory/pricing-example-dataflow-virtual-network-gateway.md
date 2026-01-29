@@ -21,7 +21,10 @@ Total cost per run:
 
 **Total = Dataflow Gen2 charge + VNET Data Gateway charge**
 
-The prices used in this example are hypothetical and are provided only to demonstrate cost estimation.
+>[!NOTE]
+>The prices used in the following example are hypothetical and don’t intend to imply exact actual pricing. The estimates demonstrate how you can estimate, plan, and manage cost for Data Factory projects in Microsoft Fabric.
+>
+>Since Fabric capacities are priced uniquely across regions, refer to [the Microsoft Fabric pricing page](https://azure.microsoft.com/pricing/details/microsoft-fabric/) to explore Fabric capacity pricing regionally.
 
 ## Configuration
 

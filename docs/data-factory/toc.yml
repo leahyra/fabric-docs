@@ -34,9 +34,9 @@
               - name: Pipelines
                 items: 
                   - name: On Premises SQL to Lakehouse
-                    href: pricing-example-copy-data-on-premises-sql-server-fabric-lakehouse-on-premises-data-gateway.md
+                    href: pricing-example-sql-server-lakehouse-on-premises-data-gateway.md
                   - name: Azure SQL database to Lakehouse
-                    href: pricing-example-azure-sql-database-fabric-lakehouse-virtual-network-gateway.md
+                    href: pricing-example-azure-sql-database-lakehouse-virtual-network-gateway.md
                   - name: Load 1 TB of Parquet data to a data Warehouse
                     href: pricing-scenario-load-1-tb-parquet-to-data-warehouse.md
                   - name: Load 1 TB of Parquet data to a data warehouse with staging
@@ -54,7 +54,7 @@
               - name: Dataflow Gen2
                 items:
                   - name: Dataflow Gen2 with virtual network gateway
-                    href: pricing-example-dataflow-gen2-virtual-network-gateway.md
+                    href: pricing-example-dataflow-virtual-network-gateway.md
       - name: Keyboard shortcuts
         href: keyboard-shortcuts.md
       - name: Secure Data Factory in Microsoft Fabric

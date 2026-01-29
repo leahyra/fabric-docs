@@ -12,8 +12,12 @@ In this scenario, you copy data from an on-premises SQL Server database to a Lak
 
 This scenario is a common hybrid integration pattern where you keep operational databases on-premises and use Fabric for analytics and reporting.
 
-> [!IMPORTANT]
-> The on-premises data gateway itself doesn't incur extra charges. All billing is based on Fabric capacity consumption by the Data Factory workload, such as the Data Movement meter.
+The on-premises data gateway itself doesn't incur extra charges. All billing is based on Fabric capacity consumption by the Data Factory workload, such as the Data Movement meter.
+
+>[!NOTE]
+>The prices used in the following example are hypothetical and don’t intend to imply exact actual pricing. The estimates demonstrate how you can estimate, plan, and manage cost for Data Factory projects in Microsoft Fabric.
+>
+>Since Fabric capacities are priced uniquely across regions, refer to [the Microsoft Fabric pricing page](https://azure.microsoft.com/pricing/details/microsoft-fabric/) to explore Fabric capacity pricing regionally.
 
 ## Configuration
 

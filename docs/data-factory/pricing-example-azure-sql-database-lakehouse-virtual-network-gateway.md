@@ -14,7 +14,10 @@ Use this pattern when you secure your data sources by using **Private Endpoints*
 
 Unlike the On-premises Data Gateway, the **VNET Data Gateway consumes Fabric capacity based on uptime**, in addition to the capacity consumed by Data Factory workloads such as Copy jobs. The effective gateway uptime is the **Copy job execution time plus the configured Time to Live (TTL)** after job completion.
 
-The prices in this example are hypothetical and are provided only to demonstrate how to estimate and manage cost.
+>[!NOTE]
+>The prices used in the following example are hypothetical and don’t intend to imply exact actual pricing. The estimates demonstrate how you can estimate, plan, and manage cost for Data Factory projects in Microsoft Fabric.
+>
+>Since Fabric capacities are priced uniquely across regions, refer to [the Microsoft Fabric pricing page](https://azure.microsoft.com/pricing/details/microsoft-fabric/) to explore Fabric capacity pricing regionally.
 
 ## Configuration
 
