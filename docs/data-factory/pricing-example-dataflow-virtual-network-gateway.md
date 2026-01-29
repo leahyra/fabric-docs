@@ -1,16 +1,16 @@
 ---
-title: Pricing example for dataflow gen 2 with a virtual network gateway.
-description: A comprehensive pricing guide to Dataflow Gen2 using a virtual network gateway.
+title: Pricing example for Dataflow Gen2 with a Virtual Network Gateway
+description: A pricing example for Dataflow Gen2 using a virtual network gateway.
 ms.reviewer: lle
 ms.date: 01/29/2026
 ms.topic: concept-article
 ---
 
-# Pricing example: Dataflow Gen2 using Virtual Network Data Gateway
+# Pricing example: Dataflow Gen2 using a Virtual Network Data Gateway
 
-In this scenario, you use Dataflow Gen2 to ingest and transform data from an Azure SQL Database deployed in a private virtual network into a Lakehouse table in Microsoft Fabric by using the **Virtual Network (VNET) Data Gateway**.
+In this scenario, we use Dataflow Gen2 to ingest and transform data from an Azure SQL Database deployed in a private virtual network into a Lakehouse table in Microsoft Fabric by using the **Virtual Network (VNET) Data Gateway**.
 
-Use this pattern when you need to apply Power Query transformations while ensuring that all data access stays within private network boundaries.
+This pattern is useful to apply Power Query transformations while ensuring that all data access stays within private network boundaries.
 
 The total cost includes two parts:
 
@@ -27,6 +27,8 @@ Total cost per run:
 >Since Fabric capacities are priced uniquely across regions, refer to [the Microsoft Fabric pricing page](https://azure.microsoft.com/pricing/details/microsoft-fabric/) to explore Fabric capacity pricing regionally.
 
 ## Configuration
+
+This scenario uses the following resources:
 
 - **Source**: Azure SQL Database with Private Endpoint in customer VNET
 - **Connectivity**: VNET Data Gateway
@@ -45,11 +47,11 @@ This scenario includes two independent cost components:
 1. **Dataflow Gen2 Standard Compute cost** (Mashup Engine)
 1. **VNET Data Gateway uptime cost** (job duration + TTL)
 
-You bill both costs to the Fabric or Power BI Premium capacity.
+Both costs are billed to the Fabric or Power BI Premium capacity.
 
 ## Dataflow Gen2 Standard Compute cost
 
-Because you disabled staging, Dataflow Gen2 uses **Standard Compute** on the Mashup Engine.
+Because staging is disabled, Dataflow Gen2 uses **Standard Compute** on the Mashup Engine.
 
 This example uses **CI/CD pricing**, which applies tiered rates per query:
 
@@ -58,7 +60,7 @@ This example uses **CI/CD pricing**, which applies tiered rates per query:
 
 ### Query execution details
 
-Assume the Dataflow contains **two queries**:
+In this example, the Dataflow contains **two queries**:
 
 | **Query**  | **Duration (seconds)**  |
 |------------|-------------------------|
@@ -109,7 +111,7 @@ CU seconds = 4 × (gateway members) × (uptime in seconds)
 
 ### Gateway uptime per run
 
-Assume the following values:
+In this example, we use the following values:
 
 - Total Dataflow execution duration: **20 minutes (1,200 seconds)**
 - TTL after run: **30 minutes (1,800 seconds)**
@@ -137,7 +139,7 @@ Gateway cost per run:
 | **Component**                   | **Cost**    |
 |---------------------------------|-------------|
 | Dataflow Gen2 Standard Compute  | $0.63      |
-| VNET Data Gateway uptime        | $1.2       |
+| VNET Data Gateway uptime        | $1.20      |
 | **Total per run**               | **$1.83**  |
 
 **Monthly estimate (30 daily runs)**
@@ -150,8 +152,8 @@ Gateway cost per run:
 
 ## Key takeaways
 
-- Dataflow Gen2 charges are based on actual query execution time and engine usage.
+- Dataflow Gen2 charges are based on query execution time and engine usage.
 - VNET Data Gateway charges are based on gateway uptime, which includes:
-   - Dataflow execution duration
-   - Plus configured TTL after job completion
+  - Dataflow execution duration
+  - Plus configured TTL after job completion
 - Gateway cost is independent of data volume or activity and continues as long as the gateway is running.
