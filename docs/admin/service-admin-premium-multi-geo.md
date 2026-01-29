@@ -20,7 +20,7 @@ Multi-Geo is a Microsoft Fabric feature that helps multinational customers addre
 
 * Power BI Embedded supports Multi-Geo.
 
-* Power BI Premium Per User (PPU) isn't supported for Multi-Geo.
+* Power BI Premium Per-User (PPU) isn't supported for Multi-Geo.
 
 ## Enable and configure
 
