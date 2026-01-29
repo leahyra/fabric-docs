@@ -1,6 +1,6 @@
 ---
-title: Create and manage streaming virtual network data gateways
-description: Learn how to create and manage streaming virtual network data gateways.
+title: Create and manage streaming virtual network data gateway
+description: Learn how to create and manage streaming virtual network data gateway.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -10,7 +10,7 @@ ms.date: 01/27/2026
 ms.search.form: Streaming Virtual Network
 ---
 
-# Create and manage streaming virtual network data gateways
+# Create and manage streaming virtual network data gateway
 
 The streaming virtual network data gateway provides an abstraction of the Azure virtual network and its subnet resources within Fabric. This allows Eventstream’s streaming connector service to use the Azure virtual network and subnet resource, injecting the connector into this Azure virtual network. As a result, Eventstream’s streaming connector can access streaming sources within a private network to collect real-time data for Fabric.
 
@@ -23,7 +23,7 @@ Before you create a streaming virtual network data gateway, you must complete th
 
 After completing these prerequisites, you can create a streaming virtual network data gateway. 
 
-When adding sources to your eventstream, select a source, i.e., Azure Service Bus and the Get events wizard is opened. Select **Set up** to open the **Manage connections and gateways** page and you can create your **Streaming virtual network gateways**.
+When adding sources to your eventstream in Fabric, select a source, i.e., Azure Service Bus and the Get events wizard is opened. Select **Set up** to open the **Manage connections and gateways** page and you can create your **Streaming virtual network gateways**.
 
 :::image type="content" source="media/streaming-connector-vnet-on-prem-support/wizard.png" alt-text="Screenshot of showing the service bus wizard." lightbox="media/streaming-connector-vnet-on-prem-support/wizard.png":::
 
@@ -33,13 +33,13 @@ When adding sources to your eventstream, select a source, i.e., Azure Service Bu
 
 :::image type="content" source="media/streaming-connector-vnet-on-prem-support/create-data-gateway.png" alt-text="Screenshot of showing how to create streaming virtual network data gateway." lightbox="media/streaming-connector-vnet-on-prem-support/create-data-gateway.png":::
 
-After a streaming virtual network data gateway is created, it's available in Fabric: **Manage Connections and Gateways > Streaming virtual network data gateways** tab where you can manage it. In this page, it lists all the streaming virtual network data gateways that you have the permission to access. In each item row, it shows the corresponding Azure virtual network resource details that you specified in it.
+After a streaming virtual network data gateway is created, it's available in Fabric: **Manage Connections and Gateways > Streaming virtual network data gateways** tab where you can manage it. In this page, it lists all the streaming virtual network data gateways that you have the permission to access. In each item row, it shows the corresponding Azure virtual network resource details.
 
 :::image type="content" source="media/create-manage-streaming-virtual-network-data-gateways/manage.png" alt-text="Screenshot of showing where to manage to stream virtual network data gateways." lightbox="media/create-manage-streaming-virtual-network-data-gateways/manage.png":::
 
 ## Manage admin and users
 
-You can manage admins for a streaming virtual network data gateway in Fabric under **Manage Connections and Gateways**, similar to how you manage other VNet data gateway. To add or remove admins, select a streaming virtual network data gateway, and then select Manage users.
+You can manage admins for a streaming virtual network data gateway in Fabric under **Manage Connections and Gateways**, similar to how you manage other data gateway. To add or remove admins, select a streaming virtual network data gateway, and then select Manage users.
 
 You can also share the streaming virtual network data gateway with other users in your organization, so they can see and use it without creating a new one. When sharing, you can assign one of the following roles: **Connection Creator**, **Connection Creator with resharing**, or **Admin**.
 

@@ -46,14 +46,14 @@ To get the detailed step-to-step configuration guide, check out the [Streaming C
 
 ## Limitations
 
-- **Data preview on source that in private network is not supported**.  
+- **Data preview on sources in private network is not supported**.  
     Some connector sources support previewing the data, such as the database CDC sources, Confluent, AWS Kinesis, etc. if they are in a public network. When they are in private network, the data preview on these sources cannot work. It shows errors when previewing it in either Edit mode or Live mode. 
 
 - **The source with vNet/Subnet configured cannot be updated after this eventstream is published**.  
     Once vNet/Subnet is configured in your eventstream source, it won’t be updated later. It's also recommended not to update your virtual network or subnet setting when connector is running.  
 
 - **Custom DNS Server is not supported yet**  
-    If your source server is located in a private network with a custom DNS server configured, the injected streaming connector within your Azure virtual network may not be able to resolve the source server’s address. There are three options to work around this:
+    If your source is located in a private network with a custom DNS server configured, the injected streaming connector within your Azure virtual network may not be able to resolve the source server’s address. There are three options to work around this:
 
     1. Create and link a [Private DNS Zone](/azure/dns/private-dns-privatednszone) to your injected virtual network and add an A record resolving your data source DNS name to the private IP address.
     1. Create a [DNS Private Resolver](/azure/dns/dns-private-resolver-overview) which forwards DNS traffic to your custom DNS server.
