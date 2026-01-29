@@ -97,11 +97,36 @@ You can configure SharePoint in workspace settings by typing in the name of the 
 
 :::image type="content" source="media/workspaces/add-onedrive-info.png" alt-text="Screenshot of adding SharePoint info.":::
 
-### License mode
+### Workspace type
 
-By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including My Workspaces can be assigned to any capacity in your organization. You can configure it while creating a workspace or in **Workspace settings -> Premium**. Read more about [licenses](../enterprise/licenses.md).
+> [!NOTE]
+> The term "license mode" has been renamed to "workspace type" in the Microsoft Fabric UI and documentation. This is a terminology change only—there are no functional changes to user workflows or capabilities.
 
-:::image type="content" source="media/workspaces/license-mode-workspace-settings.png" alt-text="Screenshot of license mode in workspace settings.":::
+By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including My Workspaces can be assigned to any capacity in your organization. You can configure it while creating a workspace or in **Workspace settings -> Premium**. 
+
+#### Workspace type groupings
+
+Workspace types are organized into two categories to help you understand the capabilities available:
+
+**Power BI workspace types** - Optimized for Power BI workloads:
+
+| Workspace type | Description |
+|----------------|-------------|
+| **Pro** | Basic Power BI features for collaboration on reports, dashboards, and scorecards. |
+| **Premium Per User (PPU)** | Access to most Power BI Premium features on a per-user basis. |
+| **Embedded** | Power BI content embedded in applications using Azure capacity (A or EM SKUs). |
+
+**Fabric workspace types** - Support all Microsoft Fabric experiences:
+
+| Workspace type | Description |
+|----------------|-------------|
+| **Fabric capacity** | Full Fabric capabilities using F SKUs. |
+| **Fabric Trial** | Try Fabric features for 60 days using Trial SKUs. |
+| **Power BI Premium** | Power BI Premium capacity using P SKUs (supports all Fabric experiences when Fabric is enabled). |
+
+Read more about [licenses](../enterprise/licenses.md).
+
+:::image type="content" source="media/workspaces/license-mode-workspace-settings.png" alt-text="Screenshot of workspace type in workspace settings.":::
 
 ### Azure connections configuration
 

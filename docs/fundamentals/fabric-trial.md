@@ -123,7 +123,7 @@ For more information, see [Sharing trial capacities](#share-trial-capacities).
 
 ## Start using your trial
 
-To start using your Fabric capacity trial, create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that trial capacity. Invite colleagues to those workspaces so they can share the trial experience with you. If you, as the Capacity administrator, enable **Contributor permissions**, then others can also assign their workspaces to your trial capacity. For more information about sharing, see [Share trial capacities](#share-trial-capacities).
+To start using your Fabric capacity trial, create a new workspace. Assign that workspace to your trial capacity [using the *Trial* workspace type](workspaces.md#workspace-type), and then all the items in that workspace are saved and executed in that trial capacity. Invite colleagues to those workspaces so they can share the trial experience with you. If you, as the Capacity administrator, enable **Contributor permissions**, then others can also assign their workspaces to your trial capacity. For more information about sharing, see [Share trial capacities](#share-trial-capacities).
 
 - **Existing Power BI users**: If you're an existing Power BI user, jump to [Start the Fabric trial](#start-the-fabric-capacity-trial). 
 - **New Power BI users**: The Fabric trial requires a per-user license. Navigate to [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial) to sign up for a Fabric (Free) license. Once you have the free license, you can [begin participating in the Fabric capacity trial](#start-the-fabric-capacity-trial).  
@@ -195,8 +195,8 @@ One reason to cancel a trial capacity is when the Capacity administrator of a tr
 
 If you don't move the workspaces and their contents to a new capacity that supports Fabric:
 
-- The license mode of any workspaces assigned to that trial capacity changes to Pro. 
-- All non Power BI Fabric items in the workspaces become unusable and may be deleted after seven days. Your Power BI items are unaffected and still available when the workspace license mode returns to Pro.    
+- The workspace type of any workspaces assigned to that trial capacity changes to Pro. 
+- All non Power BI Fabric items in the workspaces become unusable and may be deleted after seven days. Your Power BI items are unaffected and still available when the workspace type returns to Pro.    
 - You can't create workspaces that support Fabric capabilities.
 - You can't share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
 - You can't create any other analytics solutions using these Fabric items.

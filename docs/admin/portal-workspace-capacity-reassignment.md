@@ -43,9 +43,9 @@ Moving workspaces from one capacity to another has the following restrictions:
 
     After you remove the non-movable items and the workspace is migrated to a different region, you can create new items of the non-movable type. It can take up to an hour after the migration before can do so.
 
-* Only Power BI items can move from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode (with exceptions as noted here). If you're changing a workspace from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode, you must remove all non-Power BI items and any Power BI items that can't be moved first. Otherwise the license mode change fails.
+* Only Power BI items can move from Fabric workspace types (Premium capacity, Fabric capacity) to Power BI workspace types (Pro or Premium Per User) (with exceptions as noted here). If you're changing a workspace from a Fabric workspace type to a Power BI workspace type like Pro or Premium Per User, you must remove all non-Power BI items and any Power BI items that can't be moved first. Otherwise the workspace type change fails.
 
-    The following item types are considered Power BI items from the perspective of the workspace license mode.
+    The following item types are considered Power BI items from the perspective of the workspace type.
 
     * Report
     * Semantic model (small storage format and large storage format)
@@ -60,7 +60,7 @@ Moving workspaces from one capacity to another has the following restrictions:
 
     *Can't move to Pro<br>**Can't move to Pro or Premium per user
 
-    All other item types must be removed from the workspace before you can change its license mode from Premium capacity or Fabric capacity to Pro or Premium Per User.
+    All other item types must be removed from the workspace before you can change its workspace type from a Fabric workspace type (Premium capacity or Fabric capacity) to a Power BI workspace type (Pro or Premium Per User).
 
 > [!NOTE]
 > If you have Dataflow Gen2 items in your workspace, their underlying staging lakehouse and staging warehouse items only become visible in the workspace UI after **all** Dataflow Gen2 items in the workspace are deleted. These staging items are Fabric items as well, and as such their existence can prevent the workspace from being successfully migrated from one region to another. To ensure that your workspace can be successfully migrated across regions, first delete all Dataflow Gen2 items in the workspace. Then delete all the staging lakehouses and warehouses in the workspace that become visible.
