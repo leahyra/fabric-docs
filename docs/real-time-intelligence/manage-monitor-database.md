@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 05/06/2025
+ms.date: 01/29/2026
 ms.subservice: rti-eventhouse
 ms.search.form: Database
 #customer intent: As a user, I want to learn how to manage and monitor a KQL  database so that I can effectively utilize Real-Time Intelligence.
@@ -106,7 +106,7 @@ At the top of the main view area, you can select these options:
     > [!NOTE]
     > Sharing multiple databases at once isn't supported.
 
-### Database activity tracker
+### Data activity tracker
 
 The database activity tracker displays the number of rows loaded into the database and the number or queries, in the selected time range.
 
@@ -121,6 +121,7 @@ The database activity tracker displays the number of rows loaded into the databa
 | Interval | Set the data aggregation interval for the histogram display. Set intervals by one minute, five minutes, one hour, 12 hours, one day, three days, and 30 days. |
 | Refresh | Refresh your histogram manually.|
 | Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram.<br><br/>The ingestion histogram displays data by the interval chosen, and displays in UTC time. Hover over the histogram to display total rows ingested and total queries per status. |
+| **Open query** | Open the KQL editor with the underlying query preloaded. This allows you to modify and execute the query directly to analyze the data further. |
 
 ### Data insights
 
@@ -135,6 +136,8 @@ The tabs and graphs show the following information:
 | **Tables** | View table information as **Cards** or as a **List**. Cards and lists view table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>* Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>* The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, *Caching*, *Retention*, *OneLake* status, and *Created on*. To explore a specific table, select the name of this table from the list. For more information, see [Manage and monitor a table](manage-monitor-table.md). |
 | **Data preview** | Shows a preview of the top records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view. You can also search for keywords and use the filter tables option.|
 | **Query insights** | Shows query duration, cache hit misses over time, and top queries.<br></br>* **Queries duration (sec) percentiles over time**: The query duration percentiles represent the duration values in seconds or milliseconds, below which 50%, 75%, and 90% of the query durations fall, respectively. To see the query duration details at a specific point in time, hover over the graph and the details pop up.<br></br>* **Cache hit misses over time (%)**: High cache miss percentage indicates requested data wasn't in cache, leading to longer query durations.<br></br>* **Top queries**: A list of queries that can be sorted according to most recent, longest duration, highest CPU usage, highest cold storage usage, or highest memory peak usage. You can also filter the queries by complete, failed, throttled, or canceled. To sort, use the **Top by:** menu.</br> :::image type="content" source="media/create-database/queries-top-by-menu.png" alt-text="Screenshot of queries menu to see percentage of queries completed."::: |
+
+In most graphs, you can select the **Open query** in the elipsis menu to open the KQL editor with the underlying query preloaded. This allows you to modify and execute the query directly to analyze the data further.
 
 ## Database details
 
