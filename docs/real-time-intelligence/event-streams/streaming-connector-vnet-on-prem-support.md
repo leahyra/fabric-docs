@@ -1,5 +1,5 @@
 ---
-title: Streaming Connector vNet and On-Prem Support Guide
+title: Eventstream Streaming Connector Private Network Support Guide
 description: Learn how to create and manage streaming virtual network data gateways, connect streaming source’s network to the Azure virtual network and then add data source in private network into Eventstream.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -10,9 +10,9 @@ ms.date: 01/27/2026
 ms.search.form: Streaming Virtual Network
 ---
 
-# Streaming Connector vNet and On-Prem Support Guide
+# Eventstream Streaming Connector Virtual Network and On-Prem Support Guide
 
-The streaming connector vNet and on-premises support offers a secure, managed way for Eventstream to access streaming sources that are in private networks. This guide shows you how to use this feature to connect your private-network sources with Eventstream. You learn how to grant the necessary permissions, set up a virtual network, link your source network, create a data gateway for the streaming virtual network, and add your private network data source to Eventstream.
+The streaming connector virtual network and on-premises support offers a secure, managed way for Eventstream to access streaming sources that are in private networks. This guide shows you how to use this feature to connect your private-network sources with Eventstream. You learn how to grant the necessary permissions, set up a virtual network, link your source network, create a data gateway for the streaming virtual network, and add your private network data source to Eventstream.
 
 ## End-to-End workflow
 
@@ -245,3 +245,8 @@ The remaining steps follow the standard source configuration process. Finish all
 In Live view, Azure service bus source is Active, and the data should be flowing into Eventstream. You may check the Data insight of the middle node.  
 
 :::image type="content" source="media/streaming-connector-vnet-on-prem-support/live-view.png" alt-text="Screenshot of showing the live view of eventstream." lightbox="media/streaming-connector-vnet-on-prem-support/live-view.png":::
+
+## Related content
+
+* [Streaming connector private network support overview](./streaming-connector-vnet-on-prem-support-overview.md)
+* [Createn and managed streaming virtual network data gateway](./create-manage-streaming-virtual-network-data-gateways.md)
