@@ -139,7 +139,7 @@ Or other sources that are in Azure virtual network. The example is using the SQL
 1. Go to your source SQL Server on Azure VM on Azure portal, select **Network settings** of the SQL VM > **Virtual network / subnet** to open the virtual network of the SQL VM. 
 1. In the SQL VM virtual network page, select **Peerings > Add** to peering with the Azure virtual network you’ve created in Prerequisite#1. 
 
-    :::image type="content" source="media/streaming-connector-vnet-on-prem-support/configure-peerings.png" alt-text="Screenshot of showing how to configure network peerings." lightbox="media/streaming-connector-vnet-on-prem-support/configure-peerings.png":::
+    :::image type="content" source="media/streaming-connector-vnet-on-prem-support/configure-network-peerings.png" alt-text="Screenshot of showing how to configure network peerings." lightbox="media/streaming-connector-vnet-on-prem-support/configure-network-peerings.png":::
 
 ## Prerequisite 4: Enable the workspace identity and add role assignment to the workspace identity
 
@@ -248,5 +248,5 @@ In Live view, Azure service bus source is Active, and the data should be flowing
 
 ## Related content
 
-* [Streaming connector private network support overview](./streaming-connector-vnet-on-prem-support-overview.md)
+* [Streaming connector private network support overview](./streaming-connector-private-network-support-overview.md)
 * [Create and managed streaming virtual network data gateway](./create-manage-streaming-virtual-network-data-gateways.md)

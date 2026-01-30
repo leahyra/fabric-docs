@@ -42,7 +42,7 @@ To learn more about how to create and manage the streaming virtual network data 
 
 ## Next steps
 
-To get the detailed step-to-step configuration guide, check out the [Streaming Connector Private Network Support Guide](streaming-connector-vnet-on-prem-support.md).
+To get the detailed step-to-step configuration guide, check out the [Streaming Connector Private Network Support Guide](./streaming-connector-private-network-support.md).
 
 ## Limitations
 

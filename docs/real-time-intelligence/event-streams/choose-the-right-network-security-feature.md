@@ -120,7 +120,7 @@ The streaming connector vNet injection feature enables you to securely retrieve 
 
 Streaming Connector vNet injection is ideal when you need to pull data from external systems or databases that are behind firewalls or in private networks. And it requires you to have an Azure virtual network provisioned as prerequisite.
 
-**Related documents**: [Eventstream streaming connector virtual network and on-premises support overview](./streaming-connector-vnet-on-prem-support-overview.md)
+**Related documents**: [Eventstream streaming connector virtual network and on-premises support overview](./streaming-connector-private-network-support-overview.md)
 
 
 ## Choose the right network security feature
@@ -147,10 +147,11 @@ Ask yourself these questions:
    - If yes, use **Managed Private Endpoint**
    - For other external data sources, use **Streaming Connector vNet Injection**
 
-    > [!NOTE]  
+   > [!NOTE]  
 > Azure Event Hubs source has two feature levels. When selecting **Basic feature** level, **Managed Private Endpoint** solution is needed; when selecting **Extended feature** level, **Streaming Connector vNet Injection** solution is needed. 
 
-    > [!NOTE] 
+
+   > [!NOTE]
 > If you have challenge to prepare the Azure virtual network for Streaming Connector vNet Injection solution, you may consider the **Connector IP Allowlist** approach for the outbound scenario. 
 >
 > Eventstream's streaming connector in each region has a single outbound IP address. If your company's network policy permits allowlisting this IP address and your source has a publicly resolvable address, Eventstream's connector can bring real-time data into Fabric, though the transmission occurs over a public network.
@@ -243,7 +244,7 @@ When choosing a network security feature, keep these limitations in mind:
 
 - [Connect to Azure resources securely using managed private endpoints](set-up-private-endpoint.md)
 - [Secure inbound connections with Tenant and Workspace Private Links](set-up-tenant-workspace-private-links.md)
-- * [Streaming connector private network support overview](./streaming-connector-vnet-on-prem-support-overview.md)
+- * [Streaming connector private network support overview](./streaming-connector-private-network-support-overview.md)
 - [Security in Microsoft Fabric](../../security/security-overview.md)
 - [Overview of managed private endpoints](../../security/security-managed-private-endpoints-overview.md)
 - [Private links for Fabric tenants](../../security/security-private-links-overview.md)
