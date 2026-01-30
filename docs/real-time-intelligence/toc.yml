@@ -204,9 +204,9 @@ items:
           - name: Secure outbound via streaming connector vNet injection
             items:
               - name: Streaming connector private network support overview
-                href: event-streams/streaming-connector-vnet-on-prem-support-overview.md
+                href: event-streams/streaming-connector-private-network-support-overview.md
               - name: Streaming connector private network support guide
-                href: event-streams/streaming-connector-vnet-on-prem-support.md
+                href: event-streams/streaming-connector-private-network-support-guide.md
               - name: Create and manage streaming virtual network data gateway
                 href: event-streams/streaming-connector-vnet-on-prem-support.md
           - name: Secure outbound via managed private endpoints

@@ -31,7 +31,7 @@ By following this guide, you will:
 7. Create a Connection with streaming virtual network data gateway.
 8. Add your private network data source to the eventstream and publish.
 
-To learn more about the solution architecture and concept, visit [Eventstream Streaming Connector vNet and On-Prem Support Overview](streaming-connector-vnet-on-prem-support-overview.md)
+To learn more about the solution architecture and concept, visit [Eventstream Streaming Connector vNet and On-Prem Support Overview](./streaming-connector-private-network-support-overview.md)
 
 ## Supported sources
 
@@ -139,7 +139,7 @@ Or other sources that are in Azure virtual network. The example is using the SQL
 1. Go to your source SQL Server on Azure VM on Azure portal, select **Network settings** of the SQL VM > **Virtual network / subnet** to open the virtual network of the SQL VM. 
 1. In the SQL VM virtual network page, select **Peerings > Add** to peering with the Azure virtual network you’ve created in Prerequisite#1. 
 
-    :::image type="content" source="media/streaming-connector-vnet-on-prem-support/configure-network-peerings.png" alt-text="Screenshot of showing how to configure network peerings." lightbox="media/streaming-connector-vnet-on-prem-support/configure-network-peerings.png":::
+    :::image type="content" source="media/streaming-connector-vnet-on-prem-support/configure-network-peering.png" alt-text="Screenshot of showing how to configure network peering." lightbox="media/streaming-connector-vnet-on-prem-support/configure-network-peering.png":::
 
 ## Prerequisite 4: Enable the workspace identity and add role assignment to the workspace identity
 

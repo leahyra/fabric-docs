@@ -18,8 +18,8 @@ The streaming virtual network data gateway provides an abstraction of the Azure 
 
 Before you create a streaming virtual network data gateway, you must complete the following prerequisites:
 
-- Register the ‘Microsoft.MessagingConnectors’ resource provider in your Azure subscription. For detailed steps, see [Register the connector resource provider](streaming-connector-vnet-on-prem-support.md#prerequisite-1-register-the-connector-resource-provider). 
-- Create an Azure virtual network with a subnet and delegate a subnet to ‘Microsoft.MessagingConnectors’. For detailed steps, see [Set up an Azure virtual network](streaming-connector-vnet-on-prem-support.md#prerequisite-2-set-up-an-azure-virtual-network).
+- Register the ‘Microsoft.MessagingConnectors’ resource provider in your Azure subscription. For detailed steps, see [Register the connector resource provider](./streaming-connector-private-network-support-guide.md#prerequisite-1-register-the-connector-resource-provider). 
+- Create an Azure virtual network with a subnet and delegate a subnet to ‘Microsoft.MessagingConnectors’. For detailed steps, see [Set up an Azure virtual network](./streaming-connector-private-network-support-guide.md#prerequisite-2-set-up-an-azure-virtual-network).
 
 After completing these prerequisites, you can create a streaming virtual network data gateway. 
 
@@ -62,5 +62,5 @@ You can delete a streaming virtual network data gateway. Select the **More actio
 
 ## Next step
 
-- [Eventstream Streaming Connector vNet and On-Prem Support Overview](streaming-connector-vnet-on-prem-support-overview.md)
-- [Streaming Connector vNet and On-Prem Support Guide](streaming-connector-vnet-on-prem-support.md)
+- [Eventstream Streaming Connector Private Network Support Overview](./streaming-connector-private-network-support-overview.md)
+- [Streaming Connector Private Network Support Guide](./streaming-connector-private-network-support-guide.md)
