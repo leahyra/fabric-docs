@@ -42,7 +42,7 @@ The architecture includes the following key steps:
 
 1. **Activate alerts** - Data Activator monitors router telemetry and generates real-time alerts on anomalies, threshold violations, and network issues.
 
-1. **Enable ad-hoc analysis** - Network operations teams use Kusto Query Languge (KQL) queries for deep investigations and root-cause analysis, reducing investigation time from hours to minutes.
+1. **Enable ad-hoc analysis** - Network operations teams use Kusto Query Language (KQL) queries for deep investigations and root-cause analysis, reducing investigation time from hours to minutes.
 
 
 ## Operational phases
@@ -89,7 +89,7 @@ Contextual metadata (inventory, network components, technician schedules, and mo
 
 In the Analyze, transform, and enrich phase, streaming data is transformed into analytics-ready intelligence as it moves through the system. [Eventhouse](../eventhouse.md) enriches live router telemetry in motion with customer, device, and service context, producing curated datasets in real time. This processing standardizes, correlates, and aggregates high-volume events to support both immediate operational insight and long-term network analysis. The enriched data is also persisted to OneLake for historical analytics and compliance reporting, ensuring that you can analyze trends over time while maintaining the ability to respond to events as they occur.
 
-**Real-time data enrichment**: 
+#### Real-time data enrichment 
 
 Real-time data enrichment contextualizes router telemetry in Eventhouse by combining customer profiles, device details, geographic signals, and service quality metrics to produce analytics-ready datasets for operational insight. This enrichment happens as data flows through the system, adding context without introducing processing delays.
 
@@ -125,7 +125,7 @@ Processed data streams are persisted to [OneLake](../../onelake/onelake-overview
 
 The Train and score phase builds, trains, and deploys machine learning models that continuously evaluate streaming network data and score events in real time. By applying Microsoft Fabric [Data Science](../../data-science/data-science-overview.md) capabilities, the architecture transforms enriched telemetry into predictive insights that help operators anticipate issues, optimize performance, and take proactive action before customer impact occurs. This phase is where your data becomes truly predictive, enabling you to move from reactive troubleshooting to proactive network management.
 
-**Predictive network analytics**: 
+#### Predictive network analytics 
 
 Predictive network analytics applies machine learning to identify emerging operational risks, capacity constraints, and customer experience degradation by correlating historical trends with live telemetry. These models improve reliability, scalability, and customer satisfaction by catching problems early.
 
@@ -137,7 +137,7 @@ Predictive network analytics applies machine learning to identify emerging opera
 
 - **Anomaly detection**: Real-time identification of unusual network patterns and security threats enables rapid response to emerging issues.
 
-**Advanced machine learning capabilities**: 
+#### Advanced machine learning capabilities
 
 Advanced machine learning capabilities extend predictive analytics with sophisticated modeling techniques that optimize network operations and support long-term planning. These models learn from real-world outcomes to improve accuracy over time, enabling intelligent automation for performance optimization, service quality forecasting, and predictive maintenance decisions.
 
@@ -155,7 +155,7 @@ The Visualize and activate phase makes insights actionable for day-to-day networ
 
 Real-time dashboards built with [Real-Time Dashboard](../dashboard-real-time-create.md) provide a live, continuously updated view of network usage and performance. Operators can move seamlessly from high-level monitoring to detailed, contextual drill-down, enabling faster diagnosis and informed operational decisions. The dashboards deliver the following capabilities:
 
-**Comprehensive network monitoring**: 
+#### Comprehensive network monitoring 
 
 Comprehensive network monitoring provides essential operational visibility into overall network health, usage, and service quality. This capability supports continuous monitoring across regions, customer segments, and infrastructure components, giving operators a complete picture of network status at any moment.
 
@@ -167,7 +167,7 @@ Comprehensive network monitoring provides essential operational visibility into 
 
 - **Equipment monitoring**: Equipment monitoring provides real-time status of routers, switches, and network infrastructure to support proactive maintenance and rapid issue identification.
 
-**Multi-granularity network analysis**: 
+#### Multi-granularity network analysis
 
 Multi-granularity network analysis enables progressive drill-down from aggregated metrics to customer, region, and device-level telemetry. This capability supports deep analysis without losing real-time context, so operators can investigate issues at any level of detail.
 
@@ -181,7 +181,7 @@ Multi-granularity network analysis enables progressive drill-down from aggregate
 
 Real-time alerts generated using [Activator](../data-activator/activator-introduction.md) enable proactive operational response by identifying network anomalies and threshold violations as they occur. These alerts ensure that the right teams are notified immediately when action is required.
 
-**Automated network alerting**: 
+#### Automated network alerting
 
 Automated network alerting routes critical operational signals to the right teams with low-latency notifications. This capability helps operators mitigate issues before they affect service availability or customer experience, reducing the time between issue detection and response.
 
@@ -195,7 +195,7 @@ Automated network alerting routes critical operational signals to the right team
 
 DirectQuery from [Power BI](../create-powerbi-report.md) to [Eventhouse](../eventhouse.md) complements real-time dashboards with rich analytical reporting on live and historical network data. This integration supports trend analysis, optimization initiatives, and executive reporting needs.
 
-**Strategic network analytics**: 
+#### Strategic network analytics
 
 Strategic network analytics provides executive and operational insights by combining real-time and historical network data. These reports support performance management, capacity planning, and compliance reporting, connecting operational data to business decisions.
 
@@ -207,7 +207,7 @@ Strategic network analytics provides executive and operational insights by combi
 
 Ad-hoc queries using KQL enable deep investigations in minutes instead of hours. This self-service capability empowers operators to explore data freely and answer questions as they arise.
 
-**Advanced network investigation**: 
+#### Advanced network investigation
 
 Advanced network investigation enables rapid troubleshooting and root-cause analysis across network and customer signals. These capabilities reduce the time required to diagnose and resolve complex issues.
 
@@ -321,7 +321,7 @@ Successful implementation depends on well-defined connections between the Fabric
 
 Continuous monitoring of both platform health and data correctness helps you detect ingestion failures, processing bottlenecks, and cost drivers before they affect operations. A comprehensive observability strategy ensures that you can maintain system reliability while optimizing costs over time.
 
-**Operational monitoring**: 
+#### Operational monitoring
 
 Operational monitoring tracks service health and end-to-end performance across ingestion, processing, and alerting components. This visibility helps your team identify and resolve issues before they affect downstream analytics or alerting.
 
@@ -331,7 +331,7 @@ Operational monitoring tracks service health and end-to-end performance across i
 
 - **Performance metrics**: Track ingestion latency, machine learning model prediction accuracy, and dashboard response times against your defined SLAs to ensure the system meets operational requirements.
 
-**Cost optimization**: 
+#### Cost optimization
 
 Cost optimization requires balancing performance requirements against spending through careful capacity planning, appropriate retention policies, and lifecycle management aligned to your regulatory and operational needs.
 
@@ -349,7 +349,7 @@ Follow this phased approach to implement and scale the reference architecture in
 
 The initial implementation phase establishes the foundational Fabric experiences and validates the end-to-end pipeline with a limited scope. By starting small and proving the architecture works in your environment, you can build confidence and refine your approach before scaling across your full network infrastructure.
 
-**Phase 1: Foundation setup** 
+#### Phase 1: Foundation setup 
 
 During the foundation phase, you establish the core platform components and integration patterns that support the entire solution.
 
@@ -361,7 +361,7 @@ During the foundation phase, you establish the core platform components and inte
 
 - Configure [OneLake](../../onelake/onelake-overview.md) to store ERP contextual metadata and historical network analytics, establishing retention policies that balance operational needs with storage costs.
 
-**Phase 2: Pilot implementation** 
+#### Phase 2: Pilot implementation 
 
 The pilot phase validates your architecture with real data from a subset of your network, helping you identify and resolve integration issues before broader deployment.
 
@@ -373,7 +373,7 @@ The pilot phase validates your architecture with real data from a subset of your
 
 - Deploy a Real-Time Dashboard that provides network monitoring, drill-down analysis, and performance assessment capabilities to demonstrate value to stakeholders.
 
-**Phase 3: Operational validation** 
+#### Phase 3: Operational validation 
 
 The operational validation phase confirms that your implementation meets performance requirements and prepares your team to operate the solution effectively.
 
@@ -389,7 +389,7 @@ The operational validation phase confirms that your implementation meets perform
 
 Once your pilot is stable and your team is comfortable with the core capabilities, you can add intelligent automation and scale the solution across your entire network. This phase introduces machine learning, advanced alerting, and enterprise-grade reporting capabilities.
 
-**Intelligent automation and AI** 
+#### Intelligent automation and AI** 
 
 The intelligent automation phase adds predictive capabilities and automated responses that reduce manual effort and accelerate issue resolution.
 
@@ -401,7 +401,7 @@ The intelligent automation phase adds predictive capabilities and automated resp
 
 - Build intelligent network management workflows that provide real-time decision support based on performance patterns, customer behavior analysis, and predictive analytics insights.
 
-**Enterprise-scale deployment** 
+#### Enterprise-scale deployment 
 
 The enterprise deployment phase extends the solution across your full infrastructure with comprehensive monitoring and executive reporting capabilities.
 
