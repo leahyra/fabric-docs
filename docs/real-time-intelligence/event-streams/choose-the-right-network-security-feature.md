@@ -147,16 +147,17 @@ Ask yourself these questions:
    - If yes, use **Managed Private Endpoint**
    - For other external data sources, use **Streaming Connector vNet Injection**
 
-   > [!NOTE]  
-> Azure Event Hubs source has two feature levels. When selecting **Basic feature** level, **Managed Private Endpoint** solution is needed; when selecting **Extended feature** level, **Streaming Connector vNet Injection** solution is needed. 
+   > [!NOTE]
+   > Azure Event Hubs source has two feature levels. When selecting **Basic feature** level, **Managed Private Endpoint** solution is needed; when selecting **Extended feature** level, **Streaming Connector vNet Injection** solution is needed. 
 
 
    > [!NOTE]
-> If you have challenge to prepare the Azure virtual network for Streaming Connector vNet Injection solution, you may consider the **Connector IP Allowlist** approach for the outbound scenario. 
->
-> Eventstream's streaming connector in each region has a single outbound IP address. If your company's network policy permits allowlisting this IP address and your source has a publicly resolvable address, Eventstream's connector can bring real-time data into Fabric, though the transmission occurs over a public network.
->
-> This solution is applicable to all streaming connector sources. If you're interested in implementing this solution, kindly reach out to the product team by completing the following form: [Real-Time Intelligence Eventstream Streaming Connector IP allowlist Request](https://aka.ms/EventStreamsConnIPAllowlistRequest)
+   > If you have challenge to prepare the Azure virtual network for Streaming Connector vNet Injection solution, you may consider the **Connector IP Allowlist** approach for the outbound scenario. 
+   >
+   > Eventstream's streaming connector in each region has a single outbound IP address. If your company's network policy permits allowlisting this IP address and your source has a publicly resolvable address, Eventstream's connector can bring real-time data into Fabric, though the transmission occurs over a public network.
+   >
+   > This solution is applicable to all streaming connector sources. If you're interested in implementing this solution, kindly reach out to the product team by completing the following form: [Real-Time Intelligence Eventstream Streaming Connector IP allowlist Request](https://aka.ms/EventStreamsConnIPAllowlistRequest)
+
 
 ### Decision matrix
 
