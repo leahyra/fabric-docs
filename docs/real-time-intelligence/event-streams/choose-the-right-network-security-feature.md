@@ -21,11 +21,11 @@ This article helps you understand the available network security features in Eve
 
 ## Understand the three types of network traffic
 
-In Eventstream, network traffic describes which side initiates the connection. It falls into three categories: **internal**, **inbound**, and **outbound**. Understanding how traffic flows to and from Fabric—and where the connection is initiated—helps you determine whether extra network security features are required and which option to use.
+In Eventstream, network traffic describes which side **initiates the connection**. It falls into three categories: **internal**, **inbound**, and **outbound**. Understanding how network traffic flows to and from Fabric - and where the connection is initiated - helps you determine whether extra network security features are required and which option to use.
 
 ### Internal calls: Secure by default
 
-Internal calls refer to traffic between Eventstream and other Fabric-native items within the same Fabric environment. This traffic stays within Fabric's security boundary and doesn't cross any network perimeters. Internal calls don't require extra network security features because they're already protected by Fabric's built-in security model.
+Internal calls refer to network traffic between Eventstream and other Fabric-native items within the same Fabric environment. This traffic stays within Fabric's security boundary and doesn't cross any network perimeters. Internal calls don't require extra network security features because they're already protected by Fabric's built-in security model.
 
 Sources and destinations that use internal calls include:
 
@@ -42,31 +42,31 @@ Sources and destinations that use internal calls include:
 
 - Lakehouse
 - Eventhouse
-- Data Activator
+- Activator
 
-Internal calls are secure by default and protected by Microsoft Entra ID authentication, workspace permission model, and encryption at rest and in transit. The network security features described in this article apply only to external traffic—inbound and outbound connections between Eventstream and resources outside the Fabric platform.
+Internal calls are secure by default and protected by Microsoft Entra ID authentication, workspace permission model, and encryption at rest and in transit. The network security features described in this article apply only to external network traffic — inbound and outbound connections between Eventstream and resources outside the Fabric platform.
 
-### Inbound traffic
+### Inbound network traffic
 
-Inbound traffic refers to connections initiated by external data sources to Eventstream, typically to push data into Eventstream or, in some cases, to pull data from it. By configuring inbound network security, you control which sources can connect to your Eventstream and from which networks. This helps prevent unauthorized access and ensures that only approved sources can stream data into your Fabric environment.
+Inbound network traffic refers to connections initiated by external data sources to Eventstream, typically to push data into Eventstream or, in some cases, to pull data from Eventstream. By configuring inbound network security, you control which sources can connect to your Eventstream and from which networks. This helps prevent unauthorized access and ensures that only approved sources can stream/pull data into/from your Fabric Eventstream.
 
 Examples of inbound scenarios include:
 
-- Custom applications sending events to Eventstream by using the **Custom endpoints** source.
-- Custom applications retrieving events from Eventstream by using the **Custom endpoints** destination.
-- The **Azure Event Grid** source pushing system events to Eventstream.
+- Custom applications sending events to Eventstream by using the **Custom endpoint** source.
+- Custom applications pulling events from Eventstream by using the **Custom endpoint** destination.
+- The **Azure Event Grid Namespace** source pushing system events to Eventstream.
 
-Inbound security features restrict access to Eventstream itself, ensuring that only traffic from approved networks can reach your streaming environment.
+Inbound network security features restrict access to Eventstream itself, ensuring that only traffic from approved networks can reach your streaming environment.
 
-### Outbound traffic
+### Outbound network traffic
 
-Outbound traffic refers to connections that Eventstream makes to external data sources outside the Fabric platform. When you configure outbound security, you control how Eventstream connects to Azure resources and other external systems. This ensures that data flowing from external sources into Eventstream travels over secure, private connections.
+Outbound network traffic refers to connections that Eventstream makes to external data sources outside the Fabric platform. When you configure outbound security, you control how Eventstream connects to Azure-based data sources and other external systems. This ensures that data flowing from external sources into Eventstream travels over secure, private connections.
 
 Examples of outbound scenarios include:
 
 - Eventstream pulling events from **Azure Event Hubs** source
-- Eventstream capturing database change events from **Azure SQL DB (CDC)** source
-- Eventstream streaming events from **Apache Kafka** source
+- Eventstream capturing database change events from database cdc source, for example, **Azure SQL DB (CDC)** source
+- Eventstream retrieving events from **Apache Kafka** source
 
 Outbound security features ensure that when Eventstream reaches out to external data sources, those connections remain private, and don't traverse the public internet.
 
@@ -74,15 +74,17 @@ Outbound security features ensure that when Eventstream reaches out to external 
 
 Eventstream supports three main network security features. Each feature serves a different purpose and operates at a different scope within your Fabric environment.
 
-### Managed Private Endpoints
+### Managed private endpoints
 
 Managed private endpoints enable Eventstream to securely connect to Azure resources that are behind a firewall or not accessible from the public internet. When you create a managed private endpoint, Fabric automatically provisions a managed virtual network for your Eventstream, allowing outbound connections to Azure resources over a private network.
 
 **Direction:** Outbound (Eventstream connecting to external resources)
 
-**Use case:** Use managed private endpoints when your **Azure IoT Hub** have public access disabled or are protected by firewall rules. The private endpoint ensures that data flows from Azure IoT Hub to Eventstream without traversing the public internet.
+**Use case:** Use managed private endpoints when your **Azure IoT Hub** and **Azure Event Hubs** have public access disabled or are protected by firewall rules. The private endpoint ensures that data flows from Azure IoT Hub or Azure event hub to Eventstream without traversing the public internet.
 
 Managed Private Endpoints are ideal when your Azure Event Hubs or Azure IoT Hub network setting isn't publicly accessible, such as when public access is disabled or restricted by firewall rules.
+
+**Related documents**: [Connect to Azure resources securely using managed private endpoints](./set-up-private-endpoint.md)
 
 ### Tenant and Workspace-level Private Links
 
@@ -90,14 +92,14 @@ Tenant-level and workspace-level private links are inbound network security feat
 
 **Direction:** Inbound (controlling access to Fabric and Eventstream)
 
-**Tenant-level private links:**
+**Tenant-level Private Links:**
 
 - Apply to the entire Fabric tenant, securing all workspaces and workspace items
 - Use when your organization requires a comprehensive security policy for all users and workspaces
 - Block public internet access to Fabric tenant entirely; all access must come through approved private endpoints
 - Enabled by a Fabric administrator in the admin portal
 
-**Workspace-level private links:**
+**Workspace-level Private Links:**
 
 - Apply to individual workspaces, allowing granular control
 - Use when you need to secure specific workspaces with sensitive data or production workloads, while keeping other workspaces open for public access
@@ -106,15 +108,20 @@ Tenant-level and workspace-level private links are inbound network security feat
 
 Tenant-level private links are ideal for organizations with strict, company-wide security policies. Workspace-level private links are best for organizations needing flexibility to secure only select workspaces.
 
-### Streaming Connector VNet
+**Related documents**: [Secure inbound connections with Tenant and Workspace Private Links](./set-up-tenant-workspace-private-links.md)
 
-Workspace-level private links provide granular network security for specific workspaces. Unlike tenant-level private links, they let you secure individual workspaces while leaving other workspaces accessible from the public internet.
+### Streaming Connector vNet Injection
+
+The streaming connector vNet injection feature enables you to securely retrieve data from external data sources located in a private network directly to Eventstream by injecting the streaming connector into an intermediate Azure virtual network. By leveraging this feature, you can connect to sources that aren't accessible from the public internet, ensuring that data flows securely over a private network. This capability is ideal for organizations that require secure, private connectivity between their on-premises or cloud-based virtual network resources and Fabric Eventstream, without exposing those resources to the public internet.
 
 **Direction:** Outbound (Eventstream connecting to external resources)
 
-**Use case:** Use Streaming Connector VNet when you need to connect Eventstream to external streaming platforms (like Apache Kafka, Amazon Kinesis, Google Pub/Sub, MQTT) or database CDC sources (PostgreSQL, MySQL, SQL Server) that reside in private networks.
+**Use case:** Use Streaming connector vNet injection when you need to connect Eventstream to external streaming platforms (like Apache Kafka, Amazon Kinesis, Google Pub/Sub, MQTT) or database CDC sources (PostgreSQL, MySQL, SQL Server) that reside in private networks, i.e., 3rd-party cloud virtual network or on-premises environment.
 
-Streaming Connector VNet is ideal when you need to stream data from external systems or databases that are behind firewalls or in private networks.
+Streaming Connector vNet injection is ideal when you need to pull data from external systems or databases that are behind firewalls or in private networks. And it requires you to have an Azure virtual network provisioned as prerequisite.
+
+**Related documents**: [Eventstream streaming connector virtual network and on-premises support overview](./streaming-connector-vnet-on-prem-support-overview.md)
+
 
 ## Choose the right network security feature
 
@@ -125,39 +132,49 @@ Selecting the right network security feature depends on your specific scenario a
 Ask yourself these questions:
 
 1. **Is your source or destination within Fabric?**
-   - If you're using Fabric-native sources (like Workspace Item events, OneLake events, Sample data) or Fabric-native destinations (like Lakehouse, Eventhouse, Data Activator), these are **secure by default**—no extra network security features are needed
+   - If you're using Fabric-native sources (like Workspace Item events, OneLake events, Sample data) or Fabric-native destinations (like Lakehouse, Eventhouse, Activator), these are **secure by default**—no extra network security features are needed
    - If you're connecting to external Azure resources or custom applications, continue to the next questions
 
-2. **Is your data source sit in a protected network?**
+2. **Is your data source residing in a protected network?**
    - If your data source is publicly accessible and needs to send data to Eventstream, no action required.
-   - If your data source sits behind a firewall and not publicly accessible, continue to the next questions.
+   - If your data source resides behind a firewall and isn't publicly accessible, continue to the next questions.
 
-3. **What direction does the traffic flow?**
+3. **What direction does the network traffic flow? Inbound or outbound**
    - If external sources need to push data to Eventstream (inbound), use **Private Links**
    - If Eventstream needs to connect to external sources (outbound), continue to the next questions.
 
-4. **Is your data source an Azure Event Hub (Basic) or Azure IoT Hub?**
+4. **Is your data source an Azure Event Hubs or Azure IoT Hub?**
    - If yes, use **Managed Private Endpoint**
-   - For other external data sources, use **Streaming Connector VNet**
+   - For other external data sources, use **Streaming Connector vNet Injection**
+
+    > [!NOTE]  
+> Azure Event Hubs source has two feature levels. When selecting **Basic feature** level, **Managed Private Endpoint** solution is needed; when selecting **Extended feature** level, **Streaming Connector vNet Injection** solution is needed. 
+
+    > [!NOTE] 
+> If you have challenge to prepare the Azure virtual network for Streaming Connector vNet Injection solution, you may consider the **Connector IP Allowlist** approach for the outbound scenario. 
+>
+> Eventstream's streaming connector in each region has a single outbound IP address. If your company's network policy permits allowlisting this IP address and your source has a publicly resolvable address, Eventstream's connector can bring real-time data into Fabric, though the transmission occurs over a public network.
+>
+> This solution is applicable to all streaming connector sources. If you're interested in implementing this solution, kindly reach out to the product team by completing the following form: [Real-Time Intelligence Eventstream Streaming Connector IP allowlist Request](https://aka.ms/EventStreamsConnIPAllowlistRequest)
 
 ### Decision matrix
 
 Use the following flowchart and decision matrix to determine the right network security feature for your Eventstream scenario:
 
-:::image type="content" source="media/set-up-private-links/choose-right-network-security.png" alt-text="A screenshot of how to choose the right network security feature." lightbox="media/set-up-private-links/choose-right-network-security.png":::
+:::image type="content" source="media/choose-the-right-network-security-feature/choose-right-network-security-decision-flow.png" alt-text="A screenshot of how to choose the right network security feature." lightbox="media/choose-the-right-network-security-feature/choose-right-network-security-decision-flow.png":::
 
 #### Sources
 
 | Category        | Examples                                                     | Direction | Network Security Feature | Stage & Release  |
 | --------------- | ------------------------------------------------------------ | --------- | ------------------------ | ---------------- |
-| Samples         | Bicycle, Stock market, Taxi                                  | Internal  | Secure by default        | -                |
+| Sample data         | Bicycle, Stock market, Taxi                                  | Internal  | Secure by default        | -                |
 | Public feeds    | Weather                                                      | Internal  | Secure by default        | -                |
 | Fabric events   | Fabric Workspace item, Fabric OneLake events, Fabric Job events | Internal  | Secure by default        | -                |
-| Azure streams   | Azure Event Hubs, Azure IoT Hub                               | Outbound  | Managed Private Endpoint | GA (2025 July)   |
-| External        | Confluent Cloud, Amazon Kinesis, Google Pub/Sub, MQTT        | Outbound  | Connector VNet           | PrPr (2025 June) |
-| Database CDC    | PostgreSQL, MySQL, SQL Server                                | Outbound  | Connector VNet           | PrPr (2025 June) |
-| Azure events    | Azure Blob Storage events, Azure Event Grid namespace        | Inbound   | Private Links            | Not supported    |
-| Custom Endpoint | -                                                            | Inbound   | Private Links            | Not supported    |
+| Azure streams   | Azure Event Hubs (Basic feature level), Azure IoT Hub                               | Outbound  | Managed Private Endpoint | GA (2025 July)   |
+| External        | Confluent Cloud, Amazon Kinesis, Google Pub/Sub, MQTT        | Outbound  | Connector vNet injection           | PuPr (2026 Feb) |
+| Database CDC    | PostgreSQL, MySQL, SQL Server                                | Outbound  | Connector vNet injection           | PuPr (2025 Feb) |
+| Azure events    | Azure Blob Storage events, Azure Event Grid namespace        | Inbound   | Private Links            | Coming soon    |
+| Custom Endpoint | -                                                            | Inbound   | Private Links            | Coming soon    |
 
 #### Destinations
 
@@ -167,19 +184,19 @@ Use the following flowchart and decision matrix to determine the right network s
 | Eventhouse (direct ingestion mode) | Internal  | Secure by default        | -               |
 | Eventhouse (preprocessing mode)    | Internal  | Secure by default        | -               |
 | Activator                          | Internal  | Secure by default        | -               |
-| Custom Endpoint                    | Inbound   | Private Links            | Not supported   |
+| Custom Endpoint                    | Inbound   | Private Links            | Coming soon   |
 
 ## Common scenarios
 
 The following scenarios demonstrate when to use each network security feature.
 
-### Scenario 1: Connect to Azure Event Hubs behind a firewall
+### Scenario 1: Connect to Azure IoT hub behind a firewall
 
-Your organization stores streaming data in Azure Event Hubs, and your security policy requires that Event Hubs doesn't accept public internet traffic. You need to stream this data into Eventstream for processing.
+Your organization stores streaming data in Azure IoT hub, and your security policy requires that Iot hub doesn't accept public internet traffic. You need to stream this data into Eventstream for processing.
 
 **Solution:** Use **Managed Private Endpoints**
 
-Managed private endpoints allow Eventstream to connect to your Event Hubs over a private network. You create a managed private endpoint in your Fabric workspace, provide the Event Hubs resource ID, and after approval from your Azure resource networking, Eventstream can securely retrieve events without the data traversing the public internet.
+Managed private endpoints allow Eventstream to connect to your Event Hubs over a private network. You create a managed private endpoint in your Fabric workspace, provide the IoT hub resource ID, and after approval from your Azure resource networking, Eventstream can securely retrieve events without the data traversing the public internet.
 
 ### Scenario 2: Restrict Eventstream access to corporate network
 
@@ -193,9 +210,9 @@ If this requirement applies to all workspaces, use tenant-level private links to
 
 Your organization uses Apache Kafka as your streaming source, and your Kafka cluster is deployed within a private network for security reasons. You need to stream data from Apache Kafka into Eventstream for real-time processing and analytics in Fabric.
 
-**Solution:** Use **Streaming Connector VNet**
+**Solution:** Use **Streaming Connector vNet Injection**
 
-Connector VNet enables Eventstream to securely connect to Confluent Cloud through your virtual network. Configure the virtual network settings in your Eventstream workspace to establish a private connection to your Confluent cluster. Once configured, Eventstream can retrieve streaming data from Confluent Cloud without exposing traffic to the public internet.
+Streaming Connector vNet injection enables Eventstream to securely connect to Apache Kafka through your virtual network. Configure the virtual network settings in your Eventstream workspace to establish a private connection to your Kafka cluster. Once configured, Eventstream can retrieve streaming data from Apache Kafka without exposing traffic to the public internet.
 
 ## Limitations and considerations
 
@@ -203,7 +220,7 @@ When choosing a network security feature, keep these limitations in mind:
 
 ### Managed Private Endpoints limitations
 
-- Currently supported only for Azure Event Hubs and Azure IoT Hub sources
+- Currently supported only for Azure Event Hubs (Basic feature level) and Azure IoT Hub sources
 - Data preview might not be available for sources connected through managed private endpoints
 - Requires approval from the Azure resource administrator
 - Available for Fabric trial and all Fabric F SKU capacities
@@ -212,7 +229,7 @@ When choosing a network security feature, keep these limitations in mind:
 
 - When tenant or workspace level private links are enabled, you can only create and manage Eventstream using Fabric REST APIs
 - Some Eventstream sources and destinations aren't supported with private links enabled (see [Supported scenarios](set-up-tenant-workspace-private-links.md#supported-scenarios))
-- Custom endpoints aren't supported with private links
+- Custom endpoint source and destination are supported with private links
 - Eventhouse destinations with direct ingestion mode aren't supported
 
 ### General considerations
@@ -226,6 +243,7 @@ When choosing a network security feature, keep these limitations in mind:
 
 - [Connect to Azure resources securely using managed private endpoints](set-up-private-endpoint.md)
 - [Secure inbound connections with Tenant and Workspace Private Links](set-up-tenant-workspace-private-links.md)
+- * [Streaming connector private network support overview](./streaming-connector-vnet-on-prem-support-overview.md)
 - [Security in Microsoft Fabric](../../security/security-overview.md)
 - [Overview of managed private endpoints](../../security/security-managed-private-endpoints-overview.md)
 - [Private links for Fabric tenants](../../security/security-private-links-overview.md)

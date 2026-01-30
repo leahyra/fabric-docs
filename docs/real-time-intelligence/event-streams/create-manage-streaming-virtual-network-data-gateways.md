@@ -12,7 +12,7 @@ ms.search.form: Streaming Virtual Network
 
 # Create and manage streaming virtual network data gateway
 
-The streaming virtual network data gateway provides an abstraction of the Azure virtual network and its subnet resources within Fabric. This allows Eventstream’s streaming connector service to use the Azure virtual network and subnet resource, injecting the connector into this Azure virtual network. As a result, Eventstream’s streaming connector can access streaming sources within a private network to collect real-time data for Fabric.
+The streaming virtual network data gateway provides an abstraction of the Azure virtual network and its subnet resources within Fabric. It allows Eventstream’s streaming connector service to use the Azure virtual network and subnet resource, injecting the connector into this Azure virtual network. As a result, Eventstream’s streaming connector can access streaming sources within a private network to collect real-time data for Fabric.
 
 ## Create a streaming virtual network data gateway
 
@@ -23,7 +23,7 @@ Before you create a streaming virtual network data gateway, you must complete th
 
 After completing these prerequisites, you can create a streaming virtual network data gateway. 
 
-When adding sources to your eventstream in Fabric, select a source, i.e., Azure Service Bus and the Get events wizard is opened. Select **Set up** to open the **Manage connections and gateways** page and you can create your **Streaming virtual network gateways**.
+When adding sources to your eventstream in Fabric, select a source, that is, Azure Service Bus and the Get events wizard is opened. Select **Set up** to open the **Manage connections and gateways** page and you can create your **Streaming virtual network gateways**.
 
 :::image type="content" source="media/streaming-connector-vnet-on-prem-support/wizard.png" alt-text="Screenshot of showing the service bus wizard." lightbox="media/streaming-connector-vnet-on-prem-support/wizard.png":::
 
@@ -47,13 +47,13 @@ You can also share the streaming virtual network data gateway with other users i
 
 ## Update name and description
 
-You can update the name and description of a streaming virtual network data gateway. To do this, select the gateway, and then select **Settings**. In the Settings pane, you can edit the **Name** and **Description**, and then select **Save** to apply the changes.
+You can update the name and description of a streaming virtual network data gateway. Select the gateway, and then select **Settings**. In the Settings pane, you can edit the **Name** and **Description**, and then select **Save** to apply the changes.
 
 :::image type="content" source="media/create-manage-streaming-virtual-network-data-gateways/update.png" alt-text="Screenshot of showing how to update streaming virtual network data gateways." lightbox="media/create-manage-streaming-virtual-network-data-gateways/update.png":::
 
 ## Delete streaming vNet gateway
 
-You can delete a streaming virtual network data gateway. To do this, select the **More actions** menu for the gateway, and then select **Remove**.
+You can delete a streaming virtual network data gateway. Select the **More actions** menu for the gateway, and then select **Remove**.
 
 > [!NOTE]  
 > If a streaming virtual network data gateway is deleted, any connections that reference this data gateway will also be deleted.
