@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 9/15/2025
+ms.date: 12/25/2025
 ms.search.form: fabric's private links
 ---
 
@@ -87,8 +87,8 @@ Currently, when tenant or workspace level private link is enabled, you can only 
 |                       |                        | OneLake events          | Yes          |
 |                       |                        | Fabric job events       | Yes          |
 |                       |                        | Capacity events         | Yes          |
-|                       | **Azure events**       | Azure Blob Storage      | Yes          |
-|                       |                        | Azure Event Grid        | Yes          |
+|                       | **Azure events**       | Azure Blob Storage      | No           |
+|                       |                        | Azure Event Grid        | No           |
 | **Destinations**      | **Fabric destinations**| Lakehouse               | Yes          |
 |                       |                        | Eventhouse (preprocessing mode)         | Yes          |
 |                       |                        | Eventhouse (direct ingestion mode)     | No           |
