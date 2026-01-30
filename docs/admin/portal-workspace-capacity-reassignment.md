@@ -58,7 +58,7 @@ Moving workspaces from one capacity to another has the following restrictions:
     * Datamart*
     * Scorecard
 
-    *Can't move to Pro<br>**Can't move to Power BI Pro or Power BI Premium Per-User
+    *Can't move to Power BI Pro<br>**Can't move to Power BI Pro or Power BI Premium Per-User
 
     All other item types must be removed from the workspace before you can change its workspace type from Power BI Premium capacity or Fabric capacity to Power BI Pro or Power BI Premium Per-User.
 

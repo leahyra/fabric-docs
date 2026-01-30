@@ -52,13 +52,13 @@ By default, the first workspace admin who created the workspace is the contact. 
 
 Different [workspace types](../enterprise/licenses.md) provide different sets of features for your workspace. Workspace types are grouped into:
 
-- **Power BI workspace types**: Pro, Premium Per User (PPU), and Embedded
+- **Power BI workspace types**: Power BI Pro, Power BI Premium Per User (PPU), and Power BI Embedded
 - **Fabric workspace types**: Fabric capacity, Fabric Trial, and Power BI Premium
 
 After the creation, you can still change the workspace type in workspace settings, but some migration effort is needed.
 
 >[!NOTE]
-> Currently, if you want to downgrade the workspace type from a Fabric workspace type to a Power BI workspace type like Pro (Shared capacity), you must first remove any non-Power BI Fabric items that the workspace contains. Only after you remove such items will you be allowed to downgrade the capacity. For more information, see [Moving data around](../admin/portal-workspaces.md#moving-data-around).
+> Currently, if you want to downgrade the workspace type from a Fabric workspace type to a Power BI workspace type like Power BI Pro (Shared capacity), you must first remove any non-Power BI Fabric items that the workspace contains. Only after you remove such items will you be allowed to downgrade the capacity. For more information, see [Moving data around](../admin/portal-workspaces.md#moving-data-around).
 
 ### Default storage format
 

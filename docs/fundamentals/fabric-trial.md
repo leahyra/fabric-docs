@@ -195,8 +195,8 @@ One reason to cancel a trial capacity is when the Capacity administrator of a tr
 
 If you don't move the workspaces and their contents to a new capacity that supports Fabric:
 
-- The workspace type of any workspaces assigned to that trial capacity changes to Pro. 
-- All non Power BI Fabric items in the workspaces become unusable and may be deleted after seven days. Your Power BI items are unaffected and still available when the workspace type returns to Pro.    
+- The workspace type of any workspaces assigned to that trial capacity changes to Power BI Pro. 
+- All non Power BI Fabric items in the workspaces become unusable and may be deleted after seven days. Your Power BI items are unaffected and still available when the workspace type returns to Power BI Pro.    
 - You can't create workspaces that support Fabric capabilities.
 - You can't share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
 - You can't create any other analytics solutions using these Fabric items.

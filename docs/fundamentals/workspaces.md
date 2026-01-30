@@ -112,9 +112,9 @@ Workspace types are organized into two categories to help you understand the cap
 
 | Workspace type | Description |
 |----------------|-------------|
-| **Pro** | Basic Power BI features for collaboration on reports, dashboards, and scorecards. |
-| **Premium Per User (PPU)** | Access to most Power BI Premium features on a per-user basis. |
-| **Embedded** | Power BI content embedded in applications using Azure capacity (A or EM SKUs). |
+| **Power BI Pro** | Basic Power BI features for collaboration on reports, dashboards, and scorecards. |
+| **Power BI Premium Per User (PPU)** | Access to most Power BI Premium features on a per-user basis. |
+| **Power BI Embedded** | Power BI content embedded in applications using Azure capacity (A or EM SKUs). |
 
 **Fabric workspace types** - Support all Microsoft Fabric experiences:
 

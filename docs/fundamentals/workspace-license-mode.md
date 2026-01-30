@@ -24,9 +24,9 @@ Workspace types refer to different capacity types. Workspace types are now group
 
 These workspace types are optimized for Power BI workloads and are hosted on system reserved capacity or per-user shared pools:
 
-- **Pro**: Basic Power BI features for collaboration on reports, dashboards, and scorecards.
-- **Premium Per User (PPU)**: Access to most Power BI Premium features on a per-user basis.
-- **Embedded**: Power BI content embedded in applications using Azure capacity (A or EM SKUs).
+- **Power BI Pro**: Basic Power BI features for collaboration on reports, dashboards, and scorecards.
+- **Power BI Premium Per User (PPU)**: Access to most Power BI Premium features on a per-user basis.
+- **Power BI Embedded**: Power BI content embedded in applications using Azure capacity (A or EM SKUs).
 
 ### Fabric workspace types
 

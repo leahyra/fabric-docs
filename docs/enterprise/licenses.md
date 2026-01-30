@@ -75,7 +75,7 @@ In "Embed for your organization" and embedding in Microsoft 365 apps (SharePoint
 
 [Workspaces](../fundamentals/workspaces.md) reside within capacities and are used as containers for Microsoft Fabric items. Each Microsoft Fabric user has a personal workspace known as *My Workspace*. Create more workspaces to enable collaboration.  
 
-Each Microsoft Entra tenant with Fabric has a shared capacity that hosts all *My Workspaces* and workspaces using the Pro or Premium Per User workspace type. By default, workspaces are created in your tenant's shared capacity. When your tenant has other capacities, assign any workspace—including *My Workspaces*—to any capacity in the tenant.
+Each Microsoft Entra tenant with Fabric has a shared capacity that hosts all *My Workspaces* and workspaces using the Power BI Pro or Power BI Premium Per User workspace type. By default, workspaces are created in your tenant's shared capacity. When your tenant has other capacities, assign any workspace—including *My Workspaces*—to any capacity in the tenant.
 
 > [!NOTE]
 > If you're using a [Power BI Premium](/power-bi/enterprise/service-premium-what-is) capacity, Microsoft Fabric items aren't enabled. To enable support for Microsoft Fabric items on your Power BI capacity, [enable Microsoft Fabric](../admin/fabric-switch.md).
@@ -95,9 +95,9 @@ These workspace types are optimized for Power BI workloads:
 
 | Workspace type | User capabilities | Access | Supported experiences |
 |--|--|--|--|
-| Pro | Use basic Power BI features and collaborate on reports, dashboards, and scorecards. |To access a workspace with a [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) workspace type, you need a Power BI Pro, Premium Per-user (PPU) license, or a Power BI individual trial. | Power BI |
-| [Premium per-user](/power-bi/enterprise/service-premium-per-user-faq) (PPU) | Collaborate using most of the [Power BI Premium features](/power-bi/enterprise/service-premium-features), including dataflows, and datamarts. |To access a Premium Per User (PPU) workspace you need a PPU license or a Power BI individual trial. | Power BI |
-| [Embedded](/power-bi/developer/embedded/embedded-capacity#power-bi-embedded) (A SKUs) | Embed content in an Azure capacity. | To create workspaces and share content you need a Pro, Premium Per User (PPU) or a Power BI individual trial license. | Power BI |
+| Power BI Pro | Use basic Power BI features and collaborate on reports, dashboards, and scorecards. |To access a workspace with a [Power BI Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) workspace type, you need a Power BI Pro, Premium Per-user (PPU) license, or a Power BI individual trial. | Power BI |
+| [Power BI Premium Per User](/power-bi/enterprise/service-premium-per-user-faq) (PPU) | Collaborate using most of the [Power BI Premium features](/power-bi/enterprise/service-premium-features), including dataflows, and datamarts. |To access a Power BI Premium Per User (PPU) workspace you need a PPU license or a Power BI individual trial. | Power BI |
+| [Power BI Embedded](/power-bi/developer/embedded/embedded-capacity#power-bi-embedded) (A SKUs) | Embed content in an Azure capacity. | To create workspaces and share content you need a Pro, Premium Per User (PPU) or a Power BI individual trial license. | Power BI |
 
 ### Fabric workspace types
 
