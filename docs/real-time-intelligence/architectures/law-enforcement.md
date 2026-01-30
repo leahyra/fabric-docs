@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 01/29/2026
 --- 
 
-# Law enforcement reference architecture: Real-time location tracking using Fabric Real-Time Intelligence
+# Law enforcement reference architecture - Real-time location tracking
 
 When every second counts in an emergency, law enforcement agencies need immediate access to accurate device location data. This reference architecture demonstrates how to use Microsoft Fabric Real-Time Intelligence to build a comprehensive analytics solution that processes over 1 TB/hour of decoded Event Data Records (EDR) and Call Data Records (CDR) from mobile core networks.
 
