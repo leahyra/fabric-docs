@@ -208,7 +208,7 @@ items:
               - name: Streaming connector private network support guide
                 href: event-streams/streaming-connector-private-network-support-guide.md
               - name: Create and manage streaming virtual network data gateway
-                href: event-streams/streaming-connector-vnet-on-prem-support.md
+                href: event-streams/create-manage-streaming-virtual-network-data-gateways.md
           - name: Secure outbound via managed private endpoints
             href: event-streams/set-up-private-endpoint.md
           - name: Secure inbound via tenant and workspace private links
