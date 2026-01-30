@@ -272,6 +272,8 @@ The architecture requires integration with multiple external systems to function
 
 Effective monitoring ensures system reliability and helps identify issues before they affect emergency response capabilities.
 
+#### Operational monitoring
+
 **Operational monitoring** focuses on system health and data quality:
 
 - **System health dashboards** provide real-time monitoring of CDR/EDR data ingestion, Eventhouse processing, and emergency response delivery with automated alerting for system anomalies.
@@ -280,6 +282,8 @@ Effective monitoring ensures system reliability and helps identify issues before
 
 - **Performance metrics** track data ingestion latency from mobile networks, location determination response times, and emergency response coordination with Service Level Agreement (SLA) monitoring.
 
+#### Emergency response effectiveness
+
 **Emergency response effectiveness** monitoring tracks the system's ability to meet its core mission:
 
 - **Response time monitoring** provides real-time tracking of emergency request handling, location determination speed, and law enforcement coordination effectiveness.
@@ -287,6 +291,8 @@ Effective monitoring ensures system reliability and helps identify issues before
 - **Compliance monitoring** provides continuous assessment of regulatory compliance, legal authorization, and privacy protection for telecommunications data sharing.
 
 - **Public safety metrics** provide automated monitoring of emergency response outcomes and public safety effectiveness.
+
+#### Cost optimization
 
 **Cost optimization** monitoring helps manage operational expenses:
 
@@ -304,7 +310,7 @@ Use the following phased approach to implement this architecture in your environ
 
 Begin with foundation setup and progress through pilot implementation to full operational validation.
 
-**Phase 1: Foundation setup** 
+#### Phase 1: Foundation setup 
 
 In this phase, you establish the core infrastructure and plan your integration strategy.
 
@@ -316,7 +322,7 @@ In this phase, you establish the core infrastructure and plan your integration s
 
 - Configure [OneLake](../../onelake/onelake-overview.md) for customer data and historical telecommunications analytics with appropriate retention policies.
 
-**Phase 2: Pilot implementation** 
+#### Phase 2: Pilot implementation 
 
 In this phase, you deploy the solution with a subset of data sources and validate the architecture.
 
@@ -328,7 +334,7 @@ In this phase, you deploy the solution with a subset of data sources and validat
 
 - Deploy Real-Time Dashboard for emergency monitoring with immediate location determination and response coordination.
 
-**Phase 3: Operational validation** 
+#### Phase 3: Operational validation 
 
 In this phase, you test the system under realistic conditions and train your teams.
 
@@ -344,7 +350,7 @@ In this phase, you test the system under realistic conditions and train your tea
 
 After completing the initial deployment, consider these advanced capabilities to enhance your solution.
 
-**Intelligent automation and AI** 
+#### Intelligent automation and AI 
 
 These capabilities use machine learning and AI to improve prediction accuracy and automate complex workflows.
 
@@ -356,7 +362,7 @@ These capabilities use machine learning and AI to improve prediction accuracy an
 
 - Create intelligent emergency response systems that provide real-time decision support based on telecommunications patterns, location data, and predictive analytics.
 
-**Enterprise-scale deployment** 
+#### Enterprise-scale deployment 
 
 These capabilities extend the solution to support larger deployments and multi-agency coordination.
 
