@@ -14,13 +14,6 @@ ms.date: 01/29/2026
 
 When every second counts in an emergency, law enforcement agencies need immediate access to accurate device location data. This reference architecture demonstrates how to use Microsoft Fabric Real-Time Intelligence to build a comprehensive analytics solution that processes over 1 TB/hour of decoded Event Data Records (EDR) and Call Data Records (CDR) from mobile core networks.
 
-The solution enables you to:
-
-- **Process high-volume telecommunications data** - Ingest and analyze continuous streams of CDR/EDR data, cell tower events, and geo-location information in real time
-- **Determine last known device locations** - Correlate mobile device activity with cell tower positions to provide accurate location data for time-critical law enforcement requests
-- **Maintain security and compliance** - Ensure all data access is properly authorized, encrypted, and fully audited to meet regulatory requirements
-- **Respond faster to emergencies** - Deliver life-saving location information through real-time dashboards and automated alerts
-
 This architecture addresses the challenges of managing complex telecommunications environments where mobile core network mediation systems, cell towers, and customer relationship management (CRM) systems continuously generate massive data volumes that must be processed instantly for law enforcement requests.
 
 ## Architecture overview 
