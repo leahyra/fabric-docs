@@ -42,9 +42,8 @@ To create a new workspace and assign it a license:
    :::image type="content" source="media/cicd-tutorial/name-workspace.png" alt-text="Screenshot of new workspace with name. The name is FoodSalesWS.":::
 
 1. Expand the **Advanced** section to reveal **Workspace type**.
-1. Select either **Trial** or **Premium capacity**.
 
-   :::image type="content" source="media/cicd-tutorial/license-mode.png" alt-text="Screenshot of new workspace with workspace type.":::
+1. Select either **Fabric Trial** or **Power BI Premium**.
 
 1. Select **Apply**.
 
