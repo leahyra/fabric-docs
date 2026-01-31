@@ -158,7 +158,7 @@ If you're the Capacity administrator, assign the trial capacity to multiple work
 1. Open **Workspaces** and select the name of a workspace.
 1. Select **Workspace settings**, then **License info**.
 1. Select **Edit** in the **License configuration** section.
-1. Select the **Trial** license mode.
+1. Select the **Fabric Trial** workspace type.
 
     :::image type="content" source="media/fabric-trial/migrate-trial.png" lightbox="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
@@ -318,7 +318,7 @@ The Fabric trial capacity doesn't support autoscale. If you need more compute ca
 
 #### How can trial Capacity administrators migrate existing workspaces into a trial capacity?
 
-Trial Capacity administrators can migrate existing workspaces into a trial capacity using workspace settings and choosing **Trial** as the license mode. To learn how to migrate workspaces, see [create workspaces](create-workspaces.md).
+Trial Capacity administrators can migrate existing workspaces into a trial capacity using workspace settings and choosing **Fabric Trial** as the workspace type. To learn how to migrate workspaces, see [create workspaces](create-workspaces.md).
 
 :::image type="content" source="media/fabric-trial/migrate-trial.png" lightbox="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
