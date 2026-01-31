@@ -120,7 +120,7 @@ Workspace types are organized into two categories to help you understand the cap
 
 | Workspace type | Description |
 |----------------|-------------|
-| **Fabric capacity** | Full Fabric capabilities using F SKUs. |
+| **Fabric** | Full Fabric capabilities using F SKUs. |
 | **Fabric Trial** | Try Fabric features for 60 days using Trial SKUs. |
 | **Power BI Premium** | Power BI Premium capacity using P SKUs (supports all Fabric experiences when Fabric is enabled). |
 

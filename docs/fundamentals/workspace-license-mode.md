@@ -32,7 +32,7 @@ These workspace types are optimized for Power BI workloads and are hosted on sys
 
 These workspace types support all Microsoft Fabric experiences and are hosted on a capacity that has been purchased or is a trial:
 
-- **Fabric capacity**: Full Fabric capabilities using F SKUs.
+- **Fabric**: Full Fabric capabilities using F SKUs.
 - **Fabric Trial**: Try Fabric features for 60 days using Trial SKUs.
 - **Power BI Premium**: Power BI Premium capacity using P SKUs (supports all Fabric experiences when Fabric is enabled).
 
@@ -49,7 +49,7 @@ The Fabric workspace type options are related to several [capacity types](../adm
 
 * **Trial**: Refers to a Microsoft Fabric trial capacity. These capacities use Trial SKUs.
 
-* **Fabric capacity**: Fabric capacity refers to  Microsoft Fabric capacity. These capacities use F SKUs.
+* **Fabric**: Fabric capacity refers to Microsoft Fabric capacity. These capacities use F SKUs.
 
 ## Reassign a workspace to a different capacity
 
