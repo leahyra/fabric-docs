@@ -52,8 +52,8 @@ Inbound network traffic refers to connections initiated by external data sources
 
 Examples of inbound scenarios include:
 
-- Custom applications sending events to Eventstream by using the **Custom endpoint** source.
-- Custom applications pulling events from Eventstream by using the **Custom endpoint** destination.
+- Custom applications initiating connections and sending events to Eventstream by using the **Custom endpoint** source.
+- Custom applications initiating connections and pulling events from Eventstream by using the **Custom endpoint** destination.
 - The **Azure Event Grid Namespace** source pushing system events to Eventstream.
 
 Inbound network security features restrict access to Eventstream itself, ensuring that only traffic from approved networks can reach your streaming environment.
@@ -74,7 +74,7 @@ Outbound security features ensure that when Eventstream reaches out to external 
 
 Eventstream supports three main network security features. Each feature serves a different purpose and operates at a different scope within your Fabric environment.
 
-### Managed private endpoints
+### Managed Private Endpoints
 
 Managed private endpoints enable Eventstream to securely connect to Azure resources that are behind a firewall or not accessible from the public internet. When you create a managed private endpoint, Fabric automatically provisions a managed virtual network for your Eventstream, allowing outbound connections to Azure resources over a private network.
 
@@ -112,7 +112,7 @@ Tenant-level private links are ideal for organizations with strict, company-wide
 
 ### Streaming Connector vNet Injection
 
-The streaming connector vNet injection feature enables you to securely retrieve data from external data sources located in a private network directly to Eventstream by injecting the streaming connector into an intermediate Azure virtual network. By leveraging this feature, you can connect to sources that aren't accessible from the public internet, ensuring that data flows securely over a private network. This capability is ideal for organizations that require secure, private connectivity between their on-premises or cloud-based virtual network resources and Fabric Eventstream, without exposing those resources to the public internet.
+The streaming connector vNet injection feature enables you to securely retrieve data from external data sources located in a private network directly to Eventstream by injecting the streaming connector into an intermediate **Azure virtual network** that is prepared by you. By leveraging this feature, you can connect to sources that aren't accessible from the public internet, ensuring that data flows securely over a private network. This capability is ideal for organizations that require secure, private connectivity between their on-premises or cloud-based virtual network resources and Fabric Eventstream, without exposing those resources to the public internet.
 
 **Direction:** Outbound (Eventstream connecting to external resources)
 
@@ -140,7 +140,7 @@ Ask yourself these questions:
    - If your data source resides behind a firewall and isn't publicly accessible, continue to the next questions.
 
 3. **What direction does the network traffic flow? Inbound or outbound**
-   - If external sources need to push data to Eventstream (inbound), use **Private Links**
+   - If external sources initiate connections and push data to Eventstream (inbound), use **Private Links**
    - If Eventstream needs to connect to external sources (outbound), continue to the next questions.
 
 4. **Is your data source an Azure Event Hubs or Azure IoT Hub?**
@@ -148,11 +148,11 @@ Ask yourself these questions:
    - For other external data sources, use **Streaming Connector vNet Injection**
 
    > [!NOTE]
-   > Azure Event Hubs source has two feature levels. When selecting **Basic feature** level, **Managed Private Endpoint** solution is needed; when selecting **Extended feature** level, **Streaming Connector vNet Injection** solution is needed. 
+   > The Azure Event Hubs source supports two feature levels. The **Basic** feature level requires the **Managed Private Endpoint** solution, while the **Extended** feature level requires the **Streaming Connector vNet Injection** solution.
 
 
    > [!NOTE]
-   > If you have challenge to prepare the Azure virtual network for Streaming Connector vNet Injection solution, you may consider the **Connector IP Allowlist** approach for the outbound scenario. 
+   > If you encounter challenges preparing an Azure virtual network for the Streaming Connector vNet Injection solution, you may consider using the **Connector IP Allowlist** approach for outbound scenarios. 
    >
    > Eventstream's streaming connector in each region has a single outbound IP address. If your company's network policy permits allowlisting this IP address and your source has a publicly resolvable address, Eventstream's connector can bring real-time data into Fabric, though the transmission occurs over a public network.
    >
