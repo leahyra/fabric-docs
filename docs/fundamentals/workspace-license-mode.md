@@ -5,14 +5,11 @@ author: SnehaGunda
 ms.author: sngun
 ms.reviewer: liud
 ms.topic: overview
-ms.date: 01/29/2026
+ms.date: 01/30/2026
 ai-usage: ai-assisted
 #customer intent: As workspace admin, I want to understand what the workspace type options are and how to reassign the workspace to a different capacity.
 ---
 # Reassign a workspace to a different capacity
-
-> [!NOTE]
-> The term "license mode" has been renamed to "workspace type" in the Microsoft Fabric UI and documentation. This is a terminology change only—there are no functional changes.
 
 When you create a workspace, it's assigned to a [capacity](../enterprise/licenses.md#capacity). The capacity that new workspaces are assigned to by default is determined by the capacity type and/or by the configuration of Fabric or capacity administrators. After a workspace is created, you can reassign it to another available capacity if you have the [workspace admin role](roles-workspaces.md) and the capacity admin or capacity contributor role. You reassign workspaces to other capacities by changing the workspace type.
 
@@ -55,7 +52,7 @@ The Fabric workspace type options are related to several [capacity types](../adm
 
 You can reassign a workspace to a different capacity via workspace types in the workspace settings.
 
-1. Open the workspace settings and choose **License info** (or **Workspace type** in the updated UI). Information about the current workspace type is displayed.
+1. Open the workspace settings and choose **Workspace type**. Information about the current workspace type is displayed.
 
 1. Select **Edit**. The list of available workspace types appears.
 

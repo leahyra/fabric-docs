@@ -7,7 +7,7 @@ ms.reviewer: alpowers, mibruhje
 ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
-ms.date: 01/09/2026
+ms.date: 01/30/2026
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
 ---
@@ -156,13 +156,8 @@ To share and collaborate during a trial, you need to make sure the right tenant 
 If you're the Capacity administrator, assign the trial capacity to multiple workspaces. Anyone with access to one of those workspaces can now use the Fabric capacity trial.
 
 1. Open **Workspaces** and select the name of a workspace.
-1. Select **Workspace settings**, then **License info**.
-1. Select **Edit** in the **License configuration** section.
-1. Select the **Fabric Trial** workspace type.
-
-    :::image type="content" source="media/fabric-trial/migrate-trial.png" lightbox="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
-
-1. To apply your changes, select the **Select license** button.
+1. Select **Workspace settings**, then **Workspace type**.
+1. Select the **Fabric Trial** as the workspace type and select **Apply**.
 
 For more information, see [Use Workspace settings](workspaces.md#license-mode).  
 
@@ -319,8 +314,6 @@ The Fabric trial capacity doesn't support autoscale. If you need more compute ca
 #### How can trial Capacity administrators migrate existing workspaces into a trial capacity?
 
 Trial Capacity administrators can migrate existing workspaces into a trial capacity using workspace settings and choosing **Fabric Trial** as the workspace type. To learn how to migrate workspaces, see [create workspaces](create-workspaces.md).
-
-:::image type="content" source="media/fabric-trial/migrate-trial.png" lightbox="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
 #### How many SQL databases can I create in a Fabric trial capacity?
 

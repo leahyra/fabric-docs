@@ -5,7 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.reviewer: yicw
 ms.topic: how-to
-ms.date: 08/20/2025
+ms.date: 01/30/2026
 ms.custom:
 #customer intent: As a report creator, I want use workspaces so that I can create collections of artifacts that are related.
 ---
@@ -47,18 +47,11 @@ By default, the first workspace admin who created the workspace is the contact. 
 
 ### Workspace type
 
-> [!NOTE]
-> The term "license mode" has been renamed to "workspace type" in the Microsoft Fabric UI and documentation. This is a terminology change only—there are no functional changes.
-
-Different [workspace types](../enterprise/licenses.md) provide different sets of features for your workspace. Workspace types are grouped into:
-
-- **Power BI workspace types**: Power BI Pro, Power BI Premium Per User (PPU), and Power BI Embedded
-- **Fabric workspace types**: Fabric capacity, Fabric Trial, and Power BI Premium
-
-After the creation, you can still change the workspace type in workspace settings, but some migration effort is needed.
+Different [workspace types](../enterprise/licenses.md#workspace-types) provide different sets of features for your workspace.
+You can change the workspace type after creating a workspace. You can do so from the workspace settings, but some migration effort is needed.
 
 >[!NOTE]
-> Currently, if you want to downgrade the workspace type from a Fabric workspace type to a Power BI workspace type like Power BI Pro (Shared capacity), you must first remove any non-Power BI Fabric items that the workspace contains. Only after you remove such items will you be allowed to downgrade the capacity. For more information, see [Moving data around](../admin/portal-workspaces.md#moving-data-around).
+> Currently, if you want to downgrade the workspace type from a Power BI Premium to a Power BI Pro (Shared capacity), you must first remove any non-Power BI Fabric items that the workspace contains. Only after you remove such items will you be allowed to downgrade the capacity. For more information, see [Moving data around](../admin/portal-workspaces.md#moving-data-around).
 
 ### Default storage format
 

@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.custom:
 ms.search.form: product-trident, Manage your workspace
 #customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
-ms.date: 11/18/2025
+ms.date: 01/30/2026
 
 ---
 
@@ -99,32 +99,9 @@ You can configure SharePoint in workspace settings by typing in the name of the 
 
 ### Workspace type
 
-> [!NOTE]
-> The term "license mode" has been renamed to "workspace type" in the Microsoft Fabric UI and documentation. This is a terminology change only—there are no functional changes to user workflows or capabilities.
+By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including *My Workspaces* can be assigned to any capacity in your organization. You can configure it while creating a workspace or modify it after creation in the workspace settings.
 
-By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including My Workspaces can be assigned to any capacity in your organization. You can configure it while creating a workspace or in **Workspace settings -> Premium**. 
-
-#### Workspace type groupings
-
-Workspace types are organized into two categories to help you understand the capabilities available:
-
-**Power BI workspace types** - Optimized for Power BI workloads:
-
-| Workspace type | Description |
-|----------------|-------------|
-| **Power BI Pro** | Basic Power BI features for collaboration on reports, dashboards, and scorecards. |
-| **Power BI Premium Per User (PPU)** | Access to most Power BI Premium features on a per-user basis. |
-| **Power BI Embedded** | Power BI content embedded in applications using Azure capacity (A or EM SKUs). |
-
-**Fabric workspace types** - Support all Microsoft Fabric experiences:
-
-| Workspace type | Description |
-|----------------|-------------|
-| **Fabric** | Full Fabric capabilities using F SKUs. |
-| **Fabric Trial** | Try Fabric features for 60 days using Trial SKUs. |
-| **Power BI Premium** | Power BI Premium capacity using P SKUs (supports all Fabric experiences when Fabric is enabled). |
-
-Read more about [licenses](../enterprise/licenses.md).
+Workspace types are organized into two categories, **Power BI workspace types** and **Fabric workspace types**. To learn more, see [licenses](../enterprise/licenses.md#workspace-types) article.
 
 :::image type="content" source="media/workspaces/license-mode-workspace-settings.png" alt-text="Screenshot of workspace type in workspace settings.":::
 
