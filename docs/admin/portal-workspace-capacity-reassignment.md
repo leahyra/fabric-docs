@@ -21,6 +21,27 @@ In the Fabric UI, workspaces can be moved to other capacities in the following w
 * Fabric admins and capacity admins can reassign workspaces to a capacity in bulk via the **Workspaces assigned to this capacity** option in the [capacity's settings](./capacity-settings.md#capacity-settings).
 * Workspace admins can reassign their workspace to a different capacity via the [License info option of the workspace settings](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity).
 
+### Permission Requirements by capacity type to reassign workspaces
+
+- **Power BI Premium (P) capacity Admin** can effectively "claim" any workspace in the organization and pull it into their capacity by searching for the workspace name or assigning by user/group.
+
+- **Fabric (F) Capacity** admin __must__ also be a __Workspace Admin__ of that specific workspace.
+
+- **A capacity** admin __must__ also be a __Workspace Admin__ of that specific workspace.
+
+- **Embedded (EM) capacity** admin **must** also be a **Workspace Admin** of that specific workspace and the workspace must include only Power BI items.
+
+
+
+- **Global Admin** can move any workspace to any capacity type.
+
+|**SKU Type**|**Can Move Any Workspace?**|**Workspace Admin Role Required?**|**Management Tool**|
+|----|---|---|---|
+|__P (Premium)__|__Yes__ (via bulk assignment)|No|Fabric Admin Portal|
+|__F (Fabric)__|__No__ (Security Handshake)|__Yes__|Fabric Portal / Azure Portal|
+|__A (Azure)__|__No__|__Yes__|Azure Portal / API|
+|__EM (Office)__|__Partial__ (Power BI items only)|__Yes__|Fabric Admin Portal|
+
 ## Restrictions on moving workspaces around
 
 Moving workspaces from one capacity to another has the following restrictions:
