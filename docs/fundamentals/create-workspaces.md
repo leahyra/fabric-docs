@@ -5,7 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.reviewer: yicw
 ms.topic: how-to
-ms.date: 08/20/2025
+ms.date: 01/30/2026
 ms.custom:
 #customer intent: As a report creator, I want use workspaces so that I can create collections of artifacts that are related.
 ---
@@ -45,12 +45,13 @@ By default, the first workspace admin who created the workspace is the contact. 
 
 :::image type="content" border="true" source="media/create-workspaces/fabric-contact-list.png" alt-text="Screenshot of Contact list.":::
 
-### License mode
+### Workspace type
 
-Different [license](../enterprise/licenses.md) mode provides different sets of feature for your workspace. After the creation, you can still change the workspace license type in workspace settings, but some migration effort is needed.
+Different [workspace types](../enterprise/licenses.md#workspace-types) provide different sets of features for your workspace.
+You can change the workspace type after creating a workspace. You can do so from the workspace settings, but some migration effort is needed.
 
 >[!NOTE]
-> Currently, if you want to downgrade the workspace license type from Premium capacity to Pro (Shared capacity), you must first remove any non-Power BI Fabric items that the workspace contains. Only after you remove such items will you be allowed to downgrade the capacity. For more information, see [Moving data around](../admin/portal-workspaces.md#moving-data-around).
+> Currently, if you want to downgrade the workspace type from a Power BI Premium to a Power BI Pro (Shared capacity), you must first remove any non-Power BI Fabric items that the workspace contains. Only after you remove such items will you be allowed to downgrade the capacity. For more information, see [Moving data around](../admin/portal-workspaces.md#moving-data-around).
 
 ### Default storage format
 
