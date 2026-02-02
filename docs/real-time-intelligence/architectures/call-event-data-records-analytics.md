@@ -21,7 +21,7 @@ The CDR/EDR analytics reference architecture uses Microsoft Fabric Real-Time Int
 
 You can implement the architecture with four main operational phases that work together to deliver end-to-end network intelligence:
 
-- **Ingest & process** - This phase captures over 1TB/hour of decoded EDR/CDR data via MQTT with customer data and ERP contextualization synchronization.
+- **Ingest & process** - This phase captures over 1TB/hour of decoded EDR/CDR data via Message Queuing Telemetry Transport (MQTT) with customer data and ERP contextualization synchronization.
 
 - **Analyze, transform, & enrich** - This phase conducts real-time data enrichment and aggregation with dimensional metadata integration.
 
@@ -45,7 +45,7 @@ The following steps describe the data flow through this architecture:
 
 1. ML models are built and trained, then used for real-time scoring.
 
-1. In-depth, high-granularity network analytics visuals are created using the built-in Real-Time Analytics dashboard.
+1. In-depth, high-granularity network analytics visuals are created using the built-in Real-Time dashboard.
 
 1. DirectQuery from Power BI to Eventhouse provides rich BI reports on the real-time data.
 
@@ -53,7 +53,7 @@ The following steps describe the data flow through this architecture:
 
 ## Operational phases
 
-This section describes how data flows through each phase of the architecture, from initial ingestion through visualization and automated actions. Understanding these data flows helps you plan your implementation and optimizing performance.
+This section describes how data flows through each phase of the architecture, from initial ingestion through visualization and automated actions. Understanding data flows helps you plan your implementation and optimizing performance.
 
 ### Ingest & process 
 
@@ -155,7 +155,7 @@ The architecture also supports the following advanced ML capabilities:
 
 The visualization and activation phase delivers insights to users and triggers automated responses. This phase ensures that the right information reaches the right people at the right time.
 
-In-depth, high-granularity network analytics visuals use Real-Time Analytics dashboards with [Real-Time Dashboard](../dashboard-real-time-create.md). The dashboard provides the following comprehensive network monitoring capabilities:
+In-depth, high-granularity network analytics visuals use Real-Time dashboards with [Real-Time Dashboard](../dashboard-real-time-create.md). The dashboard provides the following comprehensive network monitoring capabilities:
 
 - **Network performance overview** displays a high-level view of mobile network health, capacity, and service quality.
 
@@ -215,49 +215,51 @@ Implementing this architecture delivers measurable improvements across network o
 
 Real-time intelligence transforms how you monitor and optimize network performance. The following capabilities enable proactive network management:
 
-- **Real-time network monitoring** processes over 1TB/hour of CDR/EDR data for immediate network performance assessment and optimization.
+- **Real-time network monitoring** processes over 1 TB per hour of CDR and EDR data to continuously assess network performance and drive immediate optimization.
 
-- **Predictive network analytics** uses ML models to forecast network issues and optimize mobile infrastructure performance.
+- **Predictive network analytics** applies machine learning models to forecast potential network issues and proactively optimize mobile infrastructure performance.
 
-- **Unified telecommunications platform** integrates CDR/EDR data with customer information and ERP contextualization for comprehensive network intelligence.
+- **Unified telecommunications platform** combines CDR and EDR data with customer context and ERP systems to deliver comprehensive, end-to-end network intelligence.
 
-- **High-granularity analysis** provides real-time dashboards enabling drill-down from network overview to individual call and session analytics.
+- **High-granularity analysis** delivers real-time dashboards with drill‑down capabilities, enabling analysis from an overall network view down to individual calls and session-level details.
+
+
 
 ### Automated network operations 
 
 Automation reduces response times and ensures consistent handling of network events. The following capabilities streamline operations:
 
-- **Intelligent network alerting** delivers real-time notifications for performance thresholds, anomalies, and infrastructure issues.
+- **Intelligent network alerting** delivers real-time notifications for performance threshold breaches, anomaly detection, and critical infrastructure issues to enable rapid response.
 
-- **Automated response workflows** provide streamlined processes for network issue mitigation and customer service optimization.
+- **Automated response workflows** orchestrate streamlined mitigation actions and customer service processes to reduce downtime and improve service quality.
 
-- **Proactive network management** uses predictive models for capacity planning, maintenance scheduling, and service optimization.
+- **Proactive network management** applies predictive models for capacity planning, maintenance scheduling, and continuous service optimization.
 
-- **Dynamic resource allocation** enables real-time adjustments to network capacity and service quality parameters.
+- **Dynamic resource allocation** enables real-time adjustments to network capacity and service quality parameters based on traffic patterns and performance conditions.
 
 ### Advanced analytics and business intelligence 
 
 The architecture supports sophisticated analytics that drive strategic decisions. The following capabilities enhance business intelligence:
 
-- **Real-time network analytics** correlates CDR/EDR data with customer experience for immediate network optimization.
+- **Real-time network analytics** correlate CDR and EDR data with customer experience signals to enable continuous network optimization and performance tuning.
 
-- **Cross-service intelligence** provides deep BI reports with comprehensive analysis across mobile network infrastructure and customer services.
+- **Cross-service intelligence** delivers rich business intelligence (BI) reports and analysis spanning mobile infrastructure and customer-facing services.
 
-- **Natural language processing** enables conversational AI for network teams to query complex operational scenarios.
+- **Natural language processing** enables conversational AI experiences that allow operators to query complex operational scenarios using plain language.
 
-- **Predictive and historical analysis** combines real-time events with historical patterns for optimal network management.
+- **Predictive historical analysis** combines real-time events with historical usage patterns to support proactive, data-driven network management and optimization.
 
 ### Cost optimization and operational efficiency 
 
 The architecture delivers measurable cost savings through improved efficiency. The following capabilities reduce operational costs:
 
-- **Predictive cost management** reduces network outages and maintenance costs through ML-driven issue prediction.
+- **Predictive cost management** reduces network outages and maintenance costs by using machine learning–driven issue prediction and early risk detection.
 
-- **Infrastructure efficiency** maximizes network utilization while minimizing service disruptions through predictive analytics.
+- **Infrastructure efficiency** maximizes network utilization while minimizing service disruptions through predictive and prescriptive analytics.
 
-- **Operations automation** enhances network management effectiveness through automated analytics and intelligent response systems.
+- **Operations automation** improves network management effectiveness by combining automated analytics with intelligent, event‑driven response systems.
 
-- **Strategic decision support** enables data-driven decisions for infrastructure investment, service optimization, and customer experience enhancement.
+- **Strategic decision support** enables data‑driven decisions for infrastructure investment, service optimization, and customer experience improvement.
 
 ## Implementation considerations 
 
@@ -267,11 +269,11 @@ Successfully implementing this architecture requires careful planning across sec
 
 Telecommunications data requires robust security controls to protect customer privacy and meet regulatory requirements. Implement the following security measures:
 
-- **Access controls** should implement role-based access control aligned with network operations responsibilities, including network engineers, customer service, and analytics teams. Include multifactor authentication for all system access and privileged access management for sensitive telecommunications data.
+- **Access controls** enforce role‑based access control (RBAC) aligned with network operations responsibilities, including network engineers, customer service teams, and analytics users. Multifactor authentication (MFA) and privileged access management protect sensitive telecommunications and CDR/EDR data.
 
-- **Audit trails** should create comprehensive logging for compliance including all network monitoring activities, customer data access, and analytics operations with immutable audit logs.
+- **Audit trails** provide comprehensive, immutable logging for compliance, capturing all network monitoring activities, customer data access, configuration changes, and analytics operations.
 
-- **Data privacy** should ensure compliance with telecommunications regulations, customer privacy requirements, and data protection standards for CDR/EDR and customer information.
+- **Data privacy** ensures compliance with telecommunications regulations, customer privacy requirements, and data protection standards, safeguarding CDR/EDR data and customer information across ingestion, processing, and analytics workflows.
 
 ### Integration points 
 
@@ -291,29 +293,35 @@ The architecture requires integration with multiple systems across your telecomm
 
 Continuous monitoring ensures the architecture performs as expected and helps identify issues before they affect operations.
 
+### Operational monitoring
+
 **Operational monitoring** should include the following capabilities:
 
-- **System health dashboards** provide real-time monitoring of CDR/EDR data ingestion, Eventhouse processing, and analytics delivery with automated alerting for system anomalies.
+- **System health dashboards** provide real-time visibility into CDR/EDR data ingestion, Eventhouse processing pipelines, and analytics delivery, with automated alerting for system anomalies and operational issues.
 
-- **Data quality monitoring** provides continuous validation of incoming telecommunications data with alerting for communication failures, invalid network data, or corrupted customer information.
+- **Data quality monitoring** continuously validates incoming telecommunications data, detecting communication failures, invalid network events, and corrupted customer information with proactive alerts.
 
-- **Performance metrics** track data ingestion latency from mobile networks, ML model prediction accuracy, and dashboard response times with SLA monitoring.
+- **Performance metrics** track end-to-end ingestion latency from mobile networks, machine learning model prediction accuracy, and dashboard responsiveness, supporting SLA monitoring and operational reliability.
+
+### Network analytics effectiveness
 
 **Network analytics effectiveness** should include the following monitoring:
 
-- **Analytics performance monitoring** provides real-time tracking of network analytics accuracy, prediction model effectiveness, and business intelligence delivery.
+- **Analytics performance monitoring** provides real-time visibility into network analytics accuracy, machine learning model effectiveness, and business intelligence delivery reliability.
 
-- **Customer experience monitoring** provides continuous assessment of service quality analytics and customer satisfaction measurement accuracy.
+- **Customer experience monitoring** continuously assesses service quality metrics, analytical signal accuracy, and customer satisfaction trends across network and service interactions.
 
-- **Network optimization metrics** provide automated monitoring of network performance improvement and operational efficiency gains.
+- **Network optimization metrics** automatically track network performance improvements, operational efficiency gains, and the impact of optimization initiatives over time.
+
+### Cost optimization
 
 **Cost optimization** should include the following practices:
 
-- **Capacity management** involves right-sizing of Fabric capacity based on CDR/EDR data volume and analytics complexity, and implementing autoscaling for peak usage periods.
+- **Capacity management** right-sizes Microsoft Fabric capacity based on CDR/EDR data volumes and analytics complexity, with autoscaling to support peak usage periods and maintain consistent performance.
 
-- **Data lifecycle management** involves automated archival of older network data to lower-cost storage tiers with retention policies aligned with regulatory requirements.
+- **Data lifecycle management** automates archival of historical network data to lower-cost storage tiers, applying retention policies aligned with telecommunications regulatory and compliance requirements.
 
-- **Network operations optimization** involves real-time correlation of network performance with operational costs to maximize efficiency and minimize expenses.
+- **Network operations optimization** correlates real-time network performance metrics with operational cost signals to maximize efficiency, reduce expenses, and support data-driven operational decisions.
 
 ## Next steps 
 
@@ -325,39 +333,41 @@ Begin with a foundation phase to establish the core infrastructure, then expand 
 
 **Phase 1: Foundation setup** 
 
-The foundation phase establishes the core components and integration patterns for your CDR/EDR analytics platform. Complete the following tasks:
+The foundation phase establishes the core components and integration patterns for your CDR/EDR analytics platform. 
 
-- Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your CDR/EDR analytics scale, including data volumes, network complexity, and analytics requirements.
+Complete the following tasks:
 
-- Plan your [Eventstream](../event-streams/overview.md) integration strategy for CDR/EDR data and customer information ingestion via MQTT protocols.
+- Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities to understand capacity requirements for your CDR/EDR analytics scale, including data volumes, network complexity, and real-time analytics demands.
 
-- Design your real-time analytics implementation in [Eventhouse](../eventhouse.md) for processing network events with immediate response requirements.
+- Plan your [Eventstream](../event-streams/overview.md) integration strategy to ingest CDR/EDR data and customer information using MQTT-based, low-latency streaming protocols.
 
-- Configure [OneLake](../../onelake/onelake-overview.md) for ERP contextualization metadata and historical network analytics with appropriate retention policies.
+- Design your real-time analytics implementation in [Eventhouse](../eventhouse.md) to process high-volume network events with immediate response and alerting requirements.
+
+- Configure [OneLake](../../onelake/onelake-overview.md) to store ERP contextualization metadata and historical network analytics, applying appropriate retention and compliance policies.
 
 **Phase 2: Pilot implementation** 
 
 The pilot phase validates the architecture with a subset of your network infrastructure before full-scale deployment. Complete the following tasks:
 
-- Start with a subset of mobile network infrastructure and customer segments to validate the architecture and integration performance.
+- Start with a targeted subset of mobile network infrastructure and customer segments to validate the solution architecture, ingestion reliability, and end‑to‑end integration performance before broader rollout.
 
-- Implement core data flows for network monitoring, performance analytics, and customer insights capabilities.
+- Implement core data flows for real‑time network monitoring, performance analytics, and customer insight generation using CDR/EDR event streams.
 
-- Establish integration with mobile core networks and ERP systems for comprehensive CDR/EDR analytics visibility.
+- Establish integrations with mobile core network systems and ERP platforms to provide comprehensive, contextualized CDR/EDR analytics visibility across network operations and business systems.
 
-- Deploy Real-Time Dashboard for network monitoring with high-granularity analysis and performance assessment.
+- Deploy Real‑Time Dashboards to monitor network performance with high‑granularity analysis, drill‑down capabilities, and continuous performance assessment.
 
 **Phase 3: Operational validation** 
 
 The validation phase ensures the system performs reliably under production conditions. Complete the following tasks:
 
-- Test system performance during peak network usage periods and high-volume CDR/EDR data scenarios.
+- Test system performance under peak network usage conditions and high‑volume CDR/EDR ingestion scenarios to validate throughput, latency, and scalability targets.
 
-- Validate [Activator](../data-activator/activator-introduction.md) rules for network alerts and performance optimization.
+- Validate [Activator](../data-activator/activator-introduction.md) rules to ensure accurate network alerting, timely performance optimization actions, and reliable event‑driven responses.
 
-- Ensure compliance with telecommunications regulations and network operational standards.
+- Ensure compliance with telecommunications regulations and network operational standards, including data retention, privacy, and audit requirements.
 
-- Train network operations teams on dashboard usage, analytics tools, and automated response workflows.
+- Train network operations teams on dashboard usage, analytics tools, and automated response workflows to support effective day‑to‑day operations and incident management.
 
 ### Advanced implementation 
 
@@ -367,25 +377,25 @@ After completing the foundation phases, advance to intelligent automation and en
 
 The automation phase adds machine learning and AI capabilities for predictive analytics and natural language interaction. Complete the following tasks:
 
-- Set up advanced [Data Science](../../data-science/data-science-overview.md) capabilities for building, training, and scoring sophisticated network prediction ML models for performance optimization.
+- Set up advanced [Data Science](../../data-science/data-science-overview.md) capabilities to build, train, and score sophisticated network prediction machine learning models for proactive performance optimization and anomaly detection.
 
-- Implement [Activator](../data-activator/activator-introduction.md) for advanced network automation including predictive maintenance, dynamic capacity adjustment, and automated response workflows.
+- Implement [Activator](../data-activator/activator-introduction.md) to enable advanced network automation, including predictive maintenance, dynamic capacity adjustments, and automated, event‑driven response workflows.
 
-- Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) for natural language analytics enabling network teams to query complex operational scenarios using conversational interfaces.
+- Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) for natural‑language analytics, enabling network teams to explore complex operational scenarios and insights using conversational interfaces.
 
-- Create intelligent network management systems that provide real-time decision support based on CDR/EDR patterns, customer behavior, and predictive analytics.
+- Create intelligent network management systems that provide real‑time decision support by correlating CDR/EDR patterns, customer behavior signals, and predictive analytics outcomes.
 
 **Enterprise-scale deployment** 
 
 The enterprise phase expands the solution to cover your complete network infrastructure. Complete the following tasks:
 
-- Scale to full mobile network operations with comprehensive CDR/EDR coverage and centralized monitoring across all infrastructure and customer segments.
+- **Scale mobile network operations** to achieve comprehensive CDR and EDR coverage with centralized monitoring across the full telecommunications infrastructure.
 
-- Implement advanced analytics for cross-service network optimization, capacity management, and customer experience analysis.
+- **Implement advanced analytics** to enable cross-service network optimization, capacity management, and in-depth customer experience analysis at enterprise scale.
 
-- Create comprehensive dashboards with [Power BI](../create-powerbi-report.md) DirectQuery capabilities and [Real-Time Dashboard](../dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance.
+- **Create executive and operational dashboards** using Power BI DirectQuery and Real‑Time Dashboards to support live monitoring, executive reporting, and regulatory compliance.
 
-- Develop enterprise-grade machine learning models for network prediction, customer experience optimization, and infrastructure investment planning.
+- **Develop enterprise‑grade machine learning models** for network performance prediction, customer experience optimization, and long‑term infrastructure investment planning.
 
 ## Related resources 
 
