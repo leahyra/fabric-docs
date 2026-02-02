@@ -89,7 +89,7 @@ By using [Real-Time Dashboard](../dashboard-real-time-create.md), store managers
 - **Food safety compliance** - Real-time assessment of regulatory adherence and automated compliance reporting
 - **Regional oversight** - Executive dashboards for regional supervisors to monitor performance across multiple stores
 
-Grocery store managers use [Activator](../data-activator/activator-introduction) to set up real-time alerts for temperature deviations beyond the set thresholds, prompting immediate inspections. This proactive alerting system enhances food safety compliance and ensures a seamless shopping experience for customers, enabling:
+Grocery store managers use [Activator](../data-activator/activator-introduction.md) to set up real-time alerts for temperature deviations beyond the set thresholds, prompting immediate inspections. This proactive alerting system enhances food safety compliance and ensures a seamless shopping experience for customers, enabling:
 
 - **Immediate response** - Automatic alerts for temperature deviations requiring immediate attention from store staff
 - **Proactive maintenance** - Early warning notifications for refrigeration units showing performance degradation
@@ -146,7 +146,7 @@ Grocery store managers use [Activator](../data-activator/activator-introduction)
 ### Integration points
 
 - **IoT sensor networks**: Integration with refrigeration monitoring systems, temperature sensors, and environmental monitoring equipment.
-- ** [Azure Event Hubs](/azure/event-hubs/)**: Environmental data collection from weather services, HVAC systems, and external condition monitoring.
+- **[Azure Event Hubs](/azure/event-hubs/)**: Environmental data collection from weather services, HVAC systems, and external condition monitoring.
 - **Maintenance management systems**: Integration with facility management, equipment service platforms, and maintenance scheduling systems.
 - **External data sources**: APIs for weather services, energy management, regulatory compliance, and equipment manufacturer systems.
 
@@ -183,7 +183,7 @@ Grocery store managers use [Activator](../data-activator/activator-introduction)
 ### Phase 3: Operational validation
 
 - Test system performance during extreme temperature conditions and peak operational periods.
-- Validate [Activator](../data-activator/activator-introduction) rules for temperature deviation alerts and food safety compliance.
+- Validate [Activator](../data-activator/activator-introduction.md) rules for temperature deviation alerts and food safety compliance.
 - Ensure compliance with food safety regulations and operational standards.
 - Train your store teams on dashboard usage, alert management, and natural language analytics with Copilot.
 
@@ -191,7 +191,7 @@ Grocery store managers use [Activator](../data-activator/activator-introduction)
 
 ### Intelligent automation and AI
 
-- Implement [Activator](../data-activator/activator-introduction) for sophisticated refrigeration automation, including predictive maintenance, dynamic temperature optimization, and automated compliance management.
+- Implement [Activator](../data-activator/activator-introduction.md) for sophisticated refrigeration automation, including predictive maintenance, dynamic temperature optimization, and automated compliance management.
 - Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) for advanced natural language analytics that enable store teams to query complex temperature scenarios and historical patterns.
 - Create intelligent grocery operations systems that provide real-time decision support based on temperature performance, environmental conditions, and food safety requirements.
 
@@ -205,7 +205,7 @@ Grocery store managers use [Activator](../data-activator/activator-introduction)
 ## Related resources
 
 - [Real-Time Intelligence documentation](../overview.md)
-- [Activator for automated alerting](../data-activator/activator-introduction)
+- [Activator for automated alerting](../data-activator/activator-introduction.md)
 - [Eventstreams for real-time data ingestion](../event-streams/overview.md)
 - [IoT and sensor data analytics with Microsoft Fabric](../overview.md)
 - [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md)
