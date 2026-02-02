@@ -31,15 +31,15 @@ You can implement the architecture with five main operational phases that work t
 
 - **Train & score** - This phase develops predictive ML models for real-time churn prediction and generates personalized retention recommendations based on customer profiles.
 
-- **Visualize & Activate** - This phase provides real-time dashboards for KPI monitoring and triggers automated proactive retention campaigns through personalized customer outreach. 
+- **Visualize & Activate** - This phase provides real-time dashboards for key performance indicator (KPI) monitoring and triggers automated proactive retention campaigns through personalized customer outreach. 
 
 :::image type="content" source="./media/customer-churn/customer-churn-reference-architecture.png" alt-text="Diagram showing the reference architecture for customer churn." lightbox="./media/customer-churn/customer-churn-reference-architecture.png":::
 
-1. Realtime streaming and batch CRM data, application logs, and user engagement data is ingested via Eventstream and routed to Eventhouse.
+1. Real-time streaming and batch CRM data, application logs, and user engagement data is ingested via Eventstream and routed to Eventhouse.
 
 1. Data Factory orchestrates customer profiles and network metadata and send it to OneLake for storage.
 
-1. KQL Query are written within Eventhouse to correlate customer feedback with operational metrics, conduct cohort analysis, and survival modeling to estimate customer lifecycle and churn probabilities. 
+1. Kusto Query Language (KQL) queries are written within Eventhouse to correlate customer feedback with operational metrics, conduct cohort analysis, and survival modeling to estimate customer lifecycle and churn probabilities. 
 
 1. Anomaly Detection using the power of the Kusto engine is used to identify irregular patterns, and clustering to segment entities based on behavior. 
 
@@ -49,14 +49,14 @@ You can implement the architecture with five main operational phases that work t
 
 1. Real time dashboard provides the high granularity view to monitor churn risk scores and campaign performance.
 
-1. PowerBI dashboards provide interactive views of KPIs, risk scores, and operational metrics. 
+1. Power BI dashboards provide interactive views of KPIs, risk scores, and operational metrics. 
 
 1. Activator initiates personalized outreach to implement a proactive retention plan.
 
 
 ## Operational phases
 
-This section describes how data flows through each phase of the architecture, from initial ingestion through visualization and automated retention actions. Understanding these data flows helps you plan your implementation and optimize performance for your specific customer analytics requirements.
+This section describes how data flows through each phase of the architecture, from initial ingestion through visualization and automated retention actions. Understanding these data flows helps you plan your implementation and optimizing performance for your specific customer analytics requirements.
 
 ### Ingest & process 
 
@@ -286,7 +286,7 @@ Your data architecture must handle the volume, velocity, and variety of customer
 
 - **High-throughput ingestion** requires designing your system to process real-time streaming and batch CRM data, application logs, and user engagement data with burst capacity during peak activity periods.
 
-- **Real-time processing** requires ensuring immediate response times for churn alerts, sub-second latency for risk scoring, and real-time customer analytics processing.
+- **Real-time processing** requires ensuring immediate response times for churn alerts, subsecond latency for risk scoring, and real-time customer analytics processing.
 
 - **Data quality and validation** requires implementing real-time validation for customer data accuracy, behavioral pattern integrity, and churn prediction calculations.
 
