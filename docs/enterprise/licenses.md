@@ -95,7 +95,7 @@ These workspace types are optimized for Power BI workloads:
 
 | Workspace type | User capabilities | Access | Supported experiences |
 |--|--|--|--|
-| Power BI Pro | Use basic Power BI features and collaborate on reports, dashboards, and scorecards. |To access a workspace with a [Power BI Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) workspace type, you need a Power BI Pro, Premium Per-user (PPU) license, or a Power BI individual trial. | Power BI |
+| Power BI Pro | Use basic Power BI features and collaborate on reports, dashboards, and scorecards. |To access a workspace with a [Power BI Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) workspace type, you need a Power BI Pro, Power BI Premium Per-user (PPU) license, or a Power BI individual trial. | Power BI |
 | [Power BI Premium Per-User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) | Collaborate using most of the [Power BI Premium features](/power-bi/enterprise/service-premium-features), including dataflows, and datamarts. In addition, it offers 48 data refreshes per day, support for semantic models that use more than 1GB of memory, and the XMLA endpoint. |To access a Power BI Premium Per-User (PPU) workspace you need a PPU license or a Power BI individual trial. | Power BI |
 | [Power BI Embedded](/power-bi/developer/embedded/embedded-capacity#power-bi-embedded) (A SKUs) | Embed visuals and analytics into internal/external applications or websites. For example to embed into an  Azure capacity. | To create workspaces and share content you need a Pro, Premium Per User (PPU) or a Power BI individual trial license. | Power BI |
 
@@ -119,10 +119,10 @@ Per-user licenses let users work in Microsoft Fabric. A Free (Fabric) license is
 - **Free** - Automatically granted on first Fabric sign-in (if Fabric is enabled in the tenant). Lets you create and share non-Power BI Fabric items when the workspace runs on a Fabric (F) or Trial capacity. Doesn’t remove Power BI viewing requirements on F capacities smaller than F64.
 
     > [!NOTE]
-    > To create Power BI items in a workspace other than *My workspace* and share them, you need a Power BI Pro or a Premium Per-User (PPU) license, or a Power BI individual trial.
+    > To create Power BI items in a workspace other than *My workspace* and share them, you need a Power BI Pro or a Power BI Premium Per-User (PPU) license, or a Power BI individual trial.
 
 - **Pro** - A [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) license lets you share Power BI content with other users. Every organization needs at least one user with a [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) or a Premium Per User (PPU) license, if they intend to use Power BI within Fabric. On F SKUs smaller than F64, each user viewing Power BI content must have Pro, PPU, or an individual trial. On F64 or larger, users with only a Free license and a viewer role can view Power BI content.
-- **Premium per-user (PPU)** - PPU licenses let organizations use Power BI [Premium features](/power-bi/enterprise/service-premium-features) by licensing every user with a PPU license instead of buying a Power BI Premium capacity. PPU is more cost effective when Power BI Premium features are needed for fewer than 250 users. PPU uses shared capacity across the organization, which provides the computing power for Power BI operations.
+- **Power BI Premium per-user (PPU)** - PPU licenses let organizations use Power BI [Premium features](/power-bi/enterprise/service-premium-features) by licensing every user with a PPU license instead of buying a Power BI Premium capacity. PPU is more cost effective when Power BI Premium features are needed for fewer than 250 users. PPU uses shared capacity across the organization, which provides the computing power for Power BI operations.
 
 > [!IMPORTANT]
 > **Premium Per User (PPU) doesn't provision a Fabric capacity.** Although PPU provides access to most Power BI Premium features, it doesn't enable you to create or run non-Power BI Fabric items (such as lakehouses, warehouses, or notebooks). To use Fabric workloads beyond Power BI, you need an F capacity or a Trial Fabric capacity.

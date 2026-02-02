@@ -186,7 +186,7 @@ Semantic models in *Power BI Pro* and *Power BI Premium Per-User* (PPU) workspac
 
   * **Pro** - Appear as *Reserved Capacity for Pro Workspaces* with the capacity SKU value *Pro*.
 
-  * **PPU** - Appear as *Reserved Capacity for Power BI Premium Per-User Workspaces* with the capacity SKU value *PPU*.
+  * **PPU** - Appear as *Reserved Capacity for Power BI Premium Per-User (PPU) Workspaces* with the capacity SKU value *PPU*.
 
 ### Counting logic
 
