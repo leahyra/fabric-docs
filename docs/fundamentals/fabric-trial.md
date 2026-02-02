@@ -159,7 +159,7 @@ If you're the Capacity administrator, assign the trial capacity to multiple work
 1. Select **Workspace settings**, then **Workspace type**.
 1. Select the **Fabric Trial** as the workspace type and select **Apply**.
 
-For more information, see [Use Workspace settings](workspaces.md#license-mode).  
+For more information, see [Use Workspace settings](workspaces.md#workspace-type).  
 
 ## Increase trial capacity
 
