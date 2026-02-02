@@ -878,6 +878,10 @@ items:
             href: multivariate-anomaly-detection.md
   - name: Map
     items:
+      - name: Tutorials
+        items:
+          - name: Build a real-time work order routing app
+            href: map/build-real-time-work-order-routing-app.md
       - name: Create a map
         href: map/create-map.md
       - name: Customize a map
