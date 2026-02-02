@@ -22,9 +22,6 @@ This article shows you how to:
 
 ## Prerequisites
 
-1. Because this feature is in a Preview state, you first need to enable this setting at the **tenant** or **capacity** level.
-   - Your tenant admin can enable the setting tenant-wide using the **"Enable Snowflake database item (preview)"** setting seen in the [Admin portal](../../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings).
-   - Alternatively, your capacity admin can enable this delegated tenant setting in the [capacity settings area](../../admin/capacity-settings.md#view-your-capacity).
 1. Select (or create) a Fabric workspace for the Snowflake database item.
    - To keep things simple, use alphanumeric characters only for your workspace name. 
    - If workspace name has special characters, copy the workspace ID from the browser URL seen when the workspace is open.  
