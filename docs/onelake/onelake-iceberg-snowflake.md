@@ -17,8 +17,6 @@ Follow this guide to use Snowflake on Azure to:
 * write Iceberg tables directly to OneLake
 * read virtual Iceberg tables converted from the Delta Lake format
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
 Before getting started, follow the pre-requisite steps shown below.
 
 ## Prerequisite
