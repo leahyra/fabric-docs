@@ -52,7 +52,7 @@ To collect environmental data that predicts how external conditions impact downs
 - Store traffic and door opening frequency
 - HVAC system performance and energy consumption
 
-**Real-world scenario example**: A grocery chain with more than 150 locations processes continuous temperature data from thousands of IoT sensors monitoring refrigerated and frozen storage units. [Azure Event Hubs](/azure/event-hubs/) collects environmental data, including external weather conditions, store traffic patterns, and HVAC performance, to predict temperature impacts and optimize refrigeration system performance across all store locations.
+**Real-world scenario example**: A grocery chain with more than 150 locations processes continuous temperature data from thousands of IoT sensors monitoring refrigerated and frozen storage units. [Azure Event Hubs](/azure/event-hubs/) collects environmental data, including external weather conditions, store traffic patterns, and HVAC performance, to predict temperature impact and optimize refrigeration system performance across all store locations.
 
 ### Analyze and transform
 
@@ -76,7 +76,7 @@ Send the temperature data to [Eventhouse](../eventhouse.md) for storage and proc
 By using natural language [Copilot](../../get-started/copilot-fabric-overview), store associates and analysts can generate and execute queries on temperature fluctuations over time, providing:
 
 - **Conversational analytics** - Natural language queries for temperature trend analysis and historical data exploration
-- **Accessible insights** - Enable non-technical store staff to access complex temperature analytics through simple conversations
+- **Accessible insights** - Enable nontechnical store staff to access complex temperature analytics through simple conversations
 - **Custom analysis** - Flexible query capabilities for specific refrigeration scenarios and compliance requirements
 - **Real-time intelligence** - Immediate access to temperature insights and refrigeration performance data
 
