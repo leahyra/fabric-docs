@@ -23,6 +23,10 @@ Dataflows running the modern evaluator could potentially see some of these key b
 
 ## How to enable the Modern Evaluator
 
+> [!NOTE]
+> The Modern Evaluator is enabled by default in new Dataflow Gen2 (CI/CD) items.
+> If you encounter any issues, you can disable the option to fall back to the standard evaluation engine.
+
 Follow these steps to turn on the Modern Query Evaluation Engine for a dataflow:
 
 1. **Open your dataflow for editing**: In Fabric Data Factory, navigate to your Dataflow Gen2 (CI/CD) item and open it in the Power Query editor.
@@ -35,29 +39,9 @@ Follow these steps to turn on the Modern Query Evaluation Engine for a dataflow:
 
 1. **Save and run**: Save the dataflow settings. The next time you run the dataflow, it will use the Modern Evaluator for supported connectors.
 
-> [!NOTE]
-> The Modern Evaluator can be enabled on both new and existing Dataflow Gen2 (CI/CD) items. You might consider testing it on a nonproduction workspace first, as it's a preview feature.
-> If you encounter any issues, you can disable the option to fall back to the standard evaluation engine.
-
-## Supported connectors
-
-The Modern Query Evaluation Engine supports a limited set of data connectors. Ensure your dataflow’s data sources are among the supported types to take advantage of the new engine. Currently supported connectors include:
-
-- [Azure Blob Storage](connector-azure-blob-storage-overview.md)
-- [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-overview.md)
-- [Fabric Lakehouse](connector-lakehouse-overview.md)
-- [Fabric Warehouse](connector-data-warehouse-overview.md)
-- [OData](connector-odata-overview.md)
-- [Power Platform Dataflows](connector-dataflows-overview.md)
-- [SharePoint Online List](connector-sharepoint-online-list-overview.md)
-- [SharePoint folder](connector-sharepoint-folder-overview.md)
-- [Web](connector-web-overview.md)
-
-If a dataflow uses connectors not in this list, those queries continue to run with the standard (legacy) engine. Support for more connectors will expand over time as the feature moves toward general availability.
-
 ## Performance considerations
 
-By switching to the modern evaluation engine, you should observe faster refresh times especially for data-intensive flows. For example, data transformations that previously took an hour might complete in roughly half the time with the Modern Evaluator enabled (actual results vary based on your scenarios). This performance boost helps in scenarios such as:
+When using modern evaluation engine, you should observe faster refresh times especially for data-intensive flows. For example, data transformations that previously took an hour might complete in roughly half the time with the Modern Evaluator enabled (actual results vary based on your scenarios). This performance boost helps in scenarios such as:
 
 - **Large data volumes**: When dealing with millions of rows or large files, the new engine’s optimizations can shorten processing time and reduce memory usage.
 
@@ -65,6 +49,105 @@ By switching to the modern evaluation engine, you should observe faster refresh 
 
 - **Frequent run schedules**: If your dataflows run multiple times a day, the time savings per refresh accumulate, allowing you to deliver up-to-date data to users more quickly.
 
-> [!NOTE]
-> Keep in mind that the Modern Evaluator is still in preview. While it brings performance improvements, you should monitor your dataflows after enabling it.
-> In rare cases, certain transformations or connectors might not yet be fully optimized under the new engine. Always validate the results to ensure your data output remains correct.
+## Supported connectors
+
+The Modern Query Evaluation Engine supports a varierty of data connectors. Ensure your dataflow’s data sources are among the supported types to take advantage of the new engine. Currently supported connectors include:
+
+- Acterys
+- Adobe Analytics
+- ADP Analytics
+- Anaplan
+- Aptix Insights
+- Asana
+- Assemble Views
+- Autodesk Construction Cloud
+- Automation Anywhere
+- Automy Data Analytics
+- [Azure Blob Storage](connector-azure-blob-storage-overview.md)
+- Azure Cost Management
+- [Azure Data Explorer (Kusto)](connector-azure-data-explorer.md)
+- [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-overview.md)
+- Azure Resource Graph
+- AzureTables
+- BI 360
+- BitSightSecurityRatings
+- Bloomberg
+- BQE Core
+- Building Connected
+- CCH Tagetik
+- CData Connect Cloud
+- Cds
+- Celonis
+- Cherwell
+- CloudBluePSA
+- Cognite
+- CogniteDataSource
+- CustomerInsights
+- DCWInsights
+- DeltaSharing
+- Dynamics 365 Business Central
+- DynatraceGrail
+- Eduframe
+- Emigo
+- EntersoftBusinessSuite
+- EQuIS
+- eWayCRM
+- Fabric AI Functions
+- [Fabric Lakehouse](connector-lakehouse-overview.md)
+- [Fabric Warehouse](connector-data-warehouse-overview.md)
+- FactSet Analytics
+- FactSet RMS
+- Funnel
+- Google Analytics
+- Google Sheets
+- HexagonSmartApi
+- IndustrialAppStore
+- InformationGrid
+- Intune
+- inwink
+- JamfPro
+- Kognitwin
+- kxkdbinsightsenterprise
+- LEAP
+- Linkar
+- LinkedIn Learning
+- Microstrategy Dataset
+- [OData](connector-odata-overview.md)
+- OneStream
+- Paxata
+- PlanviewOKR
+- PlanviewProjectplace
+- [Power Platform Dataflows](connector-dataflows-overview.md)
+- Profisee
+- Quickbase
+- Roamler
+- Salesforce
+- Samsara
+- SDMX
+- [SharePoint folder](connector-sharepoint-folder-overview.md)
+- [SharePoint Online List](connector-sharepoint-online-list-overview.md)
+- ShortcutsBI
+- SiteImprove
+- SmartsheetGlobal
+- SoftOneBI
+- SolarwindsServiceDesk
+- Spigit
+- SumTotal
+- Supermetrics
+- SurveyMonkey
+- TeamDesk
+- Tenforce
+- Usercube
+- Vena
+- VesselInsight
+- VivaInsights
+- [Web](connector-web-overview.md)
+- WebtrendsAnalytics
+- Windsor
+- Witivio
+- Wrike
+- Zendesk Data
+- Zoho Creator
+- Zucchetti
+
+If a dataflow uses connectors not in this list, those queries continue to run with the standard (legacy) engine. Support for more connectors will expand over time as the feature moves toward general availability.
