@@ -416,6 +416,10 @@ To complete this section, you need an Azure account with an Azure Maps account a
     ```
 
 1. Enter Your Azure Maps subscription key in the notebook code for the **AZMAPS_SUBSCRIPTION_KEY** variable by replacing "*\<Your Azure Maps subscription key\>*" with Your Azure Maps subscription key.
+
+    > [IMPORTANT]
+    > This example hardcodes the Azure Maps subscription key for simplicity. **Do *not* hardcode secrets in production environments**. Store and manage secrets securely by using Azure Key Vault and reference them at runtime. For more information, see [Best practices for protecting secrets](/azure/security/fundamentals/secrets-best-practices).
+
 1. Select the **Save as** button in the menu and save the notebook as **OptimizeRoute**.
 1. Run the notebook to create the **OptimizedRoute.geojson** file in the **Files** directory of your lakehouse.
 
