@@ -73,7 +73,7 @@ Send the temperature data to [Eventhouse](../eventhouse.md) for storage and proc
 
 ### Train
 
-By using natural language [Copilot](../../get-started/copilot-fabric-overview), store associates and analysts can generate and execute queries on temperature fluctuations over time, providing:
+By using natural language [Copilot](../../fundamentals/copilot-fabric-overview.md), store associates and analysts can generate and execute queries on temperature fluctuations over time, providing:
 
 - **Conversational analytics** - Natural language queries for temperature trend analysis and historical data exploration
 - **Accessible insights** - Enable nontechnical store staff to access complex temperature analytics through simple conversations
@@ -192,7 +192,7 @@ Grocery store managers use [Activator](../data-activator/activator-introduction)
 ### Intelligent automation and AI
 
 - Implement [Activator](../data-activator/activator-introduction) for sophisticated refrigeration automation, including predictive maintenance, dynamic temperature optimization, and automated compliance management.
-- Deploy [Copilot](../../get-started/copilot-fabric-overview) for advanced natural language analytics that enable store teams to query complex temperature scenarios and historical patterns.
+- Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) for advanced natural language analytics that enable store teams to query complex temperature scenarios and historical patterns.
 - Create intelligent grocery operations systems that provide real-time decision support based on temperature performance, environmental conditions, and food safety requirements.
 
 ### Enterprise-scale deployment
