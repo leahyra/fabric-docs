@@ -82,9 +82,9 @@ When you're performing a migration, don't delete or pause either the source or d
 
 To change the region for existing content, do one of the following:
 
-* Create a new capacity and move your workspaces to the new capacities. Free users won't experience any downtime as long as the tenant has spare v-cores.
+* Create a new capacity and move your workspaces to the new capacities. Fabric Trial users won't experience any downtime as long as the tenant has spare v-cores.
 
-* Temporarily move your content to a shared capacity. You don't need extra v-cores, but free users will experience some downtime. After you create a new capacity in the desired region, move your workspaces to the new capacity.
+* Temporarily move your content to a shared capacity. You don't need extra v-cores, but Fabric Trial users will experience some downtime. After you create a new capacity in the desired region, move your workspaces to the new capacity.
 
 ## Move content to your home region
 
