@@ -34,13 +34,21 @@ You can implement the architecture with four main operational phases that work t
 The following steps describe the data flow through this architecture:
 
 1. Real-time streaming of over 1TB/hour of decoded EDR/CDR data flows via MQTT-Eventstream from the mobile core network.
+
 1. Customer data such as device, address, and mobile plan is pushed via MQTT and collected by Eventstream.
+
 1. Contextualization metadata including inventory and cell network components from ERP sources is synced to OneLake using Data Factory with CDC to support data contextualization.
+
 1. EDR/CDR data is enriched in-motion with the dimensional metadata.
+
 1. Enriched data is aggregated for daily and weekly views on the fly for long-term retention.
+
 1. ML models are built and trained, then used for real-time scoring.
+
 1. In-depth, high-granularity network analytics visuals are created using the built-in Real-Time Analytics dashboard.
+
 1. DirectQuery from Power BI to Eventhouse provides rich BI reports on the real-time data.
+
 1. Notifications are created in real time to reduce response time and time to mitigate issues.
 
 ## Operational phases
