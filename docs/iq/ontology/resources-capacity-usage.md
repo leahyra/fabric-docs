@@ -25,8 +25,8 @@ The following table defines how many capacity units (CU) are consumed when an on
 | Meter name | Operation name | Description | Unit of measure | Fabric consumption rate |
 | --- | --- | --- | --- | --- |
 | Ontology Modeling | Ontology Modeling | Measures the usage of ontology definitions (including entity types, relationships, properties, and bindings). | Per ontology definition usage <br><br>*Usage is defined by intervals of at minimum 30 minutes, each time the API is triggered by CRUD operations to entity types, properties, relationship types, or bindings.* | 0.0039 CU per hour <br><br>*This meter is visible in preview. Any usage you see is for user feedback purposes only and is not currently billed.*|
-| Ontology Logic and Operations​ | Ontology Logic and Operations​ | Measures the usage for ontology operations, including visualizations, logic, graph creation, ontology exploration, and querying and analyzing with query endpoints (including API and SQL endpoints) | Per min | 0.666667 CU per min <br><br>*While ontology (preview) billing isn't in effect, users are billed according to their [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.* |
-| Ontology AI | Ontology AI Operations | Measures the usage of AI for context driven reasoning and query over ontology | (Input) Per 1,000 Tokens <br><br>(Output) Per 1,000 Tokens | (Input) 400 CU seconds <br><br>(Output) 1,600 CU seconds <br><br>*While ontology (preview) billing isn't in effect, users are billed according to their [Copilot in Fabric](../../fundamentals/copilot-fabric-consumption.md) usage.* |
+| Ontology Logic and Operations​ | Ontology Logic and Operations​ | Measures the usage for ontology operations, including visualizations, logic, graph creation, ontology exploration, and querying and analyzing with query endpoints (including API and SQL endpoints) | Per min | 0.666667 CU per min <br><br>*This meter is not currently in effect. Ontology users are only billed for logic and operations according to their underlying [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.* |
+| Ontology AI | Ontology AI Operations | Measures the usage of AI for context driven reasoning and query over ontology | (Input) Per 1,000 Tokens <br><br>(Output) Per 1,000 Tokens | (Input) 400 CU seconds <br><br>(Output) 1,600 CU seconds <br><br>*This meter is not currently in effect. Ontology users are only billed for AI operations according to their underlying [Copilot in Fabric](../../fundamentals/copilot-fabric-consumption.md) usage.* |
 
 ## Capacity usage examples
 
@@ -46,7 +46,7 @@ Ontology Logic and Operations usage is incurred when ontology is actively execut
 
 For example, say you run ontology exploration and workload queries for 15 minutes per hour, 8 hours a day. The calculated time for this meter is 15 minutes * 8 hours * 0.666667 CU/min (Fabric consumption rate of this operation) = 1.33 CU hours per day.
 
-*While ontology (preview) billing isn't in effect, users are billed according to their [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.*
+*This meter is not currently in effect. Ontology users are only billed for logic and operations according to their underlying [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.*
 
 ### Ontology AI Operations
 
@@ -58,7 +58,7 @@ For example, assume each ontology request has 2,000 input tokens and 500 output
 
 Since ontology is a background job and usage is averaged over a 24-hour period, this example request that takes 26.67 CU minutes consumes, on average, one CU minute of each hour of a capacity. On an F64 capacity with 64 * 24 = 1,536 CU Hours in a day, if each ontology job consumes 26.67 CU mins = 0.44 CU Hours, you could run over 3,456 of these requests each day before exhausting the capacity. 
 
-*While ontology (preview) billing isn't in effect, users are billed according to their [Copilot in Fabric](../../fundamentals/copilot-fabric-consumption.md) usage.*
+*This meter is not currently in effect. Ontology users are only billed for AI operations according to their underlying [Copilot in Fabric](../../fundamentals/copilot-fabric-consumption.md) usage.*
 
 ## Monitor usage
 
