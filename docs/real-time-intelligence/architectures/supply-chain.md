@@ -20,6 +20,8 @@ You can manage complex supply chain operations where systems continuously stream
 
 The supply chain reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from supply chain systems and integrates logistics data for intelligent supply chain management. You can implement the architecture with five main operational phases, divided into ten steps:
 
+:::image type="content" source="./media/supply-chain-diagram.png" alt-text="Diagram that shows the Supply chain reference architecture." lightbox="./media/supply-chain-diagram.png":::
+
 1. **[Eventstreams](../event-streams/overview.md)** ingests data from ERP systems, capturing purchase orders, delivery schedules, and vendor contracts.
 1. Through MQTT-**[Eventstreams](../event-streams/overview.md)** integration, real-time streaming and batch logistics feeds track shipments, carrier updates, and route disruptions.
 1. **[Data Factory](../../data-factory/data-factory-overview.md)** orchestrates on-hand stock, reserved inventory, and reorder points, then sends this information to **[OneLake](../../onelake/onelake-overview.md)** for cross-domain access.
