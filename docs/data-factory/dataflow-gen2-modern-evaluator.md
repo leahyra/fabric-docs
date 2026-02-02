@@ -1,5 +1,5 @@
 ---
-title: Modern Evaluator for Dataflow Gen2 with CI/CD (Preview)
+title: Modern Evaluator for Dataflow Gen2 with CI/CD
 description: Boost Dataflow Gen2 with CI/CD performance with the Modern Evaluator—faster query execution, scalable workflows, and support for top connectors.
 author: ptyx507x
 ms.author: miescobar
@@ -10,9 +10,6 @@ ms.custom: dataflows
 ---
 
 # Modern Evaluator for Dataflow Gen2 with CI/CD (Preview)
-
-> [!NOTE]
-> Modern evaluator for Dataflow Gen2 with CI/CD is currently in preview.
 
 The Modern Query Evaluation Engine (also known as the "Modern Evaluator") is a new preview feature for Dataflow Gen2 (with CI/CD support) in Microsoft Fabric. It provides a new query execution engine running on .NET core version 8, which can significantly improve the performance of dataflow runs in some scenarios.
 
