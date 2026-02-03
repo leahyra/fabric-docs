@@ -14,24 +14,6 @@ In this tutorial step, explore your ontology by using the preview experience inc
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Update graph refresh schedule
-
-When your ontology (preview) item is created, a [Graph in Microsoft Fabric](../../graph/overview.md) child item is also created to store and display ontology data in the ontology preview experience.
-
-That child Graph item has a default refresh schedule that runs every 60 minutes to keep data up to date in the ontology item. That refresh isn't necessary for this tutorial scenario, so disable the refresh to reduce the amount of capacity units (CU) consumed during the tutorial.
-
-1. Go to your Fabric workspace and locate the **Graph model** item that's a child of your ontology item.
-
-    :::image type="content" source="media/tutorial-3-preview-ontology/schedule-1.png" alt-text="Screenshot of the graph model in the Fabric workspace." lightbox="media/tutorial-3-preview-ontology/schedule-1.png":::
-
-1. Select the **...** next to the Graph model item's name, and select **Schedule**.
-
-    :::image type="content" source="media/tutorial-3-preview-ontology/schedule-2.png" alt-text="Screenshot of opening the schedule for a graph model item." lightbox="media/tutorial-3-preview-ontology/schedule-2.png":::
-
-1. On the **Schedule** tab, if you see a schedule called **Every 60 minutes**, toggle it to **Off**. If you don't see any schedules listed, skip this step.
-
-    :::image type="content" source="media/tutorial-3-preview-ontology/schedule-3.png" alt-text="Screenshot of toggling off a schedule called Every 60 minutes." lightbox="media/tutorial-3-preview-ontology/schedule-3.png":::
-
 ## Preview entity instances 
 
 When you bound data to your entity types in previous tutorial steps, ontology automatically created instances of those entities that are tied to the source data rows. In this section, you use the preview experience to view those entity instances.

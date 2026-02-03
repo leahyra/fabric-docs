@@ -36,11 +36,11 @@ The following table describes common issues when generating a new ontology (prev
 
 ## Troubleshoot ontology access
 
-The following table describes common issues when generally accessing the main view of an ontology (preview) item.
+The following table describes common issues when accessing the main view of an ontology (preview) item.
 
 | Issue | Recommendation |
 |---|---|
-| The canvas and entity type list are unable to load and you see a message that *Your organization's Fabric compute capacity has exceeded its limits*. | The [Graph in Microsoft Fabric](../../graph/overview.md) child item of your ontology (preview) item has a default refresh schedule that runs every 60 minutes to keep data up to date in the ontology item. This may result in increased capacity usage beyond the limits of your Fabric capacity. You can edit or disable the Graph item schedule from your workspace. For more information, see [Update graph refresh schedule](tutorial-3-preview-ontology.md#update-graph-refresh-schedule). |
+| The canvas and entity type list are unable to load and you see a message that *Your organization's Fabric compute capacity has exceeded its limits*. | Refreshes of ontology (preview)'s underlying [Graph in Microsoft Fabric](../../graph/overview.md) child item contribute to your capacity usage. If you have set a Graph refresh schedule and capacity usage becomes too high, you can reduce or disable the Graph item schedule in your workspace. For more information, see [Refresh the graph model](how-to-use-preview-experience.md#refresh-the-graph-model). |
 
 ## Troubleshoot data binding
 
