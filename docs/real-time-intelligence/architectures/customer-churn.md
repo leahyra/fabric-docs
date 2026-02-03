@@ -1,5 +1,5 @@
 ---
-title: Customer churn architecture with Fabric Real-Time Intelligence
+title: Customer Churn Architecture with Fabric Real-Time Intelligence
 description: Learn how to build real-time customer churn analytics solutions with Microsoft Fabric Real-Time Intelligence for predictive insights and retention strategies.
 #customer intent: As a data analyst, I want to understand how to use Microsoft Fabric Real-Time Intelligence for customer churn prediction so that I can improve retention strategies.
 ms.topic: example-scenario
