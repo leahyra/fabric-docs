@@ -22,15 +22,15 @@ That child Graph item has a default refresh schedule that runs every 60 minutes 
 
 1. Go to your Fabric workspace and locate the **Graph model** item that's a child of your ontology item.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/schedule-1.png" alt-text="Screenshot of the graph model in the Fabric workspace.":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/schedule-1.png" alt-text="Screenshot of the graph model in the Fabric workspace." lightbox="media/tutorial-3-preview-ontology/schedule-1.png":::
 
 1. Select the **...** next to the Graph model item's name, and select **Schedule**.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/schedule-2.png" alt-text="Screenshot of opening the schedule for a graph model item.":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/schedule-2.png" alt-text="Screenshot of opening the schedule for a graph model item." lightbox="media/tutorial-3-preview-ontology/schedule-2.png":::
 
 1. On the **Schedule** tab, if you see a schedule called **Every 60 minutes**, toggle it to **Off**. If you don't see any schedules listed, skip this step.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/schedule-3.png" alt-text="Screenshot of toggling off a schedule called Every 60 minutes.":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/schedule-3.png" alt-text="Screenshot of toggling off a schedule called Every 60 minutes." lightbox="media/tutorial-3-preview-ontology/schedule-3.png":::
 
 ## Preview entity instances 
 
