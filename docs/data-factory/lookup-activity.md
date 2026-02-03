@@ -2,8 +2,6 @@
 title: Lookup activity
 description: Learn how to add a lookup activity to a pipeline and use it to look up data from a data source.
 ms.reviewer: xupxhou
-ms.author: whhender
-author: whhender
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 01/20/2026
