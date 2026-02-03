@@ -161,7 +161,7 @@ For a detailed tutorial with screenshots, examples, and troubleshooting see [the
 
 
 ## Upgrading Synapse Pipelines to Fabric
-Run these commands to get access tokens for Arm, Synapse and Fabric:
+Run these commands to get access tokens for ARM, Synapse, and Fabric:
 
 ```PowerShell
 $ArmToken = (Get-AzAccessToken -ResourceUrl "https://management.azure.com/").Token
@@ -170,7 +170,7 @@ $fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.n
 
 ```
 ## PowerShell command to upgrade your Synapse pipelines
-On similar lines as ADF you can also upgrade your Synapse Pipelines to Fabric.
+Run these commands to upgrade your Synapse Pipelines to Fabric:
 
 ```PowerShell
 Import-SynapseWorkspace -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -WorkspaceName <your Synapse Workspace Name> -PipelineName <your Pipeline Name> -ArmToken $ArmToken -SynapseToken $synapseSecureToken| Import-FabricResolutions -rf "<path to your resolutions file>" | ConvertTo-FabricResources | Export-FabricResources -Region <region> -Workspace <your Synapse Workspace Name> -Token $fabricSecureToken -AzureToken $ArmToken -EnableVerboseLogging
