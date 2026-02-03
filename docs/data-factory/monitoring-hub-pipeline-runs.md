@@ -1,7 +1,7 @@
 ---
 title: How to monitor pipeline runs in Monitoring hub
 description: Learn how to monitor pipeline runs from the Monitoring hub.
-ms.reviewer: whhender, chugu
+ms.reviewer: chugu
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
 ms.date: 11/15/2023

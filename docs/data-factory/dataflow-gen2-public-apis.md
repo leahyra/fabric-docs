@@ -1,7 +1,7 @@
 ---
 title: "Public APIs Capabilities for Dataflow Gen2 in Fabric Data Factory"
 description: "Use the dataflow public APIs to manage your data integration through operations including dataflow CRUD (Create, Read, Update, and Delete), scheduling, and monitoring."
-ms.reviewer: whhender, conxu
+ms.reviewer: conxu
 ms.topic: concept-article
 ms.date: 05/01/2025
 ms.custom: dataflows

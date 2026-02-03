@@ -1,7 +1,7 @@
 ---
 title: If Condition activity
 description: Learn how to add an If Condition activity to a pipeline in Data Factory for Microsoft Fabric and use it to execute other activities based on an expression.
-ms.reviewer: whhender, makromer
+ms.reviewer: makromer
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 12/18/2024

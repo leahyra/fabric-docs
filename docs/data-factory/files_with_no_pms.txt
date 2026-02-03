@@ -1,0 +1,20 @@
+Files with no PM reviewers after removing whhender:
+================================================================================
+
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\includes\deactivate-activities.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\copy-job-activity.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\decision-guide-data-integration.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\decision-guide-data-movement.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\pipeline-overview.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\pricing-dataflows-gen2.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\pricing-overview.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\pricing-pipelines.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\pricing-scenario-load-1-tb-csv-to-lakehouse-files.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\pricing-scenario-load-1-tb-csv-to-lakehouse-table.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\pricing-scenario-load-1-tb-parquet-to-data-warehouse-stage.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\pricing-scenario-load-1-tb-parquet-to-data-warehouse.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\service-principals.md
+C:\Users\whhender\GitHub\fabric-docs-pr\docs\data-factory\tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse.md
+
+Total files with no PMs: 15

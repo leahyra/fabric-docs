@@ -1,7 +1,7 @@
 ---
 title: Copilot explainer skill in Dataflow Gen2
 description: Overview of the Copilot explainer skill in Dataflow Gen2 and its different entry points and use cases
-ms.reviewer: whhender, miescobar
+ms.reviewer: miescobar
 ms.topic: concept-article
 ms.date: 08/16/2025
 ms.custom: dataflows

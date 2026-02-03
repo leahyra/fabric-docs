@@ -1,7 +1,7 @@
 ---
 title: Web activity
 description: The Web activity for Data Factory pipelines in Microsoft Fabric allows you to make requests to REST APIs on the web and retrieve their results.
-ms.reviewer: whhender, abnarain
+ms.reviewer: abnarain
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
 ms.date: 04/30/2025

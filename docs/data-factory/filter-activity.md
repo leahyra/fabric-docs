@@ -1,7 +1,7 @@
 ---
 title: Filter activity
 description: Learn how to add a Filter activity to a pipeline and use it to filter data.
-ms.reviewer: whhender, makromer
+ms.reviewer: makromer
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 12/18/2024

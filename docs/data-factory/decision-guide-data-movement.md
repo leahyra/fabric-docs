@@ -1,7 +1,6 @@
 ---
 title: Comparing Copy Job, Mirroring, Copy Activity, and Eventstreams in Microsoft Fabric
 description: Compare Mirroring, Copy Job, and Copy Activity and Eventstreams in Microsoft Fabric to find the best data movement method for your needs. Learn their features and use cases.
-ms.reviewer: whhender
 ms.date: 08/12/2025
 ms.topic: concept-article
 ai-usage: ai-assisted

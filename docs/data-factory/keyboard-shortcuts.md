@@ -1,7 +1,7 @@
 ---
 title: Keyboard shortcuts for pipelines in Data Factory for Fabric
 description: Learn about keyboard shortcuts provided for pipelines in Data Factory for Microsoft Fabric.
-ms.reviewer: whhender, lle
+ms.reviewer: lle
 ms.topic: overview
 ms.date: 01/04/2024
 ms.custom: pipelines

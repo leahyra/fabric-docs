@@ -1,7 +1,7 @@
 ---
 title: Preview only step in Dataflow Gen2 (Preview)
 description: Accelerate authoring in Dataflow Gen2 with preview-only steps—apply transformations during design time without affecting runtime execution.
-ms.reviewer: whhender, miescobar
+ms.reviewer: miescobar
 ms.topic: how-to
 ms.date: 09/15/2025
 ms.custom: dataflows

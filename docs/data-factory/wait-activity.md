@@ -1,7 +1,7 @@
 ---
 title: Wait activity
 description: The Wait activity for Data Factory pipelines in Microsoft Fabric waits a specified interval before continuing execution.
-ms.reviewer: whhender, makromer
+ms.reviewer: makromer
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 11/15/2023

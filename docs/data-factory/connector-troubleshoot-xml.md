@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot the XML format connector
 description: Learn how to troubleshoot issues with the XML format connector in Data Factory in Microsoft Fabric.
-ms.reviewer: whhender, xupzhou
+ms.reviewer: xupzhou
 ms.topic: troubleshooting
 ms.custom: connectors
 ms.date: 11/15/2023

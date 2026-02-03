@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot the Data Warehouse connector
 description: Learn how to troubleshoot issues with the Data Warehouse connector in Data Factory in Microsoft Fabric.
-ms.reviewer: whhender, jianleishen
+ms.reviewer: jianleishen
 ms.topic: troubleshooting
 ms.date: 01/09/2026
 ms.custom: connectors

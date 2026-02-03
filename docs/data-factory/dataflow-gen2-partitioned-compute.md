@@ -1,7 +1,7 @@
 ---
 title: Use partitioned compute in Dataflow Gen2 (Preview)
 description: Overview on how to use partitioned compute for parallel processing in Dataflow Gen2 with CI/CD.
-ms.reviewer: whhender, miescobar
+ms.reviewer: miescobar
 ms.topic: how-to
 ms.date: 01/28/2026
 ms.custom: dataflows

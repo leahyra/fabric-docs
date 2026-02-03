@@ -1,7 +1,7 @@
 ---
 title: Move and transform data with dataflow and pipelines
 description: Steps for moving and transforming data with dataflows and pipelines.
-ms.reviewer: whhender, noelleli
+ms.reviewer: noelleli
 ms.topic: quickstart
 ms.custom:
 - dataflows

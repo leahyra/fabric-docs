@@ -1,7 +1,7 @@
 ---
 title: Variable references in Dataflow
 description: --
-ms.reviewer: whhender, miescobar
+ms.reviewer: miescobar
 ms.topic: tutorial
 ms.date: 10/2/2025
 ms.custom: dataflows

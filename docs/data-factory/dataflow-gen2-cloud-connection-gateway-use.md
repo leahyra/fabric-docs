@@ -1,7 +1,7 @@
 ---
 title: Using cloud connections through gateways
 description: Overview on the enforcement of the allow cloud connection usage on gateway setting for Dataflow Gen2 and its most frequently asked questions
-ms.reviewer: whhender, miescobar
+ms.reviewer: miescobar
 ms.topic: concept-article
 ms.date: 08/13/2025
 ms.custom: dataflows

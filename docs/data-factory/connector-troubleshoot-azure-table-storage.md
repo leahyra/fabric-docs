@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot the Azure Table Storage connector
 description: Learn how to troubleshoot issues with the Azure Table Storage connector in Data Factory in Microsoft Fabric.
-ms.reviewer: whhender, xupzhou
+ms.reviewer: xupzhou
 ms.topic: troubleshooting
 ms.date: 11/15/2023
 ms.custom: connectors

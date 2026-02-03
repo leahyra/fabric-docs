@@ -1,7 +1,7 @@
 ---
 title: Supported commands for dbt jobs
 description: List and description of supported commands for dbt jobs in Microsoft Fabric.
-ms.reviewer: whhender, akurnala
+ms.reviewer: akurnala
 ms.topic: include
 ms.date: 11/20/2025
 ---

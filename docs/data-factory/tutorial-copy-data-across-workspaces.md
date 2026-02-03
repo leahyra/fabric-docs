@@ -1,7 +1,7 @@
 ---
 title: Copy data across workspaces
 description: Learn steps to copy data across workspaces
-ms.reviewer: whhender, jianleishen
+ms.reviewer: jianleishen
 ms.topic: tutorial
 ms.custom: pipelines
 ms.date: 09/26/2025
