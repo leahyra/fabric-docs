@@ -9,23 +9,22 @@ ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Clean up tutorial resources
 ---
 
-# Tutorial: Clean up tutorial resources
+# Tutorial: Clean up graph tutorial resources
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-In this tutorial step, you learn how to clean up the resources you created during the tutorial. Cleaning up resources helps you avoid unnecessary charges and keeps your workspace organized.
+As a final step, you can optionally clean up the resources you created during the tutorial. Cleaning up resources can help you avoid unnecessary charges and keeps your workspace organized.
 
 ## Delete the graph model
 
-To delete the graph model, you created:
-
+To delete the graph model you created:
 1. Go to your [Microsoft Fabric workspace](https://fabric.microsoft.com/).
 1. Find the graph model you created (for example, "AdventureWorksGraph").
 1. Select the **More options** (...) menu next to the graph model.
 1. Select **Delete**.
 1. Confirm the deletion.
 
-## Delete the workspace (optional)
+## Delete the workspace
 
 If you created a new workspace specifically for this tutorial and you no longer need it, you can delete the entire workspace:
 
