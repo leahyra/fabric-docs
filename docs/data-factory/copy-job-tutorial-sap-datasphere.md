@@ -1,8 +1,8 @@
 ---
 title: "Tutorial: Copy job with SAP Datasphere Outbound (Preview)"
 description: Learn how to configure Copy job for SAP Datasphere Outbound.
-ms.reviewer: 
-ms.date: 01/28/2026, jingwang
+ms.reviewer: jingwang
+ms.date: 01/28/2026
 ms.topic: tutorial
 ---
 
