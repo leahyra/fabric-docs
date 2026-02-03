@@ -1,8 +1,7 @@
 ---
 title: Configure Azure Cosmos DB for MongoDB in a copy activity
 description: This article explains how to copy data using Azure Cosmos DB for MongoDB.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 08/20/2025
 ms.custom: 
