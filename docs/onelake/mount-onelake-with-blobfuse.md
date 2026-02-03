@@ -34,7 +34,7 @@ This article provides a step-by-step guide for configuring BlobFuse2 and mountin
 
 ## Create an Azure Virtual Machine
 
-1. Create an [Azure Virtual Machine](/azure-compute-docs/virtual-machines/windows/quick-create-portal.md) with a Linux-based operating system. The instructions here use Ubuntu 24.04. 
+1. Create an [Azure Virtual Machine](/azure/virtual-machines/linux/quick-create-portal) with a Linux-based operating system. The instructions here use Ubuntu 24.04. 
 
 1. Configure the Network Security Group (NSG) rules to ensure the VM can connect to Microsoft Fabric OneLake endpoints. By default, outbound internet access is allowed. If your VM is in a restricted network, ensure that outbound access to the following endpoint is allowed:
 
