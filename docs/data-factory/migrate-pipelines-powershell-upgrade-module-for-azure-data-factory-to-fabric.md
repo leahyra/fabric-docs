@@ -1,12 +1,12 @@
 ---
-title: PowerShell Migration of Azure Data Factory Pipelines to Fabric
+title: PowerShell Migration of Azure Data Factory and Synapse Pipelines to Fabric
 description: Use the **Microsoft.FabricPipelineUpgrade** PowerShell module to upgrade Azure Data Factory pipelines to Fabric pipelines.
 author: ssindhub
 ms.author: ssrinivasara
 ms.reviewer: whhender
 ms.topic: how-to
 ms.custom: pipelines
-ms.date: 09/17/2025
+ms.date: 02/02/2026
 ai-usage: ai-assisted
 ---
 
@@ -132,7 +132,7 @@ A resolution file is a JSON file that maps your ADF linked services to Fabric co
 
 For more information about the resolution file, see [How to add a connection to the resolutions file](migrate-pipelines-how-to-add-connections-to-resolutions-file.md).
 
-### PowerShell command to upgrade your pipelines
+### PowerShell command to upgrade your ADF pipelines
 
 Now that you have your resolution file, you can run this PowerShell command to perform the upgrade. Update the ResolutionFilename parameter to point to your resolution file. Also, update the Import-AdfFactory command before the first `|` to either import [all supported resources in your ADF](#import-all-factory-resources), or [a single pipeline](#import-a-single-pipeline).
 
@@ -158,3 +158,20 @@ For a detailed tutorial with screenshots, examples, and troubleshooting see [the
 ## Related content
 
 - [Step-by-step tutorial for PowerShell-based migration of Azure Data Factory pipelines to Fabric](migrate-pipelines-powershell-upgrade-module-tutorial.md)
+
+
+## Upgrading Synapse Pipelines to Fabric
+Run these commands to get access tokens for Arm, Synapse and Fabric:
+
+```PowerShell
+$ArmToken = (Get-AzAccessToken -ResourceUrl "https://management.azure.com/").Token
+$synapseSecureToken = (Get-AzAccessToken -ResourceUrl "https://dev.azuresynapse.net").Token
+$fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.net/powerbi/api").Token<img width="586" height="91" alt="image" src="https://github.com/user-attachments/assets/09d30533-cda1-4e73-a44d-3e64a366e46a" />
+
+```
+## PowerShell command to upgrade your Synapse pipelines
+On similar lines as ADF you can also upgrade your Synapse Pipelines to Fabric.
+
+```PowerShell
+Import-SynapseWorkspace -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -WorkspaceName <your Synapse Workspace Name> -PipelineName <your Pipeline Name> -ArmToken $ArmToken -SynapseToken $synapseSecureToken| Import-FabricResolutions -rf "<path to your resolutions file>" | ConvertTo-FabricResources | Export-FabricResources -Region <region> -Workspace <your Synapse Workspace Name> -Token $fabricSecureToken -AzureToken $ArmToken -EnableVerboseLogging
+```
