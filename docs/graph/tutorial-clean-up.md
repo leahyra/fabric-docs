@@ -18,6 +18,7 @@ As a final step, you can optionally clean up the resources you created during th
 ## Delete the graph model
 
 To delete the graph model you created:
+
 1. Go to your [Microsoft Fabric workspace](https://fabric.microsoft.com/).
 1. Find the graph model you created (for example, "AdventureWorksGraph").
 1. Select the **More options** (...) menu next to the graph model.

@@ -36,7 +36,7 @@ Follow these steps to switch to the code editor and start querying your graph by
 
 This query finds all nodes with the `Order` label, counts them, and returns the total as `num_orders`. It's a simple way to confirm your graph has data. The following image shows the result of the query:
 
-:::image type="content" source="./media/tutorial/gql-query-results-1.png" alt-text="Screenshot showing the result of running a GQL query to count all orders." lightbox="./media/tutorial/gql-query-results-1.png":::
+:::image type="content" source="./media/tutorial/code-editor-query-results-1.png" alt-text="Screenshot showing the result of running a GQL query to count all orders." lightbox="./media/tutorial/code-editor-query-results-1.png":::
 
 ## Recreate the query builder query in GQL
 
@@ -56,7 +56,7 @@ This query:
 
 The following image shows the result of the query (only a portion of the returned data is shown).
 
-:::image type="content" source="./media/tutorial/gql-query-results-2.png" alt-text="Screenshot showing the result of running a GQL query to find products purchased by Carla Adams." lightbox="./media/tutorial/gql-query-results-2.png":::
+:::image type="content" source="./media/tutorial/code-editor-query-results-2.png" alt-text="Screenshot showing the result of running a GQL query to find products purchased by Carla Adams." lightbox="./media/tutorial/code-editor-query-results-2.png":::
 
 ## Run a complex query
 
@@ -85,7 +85,7 @@ This query:
 
 In summary, it shows the top five vendors supplying products in the 'Touring Bikes' category, along with how many products they supply and how many orders those products have.
 
-:::image type="content" source="./media/tutorial/gql-query-results-3.png" alt-text="Screenshot showing the result of running a GQL query to find the top five vendors supplying products in the 'Touring Bikes' category." lightbox="./media/tutorial/gql-query-results-3.png":::
+:::image type="content" source="./media/tutorial/code-editor-query-results-3.png" alt-text="Screenshot showing the result of running a GQL query to find the top five vendors supplying products in the 'Touring Bikes' category." lightbox="./media/tutorial/code-editor-query-results-3.png":::
 
 ## GQL query patterns
 

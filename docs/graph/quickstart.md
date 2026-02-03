@@ -148,7 +148,7 @@ Run a GQL query to find the top five customers by order count.
 
 The following image shows the GQL query and its results:
 
-:::image type="content" source="./media/quickstart/gql-query-and-results.png" alt-text="Screenshot showing the result of running a GQL query." lightbox="./media/quickstart/gql-query-and-results.png":::
+:::image type="content" source="./media/quickstart/code-editor-query-and-results.png" alt-text="Screenshot showing the result of running a GQL query." lightbox="./media/quickstart/code-editor-query-and-results.png":::
 
 Congratulations! You created your first graph in Microsoft Fabric and ran a query against it.
 
