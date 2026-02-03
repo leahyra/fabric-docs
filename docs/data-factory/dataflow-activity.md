@@ -1,9 +1,7 @@
 ---
 title: Dataflow activity
 description: Learn how to add a Dataflow activity to a pipeline and use it to run a Dataflow Gen2.
-ms.reviewer: xupxhou
-ms.author: miescobar
-author: ptyx507x
+ms.reviewer: xupxhou, miescobar
 ms.topic: how-to
 ms.date: 1/27/2026
 ms.custom:
