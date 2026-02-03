@@ -4,7 +4,7 @@ description: Learn how to quickly find content, search, filter, multitask with t
 author: SnehaGunda
 ms.author: sngun
 ms.topic: overview
-ms.date: 11/07/2025
+ms.date: 02/03/2026
 ai-usage: ai-assisted
 #customer intent: As a new Fabric user, I want to quickly find my content, understand navigation, personalize settings, and get help.
 ---
@@ -124,6 +124,30 @@ Horizontal tabs lets you switch between multiple open items. Use the following s
 ### More open items
 
 The previous limit of 10 open items has been increased. You can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
+
+### Customize horizontal tab display settings
+
+To support diverse workflows and improve productivity, you can configure how horizontal tabs are displayed. Right-click any tab to access the **Horizontal Tab Settings** menu and select the display style that fits your needs.
+
+You can choose from two tab display patterns:
+
+1. **Full Tab Names**
+   - Displays the complete name of each tab.
+   - Ideal when clarity and readability of item names are most important.
+   - Tabs expand to fit their full text for easy identification.
+
+1. **Adaptive Truncated Names**
+   - Automatically shortens tab names when horizontal space becomes limited.
+   - Keeps more tabs visible at the same time—useful for multitasking or complex development workflows.
+   - The layout intelligently adapts to your window size and the number of open tabs.
+
+#### Improved navigation with overflow view
+
+When the number of open tabs exceeds what can be displayed on the screen, an **overflow menu** appears. This menu provides a complete list of currently open tabs, allowing you to quickly navigate to any item without losing track of your work.
+
+#### Access the new settings
+
+Right-click any tab in the horizontal tab bar and select **Open horizontal tab setting** to switch between display patterns. Changes apply instantly—no reload required.
 
 > [!NOTE]
 > These multitasking features are rolling out in phases starting mid September 2025. Availability might vary across tenants as the rollout progresses.
