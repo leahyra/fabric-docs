@@ -10,7 +10,9 @@ ms.topic: how-to
 
 # Preview experience in ontology (preview)
 
-The *preview experience* in ontology (preview) lets you view and explore your instantiated ontology data. The experience includes basic data previews, instance data, and a graph view.
+The *preview experience* in ontology (preview) lets you view and explore your instantiated ontology data. The experience includes basic data previews, instance data, and a graph view. 
+
+When your ontology (preview) item is created, a [Graph in Microsoft Fabric](../../graph/overview.md) child item is also created and is responsible for storing and displaying data in the ontology preview experience.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -136,7 +138,9 @@ You can also **Expand** the graph view, where you can run a query specific to th
 
 This section describes how and when your bound data stays up to date in your ontology (preview) item.
 
-In ontology (preview), downstream experiences automatically refresh whenever you make changes to your ontology schema. This feature ensures that whenever you add, edit, or remove any element like properties, types, or relationships, the system re-ingests all currently bound data to keep your downstream experiences in sync with the latest schema adjustments. 
+The Graph item that's automatically created as a child of your ontology (preview) item has a default refresh schedule that runs every 60 minutes to keep data up to date in the ontology item.
+
+In addition, downstream experiences automatically refresh whenever you make changes to your ontology schema. This feature ensures that whenever you add, edit, or remove any element like properties, types, or relationships, the system re-ingests all currently bound data to keep your downstream experiences in sync with the latest schema adjustments. 
 
 However, this automatic refresh only applies to changes made within the schema itself. If there are changes to the external data source that feeds your graph (for example, if new records are added, updated, or deleted in the upstream system), the graph doesn't know about these changes unless you explicitly inform it. In this case, your graph might display stale data until a new ingestion is triggered. You can enforce an update by manually refreshing the graph.
 
