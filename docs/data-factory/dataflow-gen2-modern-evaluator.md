@@ -9,7 +9,7 @@ ms.date: 09/15/2025
 ms.custom: dataflows
 ---
 
-# Modern Evaluator for Dataflow Gen2 with CI/CD (Preview)
+# Modern Evaluator for Dataflow Gen2 with CI/CD
 
 The Modern Query Evaluation Engine (also known as the "Modern Evaluator") is a new preview feature for Dataflow Gen2 (with CI/CD support) in Microsoft Fabric. It provides a new query execution engine running on .NET core version 8, which can significantly improve the performance of dataflow runs in some scenarios.
 
@@ -21,7 +21,7 @@ Dataflows running the modern evaluator could potentially see some of these key b
 
 - **Scalability and reliability**: By speeding up execution and reducing bottlenecks, the Modern Evaluator helps dataflows scale to larger volumes with greater stability. Customers can expect more consistent refresh durations and fewer timeout issues on large dataflows when using the new engine.
 
-## How to enable the Modern Evaluator
+## How to enable or disable the Modern Evaluator
 
 > [!NOTE]
 > The Modern Evaluator is enabled by default in new Dataflow Gen2 (CI/CD) items.
@@ -33,7 +33,7 @@ Follow these steps to turn on the Modern Query Evaluation Engine for a dataflow:
 
 1. **Go to Options (Scale settings)**: In the dataflow editor, select the Options menu. In the Options dialog, select on the Scale tab.
 
-1. **Enable the Modern Evaluator**: Find the setting for Modern query evaluation engine (Preview). Turn this option On (check or toggle it).
+1. **Enable the Modern Evaluator**: Find the setting for Modern query evaluation engine. Turn this option On (check or toggle it).
 
     :::image type="content" source="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png" alt-text="Screenshot of the options dialog in a Dataflow Gen2 with CI/CD displaying the modern query evaluator setting." lightbox="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png":::
 
@@ -76,7 +76,6 @@ The Modern Query Evaluation Engine supports a varierty of data connectors. Ensur
 - Building Connected
 - CCH Tagetik
 - CData Connect Cloud
-- Cds
 - Celonis
 - Cherwell
 - CloudBluePSA
