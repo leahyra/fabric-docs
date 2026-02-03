@@ -36,7 +36,7 @@ After you purchase licenses, use the Microsoft 365 admin center, PowerShell, or 
 
 Self-service allows individuals to sign up, try, or purchase Fabric or Power BI on their own. You might not want users in your organization to use one or more forms of self-service. Perhaps all licensing is centralized and managed by an admin team or perhaps your organization doesn't permit trials. To learn how to turn off self-service, visit [Enable or disable self-service](/power-bi/enterprise/service-admin-disable-self-service).
 
-Turning off self-service sign-up keeps users from exploring Fabric on their own. If you block individual sign-up, you might want to [get Fabric Trial licenses for your organization and assign them to all users](/power-bi/enterprise/service-admin-licensing-organization#about-self-service-sign-up).
+Turning off self-service sign-up keeps users from exploring Fabric on their own. If you block individual sign-up, you might want to [get Fabric (free) licenses for your organization and assign them to all users](/power-bi/enterprise/service-admin-licensing-organization#about-self-service-sign-up).
 
 ### Take over a subscription
 

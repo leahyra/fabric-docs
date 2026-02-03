@@ -307,7 +307,7 @@ You can manage mirrored databases in workspaces enabled with private links by us
 
 ## Considerations and limitations
 
-- The workspace-level private link feature is only supported in a Fabric capacity (F SKU). Other capacities, such as Power BI Premium (P SKU) and trial capacities, aren't supported.
+- The workspace-level private link feature is only supported in a Fabric capacity (F SKU). Other capacities, such as premium (P SKU) and trial capacities, aren't supported.
 - A workspace can't be deleted if an existing private link service is set up for it.
 - Only one private link service can be created per workspace, and each workspace can have only one private link service. However, multiple private endpoints can be created for a single private link service.
 - The limit of private endpoints for a workspace is 100. Create a support ticket if you need to increase this limit.
