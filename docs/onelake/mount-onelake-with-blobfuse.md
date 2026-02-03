@@ -34,7 +34,7 @@ This article provides a step-by-step guide for configuring BlobFuse2 and mountin
 
 ## Create an Azure Virtual Machine
 
-1. Create an [Azure Virtual Machine](/azure-compute-docs/articles/virtual-machines/linux/quick-create-portal.md) with a Linux-based operating system. The instructions here use Ubuntu 24.04. 
+1. Create an [Azure Virtual Machine](/azure-compute-docs/virtual-machines/windows/quick-create-portal.md) with a Linux-based operating system. The instructions here use Ubuntu 24.04. 
 
 1. Configure the Network Security Group (NSG) rules to ensure the VM can connect to Microsoft Fabric OneLake endpoints. By default, outbound internet access is allowed. If your VM is in a restricted network, ensure that outbound access to the following endpoint is allowed:
 
@@ -130,7 +130,8 @@ This document uses service principal to authenticate with OneLake. Follow these 
      client-id: <replace-with-client-id>
      client-secret: <replace-with-client-secret>
    ```
-> [!NOTE] BlobFuse2 achieves near-native performance through local file caching. Cache configuration and behavior differ based on access patterns, such as large sequential file streaming versus small, random file access. For more information on configuring caching, see [How to configure BlobFuse2](/azure-docs/articles/storage/blobs/blobfuse2-how-to-deploy.md).
+> [!NOTE]
+> BlobFuse2 achieves near-native performance through local file caching. Cache configuration and behavior differ based on access patterns, such as large sequential file streaming versus small, random file access. For more information on configuring caching, see [How to configure BlobFuse2](/azure-docs/articles/storage/blobs/blobfuse2-how-to-deploy.md).
 
 1. Replace the placeholder values in the configuration:
    - `<replace-with-fabric-workspace-id>`: Fabric Workspace ID
