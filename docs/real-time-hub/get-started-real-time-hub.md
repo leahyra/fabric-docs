@@ -6,7 +6,7 @@ author: mystina
 ms.author: majia
 ms.topic: quickstart
 ms.custom: null
-ms.date: 01/12/2026
+ms.date: 02/03/2026
 ---
 
 # Get started with Fabric Real-Time hub
