@@ -13,31 +13,30 @@ ai-usage: ai-assisted
 
 # Recover deleted files in OneLake
 
-OneLake automatically protects your data with soft delete, which retains deleted files for seven days before permanent removal. This built-in protection helps you recover from accidental deletions, failed pipelines, or user errors without needing to restore from backups.
+OneLake automatically protects your data by using soft delete, which retains deleted files for seven days before permanent removal. This built-in protection helps you recover from accidental deletions, failed pipelines, or user errors without needing to restore from backups.
 
 After seven days, soft-deleted files are permanently removed and can't be recovered.
 
-> [!NOTE]
-> Soft-deleted data is billed at the same rate as active data. Consider this when planning your data retention strategy.
+You pay for soft-deleted data at the same rate as active data. Consider this cost when planning your data retention strategy.
 
 ## Restore soft-deleted files
 
-You can restore soft-deleted files using Azure Storage Explorer, Azure PowerShell, or Azure Storage REST APIs.
+You can restore soft-deleted files by using Azure Storage Explorer, Azure PowerShell, or Azure Storage REST APIs.
 
-### Restore files with Azure Storage Explorer
+### Restore files by using Azure Storage Explorer
 
 Azure Storage Explorer provides a visual interface to browse and restore soft-deleted files.
 
-#### Prerequisites
+To restore files by using Azure Storage Explorer, make sure you have:
 
 - [Azure Storage Explorer](https://azure.microsoft.com/products/storage/storage-explorer/) installed on your computer
 - A connection to your OneLake workspace. For instructions, see [Use Azure Storage Explorer with OneLake](onelake-azure-storage-explorer.md).
 
-#### Restore steps
+Use the following steps to restore files:
 
 1. Open Azure Storage Explorer and connect to your OneLake workspace.
 
-1. Navigate to the lakehouse or data item that contained the deleted files.
+1. Go to the lakehouse or data item that contained the deleted files.
 
 1. Select the dropdown button next to the path bar, and then select **Active and soft deleted blobs** instead of the default **Active blobs**.
 
@@ -47,16 +46,14 @@ Azure Storage Explorer provides a visual interface to browse and restore soft-de
 
 1. The file is restored to its original location and is immediately available.
 
-### Restore files with PowerShell
+### Restore files by using PowerShell
 
 Use Azure PowerShell to list and restore soft-deleted files programmatically.
 
-#### Prerequisites
+To restore files by using PowerShell, make sure you have:
 
 - [Azure PowerShell Az.Storage module](/powershell/azure/install-azure-powershell) installed
 - Authentication to OneLake. For instructions, see [Connect to OneLake with PowerShell](onelake-powershell.md#connect-to-onelake-with-azure-powershell).
-
-#### List soft-deleted files
 
 Use the following script to list soft-deleted files in a specific path:
 
@@ -72,8 +69,6 @@ Get-AzStorageBlob -Container $workspaceName -Context $ctx -Prefix $path -Include
     Where-Object { $_.IsDeleted } |
     Select-Object Name, DeletedTime, RemainingDaysBeforePermanentDelete
 ```
-
-#### Restore soft-deleted files
 
 Use the following script to restore a soft-deleted file:
 
@@ -92,9 +87,9 @@ Get-AzStorageBlob -Container $workspaceName -Context $ctx -Blob $blobPath -Inclu
 
 For more PowerShell examples, see [Restore soft-deleted blobs and directories by using PowerShell](/azure/storage/blobs/soft-delete-blob-manage#restore-soft-deleted-blobs-and-directories-by-using-powershell).
 
-### Restore files with REST APIs
+### Restore files by using REST APIs
 
-You can also restore soft-deleted files using Azure Blob Storage REST APIs and SDKs. The Undelete Blob operation restores the contents and metadata of a soft-deleted blob.
+You can also restore soft-deleted files by using Azure Blob Storage REST APIs and SDKs. The Undelete Blob operation restores the contents and metadata of a soft-deleted blob.
 
 For more information, see [Undelete Blob REST API](/rest/api/storageservices/undelete-blob).
 
