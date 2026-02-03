@@ -3,7 +3,7 @@ title: Mount OneLake as a filesystem using BlobFuse2
 description: Learn how to use BlobFuse2 to mount Microsoft Fabric OneLake as a filesystem on Linux virtual machines.
 ms.reviewer: eloldag
 ms.author: amasingh
-author: amanjeetsingh2004
+author: amanjeetsingh
 ms.topic: how-to
 ms.custom: build-2024
 ms.date: 01/20/2026
