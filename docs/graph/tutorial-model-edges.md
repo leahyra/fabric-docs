@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Add edges to your graph"
+title: "Tutorial: Add edge types to your graph"
 description: Learn how to add edges to define relationships between nodes in your graph model.
 ms.topic: tutorial
 ms.date: 02/02/2026
@@ -9,17 +9,17 @@ ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Add edges to your graph
 ---
 
-# Tutorial: Add edges to your graph
+# Tutorial: Add edges types to your graph
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-In this tutorial step, you learn how to add edges to your graph model. Edges define the relationships between nodes, such as "Customer purchases Order" or "Employee sells Order."
+In this tutorial step, you learn how to add edge types to your graph model. Edges define the relationships between nodes, such as "Customer purchases Order" or "Employee sells Order."
 
 ## Adventure Works edge mappings
 
 In the Adventure Works data model, create edges to define the relationships between the nodes. The following table shows the edge mappings to use:
 
-| Label     | Mapping table                       | Source node / Associated mapping column     | Target node / Associated mapping column      |
+| Edge type label     | Mapping table                       | Source node type/ Associated mapping column     | Target node type/ Associated mapping column      |
 | --------- | ----------------------------------- | ------------------------------------------- |----------------------------------------------|
 | sells     | adventureworks_orders               | Employee / EmployeeID_FK                    | Order / SalesOrderDetailID_K                 |
 | purchases | adventureworks_orders               | Customer / CustomerID_FK                    | Order / SalesOrderDetailID_K                 |
@@ -28,7 +28,7 @@ In the Adventure Works data model, create edges to define the relationships betw
 | belongsTo | adventureworks_productsubcategories | ProductSubCategory / SubcategoryID_K        | ProductCategory / CategoryID_FK              |
 | produces  | adventureworks_vendorproduct        | Vendor / VendorID_FK                        | Product / ProductID_FK                       |
 
-## Add edges to the graph
+## Add edge types to the graph
 
 To add edges to your graph, follow these steps:
 
@@ -48,24 +48,25 @@ To add edges to your graph, follow these steps:
     - **Mapping table column to be linked to source node key**: EmployeeID_FK
     - **Target node**: Order
     - **Mapping table column to be linked to target node key**: SalesOrderDetailID_K
-
+> [!IMPORTANT]
+> If you configured node types with compound keys (IDs consisting of multiple columns), you also need to select the corresponding compound key columns here.
 1. Select **Confirm** to add the edge to your graph.
 1. Repeat the process for all other edges in the Adventure Works data model, using the table as a reference.
 
-You should see all the edges represented in your graph.
+You should see all the edge types represented in your graph.
 
 :::image type="content" source="./media/tutorial/edge-add-completed.png" alt-text="Screenshot showing all of the edges added to the graph." lightbox="./media/tutorial/edge-add-completed.png":::
 
 ## Load the graph
 
-After adding all nodes and edges, you need to load the graph:
+After adding all node types and edge types, you need to load the graph:
 
 1. Select **Save** to verify the graph model, load data from OneLake, construct the graph, and make it ready for querying. Be patient, as this process might take some time depending on the size of your data.
 
 > [!IMPORTANT]
 > Currently, you need to reload the graph (by selecting **Save**) whenever you change the model or the underlying data.
 
-At this point, you created all the nodes and edges for your graph. These nodes and edges form the basic structure of your graph model, and your graph is now ready for querying.
+At this point, you defined all the node types and edge types for your graph. These node types and edge types form the schema of your graph model, and your graph will be ready for querying once data has been ingested to form the nodes and edges.
 
 ## Next step
 
