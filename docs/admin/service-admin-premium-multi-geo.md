@@ -74,7 +74,7 @@ When you're performing a migration, don't delete or pause either the source or d
 
 1. Open the [workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
-2. From the side bar, select **License info**.
+2. From the side bar, select **Workspace type**.
 
 3. From the **License capacity** dropdown menu, select the capacity you want to move the workspace to.
 
@@ -100,7 +100,7 @@ Large-storage format semantic models shouldn't be moved from the region where th
 
 * Confirm that any movement you initiate between regions follows all corporate and government compliance requirements prior to initiating data transfer.
 
-* When you're using Multi-Geo, compute and storage (including OneLake and experience-specific storage) is located in the multi-geo region. The following tenant metadata remains in the home region:
+* When you're using Multi-Geo, compute and storage (including OneLake and experience-specific storage) is located in the multi-geo region, yet some tenant metadata remains in the home region, including the following:
 
     * Push datasets
     * Dashboard/report metadata: tile names, tile queries, and any other data
