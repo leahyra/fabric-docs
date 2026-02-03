@@ -1,5 +1,5 @@
 ---
-title: Pricing Example for a Copy with an On-premises Data Gateway
+title: Pricing Example for a Copy Job with an On-premises Data Gateway
 description: A pricing example for copying data from SQL Server to Fabric Lakehouse with the On-premises Data Gateway.
 ms.reviewer: lle
 ms.date: 01/29/2026
