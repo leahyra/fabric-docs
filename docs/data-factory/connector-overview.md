@@ -1,9 +1,7 @@
 ---
 title: Connector overview
 description: Learn about the available data connectors for Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: jianleishen
-author: jianleishen
+ms.reviewer: whhender, jianleishen
 ms.topic: overview
 ms.date: 12/02/2025
 ms.search.form: product-data-factory

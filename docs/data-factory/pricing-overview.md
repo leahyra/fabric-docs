@@ -2,8 +2,6 @@
 title: Data Factory Pricing
 description: This article provides an overview of the pricing model for Data Factory in Microsoft Fabric.
 ms.reviewer: whhender
-ms.author: whhender
-author: whhender
 ms.topic: concept-article
 ms.custom: configuration
 ms.date: 12/18/2024

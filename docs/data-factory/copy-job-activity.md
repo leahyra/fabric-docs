@@ -1,8 +1,6 @@
 ---
 title: Copy Job Activity in Data Factory Pipelines
 description: Set up and configure the Copy Job activity in Data Factory pipelines for flexible data movement and incremental copy. Learn more and get started today.
-author: whhender
-ms.author: whhender
 ms.reviewer: whhender
 ms.date: 12/31/2025
 ms.topic: how-to
