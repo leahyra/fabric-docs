@@ -18,14 +18,20 @@ Ontology (preview) integrates with [Fabric data agent (preview)](../../data-scie
 
 Follow these steps to create a new data agent that connects to your ontology (preview) item.
 
-1. Go to your Fabric workspace and create a new data agent (preview) item named *RetailOntologyAgent*. For detailed instructions, see [Create a Fabric data agent (preview)](../../data-science/how-to-create-data-agent.md#create-a-new-fabric-data-agent).
+1. Go to your Fabric workspace. Use the **+ New item** button to create a new data agent (preview) item named *RetailOntologyAgent*.
+
+    :::image type="content" source="media/tutorial-4-create-data-agent/data-agent-new.png" alt-text="Screenshot of creating a new data agent item.":::
 
     >[!TIP]
     > If you don't see the data agent item type, make sure that it's enabled in your tenant as described in the [tutorial prerequisites](tutorial-0-introduction.md#prerequisites).
 
-1. Add *RetailSalesOntology* as a data source for the data agent. For detailed instructions, see [Create a Fabric data agent (preview)](../../data-science/how-to-create-data-agent.md#select-your-data).
+1. The agent opens when it's ready. Select **Add a data source**. 
 
-When the agent is ready, it opens.
+    :::image type="content" source="media/tutorial-4-create-data-agent/add-source.png" alt-text="Screenshot of adding a source to the data agent.":::
+
+    Search for the *RetailSalesOntology* item and select **Add**. Now your ontology is added as a source for the data agent.
+
+When the agent is ready, the ontology and its entity types are visible in the Explorer. 
 
 :::image type="content" source="media/tutorial-4-create-data-agent/data-agent.png" alt-text="Screenshot of the Retail Ontology Agent." lightbox="media/tutorial-4-create-data-agent/data-agent.png":::
 

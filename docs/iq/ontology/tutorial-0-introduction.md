@@ -65,20 +65,34 @@ It contains the following sample CSV files. The data contains static entity deta
 
 ## Prepare the lakehouse 
 
-First, create a new lakehouse called *OntologyDataLH* in your Fabric workspace.
+Follow these steps to prepare the sample tutorial data in a lakehouse.
 
-Then, upload four sample CSV files to your lakehouse and load each one to a new delta table. These files contain entity details about business objects in the Lakeshore Retail scenario.
-* *DimStore.csv*
-* *DimProducts.csv*
-* *FactSales.csv*
-* *Freezer.csv*
+1. Start in your Fabric workspace. Use the **+ New item** button to create a new lakehouse called *OntologyDataLH*.
 
->[!NOTE]
-> Don't upload *FreezerTelemetry.csv* to the lakehouse. You upload this file to Eventhouse in a later step.
+    :::image type="content" source="media/tutorial-0-introduction/lakehouse-new.png" alt-text="Screenshot of creating a new lakehouse item.":::
 
-For detailed instructions on loading files to lakehouse tables, see the first three sections of [CSV file upload to Delta table for Power BI reporting](../../data-engineering/get-started-csv-upload.md).
+1. The new lakehouse opens when it's ready. From the lakehouse ribbon, select **Get data > Upload files**.
 
-The default table names reflect the file names in all lowercase. The lakehouse looks like this when you're done:
+    :::image type="content" source="media/tutorial-0-introduction/lakehouse-upload.png" alt-text="Screenshot of uploading files to the lakehouse.":::
+
+1. Upload four of the sample CSV files that you downloaded earlier to your lakehouse. These files contain entity details about business objects in the Lakeshore Retail scenario.
+    * *DimProducts.csv*
+    * *DimStore.csv*
+    * *FactSales.csv*
+    * *Freezer.csv*
+
+    >[!NOTE]
+    > Don't upload *FreezerTelemetry.csv* to the lakehouse. You upload this file to Eventhouse in a later step.
+
+1. Expand the **Files** folder in the Explorer to view your uploaded files. Next, load each file to a delta table.
+
+    For each file, select the **...** next to the file name, then **Load to Tables > New table**.
+
+    :::image type="content" source="media/tutorial-0-introduction/lakehouse-new-table.png" alt-text="Screenshot of the load to tables dialogue in lakehouse.":::
+
+    Keep the default settings when loading the tables.
+
+The lakehouse looks like the following image when you're done. The default table names reflect the file names in all lowercase. 
 
 :::image type="content" source="media/tutorial-0-introduction/lakehouse-tables.png" alt-text="Screenshot of the tables in the lakehouse.":::
 
@@ -131,11 +145,24 @@ Now the semantic model is ready to import into an ontology.
 
 Follow these steps to upload the device streaming data file to a KQL database in Eventhouse.
 
-1. Create a new eventhouse called *TelemetryDataEH* in your Fabric workspace. A default KQL database is created with the same name. For detailed instructions, see [Create an eventhouse](../../real-time-intelligence/create-eventhouse.md).
-1. The eventhouse opens when it's ready. Open the KQL database by selecting its name.
-1. Create a new table called *FreezerTelemetry* that uses the *FreezerTelemetry.csv* sample file as a source. For detailed instructions, see [Get data from file](../../real-time-intelligence/get-data-local-file.md).
+1. In your Fabric workspace, use the **+ New item** button to create a new eventhouse called *TelemetryDataEH*. A default KQL database is created with the same name.
+1. The eventhouse opens when it's ready. Open the KQL database by selecting its name in the explorer.
 
-The KQL database shows the *FreezerTelemetry* table when you're done:
+    :::image type="content" source="media/tutorial-0-introduction/eventhouse-database.png" alt-text="Screenshot of the KQL database in the eventhouse.":::
+
+1. Next, create a new table called *FreezerTelemetry* that uses the *FreezerTelemetry.csv* sample file as a source.
+
+    In the menu ribbon, select **Get data > Local file**.
+
+    :::image type="content" source="media/tutorial-0-introduction/eventhouse-get-data.png" alt-text="Screenshot of the data source options for the database.":::
+
+    Create a **New table** called *FreezerTelemetry* and browse for the *FreezerTelemetry.csv* file that you downloaded earlier.
+
+    :::image type="content" source="media/tutorial-0-introduction/eventhouse-get-data-2.png" alt-text="Screenshot of uploading the csv file and creating the table.":::
+
+    Continue through the table creation dialogue, keeping the default settings.
+
+When you're done, the KQL database shows the *FreezerTelemetry* table with data:
 
 :::image type="content" source="media/tutorial-0-introduction/eventhouse-table.png" alt-text="Screenshot of the table in the database.":::
 
