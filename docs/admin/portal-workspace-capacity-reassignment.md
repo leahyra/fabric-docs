@@ -23,26 +23,24 @@ In the Fabric UI, workspaces can be moved to other capacities in the following w
 
 ### Permission Requirements by capacity type to reassign workspaces
 
-- **Power BI Premium (P) capacity Admin** can effectively "claim" any workspace in the organization and pull it into their capacity by searching for the workspace name or assigning by user/group.
+- **Power BI Premium (P) capacity** admin can effectively "claim" any workspace in the organization and pull it into their capacity by searching for the workspace name or assigning by user/group.
 
 - **Fabric (F) Capacity** admin __must__ also be a __Workspace Admin__ of that specific workspace.
 
 - **A capacity** admin __must__ also be a __Workspace Admin__ of that specific workspace.
 
-- **Embedded (EM) capacity** admin **must** also be a **Workspace Admin** of that specific workspace and the workspace must include only Power BI items.
-
-
+- **Embedded (EM) capacity** admin, similar to P capacity, can "claim" any workspace. 
 
 - **Global Admin or Fabric Admin** can move any workspace to any capacity type.
 
 Capacity Administrator can perform following operations by Capacity type:
 
-|**SKU Type**|**Can Move Any Workspace?**|**Workspace Admin Role Required?**|**Management Tool**|
+|**Capacity Type**|**Can Move Any Workspace?**|**Workspace Admin Role Required?**|**Management Tool**|
 |----|---|---|---|
-|__P (Premium)__|__Yes__ (via bulk assignment)|No|Fabric Admin Portal|
-|__F (Fabric)__|__No__ (Security Handshake)|__Yes__|Fabric Portal / Azure Portal|
-|__A (Azure)__|__No__|__Yes__|Azure Portal / API|
-|__EM (Office)__|__Partial__ (Power BI items only)|__Yes__|Fabric Admin Portal|
+|__P (Premium)__|__Yes__|No|Fabric Admin Portal|
+|__F (Fabric)__|__No__ |__Yes__|Fabric Portal, User API, or Admin API|
+|__A (Azure)__|__No__|__Yes__|Fabric Portal, User API, or Admin API|
+|__EM (Office)__|__Yes__|__No__|Fabric Admin Portal|
 
 ## Restrictions on moving workspaces around
 
@@ -174,3 +172,4 @@ The following sections describe common error types you might encounter during ca
 ## Related articles
 
 - [Manage workspaces](portal-workspaces.md)
+
