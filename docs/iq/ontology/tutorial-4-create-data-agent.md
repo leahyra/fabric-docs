@@ -4,7 +4,7 @@ description: Create a data agent that queries the ontology (preview) in natural 
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 12/11/2025
+ms.date: 02/04/2026
 ms.topic: tutorial
 ---
 
@@ -18,9 +18,9 @@ Ontology (preview) integrates with [Fabric data agent (preview)](../../data-scie
 
 Follow these steps to create a new data agent that connects to your ontology (preview) item.
 
-1. Go to your Fabric workspace. Use the **+ New item** button to create a new data agent (preview) item named *RetailOntologyAgent*.
+1. Go to your Fabric workspace. Use the **+ New item** button to create a new **Data agent (preview)** item named *RetailOntologyAgent*.
 
-    :::image type="content" source="media/tutorial-4-create-data-agent/data-agent-new.png" alt-text="Screenshot of creating a new data agent item.":::
+    :::image type="content" source="media/tutorial-4-create-data-agent/data-agent-new.png" alt-text="Screenshot of creating a new data agent item." lightbox="media/tutorial-4-create-data-agent/data-agent-new.png":::
 
     >[!TIP]
     > If you don't see the data agent item type, make sure that it's enabled in your tenant as described in the [tutorial prerequisites](tutorial-0-introduction.md#prerequisites).
