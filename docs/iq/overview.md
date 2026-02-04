@@ -11,7 +11,7 @@ ms.service: fabric
 
 # What is Fabric IQ (preview)?
 
-IQ (preview) is a workload for unifying data sitting across OneLake and organizing it according to the language of your business. The data is then exposed to analytics, AI agents, and applications with consistent semantic meaning and context.
+IQ (preview) is a workload for unifying data sitting across OneLake and organizing it according to the language of your business. The data is then exposed to analytics, AI agents, and applications with consistent semantic meaning and context. This page provides an overview of the IQ workload, the items it contains, and how those items work together to deliver unified data and semantics in Microsoft Fabric.
 
 [!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -49,7 +49,7 @@ Here's how IQ (preview) implements key Fabric capabilities:
 
 ## Items in IQ (preview)
 
-IQ (preview) is a Fabric workload that contains the following items. Some of these items are shared with other Fabric workloads.
+IQ (preview) is a Fabric workload that contains the following items. Some of these items are shared with other Fabric workloads, and items can work together to accomplish the shared IQ vision of unified data and semantics.
 
 * *[Ontology (preview)](ontology/overview.md)* is an item for the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, and rules and constraints, and binds them to real data so that downstream tools share the same language. Ontologies are the core item for defining a common language in the IQ workload.
 * *[Graph in Microsoft Fabric (preview)](../graph/overview.md)* offers native graph storage and compute for nodes, edges, and traversals over connected data. It's good for path finding, dependency analysis, and graph algorithms. Graph is integrated with the ontology item and brings a visual representation of your business concepts and relationships to the IQ workload.
