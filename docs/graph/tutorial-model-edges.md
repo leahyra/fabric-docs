@@ -49,8 +49,8 @@ To add edges to your graph, follow these steps:
     - **Target node**: Order
     - **Mapping table column to be linked to target node key**: SalesOrderDetailID_K
 
-> [!IMPORTANT]
-> If you configured node types with compound keys (IDs consisting of multiple columns), you also need to select the corresponding compound key columns here.
+   > [!IMPORTANT]
+   > If you configured node types with compound keys (IDs consisting of multiple columns), you also need to select the corresponding compound key columns here.
 
 1. Select **Confirm** to add the edge to your graph.
 1. Repeat the process for all other edges in the Adventure Works data model, using the table as a reference.

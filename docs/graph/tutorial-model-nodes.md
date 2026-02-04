@@ -44,8 +44,8 @@ To add node types to your graph, follow these steps:
     - **Mapping table**: *adventureworks_customers*
     - **ID** of the mapping column: CustomerID_K
 
-> [!TIP]
-> You can set compound keys (IDs consisting of multiple columns).
+   > [!TIP]
+   > You can set compound keys (IDs consisting of multiple columns).
 
 1. Select **Confirm** to add the node type to your graph.
 1. Repeat the process for all other node types in the Adventure Works data model:
@@ -60,8 +60,8 @@ To add node types to your graph, follow these steps:
     | VendorProduct      | adventureworks_vendorproducts       | ProductID_K          |
     | Vendor             | adventureworks_vendors              | VendorID_K           |
 
-> [!TIP]
-> When you double-click on a node type, you see its properties. Each property maps to a column in the source table. Delete properties that you don't need in queries or analysis, because excessive properties make your graph harder to maintain and use.
+   > [!TIP]
+   > When you double-click on a node type, you see its properties. Each property maps to a column in the source table. Delete properties that you don't need in queries or analysis, because excessive properties make your graph harder to maintain and use.
 
 1. You should see all the node types represented in your graph.
 
