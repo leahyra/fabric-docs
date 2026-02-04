@@ -33,7 +33,9 @@ In the Fabric UI, workspaces can be moved to other capacities in the following w
 
 
 
-- **Global Admin** can move any workspace to any capacity type.
+- **Global Admin or Fabric Admin** can move any workspace to any capacity type.
+
+Capacity Administrator can perform following operations by Capacity type:
 
 |**SKU Type**|**Can Move Any Workspace?**|**Workspace Admin Role Required?**|**Management Tool**|
 |----|---|---|---|
