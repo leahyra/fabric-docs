@@ -3,7 +3,7 @@ title: "Mirrored Azure Databricks behind a private endpoint"
 description: Learn how to connect a mirrored Azure Databricks catalog item in Microsoft Fabric to a workspace behind a private endpoint.
 author: kgremban
 ms.author: kgremban
-ms.reviewer: whhender, preshah
+ms.reviewer: preshah
 ms.date: 01/28/2026
 ms.topic: how-to
 ---
