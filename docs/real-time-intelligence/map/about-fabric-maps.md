@@ -1,0 +1,63 @@
+---
+title: Overview for Microsoft Fabric Maps
+description: Learn about services and capabilities in Microsoft Fabric Maps and how to use them in your solutions.
+ms.reviewer: smunk
+author: sipa
+ms.author: sipa
+ms.topic: overview
+ms.custom:
+ms.date: 2/23/2026
+ms.search.form: 
+---
+
+# What is Fabric Maps? (preview)
+
+Microsoft Fabric Maps provide an interactive geospatial visualization capability within the [Real-Time Intelligence](/fabric/real-time-intelligence/overview) experience. Maps let you analyze location‑aware data alongside time‑based information, helping surface spatial patterns, relationships, and trends that are difficult to identify in charts or tables alone.
+
+> [!IMPORTANT]
+> This feature is in [preview](../../fundamentals/preview.md).
+
+Maps are built to work natively with Real-Time Intelligence data stores. You can visualize real‑time event data queried from [Eventhouses](/fabric/real-time-intelligence/overview) using [Kusto Query Language (KQL)](/kusto/query/?view=microsoft-fabric), as well as historical or static spatial data stored in a Lakehouse. This combination makes it possible to view live operational activity in geographic context while maintaining access to historical reference data.
+
+## How maps fit into Real-Time Intelligence
+
+In a Real-Time Intelligence solution, data is ingested from streaming sources, processed and stored in Eventhouses, and a visual endpoint in this workflow by rendering query results as spatial layers that refresh as new data arrives. Each map is a first‑class Fabric item that belongs to a workspace and is managed alongside other Real-Time Intelligence artifacts such as Eventhouses and [Lakehouses](/fabric/data-engineering/lakehouse-overview).
+
+Fabric Maps display data through layers, where each layer represents a specific dataset or query result. Layers can visualize points, lines, or polygons, allowing you to emphasize different spatial aspects of the data—such as density, movement, or geographic boundaries—within a single map view. For more information on data layers, see [Add data to a map](create-map.md#add-data-to-a-map---geojson).
+
+## Working with real-time and historical spatial data
+
+Fabric Maps support both real-time and static spatial data. Eventhouse-based layers can refresh at defined intervals to reflect the latest streaming data, enabling continuous monitoring of live events. At the same time, Lakehouse-based layers can provide historical or reference data, such as boundaries or known locations, to add context to what is happening right now.
+
+This combination is especially useful in scenarios where incoming events need to be evaluated against known geography, routes, or regions.
+
+## Using Azure Maps services with Fabric Maps
+
+Fabric Maps are commonly used together with Azure Maps REST APIs to enrich spatial workflows. In routing and logistics scenarios, an Azure Maps service such as the Route Directions API can be used to calculate routes or determine optimized paths based on incoming location data. The resulting route geometry is stored in Fabric—typically in a Lakehouse or generated through a notebook—and then added to a map as a layer for visualization and analysis. For an example, see [Tutorial: Build real-time work order routing with Fabric Maps](tutorial-real-time-work-order-routing-application.md).
+
+This approach separates geospatial computation from visualization. Azure Maps services perform spatial processing, while Fabric Maps focus on presenting continuously updated geographic insights within a Real-Time Intelligence solution.
+
+## Common scenarios
+
+Maps in Real-Time Intelligence are suited for a range of location‑based scenarios, including:
+
+- Monitoring live operational events on a map as they occur  
+- Visualizing the movement or flow of entities in real time  
+- Analyzing geographic distribution patterns in streaming data  
+- Combining historical and real-time spatial data in a single view  
+
+By integrating real-time analytics with geographic context, Maps help transform streaming data into actionable, location‑aware insights.
+
+## Next steps
+
+> [!div class="nextstepaction"]
+> [Create a map](create-map.md)
+
+> [!div class="nextstepaction"]
+> [Tutorial: Build real-time routing workflow with Fabric Maps](customize-map.md#change-map-settings)
+
+> [!div class="nextstepaction"]
+> [What is Azure Maps?](/azure/azure-maps/about-azure-maps)
+
+> [!div class="nextstepaction"]
+> [Get started with Real-Time Intelligence in Microsoft Fabric](https://github.com/microsoft/fabric-samples)  
