@@ -204,7 +204,7 @@ The find and replace option can help you match and locate the keywords or expres
 
 ### Full‑size mode on a cell
 
-Full‑size mode lets you fully focus on writing and editing code within a single cell—perfect for long or complex logic. You can toggle this mode by clicking the expand cell button in the cell toolbar to expand the cell, and exit by clicking return to default size.
+Full‑size mode lets you fully focus on writing and editing code within a single cell - perfect for long or complex logic. You can toggle this mode by clicking the expand cell button in the cell toolbar to expand the cell, and exit by clicking return to default size.
 
 :::image type="content" border="true" source="media/author-execute-notebook/full-size-mode-on-a-cell.gif" alt-text="Animated GIF of full‑size mode on a cell." lightbox="media/author-execute-notebook/full-size-mode-on-a-cell.gif":::
 
