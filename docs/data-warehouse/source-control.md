@@ -4,7 +4,7 @@ description: "Learn how to use source control with Microsoft Fabric Warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, pvenkat
-ms.date: 04/02/2026
+ms.date: 02/04/2026
 ms.topic: how-to
 ---
 
