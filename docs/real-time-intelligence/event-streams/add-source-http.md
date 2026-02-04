@@ -20,6 +20,7 @@ The HTTP connector provides a no-code, configurable way to stream data from any 
 
 - A workspace with **Fabric capacity** or **Trial** license mode.
 - Access to the workspace with **Contributor** or higher workspace roles.
+- A HTTP endpoint that is publicly accessible. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - If you don't have an eventstream, follow the guide to [create an eventstream](create-manage-an-eventstream.md).
 
 ## Add HTTP as a source

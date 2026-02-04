@@ -38,11 +38,12 @@ Sources and destinations that use internal calls include:
 - Sample data, e.g., Bicycle, Taxi
 - Real-time weather data
 
-**Fabric-native destinations:**
+**Fabric-native destinations (i.e., Fabric item as destination):**, e.g.,
 
 - Lakehouse
 - Eventhouse
 - Activator
+- Spark Notebook
 
 Internal calls are secure by default and protected by Microsoft Entra ID authentication, workspace permission model, and encryption at rest and in transit. The network security features described in this article apply only to external network traffic — inbound and outbound connections between Eventstream and resources outside the Fabric platform.
 
@@ -182,7 +183,7 @@ Use the following flowchart and decision matrix to determine the right network s
 
 | Category        |  Examples          | Direction | Network Security Feature | Stage & Release |
 | ----------------|--------------------|---------- | --------- | ------------------------ |
-| Fabric items    | Lakehouse, Eventhouse, Activator, Notebook, etc. | Internal  | Secure by default        | -               |
+| Fabric items    | Lakehouse, Eventhouse, Activator, Spark Notebook, etc. | Internal  | Secure by default        | -               |
 | Custom Endpoint | -                 | Inbound   | Private Links            | Coming soon   |
 
 ## Common scenarios

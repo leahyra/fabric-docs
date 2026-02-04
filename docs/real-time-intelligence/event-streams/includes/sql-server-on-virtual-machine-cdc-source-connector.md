@@ -12,7 +12,7 @@ ms.date: 10/23/2024
 
     :::image type="content" source="media/sql-server-on-virtual-machine-cdc-source-connector/new-connection.png" alt-text="Screenshot that shows the selection of New connection link on the Connect page." lightbox="media/sql-server-on-virtual-machine-cdc-source-connector/new-connection.png":::    
 1. In the **Connection settings** section, enter the following values for your SQL Server on VM:
-    - **Server:** Enter the publicly accessible IP address or domain name of your VM, and then add a colon and the port. For example, if your IP address is `xx.xxx.xxx.xxx` and the port is 1433, then you should enter `xx.xxx.xxx.xxx:1433` in the **Server** field. If the port isn't specified, the default port value `1433` is used.
+    - **Server:** Enter the IP address or domain name of your VM, and then add a colon and the port. For example, if your IP address is `xx.xxx.xxx.xxx` and the port is 1433, then you should enter `xx.xxx.xxx.xxx:1433` in the **Server** field. If the port isn't specified, the default port value `1433` is used.
     - **Database:** Enter the name of the database that you want to connect to on your SQL Server on VM.
    
         :::image type="content" source="media/sql-server-on-virtual-machine-cdc-source-connector/connection-settings.png" alt-text="Screenshot that shows the Connection settings section of the Connect page.":::        
