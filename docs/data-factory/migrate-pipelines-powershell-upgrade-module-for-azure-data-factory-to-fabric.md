@@ -8,14 +8,14 @@ ms.date: 02/02/2026
 ai-usage: ai-assisted
 ---
 
-# Upgrade Azure Data Factory pipelines to Microsoft Fabric using PowerShell
+# Upgrade Azure Data Factory and Synapse pipelines to Microsoft Fabric using PowerShell
 
 > [!TIP]
 > New to migration options? Start with the **Microsoft Fabric migration overview** for the full landscape and ADF‑to‑Fabric migration guidance. [Fabric migration guidance](../fundamentals/migration.md)
 
-You can migrate your Azure Data Factory (ADF) pipelines to Microsoft Fabric using the **Microsoft.FabricPipelineUpgrade** PowerShell module. This guide outlines all the steps to perform the migration. For a detailed tutorial with screenshots, examples, and troubleshooting see [the PowerShell migration tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
+You can migrate your Azure Data Factory (ADF) and Synapse pipelines to Microsoft Fabric using the **Microsoft.FabricPipelineUpgrade** PowerShell module. This guide outlines all the steps to perform the migration. For a detailed tutorial with screenshots, examples, and troubleshooting see [the PowerShell migration tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
-To migrate your ADF pipelines to Fabric using PowerShell, you:
+To migrate your pipelines to Fabric using PowerShell, you:
 
 1. [Prepare your environment for Fabric pipeline upgrades.](#prepare-your-environment-for-fabric-pipeline-upgrades)
 1. [Connect PowerShell to your Azure and Fabric environments.](#connect-powershell-to-your-azure-and-fabric-environments)
