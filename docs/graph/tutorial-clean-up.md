@@ -29,7 +29,7 @@ To delete the graph model you created:
 
 If you created a new workspace specifically for this tutorial and you no longer need it, you can delete the entire workspace:
 
-1. Navigate to **Workspaces** from the left navigation pane.
+1. Go to **Workspaces** from the left navigation pane.
 1. Select the workspace you want to delete.
 1. Select **Workspace settings** (gear icon).
 1. Select **Remove this workspace** under **Delete workspace**.

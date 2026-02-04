@@ -34,12 +34,11 @@ Before you start this tutorial, verify that:
 In this tutorial, you take on the role of a data analyst at the fictional Adventure Works company. You build a graph model to represent the relationships between customers, orders, employees, products, and vendors. Then, you query the graph to uncover insights about customer purchasing behavior and product performance. Follow these steps:
 
 1. [Load sample data](tutorial-load-data.md) into a lakehouse.
-1. [Create a graph model](tutorial-create-graph-model.md).
-1. [Create a graph](tutorial-create-graph.md) by loading data from OneLake.
+1. [Create a graph](tutorial-create-graph.md) by creating a graph model and loading data from OneLake.
 1. [Add nodes to your graph](tutorial-model-nodes.md) for each entity in the data model.
 1. [Add edges to your graph](tutorial-model-edges.md) to define relationships between nodes.
 1. [Query the graph with the query builder](tutorial-query-builder.md) using an interactive visual interface.
-1. [Query the graph with GQL](tutorial-query-gql.md) using the code editor.
+1. [Query the graph with GQL](tutorial-query-code-editor.md) using the code editor.
 1. [Clean up tutorial resources](tutorial-clean-up.md) by deleting the workspace and other items.
 
 ## Graph end-to-end architecture

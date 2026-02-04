@@ -13,9 +13,9 @@ ms.search.form: Tutorial - Query the graph with the query builder
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-In this tutorial step, you learn how to query your graph by using the visual query builder. The query builder provides an interactive way to explore your graph by selecting nodes and relationships.
+In this tutorial step, you query your graph by using the visual query builder. The query builder provides an interactive way to explore your graph by selecting nodes and relationships.
 
-You can also query your graph by using GQL, the graph query language. The [next tutorial step](tutorial-query-gql.md) shows you how.
+You can also query your graph by using GQL, the graph query language. The [next tutorial step](tutorial-query-code-editor.md) shows you how.
 
 ## Switch to query builder mode
 
@@ -28,7 +28,7 @@ Follow these steps to switch to query builder and start querying your graph inte
 
 ## Build a query
 
-Let's build a query to answer the question: "What products did a specific customer purchase?" This query traverses the graph from Customer through Order to Product. For example, to query customer Carla Adams' purchases, follow these steps:
+Build a query to answer the question: "What products did a specific customer purchase?" This query traverses the graph from Customer through Order to Product. For example, to query customer Carla Adams' purchases, follow these steps:
 
 1. Select **Add a node** to see the available nodes for querying.
 
@@ -107,4 +107,4 @@ Querysets let you:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Query the graph with GQL](tutorial-query-gql.md)
+> [Query the graph with GQL](tutorial-query-code-editor.md)

@@ -64,7 +64,7 @@ For each subfolder in the uploaded *adventureworks_docs_sample* folder, follow t
 
 1. Expand the **Files** folder. Hover over a subfolder (for example, *adventureworks_customers*), select the triple ellipsis (...), and choose **Load to Tables** > **New table**.
 
-1. In the **Load folder to new table** dialog, enter a table name (the default uses the folder name), and set the file type to be Parquet. Then select **Load**.
+1. In the **Load folder to new table** dialog, enter a table name (the default uses the folder name), and set the file type to Parquet. Then select **Load**.
 
 After you load all the tables, expand the **Tables** folder. You should see the following tables in your lakehouse if you used the default names:
 
@@ -77,9 +77,9 @@ After you load all the tables, expand the **Tables** folder. You should see the 
 - *adventureworks_vendorproduct*
 - *adventureworks_vendors*
 
-The lakehouse in your workspace is now ready with the Adventure Works sample data. In the next step, you'll create a graph model that uses this data.
+The lakehouse in your workspace is now ready with the Adventure Works sample data. In the next step, you create a graph model that uses this data.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Create a graph model](tutorial-create-graph-model.md)
+> [Create a graph](tutorial-create-graph.md)

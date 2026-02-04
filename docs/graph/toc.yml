@@ -25,19 +25,17 @@ items:
         href: tutorial-introduction.md
       - name: 1 - Load sample data
         href: tutorial-load-data.md
-      - name: 2 - Create a graph model
-        href: tutorial-create-graph-model.md
-      - name: 3 - Create a graph
+      - name: 2 - Create a graph
         href: tutorial-create-graph.md
-      - name: 4 - Add nodes to your graph
+      - name: 3 - Add nodes to your graph
         href: tutorial-model-nodes.md
-      - name: 5 - Add edges to your graph
+      - name: 4 - Add edges to your graph
         href: tutorial-model-edges.md
-      - name: 6 - Query the graph with the query builder
+      - name: 5 - Query the graph with the query builder
         href: tutorial-query-builder.md
-      - name: 7 - Query the graph with GQL
-        href: tutorial-query-gql.md
-      - name: 8 - Clean up tutorial resources
+      - name: 6 - Query the graph with GQL
+        href: tutorial-query-code-editor.md
+      - name: 7 - Clean up tutorial resources
         href: tutorial-clean-up.md
   - name: Troubleshoot
     items:

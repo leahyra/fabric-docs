@@ -13,7 +13,7 @@ ms.search.form: Tutorial - Query the graph with GQL
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-In this tutorial step, you learn how to query your graph by using GQL (Graph Query Language) in the code editor. GQL provides powerful querying capabilities for complex graph patterns and analysis.
+In this tutorial step, you query your graph by using GQL (Graph Query Language) in the code editor. GQL provides powerful querying capabilities for complex graph patterns and analysis.
 
 ## Switch to code editor mode
 
@@ -86,38 +86,6 @@ This query:
 In summary, it shows the top five vendors supplying products in the 'Touring Bikes' category, along with how many products they supply and how many orders those products have.
 
 :::image type="content" source="./media/tutorial/code-editor-query-results-3.png" alt-text="Screenshot showing the result of running a GQL query to find the top five vendors supplying products in the 'Touring Bikes' category." lightbox="./media/tutorial/code-editor-query-results-3.png":::
-
-## GQL query patterns
-
-Here are some common GQL query patterns you can use:
-
-### Find all nodes of a type
-
-```gql
-MATCH (c:Customer) RETURN c
-```
-
-### Find nodes with specific properties
-
-```gql
-MATCH (p:Product) FILTER p.productName = 'Mountain Bike' RETURN p
-```
-
-### Traverse relationships
-
-```gql
-MATCH (c:Customer)-[:purchases]->(o:Order)-[:contains]->(p:Product)
-RETURN c, o, p
-```
-
-### Aggregate data
-
-```gql
-MATCH (e:Employee)-[:sells]->(o:Order)
-RETURN e.employeeName, count(o) AS total_orders
-GROUP BY e.employeeName
-ORDER BY total_orders DESC
-```
 
 ## Related content
 
