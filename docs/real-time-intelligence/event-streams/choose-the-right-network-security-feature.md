@@ -169,24 +169,21 @@ Use the following flowchart and decision matrix to determine the right network s
 
 | Category        | Examples                                                     | Direction | Network Security Feature | Stage & Release  |
 | --------------- | ------------------------------------------------------------ | --------- | ------------------------ | ---------------- |
-| Sample data         | Bicycle, Stock market, Taxi                                  | Internal  | Secure by default        | -                |
+| Sample data         | Bicycle, Stock market, Taxi, Buses, S&P 500 companies stocks, Semantic Model Logs          | Internal  | Secure by default        | -                |
 | Public feeds    | Weather                                                      | Internal  | Secure by default        | -                |
-| Fabric events   | Fabric Workspace item, Fabric OneLake events, Fabric Job events | Internal  | Secure by default        | -                |
-| Azure streams   | Azure Event Hubs (Basic feature level), Azure IoT Hub                               | Outbound  | Managed Private Endpoint | GA (2025 July)   |
-| External        | Confluent Cloud, Amazon Kinesis, Google Pub/Sub, MQTT        | Outbound  | Connector vNet injection           | PuPr (2026 Feb) |
-| Database CDC    | PostgreSQL, MySQL, SQL Server                                | Outbound  | Connector vNet injection           | PuPr (2025 Feb) |
+| Fabric events   | Fabric Workspace item, Fabric OneLake events, Fabric Job events, etc. | Internal  | Secure by default        | -                |
+| Azure streaming sources   | Azure Event Hubs (Basic feature level), Azure IoT Hub                               | Outbound  | Managed Private Endpoint | GA  |
+| External        | Confluent Cloud for Apache Kafka, Amazon Kinesis, Google Pub/Sub, MQTT, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)        | Outbound  | Connector vNet injection           | PuPr  |
+| Database CDC    | PostgreSQL, MySQL, SQL Server, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)                                | Outbound  | Connector vNet injection           | PuPr |
 | Azure events    | Azure Blob Storage events, Azure Event Grid namespace        | Inbound   | Private Links            | Coming soon    |
 | Custom Endpoint | -                                                            | Inbound   | Private Links            | Coming soon    |
 
 #### Destinations
 
-| Category                           | Direction | Network Security Feature | Stage & Release |
-| ---------------------------------- | --------- | ------------------------ | --------------- |
-| Lakehouse                          | Internal  | Secure by default        | -               |
-| Eventhouse (direct ingestion mode) | Internal  | Secure by default        | -               |
-| Eventhouse (preprocessing mode)    | Internal  | Secure by default        | -               |
-| Activator                          | Internal  | Secure by default        | -               |
-| Custom Endpoint                    | Inbound   | Private Links            | Coming soon   |
+| Category        |  Examples          | Direction | Network Security Feature | Stage & Release |
+| ----------------|--------------------|---------- | --------- | ------------------------ |
+| Fabric items    | Lakehouse, Eventhouse, Activator, Notebook, etc. | Internal  | Secure by default        | -               |
+| Custom Endpoint | -                 | Inbound   | Private Links            | Coming soon   |
 
 ## Common scenarios
 
