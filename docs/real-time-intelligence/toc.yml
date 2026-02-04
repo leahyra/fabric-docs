@@ -1016,4 +1016,4 @@ items:
       - name: Call detail or event data records analytics
         href: architectures/call-event-data-records-analytics.md
       - name: Customer churn analytics
-        href: architectures/customer-churn.md    
+        href: architectures/customer-churn.md        
