@@ -12,7 +12,7 @@ ms.date: 11/18/2024
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Access to an **Azure Cosmos DB for NoSQL** account and database.
-- Your Azure Cosmos DB for NoSQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
+- Your Azure Cosmos DB for NoSQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](../streaming-connector-private-network-support-guide.md).
 - If you don't have an eventstream, [create an eventstream](../create-manage-an-eventstream.md). 
 
 
