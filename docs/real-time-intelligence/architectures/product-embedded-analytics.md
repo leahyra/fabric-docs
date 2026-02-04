@@ -25,21 +25,22 @@ The following diagram shows the key components and data flows in this architectu
 - **Train**: This phase builds advanced ML models with real-time training and scoring capabilities.
 - **Visualize & Activate**: This phase provides customized dashboards, real-time notifications, and dedicated customer applications.
 
-## Architecture components
+:::image type="content" source="./media/product-embedded-analytics/product-embedded-analytics-reference-architecture.png" alt-text="Diagram showing the reference architecture for product embedded analytics." lightbox="./media/product-embedded-analytics/product-embedded-analytics-reference-architecture.png":::
 
-The following Microsoft Fabric Real-Time Intelligence components work together to deliver comprehensive product embedded analytics management:
+The numbered steps in the diagram correspond to the following data flow:
 
-- **[Eventstreams](../event-streams/overview.md)**: Eventstreams provide real-time IoT data ingestion for customer factory floor devices.
-- **[Eventhouse](../eventhouse.md)**: Eventhouse provides real-time analytics and customer device data storage.
-- **[OneLake](../../onelake/onelake-overview.md)**: OneLake serves as the centralized data lake for asset metadata and hierarchy storage.
-- **[Real-Time Dashboard](../dashboard-real-time-create.md)**: Real-Time Dashboard enables customized high granularity customer experiences.
-- **[Power BI](../create-powerbi-report.md)**: Power BI provides rich BI reports with direct query on real-time data.
-- **[Activator](../data-activator/activator-introduction.md)**: Activator delivers real-time notifications and insights per device per customer.
-- **[Data Science](../../data-science/data-science-overview.md)**: Data Science enables advanced ML model development and real-time scoring.
-- **[Data Factory](../../data-factory/data-factory-overview.md)**: Data Factory handles daily asset metadata collection from manufacturer libraries.
-- **[Copilot](../../fundamentals/copilot-fabric-overview.md)**: Copilot provides natural language analytics for customer insights.
+1. Devices from customer factory floors natively generate and stream millions of IoT events daily to Eventstream, providing low latency at high scale.
+1. Full asset metadata and hierarchy are collected daily from manufacturer libraries using Data Factory and stored in OneLake.
+1. Streamed events are aggregated and enriched in real time with relevant asset metadata, providing multiple curated views ready for use.
+1. Hourly and daily aggregations are created on the fly per customer, factory, and device for easy consumption and long-term retention.
+1. Advanced ML models are trained and scored in real time using Data Science capabilities.
+1. Real-Time Dashboards provide unique, customized high-granularity experiences for each customer.
+1. Activator generates real-time notifications and insights per device per customer.
+1. Power BI reports provide rich analytics directly on the real-time data.
+1. Custom applications give end customers a dedicated view of their devices in real time.
 
-## Product embedded analytics data flow and processing
+
+## Operational phases
 
 This section describes each operational phase in detail, explaining the data flows, processing steps, and capabilities enabled at each stage of the product embedded analytics pipeline.
 
@@ -186,7 +187,7 @@ Plan for integration with the following systems and data sources:
 - **Customer IoT systems**: Configure native integration with customer factory floor devices, IoT gateways, and existing monitoring systems for seamless data collection.
 - **Manufacturer libraries**: Set up daily integration with asset metadata repositories, product documentation, and manufacturer knowledge bases.
 - **Customer applications**: Provide APIs and software development kits (SDKs) for embedding analytics into customer workflows, dashboards, and existing business applications.
-- **External data sources**: Integrate with third-party systems including customer ERP, maintenance management, and operational technology platforms.
+- **External data sources**: Integrate with third-party systems including customer Enterprise Resource Planning (ERP), maintenance management, and operational technology platforms.
 
 ### Monitoring and observability
 
