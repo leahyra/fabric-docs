@@ -2,8 +2,6 @@
 title: Notebook activity
 description: Learn how to add a notebook activity to a pipeline and use it to invoke a notebook in Data Factory in Microsoft Fabric.
 ms.reviewer: xupxhou
-ms.author: whhender
-author: whhender
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 06/16/2025
