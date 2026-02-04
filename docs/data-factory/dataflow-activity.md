@@ -73,6 +73,7 @@ After you configure any other activities required for your pipeline, switch to t
 >To successfully run a Dataflow Gen2 (CI/CD), users must have:
 > - Member (or higher) access to the workspace, and
 > - Access to all connections used by the dataflow  
+>
 >Not meeting these two requirements could result in run failures. 
 
 ## Troubleshooting tips
