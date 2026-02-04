@@ -11,7 +11,7 @@ ms.service: fabric
 
 # What is Fabric IQ (preview)?
 
-IQ (preview) is a workload for unifying data sitting across OneLake (including [lakehouses](../data-engineering/lakehouse-overview.md), [eventhouses](../real-time-intelligence/eventhouse.md), and [Power BI semantic models](../data-warehouse/semantic-models.md)) and organizing it according to the language of your business. The data is then exposed to analytics, AI agents, and applications with consistent semantic meaning and context.
+IQ (preview) is a workload for unifying data sitting across OneLake and organizing it according to the language of your business. The data is then exposed to analytics, AI agents, and applications with consistent semantic meaning and context.
 
 [!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -31,11 +31,12 @@ For more information about the role of each item in the IQ workload, see the sec
 
 IQ (preview) enables the following benefits:
 
-* **Consistency across tools:** A single definition of a concept (like *Customer*, *Material*, or *Asset*) drives how Power BI, notebooks, and agents interpret data.
-* **Faster onboarding:** New dashboards or AI experiences don't need to rediscover business meaning, as business concepts only need to be declared once.
-* **Governance and trust:** Clear semantics reduce duplication and inconsistent definitions across teams, while constraints improve data quality.
-* **Cross domain reasoning:** Graph links let you traverse relationships (like *Order > Shipment > Temperature Sensor > Cold Chain Breach*) to explain outcomes.
-* **AI readiness and decision-ready actions:** Ontologies provide structured grounding for copilots and agents, so answers reflect your enterprise language. Because business rules and constraints live in the ontology, agents can move beyond answers to safe, auditable actions.
+* **Unification of data:** Combines data from various sources across OneLake (like [lakehouses](../data-engineering/lakehouse-overview.md), [eventhouses](../real-time-intelligence/eventhouse.md), and [Power BI semantic models](../data-warehouse/semantic-models.md)) into a single consistent model.
+* **Consistent language across tools:** Provides a single definition of a concept (like *Customer*, *Material*, or *Asset*) that drives how Power BI, notebooks, and agents interpret data.
+* **Faster onboarding:** Provides new dashboards and AI experiences with consistent business meaning, as business concepts only need to be declared once.
+* **Governance and trust:** Reduces duplication and inconsistent definitions across teams by enforcing clear semantics, while constraints improve data quality.
+* **Cross domain reasoning:** Represents relationships between concepts with graph links, and allows you to traverse relationships (like *Order > Shipment > Temperature Sensor > Cold Chain Breach*) to explain outcomes.
+* **AI readiness and decision-ready actions:** Provides structured grounding for copilots and agents, so answers reflect your enterprise language as defined in your ontology. Because business rules and constraints live in the ontology, agents can move beyond answers to safe, auditable actions.
 
 ## Where IQ (preview) fits in Fabric
 
