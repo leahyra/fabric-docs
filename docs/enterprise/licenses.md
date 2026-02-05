@@ -112,7 +112,8 @@ These workspace types support all Microsoft Fabric experiences:
 > [!NOTE]
 > Premium Per User (PPU) provides access to most Power BI Premium features on a per-user basis. It doesn't provision a Fabric capacity. To create or run non–Power BI Fabric items (for example, lakehouses, warehouses, notebooks) you still need an F capacity (or a Trial Fabric capacity).
 
-## Per-user licenses
+<a id="per-user-licenses"></a> 
+## Per-user or individual licenses
 
 Per-user licenses let users work in Microsoft Fabric. A Free (Fabric) license is automatically assigned the first time a user signs in to the Fabric portal (if the tenant has Fabric enabled). It lets you create non-Power BI Fabric items only in a workspace backed by an F or Trial capacity. You can choose from three individual license types:
 

@@ -65,6 +65,22 @@ Power BI semantic models can store data in a highly compressed in-memory cache f
 
 Data used with Power BI is stored in internal storage provided by Power BI by default. With the integration of dataflows and Azure Data Lake Storage Gen 2 (ADLS Gen2), you can store your dataflows in your organization's Azure Data Lake Storage Gen2 account. Learn more about [dataflows in Azure Data Lake Storage Gen2 accounts](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration#considerations-and-limitations).
 
+## Reassign a workspace to a different capacity
+
+When you create a workspace, it's assigned to a [capacity](../enterprise/licenses.md#capacity). The capacity that new workspaces are assigned to by default is determined by the capacity type and/or by the configuration of Fabric or capacity administrators. After a workspace is created, you can reassign it to another available capacity if you have the [workspace admin role](roles-workspaces.md), the capacity admin role, or the capacity contributor role.
+
+You can reassign a workspace to a different capacity via workspace types in the workspace settings.
+
+1. Open the workspace settings and choose **Workspace type**. Information about the current workspace type is displayed.
+
+1. Select **Edit**. The list of available workspace types appears.
+
+1. Select the desired workspace type and specify the capacity the workspace will be hosted on.
+
+> [!NOTE]
+> * You can choose specific capacities only when you select one of the Fabric workspace types. Fabric automatically reserves shared capacity for Power BI workspace types.
+> * The types of items contained in the workspace can affect the ability to change workspace types and/or move the workspace to a capacity in a different region. See [Moving data around](../admin/portal-workspaces.md#moving-data-around) for detail.
+
 ## Give users access to your workspace
 
 Now that you've created the workspace, you'll want to add other users to *roles* in the workspace, so you can collaborate with them. See these articles for more information:
