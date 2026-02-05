@@ -115,11 +115,11 @@ The example demonstrates using Azure SQL Server source.
 
 1. After the private point is successfully created, you can find the private endpoint under **Setting > Private endpoints** in the Azure virtual network resource.
 
-    :::image type="content" source="media/streaming-connector-vnet-on-prem-support/private-endpoint-in-virtual-network.png" alt-text="Screenshot of showing the private endpoint in azure virutal network." lightbox="media/streaming-connector-vnet-on-prem-support/private-endpoint-in-virtual-network":::
+    :::image type="content" source="media/streaming-connector-vnet-on-prem-support/private-endpoint-in-virtual-network.png" alt-text="Screenshot of showing the private endpoint in azure virtual network." lightbox="media/streaming-connector-vnet-on-prem-support/private-endpoint-in-virtual-network.png":::
 
     And a corresponding private DNS zone should be attached to this Azure virtual network. You can check it in **Setting > DNS**. If you cannot find the corresponding private DNS zone, you should delete this private endpoint and re-create it again.
 
-    :::image type="content" source="media/streaming-connector-vnet-on-prem-support/private-dns-zone-in-virtual-network.png" alt-text="Screenshot of showing the private endpoint in azure virutal network." lightbox="media/streaming-connector-vnet-on-prem-support/private-dns-zone-in-virtual-network.png":::
+    :::image type="content" source="media/streaming-connector-vnet-on-prem-support/private-dns-zone-in-virtual-network.png" alt-text="Screenshot of showing the private dns zone in azure virtual network." lightbox="media/streaming-connector-vnet-on-prem-support/private-dns-zone-in-virtual-network.png":::
 
 #### Method 2: Add virtual network in selected network
 
