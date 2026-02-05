@@ -14,7 +14,7 @@ This module takes about 10 minutes to complete. You'll ingest raw data from the 
 The high-level steps in module 1 are:
 
 1. [Create a pipeline.](#create-a-pipeline)
-1. [Create a copy job activity in the pipeline to load sample data into a data Lakehouse.](#create-a-copy-job-activity-in-the-pipeline-to-load-sample-data-into-a-data-lakehouse)
+1. [Create a copy job activity in the pipeline to load sample data into a data Lakehouse.](#create-a-copy-job-activity-in-the-pipeline-to-load-sample-data-to-a-data-lakehouse)
 1. [Run and view the results of the copy job](#run-and-view-the-results-of-your-copy-job)
 
 ## Prerequisites
