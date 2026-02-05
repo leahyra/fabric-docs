@@ -33,13 +33,21 @@ The following diagram shows the key components and data flows in this architectu
 The numbered steps in the diagram correspond to the following data flow:
 
 1. Devices from customer factory floors natively generate and stream millions of IoT events daily to Eventstream, providing low latency at high scale.
+
 1. Full asset metadata and hierarchy are collected daily from manufacturer libraries using Data Factory and stored in OneLake.
+
 1. Streamed events are aggregated and enriched in real time with relevant asset metadata, providing multiple curated views ready for use.
+
 1. Hourly and daily aggregations are created on the fly per customer, factory, and device for easy consumption and long-term retention.
+
 1. Advanced ML models are trained and scored in real time using Data Science capabilities.
+
 1. Real-Time Dashboards provide unique, customized high-granularity experiences for each customer.
+
 1. Activator generates real-time notifications and insights per device per customer.
+
 1. Power BI reports provide rich analytics directly on the real-time data.
+
 1. Custom applications give end customers a dedicated view of their devices in real time.
 
 
