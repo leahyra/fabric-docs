@@ -19,13 +19,13 @@ To illustrate, let's walk through an example.
 
 * You purchase an F2 SKU with 2 Capacity Units (CU) every second and name it *Capacity1*.
 
-* You then create a workspace, *Workspace1*, and upload a 450 MB file to a lakehouse by using the Fabric portal. This action consumes both OneLake storage and OneLake transactions.
+* You then create a workspace, *Workspace1*, and upload a file to a lakehouse by using the Fabric portal. This action consumes both OneLake storage and OneLake transactions.
 
 Now, let's dive into each of these dimensions.
 
 ## OneLake storage
 
-OneLake storage uses a pay-as-you-go model. Your bill shows a separate charge for "OneLake Storage" for the 450 MB of data stored.
+OneLake storage uses a pay-as-you-go model. Your bill shows a separate charge for "OneLake Storage" for the data stored.
 
 If you're a capacity admin, you can view your storage consumption in the [Fabric Capacity Metrics app](../enterprise/metrics-app-storage-page.md). In the Fabric Capacity Metrics app, open the **Storage** tab and use the **Experience** drop-down menu to select **lake** to see the cost of OneLake storage. If you have multiple workspaces in the capacity, you can see the storage per workspace.
 
@@ -49,9 +49,9 @@ You can see capacity usage for each operation in the Fabric Capacity Metrics app
 
 :::image type="content" source="media\onelake-capacity-consumption\onelake-compute.png" alt-text="Screenshot showing how OneLake compute is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-compute.png":::
 
-In the preceding example, the file upload results in a write transaction that consumes 127.46 CU seconds. The **Compute** tab of the Fabric Capacity Metrics app reports this consumption as **OneLake Write via Proxy** under the operation name column.
+In the preceding example, the file upload results in a write transaction that consumes CU seconds. The **Compute** tab of the Fabric Capacity Metrics app reports this consumption as **OneLake Write via Proxy** under the operation name column.
 
-However, if you read this data by using a notebook, you consume 1.39 CU seconds of read transactions. The metrics app reports this consumption as **OneLake Read via Redirect**. To learn how each type of operation consumes capacity units, see [OneLake consumption page](../onelake/onelake-consumption.md).
+However, if you read this data by using a notebook, you consume CU seconds of read transactions. The metrics app reports this consumption as **OneLake Read via Redirect**. To learn how each type of operation consumes capacity units, see [OneLake consumption page](../onelake/onelake-consumption.md).
 
 To understand more about the various terminologies on the metrics app, see [Understand the metrics app compute page - Microsoft Fabric](../enterprise/metrics-app-compute-page.md).
 
