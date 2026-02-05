@@ -7,25 +7,25 @@ ms.author: sipa
 ms.topic: how-to
 ms.custom:
 ms.date: 02/16/2026
-ms.search.form: Create and manage tilesets
+ms.search.form: Create a tileset, Creating tilesets, how to create tilesets, tileset
 ---
 
 # Create tilesets (preview)
 
-Microsoft Fabric Map items (preview) enable users to visualize spatial data and derive insights by integrating both static and dynamic data sources. It uses raw data to create meaningful, actionable spatial information.
+Microsoft Fabric Maps items (preview) enable users to visualize spatial data and derive insights by integrating both static and dynamic data sources. It uses raw data to create meaningful, actionable spatial information.
 
 > [!IMPORTANT]
 > This feature is in [preview](../../fundamentals/preview.md).
 
-In certain cases, static spatial datasets can be extremely large, making smooth rendering on the map challenging. To overcome this, Map offers a specialized tool that converts extensive spatial data, such as GeoJSON files, into high-performance **tilesets**. Tilesets are commonly used in mapping platforms to visualize large datasets, such as roads, buildings, or environmental features, without overwhelming the system or the user. This conversion into tilesets enables efficient rendering, resulting in a smoother and more responsive mapping experience.
+In certain cases, static spatial datasets can be extremely large, making smooth rendering on the map challenging. To overcome this, Fabric Maps offers a specialized tool that converts extensive spatial data, such as GeoJSON files, into high-performance **tilesets**. Tilesets are commonly used in mapping platforms to visualize large datasets, such as roads, buildings, or environmental features, without overwhelming the system or the user. This conversion into tilesets enables efficient rendering, resulting in a smoother and more responsive mapping experience.
 
 For more information on tilesets, see [What is a tileset in Fabric Maps?](about-tile-sets.md).
 
 ## Prerequisites
 
 - A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-- A [map](create-map.md) with editor permission.
-- A [lakehouse](../../data-engineering/lakehouse-overview.md) is used to store GeoJSON files.
+- A [map](create-map.md) with editor permission. To create a tileset, you must have edit permissions on the map. Edit access is granted through Fabric workspace roles (Contributor, Member, or Admin) or item‑level permissions on the map. For more information, see [Manage Map permissions](manage-map-permissions.md).
+- A [lakehouse](../../data-engineering/lakehouse-overview.md) to store GeoJSON files.
 
 ## Create a tileset
 
@@ -38,7 +38,7 @@ Alternatively, you can right-click on a GeoJSON file in lakehouse and then selec
 :::image type="content" source="media/spatial-job-create-tilesets/new-tile-set-option-lakehouse-files-dropdown.png" lightbox="media/spatial-job-create-tilesets/new-tile-set-option-lakehouse-files-dropdown.png" alt-text="A screenshot showing the new tileset option in the Lakehouse files dropdown menu.":::
 
 > [!NOTE]
-> Map supports only one active job per item at a time.
+> Fabric Maps only supports one active job per item at a time.
 
 ### Step 1: Connect to a lakehouse and select source files
 
@@ -80,7 +80,7 @@ Next, set the following configuration options:
 - **Feature properties**: For GeoJSON datasets, you can choose whether to include all feature properties along with the geometries or only the geometries.
 
   > [!NOTE]
-  > Including all feature properties increase the size of the tiles and extend processing time.
+  > Including all feature properties increases the size of the tiles and extend processing time.
 
 :::image type="content" source="media/spatial-job-create-tilesets/configure-layer-settings.png" lightbox="media/spatial-job-create-tilesets/configure-layer-settings.png" alt-text="A screenshot showing the layer options screen.":::
 
@@ -114,7 +114,7 @@ Select the **View details** icon to display more information about the selected 
 
 > [!TIP]
 >
-> When you open the Monitor page from a notification panel, it automatically filters by the active map item at that moment. If you later start a new job with a different map item and revisit the Monitor page in the same browser tab, it will only show data for the new map item—not the previous one.
+> When you open the Monitor page from a notification panel, it automatically filters by the active map item at that moment. If you later start a new job with a different map item and revisit the Monitor page in the same browser tab, it only shows data for the new map item—not the previous one.
 
 ## Cancel tileset creation
 

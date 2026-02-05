@@ -1,18 +1,18 @@
 ---
 title: Tilesets in Fabric Maps 
-description: Learn about tilesets in Microsoft Fabric Maps.
+description: Learn about tilesets and PMTiles in Microsoft Fabric Maps.
 ms.reviewer: smunk
 author: sipa
 ms.author: sipa
-ms.topic: concept-article
+ms.topic: article
 ms.custom:
 ms.date: 02/16/2026
-ms.search.form: 
+ms.search.form: What is a tileset, tileset, What is a PMtile, PMtile
 ---
 
 # What is a tileset in Fabric Maps? (preview)
 
-Microsoft Fabric Maps supports tilesets to efficiently visualize large static spatial datasets. Tilesets divide geographic data into smaller, preprocessed pieces that can be rendered quickly across different zoom levels, enabling smooth interaction even with very large datasets.
+Microsoft Fabric Maps supports tilesets to efficiently visualize large static spatial datasets. Tilesets divide geographic data into smaller, preprocessed pieces that can be rendered quickly across different zoom levels, enabling smooth interaction even with large datasets.
 
 This article explains the core concepts behind tiles, tilesets, and PMTiles in Fabric Maps, and when to use a tileset instead of rendering raw spatial data directly.
 
@@ -26,7 +26,7 @@ This article explains the core concepts behind tiles, tilesets, and PMTiles in F
 
 There are two main types of tiles supported in Microsoft Fabric Maps:
 
-- **Raster tiles**: Pre-rendered image tiles (such as PNG or JPEG) that provide fixed map visuals.
+- **Raster tiles**: Prerendered image tiles (such as PNG or JPEG) that provide fixed map visuals.
 - **Vector tiles**: Data packets containing geographic features, rendered dynamically for customizable styling.
 
 > [!NOTE]
@@ -36,8 +36,8 @@ There are two main types of tiles supported in Microsoft Fabric Maps:
 
 | Feature         | Raster tiles                          | Vector tiles                               |
 |-----------------|---------------------------------------|--------------------------------------------|
-| **Format**      | Pre-rendered images (PNG, JPEG)       | Data packets (geometry + attributes)       |
-| **Styling**     | Fixed, cannot be changed client-side  | Dynamic, customizable on the client        |
+| **Format**      | Prerendered images (PNG, JPEG)       | Data packets (geometry + attributes)       |
+| **Styling**     | Fixed, can't be changed client-side  | Dynamic, customizable on the client        |
 | **Performance** | Larger files, slower zoom transitions | Smaller payloads, smooth zoom and rotation |
 | **Use Cases**   | Static imagery (satellite, terrain)   | Interactive maps with dynamic styling      |
 
