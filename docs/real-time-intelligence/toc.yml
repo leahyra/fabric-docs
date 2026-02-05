@@ -895,7 +895,7 @@ items:
           - name: Share maps with org apps
             href: map/share-map-org-apps.md
       - name: Create a tileset
-        href: map/spatial-job-create-tile-sets.md
+        href: map/create-tile-sets.md
       - name: Manage Map permissions
         href: map/manage-map-permissions.md
   - name: Monitor
