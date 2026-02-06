@@ -88,7 +88,7 @@ The following limitations apply to SharePoint shortcuts:
 
 * OneLake doesn't support shortcuts to personal **or OnPremise** SharePoint sites. Shortcuts can only connect to enterprise SharePoint sites **and OneDrive for Business.**
 
-* Service Principal support is limited to app-only access and does not include user-delegated permissions or user-context behaviors as they are being [retired]().
+* Service Principal support is limited to app-only access and does not include user-delegated permissions or user-context behaviors as they are being [retired](/sharepoint/dev/solution-guidance/security-apponly-azureacs).
 
 ## Related content
 
