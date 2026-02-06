@@ -7,7 +7,7 @@ author: xujxu
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
 ms.date: 01/27/2026
-ms.search.form: Streaming Virtual Network
+ms.search.form: Eventstream connector private network support
 ---
 
 # Create and manage streaming virtual network data gateway

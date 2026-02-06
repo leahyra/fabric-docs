@@ -1,5 +1,5 @@
 ---
-title: Eventstream Streaming Connector Virtual Network and On-Prem Support Overview
+title: Eventstream streaming connector virtual network and on-premises support overview
 description: Learn how Eventstream streaming connectors securely access streaming sources in virtual networks and on‑premises environments with a streaming virtual network data gateway.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -7,10 +7,10 @@ author: xujxu
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
 ms.date: 01/27/2026
-ms.search.form: Streaming Virtual Network
+ms.search.form: Eventstream connector private network support
 ---
 
-# Eventstream Streaming Connector Virtual Network and On-Prem Support Overview
+# Eventstream streaming connector virtual network and on-premises support overview
 
 Real-Time Intelligence Eventstream is designed to bring real-time data from diverse sources, transforming it, and effortlessly routing it to various destinations. For sources that run in private network environments, such as cloud virtual network or on-premises infrastructures, a secure method is required to enable Eventstream to access the source.
 
