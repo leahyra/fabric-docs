@@ -9,8 +9,7 @@ ms.date: 11/20/2025
 
 # Tutorial: Run Hello-world DAG in Apache Airflow Job
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 In this tutorial, you run a hello-world DAG in Apache Airflow Job. This tutorial focuses on familiarizing users with the features and environment of the Apache Airflow Job.
 

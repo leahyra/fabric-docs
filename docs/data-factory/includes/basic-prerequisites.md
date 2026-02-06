@@ -1,7 +1,7 @@
 ---
 title: Basic prerequisites for using Data Factory activities
 description: Include file for the basic prerequisites for using many activities in Data Factory in Microsoft Fabric
-ms.date: 01/05/2025
+ms.date: 02/06/2026
 ms.topic: include
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Save and run or schedule the pipeline
 description: Include file for the basic instructions to save, run, or schedule a pipeline in Microsoft Fabric Data Factory
-ms.date: 01/05/2025
+ms.date: 02/06/2026
 ms.topic: include
 ---
 

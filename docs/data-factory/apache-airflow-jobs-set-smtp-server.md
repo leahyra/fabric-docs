@@ -9,8 +9,7 @@ ms.date: 03/25/2024
 
 # Set up SMTP Server in Apache Airflow Job
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 Apache Airflow includes a powerful feature that allows you to send email notifications and alerts when tasks fail, succeed, or retry. This capability is essential for monitoring your workflows and troubleshooting any issues that may arise.
 
