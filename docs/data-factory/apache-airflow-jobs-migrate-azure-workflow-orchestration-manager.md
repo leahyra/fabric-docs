@@ -42,5 +42,5 @@ In this scenario, use the Git sync feature of Apache Airflow Job to seamlessly s
 ## Related content
 
 - [Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
-- [Run Dag in Apache Airflow Job](../data-factory/apache-airflow-jobs-hello-world.md)
+- [Run Dag in Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
 - [Apache Airflow Job workspace settings](../data-factory/apache-airflow-jobs-workspace-settings.md)
