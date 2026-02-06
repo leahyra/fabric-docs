@@ -1,5 +1,5 @@
 ---
-title: Tables
+title: Tables in Fabric Data Warehouse
 description: Learn how to design and use tables in Microsoft Fabric Data Warehouse, including temporary tables.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -15,8 +15,6 @@ ms.search.form: Warehouse design and development # This article's title should n
 This article details key concepts for designing tables in [!INCLUDE [product-name](../includes/product-name.md)].
 
 In tables, data is logically organized in a row-and-column format. Each row represents a unique record, and each column represents a field in the record.
-
-- In [!INCLUDE [fabricdw](includes/fabric-dw.md)], tables are database objects that contain all the transactional data.
 
 ## Determine table category
 
