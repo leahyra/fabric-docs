@@ -150,7 +150,7 @@ This error code means that there was a permission error while executing the Fabr
 
 ### BlockedByOutboundAccessProtection
 
-When Outbound Access Protection is enabled on a workspace some actions may be blocked depending on configuration. To resolve this problem, contact your Microsoft Fabric adminitrator.
+When Outbound Access Protection is enabled on a workspace some actions may be blocked depending on configuration. To resolve this problem, contact your Microsoft Fabric administrator.
 
 ## Common issues, symptoms, and remediations
 While Activator abstracts away much of the complexity behind real-time event processing, implementations at scale might encounter data, configuration, or orchestration-related issues that require systematic troubleshooting. This section provides a deep dive into how to identify, analyze, and resolve common operational problems in Activator.
