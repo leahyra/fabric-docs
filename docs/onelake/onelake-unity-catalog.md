@@ -15,7 +15,7 @@ ROBOTS: NOINDEX
 # Integrate Databricks Unity Catalog with OneLake
 
 > [!NOTE]
-> This article describes a manual approach using shortcuts to sync Unity Catalog tables to OneLake. Instead of this approach, we recommend using [Mirroring for Azure Databricks](../mirroring/mirroring-databricks-catalog.md) to bring Databricks tables into OneLake with automatic synchronization and minimal setup.
+> This article describes a manual approach using shortcuts to sync Unity Catalog tables to OneLake. Instead of this approach, we recommend using [Mirroring Azure Databricks Unity Catalog](../mirroring/azure-databricks.md) to bring Databricks tables into OneLake with automatic synchronization and minimal setup.
 
 This scenario shows how to integrate Unity Catalog external Delta tables to OneLake using shortcuts. After completing this tutorial, you can automatically sync your Unity Catalog external Delta tables to a Microsoft Fabric lakehouse.
 
