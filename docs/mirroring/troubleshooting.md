@@ -136,4 +136,3 @@ These common error messages have explanations and mitigations:
 
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
 - [Monitor Fabric mirrored database replication](../mirroring/monitor.md)
-- [Recover deleted files in OneLake](../onelake/soft-delete.md)

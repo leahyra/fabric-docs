@@ -13,15 +13,15 @@ ai-usage: ai-assisted
 
 # Recover deleted files in OneLake
 
-OneLake automatically protects your data by using soft delete, which retains deleted files for seven days before permanent removal. This built-in protection helps you recover from accidental deletions, failed pipelines, or user errors without needing to restore from backups.
+OneLake automatically protects your data by using soft delete, which retains deleted files for seven days before permanent removal. This built-in protection helps you recover from accidental deletions or user errors without needing to restore from backups.
 
 After seven days, soft-deleted files are permanently removed and can't be recovered.
 
-You pay for soft-deleted data at the same rate as active data. Consider this cost when planning your data retention strategy.
+You pay for soft-deleted data at the same rate as active data.
 
 ## Restore soft-deleted files
 
-You can restore soft-deleted files by using Azure Storage Explorer, Azure PowerShell, or Azure Storage REST APIs.
+You can restore soft-deleted files by using Azure Storage Explorer, Azure PowerShell, or Azure Storage REST APIs. You need write access to the files to restore them.
 
 ### Restore files by using Azure Storage Explorer
 
