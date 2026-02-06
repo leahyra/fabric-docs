@@ -5,5 +5,5 @@ ms.date: 02/06/2026
 ms.topic: include
 ---
 
-- A tenant account with an active Microsoft Fabric subscription. [You can try Fabric for free.](../../fundamentals/fabric-trial.md).
+- A tenant account with an active Microsoft Fabric subscription. [You can try Fabric with a free trial](../../fundamentals/fabric-trial.md).
 - A Fabric [workspace](../../fundamentals/create-workspaces.md).
