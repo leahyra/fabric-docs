@@ -75,7 +75,7 @@ CREATE SCHEMA wwi;
 
 ## Collation
 
-Fabric warehouses are configured based on the workspace's collation setting, which by default are the case-sensitive (CS) collation `Latin1_General_100_BIN2_UTF8`. When creating a [new warehouse](create-warehouse.md), the collation of the workspace will be used. For more information, see [Data Warehouse collation](collation.md).
+Fabric warehouses are configured based on the workspace's collation setting, which by default is the case-sensitive (CS) collation `Latin1_General_100_BIN2_UTF8`. When creating a [new warehouse](create-warehouse.md), the collation of the workspace will be used. For more information, see [Data Warehouse collation](collation.md).
 
 Supported warehouse collations are:
 
