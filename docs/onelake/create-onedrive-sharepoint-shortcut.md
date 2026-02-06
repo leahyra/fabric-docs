@@ -43,16 +43,16 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 
 1. Select **Existing connection** or **New connection**, depending on whether this account is already connected in your OneLake.
 
-* For an **Existing connection**, select the connection from the drop-down menu.
+   * For an **Existing connection**, select the connection from the drop-down menu.
 
-* To create a **New connection**, provide the following connection settings:
+   * To create a **New connection**, provide the following connection settings:
 
-  |Field | Description|
-  |-----|-----|
-  |**Site URL**| The root URL of your SharePoint account.<br><br>To retrieve your URL, sign in to OneDrive. Select the settings gear icon, then **OneDrive settings** > **More settings**. Copy the **OneDrive web URL** from the more settings page and remove anything after `_onmicrosoft_com`. For example, `https://mytenant-my.sharepoint.com/personal/user01_mytenant_onmicrosoft_com`. |
-  |**Connection** | The default value, **Create new connection**. |
-  |**Connection name** | A name for your connection. The service generates a suggested connection name based on the storage account name, but you can overwrite with a preferred name. |
-  |**Authentication kind**| The supported authentication includes Organizational account, [Workspace Identity](/fabric/security/workspace-identity), and [Service Principal](/entra/identity-platform/app-objects-and-service-principals).|
+   |Field | Description|
+   |-----|-----|
+   |**Site URL**| The root URL of your SharePoint account.<br><br>To retrieve your URL, sign in to OneDrive. Select the settings gear icon, then **OneDrive settings** > **More settings**. Copy the **OneDrive web URL** from the more settings page and remove anything after `_onmicrosoft_com`. For example, `https://mytenant-my.sharepoint.com/personal/user01_mytenant_onmicrosoft_com`. |
+   |**Connection** | The default value, **Create new connection**. |
+   |**Connection name** | A name for your connection. The service generates a suggested connection name based on the storage account name, but you can overwrite with a preferred name. |
+   |**Authentication kind**| The supported authentication includes Organizational account, [Workspace Identity](/fabric/security/workspace-identity), and [Service Principal](/entra/identity-platform/app-objects-and-service-principals).|
   
 1. Select **Next**.
 
