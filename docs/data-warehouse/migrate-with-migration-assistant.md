@@ -43,7 +43,7 @@ The AI-assisted migration features of the Migration Assistant to fix migration i
 
 1. In the **Migrate to Fabric** source menu, under **Migrate to a warehouse**, select the **Analytical T-SQL warehouse or database** tile.
 
-   :::image type="content" source="media/migrate-with-migration-assistant/dacpac-tile.png" alt-text="Screenshot from the Fabric portal of the Analytical T-SQL warehouse or database tile..":::
+   :::image type="content" source="media/migrate-with-migration-assistant/dacpac-tile.png" alt-text="Screenshot from the Fabric portal of the Analytical T-SQL warehouse or database tile.":::
 
 1. On the **Overview**, review the information and select **Next**.
 
