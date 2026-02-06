@@ -84,6 +84,8 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
     
   - Use **Workspace Identity (WI)** authentication instead of **Organizational Account** authentication to reduce throttling.
     
+- You can use Service Principal based authentication to connect to SharePoint or OneDrive across different tenants.
+
 ## Limitations
 
 The following limitations apply to SharePoint shortcuts:
