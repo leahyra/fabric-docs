@@ -86,7 +86,7 @@ To complete the installation, configure the Microsoft Fabric Capacity Metrics ap
 1. Select **Next**.
 1. In the **Connect to Microsoft Fabric Capacity Metrics** second window, complete the following fields:
 
-    * **Authentication method** - Select your authentication method. The only authentication method is *OAuth2*.
+    * **Authentication method** - Select your authentication method. The only supported authentication method is *OAuth2*.
     * **Privacy level setting for this data source** - Select *Organizational* to enable app access to all the data sources in your organization.
 
     >[!NOTE]
