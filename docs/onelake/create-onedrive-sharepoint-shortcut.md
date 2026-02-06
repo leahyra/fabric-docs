@@ -90,7 +90,7 @@ The following limitations apply to SharePoint shortcuts:
 
 * OneLake doesn't support shortcuts to personal **or OnPremise** SharePoint sites. Shortcuts can only connect to enterprise SharePoint sites **and OneDrive for Business.**
 
-* Service Principals created before Nov 1st 2024 can be used for authentication. Service Principals created after the [retirement](/sharepoint/dev/solution-guidance/security-apponly-azureacs"https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azureacs") announcement is not supported for authentication. For these instances, we recommend using the Workspace Identity approach.
+* Based on Azure ACL [retirement](/sharepoint/dev/solution-guidance/security-apponly-azureacs"https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azureacs"), Service Principal authentication will not work for Sharepoint tenants created after Nov 1st, 2024. 
 
 * SharePoint and OneDrive Shortcuts are supported only at folder level and not at file level.
 
