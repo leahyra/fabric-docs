@@ -18,6 +18,8 @@ You can manage complex supply chain operations where systems continuously stream
 
 ## Architecture overview
 
+This section provides an overview of the supply chain architecture, highlighting its components and their roles in enabling real-time data processing and decision-making.
+
 The supply chain reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from supply chain systems and integrates logistics data for intelligent supply chain management. You can implement the architecture with five main operational phases, divided into ten steps:
 
 :::image type="content" source="media/supply-chain-diagram.png" alt-text="Diagram of the supply chain architecture and data flow.":::
@@ -36,7 +38,7 @@ The supply chain reference architecture uses Microsoft Fabric Real-Time Intellig
 
 1. **[Data Science](../../data-science/data-science-overview.md)** predictive ML models forecast delivery delays using historical and real-time logistics data, while also scoring vendor performance based on reliability and responsiveness to help prioritize high-performing suppliers.
 
-1. **[Real-Time Dashboards](../dashboard-real-time-create.md)** provide the realtime updates on shipments and alerts for delays to maintain service level agreements.
+1. **[Real-Time Dashboards](../dashboard-real-time-create.md)** provide the real-time updates on shipments and alerts for delays to maintain service level agreements.
 
 1. **[Power BI](../create-powerbi-report.md)** dashboards provide interactive views of KPIs, delivery status, risk scores, and installation readiness, supporting managers, field operations, and logistics.
 
@@ -140,12 +142,16 @@ This section highlights the advantages of implementing the supply chain architec
 
 ### Supply chain intelligence and optimization
 
+Real-time visibility and predictive analytics optimize supply chain decisions, enabling better outcomes.
+
 - **Real-time supply chain visibility** - Monitor ERP data, logistics feeds, and inventory levels for immediate supply chain decision-making.
 - **Predictive analytics** - Use ML models to forecast delivery delays and optimize vendor performance for strategic sourcing.
 - **Unified data platform** - Integrate ERP data with logistics feeds and inventory information for comprehensive supply chain management.
 - **Critical path optimization** - Use Graph analysis to identify dependencies and optimize supply chain decisions.
 
 ### Automated supply chain operations
+
+Automation improves workflows, alerting, and resource allocation in supply chain management.
 
 - **Intelligent alerting** - Real-time notifications for shipment delays, inventory shortages, and vendor performance issues.
 - **Automated workflows** - Set up triggers for procurement activities, vendor escalation, and inventory replenishment.
@@ -154,12 +160,16 @@ This section highlights the advantages of implementing the supply chain architec
 
 ### Advanced analytics and business intelligence
 
+Advanced analytics and BI tools provide actionable insights for supply chain optimization.
+
 - **Real-time supply chain analytics** - Correlate ERP data with logistics information for immediate optimization and cost reduction.
 - **Cross-domain intelligence** - Deep BI reports with comprehensive supply chain analysis across procurement, logistics, and inventory.
 - **Natural language processing** - Query complex supply chain scenarios using conversational AI and rich KQL capabilities.
 - **Predictive and historical analysis** - Combine real-time events with historical patterns for optimal supply chain planning and risk management.
 
 ### Cost optimization and operational efficiency
+
+Strategies to reduce costs and enhance efficiency leverage predictive analytics and real-time monitoring.
 
 - **Predictive cost management** - Reduce procurement costs and inventory holding through ML-driven demand forecasting and optimization.
 - **Supply chain efficiency** - Maximize delivery performance and minimize disruptions through predictive analytics and real-time monitoring.
@@ -168,7 +178,11 @@ This section highlights the advantages of implementing the supply chain architec
 
 ## Implementation considerations
 
+This section outlines the key architectural, security, and integration requirements to successfully implement the supply chain reference architecture.
+
 ### Data architecture requirements
+
+Outlines the data processing and storage needs for implementing the supply chain architecture.
 
 - **High-throughput ingestion** - Design your system to process real-time ERP data, logistics feeds, and inventory updates with burst capacity during peak procurement periods.
 - **Real-time processing** - Ensure immediate response times for critical supply chain alerts, under two-second response for shipment updates, and immediate processing for inventory calculations.
