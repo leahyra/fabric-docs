@@ -2,7 +2,7 @@
 title: Supply chain reference architecture
 description: Reference architecture for building comprehensive supply chain solutions using Microsoft Fabric Real-Time Intelligence for real-time logistics monitoring, predictive analytics, and intelligent supply chain optimization.
 ms.reviewer: bisiadele
-ms.author: v-ktalmor
+ms.author: v-ktalmor 
 author: ktalmor
 ms.topic: example-scenario
 ms.subservice: rti-core
@@ -10,7 +10,7 @@ ms.date: 02/02/2026
 ms.search.form: Architecture
 ---
 
-# Supply chain reference architecture
+# Supply chain reference architecture 
 
 This reference architecture demonstrates how you can use Microsoft Fabric Real-Time Intelligence to build comprehensive supply chain solutions that handle real-time data from ERP systems, logistics feeds, and vendor networks. You can process purchase orders, delivery schedules, and shipment tracking while integrating inventory management and vendor contracts to enable intelligent supply chain optimization with predictive analytics and automated decision-making.
 
@@ -20,20 +20,31 @@ You can manage complex supply chain operations where systems continuously stream
 
 The supply chain reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from supply chain systems and integrates logistics data for intelligent supply chain management. You can implement the architecture with five main operational phases, divided into ten steps:
 
-:::image type="content" source="./media/supply-chain-diagram.png" alt-text="Diagram that shows the Supply chain reference architecture." lightbox="./media/supply-chain-diagram.png":::
+:::image type="content" source="media/supply-chain-diagram.png" alt-text="Diagram of the supply chain architecture and data flow.":::
 
-1. **[Eventstreams](../event-streams/overview.md)** ingests data from ERP systems, capturing purchase orders, delivery schedules, and vendor contracts.
-1. Through MQTT-**[Eventstreams](../event-streams/overview.md)** integration, real-time streaming and batch logistics feeds track shipments, carrier updates, and route disruptions.
-1. **[Data Factory](../../data-factory/data-factory-overview.md)** orchestrates on-hand stock, reserved inventory, and reorder points, then sends this information to **[OneLake](../../onelake/onelake-overview.md)** for cross-domain access.
-1. **[Eventstreams](../event-streams/overview.md)** conducts real-time ETL on incoming data and then routes it to **[Eventhouse](../eventhouse.md)** for deeper analysis.
-1. KQL queries are written within Eventhouse to correlate historical data from **[OneLake](../../onelake/onelake-overview.md)** with time-series data on inventory and shipment data. Identifying seasonal demand shifts,
-1. Graph analyzes relationships between suppliers, shipments, and inventory to identify critical path dependencies and optimize supply chain decisions.
+1. **[Eventstream](../event-streams/overview.md)** ingests data from ERP systems, capturing purchase orders, delivery schedules, and vendor contracts.
+
+1. Through MQTT-Eventstream integration, real-time streaming and batch logistics feeds track shipments, carrier updates, and route disruptions.
+
+1. **[Data Factory](../../data-factory/data-factory-overview.md)** orchestrates on-hand stock, reserved inventory, and reorder points, then sends this information to OneLake for cross-domain access.
+
+1. Eventstream conducts real-time ETL on incoming data and then routes it to Eventhouse for deeper analysis.
+
+1. KQL queries are written within **[Eventhouse](../eventhouse.md)** to correlate historical data from OneLake with time-series data on inventory and shipment data. 
+
+1. Identifying seasonal demand shifts, **[Microsoft Graph](../../../graph/)** analyzes relationships between suppliers, shipments, and inventory to identify critical path dependencies and optimize supply chain decisions.
+
 1. **[Data Science](../../data-science/data-science-overview.md)** predictive ML models forecast delivery delays using historical and real-time logistics data, while also scoring vendor performance based on reliability and responsiveness to help prioritize high-performing suppliers.
-1. **[Real-Time Dashboard](../dashboard-real-time-create.md)** provides the realtime updates on shipments and alerts for delays to maintain service level agreements.
-1. PowerBI dashboards provide interactive views of KPIs, delivery status, risk scores, and installation readiness, supporting managers, field operations, and logistics.
+
+1. **[Real-Time Dashboards](../dashboard-real-time-create.md)** provide the realtime updates on shipments and alerts for delays to maintain service level agreements.
+
+1. **[Power BI](../create-powerbi-report)** dashboards provide interactive views of KPIs, delivery status, risk scores, and installation readiness, supporting managers, field operations, and logistics.
+
 1. **[Activator](../data-activator/activator-introduction)** is triggered to escalate vendor manufacturing and shipment delays ensuring timely intervention.
 
-## Operational phases
+## Supply chain data flow and processing
+
+This section explains the end-to-end data flow in the supply chain architecture, from data ingestion to actionable insights, enabling real-time decision-making and optimization.
 
 ### Ingest and process
 
@@ -125,6 +136,8 @@ Get assistance from Fabric IQ, Graph, Agents, and [Copilot](../../fundamentals/c
 
 ## Technical benefits and outcomes
 
+This section highlights the advantages of implementing the supply chain architecture, including improved visibility, predictive analytics, and operational efficiency.
+
 ### Supply chain intelligence and optimization
 
 - **Real-time supply chain visibility** - Monitor ERP data, logistics feeds, and inventory levels for immediate supply chain decision-making.
@@ -179,51 +192,53 @@ Get assistance from Fabric IQ, Graph, Agents, and [Copilot](../../fundamentals/c
 
 ### Monitoring and observability
 
-**Operational monitoring**
+**Operational monitoring**:
 
 - **System health dashboards**: Real-time monitoring of ERP integration, MQTT logistics feeds, and Data Factory orchestration with automated alerting for system anomalies.
 - **Data quality monitoring**: Continuous validation of incoming supply chain data with alerting for vendor communication failures, invalid shipment data, or corrupted inventory information.
 - **Performance metrics**: Tracking of data ingestion latency from supply chain systems, query response times for real-time dashboards, and ML model prediction accuracy with SLA monitoring.
 
-**Cost optimization**
+**Cost optimization**:
 
 - **Capacity management**: Right-sizing of Fabric capacity based on supply chain complexity and data volume, implementing autoscaling for peak procurement periods, and cost optimization during low-activity windows.
 - **Data lifecycle management**: Automated archival of older supply chain data to lower-cost storage tiers, retention policies aligned with regulatory requirements, and deletion of non-essential procurement data.
 - **Supply chain cost optimization**: Real-time correlation of procurement patterns with logistics costs to minimize operational expenses and maximize supply chain efficiency.
 
-## Next steps: Getting started
+## Next steps
 
-### Phase 1: Foundation setup
+### Getting started
+
+**Phase 1: Foundation setup**
 
 - Review [Microsoft Fabric Real-Time Intelligence](../overview.md) capabilities and understand capacity requirements for your supply chain scale (ERP systems, logistics networks, and vendor operations).
 - Plan your [Eventstream](../event-streams/overview.md) integration strategy for ERP data and MQTT logistics feeds. Start with critical suppliers and high-value procurement categories.
 - Design your real-time analytics implementation in [Eventhouse](../eventhouse.md) for processing supply chain events with immediate response requirements.
 - Configure [OneLake](../../onelake/onelake-overview.md) for inventory data and historical supply chain analytics with appropriate retention policies.
 
-### Phase 2: Pilot implementation
+**Phase 2: Pilot implementation**
 
 - Use a subset of key suppliers and product categories to validate the architecture and integration performance.
 - Implement core data flows for procurement monitoring, logistics tracking, and basic alerting capabilities.
 - Establish integration with ERP systems and logistics providers for comprehensive supply chain visibility.
 - Deploy Real-Time Dashboard for supply chain monitoring with real-time shipment updates and delay alerts.
 
-### Phase 3: Operational validation
+**Phase 3: Operational validation**
 
 - Test system performance during peak procurement periods and supply chain stress scenarios.
 - Validate [Activator](../data-activator/activator-introduction) rules for vendor escalation and supply chain disruption management.
 - Ensure compliance with procurement regulations and vendor requirements.
 - Train your supply chain teams on dashboard usage, alert management, and KQL analytics for supply chain optimization.
 
-## Advanced implementation
+### Advanced implementation
 
-### Intelligent automation and AI
+**Intelligent automation and AI**
 
 - Set up advanced [Data Science](../../data-science/data-science-overview.md) capabilities for building, training, and scoring predictive ML models for delivery forecasting and vendor performance optimization.
 - Implement [Activator](../data-activator/activator-introduction) for sophisticated supply chain automation including predictive procurement, dynamic inventory management, and automated vendor management.
 - Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) for natural language analytics enabling teams to query complex supply chain scenarios using conversational interfaces.
 - Create intelligent supply chain systems that provide real-time decision support based on procurement patterns, logistics performance, and vendor relationships.
 
-### Enterprise-scale deployment
+**Enterprise-scale deployment**
 
 - Scale to full supply chain operations with comprehensive vendor coverage and centralized monitoring across multiple regions and product categories.
 - Implement advanced analytics for cross-functional supply chain optimization, cost analysis, and risk management.
