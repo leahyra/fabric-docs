@@ -32,15 +32,15 @@ The supply chain reference architecture uses Microsoft Fabric Real-Time Intellig
 
 1. KQL queries are written within **[Eventhouse](../eventhouse.md)** to correlate historical data from OneLake with time-series data on inventory and shipment data. 
 
-1. Identifying seasonal demand shifts, **[Microsoft Graph](../../../graph/)** analyzes relationships between suppliers, shipments, and inventory to identify critical path dependencies and optimize supply chain decisions.
+1. Identifying seasonal demand shifts, **[Microsoft Graph](/graph/)** analyzes relationships between suppliers, shipments, and inventory to identify critical path dependencies and optimize supply chain decisions.
 
 1. **[Data Science](../../data-science/data-science-overview.md)** predictive ML models forecast delivery delays using historical and real-time logistics data, while also scoring vendor performance based on reliability and responsiveness to help prioritize high-performing suppliers.
 
 1. **[Real-Time Dashboards](../dashboard-real-time-create.md)** provide the realtime updates on shipments and alerts for delays to maintain service level agreements.
 
-1. **[Power BI](../create-powerbi-report)** dashboards provide interactive views of KPIs, delivery status, risk scores, and installation readiness, supporting managers, field operations, and logistics.
+1. **[Power BI](../create-powerbi-report.md)** dashboards provide interactive views of KPIs, delivery status, risk scores, and installation readiness, supporting managers, field operations, and logistics.
 
-1. **[Activator](../data-activator/activator-introduction)** is triggered to escalate vendor manufacturing and shipment delays ensuring timely intervention.
+1. **[Activator](../data-activator/activator-introduction.md)** is triggered to escalate vendor manufacturing and shipment delays ensuring timely intervention.
 
 ## Supply chain data flow and processing
 
@@ -87,7 +87,7 @@ You write KQL queries within [Eventhouse](../eventhouse.md) to correlate histori
 
 ### Model and contextualize
 
-[Microsoft Graph](../../../graph/) analyzes relationships between suppliers, shipments, and inventory to identify critical path dependencies and optimize supply chain decisions. This relationship analysis provides:
+[Microsoft Graph](/graph/) analyzes relationships between suppliers, shipments, and inventory to identify critical path dependencies and optimize supply chain decisions. This relationship analysis provides:
 
 - **Supplier network mapping** - Comprehensive view of vendor relationships and dependencies
 - **Critical path identification** - Analysis of supply chain bottlenecks and risk points
@@ -113,21 +113,21 @@ The real-time dashboard provides the real-time updates on shipments and alerts f
 - **Performance metrics** - Real-time KPIs for supply chain efficiency and vendor performance
 - **Exception management** - Automated alerts for critical supply chain events requiring immediate attention
 
-[Power BI](../create-powerbi-report) dashboards provide interactive views of KPIs, delivery status, risk scores, and installation readiness, supporting managers, field operations, and logistics, including:
+[Power BI](../create-powerbi-report.md) dashboards provide interactive views of KPIs, delivery status, risk scores, and installation readiness, supporting managers, field operations, and logistics, including:
 
 - **Executive dashboards** - Strategic overview of supply chain performance, costs, and vendor relationships
 - **Operational monitoring** - Detailed tracking of inventory levels, shipment status, and delivery performance
 - **Risk management** - Comprehensive risk scoring and mitigation tracking across supply chain operations
 - **Field operations support** - Real-time information for installation readiness, parts availability, and service delivery
 
-[Activator](../data-activator/activator-introduction) escalates vendor manufacturing and shipment delays to ensure timely intervention, enabling:
+[Activator](../data-activator/activator-introduction.md) escalates vendor manufacturing and shipment delays to ensure timely intervention, enabling:
 
 - **Automated escalation** - Immediate notifications to procurement teams for vendor delays and manufacturing issues
 - **Proactive intervention** - Early warning systems for potential supply chain disruptions
 - **Service level protection** - Automated triggers to maintain customer commitments and delivery schedules
 - **Vendor management** - Automated communication and escalation protocols for supplier performance issues
 
-Get assistance from Fabric IQ, Graph, Agents, and [Copilot](../../fundamentals/copilot-fabric-overview), enabling:
+Get assistance from Fabric IQ, Graph, Agents, and [Copilot](../../fundamentals/copilot-fabric-overview.md), enabling:
 
 - **Intelligent insights** - AI-powered analysis of supply chain data for strategic decision-making
 - **Natural language queries** - Conversational access to complex supply chain analytics and reporting
@@ -225,7 +225,7 @@ This section highlights the advantages of implementing the supply chain architec
 **Phase 3: Operational validation**
 
 - Test system performance during peak procurement periods and supply chain stress scenarios.
-- Validate [Activator](../data-activator/activator-introduction) rules for vendor escalation and supply chain disruption management.
+- Validate [Activator](../data-activator/activator-introduction.md) rules for vendor escalation and supply chain disruption management.
 - Ensure compliance with procurement regulations and vendor requirements.
 - Train your supply chain teams on dashboard usage, alert management, and KQL analytics for supply chain optimization.
 
@@ -234,7 +234,7 @@ This section highlights the advantages of implementing the supply chain architec
 **Intelligent automation and AI**
 
 - Set up advanced [Data Science](../../data-science/data-science-overview.md) capabilities for building, training, and scoring predictive ML models for delivery forecasting and vendor performance optimization.
-- Implement [Activator](../data-activator/activator-introduction) for sophisticated supply chain automation including predictive procurement, dynamic inventory management, and automated vendor management.
+- Implement [Activator](../data-activator/activator-introduction.md) for sophisticated supply chain automation including predictive procurement, dynamic inventory management, and automated vendor management.
 - Deploy [Copilot](../../fundamentals/copilot-fabric-overview.md) for natural language analytics enabling teams to query complex supply chain scenarios using conversational interfaces.
 - Create intelligent supply chain systems that provide real-time decision support based on procurement patterns, logistics performance, and vendor relationships.
 
@@ -242,7 +242,7 @@ This section highlights the advantages of implementing the supply chain architec
 
 - Scale to full supply chain operations with comprehensive vendor coverage and centralized monitoring across multiple regions and product categories.
 - Implement advanced analytics for cross-functional supply chain optimization, cost analysis, and risk management.
-- Create comprehensive dashboards with [Power BI](../create-powerbi-report) direct query capabilities and [Real-Time Dashboard](../dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance.
+- Create comprehensive dashboards with [Power BI](../create-powerbi-report.md) direct query capabilities and [Real-Time Dashboard](../dashboard-real-time-create.md) for executive reporting, operational monitoring, and regulatory compliance.
 - Develop enterprise-grade machine learning models for demand prediction, supply chain optimization, and strategic sourcing.
 
 ## Related resources
@@ -255,4 +255,4 @@ This section highlights the advantages of implementing the supply chain architec
 - [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md)
 - [OneLake data storage overview](../../onelake/onelake-overview.md)
 - [Data Factory for data integration](../../data-factory/data-factory-overview.md)
-- [Microsoft Graph for relationship analysis](../../../graph/)
+- [Microsoft Graph for relationship analysis](/graph/)
