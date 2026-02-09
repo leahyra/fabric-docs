@@ -40,7 +40,7 @@ The smart meter insights reference architecture uses Microsoft Fabric Real-Time 
 
 1. Generate real time notifications on abnormal meters behavior directly to technicians on meter vicinity.
 
-1. Customer app providing customers in depth view of their usage history and real time view of the energy consumption, breakdown of costs, correlation to weather data and notifications on anomalies in energy consumption.
+1. Customer app offering an in-depth view of usage history, real-time energy consumption, cost breakdowns, weather correlations, and anomaly notifications.
 
 ## Operational phases
 
@@ -147,7 +147,7 @@ Customer app provides customers with an in-depth view of their usage history and
 
 - **Real-time meter monitoring** - Monitor more than 1 million smart meters with 10-minute granularity and subsecond response times for critical grid operations.
 
-- **Predictive analytics** - Use ML models to forecast consumption spikes, detect abnormal behavior, and optimize grid performance.
+- **Predictive analytics** - Use machine learning models to forecast consumption spikes, detect abnormal behavior, and optimize grid performance.
 
 - **Unified data platform** - Integrate meter data with customer information and weather data for comprehensive energy insights.
 
@@ -177,7 +177,7 @@ Customer app provides customers with an in-depth view of their usage history and
 
 - **Enhanced customer engagement** - Provide customers with detailed consumption insights, cost breakdowns, and personalized recommendations.
 
-- **Predictive maintenance** - Reduce meter downtime and service problems through ML-driven anomaly detection.
+- **Predictive maintenance** - Reduce meter downtime and service problems through machine learning-driven anomaly detection.
 
 - **Grid optimization** - Maximize energy distribution efficiency through real-time demand forecasting and weather correlation.
 
@@ -227,7 +227,7 @@ Customer app provides customers with an in-depth view of their usage history and
 
 - **Data quality monitoring**: Continuously validates incoming meter data and alerts for communication failures, invalid readings, or corrupted customer information.
 
-- **Performance metrics**: Tracks data ingestion latency from meters, query response times for real-time dashboards, and ML model prediction accuracy with SLA monitoring.
+- **Performance metrics**: Tracks data ingestion latency from meters, query response times for real-time dashboards, and machine learning model prediction accuracy with SLA monitoring.
 
 **Cost optimization**: 
 
@@ -275,7 +275,7 @@ Customer app provides customers with an in-depth view of their usage history and
 
 **Intelligent automation and AI**
 
-- Set up advanced [Data Science](../../data-science/data-science-overview.md) capabilities for building, training, and scoring predictive ML models for abnormal behavior detection and consumption spike prediction.
+- Set up advanced [Data Science](../../data-science/data-science-overview.md) capabilities for building, training, and scoring predictive machine learning models for abnormal behavior detection and consumption spike prediction.
 
 - Implement [Activator](../data-activator/activator-introduction.md) for sophisticated smart meter automation including predictive maintenance, dynamic customer engagement, and automated grid optimization.
 
@@ -300,4 +300,4 @@ Customer app provides customers with an in-depth view of their usage history and
 - [Eventstreams for real-time data ingestion](../event-streams/overview.md) 
 - [Advanced analytics and machine learning](../../data-science/data-science-overview.md) 
 - [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md) 
-- [OneLake data storage overview](../../onelake/onelake-overview.md) 
+- [OneLake data storage overview](../../onelake/onelake-overview.md)
