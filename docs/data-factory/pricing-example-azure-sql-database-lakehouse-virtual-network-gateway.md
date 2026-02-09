@@ -1,6 +1,6 @@
 ---
 title: Pricing Example for a Copy Job with a Virtual Network Data Gateway
-description: A pricing example for copying data from Azure SQL Database to Fabric Lakehouse with a VNET Data Gateway.
+description: A pricing example for copying data from Azure SQL Database to Fabric Lakehouse with a virtual network Data Gateway.
 ms.reviewer: lle
 ms.date: 01/29/2026
 ms.topic: concept-article
@@ -8,16 +8,16 @@ ms.topic: concept-article
 
 # Pricing example: Copy data from Azure SQL Database to Fabric Lakehouse using a Virtual Network Data Gateway
 
-In this scenario, we copy data from an Azure SQL Database deployed in a private virtual network to a Lakehouse table in Microsoft Fabric by using a Copy job with a Virtual Network (VNET) Data Gateway.
+In this scenario, we copy data from an Azure SQL Database deployed in a private virtual network to a Lakehouse table in Microsoft Fabric by using a Copy job with a Virtual Network Data Gateway.
 
 This pattern is useful to secure your data sources with **Private Endpoints**, and to keep data movement within private network boundaries.
 
 The total cost includes two parts:
 
 - **Copy job compute cost**, based on data movement meters
-- **VNET Data Gateway uptime cost**, based on how long the gateway is online
+- **Virtual Network Data Gateway uptime cost**, based on how long the gateway is online
 
-Unlike the On-premises Data Gateway, the **VNET Data Gateway consumes Fabric capacity based on uptime.** The effective gateway uptime is the **Copy job execution time plus the configured Time to Live (TTL)** after job completion.
+Unlike the On-premises Data Gateway, the **Virtual Network Data Gateway consumes Fabric capacity based on uptime.** The effective gateway uptime is the **Copy job execution time plus the configured Time to Live (TTL)** after job completion.
 
 >[!NOTE]
 >The prices used in the following example are hypothetical and don’t intend to imply exact actual pricing. The estimates demonstrate how you can estimate, plan, and manage cost for Data Factory projects in Microsoft Fabric.
@@ -28,11 +28,11 @@ Unlike the On-premises Data Gateway, the **VNET Data Gateway consumes Fabric cap
 
 This example uses the following resources and configuration settings:
 
-- Azure SQL Database with **Private Endpoint** in a customer-managed VNET.
-- **VNET Data Gateway** deployed in the same VNET with:
+- Azure SQL Database with **Private Endpoint** in a customer-managed virtual network.
+- **Virtual Network Data Gateway** deployed in the same virtual network with:
   - **Number of gateway members (nodes): 2**
 - A Copy job configured with:
-  - **Source**: Azure SQL Database via VNET Data Gateway
+  - **Source**: Azure SQL Database via Virtual Network Data Gateway
   - **Sink**: Fabric Lakehouse table
   - **Copy mode**: Full copy for the first run, followed by incremental loads.
 - **Gateway Time to Live (TTL): 30 minutes** after job completion.
@@ -41,12 +41,12 @@ This example uses the following resources and configuration settings:
 
 This scenario includes two cost components:
 
-1. **VNET Data Gateway uptime cost** (based on job duration and TTL)
-1. **Copy job execution cost** (Data Movement meters)
+- **Virtual Network Data Gateway uptime cost** (based on job duration and TTL)
+- **Copy job execution cost** (Data Movement meters)
 
 Both costs are billed to the Fabric or Power BI Premium capacity.
 
-## VNET Data Gateway uptime cost
+## Virtual network data gateway uptime cost
 
 - CU consumption rate per gateway member: **4 CUs**
 - Number of gateway members: **2**
@@ -152,7 +152,7 @@ In this example:
 
 | **Component**              | **Cost**    |
 |----------------------------|-------------|
-| VNET Gateway uptime        | $0.91      |
+| Virtual network Gateway uptime        | $0.91      |
 | Copy job execution         | $4.61      |
 | **Total (full copy run)**  | **$5.52**  |
 
@@ -160,19 +160,19 @@ In this example:
 
 | **Component**                  | **Cost**    |
 |--------------------------------|-------------|
-| VNET Gateway uptime            | $0.74      |
+| Virtual network Gateway uptime            | $0.74      |
 | Copy job execution             | $0.04      |
 | **Total per incremental run**  | **$0.78**  |
 
 ## Key takeaways
 
-- VNET Data Gateway cost comes from **job duration + TTL**, not from 24/7 uptime when TTL is configured.
+- Virtual network Data Gateway cost comes from **job duration + TTL**, not from 24/7 uptime when TTL is configured.
 - Increasing the number of gateway members improves availability but **linearly increases gateway cost**.
 - Data movement cost and gateway uptime cost are **separate and additive**.
 
 ## Comparison with on-premises data gateway
 
-- **VNET Data Gateway**
+- **Virtual Network Data Gateway**
   - Charged by Fabric capacity based on uptime (4 CUs per node)
   - No customer-managed VMs required
 - **On-premises Data Gateway (OPDG)**

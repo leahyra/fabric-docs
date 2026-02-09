@@ -15,11 +15,11 @@ This pattern is useful to apply Power Query transformations while ensuring that 
 The total cost includes two parts:
 
 - **Dataflow Gen2 compute cost**, based on the engines used (Standard Compute in this example)
-- **VNET Data Gateway uptime cost**, based on how long the gateway is online
+- **Virtual Network Data Gateway uptime cost**, based on how long the gateway is online
 
 Total cost per run:
 
-**Total = Dataflow Gen2 charge + VNET Data Gateway charge**
+**Total = Dataflow Gen2 charge + Virtual Network Data Gateway charge**
 
 >[!NOTE]
 >The prices used in the following example are hypothetical and don’t intend to imply exact actual pricing. The estimates demonstrate how you can estimate, plan, and manage cost for Data Factory projects in Microsoft Fabric.
@@ -30,8 +30,8 @@ Total cost per run:
 
 This scenario uses the following resources:
 
-- **Source**: Azure SQL Database with Private Endpoint in customer VNET
-- **Connectivity**: VNET Data Gateway
+- **Source**: Azure SQL Database with Private Endpoint in customer virtual network
+- **Connectivity**: Virtual Network Data Gateway
 - **Gateway members (nodes)**: 2
 - **Dataflow type**: Dataflow Gen2 (CI/CD)
 - **Transformations**: filtering, joins, calculated columns
@@ -44,8 +44,8 @@ This scenario uses the following resources:
 
 This scenario includes two independent cost components:
 
-1. **Dataflow Gen2 Standard Compute cost** (Mashup Engine)
-1. **VNET Data Gateway uptime cost** (job duration + TTL)
+- **Dataflow Gen2 Standard Compute cost** (Mashup Engine)
+- **Virtual Network Data Gateway uptime cost** (job duration + TTL)
 
 Both costs are billed to the Fabric or Power BI Premium capacity.
 
@@ -99,7 +99,7 @@ Dataflow compute cost:
 
 3.48 × $0.18 ≈ $0.63 per run
 
-## VNET Data Gateway uptime cost
+## Virtual network Data Gateway uptime cost
 
 - CU consumption rate: **4 CU per gateway member**
 - Number of members: **2**
@@ -139,7 +139,7 @@ Gateway cost per run:
 | **Component**                   | **Cost**    |
 |---------------------------------|-------------|
 | Dataflow Gen2 Standard Compute  | $0.63      |
-| VNET Data Gateway uptime        | $1.20      |
+| Virtual network Data Gateway uptime        | $1.20      |
 | **Total per run**               | **$1.83**  |
 
 **Monthly estimate (30 daily runs)**
@@ -147,13 +147,13 @@ Gateway cost per run:
 | **Component**          | **Monthly cost**  |
 |------------------------|-------------------|
 | Dataflow Gen2 compute  | $18.90           |
-| VNET Gateway uptime    | $36              |
+| Virtual network Gateway uptime    | $36              |
 | **Total per month**    | **$54.9**        |
 
 ## Key takeaways
 
 - Dataflow Gen2 charges are based on query execution time and engine usage.
-- VNET Data Gateway charges are based on gateway uptime, which includes:
+- Virtual network Data Gateway charges are based on gateway uptime, which includes:
   - Dataflow execution duration
   - Plus configured TTL after job completion
 - Gateway cost is independent of data volume or activity and continues as long as the gateway is running.
