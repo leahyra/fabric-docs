@@ -43,7 +43,7 @@ After providing the expression for the If Condition, selecting the pencil icon b
 :::image type="content" source="media/if-condition-activity/provide-if-condition-expression-and-configure-activities.png" lightbox="media/if-condition-activity/provide-if-condition-expression-and-configure-activities.png" alt-text="Screenshot showing the If Condition Activity settings tab and showing where to provide the Expression and choose Activities for when the expression evaluates to True or False.":::
 
 >[!TIP]
->For more examples and information about the expression lauguage, see: [Expressions and functions for Data Factory in Microsoft Fabric](expression-language.md)
+>For more examples and information about the expression language, see: [Expressions and functions for Data Factory in Microsoft Fabric](expression-language.md)
 
 ## Save and run or schedule the pipeline
 

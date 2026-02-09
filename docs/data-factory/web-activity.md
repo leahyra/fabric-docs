@@ -36,7 +36,7 @@ To use a Web activity in a pipeline, complete the following steps:
    :::image type="content" source="media/web-activity/web-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the Web activity.":::
 
    > [!NOTE]
-   > The web activity may simply appear as an icon on the toolbar as shown in the previous image, if the screen resolution doesn't allow its name to be fully spelled out.
+   > The web activity could appear as an icon on the toolbar as shown in the previous image, if the screen resolution doesn't allow its name to be fully spelled out.
 
 Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
@@ -52,11 +52,12 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
    > [!NOTE]
    > The Connection name can be max 80 characters long.
-   
-### Using On-premises or VNET data gateway
-1. When creating your connection, you can now choose to use either an on-premises data gateway (OPDG) or a VNET data gateway. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md)
 
-1. If you would like to use a VNET gateway, refer to [how to create a VNET data gateway](/data-integration/vnet/create-data-gateways).
+### Using On-premises or virtual network data gateway
+
+1. When creating your connection, you can now choose to use either an on-premises data gateway (OPDG) or a virtual network data gateway. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md)
+
+1. If you would like to use a virtual network gateway, refer to [how to create a virtual network data gateway](/data-integration/vnet/create-data-gateways).
 
 1. Once you have successfully created and configured your gateway, it should appear under the Data Gateway dropdown in the connection dialog
 

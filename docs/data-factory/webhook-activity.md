@@ -27,7 +27,7 @@ To use a WebHook activity in a pipeline, complete the following steps:
 1. Search for WebHook in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. 
 
    > [!NOTE]
-   > Unless your screen has a very high resolution, you likely need to expand the list of activities from the toolbar using the elipsis **...** button to find the WebHook activity.
+   > Unless your screen has a very high resolution, you likely need to expand the list of activities from the toolbar using the ellipsis **...** button to find the WebHook activity.
 
    :::image type="content" source="media/webhook-activity/add-webhook-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and WebHook activity highlighted.":::
 
@@ -47,14 +47,15 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
    :::image type="content" source="media/webhook-activity/create-new-connection.png" alt-text="Screenshot showing the new connection dialog for the WebHook activity.":::
 
-### Using On-premises or VNET data gateway
-1. When creating your connection, you can now choose to use either an on-premises data gateway (OPDG) or a VNET data gateway. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md).
+### Using On-premises or virtual network data gateway
 
-1. If you would like to use a VNET gateway, refer to [how to create a VNET data gateway](/data-integration/vnet/create-data-gateways).
+1. When creating your connection, you can now choose to use either an on-premises data gateway (OPDG) or a virtual network data gateway. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md).
+
+1. If you would like to use a virtual network gateway, refer to [how to create a virtual network data gateway](/data-integration/vnet/create-data-gateways).
 
 1. Once you have successfully created and configured your gateway, it should appear under the Data Gateway dropdown in the connection dialog.
 
-	:::image type="content" source="media/webhook-activity/create-new-data-gateway.png" alt-text="Screenshot showing the data gateway connection dialog for the WebHook activity.":::   
+    :::image type="content" source="media/webhook-activity/create-new-data-gateway.png" alt-text="Screenshot showing the data gateway connection dialog for the WebHook activity.":::
 
 1. After choosing or creating your connection, complete the remaining required fields, add any required headers, or set any advanced settings. The WebHook activity only supports the POST method.
 
