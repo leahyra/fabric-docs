@@ -50,7 +50,7 @@ You can stream over 1 million IIoT events per hour from 30,000 tags across 40 fa
 
 Collect contextualization data on the IIoT devices from the OPCUA library daily via MQTT. This data enables real-time asset identification, equipment specifications, and operational parameters for enhanced manufacturing insights. 
 
-Synchronize factory inventory, shift details, and component cost information to [OneLake](../onelake/onelake-overview.md) via [Data Factory](../../data-factory/data-factory-overview.md) for data enrichment and contextualization. This synchronization includes: 
+Synchronize factory inventory, shift details, and component cost information to [OneLake](../../onelake/onelake-overview.md) via [Data Factory](../../data-factory/data-factory-overview.md) for data enrichment and contextualization. This synchronization includes: 
 
 - **Manufacturing equipment specifications and performance baselines**: Include detailed information about each piece of equipment, such as operational parameters, performance thresholds, and maintenance history. This data helps in identifying deviations from normal operating conditions and optimizing equipment utilization.
 
