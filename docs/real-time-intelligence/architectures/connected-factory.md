@@ -12,7 +12,7 @@ ms.search.form: Architecture
 
 # Connected factory reference architecture 
 
-This reference architecture shows how you can use Microsoft Fabric Real-Time Intelligence to build connected factory solutions that handle real-time data from industrial IoT devices across multiple manufacturing facilities. You can process more than 1 million IIoT events per hour from 30,000 tags across 40 factories to enable intelligent manufacturing operations with predictive analytics and real-time decision making.
+This reference architecture shows how you can use Microsoft Fabric Real-Time Intelligence to build connected factory solutions that handle real-time data from industrial IoT devices across multiple manufacturing facilities. You can process more than one million IIoT events per hour from 30,000 tags across 40 factories to enable intelligent manufacturing operations with predictive analytics and real-time decision making.
 
 You can manage large-scale manufacturing operations where thousands of industrial devices stream real-time data on production metrics, equipment performance, and operational state. The architecture integrates contextualization data from OPCUA libraries via MQTT streaming and maintains comprehensive factory inventory, shift details, and cost information to create a unified connected factory platform.
 
@@ -60,7 +60,7 @@ Synchronize factory inventory, shift details, and component cost information to 
 
 - **Component costs and inventory management information**: Track the costs of raw materials, components, and finished goods alongside inventory levels. This data supports real-time cost analysis, supply chain optimization, and efficient resource allocation.
 
-**Real-world scenario example**: A major manufacturing conglomerate with 40 factories processes over 1 million IIoT events per hour from 30,000 industrial tags. These events include temperature readings from furnaces, pressure measurements from hydraulic systems, vibration data from rotating machinery, production counts from assembly lines, and quality metrics from inspection stations. The MQTT-Eventstream integration processes this data while maintaining subsecond latency for critical manufacturing decisions and real-time production optimization. 
+**Real-world scenario example**: A major manufacturing conglomerate with 40 factories processes over one million IIoT events per hour from 30,000 industrial tags. These events include temperature readings from furnaces, pressure measurements from hydraulic systems, vibration data from rotating machinery, production counts from assembly lines, and quality metrics from inspection stations. The MQTT-Eventstream integration processes this data while maintaining subsecond latency for critical manufacturing decisions and real-time production optimization. 
 
 ### Analyze, transform, and enrich 
 
@@ -138,7 +138,7 @@ By using [Copilot](../../fundamentals/copilot-fabric-overview.md), you can use n
 
 ### Connected factory intelligence 
 
-- **Real-time manufacturing monitoring** - Monitor 40 factories with more than 1 million IIoT events per hour and subsecond response times for critical production operations.
+- **Real-time manufacturing monitoring** - Monitor 40 factories with more than one million IIoT events per hour and subsecond response times for critical production operations.
 
 - **Predictive analytics** - Use machine learning models to forecast equipment failures, production optimization, and quality improvements.
 
@@ -180,7 +180,7 @@ By using [Copilot](../../fundamentals/copilot-fabric-overview.md), you can use n
 
 ### Data architecture requirements
 
-- **High-throughput ingestion** - Design your system to process more than 1 million IIoT events per hour from 30,000 tags across 40 factories, with burst capacity during peak production periods.
+- **High-throughput ingestion** - Design your system to process more than one million IIoT events per hour from 30,000 tags across 40 factories, with burst capacity during peak production periods.
 
 - **Real-time processing** - Ensure subsecond response times for critical manufacturing alerts, under two-second response for production updates, and under five-second processing for quality calculations.
 
