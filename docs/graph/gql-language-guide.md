@@ -22,7 +22,7 @@ This guide serves both newcomers learning GQL fundamentals and experienced users
 > [!NOTE]
 > The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
 
-## Prerquisites
+## Prerequisites
 
 Before diving into GQL, be familiar with these concepts:
 
