@@ -46,7 +46,7 @@ The connected factory reference architecture uses Microsoft Fabric Real-Time Int
 
 ### Ingest and process
 
-You can stream over 1 million IIoT events per hour from 30,000 tags across 40 factories in real time with subsecond latency. This streaming provides comprehensive visibility into manufacturing processes, equipment performance, and production metrics. Ingest this data through [Eventstreams](../event-streams/overview.md) and store it in [Eventhouse](../eventhouse.md) for immediate analysis.
+You can stream over one million IIoT events per hour from 30,000 tags across 40 factories in real time with subsecond latency. This streaming provides comprehensive visibility into manufacturing processes, equipment performance, and production metrics. Ingest this data through [Eventstreams](../event-streams/overview.md) and store it in [Eventhouse](../eventhouse.md) for immediate analysis.
 
 Collect contextualization data on the IIoT devices from the OPCUA library daily via MQTT. This data enables real-time asset identification, equipment specifications, and operational parameters for enhanced manufacturing insights. 
 
