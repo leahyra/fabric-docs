@@ -49,7 +49,7 @@ Internal calls are secure by default and protected by Microsoft Entra ID authent
 
 ### Inbound network traffic
 
-Inbound network traffic refers to connections initiated by external data sources to Eventstream, typically to push data into Eventstream or, in some cases, to pull data from Eventstream. By configuring inbound network security, you control which sources can connect to your Eventstream and from which networks. This helps prevent unauthorized access and ensures that only approved sources can stream/pull data into/from your Fabric Eventstream.
+Inbound network traffic refers to **connections initiated by external data sources to Eventstream**, typically to push data into Eventstream or, in some cases, to pull data from Eventstream. By configuring inbound network security, you control which sources can connect to your Eventstream and from which networks. This helps prevent unauthorized access and ensures that only approved sources can stream/pull data into/from your Fabric Eventstream.
 
 Examples of inbound scenarios include:
 
@@ -61,7 +61,7 @@ Inbound network security features restrict access to Eventstream itself, ensurin
 
 ### Outbound network traffic
 
-Outbound network traffic refers to connections that Eventstream makes to external data sources outside the Fabric platform. When you configure outbound security, you control how Eventstream connects to Azure-based data sources and other external systems. This ensures that data flowing from external sources into Eventstream travels over secure, private connections.
+Outbound network traffic refers to **connections that Eventstream makes to external data sources outside the Fabric platform**. When you configure outbound security, you control how Eventstream connects to Azure-based data sources and other external systems. This ensures that data flowing from external sources into Eventstream travels over secure, private connections.
 
 Examples of outbound scenarios include:
 
