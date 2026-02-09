@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac, ajayj
-ms.date: 01/15/2026
+ms.date: 02/09/2026
 ms.topic: concept-article
 ms.custom:
   - references_regions
@@ -26,7 +26,7 @@ The feature availability also depends on Fabric regions. For a complete list of 
 
 ## Database level limitations
 
-- Mirroring on Azure SQL Managed Instance is only available for instances that have their [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) set to **Always up to date**.
+- Mirroring on Azure SQL Managed Instance is available for instances that have their [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) set to **Always up to date** or **SQL Server 2025**.
    - SQL managed instances with the **SQL Server 2022** update policy can use Fabric Mirroring for SQL Server 2016-2022, which uses CDC instead of the change feed. For more information, see [Tutorial: Configure Microsoft Fabric Mirroring from SQL Server](sql-server-tutorial.md?tabs=sql201622).
 - Geo Disaster Recovery setup isn't supported by Mirroring.
 - Fabric Mirroring for Azure SQL Managed Instance is only supported on a **writable primary** database.
