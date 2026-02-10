@@ -1,0 +1,123 @@
+---
+title: Change data capture from Snowflake using Copy job
+description: This tutorial guides you through how to use CDC in copy job to move data from Snowflake.
+ms.reviewer: yexu
+ms.topic: tutorial
+ms.date: 02/10/2026
+ms.search.form: copy-job-tutorials
+ms.custom: copy-job, ai-generated, ai-assisted
+---
+
+# Change data capture from Snowflake using Copy job (Preview)
+
+This tutorial describes how to use change data capture (CDC) in Copy job to efficiently replicate data changes from Snowflake to a destination. This ensures your destination data stays up to date automatically.
+
+## Prerequisites
+
+Before you begin, ensure you have the following:
+
+- A Snowflake account with appropriate permissions to enable change tracking.
+- A Fabric workspace with the necessary permissions to create a Copy job.
+- A destination data store supported by Copy job for CDC replication.
+
+### Enable change tracking in Snowflake
+
+Snowflake uses change tracking (also called streams) to capture data changes. Follow these steps to enable change tracking on your Snowflake database and tables:
+
+1. Connect to your Snowflake account using the Snowflake web interface, SnowSQL, or another SQL client.
+
+1. Enable change tracking on the database. Run the following SQL command:
+
+   ```sql
+   ALTER DATABASE <database_name> SET CHANGE_TRACKING = TRUE;
+   ```
+
+   Replace `<database_name>` with the name of your database.
+
+1. Enable change tracking on specific tables. For each table you want to track, run:
+
+   ```sql
+   ALTER TABLE <schema_name>.<table_name> SET CHANGE_TRACKING = TRUE;
+   ```
+
+   Replace `<schema_name>` and `<table_name>` with your schema and table names.
+
+1. Verify change tracking is enabled. You can verify by running:
+
+   ```sql
+   SHOW TABLES LIKE '<table_name>' IN SCHEMA <schema_name>;
+   ```
+
+   Check the `change_tracking` column in the output to confirm it shows `ON`.
+
+> [!NOTE]
+> - Change tracking in Snowflake captures INSERT, UPDATE, and DELETE operations.
+> - Ensure your Snowflake user has the necessary privileges to alter databases and tables.
+> - The change tracking data retention period in Snowflake is configurable. Ensure it's longer than your scheduled Copy job interval to avoid data loss.
+
+For more information about Snowflake change tracking, see [Snowflake Documentation - Change Tracking](https://docs.snowflake.com/en/user-guide/streams-intro).
+
+## Create a Copy job with Snowflake CDC
+
+Complete the following steps to create a new Copy job to ingest data from Snowflake via CDC to a destination:
+
+1. Select **+ New Item**, choose the **Copy job** icon, name your Copy job, and select **Create**.
+
+   :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new Copy job.":::
+
+1. Choose the data store to copy data from. In this example, choose **Snowflake**.
+
+   :::image type="content" source="media/copy-job/choose-data-source.png" alt-text="Screenshot showing where to choose a data source for the Copy job.":::
+
+1. Enter your **connection details** and **credentials** to connect to Snowflake. You can copy data securely within a VNET environment using on-premises or VNET gateway.
+
+   :::image type="content" source="media/copy-job/enter-credentials-data-source.png" alt-text="Screenshot showing where to enter credentials.":::
+
+1. You should have clear visibility of which source tables have CDC enabled. Select the **tables with CDC enabled** to copy.
+
+   Tables with CDC enabled:
+   :::image type="content" source="media/copy-job/cdc-table-icon.png" alt-text="Screenshot showing cdc table icon.":::
+
+   Tables without CDC enabled:
+   :::image type="content" source="media/copy-job/none-cdc-table-icon.png" alt-text="Screenshot showing none cdc table icon.":::
+
+   :::image type="content" source="media/copy-job/select-cdc-tables.png" alt-text="Screenshot showing where to select cdc tables for the Copy job.":::
+
+1. Select your destination store. Choose a destination that supports CDC merge or upsert operations for optimal CDC replication.
+
+   :::image type="content" source="media/copy-job/select-destination-store.png" alt-text="Screenshot showing where to select the destination store for the Copy job.":::
+
+1. The default **Update method** should be set to **Merge**, and the required key columns will match the primary key defined in the source store by default.
+
+   :::image type="content" source="media/copy-job/cdc-update-method.png" alt-text="Screenshot showing the update method for CDC.":::
+
+1. Select **Incremental copy** and you'll see no Incremental column for each table is required to be input to track changes.
+
+   > [!NOTE]
+   > Copy job initially performs a full load and subsequently carries out incremental copies in subsequent runs via CDC.
+
+   :::image type="content" source="media/copy-job/copy-job-cdc-mode.png" alt-text="Screenshot showing where to select the CDC.":::
+
+1. Review the job summary, set the run option to on schedule, and select **Save + Run**.
+
+   :::image type="content" source="media/copy-job/cdc-review-save.png" alt-text="Screenshot showing where to review and save the newly created Copy job.":::
+
+   > [!NOTE]
+   > Ensure that your Snowflake change tracking retention period is longer than the interval between scheduled runs; otherwise, the changed data might be lost if not processed within the retention period.
+
+1. Your copy job starts immediately. The first run copies an initial full snapshot.
+
+   :::image type="content" source="media/copy-job/monitor-cdc-initial-run.png" alt-text="Screenshot showing the Copy job panel where you can monitor initial full snapshot.":::
+
+1. Update your source tables in Snowflake by inserting, updating, or deleting rows.
+
+1. Run the Copy job again to capture and replicate all changes, including inserted, updated, and deleted rows, to the destination.
+
+   :::image type="content" source="media/copy-job/monitor-cdc-second-run.png" alt-text="Screenshot showing the Copy job panel where you can monitor capturing and replicating all changes.":::
+
+## Next steps
+
+- [Change data capture (CDC) in Copy job](cdc-copy-job.md)
+- [What is the Copy job in Data Factory](what-is-copy-job.md)
+- [How to monitor a Copy job](monitor-copy-job.md)
+- [Snowflake connector overview](connector-snowflake-overview.md)
