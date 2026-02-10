@@ -12,16 +12,16 @@ ms.search.form:
 
 # What is Fabric Maps? (preview)
 
-Microsoft Fabric Maps provide an interactive geospatial visualization capability within the [Real-Time Intelligence](/fabric/real-time-intelligence/overview) experience. Maps let you analyze location‑aware data alongside time‑based information, helping surface spatial patterns, relationships, and trends that are difficult to identify in charts or tables alone.
+Microsoft Fabric Maps let you visualize real-time and historical location data in Microsoft Fabric, helping you monitor live events, analyze spatial patterns, and understand geographic context alongside time-based insights.
 
 > [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 Maps are built to work natively with Real-Time Intelligence data stores. You can visualize real‑time event data queried from [Eventhouses](/fabric/real-time-intelligence/overview) using [Kusto Query Language (KQL)](/kusto/query/?view=microsoft-fabric), and historical or static spatial data stored in a Lakehouse. This combination makes it possible to view live operational activity in geographic context while maintaining access to historical reference data.
 
 ## How maps fit into Real-Time Intelligence
 
-In a Real-Time Intelligence solution, data is ingested from streaming sources, processed and stored in Eventhouses, and a visual endpoint in this workflow by rendering query results as spatial layers that refresh as new data arrives. Each map is a first‑class Fabric item that belongs to a workspace and is managed alongside other Real-Time Intelligence artifacts such as Eventhouses and [Lakehouses](/fabric/data-engineering/lakehouse-overview).
+In a Real-Time Intelligence solution, data is ingested from streaming sources, processed and stored in Eventhouses, and a visual endpoint in this workflow by rendering query results as spatial layers that refresh as new data arrives. Each map is a first‑class Fabric item that belongs to a workspace and participates in Fabric's permission, sharing, and lifecycle management model.
 
 Fabric Maps display data through layers, where each layer represents a specific dataset or query result. Layers can visualize points, lines, or polygons, allowing you to emphasize different spatial aspects of the data—such as density, movement, or geographic boundaries—within a single map view. For more information on data layers, see [Add data to a map](create-map.md#add-data-to-a-map---geojson).
 
