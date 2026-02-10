@@ -17,9 +17,19 @@ This tutorial describes how to use change data capture (CDC) in Copy job to effi
 
 Before you begin, ensure you have the following:
 
-- A Snowflake account with appropriate permissions to enable change tracking.
+**Snowflake requirements:**
+- A Snowflake account with access to the database and schema containing your source tables.
+- **OWNERSHIP** privilege on the tables where you want to enable change tracking. Alternatively, the **MODIFY** privilege can be used to enable change tracking.
+- **USAGE** privilege on the database and schema containing the tables.
+- **SELECT** privilege on the tables to read data.
+- Tables must have a data retention period configured (minimum 0 days, maximum 90 days). The retention period should be longer than your scheduled Copy job interval to prevent change data loss.
+
+**Fabric requirements:**
 - A Fabric workspace with the necessary permissions to create a Copy job.
 - A destination data store supported by Copy job for CDC replication.
+
+> [!TIP]
+> Use the `SECURITYADMIN` or `SYSADMIN` roles in Snowflake to grant the required object privileges. The `ACCOUNTADMIN` role might be needed for certain account-wide configurations.
 
 ### Enable change tracking in Snowflake
 

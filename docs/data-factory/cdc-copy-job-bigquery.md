@@ -17,10 +17,24 @@ This tutorial describes how to use change data capture (CDC) in Copy job to effi
 
 Before you begin, ensure you have the following:
 
+**Google BigQuery requirements:**
 - A Google Cloud Platform (GCP) account with a BigQuery project.
-- Appropriate permissions in BigQuery to enable change data capture.
+- **To enable change history:** The `bigquery.tables.update` permission on the tables where you want to enable change history.
+- **To access change history data:** The `bigquery.tables.getData` permission on the tables. This permission is included in the following predefined IAM roles:
+  - `roles/bigquery.dataViewer`
+  - `roles/bigquery.dataEditor`
+  - `roles/bigquery.dataOwner`
+  - `roles/bigquery.admin`
+- If tables have row-level access policies, you need the `bigquery.rowAccessPolicies.overrideTimeTravelRestrictions` permission (included in the `roles/bigquery.admin` role) to access historical data.
+- Tables must have change history enabled (`enable_change_history = TRUE`).
+- Change history is limited to the table's time travel period (default 7 days, configurable up to 7 days for standard tables).
+
+**Fabric requirements:**
 - A Fabric workspace with the necessary permissions to create a Copy job.
 - A destination data store supported by Copy job for CDC replication.
+
+> [!TIP]
+> Assign BigQuery IAM roles at the appropriate resource level (project, dataset, or table) following the principle of least privilege. For more information, see [BigQuery IAM roles and permissions](https://cloud.google.com/bigquery/docs/access-control).
 
 ### Enable change data capture in Google BigQuery
 
