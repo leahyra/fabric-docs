@@ -65,7 +65,7 @@ Each file is processed as an individual layer within the tileset.
 Next, set the following configuration options:
 
 - **Layer name**: You can assign a custom name to each layer or use the default name, which matches the file name.
-- **Zoom level range**: Define the minimum and maximum zoom levels for your spatial data visibility. For more information, see [zoom level range](#zoom-level-range-and-corresponding-view).
+- **Zoom level range**: Define the minimum and maximum zoom levels for your spatial data visibility. For more information, see [Understanding zoom levels in tilesets](about-tile-sets.md#understanding-zoom-levels-in-tilesets).
 
   > [!NOTE]
   > Things to keep in mind with configuring zoom levels:
