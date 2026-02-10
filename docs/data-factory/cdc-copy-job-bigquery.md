@@ -27,7 +27,7 @@ Before you begin, ensure you have the following:
   - `roles/bigquery.admin`
 - If tables have row-level access policies, you need the `bigquery.rowAccessPolicies.overrideTimeTravelRestrictions` permission (included in the `roles/bigquery.admin` role) to access historical data.
 - Tables must have change history enabled (`enable_change_history = TRUE`).
-- Change history is limited to the table's time travel period (default 7 days, configurable up to 7 days for standard tables).
+- Change history is limited to the table's time travel period (configurable between 2 and 7 days, with 7 days as the default).
 
 **Fabric requirements:**
 - A Fabric workspace with the necessary permissions to create a Copy job.
