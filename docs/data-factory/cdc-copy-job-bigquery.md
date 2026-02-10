@@ -24,52 +24,58 @@ Before you begin, ensure you have the following:
 
 ### Enable change data capture in Google BigQuery
 
-Google BigQuery uses change data capture through table change streams. Follow these steps to enable CDC on your BigQuery tables:
+Google BigQuery uses change history to enable change data capture. When you enable change history on a table, BigQuery tracks all changes (INSERT, UPDATE, and DELETE operations) that you can query using the `CHANGES` function. Follow these steps to enable change history on your BigQuery tables:
 
 1. Sign in to the [Google Cloud Console](https://console.cloud.google.com/).
 
-1. Navigate to your BigQuery project and select the dataset containing the tables you want to track.
+1. Navigate to BigQuery in the Google Cloud Console.
 
-1. Enable change data capture on a table using one of the following methods:
-
-   **Using the BigQuery Console:**
-   
-   1. Select the table you want to enable CDC on.
-   1. Select **Edit schema**.
-   1. Under **Advanced options**, enable **Change data capture**.
-   1. Configure the change history retention period (default is 7 days, maximum is 90 days).
-   1. Select **Save**.
+1. Enable change history on a table using one of the following methods:
 
    **Using SQL (DDL):**
    
-   Create a new table with CDC enabled:
+   For a new table, create it with change history enabled:
 
    ```sql
-   CREATE TABLE `project_id.dataset_id.table_name`
-   (
+   CREATE TABLE `project_id.dataset_id.table_name` (
      column1 STRING,
      column2 INT64,
      column3 TIMESTAMP
    )
-   OPTIONS(
-     max_staleness=INTERVAL "0" DAY,
-     enable_change_history=TRUE
+   OPTIONS (
+     enable_change_history = TRUE
    );
    ```
 
-   Or alter an existing table to enable CDC:
+   For an existing table, alter it to enable change history:
 
    ```sql
    ALTER TABLE `project_id.dataset_id.table_name`
    SET OPTIONS (
-     max_staleness=INTERVAL "0" DAY,
-     enable_change_history=TRUE
+     enable_change_history = TRUE
    );
    ```
 
    Replace `project_id`, `dataset_id`, and `table_name` with your actual project, dataset, and table names.
 
-1. Verify that change data capture is enabled. Run the following query:
+   Example:
+
+   ```sql
+   ALTER TABLE `my-project.sales.customers`
+   SET OPTIONS (
+     enable_change_history = TRUE
+   );
+   ```
+
+   **Using the BigQuery Console:**
+   
+   1. In the BigQuery Console, navigate to your dataset and select the table.
+   1. Select **Schema** > **Edit schema**.
+   1. Select **Advanced options**.
+   1. Check the box for **Enable change history**.
+   1. Select **Save**.
+
+1. Verify that change history is enabled. Run the following query:
 
    ```sql
    SELECT
@@ -85,15 +91,29 @@ Google BigQuery uses change data capture through table change streams. Follow th
      AND option_name = 'enable_change_history';
    ```
 
-   The query should return `TRUE` for the `option_value` if CDC is enabled.
+   Replace `project_id`, `dataset_id`, and `table_name` with your values. The query should return `TRUE` for the `option_value` if change history is enabled.
+
+1. (Optional) Test the change history by querying changes:
+
+   ```sql
+   SELECT *
+   FROM CHANGES(
+     TABLE `project_id.dataset_id.table_name`,
+     TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 1 HOUR),
+     CURRENT_TIMESTAMP()
+   );
+   ```
+
+   This query retrieves all changes made to the table in the past hour.
 
 > [!NOTE]
-> - BigQuery change data capture tracks INSERT, UPDATE, and DELETE operations.
-> - The change history retention period determines how long change data is available. Ensure this period is longer than your scheduled Copy job interval.
-> - Change data capture might incur additional storage costs in BigQuery.
-> - You need the `bigquery.tables.update` permission to enable CDC on tables.
+> - BigQuery change history tracks INSERT, UPDATE, and DELETE operations using the `CHANGES` table-valued function.
+> - Change history is limited to the table's time travel period (default 7 days). You can't query changes within the last 10 minutes due to transactional consistency requirements.
+> - Enabling change history might incur additional storage costs for metadata.
+> - You need the `bigquery.tables.update` permission to enable change history on tables.
+> - The `_CHANGE_TYPE` column in the `CHANGES` function output indicates the type of change: `INSERT`, `UPDATE`, or `DELETE`.
 
-For more information about BigQuery change data capture, see [Google BigQuery Documentation - Change data capture](https://cloud.google.com/bigquery/docs/change-data-capture).
+For more information about BigQuery change history, see the official [Google Cloud Documentation - Work with change history](https://cloud.google.com/bigquery/docs/change-history).
 
 ## Create a Copy job with Google BigQuery CDC
 

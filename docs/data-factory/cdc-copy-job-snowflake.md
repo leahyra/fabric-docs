@@ -23,19 +23,11 @@ Before you begin, ensure you have the following:
 
 ### Enable change tracking in Snowflake
 
-Snowflake uses change tracking (also called streams) to capture data changes. Follow these steps to enable change tracking on your Snowflake database and tables:
+Snowflake uses table-level change tracking to capture data changes. Change tracking must be enabled on each table individually. Follow these steps to enable change tracking on your Snowflake tables:
 
 1. Connect to your Snowflake account using the Snowflake web interface, SnowSQL, or another SQL client.
 
-1. Enable change tracking on the database. Run the following SQL command:
-
-   ```sql
-   ALTER DATABASE <database_name> SET CHANGE_TRACKING = TRUE;
-   ```
-
-   Replace `<database_name>` with the name of your database.
-
-1. Enable change tracking on specific tables. For each table you want to track, run:
+1. Enable change tracking on each table you want to track. For each table, run the following SQL command:
 
    ```sql
    ALTER TABLE <schema_name>.<table_name> SET CHANGE_TRACKING = TRUE;
@@ -43,20 +35,46 @@ Snowflake uses change tracking (also called streams) to capture data changes. Fo
 
    Replace `<schema_name>` and `<table_name>` with your schema and table names.
 
-1. Verify change tracking is enabled. You can verify by running:
+   Example:
+
+   ```sql
+   ALTER TABLE sales.customers SET CHANGE_TRACKING = TRUE;
+   ALTER TABLE sales.orders SET CHANGE_TRACKING = TRUE;
+   ```
+
+1. (Optional) Enable change tracking when creating a new table:
+
+   ```sql
+   CREATE TABLE <schema_name>.<table_name> (
+     column1 STRING,
+     column2 NUMBER
+   ) CHANGE_TRACKING = TRUE;
+   ```
+
+1. Verify change tracking is enabled. Run the following command to check the status:
 
    ```sql
    SHOW TABLES LIKE '<table_name>' IN SCHEMA <schema_name>;
    ```
 
-   Check the `change_tracking` column in the output to confirm it shows `ON`.
+   In the output, locate the `change_tracking` column and confirm it shows `ON`.
+
+   Alternatively, query the `INFORMATION_SCHEMA`:
+
+   ```sql
+   SELECT table_catalog, table_schema, table_name, change_tracking
+   FROM <database_name>.INFORMATION_SCHEMA.TABLES
+   WHERE table_schema = '<schema_name>'
+     AND table_name = '<table_name>';
+   ```
 
 > [!NOTE]
-> - Change tracking in Snowflake captures INSERT, UPDATE, and DELETE operations.
-> - Ensure your Snowflake user has the necessary privileges to alter databases and tables.
-> - The change tracking data retention period in Snowflake is configurable. Ensure it's longer than your scheduled Copy job interval to avoid data loss.
+> - Change tracking is a table-level property in Snowflake that tracks INSERT, UPDATE, and DELETE operations.
+> - You must have `OWNERSHIP` privilege on the table or the `MODIFY` privilege to enable change tracking.
+> - Change tracking consumes additional storage for metadata but is required for features like streams and CDC patterns.
+> - Snowflake retains change tracking data according to the table's data retention period (minimum 0 days, maximum 90 days). Ensure the retention period is longer than your scheduled Copy job interval to avoid data loss.
 
-For more information about Snowflake change tracking, see [Snowflake Documentation - Change Tracking](https://docs.snowflake.com/en/user-guide/streams-intro).
+For more information about Snowflake change tracking, see the official [Snowflake Documentation - ALTER TABLE](https://docs.snowflake.com/en/sql-reference/sql/alter-table) and [Managing Streams](https://docs.snowflake.com/en/user-guide/streams-manage).
 
 ## Create a Copy job with Snowflake CDC
 
