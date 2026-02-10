@@ -163,9 +163,7 @@ Complete the following steps to create a new Copy job to ingest data from Google
    > [!NOTE]
    > Based on the supported connectors, Google BigQuery as a CDC source can replicate to destinations that support incremental copy. Review the [supported connectors for CDC](cdc-copy-job.md#supported-connectors) to choose an appropriate destination.
 
-1. Configure the copy settings. For Google BigQuery CDC sources, the Copy job automatically detects changes and applies them to the destination.
-
-1. Select **Incremental copy** and you'll see no Incremental column for each table is required to be input to track changes.
+1. Select **Incremental copy** and you'll see no Incremental column for each table is required to be input to track changes. The default **Update method** should be set to **Merge**, and the required key columns will match the primary key defined in the source store by default.
 
    > [!NOTE]
    > Copy job initially performs a full load and subsequently carries out incremental copies in subsequent runs via CDC.
@@ -173,8 +171,6 @@ Complete the following steps to create a new Copy job to ingest data from Google
    :::image type="content" source="media/copy-job/copy-job-cdc-mode.png" alt-text="Screenshot showing where to select the CDC.":::
 
 1. Review the job summary, set the run option to on schedule, and select **Save + Run**.
-
-   :::image type="content" source="media/copy-job/cdc-review-save.png" alt-text="Screenshot showing where to review and save the newly created Copy job.":::
 
    > [!NOTE]
    > Ensure that your BigQuery change history retention period is longer than the interval between scheduled runs; otherwise, the changed data might be lost if not processed within the retention period.
