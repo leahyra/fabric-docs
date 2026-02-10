@@ -1168,7 +1168,7 @@
       - name: Tutorials
         items:
           - name: Set service principal as pipeline owner
-            href: set-spn-as-pipeline-owner-tutorial.md
+            href: set-pipeline-owner-tutorial.md
           - name: Run a Script activity and send output by email
             href: script-activity-email-output.md
           - name: Use AI to turn sketches into pipelines

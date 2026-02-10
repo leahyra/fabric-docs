@@ -14,7 +14,7 @@ By completing this tutorial, you learn how to:
 > [!div class="checklist"]
 > * [Obtain an access token for a service principal](#get-an-access-token-for-the-service-principal)
 > * [Update pipeline metadata (name and description) by using a service principal](#update-pipeline-metadata)
-> * [Update pipeline definition (activities) by using a service principal](#update-pipeline-definition)
+> * [Update pipeline definition (activities) by using a service principal](#update-pipeline-definition-activities)
 
 ## Prerequisites
 
