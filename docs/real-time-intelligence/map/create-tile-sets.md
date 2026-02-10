@@ -12,14 +12,10 @@ ms.search.form: Create a tileset, Creating tilesets, how to create tilesets, til
 
 # Create tilesets (preview)
 
-Microsoft Fabric Maps items (preview) enable users to visualize spatial data and derive insights by integrating both static and dynamic data sources. It uses raw data to create meaningful, actionable spatial information.
+Large static spatial datasets can be expensive to render directly on a map. To improve performance, Fabric Maps can convert GeoJSON files into high‑performance tilesets that enable faster rendering and smoother interaction. For background concepts, [What is a tileset in Fabric Maps?](about-tile-sets.md).
 
 > [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
-
-In certain cases, static spatial datasets can be extremely large, making smooth rendering on the map challenging. To overcome this, Fabric Maps offers a specialized tool that converts extensive spatial data, such as GeoJSON files, into high-performance **tilesets**. Tilesets are commonly used in mapping platforms to visualize large datasets, such as roads, buildings, or environmental features, without overwhelming the system or the user. This conversion into tilesets enables efficient rendering, resulting in a smoother and more responsive mapping experience.
-
-For more information on tilesets, see [What is a tileset in Fabric Maps?](about-tile-sets.md).
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 ## Prerequisites
 
@@ -46,7 +42,7 @@ Start by connecting to at least one lakehouse that contains GeoJSON files. You c
 
 > [!NOTE]
 >
-> - Currently, Map supports only valid [GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946) files with the *.geojson* extension as source files.
+> - Currently, Fabric Maps supports only valid [GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946) files with the *.geojson* extension as source files.
 > - The combined size of all selected files for a single conversion job must not exceed **1 GB**.
 
 :::image type="content" source="media/spatial-job-create-tilesets/select-source-file.png" lightbox="media/spatial-job-create-tilesets/select-source-file.png" alt-text="A screenshot showing source files that can be selected.":::
@@ -60,7 +56,7 @@ Specify the output location and name for your tileset. You can also add a descri
 :::image type="content" source="media/spatial-job-create-tilesets/tile-set-options.png" lightbox="media/spatial-job-create-tilesets/tile-set-options.png" alt-text="A screenshot showing the tileset options screen.":::
 
 > [!NOTE]
-> The output files are generated in the [PMTiles](https://docs.protomaps.com/pmtiles/) format.
+> The output tileset is generated in the [PMTiles](https://docs.protomaps.com/pmtiles/) format, which packages all tiles into a single portable archive file.
 
 ### Step 3: Configure layer settings
 
@@ -80,7 +76,7 @@ Next, set the following configuration options:
 - **Feature properties**: For GeoJSON datasets, you can choose whether to include all feature properties along with the geometries or only the geometries.
 
   > [!NOTE]
-  > Including all feature properties increases the size of the tiles and extend processing time.
+  > Including all feature properties increases the size of the tiles and extends processing time.
 
 :::image type="content" source="media/spatial-job-create-tilesets/configure-layer-settings.png" lightbox="media/spatial-job-create-tilesets/configure-layer-settings.png" alt-text="A screenshot showing the layer options screen.":::
 
@@ -102,7 +98,7 @@ After starting the tileset creation process, a notification will confirm that th
 > [!NOTE]
 > The tileset creation job operates as a [Long Running Operation](/rest/api/fabric/articles/long-running-operation).
 
-Select **Go to Monitor** to view more job history related to this Map item.
+Select **Go to Monitor** to view more job history related to this map item.
 
 :::image type="content" source="media/spatial-job-create-tilesets/recent-runs.png" lightbox="media/spatial-job-create-tilesets/recent-runs.png" alt-text="A screenshot showing the recent runs.":::
 
@@ -124,3 +120,8 @@ To cancel the tileset creation, open the **Monitor** page and select the **Cance
 
 > [!NOTE]
 > Users can only cancel a job when the status is **In progress**.
+
+## Next steps
+
+> [!div class="nextstepaction"]
+> [Add data to a map – PMTiles](create-map.md#add-data-to-the-map---pmtiles)

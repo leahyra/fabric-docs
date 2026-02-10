@@ -12,15 +12,15 @@ ms.search.form: What is a tileset, tileset, What is a PMtile, PMtile
 
 # What is a tileset in Fabric Maps? (preview)
 
-Microsoft Fabric Maps supports tilesets to efficiently visualize large static spatial datasets. Tilesets divide geographic data into smaller, preprocessed pieces that can be rendered quickly across different zoom levels, enabling smooth interaction even with large datasets.
+Microsoft Fabric Maps uses tilesets to efficiently visualize large static spatial datasets. By dividing geographic data into preprocessed tiles across zoom levels, tilesets enable fast rendering and smooth interaction when working with large maps.
 
-This article explains the core concepts behind tiles, tilesets, and PMTiles in Fabric Maps, and when to use a tileset instead of rendering raw spatial data directly.
+This article explains the core concepts behind tiles, tilesets, and PMTiles in Fabric Maps, and when to use a tileset instead of rendering raw spatial data directly. For step‑by‑step instructions on using tilesets in Fabric Maps, see [Create tilesets](create-tile-sets.md).
 
 ## Introduction to tiles and tilesets
 
 ### Tiles
 
-**Tiles** are small, square sections of a map that represent geographic data for a specific area and zoom level. Instead of rendering an entire map as a single image, Map divides it into tiles to improve performance and scalability. Each tile contains data such as points, lines, and polygons relevant to its geographic area.
+**Tiles** are small, square sections of a map that represent geographic data for a specific area and zoom level. Instead of rendering an entire map as a single image, Fabric Maps divides it into tiles to improve performance and scalability. Each tile contains data such as points, lines, and polygons relevant to its geographic area.
 
 #### Map tile types
 
@@ -30,7 +30,7 @@ There are two main types of tiles supported in Microsoft Fabric Maps:
 - **Vector tiles**: Data packets containing geographic features, rendered dynamically for customizable styling.
 
 > [!NOTE]
-> Microsoft Fabric Maps supports PMTiles created from both raster and vector tiles, but currently only supports the creation of PMTiles using vector tiles.
+> Fabric Maps supports PMTiles created from both raster and vector tiles. **However, Fabric Maps can currently generate PMTiles only from vector tiles**.
 
 ##### Map tile type comparison
 
@@ -71,7 +71,8 @@ Microsoft Azure Maps](/azure/azure-maps/zoom-levels-and-tile-grid?tabs=csharp).
 
 ### PMTiles in Fabric Maps
 
-Fabric Maps uses PMTiles, a single-file tileset format that packages all tiles into one portable archive. PMTiles simplifies storage, distribution, and streaming compared to traditional folder-based tilesets. [Spatial Jo...soft Learn | External]
+Fabric Maps uses PMTiles, a single-file tileset format that packages all tiles into one portable archive. PMTiles simplifies storage, distribution, and streaming compared to traditional folder-based tilesets.
+
 Fabric Maps can:
 
 - Consume PMTiles created externally
