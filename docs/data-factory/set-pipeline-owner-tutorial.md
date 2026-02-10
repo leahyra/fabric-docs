@@ -18,12 +18,12 @@ By completing this tutorial, you learn how to:
 
 ## Prerequisites
 
-- A Fabric [workspace](../fundamentals/create-workspaces) with a [data pipeline](create-first-pipeline-with-sample-data.md)
+- A Fabric [workspace](../fundamentals/create-workspaces.md) with a [data pipeline](create-first-pipeline-with-sample-data.md)
 - A [service principal](/entra/identity-platform/howto-create-service-principal-portal) registered in Microsoft Entra ID with the following information:
   - Tenant ID
   - Client ID (Application ID)
   - Client Secret
-- [Contributor or higher permissions on the workspace](../fundamentals/give-access-workspaces) for the service principal
+- [Contributor or higher permissions on the workspace](../fundamentals/give-access-workspaces.md) for the service principal
 - A tool to make REST API calls (curl or similar)
 
 > [!IMPORTANT]
