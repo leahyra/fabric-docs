@@ -14,10 +14,10 @@ ms.search.form:
 
 Microsoft Fabric Maps let you visualize real-time and historical location data in Microsoft Fabric, helping you monitor live events, analyze spatial patterns, and understand geographic context alongside time-based insights.
 
+Maps are built to work natively with Real-Time Intelligence data stores. You can visualize real‑time event data queried from [Eventhouses](../overview.md) using [Kusto Query Language (KQL)](/kusto/query/?view=microsoft-fabric), and historical or static spatial data stored in a [Lakehouse](/fabric/data-engineering/lakehouse-overview). This combination makes it possible to view live operational activity in geographic context while maintaining access to historical reference data.
+
 > [!IMPORTANT]
 > Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
-
-Maps are built to work natively with Real-Time Intelligence data stores. You can visualize real‑time event data queried from [Eventhouses](/fabric/real-time-intelligence/overview) using [Kusto Query Language (KQL)](/kusto/query/?view=microsoft-fabric), and historical or static spatial data stored in a Lakehouse. This combination makes it possible to view live operational activity in geographic context while maintaining access to historical reference data.
 
 ## How maps fit into Real-Time Intelligence
 
