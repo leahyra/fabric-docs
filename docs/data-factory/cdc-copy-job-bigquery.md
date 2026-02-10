@@ -133,7 +133,8 @@ For more information about BigQuery change history, see the official [Google Clo
 
 ## Create a Copy job with Google BigQuery CDC
 
-The following steps are very similar to what you have done in [Use Copy job to ingest data from Azure SQL DB via CDC to another Azure SQL DB](cdc-copy-job.md#how-to-get-started)
+> [!NOTE]
+> -  The following steps are very similar to what you have done in [Use Copy job to ingest data from Azure SQL DB via CDC to another Azure SQL DB](cdc-copy-job.md#how-to-get-started)
 
 Complete the following steps to create a new Copy job to ingest data from Google BigQuery via CDC to a destination:
 
@@ -179,8 +180,6 @@ Complete the following steps to create a new Copy job to ingest data from Google
    > Ensure that your BigQuery change history retention period is longer than the interval between scheduled runs; otherwise, the changed data might be lost if not processed within the retention period.
 
 1. Your copy job starts immediately. The first run copies an initial full snapshot.
-
-   :::image type="content" source="media/copy-job/monitor-cdc-initial-run.png" alt-text="Screenshot showing the Copy job panel where you can monitor initial full snapshot.":::
 
 1. Update your source tables in BigQuery by inserting, updating, or deleting rows.
 
