@@ -5,7 +5,8 @@ ms.reviewer: yexu
 ms.topic: tutorial
 ms.date: 02/10/2026
 ms.search.form: copy-job-tutorials
-ms.custom: copy-job, ai-generated, ai-assisted
+ms.custom: copy-job
+ai-usage: ai-generated
 ---
 
 # Change data capture from Google BigQuery using Copy job (Preview)
