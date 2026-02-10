@@ -90,9 +90,10 @@ For more information about Snowflake change tracking, see the official [Snowflak
 
 ## Create a Copy job with Snowflake CDC
 
-Complete the following steps to create a new Copy job to ingest data from Snowflake via CDC to a destination:
+> [!NOTE]
+> -  The following steps are very similar to what you have done in [Use Copy job to ingest data from Azure SQL DB via CDC to another Azure SQL DB](cdc-copy-job.md#how-to-get-started)
 
-The following steps are very similar to what you have done in [Use Copy job to ingest data from Azure SQL DB via CDC to another Azure SQL DB](cdc-copy-job.md#how-to-get-started)
+Complete the following steps to create a new Copy job to ingest data from Snowflake via CDC to a destination:
 
 1. Select **+ New Item**, choose the **Copy job** icon, name your Copy job, and select **Create**.
 
@@ -135,8 +136,6 @@ The following steps are very similar to what you have done in [Use Copy job to i
    > Ensure that your Snowflake change tracking retention period is longer than the interval between scheduled runs; otherwise, the changed data might be lost if not processed within the retention period.
 
 1. Your copy job starts immediately. The first run copies an initial full snapshot.
-
-   :::image type="content" source="media/copy-job/monitor-cdc-initial-run.png" alt-text="Screenshot showing the Copy job panel where you can monitor initial full snapshot.":::
 
 1. Update your source tables in Snowflake by inserting, updating, or deleting rows.
 
