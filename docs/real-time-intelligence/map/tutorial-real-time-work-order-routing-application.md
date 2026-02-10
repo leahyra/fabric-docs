@@ -6,12 +6,12 @@ author: FarazGIS
 ms.author: fsiddiqui
 ms.topic: tutorial
 ms.custom:
-ms.date: 01/30/2026
+ms.date: 02/04/2026
 
 #customer intent: I want to learn how to create a real-time work order routing app with Microsoft Fabric Maps.
 ---
 
-# Tutorial: Build a real-time work order routing app with Microsoft Fabric Maps (preview)
+# Tutorial: Build real-time work order routing with Fabric Maps (preview)
 
 Microsoft Fabric Maps provides geospatial visualization and analysis to deliver actionable insights from real-time and historical spatial data.
 
