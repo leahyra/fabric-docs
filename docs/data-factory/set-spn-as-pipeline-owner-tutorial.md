@@ -1,11 +1,11 @@
 ---
-title: "Fabric REST API: Update Pipeline Owner with Service Principal"
-description: Learn how to modify data pipelines in Microsoft Fabric using a service principal. Follow this step-by-step guide to update metadata and definitions via REST API.
+title: "Fabric REST API Tutorial: Set a Service Principal as Pipeline Owner"
+description: Learn how to modify data pipelines in Microsoft Fabric using a service principal to operationalize production scenarios. Follow this step-by-step guide to update metadata and definitions via the REST API.
 ms.date: 02/10/2026
 ms.topic: tutorial
 ---
 
-# Set pipeline last modified by as a service principal using REST API
+# Fabric REST API tutorial: Set a service principal as a pipeline owner
 
 This tutorial shows you how to use the Fabric REST API to edit a data pipeline using a service principal (SPN). When a service principal modifies a pipeline, it becomes the **LastModifiedBy** user for that pipeline. This user is essential for operationalizing pipelines in production scenarios where pipelines need to run under a service principal identity rather than a user identity.
 
@@ -18,12 +18,12 @@ By completing this tutorial, you learn how to:
 
 ## Prerequisites
 
-- A Fabric workspace with a data pipeline
-- A service principal registered in Microsoft Entra ID with the following information:
+- A Fabric [workspace](../fundamentals/create-workspaces) with a [data pipeline](create-first-pipeline-with-sample-data.md)
+- A [service principal](/entra/identity-platform/howto-create-service-principal-portal) registered in Microsoft Entra ID with the following information:
   - Tenant ID
   - Client ID (Application ID)
   - Client Secret
-- Contributor or higher permissions on the workspace for the service principal
+- [Contributor or higher permissions on the workspace](../fundamentals/give-access-workspaces) for the service principal
 - A tool to make REST API calls (curl or similar)
 
 > [!IMPORTANT]
