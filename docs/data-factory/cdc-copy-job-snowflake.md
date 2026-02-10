@@ -24,6 +24,8 @@ Before you begin, ensure you have the following:
 - **SELECT** privilege on the tables to read data.
 - Tables must have a data retention period configured (minimum 0 days, maximum 90 days). The retention period should be longer than your scheduled Copy job interval to prevent change data loss.
 
+For more information about Snowflake permissions and change tracking, see [Access Control Privileges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges) and [Introduction to Streams](https://docs.snowflake.com/en/user-guide/streams-intro).
+
 **Fabric requirements:**
 - A Fabric workspace with the necessary permissions to create a Copy job.
 - A destination data store supported by Copy job for CDC replication.

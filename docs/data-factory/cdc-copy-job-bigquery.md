@@ -29,12 +29,14 @@ Before you begin, ensure you have the following:
 - Tables must have change history enabled (`enable_change_history = TRUE`).
 - Change history is limited to the table's time travel period (configurable between 2 and 7 days, with 7 days as the default).
 
+For more information about BigQuery permissions and change history, see [BigQuery IAM roles and permissions](https://cloud.google.com/bigquery/docs/access-control) and [Work with change history](https://cloud.google.com/bigquery/docs/change-history).
+
 **Fabric requirements:**
 - A Fabric workspace with the necessary permissions to create a Copy job.
 - A destination data store supported by Copy job for CDC replication.
 
 > [!TIP]
-> Assign BigQuery IAM roles at the appropriate resource level (project, dataset, or table) following the principle of least privilege. For more information, see [BigQuery IAM roles and permissions](https://cloud.google.com/bigquery/docs/access-control).
+> Assign BigQuery IAM roles at the appropriate resource level (project, dataset, or table) following the principle of least privilege.
 
 ### Enable change data capture in Google BigQuery
 
