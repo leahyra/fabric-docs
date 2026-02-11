@@ -11,7 +11,7 @@ ms.date: 02/11/2026
 ms.search.form: ML Monitoring
 ---
 
-# Monitor ML experiments and models in Microsoft Fabric
+# Monitor ML experiments and models in Microsoft Fabric (Preview)
 
 [!INCLUDE [product-name](../includes/product-name.md)] provides built-in monitoring capabilities for machine learning experiments and models. You can track experiment runs directly from the Fabric Monitoring hub, and monitor real-time traffic for active ML model endpoints. These monitoring features give you visibility into your ML workflows and help you understand how your deployed models are being used.
 
