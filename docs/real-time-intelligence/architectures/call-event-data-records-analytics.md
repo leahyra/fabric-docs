@@ -29,7 +29,7 @@ You can implement the architecture with four main operational phases that work t
 
 - **Visualize & Activate** - This phase provides real-time dashboards, automated alerting, and comprehensive network analytics.
 
-:::image type="content" source="./media/call-event-data-records-analytics/call-event-data-records-analytics-reference-architecture.png" alt-text="Diagram that shows the architecture of CDR/EDR analytics with Microsoft Fabric Real-Time Intelligence." lightbox="./media/call-event-data-records-analytics/call-event-data-records-analytics-reference-architecture.png":::
+:::image type="content" source="./media/call-event-record-analytics.svg" alt-text="Diagram that shows the architecture of CDR/EDR analytics with Microsoft Fabric Real-Time Intelligence." lightbox="./media/call-event-record-analytics.svg":::
 
 The following steps describe the data flow through this architecture:
 

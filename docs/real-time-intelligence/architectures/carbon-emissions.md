@@ -20,7 +20,7 @@ You can manage large-scale carbon emissions monitoring where hundreds or thousan
 
 The carbon emissions management reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from emission measurement devices and integrates carbon market intelligence for comprehensive environmental management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform, and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/carbon-emissions.png" alt-text="Screenshot of the carbon emissions management architecture diagram." lightbox="media/carbon-emissions.png":::
+:::image type="content" source="media/carbon-emissions.svg" alt-text="Screenshot of the carbon emissions management architecture diagram." lightbox="media/carbon-emissions.svg":::
 
 1. Emission measurement devices in the power plants stream emission data. The architecture aggregates and pushes the data to MQTT, and then Eventstream collects it.
 

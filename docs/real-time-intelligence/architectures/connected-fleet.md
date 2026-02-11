@@ -20,7 +20,7 @@ You can source real-time and historical vehicle data from multiple sources inclu
 
 The connected fleet reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified analytics platform that processes real-time vehicle telemetry and enables intelligent fleet management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform, and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/connected-fleet-diagram.png" alt-text="Screenshot of the connected fleet data analytics architecture diagram." lightbox="media/connected-fleet-diagram.png":::
+:::image type="content" source="media/connected-fleet.svg" alt-text="Screenshot of the connected fleet data analytics architecture diagram." lightbox="media/connected-fleet.svg":::
 
 1. Capture vehicle data from the vehicle's electronic control units (ECUs) and onboard sensors.
 

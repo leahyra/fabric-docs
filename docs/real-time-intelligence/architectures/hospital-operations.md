@@ -23,7 +23,7 @@ Unlike traditional batch-based analytics architectures, hospital operations requ
 
 The hospital operations reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from hospital systems and integrates digital twin representations for intelligent operations management. You can implement the architecture with five main operational phases: 
 
-:::image type="content" source="./media/hospital-operations/hospital-operations-reference-architecture.png" alt-text="Diagram showing the reference architecture for hospital operations." lightbox="./media/hospital-operations/hospital-operations-reference-architecture.png":::
+:::image type="content" source="./media/hospital-operations.svg" alt-text="Diagram showing the reference architecture for hospital operations." lightbox="./media/hospital-operations.svg":::
 
 Here are the key steps in the architecture:
 

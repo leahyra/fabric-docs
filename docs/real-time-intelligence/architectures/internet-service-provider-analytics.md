@@ -20,7 +20,7 @@ It also maps the end-to-end flow—from ingestion and enrichment to ML scoring a
 
 The ISP analytics reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes high-volume router logs and customer data streams, enriched with ERP context to enable intelligent network operations. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train and score, and Visualize and activate.
 
-:::image type="content" source="./media/internet-service-provider-analytics/internet-service-provider-analytics-architecture.png" alt-text="Diagram of ISP analytics reference architecture." lightbox="./media/internet-service-provider-analytics/internet-service-provider-analytics-architecture.png":::
+:::image type="content" source="./media/internet-service-provider-analytics.svg" alt-text="Diagram of ISP analytics reference architecture." lightbox="./media/internet-service-provider-analytics.svg":::
 
 The architecture includes the following key steps:
 
