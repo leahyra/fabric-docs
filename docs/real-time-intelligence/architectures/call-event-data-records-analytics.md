@@ -19,17 +19,9 @@ The architecture addresses the challenges of managing complex mobile network env
 
 The CDR/EDR analytics reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes high-volume mobile network data streams with ERP contextualization for intelligent network operations. This architecture eliminates data silos by bringing together CDR/EDR streams, customer information, and infrastructure metadata into a single analytics environment.
 
-You can implement the architecture with four main operational phases that work together to deliver end-to-end network intelligence:
+You can implement the architecture with four main operational phases that work together to deliver end-to-end network intelligence: Ingest and process, Analyze, transform, and enrich, Train and score, and Visualize and activate. 
 
-- **Ingest & process** - This phase captures over 1TB/hour of decoded EDR/CDR data via Message Queuing Telemetry Transport (MQTT) with customer data and ERP contextualization synchronization.
-
-- **Analyze, transform, & enrich** - This phase conducts real-time data enrichment and aggregation with dimensional metadata integration.
-
-- **Train & score** - This phase builds ML models for network analytics and enables real-time scoring capabilities.
-
-- **Visualize & Activate** - This phase provides real-time dashboards, automated alerting, and comprehensive network analytics.
-
-:::image type="content" source="./media/call-event-data-records-analytics/call-event-data-records-analytics-reference-architecture.png" alt-text="Diagram that shows the architecture of CDR/EDR analytics with Microsoft Fabric Real-Time Intelligence." lightbox="./media/call-event-data-records-analytics/call-event-data-records-analytics-reference-architecture.png":::
+:::image type="content" source="./media/call-event-record-analytics.png" alt-text="Diagram that shows the architecture of CDR/EDR analytics with Microsoft Fabric Real-Time Intelligence." lightbox="./media/call-event-record-analytics.png":::
 
 The following steps describe the data flow through this architecture:
 

@@ -21,19 +21,9 @@ The architecture addresses the challenges of managing complex customer environme
 
 The customer churn reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time customer data streams and integrates network metadata for intelligent churn prediction and retention management. This architecture eliminates data silos by bringing together CRM data, application logs, user engagement signals, and customer feedback into a single analytics environment where machine learning models can identify churn risk and trigger automated retention actions.
 
-You can implement the architecture with five main operational phases that work together to deliver end-to-end customer intelligence:
+You can implement the architecture with five main operational phases that work together to deliver end-to-end customer intelligence: Ingest and process, Analyze, transform, and enrich, Model and contextualize, Train and score, Visualize and activate. 
 
-- **Ingest & process** - This phase captures real-time streaming and batch CRM data, application logs, and user engagement data from across your customer touchpoints.
-
-- **Analyze, transform, & enrich** - This phase conducts customer feedback correlation, cohort analysis, and survival modeling with anomaly detection to understand customer behavior patterns.
-
-- **Model & contextualize** - This phase builds relationship graphs and patterns across customer factors including geography, device usage, service tier, and temporal patterns for lifetime value calculation and churn risk scoring.
-
-- **Train & score** - This phase develops predictive ML models for real-time churn prediction and generates personalized retention recommendations based on customer profiles.
-
-- **Visualize & Activate** - This phase provides real-time dashboards for key performance indicator (KPI) monitoring and triggers automated proactive retention campaigns through personalized customer outreach. 
-
-:::image type="content" source="./media/customer-churn/customer-churn-reference-architecture.png" alt-text="Diagram showing the reference architecture for customer churn." lightbox="./media/customer-churn/customer-churn-reference-architecture.png":::
+:::image type="content" source="./media/customer-churn.png" alt-text="Diagram showing the reference architecture for customer churn." lightbox="./media/customer-churn.png":::
 
 1. Real-time streaming and batch CRM data, application logs, and user engagement data is ingested via Eventstream and routed to Eventhouse.
 

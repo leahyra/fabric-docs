@@ -20,7 +20,7 @@ You can manage large-scale energy trading operations where thousands of energy g
 
 The energy trading management reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from energy generation facilities, consumption networks, and trading markets for intelligent energy trading management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform, and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/energy-trading-diagram.png" alt-text="Screenshot of the energy trading management architecture diagram." lightbox= "media/energy-trading-diagram.png":::
+:::image type="content" source="media/energy-trading.png" alt-text="Screenshot of the energy trading management architecture diagram." lightbox= "media/energy-trading.png":::
 
 1. Energy manufacturing IoT events stream with subsecond latency from wind turbines and power plants.
 
@@ -43,6 +43,8 @@ The energy trading management reference architecture uses Microsoft Fabric Real-
 1. Real-Time Dashboards offer a rich, high granularity view of the entire electric grid with low latency and ability to drill down from overall grid view to a specific meter consumption.
 
 1. Power BI reports provide a rich, full business view on the energy generation and consumption rates.
+
+1. Use rich KQL queries for fast, direct, ad-hoc analytics.
 
 ## Operational phases
 

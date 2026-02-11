@@ -24,17 +24,26 @@ The fraud detection reference architecture uses Microsoft Fabric Real-Time Intel
 
 The following diagram illustrates the four main operational phases of the architecture: Ingest and process, Analyze, Transform and enrich, Train and score, and Visualize & activate.
 
-:::image type="content" source="./media/fraud-detection/fraud-detection-architecture.png" alt-text="Diagram that shows the Fraud Detection reference architecture." lightbox="./media/fraud-detection/fraud-detection-architecture.png":::
+:::image type="content" source="./media/fraud-detection.png" alt-text="Diagram that shows the Fraud Detection reference architecture." lightbox="./media/fraud-detection.png":::
 
 1. **Eventstreams** ingests streaming transaction data from custom API endpoints of mobile banking apps, ATMs, e-commerce sites, and call centers.
+
 1. **Data Factory** syncs inventory and asset information from ERP systems to OneLake.
+
 1. **Eventhouse** receives events where streaming transformations are applied to normalize transaction types, filter safe behavior patterns, and aggregate recent transaction spikes per user and device.
+
 1. Data is streamed in real time, loaded into the raw transaction table, enriched with customer profiles, deduplicated, and analyzed for high-suspicion signals.
+
 1. Cleaned and processed data is streamed into **OneLake** tables.
+
 1. **Data Science** ML models compute a fraud risk score for each transaction based on behavioral patterns and historical data.
+
 1. Fraud analysts use **Real-Time Dashboards** monitor high-risk transactions and risk trends by region or customer segment.
+
 1. **Activator** alerts internal fraud teams when a transaction surpasses the fraud risk threshold or matches a known fraud signature.
+
 1. **Real-Time Dashboards** provide a high-granularity view of the entire financial ecosystem with low latency, enabling drill-down from overall transaction patterns to specific customer transactions.
+
 1. Rich **Power BI** reports provide a comprehensive business view of transaction data, fraud trends, and operational performance. 
 
 
