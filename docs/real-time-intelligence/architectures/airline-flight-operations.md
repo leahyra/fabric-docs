@@ -22,6 +22,9 @@ This reference architecture uses Microsoft Fabric to create a unified analytics 
 
 :::image type="content" source="media/airline-flight-operations.svg" alt-text="Screenshot of the airline flight operations architecture diagram." lightbox="media/airline-flight-operations.svg":::
 
+:::image type="content" source="media/airline-flight-operations.png" alt-text="Second Screenshot of the airline flight operations architecture diagram." lightbox="media/airline-flight-operations.png":::
+
+
 1. Real-time and historical airline flight operations data is sourced from multiple places including air traffic feeds, flight trackers, and weather sources. IoT sensors on aircraft and ground operations provide
 updates on engine health, baggage handling, and turnaround times. Passenger and airport systems feed check-
 in, boarding, and gate information into the pipeline.​
