@@ -18,17 +18,9 @@ The architecture supports complex multitenant analytics operations where devices
 
 The product embedded analytics reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from customer devices and integrates manufacturer asset metadata for intelligent multitenant analytics management.
 
-The following diagram shows the key components and data flows in this architecture. You can implement the architecture with four main operational phases, each building on the previous to deliver comprehensive embedded analytics capabilities:
+The following diagram shows the key components and data flows in this architecture. You can implement the architecture with four main operational phases, each building on the previous to deliver comprehensive embedded analytics capabilities: Ingest and process, Analyze and transform, Train, Visualize and activate.
 
-- **Ingest & process**: This phase captures millions of IoT events daily from customer factory floors and integrates manufacturer asset metadata.
-
-- **Analyze & transform**: This phase aggregates and enriches streaming events with asset metadata to create curated customer views.
-
-- **Train**: This phase builds advanced ML models with real-time training and scoring capabilities.
-
-- **Visualize & Activate**: This phase provides customized dashboards, real-time notifications, and dedicated customer applications.
-
-:::image type="content" source="./media/product-embedded-analytics.svg" alt-text="Diagram showing the reference architecture for product embedded analytics." lightbox="./media/product-embedded-analytics.svg":::
+:::image type="content" source="./media/product-embedded-analytics.png" alt-text="Diagram showing the reference architecture for product embedded analytics." lightbox="./media/product-embedded-analytics.png":::
 
 The numbered steps in the diagram correspond to the following data flow:
 

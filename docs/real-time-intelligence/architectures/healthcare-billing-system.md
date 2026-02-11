@@ -21,7 +21,7 @@ You can manage complex healthcare billing operations where EHR and RCM systems c
 
 This reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from healthcare systems and integrates ERP registration data for intelligent revenue cycle management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate. 
 
-:::image type="content" source="./media/healthcare-billing-system.svg" alt-text="Diagram of a healthcare billing system architecture showing ingest, process, analyze, train, and visualize phases with labeled data flows." lightbox="./media/healthcare-billing-system.svg":::
+:::image type="content" source="./media/healthcare-billing-system.png" alt-text="Diagram of a healthcare billing system architecture showing ingest, process, analyze, train, and visualize phases with labeled data flows." lightbox="./media/healthcare-billing-system.png":::
 
 1. Real-time Electronic Health Records (EHR) and Revenue Cycle Management (RCM) data is ingested from multiple sources and processed through Eventstream.
 

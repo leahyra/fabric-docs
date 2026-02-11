@@ -20,19 +20,26 @@ You can source real-time and historical airline flight operations data from mult
 
 This reference architecture uses Microsoft Fabric to create a unified analytics platform that processes real-time operational data and enables intelligent decision-making. You can implement the architecture with four main operational phases: Ingest and process, Analyze, train, and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/airline-flight-operations.svg" alt-text="Diagram of the airline flight operations architecture diagram." lightbox="media/airline-flight-operations.svg":::
+:::image type="content" source="media/airline-flight-operations.png" alt-text="Diagram of the airline flight operations architecture diagram." lightbox="media/airline-flight-operations.png":::
 
 
-1. Real-time and historical airline flight operations data is sourced from multiple places including air traffic feeds, flight trackers, and weather sources. IoT sensors on aircraft and ground operations provide
-updates on engine health, baggage handling, and turnaround times. Passenger and airport systems feed check-
+1. Real-time and historical airline flight operations data is sourced from multiple places including air traffic feeds, flight trackers, and weather sources. IoT sensors on aircraft and ground operations provide updates on engine health, baggage handling, and turnaround times. Passenger and airport systems feed check-
 in, boarding, and gate information into the pipeline.​
+
 1. Live telemetry is routed to Eventstream for ingestions and enrichments. In parallel, environmental data is processed through Azure Event Hubs before routing to Eventstream.​
+
 1. ​Eventhouse receives real-time flight operation data from Eventstreams, ingesting information such as delays, maintenance alerts, and passenger status updates. It then applies rules to detect anomalies, helping airlines quickly identify and respond to operational disruptions.​
+
 1. This data is then transformed and sent to OneLake, where analysts can query historical trends, such as identifying airports with frequent weather-related disruptions or monitoring aircraft turnaround efficiency. By correlating real-time alerts from Eventhouse with historical insights in OneLake, airlines can optimize flight schedules, improve resource allocation, and proactively mitigate operational risks. ​
+
 1. Processed data is routed to Real-Time Dashboard and Power BI. ​
+
 1. NL Copilot AI is used to quickly check the status of flights affected by bad weather, determine potential delays, and query real-time data without complex coding. It can also be built and trained to aggregate and analyze utilization patterns for better operational insights.​
+
 1. Flight operations teams use Power BI to monitor live flight patterns, delays, and airspace congestion.
+
 1. Automated alerts via Activator update passengers, reassign gates, and trigger maintenance actions. ​
+
 1. Copilot AI provides instant insights, helping teams proactively manage disruptions and optimize airline performance.​
 
 The following sections explain each operational phase in more detail.

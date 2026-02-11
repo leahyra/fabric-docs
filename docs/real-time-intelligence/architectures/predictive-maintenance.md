@@ -17,26 +17,30 @@ You can manage complex maintenance operations where factory floor devices contin
 
 The predictive maintenance reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from factory floor devices and integrates operational contextualization data for intelligent maintenance management.
 
-The following diagram shows the key components and data flows in this architecture. You can implement the architecture with four main operational phases, each building on the previous to deliver comprehensive predictive maintenance capabilities:
+The following diagram shows the key components and data flows in this architecture. You can implement the architecture with four main operational phases, each building on the previous to deliver comprehensive predictive maintenance capabilities: Ingest and process, Analyze and transform, Train, Visualize and activate.
 
-- **Ingest & process**: This phase captures real-time IIoT events from factory floor devices and integrates contextualization data from maintenance systems.
-- **Analyze & transform**: This phase enriches and contextualizes events with asset information and generates real-time aggregated views for analysis.
-- **Train**: This phase builds advanced predictive ML models for real-time scoring and maintenance prediction capabilities.
-- **Visualize & Activate**: This phase provides deep analytics, real-time dashboards, and automated notifications for maintenance operations.
-
-:::image type="content" source="./media/predictive-maintenance.svg" alt-text="Diagram showing the reference architecture for predictive maintenance operations." lightbox="./media/predictive-maintenance.svg":::
+:::image type="content" source="./media/predictive-maintenance.png" alt-text="Diagram showing the reference architecture for predictive maintenance operations." lightbox="./media/predictive-maintenance.png":::
 
 The numbered steps in the diagram correspond to the following data flow:
 
 1. IoT events stream from factory floor devices with subsecond latency, providing real-time visibility into equipment health.
+
 1. Contextualization data, including technicians' shifts, asset maintenance history, and component costs, is collected daily using MQTT-Eventstream integration.
+
 1. Asset metadata and PLC information are linked to OneLake for unified data management.
+
 1. Events are enriched and contextualized with asset information on-the-fly as they arrive.
+
 1. Aggregated views on devices are generated in real time, allowing both latest and historical views on device behavior and anomalies.
+
 1. Advanced predictive ML models are trained and scored in real time, providing predictive maintenance capabilities.
+
 1. Deep analytics on device state and predictions on maintenance needs are completed in seconds, rather than hours, using Kusto Query Language.
+
 1. Dashboards show the real-time state of factory devices with high granularity.
+
 1. Real-time notifications on device state are pushed to on-site technicians.
+
 1. Power BI reports provide a cross-factory view of maintenance status, cost, and impact on production across the company.
 
 ## Operational phases

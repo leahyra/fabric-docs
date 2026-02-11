@@ -20,14 +20,20 @@ You can manage complex multi-location grocery operations where IoT sensors conti
 
 The grocery store operations reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time IoT sensor data from refrigeration systems and integrates environmental data for intelligent grocery store management. You can implement the architecture with four main operational phases:
 
-:::image type="content" source="./media/grocery-store-operations.svg" alt-text="Diagram that shows the grocery store operations reference architecture." lightbox="./media/grocery-store-operations.svg":::
+:::image type="content" source="./media/grocery-store-operations.png" alt-text="Diagram that shows the grocery store operations reference architecture." lightbox="./media/grocery-store-operations.png":::
 
 1. **IoT sensors** installed in refrigerated and frozen storage units continuously monitor temperature levels across the grocery store.
+
 1. Additionally, **Azure Event Hubs** collects environmental data to predict how external conditions impact downstream temperature readings from all store locations.
+
 1. The data is then ingested to **Eventstreams** where the incoming temperature data undergoes real-time processing.
+
 1. The system sends temperature data to **Eventhouse** for storage and processing. Set alerts for anomalies to identify refrigeration units that experience frequent temperature spikes, allowing for proactive maintenance scheduling.
+
 1. Natural Language **Copilot** enables store associates and analysts to generate and execute queries on temperature fluctuations over time.
+
 1. Using **Real-Time Dashboard**, store managers and regional supervisors can monitor refrigeration performance across multiple locations, track trends, and assess compliance with food safety regulations.
+
 1. Grocery store managers use **Activator** to set up real-time alerts for temperature deviations beyond the set thresholds, prompting immediate inspections. This proactive alerting system enhances food safety compliance and ensures a seamless shopping experience for customers.
 
 ## Operational phases
