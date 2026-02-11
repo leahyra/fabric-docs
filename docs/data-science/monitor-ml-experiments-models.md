@@ -34,7 +34,7 @@ To view ML experiment runs from the Monitoring hub:
 1. Select the **Experiment** filter to narrow the view to experiment-related activities.
 1. Browse the list of experiment activities, which shows details like status, start time, location and duration.
 
-:::image type="content" source="media/monitor-ml-experiments-models/monitor-machine-learning-experiments-from-monitoring-hub.png" alt-text="Screenshot showing how to monitor ML experiment from monitoring hub." lightbox="media/monitor-machine-learning-experiments-from-monitoring-hub.png":::
+:::image type="content" source="media/monitor-ml-experiments-models/monitor-machine-learning-experiments-from-monitoring-hub.png" alt-text="Screenshot showing how to monitor ML experiment from monitoring hub." lightbox="media/monitor-ml-experiments-models/monitor-machine-learning-experiments-from-monitoring-hub.png":::
 
 
 ### Filter and search experiment runs
@@ -57,6 +57,8 @@ To view related experiment runs from a notebook activity:
 1. Open the **Monitor** hub and locate the notebook activity of interest.
 1. Select the notebook activity to open its detail view.
 1. Navigate to the **Item snapshots** page to see the associated experiments and runs.
+
+
 
 :::image type="content" source="media/monitor-ml-experiments-models/monitor-machine-learning-experiments-from-notebook-activity.png" alt-text="Screenshot showing how to monitor ML experiment from notebook activity." lightbox="media/monitor-ml-experiments-models/monitor-machine-learning-experiments-from-notebook-activity.png":::
 
