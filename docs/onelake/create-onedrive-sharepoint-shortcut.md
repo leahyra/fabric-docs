@@ -89,7 +89,7 @@ OneDrive and SharePoint shortcuts support the following methods for authenticati
 
 ### Configure workspace identity authentication
 
-The steps in this section require PowerShell. You can [Install PowerShell](/powershell/scripting/install/install-powershell?view=powershell-7.5) or run the PowerShell commands in [Azure Cloud Shell](/azure/cloud-shell/get-started/classic?tabs=powershell).
+The steps in this section require PowerShell. You can [Install PowerShell](/powershell/scripting/install/install-powershell) or run the PowerShell commands in [Azure Cloud Shell](/azure/cloud-shell/get-started/classic?tabs=powershell).
 
 You must be a workspace admin to be able to create a workspace identity. The workspace you're creating the identity for can't be a **My Workspace**.
 
