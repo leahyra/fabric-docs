@@ -20,7 +20,7 @@ You can manage complex multi-location grocery operations where IoT sensors conti
 
 The grocery store operations reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time IoT sensor data from refrigeration systems and integrates environmental data for intelligent grocery store management. You can implement the architecture with four main operational phases:
 
-:::image type="content" source="./media/grocery-store-operations.svg" alt-text="Diagram that shows the grocery store operations reference architecture." lightbox="./media/grocery-store-operations.svg":::
+:::image type="content" source="./media/grocery-store-operations.png" alt-text="Diagram that shows the grocery store operations reference architecture." lightbox="./media/grocery-store-operations.png":::
 
 1. **IoT sensors** installed in refrigerated and frozen storage units continuously monitor temperature levels across the grocery store.
 1. Additionally, **Azure Event Hubs** collects environmental data to predict how external conditions impact downstream temperature readings from all store locations.

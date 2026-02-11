@@ -24,7 +24,7 @@ The following diagram shows the key components and data flows in this architectu
 - **Train**: This phase builds advanced predictive ML models for real-time scoring and maintenance prediction capabilities.
 - **Visualize & Activate**: This phase provides deep analytics, real-time dashboards, and automated notifications for maintenance operations.
 
-:::image type="content" source="./media/predictive-maintenance.svg" alt-text="Diagram showing the reference architecture for predictive maintenance operations." lightbox="./media/predictive-maintenance.svg":::
+:::image type="content" source="./media/predictive-maintenance.png" alt-text="Diagram showing the reference architecture for predictive maintenance operations." lightbox="./media/predictive-maintenance.png":::
 
 The numbered steps in the diagram correspond to the following data flow:
 

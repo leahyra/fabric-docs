@@ -24,7 +24,7 @@ The fraud detection reference architecture uses Microsoft Fabric Real-Time Intel
 
 The following diagram illustrates the four main operational phases of the architecture: Ingest and process, Analyze, Transform and enrich, Train and score, and Visualize & activate.
 
-:::image type="content" source="./media/fraud-detection.svg" alt-text="Diagram that shows the Fraud Detection reference architecture." lightbox="./media/fraud-detection.svg":::
+:::image type="content" source="./media/fraud-detection.png" alt-text="Diagram that shows the Fraud Detection reference architecture." lightbox="./media/fraud-detection.png":::
 
 1. **Eventstreams** ingests streaming transaction data from custom API endpoints of mobile banking apps, ATMs, e-commerce sites, and call centers.
 1. **Data Factory** syncs inventory and asset information from ERP systems to OneLake.

@@ -20,7 +20,7 @@ You can manage large-scale manufacturing operations where thousands of industria
 
 The connected factory reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from industrial IoT devices and integrates factory contextualization data for intelligent manufacturing management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform, and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/connected-factory.svg" alt-text="Screenshot of the connected factory reference architecture diagram." lightbox="media/connected-factory.svg":::
+:::image type="content" source="media/connected-factory.png" alt-text="Screenshot of the connected factory reference architecture diagram." lightbox="media/connected-factory.png":::
 
 1. Stream more than one million IIoT events per hour with subsecond latency from 30,000 tags across 40 factories.
 
