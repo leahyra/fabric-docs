@@ -19,7 +19,7 @@ The architecture addresses the challenges of managing complex mobile network env
 
 The CDR/EDR analytics reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes high-volume mobile network data streams with ERP contextualization for intelligent network operations. This architecture eliminates data silos by bringing together CDR/EDR streams, customer information, and infrastructure metadata into a single analytics environment.
 
-You can implement the architecture with four main operational phases that work together to deliver end-to-end network intelligence: Ingest and process, Analyze, transform, and enrich, Traing and score, and Visualize and activate. 
+You can implement the architecture with four main operational phases that work together to deliver end-to-end network intelligence: Ingest and process, Analyze, transform, and enrich, Train and score, and Visualize and activate. 
 
 :::image type="content" source="./media/call-event-record-analytics.png" alt-text="Diagram that shows the architecture of CDR/EDR analytics with Microsoft Fabric Real-Time Intelligence." lightbox="./media/call-event-record-analytics.png":::
 

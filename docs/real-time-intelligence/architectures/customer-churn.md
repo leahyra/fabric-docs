@@ -21,7 +21,7 @@ The architecture addresses the challenges of managing complex customer environme
 
 The customer churn reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time customer data streams and integrates network metadata for intelligent churn prediction and retention management. This architecture eliminates data silos by bringing together CRM data, application logs, user engagement signals, and customer feedback into a single analytics environment where machine learning models can identify churn risk and trigger automated retention actions.
 
-You can implement the architecture with five main operational phases that work together to deliver end-to-end customer intelligence: Ingest and process, Analyze, transform, and enrich, Model and contextualize, Train andscore, Visualize and activate. 
+You can implement the architecture with five main operational phases that work together to deliver end-to-end customer intelligence: Ingest and process, Analyze, transform, and enrich, Model and contextualize, Train and score, Visualize and activate. 
 
 :::image type="content" source="./media/customer-churn.png" alt-text="Diagram showing the reference architecture for customer churn." lightbox="./media/customer-churn.png":::
 
