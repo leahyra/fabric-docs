@@ -97,7 +97,7 @@ You must be a workspace admin to be able to create a workspace identity. The wor
 
 1. In the [Azure portal](https://portal.azure.com), go to **Microsoft Entra ID** and search your tenant for the workspace identity. The name should be the same as your workspace.
 
-1. Copy the application id for the workspace identity to use later.
+1. Copy the application ID for the workspace identity to use later.
 
 1. Open a PowerShell command window or start a cloud shell session in the Azure portal.
 
