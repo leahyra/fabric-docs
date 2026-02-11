@@ -21,7 +21,7 @@ The Microsoft ODBC Driver for Fabric Data Engineering lets you connect, query, a
 
 - **ODBC 3.x Compliant**: Full implementation of ODBC 3.x specification
 - **Microsoft Entra ID Authentication**: Multiple authentication flows including Azure CLI, interactive, client credentials, certificate-based, and access token authentication
-- **Spark SQL Native Query Support**: Direct execution of Spark SQL statements
+- **Spark SQL Query Support**: Direct execution of Spark SQL statements
 - **Comprehensive Data Type Support**: Support for all Spark SQL data types including complex types (ARRAY, MAP, STRUCT)
 - **Session Reuse**: Built-in session management for improved performance
 - **Large Table Support**: Optimized handling for large result sets with configurable page sizes
