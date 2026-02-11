@@ -33,7 +33,7 @@ You can implement the architecture with five main operational phases that work t
 
 - **Visualize & Activate** - This phase provides real-time dashboards for key performance indicator (KPI) monitoring and triggers automated proactive retention campaigns through personalized customer outreach. 
 
-:::image type="content" source="./media/customer-churn.png" alt-text="Diagram showing the reference architecture for customer churn." lightbox="./media/customer-churn.png":::
+:::image type="content" source="./media/customer-churn.svg" alt-text="Diagram showing the reference architecture for customer churn." lightbox="./media/customer-churn.svg":::
 
 1. Real-time streaming and batch CRM data, application logs, and user engagement data is ingested via Eventstream and routed to Eventhouse.
 

@@ -20,7 +20,7 @@ You can manage large-scale smart meter networks where millions of meters stream 
 
 The smart meter insights reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from smart meters and integrates customer and weather data for intelligent meter management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform, and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/smart-meter-insights.png" alt-text="Screenshot of the smart meter insights architecture diagram." lightbox="media/smart-meter-insights.png":::
+:::image type="content" source="media/smart-meter-insights.svg" alt-text="Screenshot of the smart meter insights architecture diagram." lightbox="media/smart-meter-insights.svg":::
 
 1. Approximately 1 million smart meters stream meter usage data in 10-minute granularity.
 

@@ -28,7 +28,7 @@ The following diagram shows the key components and data flows in this architectu
 
 - **Visualize & Activate**: This phase provides customized dashboards, real-time notifications, and dedicated customer applications.
 
-:::image type="content" source="./media/product-embedded-analytics.png" alt-text="Diagram showing the reference architecture for product embedded analytics." lightbox="./media/product-embedded-analytics.png":::
+:::image type="content" source="./media/product-embedded-analytics.svg" alt-text="Diagram showing the reference architecture for product embedded analytics." lightbox="./media/product-embedded-analytics.svg":::
 
 The numbered steps in the diagram correspond to the following data flow:
 

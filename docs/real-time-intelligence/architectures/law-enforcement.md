@@ -20,7 +20,7 @@ This architecture addresses the challenges of managing complex telecommunication
 
 The following diagram shows how Microsoft Fabric Real-Time Intelligence creates a unified platform that processes high-volume CDR/EDR data streams and integrates customer information for critical emergency response services.
 
-:::image type="content" source="./media/law-enforcement.png" alt-text="Diagram showing the reference architecture for law enforcement operations." lightbox="./media/law-enforcement.png":::
+:::image type="content" source="./media/law-enforcement.svg" alt-text="Diagram showing the reference architecture for law enforcement operations." lightbox="./media/law-enforcement.svg":::
 
 The architecture implements following steps in four main operational phases that are described in detail later in this document:
 

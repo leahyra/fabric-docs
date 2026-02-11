@@ -20,7 +20,7 @@ You can manage large-scale charging networks where thousands of charging station
 
 The e-mobility charging network reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from thousands of charging stations and integrates energy cost rates for intelligent network management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, train, and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/electric-mobility.png" alt-text="Screenshot of the e-Mobility charging network architecture diagram." lightbox="media/electric-mobility.png":::
+:::image type="content" source="media/electric-mobility.svg" alt-text="Screenshot of the e-Mobility charging network architecture diagram." lightbox="media/electric-mobility.svg":::
 
 1. Thousands of charging stations stream real-time data on usage and state​.
 
