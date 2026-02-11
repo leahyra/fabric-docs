@@ -1,11 +1,11 @@
 ---
-title: "Fabric REST API Tutorial: Set a Service Principal as Pipeline Owner"
+title: Set a Service Principal as Pipeline Owner
 description: Learn how to modify data pipelines in Microsoft Fabric using a service principal to operationalize production scenarios. Follow this step-by-step guide to update metadata and definitions via the REST API.
 ms.date: 02/10/2026
 ms.topic: tutorial
 ---
 
-# Fabric REST API tutorial: Set a service principal as a pipeline owner
+# Set a service principal as a pipeline owner
 
 This tutorial shows you how to use the Fabric REST API to edit a data pipeline using a service principal (SPN). When a service principal modifies a pipeline, it becomes the **LastModifiedBy** user for that pipeline. This user is essential for operationalizing pipelines in production scenarios where pipelines need to run under a service principal identity rather than a user identity.
 
