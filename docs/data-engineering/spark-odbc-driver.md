@@ -8,10 +8,9 @@ ms.topic: how-to
 ms.date: 02/10/2026
 ---
 
-# Microsoft ODBC Driver for Microsoft Fabric Data Engineering (preview)
+# Microsoft ODBC Driver for Microsoft Fabric Data Engineering (Preview)
 
->[!NOTE]
-> This feature is in preview.
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ODBC (Open Database Connectivity) is a widely adopted standard that enables client applications to connect to and work with data from databases and big data platforms.
 
