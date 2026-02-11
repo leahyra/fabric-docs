@@ -134,6 +134,9 @@ A Cloud Optimized GeoTIFF (COG) is a standard GeoTIFF file (.tiff) designed for 
 
 There are other data layer customization options available. For more information, see [Customize a map](customize-map.md).
 
+> [!TIP]
+> For scenarios that require custom basemaps or organization‑specific imagery, see [Bring your own imagery into Fabric Maps](https://blog.fabric.microsoft.com/en-US/blog/maps-in-microsoft-fabric-bring-your-own-imagery-into-real-time-intelligence/).
+
 ### Connect to Eventhouse/KQL databases
 
 1. Switch to the **Eventhouse** tab and select **Add data items** to open the OneLake catalog.
