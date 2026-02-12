@@ -21,7 +21,7 @@ After exploring data by using Copilot, save insights to the dashboard for quick 
 
 >[!NOTE]
 >
-> Currently, Copilot-assisted data exploration in real-time dashboards supports dashboards with a *single* data source and *View mode* only. However, Copilot-assisted KQL authoring in the tile editing pane is available in Edit mode when you open a tile for editing.
+> Currently, Copilot-assisted data exploration in real-time dashboards supports dashboards with a *single* data source and *View mode* only.
 
 ## Prerequisites
 
