@@ -12,7 +12,7 @@ ms.search.form: Create a tileset, Creating tilesets, how to create tilesets, til
 
 # Create tilesets (preview)
 
-Large static spatial datasets can be expensive to render directly on a map. To improve performance, Fabric Maps can convert GeoJSON files into high‑performance tilesets that enable faster rendering and smoother interaction. For background concepts, [What is a tileset in Fabric Maps?](about-tile-sets.md).
+Large static spatial datasets can be expensive to render directly on a map. To improve performance, Fabric Maps can convert GeoJSON files into high‑performance tilesets that enable faster rendering and smoother interaction. For background concepts, see [What is a tileset in Fabric Maps?](about-tile-sets.md).
 
 > [!IMPORTANT]
 > Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
