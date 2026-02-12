@@ -21,7 +21,7 @@ The CDR/EDR analytics reference architecture uses Microsoft Fabric Real-Time Int
 
 You can implement the architecture with four main operational phases that work together to deliver end-to-end network intelligence: Ingest and process, Analyze, transform, and enrich, Train and score, and Visualize and activate. 
 
-:::image type="content" source="./media/call-event-record-analytics.svg" alt-text="Diagram that shows the architecture of CDR/EDR analytics with Microsoft Fabric Real-Time Intelligence." lightbox="./media/call-event-record-analytics.svg":::
+:::image type="content" source="./media/call-event-record-analytics.png" alt-text="Diagram that shows the architecture of CDR/EDR analytics with Microsoft Fabric Real-Time Intelligence." lightbox="./media/call-event-record-analytics.png":::
 
 The following steps describe the data flow through this architecture:
 

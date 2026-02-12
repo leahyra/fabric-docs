@@ -20,7 +20,7 @@ You can handle massive scale fleet operations where hundreds of thousands of veh
 
 The fleet management reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes millions of telemetry events from hundreds of thousands of vehicles in real time. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/fleet-management.svg" alt-text="Screenshot of the fleet management architecture diagram." lightbox="media/fleet-management.svg":::
+:::image type="content" source="media/fleet-management.png" alt-text="Screenshot of the fleet management architecture diagram." lightbox="media/fleet-management.png":::
 
 1. Hundreds of thousands of fleet vehicles generate millions of telemetry events in an hour, providing details on vehicle location, mechanical state, and more.
 

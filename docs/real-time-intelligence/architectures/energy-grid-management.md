@@ -20,7 +20,7 @@ You can manage large-scale energy grids where thousands of energy generation sou
 
 The energy grid management reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from energy generation facilities and consumption networks for intelligent grid management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/energy-grid-management.svg" alt-text="Screenshot of the energy grid management architecture diagram." lightbox= "media/energy-grid-management.svg":::
+:::image type="content" source="media/energy-grid-management.png" alt-text="Screenshot of the energy grid management architecture diagram." lightbox= "media/energy-grid-management.png":::
 
 1. Stream energy manufacturing IoT events with subsecond latency from wind turbines and power plants.
 

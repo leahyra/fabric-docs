@@ -20,7 +20,7 @@ You can manage large-scale wind farms where hundreds or thousands of wind turbin
 
 The wind farm maintenance reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from wind turbines and integrates weather monitoring data for intelligent maintenance management. You can implement the architecture with four main operational phases: Ingest and process, Analyze, transform and enrich, Train, and Visualize and activate.
 
-:::image type="content" source="media/wind-farm-maintenance.svg" alt-text="Screenshot of the wind farm maintenance architecture diagram." lightbox="media/wind-farm-maintenance.svg":::
+:::image type="content" source="media/wind-farm-maintenance.png" alt-text="Screenshot of the wind farm maintenance architecture diagram." lightbox="media/wind-farm-maintenance.png":::
 
 1. IoT events from wind turbines are transmitted with sub-second latency through Azure Event Hubs to Eventstreams​.
 
