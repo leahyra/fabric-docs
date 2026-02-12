@@ -903,6 +903,10 @@ items:
             href: multivariate-anomaly-detection.md
   - name: Map
     items:
+      - name: Overview
+        items:
+          - name: What is Fabric Maps?
+            href: map/about-fabric-maps.md
       - name: Tutorials
         items:
           - name: Build real-time work order routing
