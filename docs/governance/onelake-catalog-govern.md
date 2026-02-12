@@ -17,9 +17,6 @@ The Govern tab in the OneLake catalog enables you to assess, enhance, and overse
 * [Recommended actions](#take-actions-to-improve-the-governance-posture) you can take to improve data's governance posture. The recommended actions are accompanied by guidance to help you accomplish them.
 * [Links to tools and learning resources](#get-help-with-your-data-governance-efforts) you can use to help you analyze, improve, and maintain the governance of the data in Fabric.
 
-> [!NOTE]
-> Security insights previously available in the Microsoft Purview Hub have moved to the OneLake catalog's Govern tab as part of a unified governance experience. The Purview Hub security insights report will be retired by the end of January 2026. Going forward, use the Govern tab to access sensitivity label coverage, Data Loss Prevention (DLP) policy activation and scan state, and other security posture insights for your Fabric tenant.
-
 As a Fabric admin, the insights you see on the Govern tab are based on the entire tenant metadata, from items through workspaces to capacities and domains (see [Considerations and limitations for exceptions](#considerations-and-limitations)).
 
 As a data owner, the insights you see are based on all the items in Fabric that you own. These items appear when you apply the **My items** filter on the [explore tab](./onelake-catalog-explore.md) (see [Considerations and limitations for exceptions](#considerations-and-limitations)).
@@ -135,9 +132,6 @@ For the *My items* view, if the data isn't refreshing as expected, check the not
 ## Considerations and limitations
 
 The following are some considerations and limitations when using the Govern tab:
-
-> [!IMPORTANT]
-> The Microsoft Purview Hub security insights report is being deprecated and will be retired by the end of January 2026. After retirement, it will no longer receive updates. Tenants should rely on the OneLake catalog Govern tab for all security posture insights, including sensitivity label coverage and DLP policy information.
 
 * Subitems, such as tables, aren't supported and don't surface into the insights.
 * The Govern tab doesn't support cross-tenant scenarios or guest users
