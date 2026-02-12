@@ -3,8 +3,7 @@ title: Monitor machine learning experiments and models
 description: Learn how to monitor machine learning experiments from the Fabric Monitoring hub and track traffic for machine learning model endpoints.
 ms.author: ruxu
 author: ruixinxu
-ms.reviewer: 
-reviewer: 
+ms.reviewer: scottpolly
 ms.topic: how-to
 ms.custom:
 ms.date: 02/11/2026
