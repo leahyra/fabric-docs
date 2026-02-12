@@ -213,7 +213,7 @@ Editing the underlying query of a tile is only possible in editing mode.
 
     :::image type="content" source="media/real-time-dashboard/explorer-pane.png" alt-text="Screenshot of the explorer pane in Real-Time Dashboards.":::
 
-1. Select the **Copilot** icon and describe in natural language what you want to visualize. Copilot generates a query that you can edit as needed. For more information, see [Use Copilot for writing KQL queries](../fundamentals/copilot-for-writing-queries.md).
+1. Select the **Copilot** icon and describe in natural language what you want to visualize. Copilot generates a query that you can edit as needed. For more information, see [Use Copilot for writing KQL queries](copilot-writing-queries.md).
 
     :::image type="content" source="media/real-time-dashboard/copilot.png" alt-text="Screenshot of the Copilot icon in Real-Time Dashboards.":::
 
