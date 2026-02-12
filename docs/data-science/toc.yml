@@ -277,8 +277,8 @@ items:
       href: machine-learning-artifacts-git-deployment-pipelines.md
 - name: Monitor models and experiments
   items:
-    - name: Monitor ML experiments and models
-      href: monitor-ml-experiments-models.md
+    - name: Monitor experiments and models
+      href: monitor-machine-learning-experiments-models.md
 - name: Secure and manage ML items
   items:
     - name: Disaster recovery for ML items
