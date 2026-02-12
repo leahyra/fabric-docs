@@ -98,9 +98,9 @@ available to all Fabric workloads.
 
 ### Connect to streaming data
 
-Eventstreams let you collect, transform, and send large amounts of real-time data to different destinations—all without writing code. Eventstreams now supports connecting to sources over private networks via Azure managed virtual network and streaming data gateways. This enables secure ingestion from privately reachable sources without exposing them to the public internet.
+Eventstreams let you collect, transform, and send large amounts of real-time data to different destinations—all without writing code. Eventstreams support multiple data sources and data destinations, including a wide range of connectors to external sources, for example: Apache Kafka clusters, database change data capture feeds, AWS streaming sources (Kinesis), Google (GCP Pub/Sub), MQTT v3.1/v3.1.1, and the Real-Time Weather connector.
 
-Eventstreams support multiple data sources and data destinations, including a wide range of connectors to external sources, for example: Apache Kafka clusters, database change data capture feeds, AWS streaming sources (Kinesis), Google (GCP Pub/Sub), MQTT v3.1/v3.1.1, and the Real-Time Weather connector.
+Eventstreams now supports connecting to sources over private networks via Azure managed virtual network and streaming data gateways. This enables secure ingestion from privately reachable sources without exposing them to the public internet.
 
 ### Process data streams
 
@@ -114,7 +114,9 @@ aggregations that can be shared to consumers in Real-Time hub.
 
 ### Store and analyze data
 
-Eventhouses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. Your data is automatically organized based on when it arrived, so you can run fast, detailed queries even on large amounts of data. Eventhouse shortcuts now support acceleration by a date-time column and adjustable freshness settings, improving query performance and control over data staleness for external data accessed via shortcuts. Data stored in eventhouses can be made available in OneLake for consumption by other Fabric experiences.
+Eventhouses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. Your data is automatically organized based on when it arrived, so you can run fast, detailed queries even on large amounts of data. Data stored in eventhouses can be made available in OneLake for consumption by other Fabric experiences.
+
+Eventhouse shortcuts now support acceleration by a date-time column and adjustable freshness settings, improving query performance and control over data staleness for external data accessed via shortcuts.
 
 The indexed, partitioned data stored in eventhouses is ready for
 lightning-fast query using various code, low-code, or no-code
