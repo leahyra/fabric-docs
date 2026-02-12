@@ -7,6 +7,7 @@ ms.reviewer: yaronc
 ms.topic: overview
 ms.date: 11/12/2025
 ms.custom:
+ai-usage: ai-assisted
 #customer intent: As a Fabric admin, I would like to gain visibility on my organization governance state and improve it in one central place. As data owner, I want to learn about OneLake catalog's Govern tab and use its capabilities to get insights about and govern the data in Fabric that I own.
 ---
 # Govern Fabric data
@@ -15,6 +16,9 @@ The Govern tab in the OneLake catalog enables you to assess, enhance, and overse
 * [Insights](#get-insights-about-the-governance-status) that help you understand the governance status of data and identify areas for improvement.
 * [Recommended actions](#take-actions-to-improve-the-governance-posture) you can take to improve data's governance posture. The recommended actions are accompanied by guidance to help you accomplish them.
 * [Links to tools and learning resources](#get-help-with-your-data-governance-efforts) you can use to help you analyze, improve, and maintain the governance of the data in Fabric.
+
+> [!NOTE]
+> Security insights previously available in the Microsoft Purview Hub have moved to the OneLake catalog's Govern tab as part of a unified governance experience. The Purview Hub security insights report will be retired by the end of January 2026. Going forward, use the Govern tab to access sensitivity label coverage, Data Loss Prevention (DLP) policy activation and scan state, and other security posture insights for your Fabric tenant.
 
 As a Fabric admin, the insights you see on the Govern tab are based on the entire tenant metadata, from items through workspaces to capacities and domains (see [Considerations and limitations for exceptions](#considerations-and-limitations)).
 
@@ -33,6 +37,8 @@ You can also access the Govern tab from the settings gear by selecting the **One
 The first time you open the Govern tab, it might take a few moments for the insights and actions to appear.
 
 When Fabric Admins access the Govern tab, they see **All Data in Fabric** by default. They can switch to their own items' governance state by selecting **My items**. Data owners see their own items view by default.
+
+Former Purview Hub users can access the enhanced Admin report by opening OneLake catalog > Govern tab > **View more**. This is now the authoritative location for Fabric security posture insights.
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-left-rail-navigation.png" alt-text="Screenshot showing how admins can switch between views." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-left-rail-navigation.png":::
 
@@ -73,7 +79,7 @@ Fabric admins see a report that provides access to expanded insights across thre
 
 * **Manage your data estate** contains inventory overview, capacities & domains information and details about feature usage across the tenant. 
 
-* **Protect, secure & comply** includes information about sensitivity label coverage and data loss prevention policies activated and scanned across the various workspaces in the organization.
+* **Protect, secure & comply** includes information about sensitivity label coverage and data loss prevention policies activated and scanned across the various workspaces in the organization. These insights are the direct replacement for the Microsoft Purview Hub security insights. Former Purview Hub users can select **View more** to access this enhanced Admin report.
 
 * **Discover, trust, and reuse** surfaces insights about data freshness, item curation state with information about description and endorsement coverage and content sharing view.
 
@@ -127,6 +133,9 @@ For the *My items* view, if the data isn't refreshing as expected, check the not
 ## Considerations and limitations
 
 The following are some considerations and limitations when using the Govern tab:
+
+> [!IMPORTANT]
+> The Microsoft Purview Hub security insights report is being deprecated and will be retired by the end of January 2026. After retirement, it will no longer receive updates. Tenants should rely on the OneLake catalog Govern tab for all security posture insights, including sensitivity label coverage and DLP policy information.
 
 * Subitems, such as tables, aren't supported and don't surface into the insights.
 * The Govern tab doesn't support cross-tenant scenarios or guest users
