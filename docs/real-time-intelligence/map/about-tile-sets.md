@@ -43,14 +43,25 @@ There are two main types of tiles supported in Microsoft Fabric Maps:
 
 ### Tilesets
 
-A Map **Tileset** is a structured collection of tiles that represent geographic data for a larger area—such as a city, country/region, or the entire globe. Each tile contains only the data relevant to its specific location, and tilesets are organized by [zoom levels](#understanding-zoom-levels-in-tilesets) and tile coordinates. This structure allows mapping software to load only the necessary tiles for the current view, significantly improving rendering speed, scalability, and overall performance.
+A tileset is a structured collection of map tiles that represent geographic data for a large area—ranging from a city to the entire globe.
 
-> [!NOTE]
-> A format of tileset called [**PMTiles**](https://github.com/protomaps/PMTiles/blob/main/spec/v3/spec.md) is a modern, portable tileset for storing and delivering tiles. Unlike traditional tilesets that consist of thousands of small files organized in folders, PMTiles packages all tiles into a **single archive file**. This makes it easier to manage, distribute, and stream map data, especially for large datasets.
+Each tile in the tileset contains only the data relevant to a specific location and is organized by [zoom level](#understanding-zoom-levels-in-tilesets) and tile coordinates. This structure allows Fabric Maps to load only the tiles needed for the current map view, improving rendering performance, scalability, and responsiveness compared to rendering raw spatial data.
 
-Fabric Maps currently supports PMTiles as the format for its tilesets, which can be created using raster or vector tiles. It also allows generating PMTiles from valid GeoJSON files using vector tiles, as described in the article [create tileset](create-tile-sets.md). For more information on using PMTiles in Fabric Maps, see [Add data to the map - PMTiles](create-map.md#add-data-to-the-map---pmtiles) in the *Create a map* article.
+### PMTiles
 
-### Understanding zoom levels in tilesets
+Fabric Maps uses **PMTiles** as its tileset format. PMTiles is a modern, portable format that packages tiles for multiple zoom levels into a **single archive file**. Compared to folder-based tilesets, this approach simplifies storage, distribution, and streaming—especially for large spatial datasets.
+
+Key benefits of PMTiles include:
+
+- Efficient, responsive map interactions at scale  
+- Reduced network and storage overhead compared to folder-based tilesets  
+- Support for serverless delivery from cloud storage and CDNs  
+
+In Fabric Maps, PMTiles are stored as files in a **lakehouse** and consumed directly by the map. When a map is viewed, Fabric Maps requests only the tile data required for the current zoom level and map extent. This selective loading reduces data transfer and improves rendering performance when working with large static spatial datasets.
+
+Fabric Maps currently supports generating PMTiles from valid GeoJSON files using vector tiles, as described in [Create tilesets](create-tile-sets.md). For more information about using PMTiles in maps, see [Add data to the map – PMTiles](create-map.md#add-data-to-the-map---pmtiles) in the *Create a map* article.
+
+#### Understanding zoom levels in tilesets
 
 Zoom levels define how much geographic detail is shown on a map at different scales. In a tileset, spatial data is organized into tiles across multiple zoom levels so that Fabric Maps can load only the data needed for the current view. Lower zoom levels display broader areas with less detail, while higher zoom levels show smaller areas with greater detail, helping balance performance and visual clarity.
 
@@ -69,18 +80,7 @@ Zoom levels are defined when you [Create a tileset](create-tile-sets.md#create-a
 For more information on zoom levels, see [Zoom levels and tile grid in
 Microsoft Azure Maps](/azure/azure-maps/zoom-levels-and-tile-grid?tabs=csharp).
 
-### PMTiles in Fabric Maps
-
-Fabric Maps uses PMTiles, a single-file tileset format that packages all tiles into one portable archive. PMTiles simplifies storage, distribution, and streaming compared to traditional folder-based tilesets.
-
-Fabric Maps can:
-
-- Consume PMTiles created externally
-- Generate PMTiles from valid GeoJSON files using vector tiles
-
-For information on adding PMTiles to a map, see [Add data to the map – PMTiles](create-map.md#add-data-to-the-map---pmtiles) in the Create a map article.
-
-## Why use tilesets?
+### Why use tilesets?
 
 Large static spatial datasets—such as road networks, buildings, or environmental boundaries—can be expensive to render directly. Tilesets improve performance by:
 
