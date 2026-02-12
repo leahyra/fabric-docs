@@ -24,7 +24,7 @@ For more information about sharing maps in Fabric Maps, see [Sharing Microsoft F
 ------------------------------------------------------------------------------------>
 
 > [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 ## Accessing shared maps
 
