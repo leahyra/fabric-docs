@@ -24,7 +24,7 @@ The SAP BW Application Server connector supports the following authentication ty
 
 ## Set up your connection in Dataflow Gen2
 
-You can connect Dataflow Gen2 to SAP BW Application Server in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+You can connect Dataflow Gen2 in Microsoft Fabric to SAP BW Application Server using Power Query connectors. Follow these steps to create your connection:
 
 1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
 1. [Set up SAP BW Application Server prerequisites](/power-query/connectors/sap-bw/application-setup-and-connect#prerequisites).

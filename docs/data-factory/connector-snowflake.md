@@ -24,7 +24,7 @@ The Snowflake database connector supports the following authentication types for
 
 ## Set up your connection in Dataflow Gen2
 
-You can connect Dataflow Gen2 to Snowflake in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+You can connect Dataflow Gen2 in Microsoft Fabric to Snowflake using Power Query connectors. Follow these steps to create your connection:
 
 1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
 1. Check [Snowflake limitations and known issues](/power-query/connectors/snowflake#limitations-and-known-issues) to make sure your scenario is supported.
