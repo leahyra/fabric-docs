@@ -49,8 +49,8 @@ The Microsoft Purview Hub allows you to see insights about your Fabric data insi
 
 [You can follow this link to the Microsoft Purview Hub documentation.](use-microsoft-purview-hub.md)
 
-> [!IMPORTANT]
-> The Microsoft Purview Hub security insights report is being deprecated and will be retired by the end of January 2026. Purview Hub insights have permanently moved to the **Govern** tab in the OneLake catalog, which provides an enhanced, unified governance experience. For more information, see [Govern Fabric data](onelake-catalog-govern.md).
+> [!NOTE]
+> Purview Hub insights have moved to the **Govern** tab in the OneLake catalog, For more information, see [Govern Fabric data](onelake-catalog-govern.md).
 
 ## Learn more
 
