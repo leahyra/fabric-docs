@@ -38,24 +38,26 @@ Before using the Microsoft ODBC Driver for Microsoft Fabric Data Engineering, en
 - **Workspace and Lakehouse IDs**: GUID identifiers for your Fabric workspace and lakehouse
 - **Azure CLI** (optional): Required for Azure CLI authentication method
 
-## Download and Installation
+## Download and MSI Installation
 
-### MSI Installation
+Microsoft ODBC Driver for Microsoft Fabric Data Engineering version 1.0.0 is in public preview which you can download from this download center link.
 
-1. Download the Microsoft Fabric ODBC Driver MSI package
-2. Double-click `MicrosoftFabricODBCDriver.msi`
+* [Download Microsoft ODBC Driver for Microsoft Fabric Data Engineering (zip)](https://download.microsoft.com/download/c45e0c46-5f56-4568-89ea-8966da47abdd/ms-sparksql-odbc-1.0.0.zip)
+
+1. Download the Microsoft ODBC Driver for Microsoft Fabric Data Engineering MSI package
+2. Double-click `MicrosoftFabricODBCDriver-1.0.msi`
 3. Follow the installation wizard and accept the license agreement
-4. Choose installation directory (default: `C:\Program Files\Microsoft Fabric ODBC Driver\`)
+4. Choose installation directory (default: `C:\Program Files\Microsoft ODBC Driver for Microsoft Fabric Data Engineering\`)
 5. Complete the installation
 
-#### Silent Installation
+### Silent Installation
 
 ```powershell
 # Silent installation
-msiexec /i "MicrosoftFabricODBCDriver.msi" /quiet
+msiexec /i "MicrosoftFabricODBCDriver-1.0.msi" /quiet
 
 # Installation with logging
-msiexec /i "MicrosoftFabricODBCDriver.msi" /l*v install.log
+msiexec /i "MicrosoftFabricODBCDriver-1.0.msi" /l*v install.log
 ```
 
 ### Verify Installation
@@ -64,7 +66,7 @@ After installation, verify the driver is registered:
 
 1. Run `odbcad32.exe` (ODBC Data Source Administrator)
 2. Navigate to the **Drivers** tab
-3. Verify "Microsoft Fabric ODBC Driver" is listed
+3. Verify "Microsoft ODBC Driver for Microsoft Fabric Data Engineering" is listed
 
 ## Quick Start Example
 This example demonstrates how to connect to Microsoft Fabric and execute a query using the Microsoft ODBC Driver for Microsoft Fabric Data Engineering. Before running this code, ensure you have completed the prerequisites and installed the driver.
@@ -76,7 +78,7 @@ import pyodbc
 
 # Connection string with required parameters
 connection_string = (
-    "DRIVER={Microsoft Fabric ODBC Driver};"
+    "DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};"
     "WorkspaceId=<workspace-id>;"
     "LakehouseId=<lakehouse-id>;"
     "AuthFlow=AZURE_CLI;"
@@ -100,7 +102,7 @@ using System.Data.Odbc;
 
 // Connection string with required parameters
 string connectionString = 
-    "DRIVER={Microsoft Fabric ODBC Driver};" +
+    "DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};" +
     "WorkspaceId=<workspace-id>;" +
     "LakehouseId=<lakehouse-id>;" +
     "AuthFlow=AZURE_CLI;";
@@ -126,14 +128,14 @@ if (await reader.ReadAsync())
 The Microsoft ODBC Driver for Microsoft Fabric Data Engineering uses the following connection string format:
 
 ```
-DRIVER={Microsoft Fabric ODBC Driver};<parameter1>=<value1>;<parameter2>=<value2>;...
+DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};<parameter1>=<value1>;<parameter2>=<value2>;...
 ```
 
 ### Connection String Components
 
 | Component | Description | Example |
 |-----------|-------------|---------|
-| DRIVER | ODBC driver identifier | `{Microsoft Fabric ODBC Driver}` |
+| DRIVER | ODBC driver identifier | `{Microsoft ODBC Driver for Microsoft Fabric Data Engineering}` |
 | WorkspaceId | Microsoft Fabric workspace identifier (GUID) | `xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx` |
 | LakehouseId | Microsoft Fabric lakehouse identifier (GUID) | `xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx` |
 | AuthFlow | Authentication method | `AZURE_CLI`, `INTERACTIVE`, `CLIENT_CREDENTIAL`, `CLIENT_CERTIFICATE`, `ACCESS_TOKEN` |
@@ -143,19 +145,19 @@ DRIVER={Microsoft Fabric ODBC Driver};<parameter1>=<value1>;<parameter2>=<value2
 #### Basic Connection (Azure CLI Authentication)
 
 ```
-DRIVER={Microsoft Fabric ODBC Driver};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI
+DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI
 ```
 
 #### With Performance Options
 
 ```
-DRIVER={Microsoft Fabric ODBC Driver};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI;ReuseSession=true;LargeTableSupport=true;PageSizeBytes=18874368
+DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI;ReuseSession=true;LargeTableSupport=true;PageSizeBytes=18874368
 ```
 
 #### With Logging
 
 ```
-DRIVER={Microsoft Fabric ODBC Driver};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI;LogLevel=DEBUG;LogFile=odbc_driver.log
+DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI;LogLevel=DEBUG;LogFile=odbc_driver.log
 ```
 
 ## Authentication
@@ -179,7 +181,7 @@ The Microsoft ODBC Driver for Microsoft Fabric Data Engineering supports multipl
 ```python
 # Python Example
 connection_string = (
-    "DRIVER={Microsoft Fabric ODBC Driver};"
+    "DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};"
     "WorkspaceId=<workspace-id>;"
     "LakehouseId=<lakehouse-id>;"
     "AuthFlow=AZURE_CLI;"
@@ -200,10 +202,9 @@ conn = pyodbc.connect(connection_string)
 ```python
 # Python Example
 connection_string = (
-    "DRIVER={Microsoft Fabric ODBC Driver};"
+    "DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};"
     "WorkspaceId=<workspace-id>;"
     "LakehouseId=<lakehouse-id>;"
-    "AuthFlow=AZURE_CLI;"
     "AuthFlow=INTERACTIVE;"
     "TenantId=<tenant-id>;"
     "Scope=https://api.fabric.microsoft.com/.default;"
@@ -222,7 +223,7 @@ conn = pyodbc.connect(connection_string)
 
 ```python
 connection_string = (
-    "DRIVER={Microsoft Fabric ODBC Driver};"
+    "DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};"
     "WorkspaceId=<workspace-id>;"
     "LakehouseId=<lakehouse-id>;"
     "AuthFlow=CLIENT_CREDENTIAL;"
@@ -232,12 +233,12 @@ connection_string = (
 )
 ```
 
-**Required Parameters**:
+**Required Parameters**
 - `TenantId`: Azure tenant ID
 - `ClientId`: Application (client) ID from Microsoft Entra ID
 - `ClientSecret`: Client secret from Microsoft Entra ID
  
-**Best Practices:**
+**Best Practices**
 - Store secrets securely (Azure Key Vault, environment variables)
 - Use managed identities when possible
 - Rotate secrets regularly
@@ -248,7 +249,7 @@ connection_string = (
 
 ```python
 connection_string = (
-    "DRIVER={Microsoft Fabric ODBC Driver};"
+    "DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};"
     "WorkspaceId=<workspace-id>;"
     "LakehouseId=<lakehouse-id>;"
     "AuthFlow=CLIENT_CERTIFICATE;"
@@ -274,7 +275,7 @@ connection_string = (
 access_token = acquire_token_from_custom_source()
 
 connection_string = (
-    "DRIVER={Microsoft Fabric ODBC Driver};"
+    "DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};"
     "WorkspaceId=<workspace-id>;"
     "LakehouseId=<lakehouse-id>;"
     "AuthFlow=ACCESS_TOKEN;"
@@ -341,7 +342,7 @@ These parameters must be present in every connection string:
 2. **Create New System DSN**
    - Go to "System DSN" tab
    - Click "Add"
-   - Select "Microsoft Fabric ODBC Driver"
+   - Select "Microsoft ODBC Driver for Microsoft Fabric Data Engineering"
    - Click "Finish"
 
 3. **Configure DSN Settings**
@@ -380,7 +381,7 @@ import pyodbc
 
 def main():
     connection_string = (
-        "DRIVER={Microsoft Fabric ODBC Driver};"
+        "DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};"
         "WorkspaceId=<workspace-id>;"
         "LakehouseId=<lakehouse-id>;"
         "AuthFlow=AZURE_CLI;"
@@ -426,7 +427,7 @@ class Program
     static async Task Main(string[] args)
     {
         string connectionString = 
-            "DRIVER={Microsoft Fabric ODBC Driver};" +
+            "DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};" +
             "WorkspaceId=<workspace-id>;" +
             "LakehouseId=<lakehouse-id>;" +
             "AuthFlow=AZURE_CLI;" +
@@ -479,7 +480,7 @@ class Program
 import pyodbc
 
 connection_string = (
-    "DRIVER={Microsoft Fabric ODBC Driver};"
+    "DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};"
     "WorkspaceId=<workspace-id>;"
     "LakehouseId=<lakehouse-id>;"
     "AuthFlow=AZURE_CLI;"
