@@ -3,7 +3,7 @@ title: Product Analytics Architecture with Real-Time Intelligence
 description: Build robust product embedded analytics solutions with Microsoft Fabric Real-Time Intelligence for real-time IoT monitoring, insights, and device analytics.
 #customer intent: As an IoT solutions architect, I want to design a scalable product embedded analytics system using Microsoft Fabric Real-Time Intelligence so that I can process millions of IoT events daily with low latency.
 ms.topic: example-scenario
-ms.date: 02/04/2026
+ms.date: 02/12/2026
 ---
 
 # Product embedded analytics reference architecture

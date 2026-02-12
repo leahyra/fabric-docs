@@ -4,7 +4,7 @@ description: Build real-time CDR/EDR analytics solutions with Microsoft Fabric. 
 #customer intent: As a network engineer, I want to understand how to implement Microsoft Fabric Real-Time Intelligence for CDR/EDR analytics so that I can optimize mobile network performance.
 ms.topic: example-scenario
 ms.subservice: rti-core
-ms.date: 02/01/2026
+ms.date: 02/12/2026
 --- 
 
 # Call Data Records (CDR)/Event Detail Records (EDR) analytics reference architecture 

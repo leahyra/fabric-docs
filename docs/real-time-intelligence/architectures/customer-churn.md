@@ -4,7 +4,7 @@ description: Learn how to build real-time customer churn analytics solutions wit
 #customer intent: As a data analyst, I want to understand how to use Microsoft Fabric Real-Time Intelligence for customer churn prediction so that I can improve retention strategies.
 ms.topic: example-scenario
 ms.custom: 
-ms.date: 02/02/2026
+ms.date: 02/12/2026
 --- 
 
  
