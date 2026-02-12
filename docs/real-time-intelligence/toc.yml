@@ -903,10 +903,6 @@ items:
             href: multivariate-anomaly-detection.md
   - name: Map
     items:
-      - name: Overview
-        items:
-          - name: What is Fabric Maps?
-            href: map/about-fabric-maps.md
       - name: Tutorials
         items:
           - name: Build real-time work order routing
@@ -933,20 +929,6 @@ items:
               href: map/share-map-org-apps.md
         - name: Manage Map permissions
           href: map/manage-map-permissions.md
-  - name: Monitor
-    items:
-      - name: Eventhouse monitoring
-        href: monitor-eventhouse.md
-      - name: Metrics
-        href: monitor-metrics.md
-      - name: Command logs
-        href: monitor-logs-command.md
-      - name: Data operation logs
-        href: monitor-logs-data-operation.md
-      - name: Ingestion results logs
-        href: monitor-logs-ingestion-results.md
-      - name: Query logs
-        href: monitor-logs-query.md
   - name: Build AI agents
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:
