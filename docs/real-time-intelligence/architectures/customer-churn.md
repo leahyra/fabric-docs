@@ -23,7 +23,7 @@ The customer churn reference architecture uses Microsoft Fabric Real-Time Intell
 
 You can implement the architecture with five main operational phases that work together to deliver end-to-end customer intelligence: Ingest and process, Analyze, transform, and enrich, Model and contextualize, Train and score, Visualize and activate. 
 
-:::image type="content" source="./media/customer-churn.png" alt-text="Diagram showing the reference architecture for customer churn." lightbox="./media/customer-churn.png":::
+:::image type="content" source="./media/customer-churn.svg" alt-text="Diagram showing the reference architecture for customer churn." lightbox="./media/customer-churn.svg":::
 
 1. Real-time streaming and batch CRM data, application logs, and user engagement data is ingested via Eventstream and routed to Eventhouse.
 

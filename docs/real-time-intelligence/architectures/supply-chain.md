@@ -22,7 +22,7 @@ This section provides an overview of the supply chain architecture, highlighting
 
 The supply chain reference architecture uses Microsoft Fabric Real-Time Intelligence to create a unified platform that processes real-time data from supply chain systems and integrates logistics data for intelligent supply chain management. You can implement the architecture with five main operational phases, divided into ten steps:
 
-:::image type="content" source="media/supply-chain.png" alt-text="Diagram of the supply chain architecture and data flow." lightbox="media/supply-chain.png":::
+:::image type="content" source="media/supply-chain.svg" alt-text="Diagram of the supply chain architecture and data flow." lightbox="media/supply-chain.svg":::
 
 1. **[Eventstream](../event-streams/overview.md)** ingests data from ERP systems, capturing purchase orders, delivery schedules, and vendor contracts.
 
