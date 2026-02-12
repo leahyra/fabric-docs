@@ -117,7 +117,7 @@ Eventhouses are the ideal analytics engine to process data in motion. They're ta
 The indexed, partitioned data stored in eventhouses is ready for
 lightning-fast query using various code, low-code, or no-code
 options in Fabric. Data can be queried in native KQL (Kusto Query
-Language) or using T-SQL in the KQL queryset. 
+Language) or using T-SQL in the KQL queryset. The Kusto copilot, along 
 with the no-code query exploration experience, streamlines the process
 of analyzing data for both experienced KQL users and citizen data
 scientists. KQL is a simple, yet powerful language to query structured,
