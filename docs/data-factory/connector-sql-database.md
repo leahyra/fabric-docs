@@ -21,14 +21,6 @@ The SQL database connector supports the following authentication types for copy 
 |:---|:---|:---|
 |Organizational account| √ | √ |
 
-## Set up your connection in Dataflow Gen2
-
-You can connect Dataflow Gen2 to Azure SQL database in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
-
-1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
-1. [Set up Azure SQL database prerequisites](/power-query/connectors/azure-sql-database#prerequisites).
-1. [Connect to Azure SQL database (from Power Query Online)](/power-query/connectors/azure-sql-database#connect-to-azure-sql-database-from-power-query-online).
-
 ## Set up your connection in a pipeline
 
 To create an SQL database connection in a pipeline, select an existing SQL database under **OneLake** section. 
