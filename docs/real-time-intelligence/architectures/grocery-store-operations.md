@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: example-scenario
 ms.subservice: rti-core
-ms.date: 02/09/2026
+ms.date: 02/12/2026
 ms.search.form: Architecture
 ---
 

@@ -7,7 +7,7 @@ ms.author: spelluru
 ms.reviewer: bisiadele
 ms.topic: example-scenario
 ms.custom: 
-ms.date: 01/29/2026
+ms.date: 02/12/2026
 --- 
 
 # Law enforcement reference architecture - Real-time location tracking

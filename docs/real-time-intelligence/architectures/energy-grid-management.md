@@ -6,7 +6,7 @@ ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: example-scenario
 ms.subservice: rti-core
-ms.date: 01/26/2026
+ms.date: 02/12/2026
 ms.search.form: Architecture
 ---
 

@@ -4,7 +4,7 @@ description: Learn how to build a predictive maintenance solution using Microsof
 #customer intent: As a data scientist, I want to learn how to build and train predictive maintenance machine learning models in Microsoft Fabric so that I can forecast equipment failures and improve maintenance scheduling.
 ms.topic: example-scenario
 ms.custom:
-ms.date: 02/04/2026
+ms.date: 02/12/2026
 ---
 
 # Predictive maintenance reference architecture

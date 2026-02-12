@@ -7,7 +7,7 @@ ms.author: spelluru
 ms.reviewer: bisiadele
 ms.topic: example-scenario
 ms.custom: 
-ms.date: 01/28/2026
+ms.date: 02/12/2026
 --- 
 
 # ISP analytics reference architecture 
