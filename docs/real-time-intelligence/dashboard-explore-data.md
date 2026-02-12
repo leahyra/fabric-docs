@@ -9,6 +9,7 @@ ms.collection: ce-skilling-ai-copilot
 ms.subservice: rti-dashboard
 ms.custom:
 ms.date: 12/15/2025
+ai-usage: ai-assisted
 ---
 # Copilot-assisted real-time data exploration (preview)
 

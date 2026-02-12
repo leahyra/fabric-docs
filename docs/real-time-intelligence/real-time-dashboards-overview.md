@@ -8,6 +8,7 @@ ms.topic: overview
 ms.custom:
 ms.date: 01/08/2026
 ms.search.form: Overview
+ai-usage: ai-assisted
 ---
 
 # What is Real-Time Dashboard?

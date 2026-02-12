@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.date: 10/05/2025
 ms.subservice: rti-dashboard
 ms.search.form: product-kusto, Real-Time Dashboard
+ai-usage: ai-assisted
 ---
 # Create a Real-Time Dashboard
 
