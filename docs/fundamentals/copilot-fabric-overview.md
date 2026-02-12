@@ -86,7 +86,9 @@ Copilot is also available for Power BI apps, where it's scoped to the curated co
 
 Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists. Copilot lets you [create and refine KQL queries](../real-time-intelligence/copilot-writing-queries.md) directly in Real-Time Dashboard tiles using natural language.
 
-Copilot is now available in Real-Time Dashboard tile editing, allowing you to write natural language prompts to generate KQL queries. You can replace or refine the tile's query directly in the editing pane to speed up authoring of real-time visuals. Copilot is available both in the KQL queryset editor and inside dashboard tile editing, giving you flexibility to author queries in the context that best fits your workflow—whether building queries in a queryset or tuning visuals directly within dashboard tiles.
+Copilot is now available in Real-Time Dashboard tile editing, allowing you to write natural language prompts to generate KQL queries. You can replace or refine the tile's query directly in the editing pane to speed up authoring of real-time visuals. 
+
+Copilot is available both in the KQL queryset editor and inside dashboard tile editing, giving you flexibility to author queries in the context that best fits your workflow—whether building queries in a queryset or tuning visuals directly within dashboard tiles.
 
 For more information, see [Copilot for Writing KQL Queries](../real-time-intelligence/copilot-writing-queries.md).
 
