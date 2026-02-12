@@ -116,7 +116,7 @@ aggregations that can be shared to consumers in Real-Time hub.
 
 Eventhouses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. Your data is automatically organized based on when it arrived, so you can run fast, detailed queries even on large amounts of data. Data stored in eventhouses can be made available in OneLake for consumption by other Fabric experiences.
 
-Eventhouse shortcuts now support acceleration by a date-time column and adjustable freshness settings, improving query performance and control over data staleness for external data accessed via shortcuts.
+Eventhouse shortcuts now support acceleration by a date-time column and adjustable freshness settings, improving query performance and control over how current the data is for external data accessed via shortcuts.
 
 The indexed, partitioned data stored in eventhouses is ready for
 lightning-fast query using various code, low-code, or no-code
