@@ -26,7 +26,7 @@ Here is an example of a graph that is undergoing refresh:
 
 :::image type="content" source="./media/how-to/monitor-graph-status-in-progress.png" alt-text="Screenshot showing graph data refresh is in progress." lightbox="./media/how-to/monitor-graph-status-in-progress.png":::
 
-In this screenshot, the refresh job is complete. Note that despite the "success" job status, the graph wouldn't have queryable data if you didn't configure the node types and edge types properly. 
+In this screenshot, the refresh job is complete. Note that despite the "Succeeded" job status, the graph wouldn't have queryable data if you didn't configure the node types and edge types properly. 
 
 :::image type="content" source="./media/how-to/monitor-graph-status-success.png" alt-text="Screenshot showing graph data refresh is successful." lightbox="./media/how-to/monitor-graph-status-success.png":::
 
