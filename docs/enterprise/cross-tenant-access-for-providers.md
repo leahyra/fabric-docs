@@ -227,7 +227,7 @@ Permitted users from the provider tenant can call this API to get the SQL connec
 
 ## Enforce multi-factor authentication on access requests from outside the organization
 
-The **Enforce multi-factor authentication on access requests from outside the organization** tenant setting allows provider tenants to require multi-factor authentication (MFA) for people outside their organization when accessing content from the Fabric tenant. This setting governs access to the SQL endpoints of Fabric data warehouses. When enabled, guest users who do not have MFA enabled are denied access to cross-tenant warehouse items.
+The **Enforce multi-factor authentication on access requests from outside the organization** tenant setting allows providers to require multi-factor authentication (MFA) for guest users that are accessing Fabric content hosted in the provider's tenant. This setting governs access to Fabric data warehouses and SQL analytics endpoints of lakehouses. When enabled, guest users who do not have MFA enabled are denied access to cross-tenant warehouse items.
 
 This setting is disabled by default and applies to the entire organization. Only Fabric administrators can enable or disable this setting.
 
