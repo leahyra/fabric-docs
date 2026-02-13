@@ -1,7 +1,7 @@
 ---
 title: Monitoring and telemetry overview for Graph in Microsoft Fabric
 description: Learn about monitoring and telemetry for Graph in Microsoft Fabric.
-ms.topic: concept-article
+ms.topic: how-to
 ms.date: 01/22/2026
 author: lorihollasch
 ms.author: loriwhip
