@@ -13,7 +13,7 @@ ms.search.form: Tutorial - Add nodes and edges from one mapping table
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This tutorial explains the more advanced situation where you need to use one mapping table to create multiple node type(s) and edge type(s).
+This tutorial explains the more advanced situation where you need to use one mapping table to create multiple node types.
 
 ## Adventure Works Employee table
 
@@ -32,7 +32,7 @@ In the Adventure Works data model, the **Employees** data source table has the f
 | Country           |
 | Group             |
 
-You can use the **Employees** table to create an **Employee** node type, a **Country** node type, and a **lives_in** edge type.
+You can use the **Employees** table to create an **Employee** node type and a **Country** node type, which are connected by a **lives_in** edge type.
 
 ## Create a Country node type
 
@@ -45,7 +45,7 @@ Create a node type named "Country" using the **Employees** table by following th
 
 ## Modify the Employee node type as needed
 
-If it's not necessary for the **Employee** node type to have the **Territory**, **Country**, and **Group** properties for your queries or analysis, you may remove these properties. Excessive properties make your graph harder to maintain and use.
+If it's not necessary for the **Employee** node type to have the **Territory**, **Country**, and **Group** properties during your queries or analyses, you may remove these properties. Excessive properties make your graph harder to maintain and use.
 
 ## Create a lives_in edge
 
@@ -56,7 +56,6 @@ Create an edge type named "lives_in" using the **Employees** table by following 
     - **Mapping table column to be linked to source node key**: EmployeeID_K
     - **Target node**: Country
     - **Mapping table column to be linked to target node key**: Country
-
 
 ## Load the graph
 
