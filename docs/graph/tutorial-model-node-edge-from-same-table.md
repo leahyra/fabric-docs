@@ -19,18 +19,16 @@ This tutorial explains the more advanced situation where you need to use one map
 
 In the Adventure Works data model, the **Employees** data source table has the following columns:
 
-| Column name       |
-| ----------------- |
-| EmployeeID_K      | 
-| ManagerID         |
-| EmployeeFullName  |
-| JobTitle          |
-| OrganizationLevel |
-| MaritalStatus     |
-| Gender            |
-| Territory         |
-| Country           |
-| Group             |
+- EmployeeID_K
+- ManagerID
+- EmployeeFullName
+- JobTitle
+- OrganizationLevel
+- MaritalStatus
+- Gender
+- Territory
+- Country
+- Group
 
 You can use the **Employees** table to create an **Employee** node type and a **Country** node type, which are connected by a **lives_in** edge type.
 
@@ -38,14 +36,16 @@ You can use the **Employees** table to create an **Employee** node type and a **
 
 Create a node type named "Country" using the **Employees** table by following the steps in [Add node types to your graph](tutorial-model-nodes.md). Retain only the **Country** property and remove all other properties.
 
-> [!TIP]
-> Generally, for all node types you should remove properties that aren't required for the uniqueness of the nodes. Moreover, excessive properties make your graph harder to maintain and use.
->
-> In the case of the **Country** node type, since it's created from the **Employees** table, you should remove properties like EmployeeID_K, ManagerID, EmployeeFullName, JobTitle, OrganizationLevel, MaritalStatus, and Gender, at a minimum.
-
 ## Modify the Employee node type as needed
 
-If it's not necessary for the **Employee** node type to have the **Territory**, **Country**, and **Group** properties during your queries or analyses, you may remove these properties. Excessive properties make your graph harder to maintain and use.
+If it's not necessary for the **Employee** node type to have the **Territory**, **Country**, and **Group** properties during your queries or analyses, you may remove these properties. 
+
+> [!TIP]
+> Excessive properties make your graph harder to maintain and use. Generally, for all node types you should remove properties that are
+> - Not required for the uniqueness of the nodes
+> - Not necessary during your quries or analyses
+>
+> In the case of the **Country** node type, since it's created from the **Employees** table, you should remove properties like EmployeeID_K, ManagerID, EmployeeFullName, JobTitle, OrganizationLevel, MaritalStatus, and Gender, at a minimum.
 
 ## Create a lives_in edge
 
