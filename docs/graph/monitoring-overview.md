@@ -22,11 +22,11 @@ To access monitoring data, select **Monitor** in Fabric's navigation pane.
 
 Graph items are workspace-scoped (each Graph belongs to a specific workspace), but the Monitoring Hub aggregates visibility based on your role and permissions. This means you don't need to navigate workspace-by-workspace to monitor your Graph workloads. They're all visible in the centralized Monitoring Hub, filtered by what you're authorized to see.
 
-Here is an example showing a graph is undergoing refresh:
+Here is an example of a graph that is undergoing refresh:
 
 :::image type="content" source="./media/how-to/monitor-graph-status-in-progress.png" alt-text="Screenshot showing graph data refresh is in progress." lightbox="./media/how-to/monitor-graph-status-in-progress.png":::
 
-Now the refresh job is complete and successful:
+In this screenshot, the refresh job is complete. Note that despite the "success" job status, the graph wouldn't have queryable data if you didn't configure the node types and edge types properly. 
 
 :::image type="content" source="./media/how-to/monitor-graph-status-success.png" alt-text="Screenshot showing graph data refresh is successful." lightbox="./media/how-to/monitor-graph-status-success.png":::
 
