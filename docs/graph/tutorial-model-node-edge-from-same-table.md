@@ -66,4 +66,4 @@ After configuring all node types and edge types, load the graph:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Add edges to your graph](tutorial-model-edges.md)
+> [Query the graph with the query builder](tutorial-query-builder.md)
