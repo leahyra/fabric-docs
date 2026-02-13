@@ -45,7 +45,7 @@ Before creating your M query function, gather the following information:
 
 1. **Endpoint URL**: Navigate to your machine learning model in Fabric and copy the endpoint URL from the **Endpoint details** section.
 
-   :::image type="content" source="media/dataflow-gen2-ml-model-endpoints/endpoint-url.png" alt-text="Screenshot showing where to find the ML model endpoint URL." lightbox="media/dataflow-gen2-ml-model-endpoints/endpoint-url.png":::
+   :::image type="content" source="media/dataflow-gen2-machine-learning-model-endpoints/endpoint-url.png" alt-text="Screenshot showing where to find the machine learning model endpoint URL." lightbox="media/dataflow-gen2-machine-learning-model-endpoints/endpoint-url.png":::
 
 1. **Tenant ID**: Find your tenant ID in the Azure portal under Microsoft Entra ID.
 
