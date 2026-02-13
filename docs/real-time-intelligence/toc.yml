@@ -917,6 +917,8 @@ items:
             href: map/about-tile-sets.md
           - name: Sharing maps
             href: map/sharing-maps.md
+          - name: Permissions in Fabric Maps
+            href: map/about-map-permissions.md
       - name: How-to guides
         items:
         - name: Create a map
