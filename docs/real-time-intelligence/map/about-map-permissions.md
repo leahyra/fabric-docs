@@ -18,9 +18,9 @@ This article explains how permissions work in Fabric Maps, including how workspa
 
 Access to a map in Fabric Maps is determined by **three layers of permissions**:
 
-1. [Workspace permissions](#workspace-permissions)
-1. [Data permissions on underlying sources](#data-permissions-and-map-visibility)
-1. [Map item permissions](#map-item-permissions)
+- [Workspace permissions](#workspace-permissions)
+- [Data permissions on underlying sources](#data-permissions-and-map-visibility)
+- [Map item permissions](#map-item-permissions)
 
 All three layers must allow access for a user to fully interact with a map.
 
@@ -41,7 +41,7 @@ Fabric workspace roles apply to all items in the workspace, including map items.
 - **Contributor**
 - **Viewer**
 
-For example, Contributors can create and edit maps but can't share them, while Viewers can only view map content. For more information, see [Roles in workspaces in Microsoft Fabric](../../fundamentals/roles-workspaces.md)
+For example, Contributors can create and edit maps but can't share them, while Viewers can only view map content. For more information, see [Roles in workspaces in Microsoft Fabric](../../fundamentals/roles-workspaces.md).
 
 #### Workspace role capabilities for map items
 
@@ -74,7 +74,7 @@ Data permissions determine:
 - **Which attributes are available**  
   Only columns and properties accessible through the underlying data source are included in the map.
 
-Fabric Maps never grants access to data a user isn't permitted to read. For more information, see [Permission model](../../security/permission-model.md)
+Fabric Maps never grants access to data a user isn't permitted to read. For more information, see [Permission model](../../security/permission-model.md).
 
 #### Permissions required to build or edit a map
 
@@ -135,7 +135,7 @@ In practice, this means:
 
 Editing the map also does not override data permissions. The user must still have the required permissions on underlying data sources (such as a Lakehouse or KQL database), or the map may show errors or missing data. For more information, see [Data permissions and map visibility](#data-permissions-and-map-visibility) in the previous section.
 
-For information on granting map permissions, see [Managing Map Permissions](manage-map-permissions.md#managing-map-permissions)
+For information on granting map permissions, see [Managing Map Permissions](manage-map-permissions.md#managing-map-permissions).
 
 #### Share a map
 

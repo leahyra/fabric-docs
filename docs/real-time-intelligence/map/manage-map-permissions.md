@@ -46,7 +46,7 @@ To manage Map permissions
 1. Select the **More options** (**…**) menu next to the map.
 1. Select **Manage permissions**.
 
-  :::image type="content" source="media/manage-map-permissions/manage-permissions.png" lightbox="media/manage-map-permissions/manage-permissions.png" alt-text="Screenshot of a map item context menu appearing over a workspace list in Microsoft Fabric showing options including Open, Delete, Settings, Favorite, View workspace lineage, View item lineage, View details, Move to, Manage permissions, and Share. The Manage permissions option is highlighted with a red border. ":::
+  :::image type="content" source="media/manage-map-permissions/manage-permissions.png" lightbox="media/manage-map-permissions/manage-permissions.png" alt-text="Screenshot of a map item context menu appearing over a workspace list in Microsoft Fabric showing options including Open, Delete, Settings, Favorite, View workspace lineage, View item lineage, View details, Move to, Manage permissions, and Share.":::
 
 The **Direct access** panel opens and shows all users and groups that currently have access to the map.
 
@@ -71,7 +71,7 @@ To add a new user:
 
 1. In the **Manage permissions** panel **Direct access** tab, select **+ Add user**.
 
-  :::image type="content" source="media/manage-map-permissions/add-user.png" lightbox="media/manage-map-permissions/add-user.png" alt-text="Screenshot of the Manage permissions panel for a map item in Microsoft Fabric. The Add user button is highlighted with a red border in the upper left corner. The Direct access tab is selected showing a table with columns for People and groups with access, Email Address, Role, and Permissions.":::
+      :::image type="content" source="media/manage-map-permissions/add-user.png" lightbox="media/manage-map-permissions/add-user.png" alt-text="Screenshot of the Manage permissions panel for a map item in Microsoft Fabric. The Direct access tab is selected showing a table with columns for People and groups with access, Email Address, Role, and Permissions.":::
 
 1. Enter one or more users or groups.
 1. Choose the permission level to assign:
@@ -83,11 +83,11 @@ To add a new user:
 
 1. Select **Grant**.
 
-    :::image type="content" source="media/manage-map-permissions/grant-people-access.png" alt-text="Screenshot of the Grant people access dialog for WorkordersMap in Microsoft Fabric. The dialog shows a recipient field with Paige Turner added, Additional permissions section with Share checkbox selected and Edit checkbox unselected, Notification Options section with Notify recipients by email checkbox selected, an optional message text box, and an information note stating Share the KQL database and Lakehouse before sharing the Map. Grant and Back buttons appear at the bottom right with the grant button highlighted with a red border to indicate it should be selected.":::
+    :::image type="content" source="media/manage-map-permissions/grant-people-access.png" alt-text="Screenshot of the Grant people access dialog for WorkordersMap in Microsoft Fabric. The dialog shows a recipient field with Paige Turner added, Additional permissions section with Share checkbox selected and Edit checkbox unselected, Notification Options section with Notify recipients by email checkbox selected, an optional message text box, and an information note stating Share the KQL database and Lakehouse before sharing the Map. Grant and Back buttons appear at the bottom right.":::
 
 Those added can now access the map with the permissions granted.
 
-:::image type="content" source="media/manage-map-permissions/direct-access-after.png" lightbox="media/manage-map-permissions/direct-access-after.png" alt-text="A screenshot of the direct access panel for WorkordersMap showing the new user Paige Turner highlighted with a red border, showing permissions Read, Reshare.":::
+:::image type="content" source="media/manage-map-permissions/direct-access-after.png" lightbox="media/manage-map-permissions/direct-access-after.png" alt-text="A screenshot of the direct access panel for WorkordersMap showing the new user with permissions Read, Reshare.":::
 
 ### Links
 
@@ -108,11 +108,11 @@ To add a new user:
 
 1. In the **Manage permissions** panel **Links** tab, select **+ Add link**.
 
-    :::image type="content" source="media/manage-map-permissions/add-link.png" lightbox="media/manage-map-permissions/add-link.png" alt-text="Screenshot of the Manage permissions panel in Fabric Maps showing the Links tab selected. The panel displays an Add link button highlighted with a red border in the upper left corner. The center of the panel shows an empty state with a folder icon and the message Links you share with others appear here.":::
+    :::image type="content" source="media/manage-map-permissions/add-link.png" lightbox="media/manage-map-permissions/add-link.png" alt-text="Screenshot of the Manage permissions panel in Fabric Maps showing the Links tab selected. The panel displays an Add link button in the upper left corner. The center of the panel shows an empty state with a folder icon and the message Links you share with others appear here.":::
 
 1. The **Create and send link** dialog appears.
 
-    :::image type="content" source="media/manage-map-permissions/create-send-link.png" alt-text="Screenshot of the Create and send link dialog for WorkordersMap in Microsoft Fabric. A briefcase icon appears next to People in your organization can view with a right-pointing chevron highlighted by a red border indicating it should be selected. Below are two input fields: Enter a name or email address and Add a message optional. A Send button appears on the right. At the bottom, four sharing method icons are displayed: Copy link, by Email, by Teams, and by PowerPoint. The dialog header shows a search icon and close X button.":::
+    :::image type="content" source="media/manage-map-permissions/create-send-link.png" alt-text="Screenshot of the Create and send link dialog for WorkordersMap in Microsoft Fabric. A briefcase icon appears next to People in your organization can view with a right-pointing chevron. Below are two input fields: Enter a name or email address and Add a message optional. A Send button appears on the right. At the bottom, four sharing method icons are displayed: Copy link, by Email, by Teams, and by PowerPoint. The dialog header shows a search icon and close X button.":::
 
 1. Select **People in your organization can view** to open the select permissions dialog.
 
@@ -139,7 +139,7 @@ To change existing permissions or remove access altogether:
    - **Add** or **Remove** individual permissions
    - **Remove access**
 
-    :::image type="content" source="media/manage-map-permissions/add-remove-access.png" lightbox="media/manage-map-permissions/add-remove-access.png" alt-text="Screenshot of the Direct access panel for WorkordersMap in Microsoft Fabric showing a context menu expanded next to Marsha Mellow. The menu displays four options: Remove write, Add reshare, Remove execute, and Remove access. The panel shows four users with columns for People and groups with access, Email Address, Role, and Permissions. Marsha Mellow has Read, Write, Execute permissions. ":::
+    :::image type="content" source="media/manage-map-permissions/add-remove-access.png" lightbox="media/manage-map-permissions/add-remove-access.png" alt-text="Screenshot of the Direct access panel for WorkordersMap in Microsoft Fabric showing a context menu expanded. The menu displays four options: Remove write, Add reshare, Remove execute, and Remove access. The panel shows four users with columns for People and groups with access, Email Address, Role, and Permissions. Marsha Mellow has Read, Write, Execute permissions. ":::
 
 Changes take effect immediately.
 
@@ -151,7 +151,7 @@ If users can open a map but see missing layers or errors, verify that they have 
 - Eventhouses
 - KQL databases or KQL querysets
 
-For more information, see [Data permissions and map visibility](about-map-permissions.md#data-permissions-and-map-visibility)
+For more information, see [Data permissions and map visibility](about-map-permissions.md#data-permissions-and-map-visibility).
 
 ## Troubleshooting
 
