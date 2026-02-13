@@ -143,7 +143,7 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 ## Related content
 
 - Manage and query endpoints programmatically with the [ML model endpoint REST API](https://aka.ms/fabric/model-endpoint-api).
-- Call model endpoints from [Dataflow Gen2](../data-factory/dataflow-gen2-ml-model-endpoints.md) for real-time data enrichment.
+- Call model endpoints from [Dataflow Gen2](../data-factory/dataflow-gen2-machine-learning-model-endpoints.md) for real-time data enrichment.
 - Generate batch predictions with the [`PREDICT` function](./model-scoring-predict.md) in Fabric notebooks.
 - Learn more about [model training and experimentation](./model-training-overview.md) in Fabric.
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

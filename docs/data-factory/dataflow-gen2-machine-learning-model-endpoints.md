@@ -1,6 +1,6 @@
 ---
 title: Call machine learning model endpoints from Dataflow Gen2 (Preview)
-description: Learn how to invoke ML model endpoints from Dataflow Gen2 using service principal authentication and M query functions.
+description: Learn how to invoke machine learning model endpoints from Dataflow Gen2 using service principal authentication and M query functions.
 ms.reviewer: 
 ms.topic: how-to
 ms.date: 02/12/2026
