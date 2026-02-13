@@ -50,12 +50,12 @@ If it's not necessary for the **Employee** node type to have the **Territory**, 
 ## Create a lives_in edge
 
 Create an edge type named "lives_in" using the **Employees** table by following the steps in [Add edge types to your graph](tutorial-model-edges.md). Configure the edge schema like so:
-    - **Label**: lives_in
-    - **Mapping table**: adventureworks_employees
-    - **Source node**: Employee
-    - **Mapping table column to be linked to source node key**: EmployeeID_K
-    - **Target node**: Country
-    - **Mapping table column to be linked to target node key**: Country
+- **Label**: lives_in
+- **Mapping table**: adventureworks_employees
+- **Source node**: Employee
+- **Mapping table column to be linked to source node key**: EmployeeID_K
+- **Target node**: Country
+- **Mapping table column to be linked to target node key**: Country
 
 ## Load the graph
 
