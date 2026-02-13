@@ -4,7 +4,7 @@ description: This article describes the REST API Capabilities for Copy job in Fa
 ai-usage: ai-assisted
 ms.reviewer: krirukm
 ms.topic: how-to
-ms.date: 06/23/2025
+ms.date: 02/13/2026
 ms.search.form: copy-job
 ms.custom: copy-job
 ---
@@ -654,6 +654,159 @@ In this example, the schedule runs every 60 minutes between the specified start 
 }
 ```
 
+## Get a Copy job schedule
+
+Retrieve details of an existing schedule for a Copy job. Use the schedule ID returned when you created the schedule. For more information, see [Job Scheduler - Get Item Schedule](/rest/api/fabric/core/job-scheduler/get-item-schedule).
+
+**Sample request:**
+
+**URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/{jobType}/schedules/{scheduleId}```
+
+**Headers**:
+
+```
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
+
+```
+{
+  "id": "<scheduleId>",
+  "enabled": true,
+  "createdDateTime": "2025-07-01T00:00:00Z",
+  "configuration": {
+    "startDateTime": "2025-07-01T08:00:00",
+    "endDateTime": "2025-12-31T23:59:00",
+    "localTimeZoneId": "Central Standard Time",
+    "type": "Cron",
+    "interval": 60
+  },
+  "owner": {
+    "id": "<ownerId>",
+    "type": "User"
+  }
+}
+```
+
+## List Copy job schedules
+
+List all schedules configured for a Copy job. For more information, see [Job Scheduler - List Item Schedules](/rest/api/fabric/core/job-scheduler/list-item-schedules).
+
+**Sample request:**
+
+**URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/{jobType}/schedules```
+
+**Headers**:
+
+```
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
+
+```
+{
+  "value": [
+    {
+      "id": "<scheduleId>",
+      "enabled": true,
+      "createdDateTime": "2025-07-01T00:00:00Z",
+      "configuration": {
+        "startDateTime": "2025-07-01T08:00:00",
+        "endDateTime": "2025-12-31T23:59:00",
+        "localTimeZoneId": "Central Standard Time",
+        "type": "Cron",
+        "interval": 60
+      },
+      "owner": {
+        "id": "<ownerId>",
+        "type": "User"
+      }
+    }
+  ]
+}
+```
+
+## Update a Copy job schedule
+
+Update an existing schedule for a Copy job, including enabling or disabling it. For example, to disable a schedule, set `"enabled": false`. For more information, see [Job Scheduler - Update Item Schedule](/rest/api/fabric/core/job-scheduler/update-item-schedule).
+
+**Sample request:**
+
+**URI**: ```PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/{jobType}/schedules/{scheduleId}```
+
+**Headers**:
+
+```
+{
+  "Authorization": "Bearer <access-token>",
+  "Content-Type": "application/json"
+}
+```
+
+**Payload**:
+
+```
+{
+  "enabled": true,
+  "configuration": {
+    "startDateTime": "2025-07-01T08:00:00",
+    "endDateTime": "2025-12-31T23:59:00",
+    "localTimeZoneId": "Central Standard Time",
+    "type": "Cron",
+    "interval": 120
+  }
+}
+```
+
+In this example, the schedule is enabled and the interval is updated to 120 minutes. To disable the schedule, change `"enabled"` to `false`.
+
+**Sample response**:
+
+```
+{
+  "id": "<scheduleId>",
+  "enabled": true,
+  "createdDateTime": "2025-07-01T00:00:00Z",
+  "configuration": {
+    "startDateTime": "2025-07-01T08:00:00",
+    "endDateTime": "2025-12-31T23:59:00",
+    "localTimeZoneId": "Central Standard Time",
+    "type": "Cron",
+    "interval": 120
+  },
+  "owner": {
+    "id": "<ownerId>",
+    "type": "User"
+  }
+}
+```
+
+## Delete a Copy job schedule
+
+Delete an existing schedule for a Copy job. For more information, see [Job Scheduler - Delete Item Schedule](/rest/api/fabric/core/job-scheduler/delete-item-schedule).
+
+**Sample request:**
+
+**URI**: ```DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/{jobType}/schedules/{scheduleId}```
+
+**Headers**:
+
+```
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
+
+Status code: 200 OK
+
 ## Service Principal Name (SPN) Support
 
 Service Principal Name (SPN) is a security identity feature used by applications or services to access specific resources. In Fabric Data Factory, SPN support is crucial for enabling secure and automated access to data sources. Here are some key points about SPN support:
@@ -680,5 +833,9 @@ For more detailed information on how to set up and use SPNs in Fabric Data Facto
 - [Create Copy Job API](/rest/api/fabric/copyjob/items/create-copy-job)
 - [Connections - Create Connection](/rest/api/fabric/core/connections/create-connection)
 - [Job Scheduler - Create Item Schedule](/rest/api/fabric/core/job-scheduler/create-item-schedule)
+- [Job Scheduler - Get Item Schedule](/rest/api/fabric/core/job-scheduler/get-item-schedule)
+- [Job Scheduler - List Item Schedules](/rest/api/fabric/core/job-scheduler/list-item-schedules)
+- [Job Scheduler - Update Item Schedule](/rest/api/fabric/core/job-scheduler/update-item-schedule)
+- [Job Scheduler - Delete Item Schedule](/rest/api/fabric/core/job-scheduler/delete-item-schedule)
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
