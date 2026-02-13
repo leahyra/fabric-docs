@@ -1,0 +1,37 @@
+---
+title: "Tutorial: Create multiple node and edge types from one mapping table"
+description: Learn how to add nodes and edges from one mapping table.
+ms.topic: tutorial
+ms.date: 02/13/2026
+author: lorihollasch
+ms.author: loriwhip
+ms.reviewer: wangwilliam
+ms.search.form: Tutorial - Add nodes and edges from one mapping table
+---
+
+# Tutorial: Add multiple node and edge types from one mapping table
+
+[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+
+This tutorial explains the less straightforward situation where you need to use one mapping table to create multiple node type(s) and edge type(s).
+
+## Adventure Works Employee table
+
+In the Adventure Works data model, you can use the **Employees** table to create an **employee** node type, a **country** node type, and an **employee_lives_in_country** edge type.
+
+The **Employees** table has the following columns:
+
+| Column name       |
+| ----------------- |
+| employeeIDK       | 
+| managerID         |
+| employeeFullName  |
+| jobTitle          |
+| organizationLevel |
+| maritalStatus     |
+| gender            |
+| territory         |
+| country           |
+| group             |
+| produces          |
+
