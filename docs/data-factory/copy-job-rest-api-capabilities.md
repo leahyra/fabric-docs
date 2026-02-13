@@ -4,7 +4,7 @@ description: This article describes the REST API Capabilities for Copy job in Fa
 ai-usage: ai-assisted
 ms.reviewer: krirukm
 ms.topic: how-to
-ms.date: 06/23/2025
+ms.date: 02/13/2026
 ms.search.form: copy-job
 ms.custom: copy-job
 ---
@@ -599,9 +599,9 @@ Cancel a Copy job instance.
 
 ## Enable a schedule for Copy job
 
-After you create a Copy job, you can set up a recurring schedule so it runs automatically. Use the Job Scheduler API to create a schedule for the Copy job item.
+After you create a Copy job, you can enable a recurring schedule so it runs automatically. Use the Job Scheduler API to create and enable a schedule for the Copy job item. The `{itemId}` in the request URI is the ID of the Copy job you created earlier. This links the schedule directly to your Copy job.
 
-For the full list of schedule configuration options, see [Job Scheduler - Create Item Schedule](/rest/api/fabric/core/job-scheduler/create-item-schedule).
+Set `"enabled": true` in the request payload to activate the schedule immediately. For the full list of schedule configuration options, see [Job Scheduler - Create Item Schedule](/rest/api/fabric/core/job-scheduler/create-item-schedule).
 
 **Sample request:**
 
@@ -631,7 +631,10 @@ For the full list of schedule configuration options, see [Job Scheduler - Create
 }
 ```
 
-In this example, the schedule runs every 60 minutes between the specified start and end date. Adjust the `interval`, `startDateTime`, `endDateTime`, and `localTimeZoneId` values for your scenario.
+In this example, the schedule is created and enabled for the Copy job identified by `{itemId}`. It runs every 60 minutes between the specified start and end date. Adjust the `interval`, `startDateTime`, `endDateTime`, and `localTimeZoneId` values for your scenario.
+
+> [!NOTE]
+> To manage an existing schedule after creation, such as updating or disabling it, use the [Job Scheduler API](/rest/api/fabric/core/job-scheduler). For example, use the [Update Item Schedule](/rest/api/fabric/core/job-scheduler/update-item-schedule) API to change `"enabled"` to `false` to disable the schedule.
 
 **Sample response**:
 
