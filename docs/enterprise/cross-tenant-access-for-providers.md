@@ -227,7 +227,7 @@ Permitted users from the provider tenant can call this API to get the SQL connec
 
 ## Enforce multi-factor authentication on access requests from outside the organization
 
-The **Enforce multi-factor authentication on access requests from outside the organization** tenant setting allows provider tenants to require multi-factor authentication (MFA) for people outside their organization when accessing content from the Fabric tenant. This setting governs access to the SQL endpoints of Fabric data warehouses. When enabled, guest users who haven't completed MFA are denied access to cross-tenant warehouse items.
+The **Enforce multi-factor authentication on access requests from outside the organization** tenant setting allows provider tenants to require multi-factor authentication (MFA) for people outside their organization when accessing content from the Fabric tenant. This setting governs access to the SQL endpoints of Fabric data warehouses. When enabled, guest users who do not have MFA enabled are denied access to cross-tenant warehouse items.
 
 This setting is disabled by default and applies to the entire organization. Only Fabric administrators can enable or disable this setting.
 
@@ -235,12 +235,12 @@ To enable MFA enforcement:
 
 1. Go to the [Admin portal](../admin/admin-center.md).
 1. Select **Tenant settings**.
-1. Search for **Enforce multi-factor authentication on access requests from outside the organization**.
+1. In the **Export and sharing settings** section, find **Enforce multi-factor authentication on access requests from outside the organization**.
 1. Enable the toggle.
 1. Select **Apply**.
 
 > [!NOTE]
-> When this setting is enabled, guests who access cross-tenant warehouse items without completing MFA are denied access. The guest tenant is responsible for configuring MFA policies for their users.
+> When this setting is enabled, guests who access cross-tenant warehouse items without having MFA enabled are denied access. The guest tenant is responsible for configuring MFA policies for their users.
 
 ## Responsibilities of the guest
 
@@ -256,7 +256,7 @@ To enable MFA enforcement:
    
  - The guest tenants' conditional access or MFA policies are enforced upon sign in by guest users.
 
- - Provider tenants can enforce MFA for all guest access to cross-tenant warehouse items by enabling the **Enforce multi-factor authentication on access requests from outside the organization** tenant setting. This setting is disabled by default. When enabled, guests who haven't completed MFA are denied access.
+ - Provider tenants can enforce MFA for all guest access to cross-tenant warehouse items by enabling the **Enforce multi-factor authentication on access requests from outside the organization** tenant setting. This setting is disabled by default. When enabled, guests who do not have MFA enabled are denied access.
 
  - The guest tenant is responsible for creating and managing Microsoft Entra groups that are configured for cross-tenant access.
 
