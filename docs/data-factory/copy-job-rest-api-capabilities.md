@@ -1,6 +1,6 @@
 ---
 title: REST API Capabilities for Copy job in Fabric Data Factory
-description: This article describes the REST API Capabilities for Copy job in Fabric Data Factory, including how to create connections, create and update Copy jobs with definitions, and enable schedules.
+description: This article describes the REST API Capabilities for Copy job in Fabric Data Factory.
 ai-usage: ai-assisted
 ms.reviewer: krirukm
 ms.topic: how-to
@@ -11,7 +11,7 @@ ms.custom: copy-job
 
 # REST API Capabilities for Copy job in Fabric Data Factory
 
-Fabric Data Factory provides a robust set of APIs that enable you to automate and manage Copy jobs efficiently. These APIs allow for seamless integration with various data sources and services, enabling you to create, get, list, and update Copy jobs programmatically. The APIs support a wide range of operations including Copy job CRUD (Create, Read, Update, and Delete), connection management, and schedule configuration, making it easier to manage data integration processes end to end.
+Fabric Data Factory provides a robust set of APIs that enable you to automate and manage Copy jobs efficiently. These APIs allow for seamless integration with various data sources and services, enabling you to create, get, list, and update Copy jobs programmatically. The APIs support a wide range of operations including Copy job CRUD (Create, Read, Update, and Delete) making it easier to manage data integration processes end to end.
 
 ## End-to-end workflow for creating a Copy job
 
@@ -37,7 +37,7 @@ The APIs for Copy job in Fabric Data Factory can be used in various scenarios:
 To effectively use the APIs for Copy job in Fabric Data Factory, it's essential to understand the key concepts and components:
 
 - **Endpoints**: The API endpoints provide access to various Copy job operations, such as creating, updating, and deleting Copy jobs.
-- **Authentication**: Secure access to the APIs using Microsoft Entra ID authentication. For more information, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
+- **Authentication**: Secure access to the APIs using Microsoft Entra token. For more information, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
 - **Requests and responses**: Understand the structure of API requests and responses, including the required parameters and expected output.
 - **Copy job definition**: The Copy job definition is a Base64-encoded JSON payload (`copyjob-content.json`) that describes the source, destination, connection references, and table mappings. For the full schema, see [Copy job definition](/rest/api/fabric/articles/item-management/definitions/copyjob-definition).
 - **Rate limits**: Be aware of the rate limits imposed on API usage to avoid exceeding the allowed number of requests.
