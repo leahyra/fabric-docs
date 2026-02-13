@@ -24,11 +24,11 @@ Graph items are workspace-scoped (each Graph belongs to a specific workspace), b
 
 Here is an example showing a graph is undergoing refresh:
 
-:::image type="content" source="./media/how-to/monitor-graph-status-in-progress.png" alt-text="Screenshot showing graph data refresh is in progress." lightbox="./media/quickstart/monitor-graph-status-in-progress.png":::
+:::image type="content" source="./media/how-to/monitor-graph-status-in-progress.png" alt-text="Screenshot showing graph data refresh is in progress." lightbox="./media/how-to/monitor-graph-status-in-progress.png":::
 
 Now the refresh job is complete and successful:
 
-:::image type="content" source="./media/how-to/monitor-graph-status-success.png" alt-text="Screenshot showing graph data refresh is successful." lightbox="./media/quickstart/monitor-graph-status-success.png":::
+:::image type="content" source="./media/how-to/monitor-graph-status-success.png" alt-text="Screenshot showing graph data refresh is successful." lightbox="./media/how-to/monitor-graph-status-success.png":::
 
 ## Related content
 
