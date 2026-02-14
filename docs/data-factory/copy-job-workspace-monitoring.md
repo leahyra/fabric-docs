@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Workspace monitoring for Copy job in Microsoft Fabric
 
-Workspace monitoring gives you log-level visibility into Copy job runs in a workspace. It stores execution logs in a monitoring eventhouse so you can query and analyze them using KQL (Kusto Query Language). Copy job produces two monitoring tables: **CopyJobRunDetailsLogs** for job-level details and **CopyJobActivityRunDetailsLogs** for per-activity run details with source and destination table mappings.
+Workspace monitoring gives you log-level visibility for all items in a workspace, including Copy jobs. It stores execution logs in a monitoring eventhouse so you can query and analyze them using KQL (Kusto Query Language). Copy job produces two monitoring tables: **CopyJobRunDetailsLogs** for job-level details and **CopyJobActivityRunDetailsLogs** for per-activity run details with source and destination table mappings.
 
 ## Enable workspace monitoring
 
@@ -23,7 +23,7 @@ Workspace monitoring gives you log-level visibility into Copy job runs in a work
 
 1. Go to the KQL database. You can find it in the **Monitoring database** link within the monitoring settings or in your workspace.
 
-## CopyJobRunDetailsLogs
+## Review CopyJobRunDetailsLogs
 
 The **CopyJobRunDetailsLogs** table captures run-level details for each Copy job execution. Use this table to monitor overall run status, throughput, and data movement metrics.
 
@@ -92,7 +92,7 @@ CopyJobRunDetailsLogs
 | order by Timestamp desc
 ```
 
-## CopyJobActivityRunDetailsLogs
+## Review CopyJobActivityRunDetailsLogs
 
 The **CopyJobActivityRunDetailsLogs** table captures per-activity run details for each Copy job execution, including source and destination table mappings. Use this table to diagnose issues at the individual table mapping level and understand exactly which tables were involved in a Copy job run.
 
