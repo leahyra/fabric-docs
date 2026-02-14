@@ -20,7 +20,7 @@ In this tutorial step, you add edge types to your graph model. Edges define the 
 > - One column matches the **source node's key** in terms of values and data type
 > - Another column matches the **target node's key** in terms of values and data type
 > 
-> Tables you use to create node types can also serve as edge mapping tables if they meet this requirement.
+> Tables that you use to create node types can also serve as edge mapping tables if they meet this requirement.
 
 ## Adventure Works edge mappings
 
