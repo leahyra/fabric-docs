@@ -871,8 +871,6 @@
                 href: create-copy-job.md
               - name: How to monitor a Copy job
                 href: monitor-copy-job.md
-              - name: Workspace monitoring for Copy job
-                href: copy-job-workspace-monitoring.md
               - name: Change data capture from SAP via SAP Datasphere Outbound 
                 href: copy-job-tutorial-sap-datasphere.md
               - name: Change data capture from Snowflake
@@ -889,6 +887,8 @@
             href: cicd-copy-job.md
           - name: REST API Capabilities
             href: copy-job-rest-api-capabilities.md
+          - name: Workspace monitoring for Copy job
+            href: copy-job-workspace-monitoring.md
       - name: Copy activity
         href: copy-data-activity.md
         items:
