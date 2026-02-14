@@ -19,7 +19,7 @@ When defining an edge type, you must use a mapping table that contains two colum
 - One column matches the **source node's key** in terms of values and data type
 - Another column matches the **target node's key** in terms of values and data type
 
-Tables you have used to create node types can also serve as edge mapping tables as long as they meet the above requirement.
+Tables you use to create node types can also serve as edge mapping tables as long as they meet the above requirement.
 
 ## Adventure Works edge mappings
 
