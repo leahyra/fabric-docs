@@ -1,6 +1,6 @@
 ---
 title: Lakehouse tutorial - clean up resources
-description: As a final step in the tutorial, clean up your resources. Learn how to delete individual items like the lakehouse or semantic model, or remove the entire workspace.
+description: As a final step in the tutorial, clean up your resources by deleting individual items like the lakehouse or semantic model, or removing the entire workspace.
 ms.reviewer: arali
 ms.author: eur
 author: eric-urban
@@ -11,11 +11,7 @@ ai-usage: ai-assisted
 
 # Lakehouse tutorial: Clean up Fabric resources
 
-If you no longer need the resources you created in this tutorial, you can delete them to avoid unnecessary consumption of capacity. You can delete individual items or remove the entire workspace.
-
-## Prerequisites
-
-* [Create a semantic model and build a report](tutorial-lakehouse-build-report.md)
+In this tutorial, you delete the resources you created in the previous tutorials to avoid unnecessary consumption of capacity. You can delete individual items or remove the entire workspace.
 
 ## Delete individual items
 
