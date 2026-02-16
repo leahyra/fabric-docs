@@ -127,7 +127,7 @@ Data Activator supports ingesting events from KQL/Eventhouse, Power BI, and Real
 
 Limitations:
 
-* Currently, Data Activator does not support ingestion from Eventstream with Private Links enabled.
+* Currently, Data Activator doesn't support ingestion from Eventstream with Private Links enabled.
 
 ### Eventhouse
 
