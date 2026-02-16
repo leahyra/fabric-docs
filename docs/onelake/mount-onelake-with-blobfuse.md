@@ -45,7 +45,7 @@ This article provides a step-by-step guide for configuring BlobFuse2 and mountin
 
 ## Install BlobFuse2
 
-Follow the [installation instructions for BlobFuse2](/storage/blobs/blobfuse2-what-is) for your Linux distribution. For Ubuntu, use the following commands:
+Follow the [installation instructions for BlobFuse2](/azure/storage/blobs/blobfuse2-what-is) for your Linux distribution. For Ubuntu, use the following commands:
 
 ```bash
 sudo wget https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb
@@ -130,8 +130,8 @@ This document uses service principal to authenticate with OneLake. Follow these 
      client-id: <replace-with-client-id>
      client-secret: <replace-with-client-secret>
    ```
-> [!NOTE]
-> BlobFuse2 achieves near-native performance through local file caching. Cache configuration and behavior differ based on access patterns, such as large sequential file streaming versus small, random file access. For more information on configuring caching, see [How to configure BlobFuse2](/storage/blobs/blobfuse2-how-to-deploy).
+   > [!NOTE]
+   > > BlobFuse2 achieves near-native performance through local file caching. Cache configuration and behavior differ based on access patterns, such as large sequential file streaming versus small, random file access. For more information on configuring caching, see [How to configure BlobFuse2](/azure/storage/blobs/blobfuse2-how-to-deploy).
 
 1. Replace the placeholder values in the configuration:
    - `<replace-with-fabric-workspace-id>`: Fabric Workspace ID
