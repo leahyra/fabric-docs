@@ -123,7 +123,7 @@ Unsupported scenarios:
 
 ### Data Activator
 
-Data Activator supports ingesting events from KQL/Eventhouse, PowerBI, and Real-Time Hub Fabric Events for Tenant level Private Links.  For Workspace level, Data Activator supports ingesting events from KQl/Eventhouse and Real-Time Hub Fabric Events.
+Data Activator supports ingesting events from KQL/Eventhouse, Power BI, and Real-Time Hub Fabric Events for Tenant level Private Links.  For Workspace level, Data Activator supports ingesting events from KQl/Eventhouse and Real-Time Hub Fabric Events.
 
 Limitations:
 
