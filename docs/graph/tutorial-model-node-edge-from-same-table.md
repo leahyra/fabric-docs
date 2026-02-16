@@ -43,7 +43,7 @@ If it's not necessary for the `Employee` node type to have the `Territory`, `Cou
 > [!TIP]
 > Excessive properties make your graph harder to maintain and use. Generally, for all node types you should remove properties that are
 > - Not required for the uniqueness of the nodes
-> - Not necessary during your quries or analyses
+> - Not necessary during your queries or analyses
 >
 > In the case of the `Country` node type, since it's created from the **Employees** table, you should remove properties like `EmployeeID_K`, `ManagerID`, `EmployeeFullName`, `JobTitle`, `OrganizationLevel`, `MaritalStatus`, and `Gender`, at a minimum.
 
@@ -61,7 +61,7 @@ Create an edge type named `lives_in` using the **Employees** table by following 
 
 After configuring all node types and edge types, load the graph:
 
-1. Select **Save** to verify the graph model, load data from OneLake, construct the graph, and make it ready for querying. Be patient, as this process might take some time depending on the size of your data.
+- Select **Save** to verify the graph model, load data from OneLake, construct the graph, and make it ready for querying. Be patient, as this process might take some time depending on the size of your data.
 
 ## Next step
 
