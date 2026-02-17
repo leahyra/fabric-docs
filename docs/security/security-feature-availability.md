@@ -21,7 +21,7 @@ Microsoft Fabric supports various security features across different workloads a
 
 The following table shows the support status for each Fabric item. A check mark (✓) indicates the item is currently supported and generally available (GA). "Preview" means support for the item type is in preview. For the most up-to-date Fabric release timelines, refer to the [Microsoft Fabric Roadmap](https://roadmap.fabric.microsoft.com/?product=administration%2Cgovernanceandsecurity).
 
-|  | Item type | Workspace private links | Customer managed keys | Outbound access protection |
+| Workload | Item type | Workspace private links | Customer managed keys | Outbound access protection |
 |--|--|:--:|:--:|:--:|
 | **Data Engineering** | Lakehouse | ✓ | ✓ | ✓ |
 |  | Lakehouse Shortcut | ✓ | - | Preview |
@@ -98,8 +98,8 @@ The following table shows the support status for each Fabric item. A check mark 
 
 ## Related links
 
-- Learn about the new features and documentation improvements for Microsoft Fabric in [What's new in Microsoft Fabric](/fabric/fundamentals/whats-new.md).
+- Learn about the new features and documentation improvements for Microsoft Fabric in [What's new in Microsoft Fabric](/fabric/fundamentals/whats-new).
 - Follow the latest in Fabric news and features in the [Microsoft Fabric Updates Blog](https://blog.fabric.microsoft.com/).
 - Find community, marketing, case studies, and industry news in the [Microsoft Fabric Blog](https://www.microsoft.com/microsoft-fabric/blog/).
 - Follow the latest in Power BI at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service).
-- Review older updates in the [Microsoft Fabric What's New archive](/fabric/fundamentals/whats-new-archive.md).
+- Review older updates in the [Microsoft Fabric What's New archive](/fabric/fundamentals/whats-new-archive).
