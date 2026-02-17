@@ -1,9 +1,6 @@
 ---
-title: "Tutorial: Enrich the ontology with additional data"
-description: Enrich the ontology by creating a new entity and binding time series data.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
+title: "Tutorial part 2: Enrich the ontology with additional data"
+description: Enrich the ontology by creating a new entity and binding time series data. Part 2 of the ontology (preview) tutorial.
 ms.date: 12/19/2025
 ms.topic: tutorial
 ---
@@ -19,7 +16,7 @@ First, you create the new entity type and define properties without binding them
 >[!NOTE]
 >For both static and time series data, you can create properties without binding data and bind data later, or create properties and bind data to them in a single step. This article demonstrates both approaches.
 
-Finally, you create a new relationship type to represent the connection between a store and its freezers.
+After you complete data binding for the freezer entity, you create a new relationship type to represent the connection between a store and its freezers.
 
 ## Create Freezer entity type and add properties
 
@@ -119,3 +116,4 @@ Finally, create a new relationship type to represent the connection between a st
 Now your ontology includes a *Freezer* entity type that is connected in the ontology and bound to time series data.
 
 Next, continue to [Preview the ontology](tutorial-3-preview-ontology.md).
+
