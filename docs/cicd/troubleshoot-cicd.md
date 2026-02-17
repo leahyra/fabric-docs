@@ -511,8 +511,6 @@ To deploy successfully, fix or remove the broken rules, and redeploy.
 
 **Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are grayed out.
 
-:::image type="content" source="media/troubleshoot-cicd/rules-1.png" alt-text="A screenshot showing deployment pipelines deployment rules grayed out." lightbox="media/troubleshoot-cicd/rules-1.png":::
-
 If one of the rule options is grayed out, it could be because of the following reasons:
 
 * **Data source rules** - There are no data sources that a rule can be configured on.
