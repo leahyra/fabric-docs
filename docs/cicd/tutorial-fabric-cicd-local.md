@@ -1,12 +1,12 @@
 ---
-title: Tutorial - Working locally with Micrsofot Fabric & the `fabric-cicd` Python Package
+title: Tutorial - Local deployment with fabric-cicd 
 description: This article provides a tutorial on using the Microsoft Fabric ci-cd python library.
 author: billmath
 ms.author: billmath
 ms.topic: tutorial
 ms.custom:
 ms.service: fabric
-ms.date: 04/22/2025
+ms.date: 02/17/2026
 ---
 
 
@@ -50,7 +50,7 @@ pip install fabric-cicd
 
 
 ## Step 3. Edit the worspace id in the deploy.py script
-Navigate to the fabric-cicd demo files that you cloned down in step 1.  Edit the deploy.py script, replacing &lt;YOUR_WORKSPACE_ID&gt; with your id.  Save the changes.
+Navigate to the **fabric-cicd-local** files that you cloned down in step 1.  They are located in the samples folder.  Edit the deploy.py script, replacing &lt;YOUR_WORKSPACE_ID&gt; with your id.  Save the changes.
 
 ```python
 from pathlib import Path

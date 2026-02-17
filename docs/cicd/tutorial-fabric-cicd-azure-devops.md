@@ -1,12 +1,12 @@
 ---
-title: Tutorial - Working locally with Micrsofot Fabric & the `fabric-cicd` Python Package
-description: This article provides a tutorial on using the Microsoft Fabric ci-cd python library.
+title: Tutorial - CI/CD for Microsoft Fabric Using Azure DevOps & the `fabric-cicd` Python Package
+description: This article provides a tutorial on using the Microsoft Fabric ci-cd python library with Azure DevOps.
 author: billmath
 ms.author: billmath
 ms.topic: tutorial
 ms.custom:
 ms.service: fabric
-ms.date: 04/22/2025
+ms.date: 02/19/2026
 ---
 
 
@@ -129,6 +129,16 @@ Before you begin, make sure you have the following in place:
 | 8 | **`fabric-cicd` Python package** | Microsoft's open-source deployment library ([PyPI](https://pypi.org/project/fabric-cicd/)) |
 
 > 💡 **Tip:** To enable Service Principal access in Fabric, a Fabric Admin must enable *"Service principals can use Fabric APIs"* in the Fabric Admin Portal under **Tenant Settings**.
+
+### Download the source files
+
+1. Fork the [Fabric-cicd repository](https://aka.ms/fabric-cicd) to your GitHub account.
+2. Clone your fork to your local machine:
+
+```pwsh
+git clone https://github.com/<your-account>/fabric-cicd.git
+cd fabric-cicd
+```
 
 ---
 
@@ -298,7 +308,7 @@ Create a pipeline in ADO that references the YAML file in your repo.
 
 ## 5. Code Deep Dive: ADO Pipeline YAML
 
-**File:** `Deploy-To-Fabric.yml` — 📄 See full source: [code/Deploy-To-Fabric.yml](code/Deploy-To-Fabric.yml)
+**File:** `Deploy-To-Fabric.yml` — located in the **fabric-cicd-devops** folder under samples from the git repo cloned earlier.
 
 Below is the full pipeline with line-by-line annotations.
 
@@ -441,7 +451,7 @@ stages:
 
 ## 6. Code Deep Dive: Python Deployment Script
 
-**File:** `.deploy/deploy-to-fabric.py` — 📄 See full source: [code/deploy-to-fabric.py](code/deploy-to-fabric.py)
+**File:** `.deploy/deploy-to-fabric.py` — located in the **fabric-cicd-devops** folder under samples from the git repo cloned earlier.
 
 This is the heart of the deployment. Let's walk through each section.
 
@@ -618,7 +628,7 @@ The `fabric-cicd` package looks for a file named `parameter.yml` in the `.deploy
 > 💡 **Tip:** The `parameter.yml` find-and-replace feature supports **many approaches** beyond what's shown in this tutorial — including regex patterns, file-scoped replacements, and more. For the full list of options and advanced usage, see the official documentation:
 > 👉 [fabric-cicd Parameter File Documentation](https://microsoft.github.io/fabric-cicd/)
 
-**File:** `parameter.yml` — 📄 See full source: [code/parameter.yml](code/parameter.yml)
+**File:** `parameter.yml` — located in the **fabric-cicd-devops** folder under samples from the git repo cloned earlier.
 
 ---
 
@@ -861,6 +871,6 @@ This tutorial demonstrated a production-grade CI/CD workflow for Microsoft Fabri
 
 > 📚 **Further Reading:**
 > - [`fabric-cicd` documentation](https://pypi.org/project/fabric-cicd/)
-> - [Microsoft Fabric Git Integration](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration)
-> - [Azure DevOps Environments & Approvals](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/environments)
-> - [Azure Key Vault linked Variable Groups](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/link-variable-groups-to-key-vaults)
+> - [Microsoft Fabric Git Integration](../cicd/git-integration/intro-to-git-integration.md)
+> - [Azure DevOps Environments & Approvals](/azure/devops/pipelines/process/environments)
+> - [Azure Key Vault linked Variable Groups](/azure/devops/pipelines/library/link-variable-groups-to-key-vaults)
