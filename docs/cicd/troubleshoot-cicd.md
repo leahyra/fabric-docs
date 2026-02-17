@@ -110,7 +110,7 @@ To understand the considerations and limitations of various lifecycle management
 
 ### Connect folder issues
 
-#### Connect failure: It's asking if I want to create a new folder when I try to connect to a Git branch
+#### Connect failure: I am prompted to create a new folder when connecting to a Git branch.
 
 **Description of problem**: After selecting **Connect** in the Git integration tab, a dialog pops up indicating an invalid folder path.
 
@@ -192,7 +192,7 @@ For more information, see [Manually Update from Git](./git-integration/partial-u
 
 **Description of problem**: After updating from Git, when looking at the lineage view, the dependencies of some items aren't as expected. For example, the proxy model no longer points to the correct model.
 
-Reason: Git Integration doesn't support Direct Query and proxy models at this time.
+**Cause**: Git Integration doesn't support Direct Query and proxy models at this time.
 
 **Solution**: To fix the dependencies, do one of the following actions:
 
@@ -213,7 +213,7 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 
 * If you have write permission to the repository, select **Fix with direct commit**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then commit the changes.
 
-* If you don't have write permission to the repository, select *Create branch and go to Git**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then create a pull request to merge the changes.
+* If you don't have write permission to the repository, **select Create branch and go to Git**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then create a pull request to merge the changes.
 
 ### Undo issues
 
@@ -507,13 +507,13 @@ To deploy successfully, fix or remove the broken rules, and redeploy.
 
 **Solution**: To apply deployment rules, you have to deploy the semantic models from the source stage to the target stage which includes the created deployment rules. After configuring deployment rules, and before you deploy, the *different* indicator is shown next to the semantic model with the configured rules. This indicates that you need to deploy that semantic model from the source stage to the target stage. Once you deploy, if no other changes were made, the *different* indicator disappears signifying that the rules were applied successfully.
 
-#### Deployment rules are greyed out
+#### Deployment rules are grayed out
 
-**Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are greyed out.
+**Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are grayed out.
 
-:::image type="content" border="true" source="media/troubleshoot-cicd/rules-greyed-out.png" alt-text="A screenshot showing deployment pipelines deployment rules greyed out.":::
+:::image type="content" border="true" source="media/troubleshoot-cicd/rules-grayed-out.png" alt-text="A screenshot showing deployment pipelines deployment rules grayed out.":::
 
-If one of the rule options is greyed out, it could be because of the following reasons:
+If one of the rule options is grayed out, it could be because of the following reasons:
 
 * **Data source rules** - There are no data sources that a rule can be configured on.
 
@@ -571,7 +571,7 @@ To improve reliability and consistency across deployment environments, Microsoft
 **Solution**: 
 
 - **Deployment failure:** If a deployment error says the semantic model wasn't upgraded, it still uses legacy metadata.
-- **Workspace check:** In the workspace, hover over Open Semantic Model in the item's menu. If it's greyed out with an "upgrade required" tooltip, the model is likely not using Enhanced Metadata.
+- **Workspace check:** In the workspace, hover over Open Semantic Model in the item's menu. If it's grayed out with an "upgrade required" tooltip, the model is likely not using Enhanced Metadata.
  :::image type="content" source="media/troubleshoot-cicd/retire-1.png" alt-text="Screenshot of workspace check." lightbox="media/troubleshoot-cicd/retire-1.png":::
 
 #### What should my organization do to prepare?
@@ -602,7 +602,7 @@ Using XMLA, update the model:
 See [Semantic model connectivity and management with the XMLA endpoint in Power BI](../enterprise/powerbi/service-premium-connect-tools.md) for details.
 
 >[!NOTE]
-> Even after a successful conversion, the Open Semantic Model option may remain greyed out. However, deployments will succeed.
+> Even after a successful conversion, the Open Semantic Model option may remain grayed out. However, deployments will succeed.
 
 
 
