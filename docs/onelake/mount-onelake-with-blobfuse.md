@@ -131,7 +131,7 @@ This document uses service principal to authenticate with OneLake. Follow these 
      client-secret: <replace-with-client-secret>
    ```
    > [!NOTE]
-   > > BlobFuse2 achieves near-native performance through local file caching. Cache configuration and behavior differ based on access patterns, such as large sequential file streaming versus small, random file access. For more information on configuring caching, see [How to configure BlobFuse2](/azure/storage/blobs/blobfuse2-how-to-deploy).
+   > BlobFuse2 achieves near-native performance through local file caching. Cache configuration and behavior differ based on access patterns, such as large sequential file streaming versus small, random file access. For more information on configuring caching, see [How to configure BlobFuse2](/azure/storage/blobs/blobfuse2-how-to-deploy).
 
 1. Replace the placeholder values in the configuration:
    - `<replace-with-fabric-workspace-id>`: Fabric Workspace ID
