@@ -211,12 +211,12 @@ items:
   items:
   - name: Query external data lake files
     href: query-external-data-lake-files.md
-  - name: Query Parquet files
-    href: query-parquet-files.md
   - name: Query delimited files
     href: query-delimited-files.md
   - name: Query JSON files
     href: query-json-files.md
+  - name: Query Parquet files
+    href: query-parquet-files.md
 - name: Time travel
   items:
   - name: Query data as it existed in the past
