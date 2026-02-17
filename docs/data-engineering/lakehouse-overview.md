@@ -2,10 +2,7 @@
 title: What is a lakehouse?
 description: A lakehouse in Microsoft Fabric combines data lake scalability with data warehouse querying. Store structured and unstructured data in one place and analyze it with Spark and SQL.
 ms.reviewer: avinandac
-ms.author: eur
-author: eric-urban
 ms.topic: overview
-ms.custom:
 ms.date: 02/17/2026
 # customer intent: As a data engineer, I want to understand what a lakehouse is in Microsoft Fabric so that I can use it for big data processing and analytics.
 ms.search.form: Lakehouse Overview

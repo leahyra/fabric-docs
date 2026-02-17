@@ -2,8 +2,6 @@
 title: Navigate the Fabric Lakehouse explorer
 description: Browse tables and files, preview data, and manage lakehouse objects in the Fabric portal.
 ms.reviewer: avinandac
-ms.author: eur
-author: eric-urban
 ms.topic: concept-article
 ms.date: 02/17/2026
 ms.search.form: Lakehouse Explorer

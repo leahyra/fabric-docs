@@ -2,8 +2,6 @@
 title: Create a lakehouse in Microsoft Fabric
 description: Create a lakehouse in Microsoft Fabric to store and analyze structured and unstructured data with Spark and SQL. Also learn how to delete a lakehouse.
 ms.reviewer: avinandac
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 02/17/2026
