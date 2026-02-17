@@ -4,7 +4,7 @@ description: Troubleshoot problems with deployment pipelines, the Fabric Applica
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: sfi-image-nochange
-ms.date: 12/15/2025
+ms.date: 02/17/2026
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
