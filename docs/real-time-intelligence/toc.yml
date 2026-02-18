@@ -941,7 +941,7 @@ items:
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:
       - name: Operations agent
-        href: tocs/operations-agent-toc.yml
+        href: operations-agent-toc/toc.yml
       - name: Fabric RTI MCP Server (preview)
         href: mcp-overview.md
       - name: Use MCP with Eventhouse
