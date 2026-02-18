@@ -1,12 +1,8 @@
-﻿---
+---
 title: Use Azure AI Translator with REST API
 description: How to use prebuilt Azure AI translator in Fabric with REST API
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: lagayhar, ruxu
 ms.topic: how-to
-ms.custom: 
 ms.date: 07/31/2025
 ms.update-cycle: 180-days
 ms.search.form: 

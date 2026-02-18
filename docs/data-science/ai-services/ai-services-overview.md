@@ -1,4 +1,4 @@
-﻿---
+---
 title: Use Azure AI services in Fabric
 description: Overview of using Azure AI services in Fabric.
 ms.author: lagayhar
@@ -6,7 +6,7 @@ author: lgayhardt
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: overview
-ms.custom: 
+ms.custom:
   - references_regions
 ms.date: 01/16/2026
 ms.update-cycle: 180-days
