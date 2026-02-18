@@ -77,12 +77,9 @@ git clone https://github.com/<your-account>/fabric-samples.git
 cd fabric-samples
 ```
 
-
-
 ## 4. Initial Azure DevOps Setup
 
 This section walks through every Azure DevOps resource you need to configure before the pipeline can run.
-
 
 
 ### 4.1 Azure Key Vault Integration
@@ -197,15 +194,7 @@ ADO **Environments** allow you to add **manual approval checks** before deployme
 
 The branching strategy is central to this CI/CD setup. You need **three long-lived branches**:
 
-```
-main (optional)
- │
- ├── dev     ◀── Connected to DEV Fabric Workspace via Git Integration
- │
- ├── test    ◀── NOT connected to any workspace (deployment target only)
- │
- └── prod    ◀── NOT connected to any workspace (deployment target only)
-```
+   :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/branch-1.png" alt-text="Conceptual drawing of branch strategy." lightbox="media/tutorial-fabric-cicd-azure-devops/branch-1.png":::
 
 #### Key Points
 
