@@ -1,6 +1,6 @@
 ---
 title: Eventstream streaming connector virtual network and on-premises support guide
-description: Learn how to create and manage streaming virtual network data gateways, connect streaming source’s network to the Azure virtual network and then add data source in private network into Eventstream.
+description: Learn how to create and manage Streaming virtual network data gateways, connect streaming source’s network to the Azure virtual network and then add data source in private network into Eventstream.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -18,8 +18,8 @@ The streaming connector virtual network and on-premises support offers a secure,
 
 By following this guide, you will: 
 
-1. Register the ‘Microsoft.MessagingConnectors’ resource provider in your Azure subscription.
-2. Create an Azure virtual network with a subnet and delegate a subnet to ‘Microsoft.MessagingConnectors’.
+1. Register the `Microsoft.MessagingConnectors` resource provider in your Azure subscription.
+2. Create an Azure virtual network with a subnet and delegate a subnet to `Microsoft.MessagingConnectors`.
 3. Connect your streaming source private network to the Azure virtual network using one of the supported methods:  
    a. VPN connection or Azure ExpressRoute connection (For 3rd-party cloud virtual network or On-premises sources)  
    b. Private endpoint  
@@ -31,7 +31,7 @@ By following this guide, you will:
 7. Create a Connection with streaming virtual network data gateway.
 8. Add your private network data source to the eventstream and publish.
 
-To learn more about the solution architecture and concept, visit [Eventstream Streaming Connector vNet and On-Prem Support Overview](./streaming-connector-private-network-support-overview.md)
+To learn more about the solution architecture and concept, visit [Eventstream Streaming Connector virtual network (virtual network) and on-premises Support Overview](./streaming-connector-private-network-support-overview.md)
 
 ## Supported sources
 
@@ -39,11 +39,11 @@ To learn more about the solution architecture and concept, visit [Eventstream St
 
 ## Prerequisite 1: Register the connector resource provider
 
-Eventstream Streaming Connector vNet/On-prem requires the ‘Microsoft.MessagingConnectors’ provider to be registered in the subscription hosting the vNet.
+Eventstream Streaming Connector vNet/On-prem requires the ‘Microsoft.MessagingConnectors’ provider to be registered in the subscription hosting the virtual network.
 
 1. Go to your subscription resource in Azure portal, select the subscription that is to be used for your virtual network creation. 
-2. Select ‘**Resource providers**’ and search ‘Microsoft.MessagingConnectors’.
-3. Check if ‘Microsoft.MessagingConnectors’ is registered. If not, select it and select ‘**Register**’ button to get it registered. 
+2. Select **Resource providers** and search **Microsoft.MessagingConnectors**.
+3. Check if **Microsoft.MessagingConnectors** is registered. If not, select it and select **Register** button to get it registered. 
 
     :::image type="content" source="media/streaming-connector-vnet-on-prem-support/resource-provider.png" alt-text="Screenshot of showing how to register the connector resource provider." lightbox="media/streaming-connector-vnet-on-prem-support/resource-provider.png":::
 
@@ -54,13 +54,13 @@ This section shows how to prepare the Azure virtual network with a subnet config
 > [!NOTE]  
 > The subscription used to create the Azure virtual network must include **Owner** permission so that you can grant access later.
 
-1. Create an Azure virtual network (vNet) in the Azure portal. Make sure the region you select matches the region of your eventstream.  
+1. Create an Azure virtual network in the Azure portal. Make sure the region you select matches the region of your eventstream.  
 
     :::image type="content" source="media/streaming-connector-vnet-on-prem-support/create-virtual-network.png" alt-text="Screenshot of showing the first step of creating virtual network." lightbox="media/streaming-connector-vnet-on-prem-support/create-virtual-network.png":::
 
     You can reuse the existing Azure virtual network that is this region. But ensure the virtual network has an IP address range that doesn't overlap with the following ranges: **10.240.0.0/16** and **10.224.0.0/12**. 
 
-2. Navigate to the **Subnets** tab under your vNet resource to prepare the subnet. 
+2. Navigate to the **Subnets** tab under your virtual network resource to prepare the subnet. 
 3. You can either select an existing subnet to edit or create a new one. 
 
     :::image type="content" source="media/streaming-connector-vnet-on-prem-support/select-subnet.png" alt-text="Screenshot of showing selecting or creating subnets." lightbox="media/streaming-connector-vnet-on-prem-support/select-subnet.png":::
@@ -71,23 +71,23 @@ This section shows how to prepare the Azure virtual network with a subnet config
 
 ## Prerequisite 3: Connect your streaming source’s network to the Azure virtual network 
 
-When the source is in private network, it is required to have your Azure virtual network created in the previous step to be connected with your source’s private network, that is, the client in this Azure virtual network should be able to connect to this source.  
+When the source is in private network, it's required to have your Azure virtual network created in the previous step to be connected with your source’s private network, that is, the client in this Azure virtual network should be able to connect to this source.  
 
-### Non-Azure sources and On-prem sources
+### Non-Azure sources and on-premises sources
 
-For non-Azure source or On-prem scenario, you need to use a **VPN connection** or **Azure ExpressRoute connection** to connect your source to this Azure vNet. Refer to [Connect an on-premises network to Azure](/azure/architecture/reference-architectures/hybrid-networking). If you have such sources in private network, ensure that a virtual machine in this Azure vNet can connect to your source before you use this Azure vNet to configure your eventstream.
+For non-Azure source or on-premises scenario, you need to use a **VPN connection** or **Azure ExpressRoute connection** to connect your source to this Azure virtual network. Refer to [Connect an on-premises network to Azure](/azure/architecture/reference-architectures/hybrid-networking). If you have such sources in private network, ensure that a virtual machine in this Azure virtual network can connect to your source before you use this Azure virtual network to configure your eventstream.
 
 There are several publicly available documents providing detailed instructions for such connections, including:
 
-- To AWS VPC: [How to easily set up a VPN between Azure and AWS using managed services](https://techcommunity.microsoft.com/blog/startupsatmicrosoftblog/how-to-easily-set-up-a-vpn-between-azure-and-aws-using-managed-services-updated-/4278966)
+- To Amazon Web Services (AWS) Virtual Private Cloud (VPC): [How to easily set up a VPN between Azure and AWS using managed services](https://techcommunity.microsoft.com/blog/startupsatmicrosoftblog/how-to-easily-set-up-a-vpn-between-azure-and-aws-using-managed-services-updated-/4278966)
 - To AWS VPC: [Designing private network connectivity between AWS and Microsoft Azure](https://aws.amazon.com/blogs/modernizing-with-aws/designing-private-network-connectivity-aws-azure)
-- To GCP VPC: [Create HA VPN connections between Google Cloud and Azure](https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-azure) 
+- To Google Cloud VPC: [Create HA VPN connections between Google Cloud and Azure](https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-azure) 
 
 ### Azure sources
 
-For streaming sources on Azure, like Azure SQL Server DB CDC, Azure Cosmos DB CDC, Azure Service Bus, etc., you can use ‘**private endpoint**’ or ‘**add virtual network in selected network**’ or ‘[Virtual network peering](/azure/virtual-network/virtual-network-peering-overview)’ to allow a virtual network to access the source in this private network. 
+For streaming sources on Azure, like Azure SQL Server Database CDC, Azure Cosmos DB CDC, Azure Service Bus, etc., you can use ‘**private endpoint**’ or ‘**add virtual network in selected network**’ or ‘[Virtual network peering](/azure/virtual-network/virtual-network-peering-overview)’ to allow a virtual network to access the source in this private network. 
 
-This guide uses Azure streaming source with the methods of ‘**private endpoint**’ or ‘**add virtual network in selected network**’ and ‘[Virtual network peering](/azure/virtual-network/virtual-network-peering-overview)’ to connect to the vNet created in previous steps.  
+This guide uses Azure streaming source with the methods of ‘**private endpoint**’ or ‘**add virtual network in selected network**’ and ‘[Virtual network peering](/azure/virtual-network/virtual-network-peering-overview)’ to connect to the virtual network created in previous steps.  
 
 #### Method 1: Private endpoint
 
@@ -115,11 +115,11 @@ The example demonstrates using Azure SQL Server source.
 
 1. After the private point is successfully created, you can find the private endpoint under **Setting > Private endpoints** in the Azure virtual network resource.
 
-    :::image type="content" source="media/streaming-connector-vnet-on-prem-support/private-endpoint-in-virtual-network.png" alt-text="Screenshot of showing the private endpoint in azure virtual network." lightbox="media/streaming-connector-vnet-on-prem-support/private-endpoint-in-virtual-network.png":::
+    :::image type="content" source="media/streaming-connector-vnet-on-prem-support/private-endpoint-in-virtual-network.png" alt-text="Screenshot of showing the private endpoint in Azure virtual network." lightbox="media/streaming-connector-vnet-on-prem-support/private-endpoint-in-virtual-network.png":::
 
-    And a corresponding private DNS zone should be attached to this Azure virtual network. You can check it in **Setting > DNS**. If you cannot find the corresponding private DNS zone, you should delete this private endpoint and re-create it again.
+    And a corresponding private DNS zone should be attached to this Azure virtual network. You can check it in **Setting > DNS**. If you can't find the corresponding private DNS zone, you should delete this private endpoint and re-create it again.
 
-    :::image type="content" source="media/streaming-connector-vnet-on-prem-support/private-dns-zone-in-virtual-network.png" alt-text="Screenshot of showing the private dns zone in azure virtual network." lightbox="media/streaming-connector-vnet-on-prem-support/private-dns-zone-in-virtual-network.png":::
+    :::image type="content" source="media/streaming-connector-vnet-on-prem-support/private-dns-zone-in-virtual-network.png" alt-text="Screenshot of showing the private DNS zone in Azure virtual network." lightbox="media/streaming-connector-vnet-on-prem-support/private-dns-zone-in-virtual-network.png":::
 
 #### Method 2: Add virtual network in selected network
 
@@ -131,7 +131,7 @@ This approach is applicable for the following Azure streaming sources such as:
 
 The example shown is using Azure Service Bus with premium tier (this approach isn't available in Service Bus Basic or Standard tier). 
 
-1. Go to your source (for example, Azure Service Bus), select **Networking > Public access > Selected network > Add a virtual network**, select the virtual network you’ve created in Prerequisite#1. 
+1. Go to your source (for example, Azure Service Bus), select **Networking > Public access > Selected network > Add a virtual network**, select the virtual network you created in Prerequisite#1. 
 
     :::image type="content" source="media/streaming-connector-vnet-on-prem-support/configure-selected-network.png" alt-text="Screenshot of showing how to configure selected networks." lightbox="media/streaming-connector-vnet-on-prem-support/configure-selected-network.png":::
 
@@ -144,8 +144,8 @@ This approach is applicable for the Azure streaming sources such as:
 
 Or other sources that are in Azure virtual network. The example is using the SQL Server on Azure VM source. 
 
-1. Go to your source SQL Server on Azure VM on Azure portal, select **Network settings** of the SQL VM > **Virtual network / subnet** to open the virtual network of the SQL VM. 
-1. In the SQL VM virtual network page, select **Peerings > Add** to peering with the Azure virtual network you’ve created in Prerequisite#1. 
+1. Go to your source SQL Server on Azure VM on Azure portal, and select **Network settings** of the SQL VM > **Virtual network / subnet** to open the virtual network of the SQL VM. 
+1. In the SQL VM virtual network page, select **Peerings > Add** to peering with the Azure virtual network you created in Prerequisite#1. 
 
     :::image type="content" source="media/streaming-connector-vnet-on-prem-support/configure-network-peering.png" alt-text="Screenshot of showing how to configure network peering." lightbox="media/streaming-connector-vnet-on-prem-support/configure-network-peering.png":::
 
@@ -161,7 +161,7 @@ The workspace identity needs **Network Contributor** role on the Azure virtual n
 
     :::image type="content" source="media/streaming-connector-vnet-on-prem-support/copy.png" alt-text="Screenshot of showing where to copy workspace identity ID." lightbox="media/streaming-connector-vnet-on-prem-support/copy.png":::
 
-1. Then go back to your Azure Virtual Network (vNet) and open **Access control (IAM)**. Select **Add role assignment**.
+1. Then go back to your Azure virtual network and open **Access control (IAM)**. Select **Add role assignment**.
 
     :::image type="content" source="media/streaming-connector-vnet-on-prem-support/add-role-assignment.png" alt-text="Screenshot of showing where to add access control." lightbox="media/streaming-connector-vnet-on-prem-support/add-role-assignment.png":::
 
@@ -184,7 +184,7 @@ Select a source, that is, Azure Service Bus and the Get events wizard is opened.
 :::image type="content" source="media/streaming-connector-vnet-on-prem-support/wizard.png" alt-text="Screenshot of showing the service bus wizard." lightbox="media/streaming-connector-vnet-on-prem-support/wizard.png":::
 
 1. Navigate to **Streaming virtual network data gateways**, then select **New**. 
-1. Select the **Azure subscription** where you created the virtual network (vNet) in the previous steps, along with the **Resource group**, **Virtual network**, and **Subnet**. 
+1. Select the **Azure subscription** where you created the virtual network in the previous steps, along with the **Resource group**, **Virtual network**, and **Subnet**. 
 1. Specify a **name** and select **Save** to complete the creation.
 
 :::image type="content" source="media/streaming-connector-vnet-on-prem-support/create-data-gateway.png" alt-text="Screenshot of showing how to create streaming virtual network data gateway." lightbox="media/streaming-connector-vnet-on-prem-support/create-data-gateway.png":::
@@ -193,20 +193,20 @@ To learn more about how to manage the Streaming virtual network data gateways, v
 
 ### Create the Connection
 
-After the streaming virtual network data gateway is created, go back to Get events wizard page and select **New connection** on the wizard create a connection with selecting the data gateway you created.
+After the Streaming virtual network data gateway is created, go back to Get events wizard page and select **New connection** on the wizard create a connection with selecting the data gateway you created.
 
 1. Select **New connection**
 
     :::image type="content" source="media/streaming-connector-vnet-on-prem-support/new-connection.png" alt-text="Screenshot of showing how to create a new DMTS connection." lightbox="media/streaming-connector-vnet-on-prem-support/new-connection.png":::
 
-1. Ensure selecting the **streaming virtual network data gateway** under **Data gateway**. It has the prefix “[Streaming vNet]”. You may select refresh icon to get the newly created gateway listed.
+1. Ensure selecting the **streaming virtual network data gateway** under **Data gateway**. It has the prefix `[Streaming vNet]`. You can select refresh icon to get the newly created gateway listed.
 
     :::image type="content" source="media/streaming-connector-vnet-on-prem-support/select-data-gateway.png" alt-text="Screenshot of showing how to select a streaming virtual network when creating new DMTS connection." lightbox="media/streaming-connector-vnet-on-prem-support/select-data-gateway.png":::
 
 > [!NOTE]  
 > If a data gateway is selected, skip the test connection step in this connection creation wizard.
 
-1. Select the **Connection** you created with the streaming virtual network data gateway included. It has a prefix: “[vNet]”.
+1. Select the **Connection** you created with the streaming virtual network data gateway included. It has a prefix: `[vNet]`.
 
     :::image type="content" source="media/streaming-connector-vnet-on-prem-support/select-connection.png" alt-text="Screenshot of showing how to select a streaming virtual network connection." lightbox="media/streaming-connector-vnet-on-prem-support/select-connection.png":::
 
