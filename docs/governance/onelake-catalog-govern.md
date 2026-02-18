@@ -75,7 +75,7 @@ Fabric admins see a report that provides access to expanded insights across thre
 * **Manage your data estate** contains inventory overview, capacities & domains information and details about feature usage across the tenant. 
 
 * **Protect, secure & comply** includes information about sensitivity label coverage and data loss prevention policies activated and scanned across the various workspaces in the organization. 
-   * The **Sensitivity label** selector shows the most frequently used labels and the percentage of unlabeled items. Drill down by item type and user to identify labeling gaps and policy misalignment. Review a complete inventory of labels, or analyze label distribution by domain or workspace, to understand how labels are applied across the tenant. 
+   * The **Sensitivity labels** selector shows the most frequently used labels and the percentage of unlabeled items. Drill down by item type and user to identify labeling gaps and policy misalignment. Review a complete inventory of labels, or analyze label distribution by domain or workspace, to understand how labels are applied across the tenant. 
    * The **DLP** selector shows the workspaces or data items evaluated by DLP policies, helping you identify policy violations and take action, such as applying a more restrictive label or removing sensitive information. Break down scanned items by type or location, and review the last evaluation time to assess data freshness and trigger a new scan if needed.
 
 * **Discover, trust, and reuse** surfaces insights about data freshness, item curation state with information about description and endorsement coverage and content sharing view.
