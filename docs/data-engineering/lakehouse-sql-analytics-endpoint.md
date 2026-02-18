@@ -60,7 +60,7 @@ This background process reads the Delta logs from the `/Tables` folder in OneLak
 
 If the SQL analytics endpoint fails to provision when you create a lakehouse, you can retry directly from the lakehouse UI without recreating the lakehouse.
 
-:::image type="content" source="media\sql-endpoint\SQL-analytics-endpoint-re-provisioning.png" alt-text="Screenshot showing the option to retry SQL analytics endpoint provisioning in the lakehouse." lightbox="media\sql-endpoint\main-screen.png":::
+:::image type="content" source="media\sql-endpoint\SQL-analytics-endpoint-re-provisioning.png" alt-text="Screenshot showing the option to retry SQL analytics endpoint provisioning in the lakehouse." lightbox="media\sql-endpoint\SQL-analytics-endpoint-re-provisioning.png":::
 
 > [!NOTE]
 > Reprovisioning can still fail, just as the initial provisioning can. If repeated attempts fail, contact support.
