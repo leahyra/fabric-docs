@@ -108,6 +108,7 @@ For more information, see [Get started with Data loss prevention policies for Fa
 
 Organizational teams can have individual workspaces where different personas collaborate and work on generating content. Access to the items in the workspace is regulated via workspace roles assigned to users by the workspace admin.
 
+**Guidance**: Data owners should recommend users who could be workspace administrators. These could be team leads in your organization, for example. These workspace administrators should then govern access to the items in their workspace by assigning appropriate workspace roles to users and consumers of the items.
 
 ### Securing data in Fabric items
 
