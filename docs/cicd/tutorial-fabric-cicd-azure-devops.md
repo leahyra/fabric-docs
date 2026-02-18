@@ -9,15 +9,6 @@ ms.service: fabric
 ms.date: 02/19/2026
 ---
 
-
-
-
-
-
-
-
-
-
 # 🚀 CI/CD for Microsoft Fabric Using Azure DevOps & the `fabric-cicd` Python Package
 In this tutorial, you use the fabric-cicd python library to **promote changed** items (e.g., a specific Notebook) from the **dev** workspace to the **test** workspace, and eventually to **prod**.
 
@@ -52,71 +43,19 @@ Alex's Notebooks use the `%%configure` magic command to attach to a specific Lak
 | **Azure Key Vault** | Securely stores Service Principal credentials |
 | **Service Principal (SPN)** | Authenticates against the Fabric REST API |
 
----
+
 
 ## 2. Architecture Diagram
+The following diagram illustrates the flow of the tutorial.
+
+
+ :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/flow.png" alt-text="Conceptual flow of the architecture of the tutorial." lightbox="media/tutorial-fabric-cicd-azure-devops/flow.png":::
 
 
 
 
 
 
-```
-┌──────────────────────────────────────────────────────────────────────────┐
-│                        AZURE DEVOPS (ADO)                                │
-│                                                                          │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐                   │
-│  │  dev branch  │───▶│ test branch │───▶│ prod branch │   Git Branches   │
-│  │ (connected   │ PR │ (not conn.) │ PR │ (not conn.) │                   │
-│  │  to Fabric)  │    │             │    │             │                   │
-│  └──────┬───────┘    └──────┬──────┘    └──────┬──────┘                   │
-│         │                   │                  │                          │
-│         │            ┌──────▼──────┐    ┌──────▼──────┐                   │
-│         │            │  ADO Env:   │    │  ADO Env:   │   Approval Gates  │
-│         │            │    test     │    │    prod     │                   │
-│         │            │ (Approval)  │    │ (Approval)  │                   │
-│         │            └──────┬──────┘    └──────┬──────┘                   │
-│         │                   │                  │                          │
-│         │            ┌──────▼──────────────────▼──────┐                   │
-│         │            │   fabric_cicd_pipeline         │   ADO Pipeline    │
-│         │            │   (Deploy-To-Fabric.yml)       │                   │
-│         │            └──────┬─────────────────────────┘                   │
-│         │                   │                                             │
-│  ┌──────▼───────────────────▼──────────────────────────┐                  │
-│  │              Variable Groups                         │                 │
-│  │  🔒 fabric_cicd_group_sensitive (Key Vault linked)  │                 │
-│  │  📋 fabric_cicd_group_non_sensitive                  │                 │
-│  └──────────────────────┬──────────────────────────────┘                  │
-└─────────────────────────┼────────────────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│                     PYTHON SCRIPT (deploy-to-fabric.py)                  │
-│                                                                          │
-│  1. Parse pipeline arguments (SPN creds, target env, items)              │
-│  2. Authenticate via ClientSecretCredential (SPN)                        │
-│  3. Look up target workspace ID via Fabric REST API                      │
-│  4. Initialize FabricWorkspace with parameter.yml for GUID replacement   │
-│  5. Publish items ──▶ Unpublish orphans                                  │
-└──────────────────────────┬──────────────────────────────────────────────┘
-                           │
-                           ▼
-┌──────────────────────────────────────────────────────────────────────────┐
-│                       MICROSOFT FABRIC                                    │
-│                                                                           │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐                 │
-│  │  DEV          │    │  TEST         │    │  PROD         │               │
-│  │  Workspace    │    │  Workspace    │    │  Workspace    │               │
-│  │              │    │              │    │              │                  │
-│  │  - Notebooks  │    │  - Notebooks  │    │  - Notebooks  │               │
-│  │  - Lakehouses │    │  - Lakehouses │    │  - Lakehouses │               │
-│  │  - Pipelines  │    │  - Pipelines  │    │  - Pipelines  │               │
-│  │  - Reports    │    │  - Reports    │    │  - Reports    │               │
-│  └──────────────┘    └──────────────┘    └──────────────┘                 │
-└──────────────────────────────────────────────────────────────────────────┘
-```
-
----
 
 ## 3. Prerequisites
 
@@ -145,13 +84,13 @@ git clone https://github.com/<your-account>/fabric-cicd.git
 cd fabric-cicd
 ```
 
----
+
 
 ## 4. Initial Azure DevOps Setup
 
 This section walks through every Azure DevOps resource you need to configure before the pipeline can run.
 
----
+
 
 ### 4.1 Azure Key Vault Integration
 
@@ -172,7 +111,7 @@ Your Service Principal credentials (Tenant ID, Client ID, and Secret) should **n
 
    :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/keyvault-secrets.png" alt-text="Screenshot of keyvault secrets." lightbox="media/tutorial-fabric-cicd-azure-devops/keyvault-secrets.png":::
 
----
+
 
 ### 4.2 Variable Group: `fabric_cicd_group_sensitive`
 
@@ -201,7 +140,7 @@ This variable group is **linked to Azure Key Vault**, meaning the secret values 
 
 > ⚠️ **Important:** Because these variables are linked to Key Vault, they are accessed in the pipeline YAML as `$(aztenantid)`, `$(azclientid)`, and `$(azspnsecret)`. They are automatically masked in logs.
 
----
+
 
 ### 4.3 Variable Group: `fabric_cicd_group_non_sensitive`
 
@@ -227,7 +166,7 @@ This variable group stores **non-secret configuration values** — specifically 
 
 > 💡 **How It Works in Code:** The Python script reads these values using `os.environ`. For example, when deploying to `test`, the script constructs the variable name `testWorkspaceName`, converts it to uppercase (`TESTWORKSPACENAME`), and reads it from the environment — because ADO automatically injects non-sensitive variable group values as environment variables in uppercase.
 
----
+
 
 ### 4.4 ADO Environments & Approval Gates
 
@@ -259,7 +198,7 @@ ADO **Environments** allow you to add **manual approval checks** before deployme
 
 > 💡 **Why Environments?** The pipeline YAML uses `deployment` jobs with `environment: $(target_env)`. When `target_env` is `test` or `prod`, ADO pauses the pipeline and waits for the configured approver(s) to approve before proceeding.
 
----
+
 
 ### 4.5 Git Branch Strategy
 
@@ -289,7 +228,7 @@ main (optional)
 - The `test` and `prod` branches are **not** connected to workspaces because the `fabric-cicd` package handles deployment directly via the Fabric REST API.
 - These branches serve as a **record** of exactly which item versions have been promoted to each environment.
 
----
+
 
 ### 4.6 ADO Pipeline Setup
 
@@ -309,7 +248,7 @@ Create a pipeline in ADO that references the YAML file in your repo.
 
 > ⚠️ **Permission Tip:** The first time the pipeline runs, ADO may prompt you to authorize access to the variable groups and environments. An ADO admin can pre-authorize these under Pipeline → Settings.
 
----
+
 
 ## 5. Code Deep Dive: ADO Pipeline YAML
 
@@ -336,7 +275,7 @@ trigger:
 - The `paths` filter ensures it **only triggers** when files inside the `fabric/` directory are changed — preventing unnecessary runs from changes to documentation, scripts, etc.
 - In practice: when a PR is merged from `dev` → `test`, the merge commit lands on the `test` branch, triggering the pipeline targeting the TEST environment.
 
----
+
 
 ```yaml
 # ──────────────────────────────────────────────────────────────
@@ -357,7 +296,6 @@ parameters:
 
 > ⚠️ **Selective Deployment Warning:** If you narrow `items_in_scope` for a selective deployment, you should **not** call `unpublish_all_orphan_items()` in the Python script — because it will remove items **of the types specified in `items_in_scope`** that exist in the workspace but are not present in the release branch. For example, if you deploy only `["Notebook"]` and there are Notebooks in the workspace that aren't in the branch, they will be deleted — even though they may still be valid. It will **not** remove items of other types (like Pipelines, Reports, etc.). Only use `unpublish_all_orphan_items()` when the branch represents the complete desired state for the item types in scope.
 
----
 
 ```yaml
 # ──────────────────────────────────────────────────────────────
@@ -378,7 +316,7 @@ variables:
 | `fabric_cicd_group_sensitive` | Pulls `aztenantid`, `azclientid`, `azspnsecret` from Azure Key Vault at runtime. |
 | `fabric_cicd_group_non_sensitive` | Pulls workspace names and `gitDirectory` as plain environment variables. |
 
----
+
 
 ```yaml
 # ──────────────────────────────────────────────────────────────
@@ -407,7 +345,7 @@ stages:
 | `environment: $(target_env)` | Maps to the ADO Environment matching the branch name (`dev`, `test`, or `prod`). If approvals are configured on that environment, the pipeline **pauses here** until approved. |
 | `strategy: runOnce` | Executes the deployment steps exactly once (as opposed to canary or rolling strategies). |
 
----
+
 
 ```yaml
               steps:
@@ -452,7 +390,7 @@ stages:
 
 > ⚠️ **Security Note:** The `$(aztenantid)`, `$(azclientid)`, and `$(azspnsecret)` values are fetched from the Key Vault–linked variable group. They are **automatically masked** in pipeline logs — you'll see `***` instead of actual values.
 
----
+
 
 ## 6. Code Deep Dive: Python Deployment Script
 
@@ -460,7 +398,7 @@ stages:
 
 This is the heart of the deployment. Let's walk through each section.
 
----
+
 
 ### 6.1 Imports & Dependencies
 
@@ -484,7 +422,7 @@ from azure.identity import ClientSecretCredential
 | `fabric_cicd` | Microsoft's library — handles the heavy lifting of deploying Fabric items |
 | `ClientSecretCredential` | Azure Identity library — authenticates using SPN credentials |
 
----
+
 
 ### 6.2 Workspace ID Lookup Function
 
@@ -517,7 +455,7 @@ def get_workspace_id(p_ws_name, p_token):
 
 > 💡 **Why not hardcode the workspace ID?** By looking it up dynamically by name, the script is more resilient to workspace recreation and avoids storing GUIDs in the variable group.
 
----
+
 
 ### 6.3 Feature Flags & Logging
 
@@ -531,7 +469,7 @@ change_log_level("DEBUG")
 | `enable_shortcut_publish` | Enables deployment of **Lakehouse shortcuts** — a feature that is opt-in via feature flag in `fabric-cicd`. |
 | `DEBUG` log level | Provides verbose output during deployment — very helpful for troubleshooting. Reduce to `INFO` or `WARNING` in production. |
 
----
+
 
 ### 6.4 Argument Parsing
 
@@ -547,7 +485,7 @@ args = parser.parse_args()
 
 These arguments are passed from the pipeline YAML step. The parser makes them available as `args.aztenantid`, `args.azclientid`, etc.
 
----
+
 
 ### 6.5 Authentication
 
@@ -563,7 +501,7 @@ This creates an **Azure credential object** using the Service Principal's Client
 1. Calling the Fabric REST API (workspace lookup)
 2. Passing to `FabricWorkspace` for the `fabric-cicd` deployment
 
----
+
 
 ### 6.6 Dynamic Workspace Resolution
 
@@ -588,7 +526,7 @@ else:
     wks_id = lookup_response
 ```
 
----
+
 
 ### 6.7 Initialize FabricWorkspace & Deploy
 
@@ -620,7 +558,7 @@ unpublish_all_orphan_items(target_workspace)
 >
 > However, if you are doing a **selective deployment** (e.g., deploying only Notebooks via a narrowed `items_in_scope`), be cautious with `unpublish_all_orphan_items()` — it would delete any Notebooks in the workspace that are not in the branch, even if they are still valid and were simply not part of the selective release.
 
----
+
 
 ## 7. Code Deep Dive: Parameter Files (GUID Replacement)
 
@@ -635,7 +573,7 @@ The `fabric-cicd` package looks for a file named `parameter.yml` in the `.deploy
 
 **File:** `parameter.yml` — located in the **fabric-cicd-devops** folder under samples from the git repo cloned earlier.
 
----
+
 
 ### 7.1 Parameter File Structure
 
@@ -698,7 +636,7 @@ Same pattern — replaces the shortcut Lakehouse GUID with the corresponding one
 - **Why?** SQL endpoint IDs cannot currently be resolved dynamically by `fabric-cicd`, so they must be manually specified.
 - You can find these IDs in the Fabric portal under the Lakehouse → SQL analytics endpoint → Properties.
 
----
+
 
 ### 7.2 Dynamic Tokens Summary
 
@@ -708,7 +646,7 @@ Same pattern — replaces the shortcut Lakehouse GUID with the corresponding one
 | `$items.Lakehouse.<name>.id` | The GUID of a Lakehouse named `<name>` in the target workspace |
 | `$items.<ItemType>.<ItemName>.id` | Generic pattern for any item type |
 
----
+
 
 ### 7.3 Feature Branch Parameter File (Advanced)
 
@@ -724,19 +662,19 @@ For teams using **feature branches** (not just `dev`), there's a variant paramet
 
 This is useful when developers work in their own Fabric workspaces and need GUIDs replaced even when deploying to DEV.
 
----
+
 
 ## 8. Deployment Flow: End-to-End Walkthrough
 
 Here's the complete flow when Alex wants to promote a Notebook from **dev** to **test**:
 
----
+
 
 ### Step 1: 🔧 Developer Makes Changes in DEV
 
 Alex modifies the `IngestApiData` Notebook in the **DEV** Fabric workspace (e.g., adds a new cell). Fabric's Git Integration syncs this change to the `dev` branch automatically (or via a manual commit).
 
----
+
 
 ### Step 2: 📋 Create a Pull Request (dev → test)
 
@@ -747,7 +685,7 @@ Alex creates a **Pull Request** in ADO:
 
 The PR contains all the changed items that Alex wants to deploy to the TEST environment.
 
----
+
 
 ### Step 3: ✅ PR Approval & Merge
 
@@ -756,7 +694,7 @@ A reviewer (or Alex's admin) reviews the PR:
 - Approves the PR
 - **Completes the merge** → The changes are now on the `test` branch
 
----
+
 
 ### Step 4: 🚀 Pipeline Auto-Triggers
 
@@ -770,7 +708,7 @@ The pipeline begins execution:
 Pipeline Variable: target_env = "test"
 ```
 
----
+
 
 ### Step 5: ⏸️ Approval Gate
 
@@ -779,7 +717,7 @@ Because the pipeline uses `environment: $(target_env)` and `target_env` = `test`
 - The pipeline **pauses** and sends a notification to the configured approver(s).
 - The admin reviews and clicks **Approve**.
 
----
+
 
 ### Step 6: 🐍 Script Execution
 
@@ -798,7 +736,7 @@ The Python script:
 4. Publishes items to the TEST workspace
 5. Cleans up orphaned items
 
----
+
 
 ### Step 7: ✅ Deployment Complete
 
@@ -806,7 +744,7 @@ The Notebook is now deployed to the **TEST** workspace with:
 - ✅ The newly added cell present
 - ✅ All GUIDs in `%%configure` replaced with TEST environment values
 
----
+
 
 ## 9. Validation: Confirming a Successful Deployment
 
@@ -833,7 +771,7 @@ Open the `IngestApiData` Notebook in the **TEST** Fabric workspace and verify:
 
 > ✅ **Success!** The `%%configure` cell now points to TEST lakehouses, and the new development work has been cleanly promoted.
 
----
+
 
 ## 10. Troubleshooting & Common Pitfalls
 
@@ -849,7 +787,7 @@ Open the `IngestApiData` Notebook in the **TEST** Fabric workspace and verify:
 | `os.environ` key error | Variable group not linked to pipeline | Authorize the pipeline to access `fabric_cicd_group_non_sensitive` |
 | Feature flag errors for shortcuts | `fabric-cicd` version too old | Upgrade `fabric-cicd` to the latest version: `pip install fabric-cicd --upgrade` |
 
----
+
 
 ## 11. Summary
 
@@ -872,7 +810,7 @@ This tutorial demonstrated a production-grade CI/CD workflow for Microsoft Fabri
 3. **ADO Environments with approvals** provide governance — no deployment to higher environments without explicit approval.
 4. **Service Principal authentication** via Azure Key Vault ensures credentials are never exposed in code or logs.
 
----
+
 
 > 📚 **Further Reading:**
 > - [`fabric-cicd` documentation](https://pypi.org/project/fabric-cicd/)
