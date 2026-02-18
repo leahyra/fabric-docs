@@ -55,7 +55,7 @@ items:
       href: ../cicd/cicd-overview.md
 - name: Graph in Microsoft Fabric
   href: ../graph/toc.yml
-- name: Operations agent
+- name: Operations agents
   href: ../real-time-intelligence/operations-agent-tocs/toc.yml
 - name: Fabric data agent
   href: ../data-science/concept-data-agent.md
