@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 05/29/2025
+ms.date: 02/18/2026
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to use OneLake catalog's Explore to discover, manage, and use the content I need.
 ---
 
@@ -27,13 +27,13 @@ This article explains what you see in the explore tab and describes how to use i
 
 ## Open the explore tab
 
-To open the explore tab, select the OneLake catalog icon in the Fabric navigation pane and then select the explore tab.
+To open the explore tab, select the OneLake catalog icon in the Fabric navigation pane and then select the explore tab. The OneLake catalog is also accessible from Microsoft Teams, Microsoft Excel, and Copilot-enabled experiences, subject to admin configuration.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-open.png":::
 
 ## Find items in the items list
 
-The items list displays all the Fabric items you have access to, or can directly request access to. See [NOTE](#onelake-catalog-dlp-note) for details.
+The items list displays all the Fabric items you have access to, or can directly request access to. The Explore tab surfaces lakehouses, warehouses, Fabric databases, mirrored items, and other supported item types. See [NOTE](#onelake-catalog-dlp-note) for details.
 
 * To shorten the list, use the explore tab's filters and selectors.
 
