@@ -212,4 +212,5 @@ The admin monitoring workspace provides admins with monitoring capabilities for 
 
 * [Fabric security overview](../security/security-overview.md)
 * [Fabric administration overview](../admin/admin-overview.md)
-* [Microsoft Purview permissions](/purview/permissions)
+* [Microsoft Purview permissions](/purview/purview-permissions)
+
