@@ -56,8 +56,6 @@ For more information, see [Domains](./domains.md).
 
 **Guidance**: Business and enterprise architects should design the organization's domain setup, while Fabric admins should implement this design by creating domains and subdomains and assigning domain owners. Preferably, center of excellence (COE) teams should be part of this discussion to align the domains with the overall strategy of the organization.
 
-The Data Governance COE should lead the domain taxonomy and ownership assignments, empowering domain admins to manage endorsement, tags, and delegated tenant settings for their department. This ensures governance scales appropriately while maintaining consistency with organizational standards. Note that Cybersecurity teams focus on platform and network controls (see [Security overview](../security/security-overview.md)), and Compliance teams manage audit and DLP policies in Purview. This clear separation of responsibilities prevents overlap and confusion about which team owns specific governance functions.
-
 ### Workspaces
 
 Teams in organizations use workspaces to create Fabric items and collaborate with each other. These workspaces can be assigned to teams or departments based on governance requirements and data boundaries. How exactly workspace assignment is done depends on internal team structure and how the teams want to handle their Fabric items (for example, do they need one or many workspaces).
