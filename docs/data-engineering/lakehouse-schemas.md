@@ -59,11 +59,12 @@ A schema shortcut creates a new schema in your lakehouse that references Delta t
 To create a schema shortcut:
 
 1. In the lakehouse **Explorer** pane, hover over **Tables**, select **…**, and then choose **New schema shortcut**.
+    
+    :::image type="content" source="media\lakehouse-schemas\schema-shortcut.png" alt-text="Screenshot showing the new lakehouse schema shortcut." lightbox="media/lakehouse-schemas/schema-shortcut.png":::
+
 1. Select a source: a schema on another Fabric lakehouse, or a folder that contains Delta tables on external storage like Azure Data Lake Storage (ADLS) Gen2.
 
 A new schema appears in your lakehouse with all the referenced tables from the source.
-
-:::image type="content" source="media\lakehouse-schemas\schema-shortcut.png" alt-text="Screenshot showing the new lakehouse schema shortcut." lightbox="media/lakehouse-schemas/schema-shortcut.png":::
 
 ## Access lakehouse schemas for Power BI reporting
 
