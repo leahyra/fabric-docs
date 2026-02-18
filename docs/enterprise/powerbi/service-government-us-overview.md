@@ -81,9 +81,9 @@ Authentication, identity, and administration for Power BI depend on connectivity
 | Microsoft 365 integration | **GCC**: [Worldwide endpoints](/microsoft-365/enterprise/urls-and-ip-address-ranges)<br>**GCC High**: [US Government GCC High endpoints](/microsoft-365/enterprise/microsoft-365-u-s-government-gcc-high-endpoints)<br>**DoD**: [US Government DOD endpoints](/microsoft-365/enterprise/microsoft-365-u-s-government-dod-endpoints) |
 | Portal |**GCC**: *.powerbigov.us<br>**GCC High**: *.high.powerbigov.us<br>**DoD**: *.mil.powerbigov.us |
 | Manage gateways, connections, and data policies (preview) |**GCC**: gatewayadminportal-gov.azure.us<br>**GCC High**: gatewayadminportal-high.azure.us<br>**DoD**: gatewayadminportal-mil.azure.us |
+| OAuth 2.0 connections | **All**: preview.powerbi.com |
 | Service telemetry | **All**: dc.services.visualstudio.us |
 | Informational messages (optional) | **All**: arc.msn.com |
-| Power BI OAuth | **All**: preview.powerbi.com |
 | SharePoint web part integration with Power BI | **All**: api.powerbi.com |
 
 ## Connect government and global Azure cloud services
