@@ -605,4 +605,3 @@ display(result)
 - [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-synapse-ml.md)
 - [SynapseML GitHub repository](https://github.com/microsoft/SynapseML) - Source code and documentation for SynapseML
 - [Azure AI Language documentation](/azure/ai-services/language-service/) - Complete reference for Azure AI Language service
-
