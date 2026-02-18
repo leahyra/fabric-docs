@@ -5,6 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: overview
 ms.date: 09/26/2024
+ai-usage: ai-assisted
 ---
 
 # Governance overview and guidance
@@ -12,6 +13,10 @@ ms.date: 09/26/2024
 Microsoft Fabric governance and compliance provides a set of capabilities that help you manage, protect, monitor, and improve the discoverability of your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
 
 This article describes at a high level the main features and components that help you govern your organization's data estate, and includes some guidance regarding taking advantage of the capabilities these features and components offer. It also provides links to more detailed information about each feature and component.
+
+## Organizational ownership for data governance
+
+Data Governance in Fabric is typically owned by a cross-functional Center of Excellence (COE) or the Data/Analytics organization, distinct from Cybersecurity and Records/Compliance teams. While Cybersecurity focuses on platform and network security controls, and Records Management ensures regulatory compliance and data retention, Data Governance establishes policies for data quality, cataloging, domain design, endorsement standards, and tagging practices. The Data Governance COE defines governance frameworks, manages domain taxonomy and ownership assignments, aligns with Microsoft Purview policies, and ensures data is discoverable, trustworthy, and fit for use across the organization.
 
 | [Manage your data estate](#manage-your-data-estate) | [Secure, protect, and comply](#secure-protect-and-comply) | [Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use) | [Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act) |
 |:-|:-|:-|:-|
@@ -45,6 +50,19 @@ For more information, see [About tenant settings](../admin/about-tenant-settings
 
 **Guidance**: Fabric admins should define tenant-wide settings, leaving domain admins to override delegated settings as needed. Individual teams (workspace owners) are expected to define their own more granular workspace-level controls and settings.
 
+#### Permissioning model
+
+Fabric and Purview admin scopes map to organizational roles as follows to enable least-privilege delegation:
+
+- **Fabric (Tenant) admin**: Platform and IT owners responsible for tenant-wide settings, capacity provisioning, and domain creation. These admins define centrally managed policies and delegate governance to domain and workspace admins.
+- **Domain admin**: Department data owners or stewards who manage endorsement, tags, and delegated tenant settings within their domain. Domain admins align their governance practices with the Data Governance COE's domain taxonomy and policies.
+- **Workspace admin**: Team leads or content owners who assign workspace roles, manage item access, and apply workspace-level settings. Workspace admins ensure proper access controls and collaborate with domain admins on data access request flows.
+- **Compliance admin (Purview)**: Oversees Data Loss Prevention (DLP) policies, audit log access, and label policy definitions. Compliance admins work with Records Management teams to ensure regulatory compliance.
+- **Security admin (Purview)**: Monitors DLP alerts, investigates security incidents, and manages detection and response workflows. Security admins collaborate with Cybersecurity teams on platform and network security.
+- **Information Protection admin (Purview)**: Defines and manages sensitivity label schemas, label policies, and protection settings. Information Protection admins coordinate with the Data Governance COE to ensure labels align with governance standards.
+
+Settings are centrally defined at the tenant level and can be overridden or refined at domain and workspace levels based on delegated permissions, ensuring governance scales across the organization while maintaining control and compliance.
+
 ### Domains
 
 Domains are a way of logically grouping together all the data in an organization that is relevant to particular areas or fields, for example, by business unit. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
@@ -54,6 +72,8 @@ Grouping data into domains and subdomains enables better discoverability and gov
 For more information, see [Domains](./domains.md).
 
 **Guidance**: Business and enterprise architects should design the organization's domain setup, while Fabric admins should implement this design by creating domains and subdomains and assigning domain owners. Preferably, center of excellence (COE) teams should be part of this discussion to align the domains with the overall strategy of the organization.
+
+The Data Governance COE should lead the domain taxonomy and ownership assignments, empowering domain admins to manage endorsement, tags, and delegated tenant settings for their department. This ensures governance scales appropriately while maintaining consistency with organizational standards. Note that Cybersecurity teams focus on platform and network controls (see [Security overview](../security/security-overview.md)), and Compliance teams manage audit and DLP policies in Purview. This clear separation of responsibilities prevents overlap and confusion about which team owns specific governance functions.
 
 ### Workspaces
 
@@ -107,13 +127,13 @@ For more information, see [Get started with Data loss prevention policies for Fa
 
 Organizational teams can have individual workspaces where different personas collaborate and work on generating content. Access to the items in the workspace is regulated via workspace roles assigned to users by the workspace admin.
 
-**Guidance**: Data owners should recommend users who could be workspace administrators. These could be team leads in your organization, for example. These workspace administrators should then govern access to the items in their workspace by assigning appropriate workspace roles to users and consumers of the items.
+**Guidance**: Data owners should recommend users who could be workspace administrators. These could be team leads in your organization, for example. These workspace administrators should then govern access to the items in their workspace by assigning appropriate workspace roles to users and consumers of the items. See the [Permissioning model](#permissioning-model) section for how workspace roles (Admin, Member, Contributor, Viewer) align with organizational governance responsibilities. Data owners and stewards should standardize access request flows through domain admins to minimize ad-hoc permission sprawl and ensure consistent governance practices.
 
 ### Securing data in Fabric items
 
 Along with the broad security that gets applied at the tenant or workspace level, there are other data-level controls that can be deployed by individual teams to manage access to individual tables, rows, and columns. Fabric currently provides such data-level control for SQL analytics endpoints, warehouses, Direct Lake, and KQL Database.
 
-**Guidance**: Individual teams are expected to apply these additional controls at the item and data level.
+**Guidance**: Individual teams are expected to apply these additional controls at the item and data level. See the [Permissioning model](#permissioning-model) section for how item-level and data-level controls complement organizational governance roles and workspace permissions.
 
 ### Auditing
 
@@ -213,3 +233,4 @@ The admin monitoring workspace provides admins with monitoring capabilities for 
 
 * [Fabric security overview](../security/security-overview.md)
 * [Fabric administration overview](../admin/admin-overview.md)
+* [Microsoft Purview permissions](/purview/permissions)
