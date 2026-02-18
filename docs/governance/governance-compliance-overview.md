@@ -50,19 +50,6 @@ For more information, see [About tenant settings](../admin/about-tenant-settings
 
 **Guidance**: Fabric admins should define tenant-wide settings, leaving domain admins to override delegated settings as needed. Individual teams (workspace owners) are expected to define their own more granular workspace-level controls and settings.
 
-#### Permissioning model
-
-Fabric and Purview admin scopes map to organizational roles as follows to enable least-privilege delegation:
-
-- **Fabric (Tenant) admin**: Platform and IT owners responsible for tenant-wide settings, capacity provisioning, and domain creation. These admins define centrally managed policies and delegate governance to domain and workspace admins.
-- **Domain admin**: Department data owners or stewards who manage endorsement, tags, and delegated tenant settings within their domain. Domain admins align their governance practices with the Data Governance COE's domain taxonomy and policies.
-- **Workspace admin**: Team leads or content owners who assign workspace roles, manage item access, and apply workspace-level settings. Workspace admins ensure proper access controls and collaborate with domain admins on data access request flows.
-- **Compliance admin (Purview)**: Oversees Data Loss Prevention (DLP) policies, audit log access, and label policy definitions. Compliance admins work with Records Management teams to ensure regulatory compliance.
-- **Security admin (Purview)**: Monitors DLP alerts, investigates security incidents, and manages detection and response workflows. Security admins collaborate with Cybersecurity teams on platform and network security.
-- **Information Protection admin (Purview)**: Defines and manages sensitivity label schemas, label policies, and protection settings. Information Protection admins coordinate with the Data Governance COE to ensure labels align with governance standards.
-
-Settings are centrally defined at the tenant level and can be overridden or refined at domain and workspace levels based on delegated permissions, ensuring governance scales across the organization while maintaining control and compliance.
-
 ### Domains
 
 Domains are a way of logically grouping together all the data in an organization that is relevant to particular areas or fields, for example, by business unit. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
