@@ -113,7 +113,6 @@ Organizational teams can have individual workspaces where different personas col
 
 Along with the broad security that gets applied at the tenant or workspace level, there are other data-level controls that can be deployed by individual teams to manage access to individual tables, rows, and columns. Fabric currently provides such data-level control for SQL analytics endpoints, warehouses, Direct Lake, and KQL Database.
 
-**Guidance**: Individual teams are expected to apply these additional controls at the item and data level. See the [Permissioning model](#permissioning-model) section for how item-level and data-level controls complement organizational governance roles and workspace permissions.
 
 ### Auditing
 
