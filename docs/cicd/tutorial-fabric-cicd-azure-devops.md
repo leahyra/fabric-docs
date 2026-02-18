@@ -56,6 +56,11 @@ Alex's Notebooks use the `%%configure` magic command to attach to a specific Lak
 
 ## 2. Architecture Diagram
 
+
+
+
+
+
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                        AZURE DEVOPS (ADO)                                │
