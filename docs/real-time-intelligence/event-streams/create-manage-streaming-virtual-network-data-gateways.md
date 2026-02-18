@@ -1,6 +1,6 @@
 ---
 title: Create and manage streaming virtual network data gateway
-description: Learn how to create and manage streaming virtual network data gateway.
+description: Learn how to create and manage a streaming virtual network data gateway.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -10,16 +10,16 @@ ms.date: 01/27/2026
 ms.search.form: Eventstream connector private network support
 ---
 
-# Create and manage streaming virtual network data gateway
+# Create and manage a Streaming virtual network data gateway
 
-The streaming virtual network data gateway provides an abstraction of the Azure virtual network and its subnet resources within Fabric. It allows Eventstream’s streaming connector service to use the Azure virtual network and subnet resource, injecting the connector into this Azure virtual network. As a result, Eventstream’s streaming connector can access streaming sources within a private network to collect real-time data for Fabric.
+A Streaming virtual network data gateway provides an abstraction of the Azure virtual network and its subnet resources within Fabric. It allows Eventstream’s streaming connector service to use the Azure virtual network and subnet resource, injecting the connector into this Azure virtual network. As a result, Eventstream’s streaming connector can access streaming sources within a private network to collect real-time data for Fabric.
 
 ## Create a streaming virtual network data gateway
 
 Before you create a streaming virtual network data gateway, you must complete the following prerequisites:
 
-- Register the ‘Microsoft.MessagingConnectors’ resource provider in your Azure subscription. For detailed steps, see [Register the connector resource provider](./streaming-connector-private-network-support-guide.md#prerequisite-1-register-the-connector-resource-provider). 
-- Create an Azure virtual network with a subnet and delegate a subnet to ‘Microsoft.MessagingConnectors’. For detailed steps, see [Set up an Azure virtual network](./streaming-connector-private-network-support-guide.md#prerequisite-2-set-up-an-azure-virtual-network).
+- Register the `Microsoft.MessagingConnectors` resource provider in your Azure subscription. For detailed steps, see [Register the connector resource provider](./streaming-connector-private-network-support-guide.md#prerequisite-1-register-the-connector-resource-provider). 
+- Create an Azure virtual network with a subnet and delegate a subnet to `Microsoft.MessagingConnectors`. For detailed steps, see [Set up an Azure virtual network](./streaming-connector-private-network-support-guide.md#prerequisite-2-set-up-an-azure-virtual-network).
 
 After completing these prerequisites, you can create a streaming virtual network data gateway. 
 
@@ -33,7 +33,7 @@ When adding sources to your eventstream in Fabric, select a source, that is, Azu
 
 :::image type="content" source="media/streaming-connector-vnet-on-prem-support/create-data-gateway.png" alt-text="Screenshot of showing how to create streaming virtual network data gateway." lightbox="media/streaming-connector-vnet-on-prem-support/create-data-gateway.png":::
 
-After a streaming virtual network data gateway is created, it's available in Fabric: **Manage Connections and Gateways > Streaming virtual network data gateways** tab where you can manage it. In this page, it lists all the streaming virtual network data gateways that you have the permission to access. In each item row, it shows the corresponding Azure virtual network resource details.
+After a Streaming virtual network data gateway is created, it's available in Fabric: **Manage Connections and Gateways > Streaming virtual network data gateways** tab where you can manage it. In this page, it lists all the streaming virtual network data gateways that you have the permission to access. In each item row, it shows the corresponding Azure virtual network resource details.
 
 :::image type="content" source="media/create-manage-streaming-virtual-network-data-gateways/manage.png" alt-text="Screenshot of showing where to manage to stream virtual network data gateways." lightbox="media/create-manage-streaming-virtual-network-data-gateways/manage.png":::
 
@@ -56,7 +56,7 @@ You can update the name and description of a streaming virtual network data gate
 You can delete a streaming virtual network data gateway. Select the **More actions** menu for the gateway, and then select **Remove**.
 
 > [!NOTE]  
-> If a streaming virtual network data gateway is deleted, any connections that reference this data gateway will also be deleted.
+> If a Streaming virtual network data gateway is deleted, any connections that reference this data gateway are also deleted.
 
 :::image type="content" source="media/create-manage-streaming-virtual-network-data-gateways/delete.png" alt-text="Screenshot of showing how to delete streaming virtual network data gateways." lightbox="media/create-manage-streaming-virtual-network-data-gateways/delete.png":::
 
