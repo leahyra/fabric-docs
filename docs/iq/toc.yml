@@ -56,7 +56,7 @@ items:
 - name: Graph in Microsoft Fabric
   href: ../graph/toc.yml
 - name: Operations agent
-  href: ../real-time-intelligence/includes/operations-agent-toc.yml
+  href: ../real-time-intelligence/tocs/operations-agent-toc.yml
 - name: Fabric data agent
   href: ../data-science/concept-data-agent.md
 - name: Power BI semantic model

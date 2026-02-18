@@ -940,8 +940,8 @@ items:
   - name: Build AI agents
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:
-      - name: Operations agents
-        href: includes/operations-agent-toc.yml
+      - name: Operations agent
+        href: tocs/operations-agent-toc.yml
       - name: Fabric RTI MCP Server (preview)
         href: mcp-overview.md
       - name: Use MCP with Eventhouse
