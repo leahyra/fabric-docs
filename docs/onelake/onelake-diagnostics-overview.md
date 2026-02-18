@@ -90,6 +90,8 @@ OneLake saves your diagnostic lakehouse information. If you re-enable diagnostic
 
 ## Best practice recommendations
 
+Follow these recommendations to simplify management and improve access control.
+
 - **Use a dedicated workspace for diagnostic logs.** If you enable diagnostics across multiple workspaces in the same capacity, consider centralizing logs in a single lakehouse to make analysis easier. A dedicated workspace isolates permissions and prevents operational workloads from interfering with audit data.
 
 If you enable immutable diagnostic logs, also consider these practices:
