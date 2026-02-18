@@ -3,11 +3,10 @@ title: What's new? archive
 description: An archive of new feature announcements and documentation improvements for Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: rymajidi, sngun
+ms.reviewer: rymajidi
 ms.date: 02/06/2026
 ms.update-cycle: 180-days
 ms.topic: whats-new
-ms.custom:
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -458,7 +457,7 @@ This section summarizes archived improvements and features for SQL database in M
 |January 2025|**SQL databases billing begins**|After February 1, 2025, [compute and data storage for SQL database](../database/sql/usage-reporting.md) are charged to your Fabric capacity. Additionally, backup billing will start after April 1, 2025. For more information, see [Activation of billing for SQL database in Fabric](https://blog.fabric.microsoft.com/blog/announcing-the-activation-of-billing-for-sql-database-in-fabric?ft=All).|
 |January 2025|**Ask the Experts – Fabric Databases – Livestream January 29!**|Join us for a [live Q&A session on the new Fabric Databases experience](https://blog.fabric.microsoft.com/blog/ask-the-experts-fabric-databases-livestream-january-29?ft=All)! Our product engineering team will answer your top questions in real time.|
 
-#### SQL database in Microsoft Fabric (Preview) samples and guidance
+#### SQL database in Microsoft Fabric samples and guidance
 
 |**Month** | **Feature** | **Learn more**|
 |:-- |:-- | :-- |
@@ -539,7 +538,6 @@ This section summarizes archived improvements and features for [Data Warehouse i
 |:-- |:-- | :-- |
 |October 2025|**Simplifying file access in OPENROWSET using data sources and relative paths (Preview)**|You can [access Lakehouse and ADLS files in OPENROWSET using data sources and relative paths](https://blog.fabric.microsoft.com/blog/simplifying-file-access-in-openrowset-using-data-sources-and-relative-paths-preview?ft=All), making SQL queries easier and more maintainable. For more information, see [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?view=fabric&preserve-view=true).|
 |October 2025|**Resolving Write Conflicts in Fabric Data Warehouse**|The blog [Resolving Write Conflicts in Microsoft Fabric Data Warehouse](https://blog.fabric.microsoft.com/blog/concurrency-control-and-conflict-resolution-in-microsoft-fabric-data-warehouse?ft=All) explains snapshot isolation, write-write conflicts, and new compaction preemption to improve concurrency. |
-|October 2025|**Understanding Locking and DDL Blocking**|[Understanding Locking and DDL Blocking in Microsoft Fabric Data Warehouse](https://blog.fabric.microsoft.com/blog/locking-and-ddl-blocking-behavior-in-microsoft-fabric-data-warehouse-what-you-need-to-know?ft=All) explains table-level locking, DDL blocking, and best practices for managing concurrency in Fabric Data Warehouse.|
 |October 2025|**Understanding Locking and DDL Blocking**|The blog post [Understanding Locking and DDL Blocking in Microsoft Fabric Data Warehouse](https://blog.fabric.microsoft.com/blog/locking-and-ddl-blocking-behavior-in-microsoft-fabric-data-warehouse-what-you-need-to-know?ft=All) explains table-level locking, DDL blocking, and best practices for managing concurrency in Fabric Data Warehouse.|
 |September 2025|**A Guide: Migrating to Fabric Data Warehouse**|Read for [resources, tools, roadmaps, and more for migration to Fabric Data Warehouse](https://blog.fabric.microsoft.com/blog/migrating-to-fabric-data-warehouse-guide-now-available?ft=All). |
 |June 2025|**Make your scalar user-defined functions (UDFs) inlineable**|[Scalar user-defined functions (UDFs) are now supported](https://blog.fabric.microsoft.com/blog/inline-scalar-user-defined-functions-udfs-in-microsoft-fabric-warehouse-preview?ft=All) and inlining is an importance concept to understand. For more information, see [How to make your SQL scalar user-defined function (UDF) inlineable in Microsoft Fabric Warehouse](https://blog.fabric.microsoft.com/blog/how-to-make-your-sql-scalar-user-defined-function-udf-inlineable-in-microsoft-fabric-warehouse?ft=All).|
@@ -685,3 +683,4 @@ This section includes guidance and documentation updates on development process,
 - [Microsoft Fabric terminology](../fundamentals/fabric-terminology.md)
 - [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
 - [What's new in Microsoft Fabric?](whats-new.md)
+
