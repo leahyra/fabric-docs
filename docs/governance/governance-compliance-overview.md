@@ -14,10 +14,6 @@ Microsoft Fabric governance and compliance provides a set of capabilities that h
 
 This article describes at a high level the main features and components that help you govern your organization's data estate, and includes some guidance regarding taking advantage of the capabilities these features and components offer. It also provides links to more detailed information about each feature and component.
 
-## Organizational ownership for data governance
-
-Data Governance in Fabric is typically owned by a cross-functional Center of Excellence (COE) or the Data/Analytics organization, distinct from Cybersecurity and Records/Compliance teams. While Cybersecurity focuses on platform and network security controls, and Records Management ensures regulatory compliance and data retention, Data Governance establishes policies for data quality, cataloging, domain design, endorsement standards, and tagging practices. The Data Governance COE defines governance frameworks, manages domain taxonomy and ownership assignments, aligns with Microsoft Purview policies, and ensures data is discoverable, trustworthy, and fit for use across the organization.
-
 | [Manage your data estate](#manage-your-data-estate) | [Secure, protect, and comply](#secure-protect-and-comply) | [Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use) | [Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act) |
 |:-|:-|:-|:-|
 | [Admin portal](#admin-portal) | [Privacy](#privacy) | [OneLake data hub](#onelake-data-hub) | [Monitoring hub](#monitoring-hub) |
