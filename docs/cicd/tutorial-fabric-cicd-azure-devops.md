@@ -48,7 +48,7 @@ Alex's Notebooks use the `%%configure` magic command to attach to a specific Lak
 The following diagram illustrates the flow of the tutorial.
 
 
- :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/flow.png" alt-text="Conceptual flow of the architecture of the tutorial." lightbox="media/tutorial-fabric-cicd-azure-devops/flow.png":::
+ :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/flow-1.png" alt-text="Conceptual flow of the architecture of the tutorial." lightbox="media/tutorial-fabric-cicd-azure-devops/flow-1.png":::
 
 ## 3. Prerequisites
 
