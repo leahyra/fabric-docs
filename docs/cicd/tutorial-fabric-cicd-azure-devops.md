@@ -44,18 +44,11 @@ Alex's Notebooks use the `%%configure` magic command to attach to a specific Lak
 | **Service Principal (SPN)** | Authenticates against the Fabric REST API |
 
 
-
 ## 2. Architecture Diagram
 The following diagram illustrates the flow of the tutorial.
 
 
  :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/flow.png" alt-text="Conceptual flow of the architecture of the tutorial." lightbox="media/tutorial-fabric-cicd-azure-devops/flow.png":::
-
-
-
-
-
-
 
 ## 3. Prerequisites
 
@@ -76,12 +69,12 @@ Before you begin, make sure you have the following in place:
 
 ### Download the source files
 
-1. Fork the [Fabric-cicd repository](https://aka.ms/fabric-cicd) to your GitHub account.
+1. Fork the [Fabric-samples repository](https://github.com/microsoft/fabric-samples) to your GitHub account.
 2. Clone your fork to your local machine:
 
 ```pwsh
-git clone https://github.com/<your-account>/fabric-cicd.git
-cd fabric-cicd
+git clone https://github.com/<your-account>/fabric-samples.git
+cd fabric-samples
 ```
 
 
