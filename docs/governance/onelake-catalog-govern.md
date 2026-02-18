@@ -35,7 +35,6 @@ The first time you open the Govern tab, it might take a few moments for the insi
 
 When Fabric Admins access the Govern tab, they see **All Data in Fabric** by default. They can switch to their own items' governance state by selecting **My items**. Data owners see their own items view by default.
 
-
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-left-rail-navigation.png" alt-text="Screenshot showing how admins can switch between views." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-left-rail-navigation.png":::
 
 ## Scope the insights and recommended actions by domain
