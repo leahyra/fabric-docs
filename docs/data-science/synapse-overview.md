@@ -60,7 +60,7 @@ SynapseML is generally available on Azure Synapse Analytics with enterprise supp
 
 ### Using AI services in Fabric
 
-- [AI Functions overview](ai-functions/overview.md) - Simplest approach for text transofmration operations
+- [AI Functions overview](ai-functions/overview.md) - Simplest approach for text transformration operations
 - [Use Azure OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md) - Distributed processing for large-scale workloads
 - [Use Azure OpenAI with Python SDK](ai-services/how-to-use-openai-python-sdk.md) - Fine-grained control for single API calls
 - [Azure AI services in SynapseML with bring-your-own-key](ai-services/ai-services-in-synapseml-bring-your-own-key.md) - Specialized AI services
