@@ -103,7 +103,7 @@ try {
 
     $databaseProperties = (Invoke-RestMethod -Headers $headers -Uri https://api.fabric.microsoft.com/v1/workspaces/$($workspaceid)/SqlDatabases/$($databaseid) | select -ExpandProperty Properties)
 
-    #4. Connnect to the database and create a table
+    #4. Connect to the database and create a table
 
     Write-Host 'Attempting to connect to the database.'
 
@@ -201,7 +201,7 @@ Invoke-RestMethod -Headers $headers -Uri https://api.fabric.microsoft.com/v1/wor
 
 $databaseProperties = (Invoke-RestMethod -Headers $headers -Uri https://api.fabric.microsoft.com/v1/workspaces/$($workspaceid)/SqlDatabases/$($databaseid) | select -ExpandProperty Properties)
 
-#4. Connnect to the database and create a table
+#4. Connect to the database and create a table
 
 Write-Host 'Attempting to connect to the database.'
 
