@@ -111,7 +111,7 @@ For information about available models and consumption rates, see [AI Services c
 
 ### Fabric documentation
 
-- [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md) for large scale dataset transofrmations in Fabric for Pandas or PySpark DataFrames
+- [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md) for large scale dataset transformations in Fabric for Pandas or PySpark DataFrames
 - [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing using Spark DataFrames with no overhead
 - [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint
 
