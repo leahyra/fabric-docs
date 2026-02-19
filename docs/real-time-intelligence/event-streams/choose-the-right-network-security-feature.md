@@ -243,7 +243,7 @@ When choosing a network security feature, keep these limitations in mind:
 
 - [Connect to Azure resources securely using managed private endpoints](set-up-private-endpoint.md)
 - [Secure inbound connections with Tenant and Workspace Private Links](set-up-tenant-workspace-private-links.md)
-- * [Streaming connector private network support overview](./streaming-connector-private-network-support-overview.md)
+- [Streaming connector private network support overview](./streaming-connector-private-network-support-overview.md)
 - [Security in Microsoft Fabric](../../security/security-overview.md)
 - [Overview of managed private endpoints](../../security/security-managed-private-endpoints-overview.md)
 - [Private links for Fabric tenants](../../security/security-private-links-overview.md)

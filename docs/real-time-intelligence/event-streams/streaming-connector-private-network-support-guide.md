@@ -256,5 +256,6 @@ In Live view, Azure service bus source is Active, and the data should be flowing
 
 ## Related content
 
-* [Streaming connector private network support overview](./streaming-connector-private-network-support-overview.md)
-* [Create and managed streaming virtual network data gateway](./create-manage-streaming-virtual-network-data-gateways.md)
+- [Eventstream streaming connector private network support overview](./streaming-connector-private-network-support-overview.md)
+- [Create and managed streaming virtual network data gateway](./create-manage-streaming-virtual-network-data-gateways.md)
+- [Choose the right network security feature for Eventstream](./choose-the-right-network-security-feature.md)

@@ -61,3 +61,10 @@ To get the detailed step-to-step configuration guide, check out the [Streaming C
 
 - **Race condition issue may occur when creating and deleting vNet connector with same virtual network’s subnet configured at same time**  
     If you delete a connector source with a virtual network subnet configured and add a new connector source with the same subnet in Eventstream's edit mode, publishing both changes might cause race condition conflicts. To prevent this issue, follow these steps: delete the connector source with virtual network in Edit mode -> publish the eventstream -> reenter edit mode -> add the new connector source with virtual network -> and publish again.
+
+
+## Related content
+
+- [Eventstream streaming connector private network support guide](./streaming-connector-private-network-support-guide.md)
+- [Create and managed streaming virtual network data gateway](./create-manage-streaming-virtual-network-data-gateways.md)
+- [Choose the right network security feature for Eventstream](./choose-the-right-network-security-feature.md)

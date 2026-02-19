@@ -62,5 +62,5 @@ You can delete a streaming virtual network data gateway. Select the **More actio
 
 ## Next step
 
-- [Eventstream Streaming Connector Private Network Support Overview](./streaming-connector-private-network-support-overview.md)
-- [Streaming Connector Private Network Support Guide](./streaming-connector-private-network-support-guide.md)
+- [Eventstream streaming connector private petwork support overview](./streaming-connector-private-network-support-overview.md)
+- [Eventstream streaming connector private petwork support guide](./streaming-connector-private-network-support-guide.md)
