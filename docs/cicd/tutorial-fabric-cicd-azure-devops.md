@@ -102,7 +102,7 @@ Your Service Principal credentials (Tenant ID, Client ID, and Secret) should **n
 
 3. **Grant Access:** The ADO service connection (or the ADO project identity) must have **Get** and **List** permissions on secrets in the Key Vault's Access Policies (or RBAC role `Key Vault Secrets User`).
 
-![Azure Key Vault - Secrets Blade](images/keyvault-secrets.png)
+   :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/keyvault-secrets.png" alt-text="Screenshot of adding variables to a pipeline." lightbox="media/tutorial-fabric-cicd-azure-devops/keyvault-secrets.png":::
 
 ---
 
@@ -129,7 +129,7 @@ This variable group is **linked to Azure Key Vault**, meaning the secret values 
 | `azclientid` | Azure Key Vault | ✅ Yes |
 | `azspnsecret` | Azure Key Vault | ✅ Yes |
 
-![ADO Variable Group - fabric_cicd_group_sensitive](images/variable-group-sensitive.png)
+   :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/variable-group-sensitive.png" alt-text="Screenshot of the variable group." lightbox="media/tutorial-fabric-cicd-azure-devops/variable-group-sensitive.png":::
 
 > ⚠️ **Important:** Because these variables are linked to Key Vault, they are accessed in the pipeline YAML as `$(aztenantid)`, `$(azclientid)`, and `$(azspnsecret)`. They are automatically masked in logs.
 
@@ -155,7 +155,7 @@ This variable group stores **non-secret configuration values** — specifically 
 
 5. Click **Save**.
 
-![ADO Variable Group - fabric_cicd_group_non_sensitive](images/variable-group-nonsensitive.png)
+   :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/variable-group-non-sensitive.png" alt-text="Screenshot of the non-sensitive variable group." lightbox="media/tutorial-fabric-cicd-azure-devops/variable-group-non-sensitive.png":::
 
 > 💡 **How It Works in Code:** The Python script reads these values using `os.environ`. For example, when deploying to `test`, the script constructs the variable name `testWorkspaceName`, converts it to uppercase (`TESTWORKSPACENAME`), and reads it from the environment — because ADO automatically injects non-sensitive variable group values as environment variables in uppercase.
 
@@ -179,7 +179,7 @@ ADO **Environments** allow you to add **manual approval checks** before deployme
 3. For `test` and `prod`, click on the environment → **⋮ (More options)** → **Approvals and checks** → **+ Add check** → **Approvals**.
 4. Add the required approvers.
 
-![ADO Environments - dev, test, prod](images/ado-environments.png)
+   :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/ado-environments.png" alt-text="Screenshot of ado environments." lightbox="media/tutorial-fabric-cicd-azure-devops/ado-environments.png":::
 
 **Example Environment Status View:**
 
@@ -238,7 +238,7 @@ Create a pipeline in ADO that references the YAML file in your repo.
 
 ## 5. Code Deep Dive: ADO Pipeline YAML
 
-**File:** `Deploy-To-Fabric.yml` — 📄 See full source: [code/Deploy-To-Fabric.yml](code/Deploy-To-Fabric.yml)
+**File:** `Deploy-To-Fabric.yml` — located in the GitHub repo downloaded earlier.
 
 Below is the full pipeline with line-by-line annotations.
 
@@ -381,7 +381,7 @@ stages:
 
 ## 6. Code Deep Dive: Python Deployment Script
 
-**File:** `.deploy/deploy-to-fabric.py` — 📄 See full source: [code/deploy-to-fabric.py](code/deploy-to-fabric.py)
+**File:** `.deploy/deploy-to-fabric.py` — located in the GitHub repo downloaded earlier.
 
 This is the heart of the deployment. Let's walk through each section.
 
@@ -560,10 +560,9 @@ The `fabric-cicd` package looks for a file named `parameter.yml` in the `.deploy
 > 💡 **Tip:** The `parameter.yml` find-and-replace feature supports **many approaches** beyond what's shown in this tutorial — including regex patterns, file-scoped replacements, and more. For the full list of options and advanced usage, see the official documentation:
 > 👉 [fabric-cicd Parameter File Documentation](https://microsoft.github.io/fabric-cicd/)
 
-> 💡 **Tip — Variable Library:** It is recommended to leverage **Variable Library** whenever possible to manage environment-specific values, rather than relying solely on `find_replace` in parameter files. Variable Libraries provide a centralized, reusable way to manage configuration across environments. For more information, see [Get started with Variable Libraries](https://learn.microsoft.com/en-us/fabric/cicd/variable-library/get-started-variable-libraries?tabs=home-page).
+> 💡 **Tip — Variable Library:** It is recommended to leverage **Variable Library** whenever possible to manage environment-specific values, rather than relying solely on `find_replace` in parameter files. Variable Libraries provide a centralized, reusable way to manage configuration across environments. For more information, see [Get started with Variable Libraries](../cicd/variable-library/get-started-variable-libraries.md?tabs=home-page).
 
-**File:** `parameter.yml` — 📄 See full source: [code/parameter.yml](code/parameter.yml)
-
+**File:** `parameter.yml` — located in the GitHub repo downloaded earlier.
 ---
 
 ### 7.1 Parameter File Structure
@@ -793,6 +792,6 @@ This tutorial demonstrated a production-grade CI/CD workflow for Microsoft Fabri
 
 > 📚 **Further Reading:**
 > - [`fabric-cicd` documentation](https://pypi.org/project/fabric-cicd/)
-> - [Microsoft Fabric Git Integration](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration)
-> - [Azure DevOps Environments & Approvals](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/environments)
-> - [Azure Key Vault linked Variable Groups](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/link-variable-groups-to-key-vaults)
+> - [Microsoft Fabric Git Integration](../cicd/git-integration/intro-to-git-integration.md)
+> - [Azure DevOps Environments & Approvals](/azure/devops/pipelines/process/environments)
+> - [Azure Key Vault linked Variable Groups](/azure/devops/pipelines/library/link-variable-groups-to-key-vaults)
