@@ -153,6 +153,6 @@ For information about available models and consumption rates, see [AI Services c
 
 ## Related content
 
-- [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md) for large scale dataset transofrmations in Fabric for Pandas or PySpark DataFrames
+- [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md) for large scale dataset transformations in Fabric for Pandas or PySpark DataFrames
 - [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for pythonic control over single API calls using OpenAI Python SDK
 - [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint
