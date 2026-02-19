@@ -454,7 +454,7 @@ change_log_level("DEBUG")
 | Setting | Purpose |
 |---|---|
 | `enable_shortcut_publish` | Enables deployment of **Lakehouse shortcuts** — a feature that's opt-in via feature flag in `fabric-cicd`. |
-| `DEBUG` log level | Provides verbose output during deployment — very helpful for troubleshooting. Reduce to `INFO` or `WARNING` in production. The `"DEBUG"` argument is optional — calling `change_log_level()` without it will also enable more verbose logging. |
+| `DEBUG` log level | Provides verbose output during deployment — very helpful for troubleshooting. The `"DEBUG"` argument is optional — calling `change_log_level()` without it will also enables more verbose logging. Remove the change_log_level() if debug logs are not required.|
 
 ---
 
@@ -571,8 +571,8 @@ The `fabric-cicd` package looks for a file named `parameter.yml` in the `.deploy
 find_replace:
  - find_value: "bfddf0b6-5b74-461a-a963-e89ddc32f852"  # DEV Workspace ID
  replace_value:
-  test: "$workspace.id"         # Replaced with TEST workspace ID
-  prod: "$workspace.id"         # Replaced with PROD workspace ID
+  test: " $workspace.$id"         # Replaced with TEST workspace ID
+  prod: " $workspace.$id"         # Replaced with PROD workspace ID
 ```
 
 ### 🔍 Understanding Each Entry
@@ -582,12 +582,12 @@ find_replace:
 ```yaml
 - find_value: "bfddf0b6-5b74-461a-a963-e89ddc32f852" # DEV Workspace ID
  replace_value:
- test: "$workspace.id" # Auto-resolves to the TEST workspace's actual ID
- prod: "$workspace.id" # Auto-resolves to the PROD workspace's actual ID
+ test: " $workspace.$id" # Auto-resolves to the TEST workspace's actual ID
+ prod: " $workspace.$id" # Auto-resolves to the PROD workspace's actual ID
 ```
 
 - **`find_value`**: The GUID found in the Notebook's `%%configure` command — this is the **DEV** workspace ID.
-- **`replace_value`**: The `$workspace.id` is a **built-in token** in `fabric-cicd` that automatically resolves to the target workspace's ID at deployment time.
+- **`replace_value`**: The ` $workspace.$id` is a **built-in token** in `fabric-cicd` that automatically resolves to the target workspace's ID at deployment time.
 - Since `dev` isn't listed in `replace_value`, the GUID is only replaced when deploying to `test` or `prod`.
 
 #### Entry 2 — Lakehouse ID Replacement
@@ -620,7 +620,7 @@ find_replace:
 
 | Token | Resolves To |
 |---|---|
-| `$workspace.id` | The target workspace's GUID |
+| ` $workspace.$id` | The target workspace's GUID |
 | `$items.Lakehouse.<name>.$id` | The GUID of a Lakehouse named `<name>` in the target workspace |
 | `$items.<ItemType>.<ItemName>.$id` | Generic pattern for any item type |
 | `$items.Lakehouse.<name>.$sqlendpointid` | The SQL endpoint GUID of a Lakehouse (resolved dynamically) |
@@ -634,9 +634,9 @@ For teams using **feature branches** (not just `dev`), there's a variant paramet
 ```yaml
 - find_value: "d34e3a2a-96ba-4461-9a80-496894ca4cda" # Feature branch Workspace ID
  replace_value:
- dev: "$workspace.id"
- test: "$workspace.id"
- prod: "$workspace.id"
+ dev: " $workspace.$id"
+ test: " $workspace.$id"
+ prod: " $workspace.$id"
 ```
 
 This is useful when developers work in their own Fabric workspaces and need GUIDs replaced even when deploying to DEV.
@@ -784,7 +784,7 @@ This tutorial demonstrated a production-grade CI/CD workflow for Microsoft Fabri
 ### Key Takeaways
 
 1. **Only the `dev` branch is connected to a Fabric workspace** — `test` and `prod` branches serve as deployment records.
-2. **`fabric-cicd`'s parameter files** handle GUID replacement automatically using dynamic tokens like `$workspace.id` and `$items.Lakehouse.<name>.id`.
+2. **`fabric-cicd`'s parameter files** handle GUID replacement automatically using dynamic tokens like ` $workspace.$id` and `$items.Lakehouse.<name>.id`.
 3. **ADO Environments with approvals** provide governance — no deployment to higher environments without explicit approval.
 4. **Service Principal authentication** via Azure Key Vault ensures credentials are never exposed in code or logs.
 

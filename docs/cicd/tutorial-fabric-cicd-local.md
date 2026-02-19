@@ -25,11 +25,11 @@ In this tutorial, you set up a basic development environment and use the fabric-
 
 ## Step 1. Download the source files
 
-1. Fork the [Fabric-cicd repository](https://github.com/microsoft/fabric-samples) to your GitHub account.
+1. Fork the [Fabric-cicd repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/cicd/fabric-cicd-local) to your GitHub account.
 2. Clone your fork to your local machine:
 
 ```pwsh
-git clone https://github.com/<your-account>/fabric-samples.git
+git clone https://github.com/<your-account>/fabric-samples/tree/main/docs-samples/cicd/fabric-cicd-local.git
 cd fabric-samples
 ```
 
