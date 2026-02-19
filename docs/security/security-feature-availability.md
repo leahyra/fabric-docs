@@ -11,7 +11,7 @@ ms.topic: concept-article
 
 # Security feature availability in Microsoft Fabric
 
-Microsoft Fabric supports various security features across different workloads and items. This article is continuously updated with the availability of the following security features for Fabric items:
+Microsoft Fabric supports various security features across different workloads and items. This article is continually updated with the availability of the following security features for Fabric items:
 
 * [Workspace private links](security-workspace-level-private-links-overview.md)
 * [Customer managed keys](workspace-customer-managed-keys.md)
