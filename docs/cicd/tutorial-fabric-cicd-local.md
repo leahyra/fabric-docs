@@ -75,7 +75,7 @@ Using the terminal from within VS Code, sign-in using az login.
 az login
 ```
 >[!NOTE]
-> If you're using a trial or have no Azure subscriptions associated with your account you can use the following:
+> If you're using a trial or have no Azure subscriptions associated with your account you can use the --allow-no-subscriptions switch.
 >
 >  az login --allow-no-subscriptions
 >

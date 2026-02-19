@@ -91,7 +91,7 @@ Your Service Principal credentials (Tenant ID, Client ID, and Secret) should **n
 
 #### Steps to Set Up Azure Key Vault
 
-1. **Create a Key Vault** in the Azure Portal (or use an existing one).
+1. **Create a Key Vault** in the Azure portal (or use an existing one).
 2. **Add three secrets:**
 
  | Secret Name | Description | Example Value |
@@ -131,13 +131,14 @@ This variable group is **linked to Azure Key Vault**, meaning the secret values 
 
    :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/variable-group-sensitive.png" alt-text="Screenshot of the variable group." lightbox="media/tutorial-fabric-cicd-azure-devops/variable-group-sensitive.png":::
 
-> ⚠️ **Important:** Because these variables are linked to Key Vault, they are accessed in the pipeline YAML as `$(aztenantid)`, `$(azclientid)`, and `$(azspnsecret)`. They are automatically masked in logs.
+> [!IMPORTANT] 
+> Because these variables are linked to Key Vault, they are accessed in the pipeline YAML as `$(aztenantid)`, `$(azclientid)`, and `$(azspnsecret)`. They are automatically masked in logs.
 
 ---
 
 ### 4.3 Variable Group: `fabric_cicd_group_non_sensitive`
 
-This variable group stores **non-secret configuration values** — specifically the workspace names per environment and the Git directory path.
+This variable group stores **non-secret configuration values**-specifically the workspace names per environment and the Git directory path.
 
 #### Steps to Create
 
@@ -157,7 +158,7 @@ This variable group stores **non-secret configuration values** — specifically 
 
    :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/variable-group-non-sensitive.png" alt-text="Screenshot of the non-sensitive variable group." lightbox="media/tutorial-fabric-cicd-azure-devops/variable-group-non-sensitive.png":::
 
-> 💡 **How It Works in Code:** The Python script reads these values using `os.environ`. For example, when deploying to `test`, the script constructs the variable name `testWorkspaceName`, converts it to uppercase (`TESTWORKSPACENAME`), and reads it from the environment — because ADO automatically injects non-sensitive variable group values as environment variables in uppercase.
+> 💡 **How It Works in Code:** The Python script reads these values using `os.environ`. For example, when deploying to `test`, the script constructs the variable name `testWorkspaceName`, converts it to uppercase (`TESTWORKSPACENAME`), and reads it from the environment-because ADO automatically injects non-sensitive variable group values as environment variables in uppercase.
 
 ---
 
@@ -204,7 +205,7 @@ The branching strategy is central to this CI/CD setup. You need **three long-liv
 
 | Branch | Connected to Fabric Workspace? | Purpose |
 |---|---|---|
-| `dev` | ✅ **Yes** — synced with the DEV workspace | Source of truth. Changes made in the DEV workspace are committed here. |
+| `dev` | ✅ **Yes**-synced with the DEV workspace | Source of truth. Changes made in the DEV workspace are committed here. |
 | `test` | ❌ **No** | Receives promoted items via PR merge. Tracks what's deployed to TEST. |
 | `prod` | ❌ **No** | Receives promoted items via PR merge. Tracks what's deployed to PROD. |
 
@@ -230,7 +231,7 @@ Create a pipeline in ADO that references the YAML file in your repo.
 6. Under **Pipeline permissions**, ensure it has access to:
  - Both variable groups (`fabric_cicd_group_sensitive` and `fabric_cicd_group_non_sensitive`)
  - All three environments (`dev`, `test`, `prod`)
-7. **Save** (do not run yet).
+7. **Save** (don't run yet).
 
 > ⚠️ **Permission Tip:** The first time the pipeline runs, ADO may prompt you to authorize access to the variable groups and environments. An ADO admin can pre-authorize these under Pipeline → Settings.
 
@@ -238,7 +239,7 @@ Create a pipeline in ADO that references the YAML file in your repo.
 
 ## 5. Code Deep Dive: ADO Pipeline YAML
 
-**File:** `Deploy-To-Fabric.yml` — located in the GitHub repo downloaded earlier.
+**File:** `Deploy-To-Fabric.yml`-located in the GitHub repo downloaded earlier.
 
 Below is the full pipeline with line-by-line annotations.
 
@@ -255,17 +256,17 @@ trigger:
   - fabric/**
 ```
 
-### 🔍 Explanation — Trigger
+### 🔍 Explanation-Trigger
 
-- The pipeline auto-triggers on commits to the `test` or `prod` branches. It does **not** trigger on `dev` — because `dev` is the source branch connected to Fabric Git integration.
-- The `paths` filter ensures it **only triggers** when files inside the `fabric/` directory are changed — preventing unnecessary runs from changes to documentation, scripts, etc.
+- The pipeline auto-triggers on commits to the `test` or `prod` branches. It does **not** trigger on `dev`-because `dev` is the source branch connected to Fabric Git integration.
+- The `paths` filter ensures it **only triggers** when files inside the `fabric/` directory are changed-preventing unnecessary runs from changes to documentation, scripts, etc.
 - In practice: when a PR is merged from `dev` → `test`, the merge commit lands on the `test` branch, triggering the pipeline targeting the TEST environment.
 
 ---
 
 ```yaml
 # ──────────────────────────────────────────────────────────────
-# PARAMETERS: Runtime input — which Fabric item types to deploy
+# PARAMETERS: Runtime input-which Fabric item types to deploy
 # ──────────────────────────────────────────────────────────────
 parameters:
  - name: items_in_scope
@@ -274,13 +275,13 @@ parameters:
  default: '["Notebook","DataPipeline","Lakehouse","SemanticModel","Report","VariableLibrary"]'
 ```
 
-### 🔍 Explanation — Parameters
+### 🔍 Explanation-Parameters
 
 - This defines a **runtime parameter** that controls which Fabric item types are in scope for deployment.
-- If this parameter isn specified, all item types supported by the `fabric-cicd` package will be deployed.
-- This also serves as an option for **selective deployment** — for example, you could pass only `["Notebook"]` to deploy just Notebooks.
+- If this parameter isn't specified, all item types supported by the `fabric-cicd` package will be deployed.
+- This also serves as an option for **selective deployment**-for example, you could pass only `["Notebook"]` to deploy just Notebooks.
 
-> ⚠️ **Selective Deployment Warning:** If you narrow `items_in_scope` for a selective deployment, you should **not** call `unpublish_all_orphan_items()` in the Python script — because it will remove items **of the types specified in `items_in_scope`** that exist in the workspace but are not present in the release branch. For example, if you deploy only `["Notebook"]` and there are Notebooks in the workspace that aren't in the branch, they will be deleted — even though they may still be valid. It will **not** remove items of other types (like Pipelines, Reports, etc.). Only use `unpublish_all_orphan_items()` when the branch represents the complete desired state for the item types in scope.
+> ⚠️ **Selective Deployment Warning:** If you narrow `items_in_scope` for a selective deployment, you should **not** call `unpublish_all_orphan_items()` in the Python script-because it will remove items **of the types specified in `items_in_scope`** that exist in the workspace but aren't present in the release branch. For example, if you deploy only `["Notebook"]` and there are Notebooks in the workspace that aren't in the branch, they will be deleted-even though they may still be valid. It will **not** remove items of other types (like Pipelines, Reports, etc.). Only use `unpublish_all_orphan_items()` when the branch represents the complete desired state for the item types in scope.
 
 ---
 
@@ -295,7 +296,7 @@ variables:
  - group: fabric_cicd_group_non_sensitive
 ```
 
-### 🔍 Explanation — Variables
+### 🔍 Explanation-Variables
 
 | Variable | How It Works |
 |---|---|
@@ -324,7 +325,7 @@ stages:
     steps:
 ```
 
-### 🔍 Explanation — Deployment Job
+### 🔍 Explanation-Deployment Job
 
 | Element | Purpose |
 |---|---|
@@ -366,7 +367,7 @@ stages:
      displayName: 'Run deployment using fabric-cicd'
 ```
 
-### 🔍 Explanation — Steps
+### 🔍 Explanation-Steps
 
 | Step | What It Does |
 |---|---|
@@ -454,7 +455,7 @@ change_log_level("DEBUG")
 | Setting | Purpose |
 |---|---|
 | `enable_shortcut_publish` | Enables deployment of **Lakehouse shortcuts** — a feature that's opt-in via feature flag in `fabric-cicd`. |
-| `DEBUG` log level | Provides verbose output during deployment — very helpful for troubleshooting. The `"DEBUG"` argument is optional — calling `change_log_level()` without it will also enables more verbose logging. Remove the change_log_level() if debug logs are not required.|
+| `DEBUG` log level | Provides verbose output during deployment — very helpful for troubleshooting. The `"DEBUG"` argument is optional — calling `change_log_level()` without it enables more verbose logging. Remove the change_log_level() if debug logs aren't required.|
 
 ---
 
@@ -543,9 +544,9 @@ unpublish_all_orphan_items(target_workspace)
 
 > ⚠️ **IMPORTANT — Understanding `unpublish_all_orphan_items()`:** This method will **delete items of the types specified in `items_in_scope`** from the target workspace that are **not present in the release branch** (i.e., the branch used as the source for the `fabric-cicd` package). It will **not** touch items of other types. In this tutorial, the `test` branch contains **all** the items intended for the TEST workspace, so it is safe to call `unpublish_all_orphan_items()` — it will only remove items that have been intentionally deleted from the branch.
 >
-> However, if you are doing a **selective deployment** (e.g., deploying only Notebooks via a narrowed `items_in_scope`), be cautious with `unpublish_all_orphan_items()` — it would delete any Notebooks in the workspace that are not in the branch, even if they are still valid and were simply not part of the selective release.
+> However, if you are doing a **selective deployment** (e.g., deploying only Notebooks via a narrowed `items_in_scope`), be cautious with `unpublish_all_orphan_items()` — it would delete any Notebooks in the workspace that aren't in the branch, even if they are still valid and were simply not part of the selective release.
 
-> 💡 **Tip:** `unpublish_all_orphan_items()` supports excluding specific items from removal by passing a **regex pattern**. Any items whose names match the regex will be preserved in the workspace even if they are not in the source branch. For more details and usage examples, see the [official API reference](https://microsoft.github.io/fabric-cicd/latest/code_reference/#fabric_cicd.unpublish_all_orphan_items).
+> 💡 **Tip:** `unpublish_all_orphan_items()` supports excluding specific items from removal by passing a **regex pattern**. Any items whose names match the regex will be preserved in the workspace even if they aren't in the source branch. For more details and usage examples, see the [official API reference](https://microsoft.github.io/fabric-cicd/latest/code_reference/#fabric_cicd.unpublish_all_orphan_items).
 
 ---
 
