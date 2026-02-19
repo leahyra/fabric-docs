@@ -1,6 +1,6 @@
 ---
-title: Consume a data agent in Azure AI foundry (preview)
-description: Learn how to consume a data agent in Azure AI foundry (preview).
+title: Consume a data agent in Microsoft Foundry (preview)
+description: Learn how to consume a data agent in Microsoft Foundry (preview).
 ms.topic: how-to
 ms.reviewer: scottpolly
 ms.date: 12/05/2025
