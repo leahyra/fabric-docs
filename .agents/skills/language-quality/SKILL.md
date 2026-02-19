@@ -45,6 +45,6 @@ Use this skill when handling typo, grammar, or coherence-fix requests in this re
 ## Reporting template
 
 - Total files updated.
-- Representative typo fixes (for example, `programatically` -> `programmatically`).
+- Representative typo fixes (for example, corrected misspelled words).
 - Representative grammar or coherence fixes (for example, agreement or wording fixes in changed sentences).
 - Remaining scanner hits that are likely acceptable (for example, acronym-only hits).
