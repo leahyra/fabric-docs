@@ -94,11 +94,11 @@ Your Service Principal credentials (Tenant ID, Client ID, and Secret) should **n
 1. **Create a Key Vault** in the Azure Portal (or use an existing one).
 2. **Add three secrets:**
 
-   | Secret Name | Description | Example Value |
-   |---|---|---|
-   | `aztenantid` | Your Azure AD / Entra ID Tenant ID | `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` |
-   | `azclientid` | The Service Principal's Application (Client) ID | `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` |
-   | `azspnsecret` | The Service Principal's Client Secret value | `your-secret-value` |
+ | Secret Name | Description | Example Value |
+ |---|---|---|
+ | `aztenantid` | Your Azure AD / Entra ID Tenant ID | `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` |
+ | `azclientid` | The Service Principal's Application (Client) ID | `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` |
+ | `azspnsecret` | The Service Principal's Client Secret value | `your-secret-value` |
 
 3. **Grant Access:** The ADO service connection (or the ADO project identity) must have **Get** and **List** permissions on secrets in the Key Vault's Access Policies (or RBAC role `Key Vault Secrets User`).
 
@@ -118,9 +118,9 @@ This variable group is **linked to Azure Key Vault**, meaning the secret values 
 4. Toggle on **Link secrets from an Azure key vault as variables**.
 5. Select your Azure subscription and Key Vault.
 6. Click **+ Add** and select the three secrets:
-   - `aztenantid`
-   - `azclientid`
-   - `azspnsecret`
+ - `aztenantid`
+ - `azclientid`
+ - `azspnsecret`
 7. Click **Save**.
 
 | Variable | Source | Sensitive? |
@@ -170,11 +170,11 @@ ADO **Environments** allow you to add **manual approval checks** before deployme
 1. Navigate to **Pipelines → Environments** in your ADO project.
 2. Create **three environments** with the **exact names** matching your branch names:
 
-   | Environment Name | Approval Required? | Approvers |
-   |---|---|---|
-   | `dev` | ❌ No (auto-deploy) | — |
-   | `test` | ✅ Yes | Admin team / Lead |
-   | `prod` | ✅ Yes | Admin team / Lead |
+ | Environment Name | Approval Required? | Approvers |
+ |---|---|---|
+ | `dev` | ❌ No (auto-deploy) | — |
+ | `test` | ✅ Yes | Admin team / Lead |
+ | `prod` | ✅ Yes | Admin team / Lead |
 
 3. For `test` and `prod`, click on the environment → **⋮ (More options)** → **Approvals and checks** → **+ Add check** → **Approvals**.
 4. Add the required approvers.
@@ -198,7 +198,7 @@ ADO **Environments** allow you to add **manual approval checks** before deployme
 
 The branching strategy is central to this CI/CD setup. You need **three long-lived branches**:
 
-   :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/branch-1.png" alt-text="Conceptual drawing of branch strategy." lightbox="media/tutorial-fabric-cicd-azure-devops/branch-1.png":::
+ :::image type="content" source="media/tutorial-fabric-cicd-azure-devops/branch-1.png" alt-text="Conceptual drawing of branch strategy." lightbox="media/tutorial-fabric-cicd-azure-devops/branch-1.png":::
 
 #### Key Points
 
@@ -228,8 +228,8 @@ Create a pipeline in ADO that references the YAML file in your repo.
 4. Point to the path: `Deploy-To-Fabric.yml` (or wherever you've placed it).
 5. **Name** the pipeline: `fabric_cicd_pipeline`.
 6. Under **Pipeline permissions**, ensure it has access to:
-   - Both variable groups (`fabric_cicd_group_sensitive` and `fabric_cicd_group_non_sensitive`)
-   - All three environments (`dev`, `test`, `prod`)
+ - Both variable groups (`fabric_cicd_group_sensitive` and `fabric_cicd_group_non_sensitive`)
+ - All three environments (`dev`, `test`, `prod`)
 7. **Save** (do not run yet).
 
 > ⚠️ **Permission Tip:** The first time the pipeline runs, ADO may prompt you to authorize access to the variable groups and environments. An ADO admin can pre-authorize these under Pipeline → Settings.
@@ -248,11 +248,11 @@ Below is the full pipeline with line-by-line annotations.
 # Only triggers when changes are in the "fabric/" folder
 # ──────────────────────────────────────────────────────────────
 trigger:
-  branches:
-    include: [test, prod]
-  paths:
-    include:
-      - fabric/**
+ branches:
+ include: [test, prod]
+ paths:
+ include:
+  - fabric/**
 ```
 
 ### 🔍 Explanation — Trigger
@@ -268,16 +268,16 @@ trigger:
 # PARAMETERS: Runtime input — which Fabric item types to deploy
 # ──────────────────────────────────────────────────────────────
 parameters:
-  - name: items_in_scope
-    displayName: Enter Fabric items to be deployed
-    type: string
-    default: '["Notebook","DataPipeline","Lakehouse","SemanticModel","Report","VariableLibrary"]'
+ - name: items_in_scope
+ displayName: Enter Fabric items to be deployed
+ type: string
+ default: '["Notebook","DataPipeline","Lakehouse","SemanticModel","Report","VariableLibrary"]'
 ```
 
 ### 🔍 Explanation — Parameters
 
 - This defines a **runtime parameter** that controls which Fabric item types are in scope for deployment.
-- If this parameter is not specified, all item types supported by the `fabric-cicd` package will be deployed.
+- If this parameter isn specified, all item types supported by the `fabric-cicd` package will be deployed.
 - This also serves as an option for **selective deployment** — for example, you could pass only `["Notebook"]` to deploy just Notebooks.
 
 > ⚠️ **Selective Deployment Warning:** If you narrow `items_in_scope` for a selective deployment, you should **not** call `unpublish_all_orphan_items()` in the Python script — because it will remove items **of the types specified in `items_in_scope`** that exist in the workspace but are not present in the release branch. For example, if you deploy only `["Notebook"]` and there are Notebooks in the workspace that aren't in the branch, they will be deleted — even though they may still be valid. It will **not** remove items of other types (like Pipelines, Reports, etc.). Only use `unpublish_all_orphan_items()` when the branch represents the complete desired state for the item types in scope.
@@ -289,10 +289,10 @@ parameters:
 # VARIABLES: Environment-specific config & secrets
 # ──────────────────────────────────────────────────────────────
 variables:
-  - name: target_env
-    value: ${{ replace(variables['Build.SourceBranch'], 'refs/heads/', '') }}
-  - group: fabric_cicd_group_sensitive
-  - group: fabric_cicd_group_non_sensitive
+ - name: target_env
+ value: ${{ replace(variables['Build.SourceBranch'], 'refs/heads/', '') }}
+ - group: fabric_cicd_group_sensitive
+ - group: fabric_cicd_group_non_sensitive
 ```
 
 ### 🔍 Explanation — Variables
@@ -310,18 +310,18 @@ variables:
 # STAGES & JOBS: Single deployment stage
 # ──────────────────────────────────────────────────────────────
 stages:
-  - stage: DeployToFabric
-    displayName: "Deploy to Fabric Workspace"
-    jobs:
-      - deployment: Deployment
-        displayName: "Deploy Resources"
-        environment: $(target_env)      # ◀── THIS triggers the approval gate!
-        pool:
-          name: Azure Pipelines
-        strategy:
-          runOnce:
-            deploy:
-              steps:
+ - stage: DeployToFabric
+ displayName: "Deploy to Fabric Workspace"
+ jobs:
+  - deployment: Deployment
+  displayName: "Deploy Resources"
+  environment: $(target_env)  # ◀── THIS triggers the approval gate!
+  pool:
+   name: Azure Pipelines
+  strategy:
+   runOnce:
+   deploy:
+    steps:
 ```
 
 ### 🔍 Explanation — Deployment Job
@@ -335,35 +335,35 @@ stages:
 ---
 
 ```yaml
-              steps:
-                # Step 1: Checkout the source code
-                - checkout: self
+    steps:
+    # Step 1: Checkout the source code
+    - checkout: self
 
-                # Step 2: Set up Python 3.12
-                - task: UsePythonVersion@0
-                  inputs:
-                    versionSpec: '3.12'
-                    addToPath: true
-                  displayName: "Set up Python Environment"
+    # Step 2: Set up Python 3.12
+    - task: UsePythonVersion@0
+     inputs:
+     versionSpec: '3.12'
+     addToPath: true
+     displayName: "Set up Python Environment"
 
-                # Step 3: Install dependencies
-                - script: |
-                    python -m pip install --upgrade pip
-                    pip install fabric-cicd
-                  displayName: "Install Fabric CICD Library"
+    # Step 3: Install dependencies
+    - script: |
+     python -m pip install --upgrade pip
+     pip install fabric-cicd
+     displayName: "Install Fabric CICD Library"
 
-                # Step 4: Run the deployment script
-                - task: PythonScript@0
-                  inputs:
-                    scriptSource: 'filePath'
-                    scriptPath: '.deploy/deploy-to-fabric.py'
-                    arguments: >-
-                      --aztenantid $(aztenantid)
-                      --azclientid $(azclientid)
-                      --azspsecret $(azspnsecret)
-                      --items_in_scope ${{ parameters.items_in_scope }}
-                      --target_env $(target_env)
-                  displayName: 'Run deployment using fabric-cicd'
+    # Step 4: Run the deployment script
+    - task: PythonScript@0
+     inputs:
+     scriptSource: 'filePath'
+     scriptPath: '.deploy/deploy-to-fabric.py'
+     arguments: >-
+      --aztenantid $(aztenantid)
+      --azclientid $(azclientid)
+      --azspsecret $(azspnsecret)
+      --items_in_scope ${{ parameters.items_in_scope }}
+      --target_env $(target_env)
+     displayName: 'Run deployment using fabric-cicd'
 ```
 
 ### 🔍 Explanation — Steps
@@ -392,11 +392,11 @@ This is the heart of the deployment. Let's walk through each section.
 ```python
 import os, argparse, requests, ast
 from fabric_cicd import (
-    FabricWorkspace,
-    publish_all_items,
-    unpublish_all_orphan_items,
-    change_log_level,
-    append_feature_flag,
+ FabricWorkspace,
+ publish_all_items,
+ unpublish_all_orphan_items,
+ change_log_level,
+ append_feature_flag,
 )
 from azure.identity import ClientSecretCredential
 ```
@@ -415,23 +415,23 @@ from azure.identity import ClientSecretCredential
 
 ```python
 def get_workspace_id(p_ws_name, p_token):
-    url = "https://api.fabric.microsoft.com/v1/workspaces"
-    headers = {
-        "Authorization": f"Bearer {p_token.token}",
-        "Content-Type": "application/json"
-    }
-    response = requests.get(url, headers=headers)
-    ws_id = ''
-    if response.status_code == 200:
-        workspaces = response.json()["value"]
-        for workspace in workspaces:
-            if workspace["displayName"] == p_ws_name:
-                ws_id = workspace["id"]
-                return workspace["id"]
-        if ws_id == '':
-            return f"Error: Workspace {p_ws_name} could not found."
-    else:
-        return f"Error: {response.status_code}, {response.text}"
+ url = "https://api.fabric.microsoft.com/v1/workspaces"
+ headers = {
+  "Authorization": f"Bearer {p_token.token}",
+  "Content-Type": "application/json"
+ }
+ response = requests.get(url, headers=headers)
+ ws_id = ''
+ if response.status_code == 200:
+  workspaces = response.json()["value"]
+  for workspace in workspaces:
+   if workspace["displayName"] == p_ws_name:
+    ws_id = workspace["id"]
+    return workspace["id"]
+  if ws_id == '':
+   return f"Error: Workspace {p_ws_name} could not found."
+ else:
+  return f"Error: {response.status_code}, {response.text}"
 ```
 
 **What this does:**
@@ -453,7 +453,7 @@ change_log_level("DEBUG")
 
 | Setting | Purpose |
 |---|---|
-| `enable_shortcut_publish` | Enables deployment of **Lakehouse shortcuts** — a feature that is opt-in via feature flag in `fabric-cicd`. |
+| `enable_shortcut_publish` | Enables deployment of **Lakehouse shortcuts** — a feature that's opt-in via feature flag in `fabric-cicd`. |
 | `DEBUG` log level | Provides verbose output during deployment — very helpful for troubleshooting. Reduce to `INFO` or `WARNING` in production. The `"DEBUG"` argument is optional — calling `change_log_level()` without it will also enable more verbose logging. |
 
 ---
@@ -478,9 +478,9 @@ These arguments are passed from the pipeline YAML step. The parser makes them av
 
 ```python
 token_credential = ClientSecretCredential(
-    client_id=args.azclientid,
-    client_secret=args.azspsecret,
-    tenant_id=args.aztenantid,
+ client_id=args.azclientid,
+ client_secret=args.azspsecret,
+ tenant_id=args.aztenantid,
 )
 ```
 
@@ -493,9 +493,9 @@ This creates an **Azure credential object** using the Service Principal's Client
 ### 6.6 Dynamic Workspace Resolution
 
 ```python
-tgtenv = args.target_env                          # e.g., "test"
-ws_name = f'{tgtenv}WorkspaceName'                # e.g., "testWorkspaceName"
-workspace_name = os.environ[ws_name.upper()]      # reads TESTWORKSPACENAME from env vars
+tgtenv = args.target_env       # e.g., "test"
+ws_name = f'{tgtenv}WorkspaceName'    # e.g., "testWorkspaceName"
+workspace_name = os.environ[ws_name.upper()]  # reads TESTWORKSPACENAME from env vars
 ```
 
 **The clever part:** The variable group `fabric_cicd_group_non_sensitive` contains variables like `devWorkspaceName`, `testWorkspaceName`, etc. ADO injects these as **uppercase environment variables**. The script dynamically constructs the variable name based on the target environment.
@@ -508,9 +508,9 @@ token = token_credential.get_token(scope)
 
 lookup_response = get_workspace_id(workspace_name, token)
 if lookup_response.startswith("Error"):
-    raise ValueError(f"{lookup_response}. Perhaps workspace name is set incorrectly...")
+ raise ValueError(f"{lookup_response}. Perhaps workspace name is set incorrectly...")
 else:
-    wks_id = lookup_response
+ wks_id = lookup_response
 ```
 
 ---
@@ -518,16 +518,16 @@ else:
 ### 6.7 Initialize FabricWorkspace & Deploy
 
 ```python
-repository_directory = os.environ["GITDIRECTORY"]    # e.g., "fabric"
+repository_directory = os.environ["GITDIRECTORY"] # e.g., "fabric"
 
-item_types = args.items_in_scope.strip("[]").split(",")  # Convert string to list
+item_types = args.items_in_scope.strip("[]").split(",") # Convert string to list
 
 target_workspace = FabricWorkspace(
-    workspace_id=wks_id,
-    environment=tgtenv,
-    repository_directory=repository_directory,
-    item_type_in_scope=item_types,
-    token_credential=token_credential,
+ workspace_id=wks_id,
+ environment=tgtenv,
+ repository_directory=repository_directory,
+ item_type_in_scope=item_types,
+ token_credential=token_credential,
 )
 
 # Deploy!
@@ -570,10 +570,10 @@ The `fabric-cicd` package looks for a file named `parameter.yml` in the `.deploy
 
 ```yaml
 find_replace:
-  - find_value: "bfddf0b6-5b74-461a-a963-e89ddc32f852"     # DEV Workspace ID
-    replace_value:
-      test: "$workspace.id"                                  # Replaced with TEST workspace ID
-      prod: "$workspace.id"                                  # Replaced with PROD workspace ID
+ - find_value: "bfddf0b6-5b74-461a-a963-e89ddc32f852"  # DEV Workspace ID
+ replace_value:
+  test: "$workspace.id"         # Replaced with TEST workspace ID
+  prod: "$workspace.id"         # Replaced with PROD workspace ID
 ```
 
 ### 🔍 Understanding Each Entry
@@ -581,23 +581,23 @@ find_replace:
 #### Entry 1 — Workspace ID Replacement
 
 ```yaml
-- find_value: "bfddf0b6-5b74-461a-a963-e89ddc32f852"  # DEV Workspace ID
-  replace_value:
-    test: "$workspace.id"    # Auto-resolves to the TEST workspace's actual ID
-    prod: "$workspace.id"    # Auto-resolves to the PROD workspace's actual ID
+- find_value: "bfddf0b6-5b74-461a-a963-e89ddc32f852" # DEV Workspace ID
+ replace_value:
+ test: "$workspace.id" # Auto-resolves to the TEST workspace's actual ID
+ prod: "$workspace.id" # Auto-resolves to the PROD workspace's actual ID
 ```
 
 - **`find_value`**: The GUID found in the Notebook's `%%configure` command — this is the **DEV** workspace ID.
 - **`replace_value`**: The `$workspace.id` is a **built-in token** in `fabric-cicd` that automatically resolves to the target workspace's ID at deployment time.
-- Since `dev` is not listed in `replace_value`, the GUID is only replaced when deploying to `test` or `prod`.
+- Since `dev` isn't listed in `replace_value`, the GUID is only replaced when deploying to `test` or `prod`.
 
 #### Entry 2 — Lakehouse ID Replacement
 
 ```yaml
-- find_value: "981f2f9a-0436-4942-b158-019bd73cdf1c"  # DEV DemoLakehouse GUID
-  replace_value:
-    test: "$items.Lakehouse.DemoLakehouse.$id"   # Resolves to TEST Lakehouse ID
-    prod: "$items.Lakehouse.DemoLakehouse.$id"   # Resolves to PROD Lakehouse ID
+- find_value: "981f2f9a-0436-4942-b158-019bd73cdf1c" # DEV DemoLakehouse GUID
+ replace_value:
+ test: "$items.Lakehouse.DemoLakehouse.$id" # Resolves to TEST Lakehouse ID
+ prod: "$items.Lakehouse.DemoLakehouse.$id" # Resolves to PROD Lakehouse ID
 ```
 
 - **`$items.Lakehouse.DemoLakehouse.$id`** is a dynamic token that looks up the Lakehouse named `DemoLakehouse` in the target workspace and returns its ID.
@@ -606,10 +606,10 @@ find_replace:
 #### Entry 3 — SQL Endpoint ID Replacement (Dynamic Notation)
 
 ```yaml
-- find_value: "91280ad0-b76e-4c98-a656-95d8f09a5e28"  # DEV SQL Endpoint GUID
-  replace_value:
-    test: $items.Lakehouse.DemoLakehouse.$sqlendpointid   # Resolved dynamically at deploy time
-    prod: $items.Lakehouse.DemoLakehouse.$sqlendpointid   # Resolved dynamically at deploy time
+- find_value: "91280ad0-b76e-4c98-a656-95d8f09a5e28" # DEV SQL Endpoint GUID
+ replace_value:
+ test: $items.Lakehouse.DemoLakehouse.$sqlendpointid # Resolved dynamically at deploy time
+ prod: $items.Lakehouse.DemoLakehouse.$sqlendpointid # Resolved dynamically at deploy time
 ```
 
 - Instead of hardcoding the SQL endpoint GUID for each environment (e.g., `204fd20c-e34c-4bef-9dce-4ecf53b0e878` for TEST or `29bda5ec-ebc7-466e-a618-ef5bbea75e13` for PROD), this entry uses **dynamic notation** — `$items.Lakehouse.DemoLakehouse.$sqlendpointid`.
@@ -633,11 +633,11 @@ find_replace:
 For teams using **feature branches** (not just `dev`), there's a variant parameter file where all three environments (dev, test, prod) have replacements:
 
 ```yaml
-- find_value: "d34e3a2a-96ba-4461-9a80-496894ca4cda"  # Feature branch Workspace ID
-  replace_value:
-    dev: "$workspace.id"
-    test: "$workspace.id"
-    prod: "$workspace.id"
+- find_value: "d34e3a2a-96ba-4461-9a80-496894ca4cda" # Feature branch Workspace ID
+ replace_value:
+ dev: "$workspace.id"
+ test: "$workspace.id"
+ prod: "$workspace.id"
 ```
 
 This is useful when developers work in their own Fabric workspaces and need GUIDs replaced even when deploying to DEV.
@@ -705,9 +705,9 @@ After approval, the pipeline:
 1. ⚙️ Sets up Python 3.12
 2. 📦 Installs `fabric-cicd`
 3. ▶️ Runs `deploy-to-fabric.py` with:
-   - SPN credentials from Key Vault
-   - `--target_env test`
-   - `--items_in_scope ["Notebook","Lakehouse",...]`
+ - SPN credentials from Key Vault
+ - `--target_env test`
+ - `--items_in_scope ["Notebook","Lakehouse",...]`
 
 The Python script:
 1. 🔐 Authenticates using the SPN
@@ -742,11 +742,11 @@ Open the `IngestApiData` Notebook in the **TEST** Fabric workspace and verify:
 
 2. **GUIDs are replaced in Cell 1:** In the `%%configure` command (typically in Cell 1), verify that:
 
-   | GUID Type | Should Show | Should NOT Show |
-   |---|---|---|
-   | Workspace ID | TEST workspace ID | ~~DEV workspace ID~~ |
-   | DemoLakehouse ID | TEST Lakehouse ID | ~~DEV Lakehouse ID~~ |
-   | SQL Endpoint ID | TEST SQL Endpoint ID (resolved dynamically) | ~~DEV SQL Endpoint ID (`91280ad0-...`)~~ |
+ | GUID Type | Should Show | Should NOT Show |
+ |---|---|---|
+ | Workspace ID | TEST workspace ID | ~~DEV workspace ID~~ |
+ | DemoLakehouse ID | TEST Lakehouse ID | ~~DEV Lakehouse ID~~ |
+ | SQL Endpoint ID | TEST SQL Endpoint ID (resolved dynamically) | ~~DEV SQL Endpoint ID (`91280ad0-...`)~~ |
 
 > ✅ **Success!** The `%%configure` cell now points to TEST lakehouses, and the new development work has been cleanly promoted.
 
