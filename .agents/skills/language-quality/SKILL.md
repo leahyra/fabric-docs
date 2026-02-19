@@ -16,6 +16,7 @@ Use this skill when handling typo, grammar, or coherence-fix requests in this re
 
 ## Workflow
 
+1. For large markdown scopes, split files into independent batches and run checks in parallel with multi-agent mode (for example, `/fleet` in Copilot CLI).
 1. Check for existing spellcheck tooling before scanning (`cspell`, `vale`, workflow tasks).
 1. Use `codespell` for candidate detection when no repo-native checker is configured:
 
