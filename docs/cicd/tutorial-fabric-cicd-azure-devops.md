@@ -71,7 +71,7 @@ Before you begin, make sure you have the following in place:
 
 ### Download the source files
 
-1. Fork the [Fabric-samples repository](https://github.com/microsoft/fabric-samples) to your GitHub account.
+1. Fork the [Fabric-samples repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/cicd/fabric-cicd-devops/code) to your GitHub account.
 2. Clone your fork to your local machine:
 
 ```pwsh
