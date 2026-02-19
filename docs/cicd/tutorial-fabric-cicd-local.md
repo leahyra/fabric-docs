@@ -11,7 +11,7 @@ ms.date: 02/17/2026
 
 
 # Tutorial - Local deployment with fabric-cicd 
-In this tutorial, you set up a basic development environment and use the fabric-cicd python library to publish a lakehouse and notebook to a Microsoft Fabric workspace that you developed locally on your dev workstation. This is an example for developers who are working locally.
+In this tutorial, you set up a basic development environment and use the fabric-cicd python library to publish a lakehouse and notebook to a Microsoft Fabric workspace that you developed locally on your dev workstation. This tutorial is an example for developers who are working locally.
 
 ## Prerequisites
 
@@ -43,14 +43,14 @@ pip install fabric-cicd
 ```
 
 >[!NOTE]
-> Fabric-cicd requires python versions 3.9 to 3.12. If you are using python 3.13 or greater, you can bypass the python requirement check with the following:
+> Fabric-cicd requires python versions 3.9 to 3.12. If you're using python 3.13 or greater, you can bypass the python requirement check with the following:
 >
 >    pip install fabric-cicd --ignore-requires-python
 >
 
 
-## Step 3. Edit the worspace id in the deploy.py script
-Navigate to the **fabric-cicd-local** files that you cloned down in step 1.  They are located in the samples folder.  Edit the deploy.py script, replacing &lt;YOUR_WORKSPACE_ID&gt; with your id.  Save the changes.
+## Step 3. Edit the workspace id in the deploy.py script
+Navigate to the **fabric-cicd-local** files that you cloned down in step 1.  They're located in the samples folder.  Edit the deploy.py script, replacing &lt;YOUR_WORKSPACE_ID&gt; with your id.  Save the changes.
 
 ```python
 from pathlib import Path
@@ -75,27 +75,27 @@ Using the terminal from within VS Code, sign-in using az login.
 az login
 ```
 >[!NOTE]
-> If you are using a trial or have no Azure subscriptions associated with your account you can use the following:
+> If you're using a trial or have no Azure subscriptions associated with your account you can use the following:
 >
 >    az login --allow-no-subscriptions
 >
 
-   :::image type="content" source="media/tutorial-fabric-cicd-local/demo-1.png" alt-text="Screenshot of the VS code running az login." lightbox="media/tutorial-fabric-cicd-local/demo-1.png":::
+   :::image type="content" source="media/tutorial-fabric-cicd-local/demo-1.png" alt-text="Screenshot of running az login in VS Code." lightbox="media/tutorial-fabric-cicd-local/demo-1.png":::
 
 
 ## Step 5. Run the script
-Now run the deploy.py script. From within VS Code you can go to Run -> Start Debugging.  You should see the following output in the screenshot below.
+Now run the deploy.py script. From within VS Code, go to Run -> Start Debugging.  You should see the following output in the screenshot.
 
-   :::image type="content" source="media/tutorial-fabric-cicd-local/demo-2.png" alt-text="Screenshot of the VS code running deploy.py." lightbox="media/tutorial-fabric-cicd-local/demo-2.png":::
+   :::image type="content" source="media/tutorial-fabric-cicd-local/demo-2.png" alt-text="Screenshot of running deploy.py in VS Code." lightbox="media/tutorial-fabric-cicd-local/demo-2.png":::
 
 ## Step 6. Verify the items were created
-Once the script has completed check your Fabric workspace.  You should see the new lakehouse and notebook.  Congrats you are done!
+Once the script completes, check your Fabric workspace.  You should see the new lakehouse and notebook.  Congrats you're done!
 
    :::image type="content" source="media/tutorial-fabric-cicd-local/demo-3.png" alt-text="Screenshot of the Fabric workspace with new items." lightbox="media/tutorial-fabric-cicd-local/demo-3.png":::
 
 ## Debugging
 
-If an error arises, or you want to have full transparency to all calls being made outside the library, enable debugging. Enabling debugging will write all API calls to the terminal. The logs can also be found in the `fabric_cicd.error.log` file.
+If an error arises, or you want to have full transparency to all calls being made outside the library, enable debugging. Enabling debugging writes all API calls to the terminal. The logs can also be found in the `fabric_cicd.error.log` file.
 
 ```python
 from fabric_cicd import change_log_level
