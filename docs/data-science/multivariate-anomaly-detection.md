@@ -6,7 +6,6 @@ ms.custom: sfi-ropc-nochange
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
-reviewer: JessicaXYWang
 ms.date: 07/21/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
@@ -64,7 +63,7 @@ spark = SparkSession.builder.getOrCreate()
 Read the `ANOMALY_API_KEY` and `BLOB_CONNECTION_STRING` environment variables, and set the `containerName` and `location` variables:
 
 ```python
-# An Anomaly Dectector subscription key
+# An Anomaly Detector subscription key
 anomalyKey = find_secret("anomaly-api-key") # use your own anomaly api key
 # Your storage account name
 storageName = "anomalydetectiontest" # use your own storage account name

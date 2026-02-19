@@ -1,8 +1,6 @@
 ---
 title: Shortcut transformations (file)
 description: Use OneLake shortcut transformations to convert raw files into Delta tables that stay always in sync with the source data.  
-author: kgremban
-ms.author: kgremban
 ms.reviewer: mideboer
 ms.topic: how-to
 ms.date: 11/12/2025
@@ -105,4 +103,5 @@ Use the [Fabric Roadmap](https://roadmap.fabric.microsoft.com/?product=onelake) 
 ## Clean up
 
 To stop synchronization, delete the shortcut transformation from the lakehouse UI.  
+
 Deleting the transformation doesn't remove the underlying files.

@@ -1,12 +1,8 @@
-﻿---
+---
 title: Use Azure AI Translator with REST API
 description: How to use prebuilt Azure AI translator in Fabric with REST API
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: lagayhar, ruxu
 ms.topic: how-to
-ms.custom: 
 ms.date: 07/31/2025
 ms.update-cycle: 180-days
 ms.search.form: 
@@ -82,7 +78,7 @@ def print_response(response):
             result = response.json()
             print(json.dumps(result, indent=2, ensure_ascii=False))
         except:
-            print(f"pasre error {response.content}")
+            print(f"parse error {response.content}")
     else:
         print(f"error message: {response.content}")
 ```
@@ -243,5 +239,5 @@ No steps for SynapseML in this section.
 
 - [Use prebuilt Text Analytics in Fabric with REST API and SynapseML](how-to-use-text-analytics.md)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
-- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-sdk-synapse.md)
-- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-sdk-synapse.md)
+- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-python-sdk.md)
+- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-synapse-ml.md)
