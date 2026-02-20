@@ -76,7 +76,7 @@ WHERE max_length = -1
 AND type_name(user_type_id) IN ('varchar', 'varbinary');
 ```
 
-- Schemas with names that are [SQL reserved keywords](/sql/t-sql/language-elements/reserved-keywords-transact-sql?view=sql-server-ver17) aren't supported in SQL analytics endpoint. Tables under these schemas will fail to sync to the SQL analytics endpoint. Use non‑reserved names for schemas.
+- Schemas with names that conflict with system schemas (such as sys, information_schema) and database security principals (such as db_owner, db_datareader) aren't supported in SQL analytics endpoint. Tables under these schemas will fail to sync to the SQL analytics endpoint. 
 
 ## Known issues
 
