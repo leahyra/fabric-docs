@@ -23,6 +23,8 @@ To access the **Embed codes** page in the Admin portal:
 
 1. Select the **Settings** (gear) icon, and then select **Admin portal**.
 
+1. Select **Embed Codes**.
+
 ## Disable embed codes
 
 You can disable the *Publish to web* feature, or allow embed codes to work only in your organization. If you disable *Publish to web*, the existing embed codes aren't deleted. When you re-enable *Publish to web*, the existing embed codes become active again.
