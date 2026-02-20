@@ -49,6 +49,15 @@ When using modern evaluation engine, you should observe faster refresh times esp
 
 - **Frequent run schedules**: If your dataflows run multiple times a day, the time savings per refresh accumulate, allowing you to deliver up-to-date data to users more quickly.
 
+
+```mermaid
+xychart-beta
+  title "Values"
+  x-axis ["Column A", "Column B"]
+  y-axis "Value" 0 --> 40
+  bar [10, 35]
+
+
 ## Supported connectors
 
 The Modern Query Evaluation Engine supports a varierty of data connectors. Ensure your dataflow’s data sources are among the supported types to take advantage of the new engine. Currently supported connectors include:
