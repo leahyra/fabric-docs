@@ -29,7 +29,7 @@ To turn on external data sharing:
 
 1. Open the **Tenant settings** tab.
 
-1. Under the **Export and sharing settings** section, find and expand the **External data sharing (preview)** setting.
+1. Under the **Export and sharing settings** section, find and expand the **External data sharing** setting.
 
 1. Set the toggle to **Enabled**.
 
