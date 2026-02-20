@@ -27,13 +27,13 @@ This article explains what you see in the explore tab and describes how to use i
 
 ## Open the explore tab
 
-To open the explore tab, select the OneLake catalog icon in the Fabric navigation pane and then select the explore tab. The Explore tab surfaces lakehouses, warehouses, Fabric databases, mirrored items, and other supported item types. See [NOTE](#onelake-catalog-dlp-note) for details.
+To open the explore tab, select the OneLake catalog icon in the Fabric navigation pane and then select the explore tab. The Explore tab surfaces lakehouses, warehouses, Fabric databases, mirrored items, and other supported item types.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-open.png":::
 
 ## Find items in the items list
 
-The items list displays all the Fabric items you have access to, or can directly request access to.
+The items list displays all the Fabric items you have access to, or can directly request access to. See [NOTE](#onelake-catalog-dlp-note) for details.
 
 * To shorten the list, use the explore tab's filters and selectors.
 
