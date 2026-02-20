@@ -13,13 +13,10 @@ ms.date: 02/07/2026
 
 # Recent data in Fabric (Preview)
 
-Recent data is a Microsoft Fabric feature that helps you work more efficiently by providing quick access to your most frequently used data items across various Fabric artifacts. The feature remembers the specific items you've worked with—including tables, files, folders, databases, and sheets—so you can return to them without navigating through connection dialogs and folder structures.
+Recent data is a feature that helps you work more efficiently by providing quick access to your most frequently used data items. The feature remembers the specific items you've worked with—including tables, files, folders, databases, and sheets, etc., so you can return to them without navigating through connection dialogs and folder structures.
 
 
-This feature is currently in Preview in Data flow gen2, Pipelines, Copy job and Lakehouse shortcut.
-
-## Prerequisites
-
+This feature is currently in Preview in Data flow gen2 and will be avilable in more Fabric artifacts in the future.
 Before you begin, make sure you have the following setup:
 
 - A Microsoft Fabric tenant account with an active subscription. [Create a free account](https://www.microsoft.com/microsoft-fabric).
@@ -51,6 +48,7 @@ You can access your recent data directly from the Power Query ribbon when workin
 1. Review the list of recently used items. The list includes tables, files, folders, databases, and sheets from your previous dataflow sessions.
 
 1. Select an item to load it into the Power Query editor. The data loads immediately, ready for transformation.
+
  :::image type="content" source="media/recent-data/RecentDataPQRibbon.jpg" alt-text="Screenshot showing how to access recent-data in Power Query ribbon":::
 
 ## Access recent data from Modern Get Data
