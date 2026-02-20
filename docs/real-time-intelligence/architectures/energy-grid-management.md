@@ -44,8 +44,6 @@ The energy grid management reference architecture uses Microsoft Fabric Real-Tim
 
 1. Power BI provides rich reports with a full business view on the energy generation and consumption rates.
 
-1. Use rich KQL queries for fast, direct, ad-hoc analytics.
-
 The following sections explain each operational phase in detail.
 
 ## Operational phases

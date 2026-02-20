@@ -44,8 +44,6 @@ The energy trading management reference architecture uses Microsoft Fabric Real-
 
 1. Power BI reports provide a rich, full business view on the energy generation and consumption rates.
 
-1. Use rich KQL queries for fast, direct, ad-hoc analytics.
-
 ## Operational phases
 
 ### Ingest and process
