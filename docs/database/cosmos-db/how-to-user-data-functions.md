@@ -3,7 +3,7 @@ title: User data functions with Cosmos DB Database in Fabric
 description: How to build user data functions for Cosmos DB in Microsoft Fabric.
 ms.reviewer: mjbrown
 ms.topic: how-to
-ms.date: 10/31/2025
+ms.date: 02/20/2026
 ---
 
 # How to create user data functions for Cosmos DB in Microsoft Fabric
@@ -83,7 +83,7 @@ Next we will create a new function. In this example we will modify the `hello_fa
 
    :::image type="content" source="./media/how-to-user-data-functions/add-cosmos-library.png" alt-text="Screenshot showing how to add azure-cosmos library." lightbox="./media/how-to-user-data-functions/add-cosmos-library.png":::
 
-1. Select the code below then insert it into the body of your new function.
+1. Select the code below then insert it into the body of your new function then update the COSMOS_DB_URI and the DB_NAME with the values you captured earlier.
 
     ```python
     import fabric.functions as fn
@@ -91,19 +91,19 @@ Next we will create a new function. In this example we will modify the `hello_fa
 
     import logging
     from typing import Any
-    from fabric.functions.cosmosdb import get_cosmos_client
+    from azure.cosmos import CosmosClient
     from azure.cosmos import exceptions
 
-    @udf.generic_connection(argName="cosmosDb", audienceType="CosmosDB")
-    @udf.function()
-    def query_products(cosmosDb: fn.FabricItem, categoryName: str) -> list[dict[str, Any]]:
+    COSMOS_URI = "{my-cosmos-artifact-uri}"
+    DB_NAME = "{my-cosmos-artifact-name}"
+    CONTAINER_NAME = "SampleData"
 
-        COSMOS_DB_URI = "{my-cosmos-artifact-uri}"
-        DB_NAME = "{my-cosmos-artifact-name}" 
-        CONTAINER_NAME = "SampleData"
+    @udf.connection(argName="cosmosClient", audienceType="CosmosDB", cosmos_endpoint=COSMOS_URI)
+    @udf.function()
+    def query_products(cosmosClient: CosmosClient, categoryName: str) -> list[dict[str, Any]]:
 
         try:
-            cosmosClient = get_cosmos_client(cosmosDb, COSMOS_DB_URI)
+            # Get the database and container clients
             database = cosmosClient.get_database_client(DB_NAME)
             container = database.get_container_client(CONTAINER_NAME)
 
@@ -146,10 +146,6 @@ Next we will create a new function. In this example we will modify the `hello_fa
             raise
     ```
 
-1. Once the code is inserted into the editor, update the COSMOS_DB_URI and the DB_NAME with the values you captured earlier.
-
-    :::image type="content" source="./media/how-to-user-data-functions/update-endpoint-and-database.png" alt-text="Screenshot showing how to update the endpoint and database name." lightbox="./media/how-to-user-data-functions/update-endpoint-and-database.png":::
-
 1. Now you can test it by using the [Test capability](/fabric/data-engineering/user-data-functions/test-user-data-functions) in Develop mode.
 
 1. In the catetoryName parameter type `Computers, Laptops`
@@ -164,4 +160,3 @@ Next we will create a new function. In this example we will modify the `hello_fa
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Manage authorization in Cosmos DB in Microsoft Fabric](authorization.md)
-
