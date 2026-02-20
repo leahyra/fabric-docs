@@ -137,6 +137,8 @@
     items:
       - name: Manage data sources
         href: data-source-management.md
+      - name: Connect recent data
+        href: recent-data.md
       - name: Connectors
         href: connector-overview.md
         items:
