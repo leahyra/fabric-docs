@@ -55,7 +55,8 @@ CREATE TABLE { warehouse_name.schema_name.table_name | schema_name.table_name | 
 
 ```syntaxsql
 CREATE TABLE { warehouse_name.schema_name.table_name | schema_name.table_name | table_name }
-WITH (CLUSTER BY[ ,... n ])
+( { <column_definition> } [ ,... n ] )
+WITH (CLUSTER BY [ ,... n ])
 AS <select_statement>;
 ```
 
