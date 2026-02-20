@@ -41,7 +41,7 @@ To change ownership from the Admin portal, follow these steps:
 
 1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
 
-1. Select the **Settings** (gear) icon, and then select **Admin portal**.
+1. Select the **Settings** (gear) icon, select **Admin portal**, and then select **Embed Codes**.
 
 1. On the **Embed codes** page, select **Change ownership**. 
 
