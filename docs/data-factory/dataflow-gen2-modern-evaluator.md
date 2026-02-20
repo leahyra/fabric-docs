@@ -5,7 +5,7 @@ author: ptyx507x
 ms.author: miescobar
 ms.reviewer: whhender
 ms.topic: how-to
-ms.date: 2/20/2026
+ms.date: 2/25/2026
 ms.custom: dataflows
 ---
 
@@ -49,14 +49,61 @@ When using modern evaluation engine, you should observe faster refresh times esp
 
 - **Frequent run schedules**: If your dataflows run multiple times a day, the time savings per refresh accumulate, allowing you to deliver up-to-date data to users more quickly.
 
+## Benchmarks
 
-```mermaid
-xychart-beta
-  title "Values"
-  x-axis ["Column A", "Column B"]
-  y-axis "Value" 0 --> 40
-  bar [10, 35]
+This section uses a large, real‑world dataset to illustrate how architectural changes across Dataflow generations and the introduction of the Modern Query Evaluation Engine affect execution time. 
 
+>[!NOTE]
+>Results are provided for comparison purposes only and may vary depending on data source, transformations, and execution environment.
+
+### Cross‑product comparison
+
+This benchmark compares Dataflow Gen1, Dataflow Gen2, and Dataflow Gen2 (CI/CD) using an identical ingestion and transformation scenario.
+
+**Scenario**
+
+- **Source**: NYC Taxi dataset stored in Azure Blob Storage  
+- **Data volume**: ~110 million rows  
+- **Transformation**: Row‑by‑row transformation during ingestion  
+- **Destination**:
+  - **Gen1**: CSV
+  - **Gen2 / Gen2 (CI/CD)**: Lakehouse (default output)
+
+**Results**
+
+| Product | Default output | Execution time |
+|--------|----------------|----------------|
+| Dataflow Gen1 | CSV | ~60 minutes |
+| Dataflow Gen2 | Lakehouse | ~57 minutes |
+| Dataflow Gen2.1 (Modern Evaluator) | Lakehouse | ~33 minutes |
+
+**Observations**
+
+- Dataflow Gen1 and Dataflow Gen2 show comparable execution times for this row‑by‑row transformation scenario.
+- Dataflow Gen2 (CI/CD) completes the same workload in approximately half the time.
+- The performance improvement is driven by the Modern Query Evaluation Engine, which reduces per‑row processing overhead and optimizes execution for large ingestion workloads.
+
+### Legacy vs. Modern evaluator
+
+This benchmark compares the legacy evaluation engine and the Modern Query Evaluation Engine within Dataflow Gen2 (CI/CD) under two common query patterns.
+
+**Scenario**
+
+- **Data source**: NYC Taxi dataset stored in SQL
+- **Data volume**: ~110 million rows
+
+**Results**
+
+| Scenario | Legacy evaluator | Modern evaluator |
+|--------|------------------|------------------|
+| Query folds to SQL | ~20 minutes | ~13 minutes |
+| Query does not fold to SQL (Split by Delimiter) | ~28 minutes | ~16 minutes |
+
+**Observations**
+
+- **When query folding is preserved**, the Modern Query Evaluation Engine reduces end‑to‑end execution time by optimizing query execution against the source.
+- **When query folding is not possible**, the Modern Query Evaluation Engine still provides significant performance improvements due to a more efficient runtime and reduced execution overhead.
+- **Performance gains become more pronounced as data volumes increase**, making the Modern Query Evaluation Engine particularly beneficial for enterprise‑scale dataflows.
 
 ## Supported connectors
 
