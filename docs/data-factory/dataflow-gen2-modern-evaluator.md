@@ -91,6 +91,7 @@ This benchmark compares the legacy evaluation engine and the Modern Query Evalua
 
 - **Data source**: NYC Taxi dataset stored in SQL
 - **Data volume**: ~110 million rows
+- **Destination**: Fabric Lakehouse
 
 **Results**
 
@@ -101,7 +102,7 @@ This benchmark compares the legacy evaluation engine and the Modern Query Evalua
 
 **Observations**
 
-- **When query folding is preserved**, the Modern Query Evaluation Engine reduces end‑to‑end execution time by optimizing query execution against the source.
+- **When query folding is preserved**, the Modern Query Evaluation Engine provides significant performance improvements due to a more efficient runtime and reduced execution overhead..
 - **When query folding is not possible**, the Modern Query Evaluation Engine still provides significant performance improvements due to a more efficient runtime and reduced execution overhead.
 - **Performance gains become more pronounced as data volumes increase**, making the Modern Query Evaluation Engine particularly beneficial for enterprise‑scale dataflows.
 
