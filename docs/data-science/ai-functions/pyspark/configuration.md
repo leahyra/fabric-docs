@@ -131,7 +131,7 @@ Set the `embedding_deployment_name` to one of the [models supported by Fabric](.
 ### Configure a custom model endpoint
 
 By default, AI functions use the Fabric LLM endpoint API for unified billing and easy setup.
-You may choose to use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with your own Foundry (formerly Azure OpenAI) resource's model deployments:
+You may choose to use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with your own Foundry or Azure OpenAI resource's model deployments:
 
 ```python
 from synapse.ml.services.openai import OpenAIDefaults
