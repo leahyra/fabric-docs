@@ -45,7 +45,7 @@ To allow users to accept external data shares:
 
 1. Select the **Settings** (gear) icon, and then select **Admin portal**.
 
-1. Open the **Tenant settings** tab.
+1. Select **Tenant settings**.
 
 1. Under the **Export and sharing settings** section, find and expand the **Users can accept external data shares (preview)** setting.
 
