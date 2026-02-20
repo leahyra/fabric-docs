@@ -108,7 +108,10 @@ This benchmark compares the legacy evaluation engine and the Modern Query Evalua
 
 ## Supported connectors
 
-The Modern Query Evaluation Engine supports a varierty of data connectors. Ensure your dataflow’s data sources are among the supported types to take advantage of the new engine. Currently supported connectors include:
+The Modern Query Evaluation Engine supports a varierty of data connectors. Ensure your dataflow’s data sources are among the supported types to take advantage of the new engine. Currently supported connectors include.
+
+<details>
+<summary><b>Show connectors list</b></summary>
 
 - Acterys
 - Adobe Analytics
@@ -205,5 +208,6 @@ The Modern Query Evaluation Engine supports a varierty of data connectors. Ensur
 - Zendesk Data
 - Zoho Creator
 - Zucchetti
+</details>
 
 If a dataflow uses connectors not in this list, those queries continue to run with the standard (legacy) engine.
