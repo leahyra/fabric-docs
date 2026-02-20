@@ -42,7 +42,6 @@ The architecture includes the following key steps:
 
 1. **Activate alerts** - Data Activator monitors router telemetry and generates real-time alerts on anomalies, threshold violations, and network issues.
 
-1. **Enable ad-hoc analysis** - Network operations teams use Kusto Query Language (KQL) queries for deep investigations and root-cause analysis, reducing investigation time from hours to minutes.
 
 
 ## Operational phases

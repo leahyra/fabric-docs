@@ -40,7 +40,6 @@ The connected factory reference architecture uses Microsoft Fabric Real-Time Int
 
 1. Notify on-site technicians in response to live indications from the factory floor.
 
-1. Use rich KQL queries for fast, direct, ad-hoc analytics.
 
 ## Operational phases
 
