@@ -279,7 +279,7 @@ The response doesn't include a body. The `Location` header contains a URI you us
 The run endpoint is lakehouse-scoped, but job-instance polling uses the generic item job endpoint (`/items/{itemId}/jobs/instances/{jobInstanceId}`) by design.
 
 > [!IMPORTANT]
-> Setting a retention period shorter than seven days impacts Delta time travel and can cause reader failures or table corruption if active files are removed. The API rejects retention periods under seven days by default. To override this check, set `spark.databricks.delta.retentionDurationCheck.enabled` to `false` in the workspace settings.
+> Setting a retention period shorter than seven days impacts Delta time travel and can cause reader failures or table corruption if snapshots or uncommitted files are still in use. For that reason, table maintenance in both the Fabric UI and REST APIs rejects retention periods under seven days by default. To allow a shorter interval, set `spark.databricks.delta.retentionDurationCheck.enabled` to `false` in workspace settings; table maintenance jobs then use that configuration during execution.
 
 ### Poll the table maintenance status
 

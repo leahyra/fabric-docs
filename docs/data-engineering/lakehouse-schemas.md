@@ -135,11 +135,11 @@ In the meantime, you can start preparing by using four-part naming (`workspace.l
 Schema-enabled lakehouses have the following known limitations. The table also describes workarounds for each.
 
 | Limitation | Description | Workaround |
-|-|-|-|
-| Spark views | `CREATE VIEW` isn't supported in Spark SQL for schema-enabled lakehouses. | Use [materialized lake views](materialized-lake-views/overview-materialized-lake-view.md) to precompute and persist query results as Delta tables. |
-| Shared lakehouses | A schema-enabled lakehouse can't be shared directly with workspace-level sharing. | Create [shortcuts](../onelake/onelake-shortcuts.md) in a lakehouse where the user has a workspace role, pointing to the shared lakehouse tables. |
-| External ADLS tables | External tables backed by Azure Data Lake Storage aren't supported. | Use [OneLake shortcuts](/rest/api/fabric/core/onelake-shortcuts) to reference external Delta tables. |
-| Outbound access protection | Cross-workspace Spark SQL queries don't work when outbound access protection is enabled. | Use non-schema lakehouses for cross-workspace queries in environments with outbound access protection. |
+|---|---|---|
+| Spark views | `CREATE VIEW` in Spark SQL isn't currently supported for schema-enabled lakehouses. | Use [materialized lake views](materialized-lake-views/overview-materialized-lake-view.md) to precompute and persist query results as Delta tables. |
+| Shared lakehouses | A schema-enabled lakehouse can't currently be shared directly through workspace-level sharing. | Create [shortcuts](../onelake/onelake-shortcuts.md) in a lakehouse where the user has a workspace role, and reference the shared lakehouse tables through those shortcuts. |
+| External ADLS tables | External table metadata over Azure Data Lake Storage (ADLS) isn't supported directly in schema-enabled lakehouses. | Use [OneLake shortcuts](/rest/api/fabric/core/onelake-shortcuts) to reference external Delta tables. |
+| Outbound access protection | Cross-workspace Spark SQL queries are blocked when outbound access protection is enabled. | Use non-schema lakehouses for cross-workspace query scenarios in environments where outbound access protection is enabled. |
 
 ## Related content
 
