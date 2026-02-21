@@ -76,7 +76,7 @@ In this tutorial page, select the tab that matches the notebook you imported, an
 
    Run this cell, and wait for it to finish before moving on to the next step.
 
-   ### [PySpark](#tab/pyspark-config)
+   ### [PySpark](#tab/pyspark)
 
    ```python
    spark.conf.set("spark.sql.parquet.vorder.enabled", "true")
@@ -84,7 +84,7 @@ In this tutorial page, select the tab that matches the notebook you imported, an
    spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
    ```
 
-   ### [Spark SQL](#tab/spark-sql-config)
+   ### [Spark SQL](#tab/spark-sql)
 
    ```sql
    %%sql
@@ -102,7 +102,7 @@ In this tutorial page, select the tab that matches the notebook you imported, an
 
    Run this cell, and wait for it to finish before moving on to the next step.
 
-   ### [PySpark](#tab/pyspark-fact)
+   ### [PySpark](#tab/pyspark)
 
    ```python
    from pyspark.sql.functions import col, year, month, quarter
@@ -117,7 +117,7 @@ In this tutorial page, select the tab that matches the notebook you imported, an
    df.write.mode("overwrite").format("delta").partitionBy("Year","Quarter").save("Tables/dbo/" + table_name)
    ```
 
-   ### [Spark SQL](#tab/spark-sql-fact)
+   ### [Spark SQL](#tab/spark-sql)
 
    ```sql
    %%sql
@@ -139,7 +139,7 @@ In this tutorial page, select the tab that matches the notebook you imported, an
 
    Run this cell, and wait for it to finish before moving on to the next step.
 
-   ### [PySpark](#tab/pyspark-dimensions)
+   ### [PySpark](#tab/pyspark)
 
    ```python
    def loadFullDataFromSource(table_name):
@@ -159,7 +159,7 @@ In this tutorial page, select the tab that matches the notebook you imported, an
       loadFullDataFromSource(table)
    ```
 
-   ### [Spark SQL](#tab/spark-sql-dimensions)
+   ### [Spark SQL](#tab/spark-sql)
 
    ```sql
    %%sql
@@ -182,15 +182,11 @@ In this section, you continue in the same notebook and run the next cells to cre
 
 1. Make sure the notebook is still linked to **wwilakehouse**.
 
-1. Continue running cells in the same notebook that you opened in the previous section.
-
-1. Run each remaining cell in order. Don't skip ahead, because each step depends on tables or views created by the previous step.
-
 1. **Cell 4 - Load source tables for transformation (PySpark only).** If you're using the PySpark notebook, run this cell to load Delta tables into DataFrames for the aggregation steps that follow.
 
    Run this cell, and wait for it to finish before moving on to the next step.
 
-   ### [PySpark](#tab/pyspark-load)
+   ### [PySpark](#tab/pyspark)
 
    ```python
    df_fact_sale = spark.read.format("delta").load("Tables/dbo/fact_sale")
@@ -198,7 +194,7 @@ In this section, you continue in the same notebook and run the next cells to cre
    df_dimension_city = spark.read.format("delta").load("Tables/dbo/dimension_city")
    ```
 
-   ### [Spark SQL](#tab/spark-sql-load)
+   ### [Spark SQL](#tab/spark-sql)
 
    No action is required for Spark SQL in this step.
 
@@ -208,7 +204,7 @@ In this section, you continue in the same notebook and run the next cells to cre
 
    Run this cell, and wait for it to finish before moving on to the next step.
 
-   ### [PySpark](#tab/pyspark-aggregate-city)
+   ### [PySpark](#tab/pyspark)
 
       ```python
       sale_by_date_city = (
@@ -228,7 +224,7 @@ In this section, you continue in the same notebook and run the next cells to cre
       sale_by_date_city.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/dbo/aggregate_sale_by_date_city")
       ```
 
-      ### [Spark SQL](#tab/spark-sql-aggregate-city)
+      ### [Spark SQL](#tab/spark-sql)
 
       ```sql
       %%sql
@@ -259,7 +255,7 @@ In this section, you continue in the same notebook and run the next cells to cre
 
    Run this cell, and wait for it to finish before moving on to the next step.
 
-   ### [PySpark](#tab/pyspark-aggregate-employee)
+   ### [PySpark](#tab/pyspark)
 
    ```python
    spark.sql("""
@@ -284,7 +280,7 @@ In this section, you continue in the same notebook and run the next cells to cre
    sale_by_date_employee.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/dbo/aggregate_sale_by_date_employee")
    ```
 
-   ### [Spark SQL](#tab/spark-sql-aggregate-employee)
+   ### [Spark SQL](#tab/spark-sql)
 
    ```sql
    %%sql
