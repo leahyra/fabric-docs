@@ -75,7 +75,7 @@ This benchmark compares Dataflow Gen1, Dataflow Gen2, and Dataflow Gen2 (CI/CD) 
 |--------|----------------|----------------|
 | Dataflow Gen1 | CSV | ~60 minutes |
 | Dataflow Gen2 | Lakehouse | ~57 minutes |
-| Dataflow Gen2.1 (Modern Evaluator) | Lakehouse | ~33 minutes |
+| Dataflow Gen2 (CI/CD) with Modern Evaluator | Lakehouse | ~33 minutes |
 
 **Observations**
 
