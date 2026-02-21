@@ -206,48 +206,48 @@ In this section, you continue in the same notebook and run the next cells to cre
 
    ### [PySpark](#tab/pyspark)
 
-      ```python
-      sale_by_date_city = (
-         df_fact_sale.alias("sale")
-         .join(df_dimension_date.alias("date"), df_fact_sale.InvoiceDateKey == df_dimension_date.Date, "inner")
-         .join(df_dimension_city.alias("city"), df_fact_sale.CityKey == df_dimension_city.CityKey, "inner")
-         .select("date.Date", "date.CalendarMonthLabel", "date.Day", "date.ShortMonth", "date.CalendarYear", "city.City", "city.StateProvince", "city.SalesTerritory", "sale.TotalExcludingTax", "sale.TaxAmount", "sale.TotalIncludingTax", "sale.Profit")
-         .groupBy("date.Date", "date.CalendarMonthLabel", "date.Day", "date.ShortMonth", "date.CalendarYear", "city.City", "city.StateProvince", "city.SalesTerritory")
-         .sum("sale.TotalExcludingTax", "sale.TaxAmount", "sale.TotalIncludingTax", "sale.Profit")
-         .withColumnRenamed("sum(TotalExcludingTax)", "SumOfTotalExcludingTax")
-         .withColumnRenamed("sum(TaxAmount)", "SumOfTaxAmount")
-         .withColumnRenamed("sum(TotalIncludingTax)", "SumOfTotalIncludingTax")
-         .withColumnRenamed("sum(Profit)", "SumOfProfit")
-         .orderBy("date.Date", "city.StateProvince", "city.City")
-      )
+   ```python
+   sale_by_date_city = (
+      df_fact_sale.alias("sale")
+      .join(df_dimension_date.alias("date"), df_fact_sale.InvoiceDateKey == df_dimension_date.Date, "inner")
+      .join(df_dimension_city.alias("city"), df_fact_sale.CityKey == df_dimension_city.CityKey, "inner")
+      .select("date.Date", "date.CalendarMonthLabel", "date.Day", "date.ShortMonth", "date.CalendarYear", "city.City", "city.StateProvince", "city.SalesTerritory", "sale.TotalExcludingTax", "sale.TaxAmount", "sale.TotalIncludingTax", "sale.Profit")
+      .groupBy("date.Date", "date.CalendarMonthLabel", "date.Day", "date.ShortMonth", "date.CalendarYear", "city.City", "city.StateProvince", "city.SalesTerritory")
+      .sum("sale.TotalExcludingTax", "sale.TaxAmount", "sale.TotalIncludingTax", "sale.Profit")
+      .withColumnRenamed("sum(TotalExcludingTax)", "SumOfTotalExcludingTax")
+      .withColumnRenamed("sum(TaxAmount)", "SumOfTaxAmount")
+      .withColumnRenamed("sum(TotalIncludingTax)", "SumOfTotalIncludingTax")
+      .withColumnRenamed("sum(Profit)", "SumOfProfit")
+      .orderBy("date.Date", "city.StateProvince", "city.City")
+   )
 
-      sale_by_date_city.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/dbo/aggregate_sale_by_date_city")
-      ```
+   sale_by_date_city.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/dbo/aggregate_sale_by_date_city")
+   ```
 
-      ### [Spark SQL](#tab/spark-sql)
+   ### [Spark SQL](#tab/spark-sql)
 
-      ```sql
-      %%sql
-      CREATE OR REPLACE TEMPORARY VIEW sale_by_date_city
-      AS
-      SELECT
-           DD.Date, DD.CalendarMonthLabel
-           , DD.Day, DD.ShortMonth Month, CalendarYear Year
-           , DC.City, DC.StateProvince, DC.SalesTerritory
-           , SUM(FS.TotalExcludingTax) SumOfTotalExcludingTax
-           , SUM(FS.TaxAmount) SumOfTaxAmount
-           , SUM(FS.TotalIncludingTax) SumOfTotalIncludingTax
-           , SUM(FS.Profit) SumOfProfit
-      FROM delta.`Tables/dbo/fact_sale` FS
-      INNER JOIN delta.`Tables/dbo/dimension_date` DD ON FS.InvoiceDateKey = DD.Date
-      INNER JOIN delta.`Tables/dbo/dimension_city` DC ON FS.CityKey = DC.CityKey
-      GROUP BY DD.Date, DD.CalendarMonthLabel, DD.Day, DD.ShortMonth, DD.CalendarYear, DC.City, DC.StateProvince, DC.SalesTerritory
-      ORDER BY DD.Date ASC, DC.StateProvince ASC, DC.City ASC;
+   ```sql
+   %%sql
+   CREATE OR REPLACE TEMPORARY VIEW sale_by_date_city
+   AS
+   SELECT
+         DD.Date, DD.CalendarMonthLabel
+         , DD.Day, DD.ShortMonth Month, CalendarYear Year
+         , DC.City, DC.StateProvince, DC.SalesTerritory
+         , SUM(FS.TotalExcludingTax) SumOfTotalExcludingTax
+         , SUM(FS.TaxAmount) SumOfTaxAmount
+         , SUM(FS.TotalIncludingTax) SumOfTotalIncludingTax
+         , SUM(FS.Profit) SumOfProfit
+   FROM delta.`Tables/dbo/fact_sale` FS
+   INNER JOIN delta.`Tables/dbo/dimension_date` DD ON FS.InvoiceDateKey = DD.Date
+   INNER JOIN delta.`Tables/dbo/dimension_city` DC ON FS.CityKey = DC.CityKey
+   GROUP BY DD.Date, DD.CalendarMonthLabel, DD.Day, DD.ShortMonth, DD.CalendarYear, DC.City, DC.StateProvince, DC.SalesTerritory
+   ORDER BY DD.Date ASC, DC.StateProvince ASC, DC.City ASC;
 
-      CREATE OR REPLACE TABLE delta.`Tables/dbo/aggregate_sale_by_date_city`
-      AS
-      SELECT * FROM sale_by_date_city;
-      ```
+   CREATE OR REPLACE TABLE delta.`Tables/dbo/aggregate_sale_by_date_city`
+   AS
+   SELECT * FROM sale_by_date_city;
+   ```
 
    ---
 
