@@ -92,8 +92,6 @@ In this tutorial page, select the tab that matches the notebook you imported, an
    SET spark.microsoft.delta.optimizeWrite.enabled=true;
    SET spark.microsoft.delta.optimizeWrite.binSize=1073741824;
    ```
-
-   ***
     
    > [!TIP]
    > You don't need to specify any Spark pool or cluster details. Fabric provides a default Spark pool called Live Pool for every workspace. When you execute the first cell, the live pool starts in a few seconds and establishes the Spark session. Subsequent cells run almost instantaneously while the session is active.
@@ -133,8 +131,6 @@ In this tutorial page, select the tab that matches the notebook you imported, an
    FROM parquet.`Files/wwi-raw-data/full/fact_sale_1y_full`;
    ```
 
-   ***
-
 1. **Cell 3 - Dimensions.** This cell reads the five dimension parquet datasets and writes them as Delta tables (`dimension_city`, `dimension_customer`, `dimension_date`, `dimension_employee`, and `dimension_stock_item`) under `Tables/dbo/...`.
 
    Run this cell, and wait for it to finish before moving on to the next step.
@@ -170,7 +166,7 @@ In this tutorial page, select the tab that matches the notebook you imported, an
    CREATE OR REPLACE TABLE delta.`Tables/dbo/dimension_stock_item` USING DELTA AS SELECT * FROM parquet.`Files/wwi-raw-data/full/dimension_stock_item`;
    ```
 
-   ---
+
 
 1. To validate the created tables, right-click the **wwilakehouse** lakehouse in the explorer and then select **Refresh**. The tables appear.
 
@@ -198,7 +194,7 @@ In this section, you continue in the same notebook and run the next cells to cre
 
    No action is required for Spark SQL in this step.
 
-   ---
+
 
 1. **Cell 5 - Create `aggregate_sale_by_date_city`.** This cell joins sales, date, and city data, then creates the city-level aggregate table.
 
@@ -249,7 +245,7 @@ In this section, you continue in the same notebook and run the next cells to cre
    SELECT * FROM sale_by_date_city;
    ```
 
-   ---
+
 
 1. **Cell 6 - Create `aggregate_sale_by_date_employee`.** This cell joins sales, date, and employee data, then creates the employee-level aggregate table.
 
@@ -305,7 +301,7 @@ In this section, you continue in the same notebook and run the next cells to cre
    SELECT * FROM sale_by_date_employee;
    ```
 
-   ---
+
 
 1. To validate the created tables, right-click the **wwilakehouse** lakehouse in the explorer and then select **Refresh**. The aggregate tables appear.
 
