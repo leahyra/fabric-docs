@@ -93,7 +93,7 @@ In this tutorial page, select the tab that matches the notebook you imported, an
    SET spark.microsoft.delta.optimizeWrite.binSize=1073741824;
    ```
 
-   ---
+   ***
     
    > [!TIP]
    > You don't need to specify any Spark pool or cluster details. Fabric provides a default Spark pool called Live Pool for every workspace. When you execute the first cell, the live pool starts in a few seconds and establishes the Spark session. Subsequent cells run almost instantaneously while the session is active.
@@ -133,7 +133,7 @@ In this tutorial page, select the tab that matches the notebook you imported, an
    FROM parquet.`Files/wwi-raw-data/full/fact_sale_1y_full`;
    ```
 
-   ---
+   ***
 
 1. **Cell 3 - Dimensions.** This cell reads the five dimension parquet datasets and writes them as Delta tables (`dimension_city`, `dimension_customer`, `dimension_date`, `dimension_employee`, and `dimension_stock_item`) under `Tables/dbo/...`.
 
