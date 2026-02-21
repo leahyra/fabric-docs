@@ -3,7 +3,7 @@ title: Manage a lakehouse with the REST API
 description: Learn how to create, update, delete, and maintain lakehouse tables programmatically by using the Microsoft Fabric REST API.
 ms.reviewer: dacoelho
 ms.topic: how-to
-ms.date: 02/17/2026
+ms.date: 02/22/2026
 ms.search.form: lakehouse api
 ---
 
@@ -68,7 +68,7 @@ PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{l
     "id": "56c6dedf-2640-43cb-a412-84faad8ad648", 
     "type": "Lakehouse", 
     "displayName": "newname", 
-    "description": "", 
+    "description": "Item's New description", 
     "workspaceId": "fc67689a-442e-4d14-b3f8-085076f2f92f" 
 } 
 ```
@@ -276,6 +276,8 @@ The response doesn't include a body. The `Location` header contains a URI you us
 
 `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances/{operationId}`
 
+The run endpoint is lakehouse-scoped, but job-instance polling uses the generic item job endpoint (`/items/{itemId}/jobs/instances/{jobInstanceId}`) by design.
+
 > [!IMPORTANT]
 > Setting a retention period shorter than seven days impacts Delta time travel and can cause reader failures or table corruption if active files are removed. The API rejects retention periods under seven days by default. To override this check, set `spark.databricks.delta.retentionDurationCheck.enabled` to `false` in the workspace settings.
 
@@ -288,6 +290,8 @@ Use the `operationId` from the `Location` header to check job status:
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances/{operationId}
 ```
+
+This polling route intentionally uses `items` rather than `lakehouses`.
 
 **Response**
 

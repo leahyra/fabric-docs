@@ -3,7 +3,7 @@ title: Lakehouse schemas
 description: Organize lakehouse tables into schemas for better discovery, access control, and cross-workspace queries in Microsoft Fabric.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 02/17/2026
+ms.date: 02/22/2026
 ms.search.form: Lakehouse schemas
 ---
 
@@ -40,7 +40,7 @@ In code, you need to include the schema name when you save a table to store it i
 
 ```python
 # schema.table
-df.write.mode("Overwrite").saveAsTable("marketing.productdevelopment")
+df.write.mode("overwrite").saveAsTable("marketing.productdevelopment")
 ```
 
 In this example, `marketing` is the schema name and `productdevelopment` is the table name.
@@ -91,7 +91,7 @@ SELECT *
     ON employees.deptno = departments.deptno;
 ```
 
-## Referencing nonschema lakehouses
+## Referencing non-schema lakehouses
 
 If you work with both schema-enabled and non-schema lakehouses, you can query and join both types in the same Spark SQL code. Reference non-schema lakehouse tables without a schema part — either as `lakehouse.table` or `workspace.lakehouse.table` for cross-workspace queries.
 
@@ -128,7 +128,7 @@ To list tables, schemas, or get table details, use the [OneLake table APIs for D
 
 Lakehouses created before schemas were available don't have schema support. Fabric continues to support non-schema lakehouses, and Spark can query and join both types in the same code. Migration tools that convert a non-schema lakehouse to a schema-enabled lakehouse without moving data or downtime aren't yet available.
 
-In the meantime, you can start preparing by using four-part naming (`workspace.lakehouse.dbo.table`) in your existing code — even for non-schema lakehouses — so your queries are ready when you enable schemas. For more information, see [Referencing nonschema lakehouses](#referencing-nonschema-lakehouses).
+In the meantime, you can start preparing by using four-part naming (`workspace.lakehouse.dbo.table`) in your existing code — even for non-schema lakehouses — so your queries are ready when you enable schemas. For more information, see [Referencing non-schema lakehouses](#referencing-non-schema-lakehouses).
 
 ## Current limitations
 
@@ -139,7 +139,7 @@ Schema-enabled lakehouses have the following known limitations. The table also d
 | Spark views | `CREATE VIEW` isn't supported in Spark SQL for schema-enabled lakehouses. | Use [materialized lake views](materialized-lake-views/overview-materialized-lake-view.md) to precompute and persist query results as Delta tables. |
 | Shared lakehouses | A schema-enabled lakehouse can't be shared directly with workspace-level sharing. | Create [shortcuts](../onelake/onelake-shortcuts.md) in a lakehouse where the user has a workspace role, pointing to the shared lakehouse tables. |
 | External ADLS tables | External tables backed by Azure Data Lake Storage aren't supported. | Use [OneLake shortcuts](/rest/api/fabric/core/onelake-shortcuts) to reference external Delta tables. |
-| Outbound access protection | Cross-workspace Spark SQL queries don't work when outbound access protection is enabled. | Use nonschema lakehouses for cross-workspace queries in environments with outbound access protection. |
+| Outbound access protection | Cross-workspace Spark SQL queries don't work when outbound access protection is enabled. | Use non-schema lakehouses for cross-workspace queries in environments with outbound access protection. |
 
 ## Related content
 
