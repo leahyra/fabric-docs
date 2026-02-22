@@ -4,9 +4,7 @@ description: Use autologging with MLflow to automatically capture machine learni
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
-reviewer: midesa
-ms.topic: conceptual
-ms.custom: 
+ms.topic: concept-article
 ms.date: 01/14/2025
 ---
 

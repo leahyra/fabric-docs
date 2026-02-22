@@ -4,8 +4,7 @@ description: Learn how to enable Copilot in Fabric and Power BI, which brings a 
 author: snehagunda
 ms.author: sngun
 ms.reviewer: shlindsay
-ms.custom:
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/02/2025
 ms.update-cycle: 180-days
 no-loc: [Copilot]

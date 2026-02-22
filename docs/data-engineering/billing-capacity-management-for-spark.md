@@ -2,10 +2,7 @@
 title: Billing and utilization reports in Apache Spark for Fabric
 description: Learn about the billing, capacity utilization, and utilization reporting for Apache Spark in the Data Engineering and Science experiences in Microsoft Fabric.
 ms.reviewer: saravi
-ms.author: eur
-author: eric-urban
-ms.topic: article
-ms.custom:
+ms.topic: concept-article
 ms.date: 11/11/2024
 ---
 # Billing and utilization reporting for Apache Spark in Microsoft Fabric

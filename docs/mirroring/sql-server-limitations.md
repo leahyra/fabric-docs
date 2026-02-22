@@ -3,9 +3,9 @@ title: "Limitations of Fabric Mirrored Databases From SQL Server"
 description: A detailed list of limitations for mirrored databases From SQL Server in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: ajayj, rajpo, whhender
-ms.date: 01/07/2026
-ms.topic: conceptual
+ms.reviewer: ajayj, rajpo
+ms.date: 01/12/2026
+ms.topic: concept-article
 ms.custom:
   - references_regions
 ---
@@ -46,6 +46,7 @@ For troubleshooting, see:
 - [Object-level permissions](/sql/t-sql/statements/grant-object-permissions-transact-sql?view=sql-server-ver17&preserve-view=true), for example granting permissions to certain columns, aren't currently propagated to the replicated data in Fabric OneLake.
 - [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking?view=sql-server-ver17&preserve-view=true) settings aren't currently propagated to the replicated data in Fabric OneLake.
 - To successfully configure Mirroring for SQL Server, grant the principal used to connect to the source SQL Server the permission **ALTER ANY EXTERNAL MIRROR**. This permission is included in higher level permissions like **CONTROL** or the **db_owner** role.
+- When setting up CDC for SQL Server versions 2016-2022, an admin needs membership in the sysadmin server role to initially set up CDC. Any future CDC maintenance will require membership in the sysadmin server role. Mirroring will use CDC if it is already enabled for the database and tables that need to be mirrored. If CDC is not already enabled, the [Tutorial: Configure Microsoft Fabric Mirroring from SQL Server](sql-server-tutorial.md) configures the `fabric_login` login to temporarily be a member of the sysadmin server role for the purposes of configuring CDC. If CDC already exists, you do not need to temporarily add `fabric_login` to the server sysadmin role.
 
 ## Network and connectivity security
 
@@ -68,7 +69,8 @@ For troubleshooting, see:
     - Graph  
     - External tables  
 - You can't perform the following table-level data definition language (DDL) operations on SQL database source tables when enabled for mirroring. 
-    - Switch, split, or merge partition
+  - Switch partition
+    
     - Alter primary key
 - Currently, you can't mirror a table if it has the **json** or **vector** data type.
     - Currently, you can't alter a column to use the **vector** or **json** data type when a table is mirrored.

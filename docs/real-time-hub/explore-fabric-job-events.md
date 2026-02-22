@@ -1,8 +1,7 @@
 ---
 title: Explore Job events in Fabric Real-Time hub
 description: This article shows how to explore Job events in Fabric Real-Time hub.
-author: robece
-ms.author: robece
+ms.reviewer: robece
 ms.topic: how-to
 ms.date: 12/11/2025
 ---
@@ -66,7 +65,6 @@ This section shows the artifacts using Job events. Here are the columns and thei
 | Pipeline |
 | Notebook |
 | Lakehouse |
-| Warehouse |
 | Sql Analytics Endpoint |
 | Spark Job Definition |
 | CopyJob |
@@ -78,7 +76,6 @@ This section shows the artifacts using Job events. Here are the columns and thei
 | Digital Twin Builder |
 | Digital Twin Builder Flow |
 | Databricks |
-| Sustainability Data Manager |
 | KQL Database |
 | Snowflake database |
 | Anomaly detector |
@@ -127,3 +124,4 @@ For more information, see [subscribe permission for Fabric events](fabric-events
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
+

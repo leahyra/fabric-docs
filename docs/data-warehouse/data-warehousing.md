@@ -1,14 +1,12 @@
 ---
-title: What Is Data Warehousing in Microsoft Fabric?
+title: What Is Fabric Data Warehouse?
 description: Learn more about data warehousing workloads in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: joanpo, chweb, cynotebo
 ms.date: 09/09/2025
 ms.topic: overview
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
-# What is data warehousing in Microsoft Fabric?
+# What is Fabric Data Warehouse?
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -60,7 +58,7 @@ With the SQL analytics endpoint, T-SQL commands can define and query data object
 
 - Query the tables that reference data in your Delta Lake folders in the lake.
 - Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
-- Manage permissions on the objects. For more about security in the SQL anlaytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
+- Manage permissions on the objects. For more about security in the SQL analytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
 
 To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see:
 

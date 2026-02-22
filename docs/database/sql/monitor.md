@@ -1,11 +1,9 @@
 ---
 title: "Monitor SQL database performance and utilization trends"
 description: Learn what tools to use to analyze database performance, utilization, trends, and history.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: amar.patil # Microsoft alias
+ms.reviewer: amar.patil
 ms.date: 01/22/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Performance monitoring in SQL database
 ---
 # Monitor SQL database in Microsoft Fabric

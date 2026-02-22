@@ -1,11 +1,9 @@
 ---
 title: Ingest Data into the Warehouse
 description: Learn about the features and methods to ingest data into your warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha, fresantos
 ms.date: 12/02/2025
-ms.topic: article
+ms.topic: concept-article
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
 # Ingest data into the Warehouse

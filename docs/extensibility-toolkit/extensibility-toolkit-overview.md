@@ -1,10 +1,8 @@
 ---
 title: Microsoft Fabric Extensibility Toolkit
 description: Learn about extending Fabric.
-author: gsaurer
-ms.author: billmath
-ms.topic: article
-ms.custom:
+ms.reviewer: gesaur
+ms.topic: overview
 ms.date: 12/15/2025
 ---
 

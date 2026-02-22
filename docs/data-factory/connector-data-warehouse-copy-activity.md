@@ -1,11 +1,10 @@
 ---
 title: Configure Data Warehouse in copy activity in Data Factory in Microsoft Fabric
 description: This article explains how to copy data using Data Warehouse.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 12/26/2025
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors
@@ -27,7 +26,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 ### General
 
-For the **General** tab configuration, go to [General](activity-overview.md#general-settings).
+For the **General** tab configuration, select the copy activity, then select the the [General](activity-overview.md#general-settings) tab.
 
 ### Source
 
@@ -139,7 +138,7 @@ To use staged copy, go to **Settings** tab and select **Enable staging**. You ca
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply Data Warehouse with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For the **Mapping** tab configuration, if you don't apply Data Warehouse with auto create table as your destination, select the copy activity, then select the [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab) tab.
 
 If you apply Data Warehouse with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
@@ -151,7 +150,7 @@ If you choose varchar or varbinary type for the destination column, you can spec
 
 ### Settings
 
-For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For the **Settings** tab configuration, select the copy activity, then select the [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab) tab.
 
 ## Table summary
 
