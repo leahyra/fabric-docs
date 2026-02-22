@@ -1,12 +1,11 @@
 ---
 title: Overview of Copilot in Fabric
 description: Learn about Copilot in Fabric and Power BI, which brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
-author: denglishbi
-ms.author: daengli
-ms.reviewer: guptamaya, maghan
-ms.date: 10/23/2025
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: daengli, guptamaya, maghan
+ms.date: 01/25/2026
 ms.update-cycle: 180-days
-ms.service: fabric
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
@@ -15,6 +14,7 @@ ms.custom:
   - copilot-learning-hub
   - fabric-cat
 no-loc: [Copilot]
+ai-usage: ai-assisted
 ---
 
 # What is Copilot in Fabric?
@@ -77,15 +77,17 @@ Copilot for SQL database in Microsoft Fabric is an AI assistant designed to stre
 
 ### Copilot in Fabric in the Power BI workload
 
-Power BI has introduced generative AI that allows you to create reports automatically by selecting the article for a report or by prompting Copilot for Power BI on a particular article. You can use Copilot for Power BI to generate a summary for the report page that you created, and generate synonyms for better Q&A capabilities.
+Power BI has introduced generative AI that allows you to create reports automatically by selecting the article for a report or by prompting Copilot for Power BI on a particular article. You can use Copilot for Power BI to generate a summary for the report page that you created, and generate synonyms for better Q&A capabilities. For more information on the features and how to use Copilot for Power BI, see [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction).
 
-For more information on the features and how to use Copilot for Power BI, see [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction).
+Copilot is also available for Power BI apps, where it's scoped to the curated content within an app. App-scoped Copilot helps users search reports, ask questions, and get summaries based on the app's content. For more information, see [Overview of Copilot for Power BI apps (preview)](/power-bi/create-reports/copilot-apps-overview).
 
 ### Copilot in Fabric in the Real-Time Intelligence workload
 
-Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists.
+Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists. Copilot lets you [create and refine KQL queries](../real-time-intelligence/copilot-writing-queries.md) directly in Real-Time Dashboard tiles using natural language.
 
-For more information, see [Copilot for Writing KQL Queries](../fundamentals/copilot-for-writing-queries.md).
+Copilot is available both in the KQL queryset editor and inside dashboard tile editing, allowing you to write natural language prompts to generate, replace, or refine KQL queries. This gives you flexibility to author queries in the context that best fits your workflow—whether building queries in a queryset or tuning visuals directly within dashboard tiles.
+
+For more information, see [Copilot for Writing KQL Queries](../real-time-intelligence/copilot-writing-queries.md).
 
 ### Where to find the AI and Copilot experiences in Fabric
 
@@ -94,15 +96,15 @@ The following table provides an overview of the various AI and Copilot experienc
 | **Fabric workload** | **Supported items** | **Experience** |
 | --- | --- | --- |
 | **Copilot for Data Science and Data Engineering** | Notebook (typically with lakehouses and other data items) | - [Copilot chat panel](../data-engineering/copilot-notebooks-chat-pane.md) vs [chat magics](../data-engineering/copilot-notebooks-chat-magics.md) in a notebook.<br />- [Generate code or markdown for a notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities).<br />- [Add comments, fix errors, or debug notebook code (preview)](../data-engineering/copilot-notebooks-chat-magics.md#commenting-and-debugging).<br />- [Analyze and visualize data](../data-engineering/copilot-notebooks-chat-pane.md).<br />- [Explain notebook contents (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities). |
-| **AI Experiences in Fabric Data Science** | Data agent <br> AI functions <br> AI services | - [Create a Fabric Data agent](../data-science/how-to-create-data-agent.md). <br />- [Transform and enrich data seamlessly with AI functions](../data-science/ai-functions/overview.md).<br />- [AI services in Fabric](../data-science/ai-services/ai-services-overview.md#ai-services-in-fabric-preview).<br />
+| **AI Experiences in Fabric Data Science** | Data agent <br> AI functions <br> AI services | - [Create a Fabric Data agent](../data-science/how-to-create-data-agent.md). <br />- [Transform and enrich data seamlessly with AI functions](../data-science/ai-functions/overview.md).<br />- [AI services in Fabric](../data-science/ai-services/ai-services-overview.md#foundry-tools-in-fabric-preview).<br />
 | **Copilot for Data Factory** | Dataflows gen2 | - [Generate a new query](copilot-fabric-data-factory.md#get-started-with-copilot-for-dataflow-gen2). |
 | | Pipeline | - [Generate and run a pipeline](copilot-fabric-data-factory.md#generate-a-data-pipeline-with-copilot).<br />- [Summarize a pipeline](copilot-fabric-data-factory.md#summarize-a-data-pipeline-with-copilot).<br />- [Troubleshoot pipeline errors](copilot-fabric-data-factory.md#troubleshoot-pipeline-errors-with-copilot). |
 | **Copilot for Data Warehouse** | SQL Queries in Data Warehouse | - [Generate SQL queries (preview)](../data-warehouse/copilot-chat-pane.md).<br />- [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).<br />- [Fix code in SQL queries (preview)](../data-warehouse/copilot-quick-action.md).<br />- [Explain code in SQL queries (preview)](../data-warehouse/copilot-quick-action.md). |
 | **Copilot for SQL database** | SQL queries in SQL database | - [Generate SQL queries (preview)](../database/sql/copilot-chat-pane.md).<br />- [Suggest SQL code completions (preview)](../database/sql/copilot-code-completion.md).<br />- [Fix code in SQL queries (preview)](../database/sql/copilot-quick-actions.md).<br />- [Explain code in SQL queries (preview)](../database/sql/copilot-quick-actions.md). |
 | **Copilot for Power BI** | Semantic models in Power BI Desktop or Power BI service | - [Suggest linguistic model synonyms](/power-bi/natural-language/q-and-a-copilot-enhancements).<br />- [Suggest measure descriptions](/power-bi/transform-model/desktop-measure-copilot-descriptions).<br />- [Write and explain DAX queries](/dax/dax-copilot).<br />- [Ask questions about your data (preview)](/power-bi/create-reports/copilot-ask-data-question). |
 | | Reports (Power BI Desktop, service, or mobile app) | - Power BI home (announced).<br />- [Suggest a report page (preview)](/power-bi/create-reports/copilot-create-desktop-report).<br />- [Suggest a visual (preview)](/power-bi/create-reports/copilot-create-report-service).<br />- [Summarize data in a narrative visual](/power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service).<br />- [Explain a report page or visual](/power-bi/create-reports/copilot-pane-summarize-content). |
-| **Copilot for Real-Time Intelligence** | KQL queryset | - [Generate KQL queries (preview)](copilot-for-writing-queries.md).<br />- [Modify or explore a previously generated KQL query (preview)](copilot-for-writing-queries.md). |
-| | Real-time dashboards | - [Generate a real-time dashboard](../fundamentals/copilot-generate-dashboard.md). |
+| **Copilot for Real-Time Intelligence** | KQL queryset | - [Generate KQL queries (preview)](../real-time-intelligence/copilot-writing-queries.md).<br />- [Modify or explore a previously generated KQL query (preview)](../real-time-intelligence/copilot-writing-queries.md). |
+| | Real-time dashboards | - [Generate a real-time dashboard](../real-time-intelligence/copilot-generate-dashboard.md).<br />- [Edit tile with Copilot (preview)](../real-time-intelligence/dashboard-real-time-create.md#edit-tile).<br />- [Author queries with Copilot (preview)](../real-time-intelligence/copilot-writing-queries.md). |
 > [!NOTE]  
 > Copilot's capabilities are evolving over time. More items and Copilot experiences will likely become available in the future.
 >  
@@ -121,6 +123,10 @@ Accelerate intelligent decision-making at scale with secure, agentic AI built on
 ### Unified data foundation with Fabric
 
 Build a unified data foundation in Microsoft Fabric using the Modern Analytics, AI, and Governance (MAAG) framework to deliver scalable insights. This accelerator connects Fabric, OneLake, Purview, and Azure Databricks through a [medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md), with sample domain models and prebuilt Power BI dashboards. With flexible deployment options and built-in governance, it helps you unify and analyze data across domains efficiently. To learn more, [explore the solution on GitHub](https://github.com/microsoft/unified-data-foundation-with-fabric-solution-accelerator)
+
+### Real-Time Intelligence for operations
+
+Use Microsoft Fabric’s real‑time intelligence on a unified data foundation to analyze live and historical telemetry, detect anomalies, and monitor operations through interactive dashboards. The solution includes automated email alerts and an AI‑powered data agent for natural‑language insights. To learn more, [explore the solution on GitHub](https://github.com/microsoft/real-time-intelligence-operations-solution-accelerator).
 
 ## How do I use Copilot responsibly?
 
@@ -165,3 +171,4 @@ In order to use fully conversational agentic AI experiences, the agent needs to 
 - [Copilot for Microsoft Fabric and Power BI: FAQ](copilot-faq-fabric.yml)
 - [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
 - [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
+

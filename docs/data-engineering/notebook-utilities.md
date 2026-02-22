@@ -2,8 +2,6 @@
 title: NotebookUtils (former MSSparkUtils) for Fabric
 description: Use NotebookUtils, a built-in package for Fabric Notebook, to work with file systems, modularize and chain notebooks together, manage data engineering items, and work with credentials.
 ms.reviewer: jingzh
-ms.author: jingzh
-author: JeneZhang
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
@@ -285,25 +283,27 @@ Here's an example of running notebooks with topological structure using `noteboo
 DAG = {
     "activities": [
         {
-            "name": "NotebookSimple", # activity name, must be unique
-            "path": "NotebookSimple", # notebook path
+            "name": "Process_1", # activity name, must be unique
+            "path": "NotebookSimple", # notebook item name
             "timeoutPerCellInSeconds": 90, # max timeout for each cell, default to 90 seconds
             "args": {"p1": "changed value", "p2": 100}, # notebook parameters
+            "workspace":"WorkspaceName" # both name and id are supported
         },
         {
-            "name": "NotebookSimple2",
+            "name": "Process_2",
             "path": "NotebookSimple2",
             "timeoutPerCellInSeconds": 120,
-            "args": {"p1": "changed value 2", "p2": 200}
+            "args": {"p1": "changed value 2", "p2": 200},
+            "workspace":"id" # both name and id are supported
         },
         {
-            "name": "NotebookSimple2.2",
+            "name": "Process_1.1",
             "path": "NotebookSimple2",
             "timeoutPerCellInSeconds": 120,
             "args": {"p1": "changed value 3", "p2": 300},
             "retry": 1,
             "retryIntervalInSeconds": 10,
-            "dependencies": ["NotebookSimple"] # list of activity names that this activity depends on
+            "dependencies": ["Process_1"] # list of activity names that this activity depends on
         }
     ],
     "timeoutInSeconds": 43200, # max timeout for the entire DAG, default to 12 hours
@@ -1015,3 +1015,4 @@ notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
 - [Microsoft Spark Utilities (MSSparkUtils) for Fabric](microsoft-spark-utilities.md)
 - [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
 - [Manage and execute notebooks in Fabric with APIs](notebook-public-api.md)
+

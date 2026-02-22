@@ -2,10 +2,7 @@
 title: Streaming data into lakehouse
 description: Learn how to use Spark structured streaming and retry policy to set up streaming jobs to get data into lakehouse.
 ms.reviewer: tvilutis
-ms.author: eur
-author: eric-urban
-ms.topic: article
-ms.custom:
+ms.topic: concept-article
 ms.date: 05/23/2023
 ms.search.form: Lakehouse Spark Structured Streaming
 ---

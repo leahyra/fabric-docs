@@ -1,19 +1,17 @@
 ---
 title: Amazon Managed streaming for Kafka connector for Fabric event streams
 description: This file has the common content for configuring Amazon Managed streaming for Kafka connector for Fabric event streams and Real-Time hub. 
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: include
-ms.custom:
-ms.date: 11/18/2024
+ms.date: 12/22/2025
 ---
 
 1. On the **Data sources** page, select **Amazon MSK Kafka**. 
 
-    :::image type="content" source="./media/amazon-msk-kafka-source-connector/select-amazon-msk-kafka.png" alt-text="Screenshot that shows the selection of Amazon MSK Kafka as the source type in the Get events wizard.":::
+    :::image type="content" source="./media/amazon-msk-kafka-source-connector/add-data-kafka.png" alt-text="Screenshot that shows the selection of Amazon MSK Kafka as the source type in the Get events wizard.":::
 1. On the **Connect** page, select **New connection**.
 
-    :::image type="content" source="./media/amazon-msk-kafka-source-connector/new-connection-link.png" alt-text="Screenshot that shows the selection of the New connection link on the Connect page of the Get events wizard.":::    
+    :::image type="content" source="./media/amazon-msk-kafka-source-connector/new-connection.png" alt-text="Screenshot that shows the selection of the New connection link on the Connect page of the Get events wizard.":::    
 1. In the **Connection settings** section, for **Bootstrap Server**, enter the public endpoint of your Kafka cluster.
 
     :::image type="content" source="./media/amazon-msk-kafka-source-connector/bootstrap-server.png" alt-text="Screenshot that shows the selection of the Bootstrap server field on the Connect page of the Get events wizard.":::   
@@ -32,5 +30,6 @@ ms.date: 11/18/2024
     1. Select **Reset auto offset** to specify where to start reading offsets if there's no commit. 
     1. For **Security protocol**, the default value is **SASL_SSL**. The default **SASL mechanism** is **SCRAM-SHA-512** and cannot be changed. 
     
-        :::image type="content" source="./media/amazon-msk-kafka-source-connector/configure-amazon-msk-kafka-source.png" alt-text="Screenshot that shows the first page of the Amazon MSK Kafka connection settings." lightbox="./media/amazon-msk-kafka-source-connector/configure-amazon-msk-kafka-source.png":::      
+        :::image type="content" source="./media/amazon-msk-kafka-source-connector/configure-settings.png" alt-text="Screenshot that shows the first page of the Amazon MSK Kafka connection settings." lightbox="./media/amazon-msk-kafka-source-connector/configure-settings.png":::      
 1. Select **Next**. On the **Review + connect** screen, review the summary, and then select **Connect**.
+

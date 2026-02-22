@@ -1,16 +1,13 @@
 ---
 title: Add a Fabric Activator destination to an eventstream
-description: Learn how to add Activator destination to a Fabric eventstream. This feature is currently in preview.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+description: Learn how to add Activator destination to a Fabric eventstream.
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
 
-# Add a Fabric activator destination to an eventstream (preview)
+# Add a Fabric activator destination to an eventstream
 
 This article shows you how to add an activator destination to an eventstream.
 
@@ -66,3 +63,5 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Eventhouse destination](add-destination-kql-database.md)
 - [Lakehouse destination](add-destination-lakehouse.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
+
+

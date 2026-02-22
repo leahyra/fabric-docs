@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
-ms.custom:
 ms.date: 10/22/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
@@ -216,9 +215,9 @@ Manage pipelines, copy jobs, and mounted data factories in workspaces enabled wi
 
 The following scenarios are unsupported:
 
-* Copy to warehouse isn't supported.
+* Workspace staging is not supported for Fabric Data Warehouse, Snowflake, or Teradata connectors in Copy activity and Copy job. Use external staging as an alternative.
 * Copy to Eventhouse isn't supported.
-* OneLake staging isn't currently supported.
+
 
 ### Eventstream support
 

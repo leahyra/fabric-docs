@@ -1,9 +1,7 @@
 ---
 title: OneLake security access control model (preview)
 description: Learn the details of how OneLake secures data with role-based access control and the interaction with Fabric permissions.
-ms.reviewer: eloldag
-ms.author: aamerril
-author: aamerril
+ms.reviewer: eloldag, aamerril
 ms.topic: concept-article
 ms.custom:
 - onelake-data-access-public-preview-april-2024
@@ -39,6 +37,7 @@ OneLake security enables users to define data access roles for the following Fab
 | ---- | --- | --- |
 | Lakehouse | Public Preview | Read, ReadWrite |
 | Azure Databricks Mirrored Catalog | Public Preview | Read |
+| Mirrored Databases | Public Preview | Read |
 
 ## OneLake security and workspace permissions
 
@@ -119,10 +118,7 @@ Any tables that do not meet those criteria will have access denied if table leve
 
 ### Metadata security
 
-OneLake security's Read access to data grants full access to the data and metadata in a table. For users with no access to a table, the data is never exposed and generally the metadata isn't visible. This also applies to column level security and a user's ability to see or not see a column in that table. However, OneLake security doesn't guarantee that the **metadata** for a table won't be accessible, specifically in the following cases:
-
-- SQL Endpoint queries: SQL Analytics Endpoint uses the same metadata security behavior as SQL Server. This means that if a user doesn't have access to a table or column, the error message for that query will explicitly state the table or column names the user doesn't have access to.
-- Semantic models: Giving a user Build permission on a semantic model allows them access to see the table names included in the model, regardless of whether the user has access to them or not. In addition, report visuals that contain hidden columns show the column name in the error message.
+OneLake security's Read access to data grants full access to the data and metadata in a table. For users with no access to a table, the data is never exposed. This also applies to column level security and a user's ability to see or not see a column in that table. However, OneLake security doesn't guarantee that the **metadata** for a table won't be accessible.
 
 ### Permission inheritance
 
@@ -381,3 +377,4 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 * Changes to role definitions take about 5 minutes to apply.
 * Changes to a user group in a OneLake security role take about an hour for OneLake to apply the role's permissions on the updated user group.
   * Some Fabric engines have their own caching layer, so might require an extra hour to update access in all systems.
+

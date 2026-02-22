@@ -1,10 +1,8 @@
 ---
 title: Workload Manifest
 description: Learn more about the Workload Manifest and the usage.
-author: gsaurer
-ms.author: billmath
-ms.topic: article
-ms.custom:
+ms.reviewer: gesaur
+ms.topic: concept-article
 ms.date: 12/15/2025
 ---
 

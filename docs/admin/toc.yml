@@ -62,7 +62,7 @@ items:
     href: service-admin-portal-organizational-visuals.md
   - name: Manage Power BI visuals admin settings
     href: organizational-visuals.md 
-  - name: Manage Premium Per User
+  - name: Manage Power BI Premium Per-User
     href: service-admin-portal-premium-per-user.md
   - name: Manage users
     href: service-admin-portal-users.md
@@ -167,7 +167,7 @@ items:
       href: service-admin-portal-insights.md
     - name: Datamart settings
       href: service-admin-portal-datamart.md
-    - name: Data model settings
+    - name: Semantic model settings
       href: service-admin-portal-data-model.md
     - name: Quick measure suggestions settings
       href: service-admin-portal-quick-measure-suggestions-settings.md
