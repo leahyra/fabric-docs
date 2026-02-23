@@ -371,6 +371,7 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
   | Maximum number of OneLake security roles per Fabric Item | 250 roles per item<sup>1</sup> |
   | Maximum number of members per OneLake security role | 500 users or user groups per role |
   | Maximum number of permissions per OneLake security role | 500 permissions per role |
+
 <sup>1</sup> You can request an increase in roles per item to 1000. To request an increase, contact (Azure Support.)[https://azure.microsoft.com/support/faq/]
 
 ## Latencies in OneLake security
