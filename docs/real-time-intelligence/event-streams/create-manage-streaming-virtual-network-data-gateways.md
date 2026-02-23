@@ -10,7 +10,7 @@ ms.date: 01/27/2026
 ms.search.form: Eventstream connector private network support
 ---
 
-# Create and manage a Streaming virtual network data gateway
+# Create and manage a streaming virtual network data gateway
 
 A Streaming virtual network data gateway provides an abstraction of the Azure virtual network and its subnet resources within Fabric. It allows Eventstream’s streaming connector service to use the Azure virtual network and subnet resource, injecting the connector into this Azure virtual network. As a result, Eventstream’s streaming connector can access streaming sources within a private network to collect real-time data for Fabric.
 
@@ -25,13 +25,13 @@ After completing these prerequisites, you can create a streaming virtual network
 
 When adding sources to your eventstream in Fabric, select a source, that is, Azure Service Bus and the Get events wizard is opened. Select **Set up** to open the **Manage connections and gateways** page and you can create your **Streaming virtual network gateways**.
 
-:::image type="content" source="media/streaming-connector-vnet-on-prem-support/wizard.png" alt-text="Screenshot of showing the service bus wizard." lightbox="media/streaming-connector-vnet-on-prem-support/wizard.png":::
+:::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/wizard.png" alt-text="Screenshot of showing the service bus wizard." lightbox="media/streaming-connector-virtual-network-on-premises-support/wizard.png":::
 
 1. Navigate to **Streaming virtual network data gateways**, then select **New**. 
-1. Select the **Azure subscription** where you created the virtual network (vNet) in the previous steps, along with the **Resource group**, **Virtual network**, and **Subnet**. 
+1. Select the **Azure subscription** where you created the virtual network in the previous steps, along with the **Resource group**, **Virtual network**, and **Subnet**. 
 1. Specify a **name** and select **Save** to complete the creation.
 
-:::image type="content" source="media/streaming-connector-vnet-on-prem-support/create-data-gateway.png" alt-text="Screenshot of showing how to create streaming virtual network data gateway." lightbox="media/streaming-connector-vnet-on-prem-support/create-data-gateway.png":::
+:::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/create-data-gateway.png" alt-text="Screenshot of showing how to create streaming virtual network data gateway." lightbox="media/streaming-connector-virtual-network-on-premises-support/create-data-gateway.png":::
 
 After a Streaming virtual network data gateway is created, it's available in Fabric: **Manage Connections and Gateways > Streaming virtual network data gateways** tab where you can manage it. In this page, it lists all the streaming virtual network data gateways that you have the permission to access. In each item row, it shows the corresponding Azure virtual network resource details.
 
@@ -51,7 +51,7 @@ You can update the name and description of a streaming virtual network data gate
 
 :::image type="content" source="media/create-manage-streaming-virtual-network-data-gateways/update.png" alt-text="Screenshot of showing how to update streaming virtual network data gateways." lightbox="media/create-manage-streaming-virtual-network-data-gateways/update.png":::
 
-## Delete streaming vNet gateway
+## Delete streaming virtual network gateway
 
 You can delete a streaming virtual network data gateway. Select the **More actions** menu for the gateway, and then select **Remove**.
 
@@ -62,5 +62,5 @@ You can delete a streaming virtual network data gateway. Select the **More actio
 
 ## Next step
 
-- [Eventstream streaming connector private petwork support overview](./streaming-connector-private-network-support-overview.md)
-- [Eventstream streaming connector private petwork support guide](./streaming-connector-private-network-support-guide.md)
+- [Eventstream streaming connector private network support overview](./streaming-connector-private-network-support-overview.md)
+- [Eventstream streaming connector private network support guide](./streaming-connector-private-network-support-guide.md)

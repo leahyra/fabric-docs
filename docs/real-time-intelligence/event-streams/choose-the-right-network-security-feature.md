@@ -132,19 +132,19 @@ Selecting the right network security feature depends on your specific scenario a
 
 Ask yourself these questions:
 
-1. **Is your source or destination within Fabric?**
+- **Is your source or destination within Fabric?**
    - If you're using Fabric-native sources (like Workspace Item events, OneLake events, Sample data) or Fabric-native destinations (like Lakehouse, Eventhouse, Activator), these are **secure by default**—no extra network security features are needed
    - If you're connecting to external Azure resources or custom applications, continue to the next questions
 
-2. **Is your data source residing in a protected network?**
+- **Is your data source residing in a protected network?**
    - If your data source is publicly accessible and needs to send data to Eventstream, no action required.
    - If your data source resides behind a firewall and isn't publicly accessible, continue to the next questions.
 
-3. **What direction does the network traffic flow? Inbound or outbound**
+- **What direction does the network traffic flow? Inbound or outbound**
    - If external sources initiate connections and push data to Eventstream (inbound), use **Private Links**
    - If Eventstream needs to connect to external sources (outbound), continue to the next questions.
 
-4. **Is your data source an Azure Event Hubs or Azure IoT Hub?**
+- **Is your data source an Azure Event Hubs or Azure IoT Hub?**
    - If yes, use **Managed Private Endpoint**
    - For other external data sources, use **Streaming Connector vNet Injection**
 
@@ -155,9 +155,9 @@ Ask yourself these questions:
    > [!NOTE]
    > If you encounter challenges preparing an Azure virtual network for the Streaming Connector vNet Injection solution, you may consider using the **Connector IP Allowlist** approach for outbound scenarios. 
    >
-   > Eventstream's streaming connector in each region has a single outbound IP address. If your company's network policy permits allowlisting this IP address and your source has a publicly resolvable address, Eventstream's connector can bring real-time data into Fabric, though the transmission occurs over a public network.
+   > Eventstream's streaming connector in each region has a single outbound IP address. If your company's network policy permits allow listing this IP address and your source has a publicly resolvable address, Eventstream's connector can bring real-time data into Fabric, though the transmission occurs over a public network.
    >
-   > This solution is applicable to all streaming connector sources. If you're interested in implementing this solution, kindly reach out to the product team by completing the following form: [Real-Time Intelligence Eventstream Streaming Connector IP allowlist Request](https://aka.ms/EventStreamsConnIPAllowlistRequest)
+   > This solution is applicable to all streaming connector sources. If you're interested in implementing this solution, kindly reach out to the product team by completing the following form: [Real-Time Intelligence Eventstream Streaming Connector IP allow list Request](https://aka.ms/EventStreamsConnIPAllowlistRequest)
 
 
 ### Decision matrix
@@ -176,15 +176,12 @@ Use the following flowchart and decision matrix to determine the right network s
 | Azure streaming sources   | Azure Event Hubs (Basic feature level), Azure IoT Hub                               | Outbound  | Managed Private Endpoint | GA  |
 | External        | Confluent Cloud for Apache Kafka, Amazon Kinesis, Google Pub/Sub, MQTT, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)        | Outbound  | Connector vNet injection           | PuPr  |
 | Database CDC    | PostgreSQL, MySQL, SQL Server, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)                                | Outbound  | Connector vNet injection           | PuPr |
-| Azure events    | Azure Blob Storage events, Azure Event Grid namespace        | Inbound   | Private Links            | Coming soon    |
-| Custom Endpoint | -                                                            | Inbound   | Private Links            | Coming soon    |
 
 #### Destinations
 
 | Category        |  Examples          | Direction | Network Security Feature | Stage & Release |
 | ----------------|--------------------|---------- | --------- | ------------------------ |
 | Fabric items    | Lakehouse, Eventhouse, Activator, Spark Notebook, etc. | Internal  | Secure by default        | -               |
-| Custom Endpoint | -                 | Inbound   | Private Links            | Coming soon   |
 
 ## Common scenarios
 

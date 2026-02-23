@@ -4,6 +4,8 @@ description: This file has the list of sources supported by Streaming Connector 
 ms.author: xujiang1
 author: xujxu
 ms.topic: include
+ms.service: fabric
+ms.subservice: rti-eventstream
 ms.custom:
 ms.date: 01/27/2026
 ---

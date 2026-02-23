@@ -20,7 +20,6 @@ The streaming connector’s support for virtual networks and on-premises environ
 
 To enable data transfer from a source within a private network into Eventstream, it's necessary to establish an Azure managed virtual network as an intermediary bridge, as illustrated in the diagram. The Azure virtual network should be connected to the private network hosting the data source using appropriate methods, such as VPN or ExpressRoute for on-premises scenarios, and private endpoints or network peering for Azure sources. Then, the Eventstream streaming connector instance is injected into this virtual network through virtual network injection, allowing secure connectivity between the connector and the data source located within the private network.
 
-:::image type="content" source="media/streaming-connector-vnet-on-prem-support-overview/overview.png" alt-text="Screenshot of showing the overview of the architecture." lightbox="media/streaming-connector-vnet-on-prem-support-overview/overview.png":::
 
 ## What is a streaming virtual network data gateway
 
@@ -34,11 +33,11 @@ To facilitate streaming connector virtual network injection into an Azure virtua
 
 To learn more about how to create and manage the streaming virtual network data gateway, refer to [Create and manage streaming virtual network data gateways](create-manage-streaming-virtual-network-data-gateways.md).
 
-:::image type="content" source="media/streaming-connector-vnet-on-prem-support-overview/data-gateway.png" alt-text="Screenshot of showing what is streaming virtual network data gateway." lightbox="media/streaming-connector-vnet-on-prem-support-overview/data-gateway.png":::
+:::image type="content" source="media/streaming-connector-virtual-network-on-premises-support-overview/data-gateway.png" alt-text="Screenshot of showing what is streaming virtual network data gateway." lightbox="media/streaming-connector-virtual-network-on-premises-support-overview/data-gateway.png":::
 
 ## Supported sources
 
-[!INCLUDE [streaming-connector-vnet-supported-sources](./includes/streaming-connector-vnet-supported-sources.md)]
+[!INCLUDE [streaming-connector-vnet-supported-sources](./includes/streaming-connector-virtual-network-supported-sources.md)]
 
 ## Next steps
 
@@ -55,9 +54,9 @@ To get the detailed step-to-step configuration guide, check out the [Streaming C
 - **Custom DNS Server is not supported yet**  
     If your source is located in a private network with a custom DNS server configured, the injected streaming connector within your Azure virtual network might not be able to resolve the source server’s address. There are three options to work around this issue:
 
-    1. Create and link a [Private DNS Zone](/azure/dns/private-dns-privatednszone) to your injected virtual network and add an A record resolving your data source DNS name to the private IP address.
-    1. Create a [DNS Private Resolver](/azure/dns/dns-private-resolver-overview), which forwards DNS traffic to your custom DNS server.
-    1. Configure the private IP address directly when creating your connector. This option doesn't work for connectors that require a fully qualified domain name.
+    - Create and link a [Private DNS Zone](/azure/dns/private-dns-privatednszone) to your injected virtual network and add an A record resolving your data source DNS name to the private IP address.
+    - Create a [DNS Private Resolver](/azure/dns/dns-private-resolver-overview), which forwards DNS traffic to your custom DNS server.
+    - Configure the private IP address directly when creating your connector. This option doesn't work for connectors that require a fully qualified domain name.
 
 - **Race condition issue may occur when creating and deleting vNet connector with same virtual network’s subnet configured at same time**  
     If you delete a connector source with a virtual network subnet configured and add a new connector source with the same subnet in Eventstream's edit mode, publishing both changes might cause race condition conflicts. To prevent this issue, follow these steps: delete the connector source with virtual network in Edit mode -> publish the eventstream -> reenter edit mode -> add the new connector source with virtual network -> and publish again.
