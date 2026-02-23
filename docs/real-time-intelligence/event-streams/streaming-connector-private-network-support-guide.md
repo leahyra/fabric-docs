@@ -111,8 +111,6 @@ The example demonstrates using Azure SQL Server source.
 
 1. Use the wizard to create the private endpoint, selecting the Azure virtual network created in Prerequisite #1 during the 'Virtual Network' step. For the subnet selection, choose a subnet different from the one delegated to ‘MessagingConnector’ in Prerequisite #1. 
 
-    :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/configure-virtual-network.png" alt-text="Screenshot of showing how to delegate to ‘MessagingConnector’." lightbox="media/streaming-connector-virtual-network-on-premises-support/configure-virtual-network.png":::
-
 1. After the private point is successfully created, you can find the private endpoint under **Setting > Private endpoints** in the Azure virtual network resource.
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/private-endpoint-in-virtual-network.png" alt-text="Screenshot of showing the private endpoint in Azure virtual network." lightbox="media/streaming-connector-virtual-network-on-premises-support/private-endpoint-in-virtual-network.png":::
