@@ -33,7 +33,7 @@ Follow these steps to turn on the Modern Query Evaluation Engine for a dataflow:
 
 1. **Go to Options (Scale settings)**: In the dataflow editor, select the Options menu. In the Options dialog, select on the Scale tab.
 
-1. **Enable the Modern Evaluator**: Find the setting for Modern query evaluation engine. Turn this option On (check or toggle it).
+1. **Enable the Modern Evaluator**: Find the setting for Modern query evaluation engine. Verify this option is enabled.
 
     :::image type="content" source="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png" alt-text="Screenshot of the options dialog in a Dataflow Gen2 with CI/CD displaying the modern query evaluator setting." lightbox="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png":::
 
@@ -102,9 +102,7 @@ This benchmark compares the legacy evaluation engine and the Modern Query Evalua
 
 **Observations**
 
-- **When query folding is preserved**, the Modern Query Evaluation Engine provides significant performance improvements due to a more efficient runtime and reduced execution overhead..
-- **When query folding is not possible**, the Modern Query Evaluation Engine still provides significant performance improvements due to a more efficient runtime and reduced execution overhead.
-- **Performance gains become more pronounced as data volumes increase**, making the Modern Query Evaluation Engine particularly beneficial for enterprise‑scale dataflows.
+The Modern Query Evaluation Engine provides significant performance improvements due to a more efficient runtime and reduced execution overhead regardless of whether the query folds or not.
 -->
 
 ## Supported connectors
