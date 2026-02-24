@@ -68,7 +68,7 @@ To create a shortcut, open a lakehouse and go to the **Explorer** view. Select t
 
 The following example shows creating a shortcut in the **Files** section. 
 
-:::image type="content" source="media\lakehouse-shortcuts\create-lakehouse-schortcut.png" alt-text="Screenshot showing the New shortcut option in the Files section of the lakehouse explorer." lightbox="media\lakehouse-shortcuts\create-lakehouse-schortcut.png":::
+:::image type="content" source="media\lakehouse-shortcuts\create-lakehouse-shortcut.png" alt-text="Screenshot showing the New shortcut option in the Files section of the lakehouse explorer." lightbox="media\lakehouse-shortcuts\create-lakehouse-shortcut.png":::
 
 For detailed step-by-step instructions for each source type, see [Create an internal OneLake shortcut](../onelake/create-onelake-shortcut.md) or select one of the external source links in the [Supported shortcut sources](#supported-shortcut-sources) section.
 
