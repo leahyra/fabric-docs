@@ -81,7 +81,7 @@ The Fabric portal Query Editor includes a built-in Copilot experience for SQL da
 
 Copilot is also available when you connect to a SQL database in Fabric from external tools:
 
-- **SQL Server Management Studio 22 (preview)**: GitHub Copilot in SSMS 22 offers inline T-SQL completions, chat-based code generation and explanations, and execution plan analysis with optimization recommendations.
+Copilot is available when connecting to a Fabric SQL database from external tools such as SSMS 22 and the VS Code MSSQL extension, offering inline T‑SQL assistance and chat-based help grounded to the connected database. To learn more, see [Copilot with SSMS and VS Code](https://github.com/MicrosoftDocs/fabric-docs-pr/database/sql/copilot-sql-database.md%E2%80%8E#use-copilot-with-ssms-and-vscode)
 - **Visual Studio Code (MSSQL extension)**: The VS Code MSSQL extension integrates GitHub Copilot with chat and inline assistance grounded to the connected database, and supports Agent Mode for multi-step, tool-driven workflows.
 
 These tool integrations support two operational modes:
