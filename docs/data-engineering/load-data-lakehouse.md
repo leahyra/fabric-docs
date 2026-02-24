@@ -3,7 +3,7 @@ title: Data ingestion options for a lakehouse
 description: Learn about the different ways to get data into a lakehouse, including file upload, shortcuts, Dataflow Gen2, data pipelines, notebook code, Eventstream, and Eventhouse.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 02/23/2026
+ms.date: 02/24/2026
 ms.search.form: Lakehouse Get Data
 ---
 

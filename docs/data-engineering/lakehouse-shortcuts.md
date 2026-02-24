@@ -3,7 +3,7 @@ title: Shortcuts in a lakehouse
 description: Learn how to use shortcuts in a Fabric lakehouse to reference data from internal and external sources without copying it.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 02/23/2026
+ms.date: 02/24/2026
 ms.update-cycle: 180-days
 ms.search.form: Lakehouse shortcuts
 #customer intent: As a data engineer, I want to create and manage shortcuts in a Fabric lakehouse to reference data from various sources without copying it.

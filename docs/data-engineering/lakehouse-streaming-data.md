@@ -3,7 +3,7 @@ title: Data streaming into a lakehouse with Spark
 description: Learn about Spark structured streaming for ingesting data into a lakehouse, optimizing write performance, and running production streaming jobs.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 02/23/2026
+ms.date: 02/24/2026
 ms.search.form: Lakehouse Spark Structured Streaming
 ---
 
