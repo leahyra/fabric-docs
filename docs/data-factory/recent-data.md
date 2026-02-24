@@ -1,11 +1,9 @@
 ---
 title: Recent data in Fabric (Preview)
-description: Learn how to use the Recent data module to quickly access your most frequently used tables, files, folders, databases, and sheets in Microsoft Fabric.
+description: Learn how to use the recent data module to quickly access your most frequently used tables, files, folders, databases, and sheets in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.topic: how-to
-ms.custom: data-factory, sfi-image-nochange
-ms.date: 02/07/2026
-ms.search.form: Recent Data
+ms.date: 02/24/2026
 ai-usage: ai-assisted
 
 #customer intent: As a data engineer, I want to quickly access my recently used data sources so that I can reduce navigation time when working with data in Fabric.
@@ -13,17 +11,19 @@ ai-usage: ai-assisted
 
 # Recent data in Fabric (Preview)
 
-Recent data is a feature that helps you work more efficiently by providing quick access to your most frequently used data items. The feature remembers the specific items you've worked with—including tables, files, folders, databases, and sheets, etc., so you can return to them without navigating through connection dialogs and folder structures.
+Recent data provides quick access to your most frequently used data items. The feature remembers the specific items you've worked with—including tables, files, folders, databases, sheets, etc., so you can return to them without navigating through connection dialogs and folder structures.
 
+This feature is currently in preview for Dataflow Gen2 and will be available in Pipelines, Copy Job, and more Fabric items in the future.
 
-This feature is currently in preview for Dataflow Gen2 and will be available in Pipelines, Copy Job, and additional Fabric artifacts in the future.
+## Prerequisites
+
 Before you begin, make sure you have the following setup:
 
 - A Microsoft Fabric tenant account with an active subscription. [Create a free account](https://www.microsoft.com/microsoft-fabric).
-- A Microsoft Fabric enabled workspace. [Create a workspace](../fundamentals/create-workspaces.md).
-- A Dataflow Gen2 item, or permissions to create one. [Create a Dataflow Gen2](create-first-dataflow-gen2.md).
+- A Microsoft Fabric enabled [workspace](../fundamentals/create-workspaces.md).
+- A [Dataflow Gen2](create-first-dataflow-gen2.md) item, or permissions to create one.
 
-## Supported recent items
+## Items that support recent data
 
 Recent data tracks the following types of data items you work with:
 
@@ -35,7 +35,7 @@ Recent data tracks the following types of data items you work with:
 - **View**: Database views that present data from one or more tables
 - **Function**: Custom or built-in functions from data sources
 
-When you access any of these item types in your Fabric hosts, they appear in your Recent data list for quick access in future sessions.
+When you access any of these item types in your Fabric hosts, they appear in your recent data list for quick access in future sessions.
 
 ## Access recent data from the Power Query ribbon
 
@@ -49,7 +49,7 @@ You can access your recent data directly from the Power Query ribbon when workin
 
 1. Select an item to load it into the Power Query editor. The data loads immediately, ready for transformation.
 
- :::image type="content" source="media/recent-data/recentdatapqribbon.jpg" alt-text="Screenshot showing how to access recent-data in Power Query ribbon":::
+    :::image type="content" source="media/recent-data/recent-data-ribbon.jpg" alt-text="Screenshot of accessing recent data from the Power Query ribbon.":::
 
 ## Access recent data from Modern Get Data
 
@@ -65,17 +65,17 @@ You can also access recent data through the Modern Get Data experience when addi
 
 1. Select an item to load it into the Power Query editor. The data loads immediately, ready for transformation.
 
-   :::image type="content" source="media/recent-data/recentdatainmgd.jpg" alt-text="Screenshot showing how to access recent-data inside Modern Get Data":::
+    :::image type="content" source="media/recent-data/recent-data-get-data.jpg" alt-text="Screenshot of accessing recent data inside Modern Get Data.":::
 
 ## Browse location for related items
 
-After accessing Recent data, you can use the Browse location option to explore other items in the same folder or database.
+After accessing recent data, you can use the **Browse location** option to explore other items in the same folder or database.
 
-1. After loading an item from Recent data, select **Browse location** in the Power Query editor.
+1. After loading an item from recent data, select **Browse location** in the Power Query editor.
 
 1. The navigation pane displays other tables, files, or items available at the same location.
 
-1. Select additional items to include in your dataflow. Each item you select creates a new query in the Power Query editor.
+1. Select other items to include in your dataflow. Each item you select creates a new query in the Power Query editor.
 
 1. Apply transformations, merge queries, or configure your dataflow as needed.
 
@@ -85,4 +85,3 @@ This option helps you discover related data without leaving the Power Query edit
 
 - [What is Data Factory in Microsoft Fabric?](data-factory-overview.md)
 - [Create your first Dataflow Gen2](create-first-dataflow-gen2.md)
-
