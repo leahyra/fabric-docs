@@ -1,12 +1,12 @@
 ---
 title: Recent data in Fabric (Preview)
 description: Learn how to use the Recent data module to quickly access your most frequently used tables, files, folders, databases, and sheets in Microsoft Fabric.
-author: xupzhou
-ms.author: xupzhou
-ms.service: fabric
-ms.subservice: data-factory
+ms.reviewer: xupzhou
 ms.topic: how-to
+ms.custom: data-factory, sfi-image-nochange
 ms.date: 02/07/2026
+ms.search.form: Recent Data
+ai-usage: ai-assisted
 
 #customer intent: As a data engineer, I want to quickly access my recently used data sources so that I can reduce navigation time when working with data in Fabric.
 ---
@@ -20,8 +20,8 @@ This feature is currently in preview for Dataflow Gen2 and will be available in 
 Before you begin, make sure you have the following setup:
 
 - A Microsoft Fabric tenant account with an active subscription. [Create a free account](https://www.microsoft.com/microsoft-fabric).
-- A Microsoft Fabric enabled workspace. [Create a workspace](https://learn.microsoft.com/fabric/fundamentals/create-workspaces).
-- A Dataflow Gen2 item, or permissions to create one. [Create a Dataflow Gen2](https://learn.microsoft.com/fabric/data-factory/create-first-dataflow-gen2).
+- A Microsoft Fabric enabled workspace. [Create a workspace](../fundamentals/create-workspaces.md).
+- A Dataflow Gen2 item, or permissions to create one. [Create a Dataflow Gen2](create-first-dataflow-gen2.md).
 
 ## Supported recent items
 
@@ -49,7 +49,7 @@ You can access your recent data directly from the Power Query ribbon when workin
 
 1. Select an item to load it into the Power Query editor. The data loads immediately, ready for transformation.
 
- :::image type="content" source="media/recent-data/RecentDataPQRibbon.jpg" alt-text="Screenshot showing how to access recent-data in Power Query ribbon":::
+ :::image type="content" source="media/recent-data/recentdatapqribbon.jpg" alt-text="Screenshot showing how to access recent-data in Power Query ribbon":::
 
 ## Access recent data from Modern Get Data
 
@@ -65,7 +65,7 @@ You can also access recent data through the Modern Get Data experience when addi
 
 1. Select an item to load it into the Power Query editor. The data loads immediately, ready for transformation.
 
-   :::image type="content" source="media/recent-data/RecentDataInMGD.jpg" alt-text="Screenshot showing how to access recent-data inside Modern Get Data":::
+   :::image type="content" source="media/recent-data/recentdatainmgd.jpg" alt-text="Screenshot showing how to access recent-data inside Modern Get Data":::
 
 ## Browse location for related items
 
@@ -83,6 +83,6 @@ This option helps you discover related data without leaving the Power Query edit
 
 ## Related content
 
-- [What is Data Factory in Microsoft Fabric?](https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview)
-- [Create your first Dataflow Gen2](https://learn.microsoft.com/en-us/fabric/data-factory/create-first-dataflow-gen2)
+- [What is Data Factory in Microsoft Fabric?](data-factory-overview.md)
+- [Create your first Dataflow Gen2](create-first-dataflow-gen2.md)
 
