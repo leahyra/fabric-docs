@@ -35,17 +35,17 @@ Sources and destinations that use internal calls include:
 - Fabric OneLake events
 - Fabric Job events
 - Fabric capacity overview events
-- Sample data, e.g., Bicycle, Taxi
+- Sample data, for example, Bicycle, Taxi
 - Real-time weather data
 
-**Fabric-native destinations (i.e., Fabric item as destination):**, e.g.,
+**Fabric-native destinations (i.e., Fabric item as destination):**, for example:
 
 - Lakehouse
 - Eventhouse
 - Activator
 - Spark Notebook
 
-Internal calls are secure by default and protected by Microsoft Entra ID authentication, workspace permission model, and encryption at rest and in transit. The network security features described in this article apply only to external network traffic — inbound and outbound connections between Eventstream and resources outside the Fabric platform.
+Internal calls are secure by default and protected by Microsoft Entra ID authentication, workspace permission model, and encryption at rest and in transit. The network security features described in this article apply only to external network traffic, inbound and outbound connections between Eventstream and resources outside the Fabric platform.
 
 ### Inbound network traffic
 
@@ -111,15 +111,15 @@ Tenant-level private links are ideal for organizations with strict, company-wide
 
 **Related documents**: [Secure inbound connections with Tenant and Workspace Private Links](./set-up-tenant-workspace-private-links.md)
 
-### Streaming Connector vNet Injection
+### Streaming Connector virtual network Injection
 
-The streaming connector vNet injection feature enables you to securely retrieve data from external data sources located in a private network directly to Eventstream by injecting the streaming connector into an intermediate **Azure virtual network** that is prepared by you. By leveraging this feature, you can connect to sources that aren't accessible from the public internet, ensuring that data flows securely over a private network. This capability is ideal for organizations that require secure, private connectivity between their on-premises or cloud-based virtual network resources and Fabric Eventstream, without exposing those resources to the public internet.
+The streaming connector virtual network injection feature enables you to securely retrieve data from external data sources located in a private network directly to Eventstream by injecting the streaming connector into an intermediate **Azure virtual network** that is prepared by you. By using this feature, you can connect to sources that aren't accessible from the public internet, ensuring that data flows securely over a private network. This capability is ideal for organizations that require secure, private connectivity between their on-premises or cloud-based virtual network resources and Fabric Eventstream, without exposing those resources to the public internet.
 
 **Direction:** Outbound (Eventstream connecting to external resources)
 
-**Use case:** Use Streaming connector vNet injection when you need to connect Eventstream to external streaming platforms (like Apache Kafka, Amazon Kinesis, Google Pub/Sub, MQTT) or database CDC sources (PostgreSQL, MySQL, SQL Server) that reside in private networks, i.e., 3rd-party cloud virtual network or on-premises environment.
+**Use case:** Use Streaming connector virtual network injection when you need to connect Eventstream to external streaming platforms (like Apache Kafka, Amazon Kinesis, Google Pub/Sub, MQTT) or database Change Data Capture (CDC) sources (PostgreSQL, MySQL, SQL Server) that reside in private networks, that is, 3rd-party cloud virtual network or on-premises environment.
 
-Streaming Connector vNet injection is ideal when you need to pull data from external systems or databases that are behind firewalls or in private networks. And it requires you to have an Azure virtual network provisioned as prerequisite.
+Streaming Connector virtual network injection is ideal when you need to pull data from external systems or databases that are behind firewalls or in private networks. And it requires you to have an Azure virtual network provisioned as prerequisite.
 
 **Related documents**: [Eventstream streaming connector virtual network and on-premises support overview](./streaming-connector-private-network-support-overview.md)
 
@@ -153,7 +153,7 @@ Ask yourself these questions:
 
 
    > [!NOTE]
-   > If you encounter challenges preparing an Azure virtual network for the Streaming Connector vNet Injection solution, you may consider using the **Connector IP Allowlist** approach for outbound scenarios. 
+   > If you encounter challenges preparing an Azure virtual network for the Streaming Connector virtual network Injection solution, you might consider using the **Connector IP Allowlist** approach for outbound scenarios. 
    >
    > Eventstream's streaming connector in each region has a single outbound IP address. If your company's network policy permits allow listing this IP address and your source has a publicly resolvable address, Eventstream's connector can bring real-time data into Fabric, though the transmission occurs over a public network.
    >
@@ -174,8 +174,8 @@ Use the following flowchart and decision matrix to determine the right network s
 | Public feeds    | Weather                                                      | Internal  | Secure by default        | -                |
 | Fabric events   | Fabric Workspace item, Fabric OneLake events, Fabric Job events, etc. | Internal  | Secure by default        | -                |
 | Azure streaming sources   | Azure Event Hubs (Basic feature level), Azure IoT Hub                               | Outbound  | Managed Private Endpoint | GA  |
-| External        | Confluent Cloud for Apache Kafka, Amazon Kinesis, Google Pub/Sub, MQTT, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)        | Outbound  | Connector vNet injection           | PuPr  |
-| Database CDC    | PostgreSQL, MySQL, SQL Server, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)                                | Outbound  | Connector vNet injection           | PuPr |
+| External        | Confluent Cloud for Apache Kafka, Amazon Kinesis, Google Pub/Sub, MQTT, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)        | Outbound  | Connector virtual network injection           | PuPr  |
+| Database CDC    | PostgreSQL, MySQL, SQL Server, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)                                | Outbound  | Connector virtual network injection           | PuPr |
 
 #### Destinations
 
@@ -209,7 +209,7 @@ Your organization uses Apache Kafka as your streaming source, and your Kafka clu
 
 **Solution:** Use **Streaming Connector vNet Injection**
 
-Streaming Connector vNet injection enables Eventstream to securely connect to Apache Kafka through your virtual network. Configure the virtual network settings in your Eventstream workspace to establish a private connection to your Kafka cluster. Once configured, Eventstream can retrieve streaming data from Apache Kafka without exposing traffic to the public internet.
+Streaming Connector virtual network injection enables Eventstream to securely connect to Apache Kafka through your virtual network. Configure the virtual network settings in your Eventstream workspace to establish a private connection to your Kafka cluster. Once configured, Eventstream can retrieve streaming data from Apache Kafka without exposing traffic to the public internet.
 
 ## Limitations and considerations
 
