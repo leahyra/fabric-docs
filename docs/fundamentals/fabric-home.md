@@ -135,11 +135,11 @@ Object explorer helps you browse workspaces, folders, and items. Use the followi
 
 **Use keyboard shortcuts in horizontal tabs**
 
-Horizontal tabs lets you switch between multiple open items. Use the following shortcuts to move efficiently across tabs:
+Horizontal tabs let you switch between multiple open items. Use the following shortcuts to move efficiently across tabs:
 
 | Action | Shortcut |
 |--------|----------|
-| Navigate to the Nth tab | * Windows: Alt + Number (1–9)<br>* MacOS: Control + Number (1–9) |
+| Navigate to the Nth tab | * Windows: Alt + Number (1–9)<br>* macOS: Control + Number (1–9) |
 
 ### More open items
 
