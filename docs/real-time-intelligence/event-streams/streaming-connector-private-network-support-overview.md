@@ -20,6 +20,7 @@ The streaming connector’s support for virtual networks and on-premises environ
 
 To enable data transfer from a source within a private network into Eventstream, it's necessary to establish an Azure managed virtual network as an intermediary bridge, as illustrated in the diagram. The Azure virtual network should be connected to the private network hosting the data source using appropriate methods, such as VPN or ExpressRoute for on-premises scenarios, and private endpoints or network peering for Azure sources. Then, the Eventstream streaming connector instance is injected into this virtual network through virtual network injection, allowing secure connectivity between the connector and the data source located within the private network.
 
+:::image type="content" source="media/streaming-connector-virtual-network-on-premises-support-overview/overview.png" alt-text="Screenshot of showing the overview of the architecture." lightbox="media/streaming-connector-virtual-network-on-premises-support-overview/overview.png":::
 
 ## What is a streaming virtual network data gateway
 
