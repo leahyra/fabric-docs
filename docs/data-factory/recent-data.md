@@ -13,7 +13,8 @@ ai-usage: ai-assisted
 
 Recent data provides quick access to your most frequently used data items. The feature remembers the specific items you've worked with—including tables, files, folders, databases, sheets, etc., so you can return to them without navigating through connection dialogs and folder structures.
 
-This feature is currently in preview for Dataflow Gen2 and will be available in Pipelines, Copy Job, and more Fabric items in the future.
+[!IMPORTANT]
+> This feature is currently only in preview for Dataflow Gen2.
 
 ## Prerequisites
 
