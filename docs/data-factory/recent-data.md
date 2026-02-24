@@ -16,7 +16,7 @@ ms.date: 02/07/2026
 Recent data is a feature that helps you work more efficiently by providing quick access to your most frequently used data items. The feature remembers the specific items you've worked with—including tables, files, folders, databases, and sheets, etc., so you can return to them without navigating through connection dialogs and folder structures.
 
 
-This feature is currently in Preview in Data flow gen2 and will be avilable in Pipelines, Copy job and more Fabric artifacts in the future.
+This feature is currently in preview for Dataflow Gen2 and will be available in Pipelines, Copy Job, and additional Fabric artifacts in the future.
 Before you begin, make sure you have the following setup:
 
 - A Microsoft Fabric tenant account with an active subscription. [Create a free account](https://www.microsoft.com/microsoft-fabric).
