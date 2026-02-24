@@ -38,7 +38,7 @@ Get started with Copilot in Fabric in SQL database:
 
 ## Use Copilot with SSMS and VS Code
 
-When you connect to a SQL database in Fabric from SQL Server Management Studio 22 (preview) or the Visual Studio Code MSSQL extension, Copilot offers chat and inline T-SQL assistance grounded to the connected database. Key capabilities include:
+When you connect to a SQL database in Fabric from SQL Server Management Studio 22 or the Visual Studio Code MSSQL extension, Copilot offers chat and inline T-SQL assistance grounded to the connected database. Key capabilities include:
 
 - **Inline T-SQL completions**: Copilot suggests code completions as you type in the query editor.
 - **Chat-based code generation and explanations**: Ask questions or request T-SQL generation through natural language in the chat panel.
