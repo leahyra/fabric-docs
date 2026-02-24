@@ -137,8 +137,6 @@
     items:
       - name: Manage data sources
         href: data-source-management.md
-      - name: Connect recent data
-        href: recent-data.md
       - name: Connectors
         href: connector-overview.md
         items:
@@ -855,6 +853,8 @@
                     href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Download diagnostics logs
                     href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json  
+      - name: Access recent data
+        href: recent-data.md
   - name: Move data
     items:
       - name: Decide - Data movement strategy
