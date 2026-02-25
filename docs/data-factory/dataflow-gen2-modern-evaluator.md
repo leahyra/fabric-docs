@@ -31,7 +31,7 @@ Follow these steps to turn on the Modern Query Evaluation Engine for a dataflow:
 
 1. **Open your dataflow for editing**: In Fabric Data Factory, navigate to your Dataflow Gen2 (CI/CD) item and open it in the Power Query editor.
 
-1. **Go to Options (Scale settings)**: In the dataflow editor, select the Options menu. In the Options dialog, select on the Scale tab.
+1. **Go to Options (Scale settings)**: In the dataflow editor, select the Options menu. In the Options dialog, select the Scale tab.
 
 1. **Enable the Modern Evaluator**: Find the setting for Modern query evaluation engine. Verify this option is enabled.
 
@@ -107,7 +107,7 @@ The Modern Query Evaluation Engine provides significant performance improvements
 
 ## Supported connectors
 
-The Modern Query Evaluation Engine supports a varierty of data connectors. Ensure your dataflow’s data sources are among the supported types to take advantage of the new engine. Currently supported connectors include.
+The Modern Query Evaluation Engine supports a variety of data connectors. Ensure your dataflow’s data sources are among the supported types to take advantage of the new engine. Currently supported connectors include.
 
 <details>
 <summary><b>Show connectors list</b></summary>
