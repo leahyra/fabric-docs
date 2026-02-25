@@ -85,7 +85,7 @@ The following properties are **required**:
           :::image type="content" source="./media/connector-lakehouse/use-query-t-sql-query.png" alt-text="Screenshot showing Use query - T-SQL Query." :::
 
           > [!NOTE]
-          > T-SQL Query (Preview) is not available when your Lakehouse is connected through Get Data page.
+          > T-SQL Query (Preview) is supported only when read the Lakehouse via the connection set up in Manage connections and gateways.
 
         - Under **Advanced**, you can specify the following fields:
           - **Query timeout (minutes)**: Specify the timeout for query command execution, default is 120 minutes.
