@@ -328,6 +328,8 @@ when you apply reader version 3 with `deletionVectors` in `readerFeatures` in yo
 
 [Change Data Feed](https://docs.delta.io/delta-change-data-feed/) is supported.
 
+[Liquid clustering](https://docs.delta.io/delta-clustering/) is supported.
+
 ## Table summary
 
 The following tables contain more information about a copy activity in Lakehouse.
