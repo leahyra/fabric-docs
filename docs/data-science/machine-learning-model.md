@@ -179,6 +179,5 @@ To get started with applying your models, choose the approach that fits your sce
 ## Related content
 
 - [Track experiments with MLflow in Fabric](machine-learning-experiment.md)
-- [Train models with Fabric notebooks](train-models-fabric.md)
 - [MLflow Experiment APIs reference](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
 
