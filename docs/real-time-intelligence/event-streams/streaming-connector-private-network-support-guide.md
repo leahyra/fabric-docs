@@ -210,8 +210,8 @@ After the Streaming virtual network data gateway is created, go back to Get even
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/select-connection.png" alt-text="Screenshot of showing how to select a streaming virtual network connection." lightbox="media/streaming-connector-virtual-network-on-premises-support/select-connection.png":::
 
-    > [!NOTE]  
-    > Alternatively, you can create a connection in **Manage connections and gateways** page, and then select it in **Connection** on Get events wizard page.
+
+Alternatively, you can create a connection in **Manage connections and gateways** page, and then select it in **Connection** on Get events wizard page.
 
 1. On the **Manage connections and gateways** page, select **Connections** tab and select **+ New** button. When creating a **new connection**, select **Streaming virtual network**.
 
